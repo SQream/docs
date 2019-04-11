@@ -1,0 +1,1107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\Resources\MasterPages\SQLReference.flmsp');">
+    <head>
+        <link href="../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body class="article toc2 toc-left">
+        <div id="content">
+            <div class="sect1">
+                <div class="sectionbody">
+                    <div class="sect2">
+                        <h3 id="_data_definition_language">Data Definition Language</h3>
+                        <div class="sect3">
+                            <h4 id="_databases">Databases</h4>
+                            <div class="sect4">
+                                <h5 id="_create_database"><a name="CREATE"></a>CREATE DATABASE</h5>
+                                <div class="paragraph">
+                                    <p><strong>CREATE DATABASE</strong> will create a new database in the current cluster
+storage set. To use the new database, disconnect and reconnect to the new database.</p>
+                                </div>
+                                <div class="code">
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>create_database_statement</em></strong> ::=
+
+    CREATE DATABASE <strong><em>database_name</em></strong> ;
+
+<strong><em>database_name</em></strong> ::= <strong><em>identifier</em></strong></code></pre>
+                                    </div>
+                                </div>
+                                <div class="code">
+                                    <div class="title">Examples</div>
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">create</span>  <span class="tok-k">database</span>  <span class="tok-n">my_database</span><span class="tok-p">;</span></code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sect4">
+                                <h5 id="_drop_database">DROP DATABASE</h5>
+                                <div class="paragraph">
+                                    <p><strong>DROP DATABASE</strong> will delete a database and all of its files.
+During <strong>DROP DATABASE</strong>, no other DDL/DML operations can run
+ on the database, and subsequent connections to it will fail.</p>
+                                </div>
+                                <div class="code">
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>drop_database_statement</em></strong> ::=
+
+    DROP DATABASE <strong><em>database_name</em></strong> ;</code></pre>
+                                    </div>
+                                </div>
+                                <div class="code">
+                                    <div class="title">Examples</div>
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">drop</span>  <span class="tok-k">database</span>  <span class="tok-n">my_database</span><span class="tok-p">;</span></code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_schemas">Schemas</h4>
+                            <div class="sect4">
+                                <h5 id="_create_schema">CREATE SCHEMA</h5>
+                                <div class="paragraph">
+                                    <p><strong>CREATE SCHEMA</strong> will create a new schema in the current database.</p>
+                                </div>
+                                <div class="code">
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>create_schema_statement</em></strong> ::=
+
+    CREATE SCHEMA <strong><em>schema_name</em></strong> ;
+
+<strong><em>schema_name</em></strong> ::= <strong><em>identifier</em></strong></code></pre>
+                                    </div>
+                                </div>
+                                <div class="admonitionblock note">
+                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                        <tr class="TableStyle-Default_Table-Body-Body1">
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+New tables should be explicitly associated to an existing schema, or implicitly associated to the PUBLIC default schema.
+</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="code">
+                                    <div class="title">Examples</div>
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">create</span>  <span class="tok-k">schema</span>  <span class="tok-n">my_schema</span><span class="tok-p">;</span></code></pre>
+                                    </div>
+                                </div>
+                                <div class="paragraph">
+                                    <p><strong>DROP SCHEMA</strong> will delete an empty schema from the database.</p>
+                                </div>
+                            </div>
+                            <div class="sect4">
+                                <h5 id="_drop_schema">DROP SCHEMA</h5>
+                                <div class="code">
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>drop_schema_statement</em></strong> ::=
+
+    DROP SCHEMA <strong><em>schema_name</em></strong> ;</code></pre>
+                                    </div>
+                                </div>
+                                <div class="admonitionblock note">
+                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                        <tr class="TableStyle-Default_Table-Body-Body1">
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+The PUBLIC schema can not be dropped.
+</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="code">
+                                    <div class="title">Examples</div>
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">DROP</span>  <span class="tok-k">SCHEMA</span>  <span class="tok-n">my_schema</span><span class="tok-p">;</span></code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sect4">
+                                <h5 id="_alter_default_schema">ALTER DEFAULT SCHEMA</h5>
+                                <div class="paragraph">
+                                    <p>Change the default schema for a specific role.
+Alter default schema should be used to change the user/role default schema to a different schema name.</p>
+                                </div>
+                                <div class="code">
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>alter_default_schema_statement</em></strong> ::=
+    ALTER DEFAULT SCHEMA FOR  <strong><em>role_name</em></strong> TO <strong><em>schema_name</em></strong>;</code></pre>
+                                    </div>
+                                </div>
+                                <div class="code">
+                                    <div class="title">Examples</div>
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">ALTER</span>  <span class="tok-k">DEFAULT</span>  <span class="tok-k">SCHEMA</span>  <span class="tok-k">FOR</span>  <span class="tok-n">user_a</span>  <span class="tok-k">TO</span>  <span class="tok-n">schema_a</span><span class="tok-p">;</span></code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_tables">Tables</h4>
+                            <div class="sect4">
+                                <h5 id="_create_table"><a name="CREATE3"></a>CREATE TABLE</h5>
+                                <div class="paragraph">
+                                    <p>CREATE TABLE creates a new table in the current database under a specific schema.</p>
+                                </div>
+                                <div class="admonitionblock note">
+                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                        <tr class="TableStyle-Default_Table-Body-Body1">
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                                <div class="ulist">
+                                                    <ul>
+                                                        <li>
+                                                            <p>This operation requires exclusive lock on the table.</p>
+                                                        </li>
+                                                        <li>
+                                                            <p>New tables should be explicitly associated to an existing schema. Otherwise, they will be implicitly associated to the PUBLIC default schema.</p>
+                                                        </li>
+                                                        <li>
+                                                            <p>Max row length cannot exceed 10239 bytes.</p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="code">
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>create_table_statement</em></strong> ::=
+
+    CREATE TABLE [<strong><em>schema_name</em></strong>].<strong><em>table_name</em></strong> (
+        { <strong><em>column_name</em></strong>  <strong><em>type_name</em></strong> [ <strong><em>default</em></strong> ]
+          [ <strong><em>column_constraint</em></strong> ] }
+        [, ... ]
+    )
+    ;
+
+<strong><em>schema_name</em></strong> ::= <strong><em>identifier</em></strong>  
+
+<strong><em>table_name</em></strong> ::= <strong><em>identifier</em></strong>  
+
+<strong><em>column_name</em></strong> ::= <strong><em>identifier</em></strong></code></pre>
+                                    </div>
+                                </div>
+                                <div class="paragraph">
+                                    <p><code><strong><em>identifier</em></strong></code> is defined below in the <a href="22_2.7_Value_expressions.htm#identifier-definitions">identifier definition</a> section.</p>
+                                </div>
+                                <div class="paragraph">
+                                    <p><code><strong><em>type_name</em></strong></code> is defined below in the <a href="21_2.6_Data_types.htm">type name definition</a> section.</p>
+                                </div>
+                                <div class="sect5">
+                                    <h6 id="_constraints_and_defaults">Constraints and defaults</h6>
+                                    <div class="code">
+                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>column_constraint</em></strong> ::=
+
+    { NOT NULL | NULL }
+
+<strong><em>default</em></strong> ::=
+
+    DEFAULT <strong><em>default_value</em></strong>
+
+    | IDENTITY [ ( <strong><em>start_with</em></strong> [ , <strong><em>increment_by</em></strong> ] ) ]</code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="paragraph">
+                                        <p>The <code><strong><em>default_value</em></strong></code> can be NULL or a literal.</p>
+                                    </div>
+                                    <div class="paragraph">
+                                        <p>The common sequence generator options can be comma or whitespace
+separated.</p>
+                                    </div>
+                                    <div class="admonitionblock warning">
+                                        <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                            <tr class="TableStyle-Default_Table-Body-Body1">
+                                                <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-warning" title="Warning"></i>
+                                                </td>
+                                                <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                                    <div class="paragraph">
+                                                        <p>Identity columns are only supported for columns of type BIGINT.</p>
+                                                    </div>
+                                                    <div class="paragraph">
+                                                        <p>Identity does not enforce uniqueness of the value. When the value in the identity column reaches the maximum number for the specific column datatype limitation, the next number in the identity will restart as 1.</p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="sect5">
+                                    <h6 id="compression-types"><a name="Compression_types"></a>Compression types</h6>
+                                    <div class="code">
+                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>compression_type</em></strong> ::=
+    CHECK ( 'CS "<strong><em>compression_name</em></strong>"' )</code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="paragraph">
+                                        <p>SQream recommends using the default compression type by omitting the compression
+specification, which defaults to automatic compression.</p>
+                                    </div>
+                                    <div class="admonitionblock note">
+                                        <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                            <tr class="TableStyle-Default_Table-Body-Body1">
+                                                <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                                </td>
+                                                <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+You may override the default compression by specifying the <code>check</code> modifier.
+For example, <code>check ('CS "p4d"')</code>.<br />Please contact SQream support for more information about recommended compressions.
+</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="code">
+                                        <div class="title">Examples</div>
+                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">create</span>  <span class="tok-k">table</span>  <span class="tok-n">t</span>  <span class="tok-p">(</span>  
+    <span class="tok-n">a</span>  <span class="tok-nb">bigint</span>  <span class="tok-k">identity</span>  <span class="tok-p">(</span><span class="tok-mf">1</span><span class="tok-p">,</span><span class="tok-mf">1</span><span class="tok-p">)</span>  <span class="tok-k">CHECK</span>  <span class="tok-p">(</span>  <span class="tok-s1">'CS "default"'</span>  <span class="tok-p">),</span>  
+    <span class="tok-n">b</span>  <span class="tok-nb">int</span><span class="tok-p">);</span>  
+
+<span class="tok-k">create</span>  <span class="tok-k">table</span>  <span class="tok-n">my_schema</span><span class="tok-mf">.</span><span class="tok-n">t</span>  <span class="tok-p">(</span>  
+    <span class="tok-n">a</span>  <span class="tok-nb">int</span>  <span class="tok-k">null</span>  <span class="tok-k">CHECK</span>  <span class="tok-p">(</span>  <span class="tok-s1">'CS "p4d"'</span>  <span class="tok-p">),</span>  
+    <span class="tok-n">b</span>  <span class="tok-nb">int</span>  <span class="tok-k">not</span>  <span class="tok-k">null</span>  <span class="tok-k">CHECK</span>  <span class="tok-p">(</span>  <span class="tok-s1">'CS "dict"'</span>  <span class="tok-p">));</span>  
+
+<span class="tok-k">create</span>  <span class="tok-k">table</span>  <span class="tok-n">u</span>  <span class="tok-p">(</span>  
+    <span class="tok-n">a</span>  <span class="tok-nb">int</span>  <span class="tok-k">default</span>  <span class="tok-mf">0</span><span class="tok-p">,</span>  
+    <span class="tok-n">b</span>  <span class="tok-nb">int</span><span class="tok-p">,</span>  
+    <span class="tok-n">c</span>  <span class="tok-nb">date</span><span class="tok-p">);</span>  
+
+<span class="tok-k">create</span>  <span class="tok-k">table</span>  <span class="tok-n">u</span>  <span class="tok-p">(</span>  
+    <span class="tok-n">k</span>  <span class="tok-nb">bigint</span>  <span class="tok-k">not</span>  <span class="tok-k">null</span>  <span class="tok-k">identity</span><span class="tok-p">,</span>  
+    <span class="tok-n">v</span>  <span class="tok-nb">varchar</span><span class="tok-p">(</span><span class="tok-mf">10</span><span class="tok-p">)</span>  <span class="tok-k">CHECK</span>  <span class="tok-p">(</span>  <span class="tok-s1">'CS "dict"'</span>  <span class="tok-p">));</span>  
+
+<span class="tok-k">create</span>  <span class="tok-k">table</span>  <span class="tok-n">u</span>  <span class="tok-p">(</span>  
+    <span class="tok-n">k</span>  <span class="tok-nb">bigint</span>  <span class="tok-k">not</span>  <span class="tok-k">null</span>  <span class="tok-k">identity</span><span class="tok-p">(</span><span class="tok-mf">1</span><span class="tok-p">,</span><span class="tok-mf">1</span><span class="tok-p">),</span>  
+    <span class="tok-n">v</span>  <span class="tok-nb">varchar</span><span class="tok-p">(</span><span class="tok-mf">10</span><span class="tok-p">));</span>  
+
+<span class="tok-k">create</span>  <span class="tok-k">table</span>  <span class="tok-n">t</span><span class="tok-p">(</span><span class="tok-n">x</span>  <span class="tok-nb">int</span>  <span class="tok-k">not</span>  <span class="tok-k">null</span><span class="tok-p">,</span>  
+               <span class="tok-n">y</span>  <span class="tok-nb">int</span>  <span class="tok-k">default</span>  <span class="tok-mf">0</span>  <span class="tok-k">not</span>  <span class="tok-k">null</span><span class="tok-p">);</span></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="code">
+                                        <div class="title">Special use case: Create a table from an existing table. The new table will be populated with the records from the existing table (based on the SELECT Statement).</div>
+                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">create</span>  <span class="tok-k">table</span>  <span class="tok-n">customers_new</span>  <span class="tok-k">as</span>  <span class="tok-k">select</span>  <span class="tok-o">*</span>  <span class="tok-k">from</span>  <span class="tok-n">customers</span><span class="tok-p">;</span></code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sect5">
+                                    <h6 id="_create_or_replace_table">Create Or Replace Table</h6>
+                                    <div class="paragraph">
+                                        <p>CREATE OR REPLACE TABLE will either create a new table (if the same table doesn’t already exists) or DROP and CREATE the table with its new definition.</p>
+                                    </div>
+                                    <div class="code">
+                                        <div class="title">Examples</div>
+                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">create</span>  <span class="tok-k">or</span>  <span class="tok-k">replace</span>  <span class="tok-k">table</span>  <span class="tok-n">t</span>  <span class="tok-p">(</span>  
+    <span class="tok-n">a</span>  <span class="tok-nb">bigint</span>  <span class="tok-k">identity</span>  <span class="tok-p">(</span><span class="tok-mf">1</span><span class="tok-p">,</span><span class="tok-mf">1</span><span class="tok-p">),</span>  
+    <span class="tok-n">b</span>  <span class="tok-nb">int</span>  
+<span class="tok-p">);</span>  
+
+
+<span class="tok-k">CREATE</span>  <span class="tok-k">OR</span>  <span class="tok-k">REPLACE</span>  <span class="tok-k">TABLE</span>  <span class="tok-n">t</span>  <span class="tok-k">AS</span>  <span class="tok-k">select</span>  <span class="tok-o">*</span>  <span class="tok-k">from</span>  <span class="tok-n">sqream_catalog</span><span class="tok-mf">.</span><span class="tok-k">tables</span><span class="tok-p">;</span></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="admonitionblock warning">
+                                        <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                            <tr class="TableStyle-Default_Table-Body-Body1">
+                                                <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-warning" title="Warning"></i>
+                                                </td>
+                                                <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+If the CREATE TABLE operation does not complete successfully, the replaced table (<code>t</code> in this example) will no longer exist.
+</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sect4">
+                                <h5 id="_alter_table">ALTER TABLE</h5>
+                                <div class="paragraph">
+                                    <p>ALTER TABLE is used to alter the structure of an existing table.</p>
+                                </div>
+                                <div class="admonitionblock note">
+                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                        <tr class="TableStyle-Default_Table-Body-Body1">
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+This operation will require exclusive lock on the table.
+</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="sect5">
+                                    <h6 id="_rename_table">Rename table</h6>
+                                    <div class="paragraph">
+                                        <p>This form of alter table allows you to rename a table within the same schema.</p>
+                                    </div>
+                                    <div class="code">
+                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>alter_table_statement_rename_table</em></strong> ::=
+
+    ALTER TABLE [<strong><em>schema_name</em></strong>].<strong><em>table_name</em></strong> RENAME TO <strong><em>new_table_name</em></strong> ;</code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="code">
+                                        <div class="title">Examples</div>
+                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">ALTER</span>  <span class="tok-k">TABLE</span>  <span class="tok-n">my_table</span>  <span class="tok-k">RENAME</span>  <span class="tok-k">TO</span>  <span class="tok-n">your_table</span><span class="tok-p">;</span></code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sect5">
+                                    <h6 id="_rename_column">Rename column</h6>
+                                    <div class="paragraph">
+                                        <p>This form of alter table allows you to rename a column in an existing
+table.</p>
+                                    </div>
+                                    <div class="code">
+                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>alter_table_statement_rename_column</em></strong> ::=
+
+    ALTER TABLE [<strong><em>schema_name</em></strong>].<strong><em>table_name</em></strong>
+        RENAME COLUMN <strong><em>column_name</em></strong> TO <strong><em>new_column_name</em></strong> ;</code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="code">
+                                        <div class="title">Examples</div>
+                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">ALTER</span>  <span class="tok-k">TABLE</span>  <span class="tok-n">my_table</span>  <span class="tok-k">RENAME</span>  <span class="tok-k">COLUMN</span>  <span class="tok-n">col1</span>  <span class="tok-k">to</span>  <span class="tok-n">col2</span><span class="tok-p">;</span></code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sect5">
+                                    <h6 id="_add_column">Add column</h6>
+                                    <div class="paragraph">
+                                        <p>Add a new column to an existing table.</p>
+                                    </div>
+                                    <div class="olist arabic">
+                                        <div class="title">Known Limitations</div>
+                                        <ol class="arabic">
+                                            <li>
+                                                <p>When adding a new column to an existing table, a default (or nullability) has
+to be specified, even if the table is empty.</p>
+                                            </li>
+                                            <li>
+                                                <p>The new column can not contain an <strong>IDENTITY</strong> or an <strong>NVARCHAR</strong>.</p>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    <div class="code">
+                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>alter_table_statement_add_column</em></strong> ::=
+
+    ALTER TABLE [<strong><em>schema_name</em></strong>].<strong><em>table_name</em></strong> ADD COLUMN <strong><em>column_name</em></strong>  <strong><em>type_name</em></strong>  <strong><em>default</em></strong> [ <strong><em>column_constraint</em></strong> ]
+    ;</code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="code">
+                                        <div class="title">Examples</div>
+                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db">  
+<span class="tok-k">ALTER</span>  <span class="tok-k">TABLE</span>  <span class="tok-n">my_table</span>  <span class="tok-k">ADD</span>  <span class="tok-k">COLUMN</span>  <span class="tok-n">new_supercool_column</span>  <span class="tok-nb">BIGINT</span>  <span class="tok-k">default</span>  <span class="tok-mf">1</span><span class="tok-p">;</span>  
+<span class="tok-c1">-- Adds a new column of type nullable BIGINT, with default value of 1.</span>  
+
+<span class="tok-k">ALTER</span>  <span class="tok-k">TABLE</span>  <span class="tok-n">my_table</span>  <span class="tok-k">ADD</span>  <span class="tok-k">COLUMN</span>  <span class="tok-n">new_supercool_column</span>  <span class="tok-nb">BIGINT</span>  <span class="tok-k">default</span>  <span class="tok-mf">1</span>  <span class="tok-k">NOT</span>  <span class="tok-k">NULL</span><span class="tok-p">;</span>  
+<span class="tok-c1">-- Adds a new column of type non-null BIGINT, with default value of 1.</span>  
+
+<span class="tok-k">ALTER</span>  <span class="tok-k">TABLE</span>  <span class="tok-n">my_table</span>  <span class="tok-k">ADD</span>  <span class="tok-k">COLUMN</span>  <span class="tok-n">new_date_col</span>  <span class="tok-nb">date</span>  <span class="tok-k">default</span>  <span class="tok-s1">'2016-01-01'</span><span class="tok-p">;</span>  
+<span class="tok-c1">-- Adds a new column of type nullable date, with default date '2016-01-01'.</span></code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sect5">
+                                    <h6 id="_drop_column">Drop column</h6>
+                                    <div class="paragraph">
+                                        <p>Drop a column from an existing table
+This form of alter table allows you to drop a column from an existing table.</p>
+                                    </div>
+                                    <div class="code">
+                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>alter_table_statement_rename_table</em></strong> ::=
+
+    ALTER TABLE [<strong><em>schema_name</em></strong>].<strong><em>table_name</em></strong> drop column <strong><em>column_name</em></strong> ;</code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="code">
+                                        <div class="title">Examples</div>
+                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">ALTER</span>  <span class="tok-k">TABLE</span>  <span class="tok-n">my_table</span>  <span class="tok-k">DROP</span>  <span class="tok-n">dreadful_column_i_never_even_wanted_in_my_table</span><span class="tok-p">;</span></code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sect4">
+                                <h5 id="_drop_table">DROP TABLE</h5>
+                                <div class="paragraph">
+                                    <p><strong>DROP TABLE</strong> will delete a table or external table and all its data.
+Note that this operation will require exclusive lock on the table.</p>
+                                </div>
+                                <div class="admonitionblock note">
+                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                        <tr class="TableStyle-Default_Table-Body-Body1">
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                                <div class="ulist">
+                                                    <ul>
+                                                        <li>
+                                                            <p>Dropping a table without explicit <code>schema_name</code>, will drop the table under the default PUBLIC schema.</p>
+                                                        </li>
+                                                        <li>
+                                                            <p>To be able to drop tables, a role requires the <strong>superuser</strong> permission. See the SQream Administrator Guide for more details.</p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="code">
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>drop_table</em></strong> ::=
+
+    DROP TABLE [IF EXISTS] [<strong><em>schema_name</em></strong>].<strong><em>table_name</em></strong> ;
+    DROP TABLE [IF EXISTS] [<strong><em>schema_name</em></strong>].<strong><em>external_table_name</em></strong> ;</code></pre>
+                                    </div>
+                                </div>
+                                <div class="code">
+                                    <div class="title">Examples</div>
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">DROP</span>  <span class="tok-k">TABLE</span>  <span class="tok-n">my_schema</span><span class="tok-mf">.</span><span class="tok-n">my_table</span><span class="tok-p">;</span></code></pre>
+                                    </div>
+                                </div>
+                                <div class="paragraph">
+                                    <p>DROP TABLE IF EXISTS will either drop the table if it exists, or
+do nothing (other than returning an error that the table do not exists).</p>
+                                </div>
+                                <div class="code">
+                                    <div class="title">Examples</div>
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">drop</span>  <span class="tok-k">table</span>  <span class="tok-k">if</span>  <span class="tok-k">exists</span>  <span class="tok-n">my_schema</span><span class="tok-mf">.</span><span class="tok-n">my_table</span><span class="tok-p">;</span></code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_external_tables"><a name="External_tables"></a>External Tables</h4>
+                            <div class="sect4">
+                                <h5 id="_create_external_table"><a name="CREATE4"></a>CREATE EXTERNAL TABLE</h5>
+                                <div class="paragraph">
+                                    <p>CREATE EXTERNAL TABLE creates a new external table in the current database under a specific schema.
+External tables allow SQream to access data that is stored outside the database in a none-SQream format, and to query it via SQL commands.<br />While creating it, the user should specify the files format and location, these will be used by SQream while accessing it at the query execution time.<br /></p>
+                                </div>
+                                <div class="admonitionblock note">
+                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                        <tr class="TableStyle-Default_Table-Body-Body1">
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                                <div class="ulist">
+                                                    <ul>
+                                                        <li>
+                                                            <p>SQream accesses the files only at execution time, hence, errors in case of file/DDL mismatch will not be captured during table creation time.</p>
+                                                        </li>
+                                                        <li>
+                                                            <p>New external tables should be explicitly associated to an existing schema. Otherwise, they will be implicitly associated to the PUBLIC default schema.</p>
+                                                        </li>
+                                                        <li>
+                                                            <p>Max row length cannot exceed 10239 bytes.</p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="code">
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code>CREATE [OR REPLACE] EXTERNAL TABLE [schema_name.]table_name
+		(column_name column_type [, ...])
+   USING FORMAT {PARQUET | CSV}
+   WITH PATH '{file_name | directory_path}'
+   [FIELD DELIMITER 'delimiter']
+   [RECORD DELIMITER 'record delimiter'];</code></pre>
+                                    </div>
+                                </div>
+                                <div class="ulist">
+                                    <ul>
+                                        <li>
+                                            <p><strong>WITH PATH</strong>:<br />Contains either a (1) file name or a (2) path to a directory in which all the CSV or PARQUET files will be read.<br />You can use wildcard characters for file name and directory path. Standard wildcard characters for Linux are used.<br />Hidden files (files with file names that start with a dot) are skipped.</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="admonitionblock note">
+                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                        <tr class="TableStyle-Default_Table-Body-Body1">
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                                <div class="ulist">
+                                                    <div class="title">Wildcard options:</div>
+                                                    <ul>
+                                                        <li>
+                                                            <p><code>*</code> - Represent zero or more characters.</p>
+                                                        </li>
+                                                        <li>
+                                                            <p><code>?</code> - Represent a single character.</p>
+                                                        </li>
+                                                        <li>
+                                                            <p><code>[a-z]</code> - Represent a range of characters or numbers.</p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="ulist">
+                                    <ul>
+                                        <li>
+                                            <p><strong>FIELD DELIMITER</strong>:<br />Allows to specify a character(s) as delimiter between fields in a row. Default is <code>,</code> (comma) the CSV standard field delimiter.</p>
+                                        </li>
+                                        <li>
+                                            <p><strong>RECORD DELIMITER</strong>:<br />Allows to specify a character(s) as delimiter between lines. Default is <code>\n</code>, the CSV standard record delimiter.</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="code">
+                                    <div class="title">Examples</div>
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">CREATE</span>  <span class="tok-k">OR</span>  <span class="tok-k">REPLACE</span>  <span class="tok-k">EXTERNAL</span>  <span class="tok-k">TABLE</span>  <span class="tok-n">my_ext_table</span>  <span class="tok-p">(</span><span class="tok-n">column1</span>  <span class="tok-nb">int</span><span class="tok-p">,</span>  <span class="tok-n">column2</span>  <span class="tok-nb">varchar</span><span class="tok-p">(</span><span class="tok-mf">10</span><span class="tok-p">),</span>  <span class="tok-n">column3</span>  <span class="tok-nb">date</span><span class="tok-p">)</span>  
+<span class="tok-k">USING</span>  <span class="tok-n">FORMAT</span>  <span class="tok-k">csv</span>  
+<span class="tok-k">WITH</span>  <span class="tok-nb">PATH</span>  <span class="tok-s1">'/home/sqream/my_csv_file.csv'</span><span class="tok-p">;</span>  
+
+<span class="tok-k">CREATE</span>  <span class="tok-k">OR</span>  <span class="tok-k">REPLACE</span>  <span class="tok-k">EXTERNAL</span>  <span class="tok-k">TABLE</span>  <span class="tok-n">my_ext_table</span>  <span class="tok-p">(</span><span class="tok-n">column1</span>  <span class="tok-nb">int</span><span class="tok-p">,</span>  <span class="tok-n">column2</span>  <span class="tok-nb">varchar</span><span class="tok-p">(</span><span class="tok-mf">10</span><span class="tok-p">),</span>  <span class="tok-n">column3</span>  <span class="tok-nb">date</span><span class="tok-p">)</span>  
+<span class="tok-k">USING</span>  <span class="tok-n">FORMAT</span>  <span class="tok-n">parquet</span>  
+<span class="tok-k">WITH</span>  <span class="tok-nb">PATH</span>  <span class="tok-s1">'/home/sqream/my_parquet_file.parquet'</span><span class="tok-p">;</span>  
+
+<span class="tok-k">CREATE</span>  <span class="tok-k">OR</span>  <span class="tok-k">REPLACE</span>  <span class="tok-k">EXTERNAL</span>  <span class="tok-k">TABLE</span>  <span class="tok-n">my_ext_table</span>  <span class="tok-p">(</span><span class="tok-n">column1</span>  <span class="tok-nb">int</span><span class="tok-p">,</span>  <span class="tok-n">column2</span>  <span class="tok-nb">varchar</span><span class="tok-p">(</span><span class="tok-mf">10</span><span class="tok-p">),</span>  <span class="tok-n">column3</span>  <span class="tok-nb">date</span><span class="tok-p">)</span>  
+<span class="tok-k">USING</span>  <span class="tok-n">FORMAT</span>  <span class="tok-k">csv</span>  
+<span class="tok-k">WITH</span>  <span class="tok-nb">PATH</span>  <span class="tok-s1">'/home/sqream/my_csv_file.csv'</span>  
+<span class="tok-n">FIELD</span>  <span class="tok-k">DELIMITER</span>  <span class="tok-s1">'|'</span>  
+<span class="tok-nb">RECORD</span>  <span class="tok-k">DELIMITER</span>  <span class="tok-s1">'\n'</span><span class="tok-p">;</span>  
+
+<span class="tok-c1">-- Use wildcard characters for directory name and file name:</span>  
+<span class="tok-k">CREATE</span>  <span class="tok-k">OR</span>  <span class="tok-k">REPLACE</span>  <span class="tok-k">EXTERNAL</span>  <span class="tok-k">TABLE</span>  <span class="tok-n">ext_my_table</span>  
+  <span class="tok-p">(</span>  <span class="tok-n">id</span>  <span class="tok-nb">bigint</span><span class="tok-p">,</span>  
+    <span class="tok-k">name</span>  <span class="tok-nb">varchar</span><span class="tok-p">(</span><span class="tok-mf">100</span><span class="tok-p">),</span>  
+    <span class="tok-k">location</span>  <span class="tok-nb">varchar</span><span class="tok-p">(</span><span class="tok-mf">25</span><span class="tok-p">),</span>  
+    <span class="tok-k">comments</span>  <span class="tok-n">nvarchar</span><span class="tok-p">(</span><span class="tok-mf">10000</span><span class="tok-p">)</span>  
+  <span class="tok-p">)</span>  
+    <span class="tok-k">USING</span>  <span class="tok-n">FORMAT</span>  <span class="tok-k">csv</span>  
+    <span class="tok-k">WITH</span>  <span class="tok-nb">PATH</span>  <span class="tok-s1">'/home/sqream/csv_?/*.csv'</span><span class="tok-p">;</span></code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sect4">
+                                <h5 id="_conversion_table_for_datatypes_of_external_tables_over_parquet">CONVERSION TABLE FOR DATATYPES OF EXTERNAL TABLES OVER PARQUET</h5>
+                                <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                                    <caption class="title">Table 20. Conversion table</caption>
+                                    <colgroup>
+                                        <col />
+                                        <col />
+                                        <col />
+                                    </colgroup>
+                                    <thead>
+                                        <tr class="TableStyle-Default_Table-Head-Header1">
+                                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Data type in Parquet</th>
+                                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Matching data type in SQream</th>
+                                            <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Comments</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="TableStyle-Default_Table-Body-Body1">
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                                <p class="tableblock">BOOLEAN</p>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                                <p class="tableblock">BOOL</p>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                        </tr>
+                                        <tr class="TableStyle-Default_Table-Body-Body2">
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                                <p class="tableblock">INT16</p>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                                <p class="tableblock">SMALLINT</p>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                        </tr>
+                                        <tr class="TableStyle-Default_Table-Body-Body1">
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                                <p class="tableblock">INT32</p>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                                <p class="tableblock">INT</p>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                        </tr>
+                                        <tr class="TableStyle-Default_Table-Body-Body2">
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                                <p class="tableblock">INT64</p>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                                <p class="tableblock">BIGINT</p>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                        </tr>
+                                        <tr class="TableStyle-Default_Table-Body-Body1">
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                                <p class="tableblock">FLOAT</p>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                                <p class="tableblock">REAL</p>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                        </tr>
+                                        <tr class="TableStyle-Default_Table-Body-Body2">
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                                <p class="tableblock">DOUBLE</p>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                                <p class="tableblock">DOUBLE</p>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                        </tr>
+                                        <tr class="TableStyle-Default_Table-Body-Body1">
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                                <p class="tableblock">BYTE_ARRAY with annotation UTF8</p>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                                <p class="tableblock">VARCHAR or NVARCHAR</p>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                        </tr>
+                                        <tr class="TableStyle-Default_Table-Body-Body2">
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                                <p class="tableblock">DATE</p>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                                <p class="tableblock">DATE</p>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                        </tr>
+                                        <tr class="TableStyle-Default_Table-Body-Body1">
+                                            <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                                <p class="tableblock">INT 96 (TIMESTAMP_MILLIS)</p>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                                <p class="tableblock">DATETIME</p>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
+                                                <p class="tableblock">INT96 may contain microseconds. As DATETIME in SQream supports milliseconds only, the microseconds are rounded to milliseconds.</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_views">Views</h4>
+                            <div class="sect4">
+                                <h5 id="_create_view"><a name="CREATE5"></a>CREATE VIEW</h5>
+                                <div class="paragraph">
+                                    <p><strong>CREATE VIEW</strong> creates a new view in the current database.</p>
+                                </div>
+                                <div class="code">
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>create_view_statement</em></strong> ::=
+
+    CREATE VIEW [<strong><em>schema_name</em></strong>].<strong><em>view_name</em></strong> [ ( <strong><em>column_name</em></strong> [, ... ] ) ]
+        AS <strong><em>query</em></strong> ;
+
+
+<strong><em>view_name</em></strong> ::= <strong><em>identifier</em></strong></code></pre>
+                                    </div>
+                                </div>
+                                <div class="code">
+                                    <div class="title">Example</div>
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">CREATE</span>  <span class="tok-k">VIEW</span>  <span class="tok-p">[</span><span class="tok-n">schema_name</span><span class="tok-p">]</span><span class="tok-mf">.</span><span class="tok-n">my_view</span>  <span class="tok-k">as</span>  <span class="tok-k">select</span>  <span class="tok-o">*</span>  <span class="tok-k">from</span>  <span class="tok-n">my_schema</span><span class="tok-mf">.</span><span class="tok-n">t</span>  <span class="tok-k">where</span>  <span class="tok-n">x</span>  <span class="tok-o">&gt;</span>  <span class="tok-mf">5</span><span class="tok-p">;</span></code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sect4">
+                                <h5 id="_drop_view">DROP VIEW</h5>
+                                <div class="paragraph">
+                                    <p><strong>DROP VIEW</strong> will delete a view from the current database.</p>
+                                </div>
+                                <div class="code">
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>drop_view_statement</em></strong> ::=
+
+    DROP VIEW [<strong><em>schema_name</em></strong>].<strong><em>view_name</em></strong> ;</code></pre>
+                                    </div>
+                                </div>
+                                <div class="code">
+                                    <div class="title">Example</div>
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">DROP</span>  <span class="tok-k">VIEW</span>  <span class="tok-n">my_schema</span><span class="tok-mf">.</span><span class="tok-n">my_view</span><span class="tok-p">;</span></code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sect4">
+                                <h5 id="_recompile_view">RECOMPILE VIEW</h5>
+                                <div class="paragraph">
+                                    <p>Use the utility function <strong>RECOMPILE_VIEW</strong> to recompile an invalid view in the current database.</p>
+                                </div>
+                                <div class="code">
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>recompile_view_statement</em></strong> ::=
+
+    SELECT RECOMPILE_VIEW([<strong><em>schema_name</em></strong>].<strong><em>view_name</em></strong>) ;</code></pre>
+                                    </div>
+                                </div>
+                                <div class="code">
+                                    <div class="title">Examples</div>
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">recompile_view</span><span class="tok-p">(</span><span class="tok-s1">'my_view_name'</span><span class="tok-p">);</span></code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="roles"><a name="roles"></a>Users/Roles</h4>
+                            <div class="sect4">
+                                <h5 id="_create_role"><a name="CREATE2"></a>CREATE ROLE</h5>
+                                <div class="paragraph">
+                                    <p>SQream manages users by <em>roles</em>. <strong>CREATE ROLE</strong> adds a new user/role to the cluster.</p>
+                                </div>
+                                <div class="paragraph">
+                                    <p>When the <strong>ROLE</strong> is used as a <strong>USER</strong>, it has to be granted a password, with login and connect privilege to the relevant databases.</p>
+                                </div>
+                                <div class="paragraph">
+                                    <p>For more information regarding <strong>ROLES</strong> and permissions, see <a href="#roles-and-permissions">Managing Database Roles and Permissions</a></p>
+                                </div>
+                                <div class="code">
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>create_role_statement</em></strong> ::=
+
+    CREATE ROLE <strong><em>role_name</em></strong> ;
+    GRANT LOGIN to <strong><em>role_name</em></strong> ;
+    GRANT PASSWORD '<strong><em>new_password</em></strong>' to <strong><em>role_name</em></strong> ;
+    GRANT CONNECT ON DATABASE <strong><em>database_name</em></strong> to <strong><em>role_name</em></strong> ;</code></pre>
+                                    </div>
+                                </div>
+                                <div class="code">
+                                    <div class="title">Examples</div>
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">CREATE</span>  <span class="tok-k">ROLE</span>  <span class="tok-n">new_role_name</span>  <span class="tok-p">;</span>  
+<span class="tok-k">GRANT</span>  <span class="tok-n">LOGIN</span>  <span class="tok-k">TO</span>  <span class="tok-n">new_role_name</span><span class="tok-p">;</span>  
+<span class="tok-k">GRANT</span>  <span class="tok-k">PASSWORD</span>  <span class="tok-s1">'my_password'</span>  <span class="tok-k">TO</span>  <span class="tok-n">new_role_name</span><span class="tok-p">;</span>  
+<span class="tok-k">GRANT</span>  <span class="tok-n">CONNECT</span>  <span class="tok-k">ON</span>  <span class="tok-k">DATABASE</span>  <span class="tok-n">master</span>  <span class="tok-k">TO</span>  <span class="tok-n">new_role_name</span><span class="tok-p">;</span></code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sect4">
+                                <h5 id="_drop_role">DROP ROLE</h5>
+                                <div class="paragraph">
+                                    <p><strong>DROP ROLE</strong> deletes a role/user.</p>
+                                </div>
+                                <div class="code">
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>drop_role_statement</em></strong> ::=
+
+    DROP ROLE <strong><em>role_name</em></strong> ;</code></pre>
+                                    </div>
+                                </div>
+                                <div class="code">
+                                    <div class="title">Example</div>
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">DROP</span>  <span class="tok-k">ROLE</span>  <span class="tok-n">admin_role</span><span class="tok-p">;</span></code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sect4">
+                                <h5 id="_alter_role">ALTER ROLE</h5>
+                                <div class="paragraph">
+                                    <p>Use <strong>ALTER ROLE</strong> to rename an existing role.</p>
+                                </div>
+                                <div class="code">
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>alter_role_statement</em></strong> ::=
+
+    ALTER ROLE <strong><em>role_name</em></strong> RENAME TO <strong><em>new_role_name</em></strong> ;</code></pre>
+                                    </div>
+                                </div>
+                                <div class="code">
+                                    <div class="title">Example</div>
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">ALTER</span>  <span class="tok-k">ROLE</span>  <span class="tok-n">admin_role</span>  <span class="tok-k">RENAME</span>  <span class="tok-k">TO</span>  <span class="tok-n">copy_role</span><span class="tok-p">;</span></code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="managing-roles-and-permissions"><a name="roles-and-permissions"></a>Database Roles and Permissions</h4>
+                            <div class="paragraph">
+                                <p>SQream manages database access permissions using the concept of roles. A role can be thought of as either a database user, or a set of database permissions, depending on how the role is set up.</p>
+                            </div>
+                            <div class="paragraph">
+                                <p>Roles can have permissions and access database objects (for example, tables). <strong>SUPERUSER</strong> can grant membership in a role to another role, thus allowing the use of permissions assigned to the role it is a member of.</p>
+                            </div>
+                            <div class="paragraph">
+                                <p>Roles are global across all the databases.</p>
+                            </div>
+                            <div class="paragraph">
+                                <p>For a role to be used as a user, it must have <strong>PASSWORD</strong>, <strong>LOGIN</strong> and <strong>CONNECT</strong> permissions to a specified database(s).</p>
+                            </div>
+                            <div class="paragraph">
+                                <p>For a role to create and manage (read/write/alter) objects, it has to have the <strong>CREATE</strong> and <strong>USAGE</strong> permissions at the respective SCHEMA level.</p>
+                            </div>
+                            <div class="paragraph">
+                                <p>When creating an object, it will be created in the role’s default schema. Typically the 'default schema' is <strong>public</strong>. You can change the default schema with <strong>ALTER DEFAULT SCHEMA</strong>.</p>
+                            </div>
+                            <div class="paragraph">
+                                <p>The owner is normally the role that executed the creation statement. Once the object was created, only the owner (or a superuser) can perform read/write/alter operations on the object.</p>
+                            </div>
+                            <div class="paragraph">
+                                <p>To allow other roles perform these operations, permissions must be granted. These permissions can be given in advance for a given schema in a given role with the command <strong>ALTER DEFAULT PERMISSIONS</strong> (as long as they are sharing the same group).</p>
+                            </div>
+                            <div class="sect4">
+                                <h5 id="_public_role">PUBLIC Role</h5>
+                                <div class="paragraph">
+                                    <p>On database creation, SQream automatically generates the <strong>sqream</strong> user as a superuser and the <strong>PUBLIC</strong> schema and role. Each new user will automatically be granted with the PUBLIC role which cannot be revoked.</p>
+                                </div>
+                                <div class="paragraph">
+                                    <p>The PUBLIC role has USAGE and CREATE permissions on PUBLIC schema by default, therefore, new users can create and manage their own objects in the <strong>PUBLIC</strong> schema. To see/manage other users/role objects in PUBLIC schema, use the <strong>GRANT</strong> command while connected as the object owner or as a superuser.</p>
+                                </div>
+                            </div>
+                            <div class="sect4">
+                                <h5 id="_grant_permissions">GRANT Permissions</h5>
+                                <div class="paragraph">
+                                    <p>The <strong>GRANT</strong> command assigns specific permissions to existing database objects or at the database level, to one or more roles.</p>
+                                </div>
+                                <div class="paragraph">
+                                    <p>The identifier name can be the role name or CURRENT_ROLE.</p>
+                                </div>
+                                <div class="paragraph">
+                                    <p>Possible permissions at the cluster level: LOGIN, PASSWORD, CREATE FUNCTION</p>
+                                </div>
+                                <div class="paragraph">
+                                    <p>Possible permissions at the database level: SUPERUSER, CONNECT, CREATE, USAGE</p>
+                                </div>
+                                <div class="paragraph">
+                                    <p>Possible permissions at the schema level: USAGE, CREATE</p>
+                                </div>
+                                <div class="paragraph">
+                                    <p>Possible permissions at object level: SELECT, INSERT, DELETE, DDL, EXECUTE, ALL.</p>
+                                </div>
+                                <div class="admonitionblock note">
+                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                        <tr class="TableStyle-Default_Table-Body-Body1">
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                                <div class="ulist">
+                                                    <ul>
+                                                        <li>
+                                                            <p>SQream allows passing privilege between roles by granting one role to another, with or without inherit.</p>
+                                                        </li>
+                                                        <li>
+                                                            <p>For a role to act as a user, it must be granted with *PASSWORD*, *LOGIN*, and *CONNECT* permission to the database it wishes to connect to.</p>
+                                                        </li>
+                                                        <li>
+                                                            <p>For a role to create and manage (read/write/alter) objects, it has to have the CREATE and USAGE permissions in that SCHEMA level.</p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="code">
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code>-- Grant permissions at the cluster level:
+    GRANT
+    { SUPERUSER
+    | LOGIN
+    | PASSWORD '&lt;password&gt;'
+    | CREATE FUNCTION
+    }
+    TO &lt;role&gt; [, ...]
+
+-- Grant permissions at the database level:
+    GRANT { { CREATE | CONNECT | DDL | SUPERUSER } [, ...] | ALL [ PERMISSIONS ] }
+	ON DATABASE &lt;database&gt; [, ...]
+	TO &lt;role&gt; [, ...]
+
+-- Grant permissions at the schema level:
+    GRANT { { CREATE | DDL | USAGE | SUPERUSER } [, ...] | ALL [ PERMISSIONS ] }
+	ON SCHEMA &lt;schema&gt; [, ...]
+	TO &lt;role&gt; [, ...]
+
+-- Grant permissions at the object level:
+    GRANT { { SELECT | INSERT | DELETE | DDL } [, ...] | ALL [ PERMISSIONS ] }
+	ON { TABLE &lt;table_name&gt; [, ...]  | ALL TABLES IN SCHEMA &lt;schema_name&gt; [, ...] }
+	TO &lt;role&gt; [, ...]
+
+-- Grant execute function permission:
+    GRANT {ALL | EXECUTE | DDL} ON FUNCTION function_name TO role;
+
+
+-- Pass privileges between roles by granting one role to another:
+    GRANT &lt;role1&gt; [, ...] TO &lt;role2&gt; [, ...] WITH [ INHERIT | NOINHERIT ]</code></pre>
+                                    </div>
+                                </div>
+                                <div class="paragraph">
+                                    <p>SELECT: Allows to SELECT any column of the specified table.</p>
+                                </div>
+                                <div class="paragraph">
+                                    <p>INSERT: Allows INSERT of a new row into the specified table using INSERT/COPY command.</p>
+                                </div>
+                                <div class="paragraph">
+                                    <p>DELETE: Allows to DELETE a row from the specified table. This privilege effects both DELETE and TRUNCATE commands.</p>
+                                </div>
+                                <div class="paragraph">
+                                    <p>DDL: Allows DROP/ALTER on a specified table.</p>
+                                </div>
+                                <div class="paragraph">
+                                    <p>SUPERUSER: The most privileged role in SQream cluster, allowing full control over the cluster. By default, SQream role is a superuser. Some utility functions can be used by superusers only.</p>
+                                </div>
+                                <div class="paragraph">
+                                    <p>SUPERUSER ON SCHEMA: Having maximum permissions on existing and new objects for a specific schema.</p>
+                                </div>
+                                <div class="paragraph">
+                                    <p>LOGIN: Grants the login permission. Without it, a role cannot function as a USER and login.</p>
+                                </div>
+                                <div class="paragraph">
+                                    <p>PASSWORD: Grant a new password for the role. Without a password the role cannot function as a USER and login.</p>
+                                </div>
+                                <div class="paragraph">
+                                    <p>INHERIT/NOINHERIT: While INHERIT is true (default), permissions belonging to the superclass role, will automatically be transferred to the heir role.</p>
+                                </div>
+                                <div class="admonitionblock note">
+                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                        <tr class="TableStyle-Default_Table-Body-Body1">
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+The permissions LOGIN cannot be inherited and must be explicitly granted.
+</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="code">
+                                    <div class="title">Examples</div>
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">GRANT</span>  <span class="tok-n">LOGIN</span><span class="tok-p">,</span><span class="tok-n">superuser</span>  <span class="tok-k">TO</span>  <span class="tok-k">admin</span><span class="tok-p">;</span>  
+<span class="tok-k">GRANT</span>  <span class="tok-k">CREATE</span>  <span class="tok-k">FUNCTION</span>  <span class="tok-k">TO</span>  <span class="tok-k">admin</span><span class="tok-p">;</span>  
+<span class="tok-k">GRANT</span>  <span class="tok-k">SELECT</span>  <span class="tok-k">ON</span>  <span class="tok-k">TABLE</span>  <span class="tok-k">admin</span><span class="tok-mf">.</span><span class="tok-n">table1</span>  <span class="tok-k">TO</span>  <span class="tok-n">userA</span><span class="tok-p">;</span>  
+<span class="tok-k">GRANT</span>  <span class="tok-k">EXECUTE</span>  <span class="tok-k">ON</span>  <span class="tok-k">FUNCTION</span>  <span class="tok-n">my_function</span>  <span class="tok-k">TO</span>  <span class="tok-n">userA</span><span class="tok-p">;</span>  
+<span class="tok-k">GRANT</span>  <span class="tok-k">ALL</span>  <span class="tok-k">ON</span>  <span class="tok-k">FUNCTION</span>  <span class="tok-n">my_function</span>  <span class="tok-k">TO</span>  <span class="tok-n">userA</span><span class="tok-p">;</span>  
+<span class="tok-k">GRANT</span>  <span class="tok-n">DDL</span>  <span class="tok-k">ON</span>  <span class="tok-k">admin</span><span class="tok-mf">.</span><span class="tok-n">main_table</span>  <span class="tok-k">TO</span>  <span class="tok-n">userB</span><span class="tok-p">;</span>  
+<span class="tok-k">GRANT</span>  <span class="tok-k">ALL</span>  <span class="tok-k">ON</span>  <span class="tok-k">all</span>  <span class="tok-k">tables</span>  <span class="tok-k">IN</span>  <span class="tok-k">schema</span>  <span class="tok-n">public</span>  <span class="tok-k">TO</span>  <span class="tok-n">userB</span><span class="tok-p">;</span>  
+<span class="tok-k">GRANT</span>  <span class="tok-k">SELECT</span>  <span class="tok-k">ON</span>  <span class="tok-k">all</span>  <span class="tok-k">views</span>  <span class="tok-k">IN</span>  <span class="tok-k">schema</span>  <span class="tok-k">admin</span>  <span class="tok-k">TO</span>  <span class="tok-n">userA</span><span class="tok-p">;</span>  
+<span class="tok-k">GRANT</span>  <span class="tok-k">ROLE</span>  <span class="tok-k">admin</span>  <span class="tok-k">TO</span>  <span class="tok-n">userC</span>  <span class="tok-n">noinherit</span><span class="tok-p">;</span>  
+<span class="tok-k">GRANT</span>  <span class="tok-n">superuser</span>  <span class="tok-k">ON</span>  <span class="tok-k">schema</span>  <span class="tok-n">demo</span>  <span class="tok-k">TO</span>  <span class="tok-n">userA</span><span class="tok-p">;</span>  
+<span class="tok-k">GRANT</span>  <span class="tok-n">admin_role</span>  <span class="tok-k">TO</span>  <span class="tok-n">userB</span><span class="tok-p">;</span></code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sect4">
+                                <h5 id="_revoke_permissions">REVOKE Permissions</h5>
+                                <div class="paragraph">
+                                    <p>The <strong>REVOKE</strong> command removes permissions from one or more roles.</p>
+                                </div>
+                                <div class="paragraph">
+                                    <p>The identifier name can be the role name or CURRENT_ROLE.</p>
+                                </div>
+                                <div class="code">
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code>-- Revoke permissions at the cluster level:
+    REVOKE
+    { SUPERUSER
+    | LOGIN
+    | PASSWORD
+    | CREATE FUNCTION
+    }
+    FROM &lt;role&gt; [, ...]
+
+-- Revoke permissions at the database level:
+    REVOKE { { CREATE | CONNECT | DDL |  SUPERUSER } [, ...] | ALL [ PERMISSIONS ] }
+	ON DATABASE &lt;database&gt; [, ...]
+	FROM &lt;role&gt; [, ...]
+
+-- Revoke permissions at the schema level:
+    REVOKE { { CREATE | DDL | USAGE |  SUPERUSER } [, ...] | ALL [ PERMISSIONS ] }
+	ON SCHEMA &lt;schema&gt; [, ...]
+	FROM &lt;role&gt; [, ...]
+
+-- Revoke permissions at the object level:
+    REVOKE { { SELECT | INSERT | DELETE | DDL } [, ...] | ALL }
+	ON { [ TABLE ] &lt;table_name&gt; [, ...] | ALL TABLES IN SCHEMA &lt;schema_name&gt; [, ...] }
+	FROM &lt;role&gt; [, ...]
+
+-- Pass privileges between roles by granting one role to another:
+    REVOKE &lt;role1&gt; [, ...] FROM &lt;role2&gt; [, ...]</code></pre>
+                                    </div>
+                                </div>
+                                <div class="code">
+                                    <div class="title">Examples</div>
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">REVOKE</span>  <span class="tok-n">superuser</span>  <span class="tok-k">on</span>  <span class="tok-k">schema</span>  <span class="tok-n">demo</span>  <span class="tok-k">from</span>  <span class="tok-n">userA</span><span class="tok-p">;</span>  
+<span class="tok-k">REVOKE</span>  <span class="tok-k">delete</span>  <span class="tok-k">on</span>  <span class="tok-k">admin</span><span class="tok-mf">.</span><span class="tok-n">table1</span>  <span class="tok-k">from</span>  <span class="tok-n">userB</span><span class="tok-p">;</span>  
+<span class="tok-k">REVOKE</span>  <span class="tok-n">login</span>  <span class="tok-k">from</span>  <span class="tok-n">role_test</span><span class="tok-p">;</span>  
+<span class="tok-k">REVOKE</span>  <span class="tok-k">CREATE</span>  <span class="tok-k">FUNCTION</span>  <span class="tok-k">FROM</span>  <span class="tok-k">admin</span><span class="tok-p">;</span></code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sect4">
+                                <h5 id="_alter_default_permissions">Alter Default Permissions</h5>
+                                <div class="paragraph">
+                                    <p><strong>ALTER DEFAULT PERMISSIONS</strong> allow setting/removing permissions to objects created in the future as long as they are sharing the same group.
+By using this command, the role who run it controls which grants will be given on each object to each roles.</p>
+                                </div>
+                                <div class="code">
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code>    ALTER DEFAULT PERMISSIONS FOR role, ...
+    ( [IN schema, ...] FOR TABLES | FOR SCHEMAS )
+    ( GRANT | DROP GRANT ) ... TO xrole, ...;
+
+xrole := role | CREATOR_ROLE</code></pre>
+                                    </div>
+                                </div>
+                                <div class="code">
+                                    <div class="title">Examples</div>
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-c1">-- Anytime role DEMO creates a new schema, roles U1,U2 will get USAGE and CREATE permissions in the new schema:</span>  
+<span class="tok-k">ALTER</span>  <span class="tok-k">DEFAULT</span>  <span class="tok-n">PERMISSIONS</span>  <span class="tok-k">FOR</span>  <span class="tok-n">demo</span>  <span class="tok-k">FOR</span>  <span class="tok-n">SCHEMAS</span>  <span class="tok-k">GRANT</span>  <span class="tok-n">USAGE</span><span class="tok-p">,</span>  <span class="tok-k">CREATE</span>  <span class="tok-k">TO</span>  <span class="tok-n">u1</span><span class="tok-p">,</span><span class="tok-n">u2</span><span class="tok-p">;</span>  
+
+<span class="tok-c1">-- Anytime role DEMO create a new table in schema S1, roles U1,U2 will be granted with SELECT on it:</span>  
+<span class="tok-k">ALTER</span>  <span class="tok-k">DEFAULT</span>  <span class="tok-n">PERMISSIONS</span>  <span class="tok-k">FOR</span>  <span class="tok-n">demo</span>  <span class="tok-k">IN</span>  <span class="tok-n">s1</span>  <span class="tok-k">FOR</span>  <span class="tok-k">TABLES</span>  <span class="tok-k">GRANT</span>  <span class="tok-k">SELECT</span>  <span class="tok-k">TO</span>  <span class="tok-n">u1</span><span class="tok-p">,</span><span class="tok-n">u2</span><span class="tok-p">;</span>  
+
+<span class="tok-c1">-- To grant all schemas so they can all create and use all future schemas in all possible operations, use the following:</span>  
+<span class="tok-k">ALTER</span>  <span class="tok-k">DEFAULT</span>  <span class="tok-n">PERMISSIONS</span>  <span class="tok-k">FOR</span>  <span class="tok-n">public</span>  <span class="tok-k">for</span>  <span class="tok-n">schemas</span>  <span class="tok-k">GRANT</span>  <span class="tok-n">USAGE</span><span class="tok-p">,</span>  <span class="tok-k">CREATE</span>  <span class="tok-k">TO</span>  <span class="tok-n">public</span><span class="tok-p">;</span>  
+<span class="tok-k">ALTER</span>  <span class="tok-k">DEFAULT</span>  <span class="tok-n">PERMISSIONS</span>  <span class="tok-k">FOR</span>  <span class="tok-n">public</span>  <span class="tok-k">FOR</span>  <span class="tok-k">TABLES</span>  <span class="tok-k">GRANT</span>  <span class="tok-k">SELECT</span><span class="tok-p">,</span><span class="tok-n">DDL</span><span class="tok-p">,</span><span class="tok-k">INSERT</span><span class="tok-p">,</span><span class="tok-k">DELETE</span>  <span class="tok-k">TO</span>  <span class="tok-n">public</span><span class="tok-p">;</span>  
+
+<span class="tok-c1">-- To remove future grant, add the keyword DROP before the given grant:</span>  
+<span class="tok-k">ALTER</span>  <span class="tok-k">DEFAULT</span>  <span class="tok-n">PERMISSIONS</span>  <span class="tok-k">FOR</span>  <span class="tok-n">public</span>  <span class="tok-k">FOR</span>  <span class="tok-k">TABLES</span>  <span class="tok-k">DROP</span>  <span class="tok-k">GRANT</span>  <span class="tok-k">SELECT</span><span class="tok-p">,</span><span class="tok-n">DDL</span><span class="tok-p">,</span><span class="tok-k">INSERT</span><span class="tok-p">,</span><span class="tok-k">DELETE</span>  <span class="tok-k">TO</span>  <span class="tok-n">public</span><span class="tok-p">;</span></code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_locks">Locks</h4>
+                            <div class="paragraph">
+                                <p>See <a href="../Concepts/13_1.11_Locks.htm">Locks</a> in the Concepts section.</p>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_ddl_for_a_whole_database_or_single_database_object">DDL for a whole database or single database object</h4>
+                            <div class="paragraph">
+                                <div class="title">Generate the DDL for all objects of a database</div>
+                                <p>Use the utility function <strong>dump_database_ddl()</strong> to generate the DDL for all tables and views of the database you are currently connected to.</p>
+                            </div>
+                            <div class="code">
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-c1">-- Just view</span>  
+<span class="tok-k">SELECT</span>  <span class="tok-n">dump_database_ddl</span><span class="tok-p">();</span>  
+
+<span class="tok-c1">-- Output to file</span>  
+<span class="tok-k">COPY</span>  <span class="tok-p">(</span><span class="tok-k">SELECT</span>  <span class="tok-n">dump_database_ddl</span><span class="tok-p">())</span>  <span class="tok-k">TO</span>  <span class="tok-s1">'/path/file_name'</span><span class="tok-p">;</span></code></pre>
+                                </div>
+                            </div>
+                            <div class="paragraph">
+                                <div class="title">Generate the DDL of a single table, external table or view</div>
+                                <p>Use the utility function <strong>get_ddl('table_name')</strong> or <strong>get_view_ddl('view_name')</strong> to generate the DDL for a specified table, external table or view.</p>
+                            </div>
+                            <div class="admonitionblock note">
+                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+If the table name has a numeric prefix (e.g. "2018_my_table"), the name must be wrapped with single and double quotes. If the schema name or table/view name is case sensitive, they must be wrapped with single and double quotes. See examples below.
+</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="code">
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-c1">-- Just view</span>  
+<span class="tok-k">SELECT</span>  <span class="tok-n">get_ddl</span><span class="tok-p">(</span><span class="tok-s1">'my_table'</span><span class="tok-p">);</span>  
+<span class="tok-k">SELECT</span>  <span class="tok-n">get_ddl</span><span class="tok-p">(</span><span class="tok-s1">'"2018_my_table"'</span><span class="tok-p">);</span>  
+<span class="tok-k">SELECT</span>  <span class="tok-n">get_ddl</span><span class="tok-p">(</span><span class="tok-s1">'my_external_table'</span><span class="tok-p">);</span>  
+<span class="tok-k">SELECT</span>  <span class="tok-n">get_view_ddl</span><span class="tok-p">(</span><span class="tok-s1">'my_view_name'</span><span class="tok-p">);</span>  
+<span class="tok-k">SELECT</span>  <span class="tok-n">get_view_ddl</span><span class="tok-p">(</span><span class="tok-s1">'"My_schema"."My_View"'</span><span class="tok-p">);</span>  
+
+<span class="tok-c1">-- Output to file</span>  
+<span class="tok-k">COPY</span>  <span class="tok-p">(</span><span class="tok-k">SELECT</span>  <span class="tok-n">get_ddl</span><span class="tok-p">(</span><span class="tok-s1">'my_table'</span><span class="tok-p">))</span>  <span class="tok-k">TO</span>  <span class="tok-s1">'/path/file_name'</span><span class="tok-p">;</span></code></pre>
+                                </div>
+                            </div>
+                            <div class="paragraph">
+                                <div class="title">Generate the DDL of a single user defined function (UDF)</div>
+                                <p>Use the utility function <strong>get_function_ddl()</strong> to generate the DDL for a specified UDF.</p>
+                            </div>
+                            <div class="code">
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">select</span>  <span class="tok-n">get_function_ddl</span><span class="tok-p">(</span><span class="tok-s1">'user_function_name'</span><span class="tok-p">);</span></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic">
+    <head>
+    </head>
+    <body>
+        <h2>Running SQream via Docker commands</h2>
+        <p>Set storage/configuration directories for your environment.</p>
+        <p style="text-indent: 0.5in;">Configuration directory on host: <span class="strong">/etc/sqream-console</span></p>
+        <p style="text-indent: 0.5in;">Storage directory on host: <span class="strong">$(pwd)/data</span></p>
+        <p>Start <span class="strong">sqream-worker</span> (the json config file should be inside <span class="emphasis">.sqream</span> folder):</p>
+        <div class="code">
+            <p>docker run -it --rm --runtime=nvidia --network sqream_network -p 5000:5000</p>
+            <p>-v $(pwd)/data:/mnt -v /etc/sqreamconsole:/etc/sqream gitlab.sq.l:4567/rnd/sqream:2.22-10.0-rp sqreamd –config /etc/sqream/sqream_single_host_worker_0.config</p>
+        </div>
+        <p>Start <span class="strong">sqream-master</span>:</p>
+        <div class="code">
+            <p>docker run -it --rm --name sqream-master --network sqream_network -p 3106:3105</p>
+            <p>-p 3109:3108 -v /etc/sqream-console:/mnt –v $(pwd)/.sqream:/etc/sqream gitlab.sq.l:4567/rnd/sqream:2.22-10.0-rp bash -c "metadata_server /var/log 3105 &amp; sleep 10 &amp;&amp; server_picker sqream-master 3105"</p>
+        </div>
+        <p>Get the <span class="strong">sqream-master</span> ip address:</p>
+        <div class="code">
+            <p>docker run --rm --network sqream_network gitlab.sq.l:4567/rnd/sqream:2.22-10.0-rp bash -c "dig +short sqream_single_host_master"</p>
+        </div>
+        <p>Stop all running containers:</p>
+        <p class="code">docker stop $(docker ps -q)</p>
+    </body>
+</html>

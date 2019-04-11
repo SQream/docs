@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+    </head>
+    <body class="article toc2 toc-left">
+        <h2 id="_deployment_steps">Deployment Steps</h2>
+        <div class="sectionbody">
+            <div class="sect2">
+                <h3 id="_install_the_dashboard_application">Install the Dashboard application</h3>
+                <div class="paragraph">
+                    <p>From this step onward, use the <strong>sqream</strong> user on your system:</p>
+                </div>
+                <div class="code">
+                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">su - sqream
+<span class="tok-nb">cd</span> ~</code></pre>
+                    </div>
+                </div>
+                <div class="sect3">
+                    <h4 id="_copy_the_dashboard_application_tar_file">Copy the dashboard application tar file</h4>
+                    <div class="paragraph">
+                        <p>Copy the dashboard application tar file to the folder you would like to install the Administration Dashboard to:<br></br>In a stand-alone system, this could be <code>/home/sqream</code>.<br></br>In a system with Pacemaker, this typically is <code>/usr/local/sqream</code>.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p class="example">For Example:</p>
+                    </div>
+                    <div class="code">
+                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash"><span class="tok-c1"># Stand-alone system</span>
+cp sqream_dashboard_2.0.3.tar.gz /home/sqream/
+<span class="tok-c1"># HA system with Pacemaker:</span>
+cp sqream_dashboard_2.0.3.tar.gz /usr/local/sqream/</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="sect3">
+                    <h4 id="_extract_the_dashboard_application_tar_file">Extract the dashboard application tar file</h4>
+                    <div class="paragraph">
+                        <p>Untar (extract) the dashboard application tar file.
+This opens the application into the sqream_dashboard directory.
+Typically, this would be <code>/home/sqream/sqream_dashboard</code> or <code>/usr/local/sqream/sqream_dashboard</code></p>
+                    </div>
+                    <div class="paragraph">
+                        <p class="example">For example:</p>
+                    </div>
+                    <div class="code">
+                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">tar -xvf sqream_dashboard_2.0.3.tar.gz</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

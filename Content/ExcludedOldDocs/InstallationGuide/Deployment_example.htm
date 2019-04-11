@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic">
+    <head>
+    </head>
+    <body>
+        <h1>Deployment example</h1>
+        <p>Here is a sample of commands used to deploy a single-host deployment with 3 workers.</p>
+        <h2>single-host deployment</h2>
+        <ol>
+            <li>Create new sqream storage on $(pwd)/data local folder:</li>
+            <p class="code">sqream install --volume –-create $(pwd)/data</p>
+            <li>Start sqream master in single-host mode:</li>
+            <p class="code">sqream master --start --single-host</p>
+            <li>Start 3 sqream workers on host, listening on ports 5000, 5001, 5002, each one with 100 GB of memory allocated:</li>
+            <p class="code">sqream worker --start 3 -p 5000 --memory 100</p>
+        </ol>
+    </body>
+</html>

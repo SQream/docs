@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+    </head>
+    <body>
+        <h3 id="_database_tree">Database Tree</h3>
+        <div class="imageblock">
+            <div class="content">
+                <img src="Images/databasetree1.png" alt="DB Tree">
+                </img>
+            </div>
+            <div class="title">Figure 3. Database Tree</div>
+        </div>
+        <div class="paragraph">
+            <p>The Database Tree pane shows the various databases and database objects, such as tables and views. In addition it allows you to view metadata information and run pre-defined queries for statistics.</p>
+        </div>
+        <div class="paragraph">
+            <p>Using the Database Tree pane you can create new tables, rename the table, truncate or drop a table. You can create DDL scripts for a single table or all tables of a database.</p>
+        </div>
+        <div class="sect3">
+            <h4 id="_database_level">Database Level</h4>
+            <div class="paragraph">
+                <p>Right mouse click on the database name, allows you to copy the DDL script to create all tables of this database to the clipboard.</p>
+            </div>
+        </div>
+        <div class="sect3">
+            <h4 id="_schema_level">Schema Level</h4>
+            <div class="paragraph">
+                <p>Right mouse click on the schema name, allows you to copy the script to drop this schema to the clipboard.</p>
+            </div>
+        </div>
+        <div class="sect3">
+            <h4 id="_table_level">Table Level</h4>
+            <div class="paragraph">
+                <p>Right mouse click on the table name offers the following actions. All of them (except Show row count) create a database script to be copied to the clipboard. You can use these scripts in the editor or save them to a file.</p>
+            </div>
+            <div class="ulist">
+                <ul>
+                    <li>
+                        <p>Get DDL: Creates a database script to create this table</p>
+                    </li>
+                    <li>
+                        <p>Show row count, equivalent to "select count (*) from table"</p>
+                    </li>
+                    <li>
+                        <p>SELECT to clipboard</p>
+                    </li>
+                    <li>
+                        <p>INSERT to clipboard</p>
+                    </li>
+                    <li>
+                        <p>DELETE to clipboard</p>
+                    </li>
+                    <li>
+                        <p>Rename table</p>
+                    </li>
+                    <li>
+                        <p>Create table LIKE</p>
+                    </li>
+                    <li>
+                        <p>Add column</p>
+                    </li>
+                    <li>
+                        <p>Truncate table</p>
+                    </li>
+                    <li>
+                        <p>Drop table</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="sect4">
+                <h5 id="_create_a_new_table">Create a new table</h5>
+                <div class="paragraph">
+                    <p>Add a new table by running a statement, or alternatively use the <strong>Add new</strong> link. The <strong>Create a new table</strong> diaglog opens. Fill out the required information and click <kbd>EXEC</kbd>.</p>
+                </div>
+                <div class="imageblock">
+                    <div class="content">
+                        <img src="Images/createtable1.png" alt="Add Table">
+                        </img>
+                    </div>
+                    <div class="title">Figure 4. Create a new Table</div>
+                </div>
+            </div>
+        </div>
+        <div class="sect3">
+            <h4 id="_system_views_catalog">System Views - Catalog</h4>
+            <div class="paragraph">
+                <p>The SQream Database catalog or information schema consists of views that contain information about all database objects. This provides access to database metadata, column types, tables and their row-counts, etc.</p>
+            </div>
+            <div class="imageblock">
+                <div class="content">
+                    <img src="Images/systemviewcatalog1.png" alt="Catalog">
+                    </img>
+                </div>
+            </div>
+            <div class="paragraph">
+                <p>To retrieve information from the catalog views click the catalog view name in the left pane, for example <strong>databases</strong>. The Editor then populates the relevant database query and runs it. Review the results in the results pane.</p>
+            </div>
+            <div class="paragraph">
+                <p>For the full list of available catalog views, their description and usage please refer to the SQream SQL Reference Guide under the <a href="../../../Concepts/12_1.10_Catalog_(information_schema).htm">"Catalog (information schema)"</a>.</p>
+            </div>
+        </div>
+        <div class="sect3">
+            <h4 id="_system_views_predefined_queries">System Views - Predefined Queries</h4>
+            <div class="paragraph">
+                <p>The predefined queries allow you to retrieve performance related information using predefined queries on the catalog views. This information is typically used by support team members or advanced DBAs to analyze database internal data, such as chunk size, compression rate or physical size of a specific table.</p>
+            </div>
+            <div class="imageblock">
+                <div class="content">
+                    <img src="Images/systemviewquery1.png" alt="Predefined">
+                    </img>
+                </div>
+            </div>
+            <div class="paragraph">
+                <p>To run a predefined query click the query name in the left pane, for example <strong>Average chunk size and rows per table</strong>. The Editor then populates the relevant database query and runs it. Review the results in the results pane.</p>
+            </div>
+        </div>
+    </body>
+</html>

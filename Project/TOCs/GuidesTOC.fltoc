@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Guides/Guides.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Guides/QuickGuides/CreateYourFirstDatabase/Creating_Your_First_Database_In_SQream.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      ComputeToc="true"
+      ComputedTocAction="Replace"
+      ComputedTocDepth="10"></TocEntry>
+    <TocEntry
+      Title="LoadingDataTOC"
+      Link="/Project/TOCs/LoadingDataTOC.fltoc"
+      ReplaceMergeNode="true" />
+    <TocEntry
+      Title="QuickAdminGuideTOC"
+      Link="/Project/TOCs/QuickAdminGuideTOC.fltoc"
+      ReplaceMergeNode="true" />
+    <TocEntry
+      Title="DWLMTOC"
+      Link="/Project/TOCs/DWLMTOC.fltoc"
+      ReplaceMergeNode="true"></TocEntry>
+    <TocEntry
+      Title="AdminGuideTOC"
+      Link="/Project/TOCs/AdminGuideTOC.fltoc"
+      ReplaceMergeNode="true" />
+    <TocEntry
+      Title="DashboardTOC"
+      Link="/Project/TOCs/DashboardTOC.fltoc"
+      ReplaceMergeNode="true" />
+    <TocEntry
+      Title="StatementEditorTOC"
+      Link="/Project/TOCs/StatementEditorTOC.fltoc"
+      ReplaceMergeNode="true" />
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Guides/InstallationGuides/SQream Installation Guides.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    <TocEntry
+      Title="DashboardInstallTOC"
+      Link="/Project/TOCs/DashboardInstallTOC.fltoc"
+      ReplaceMergeNode="true" />
+    <TocEntry
+      Title="SQLEditorInstallTOC"
+      Link="/Project/TOCs/SQLEditorInstallTOC.fltoc"
+      ReplaceMergeNode="true" />
+  </TocEntry>
+</CatapultToc>

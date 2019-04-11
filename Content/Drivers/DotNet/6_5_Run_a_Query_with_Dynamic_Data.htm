@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\Resources\MasterPages\Drivers.flmsp');">
+    <head>
+    </head>
+    <body class="article toc2 toc-left">
+        <h2 id="_run_a_query_with_dynamic_data">Run a Query with Dynamic Data</h2>
+        <div class="sectionbody">
+            <div class="paragraph">
+                <p>When the data structure of the object is unknown, saving pre-defined indexes will not help. It is therefore recommended that you implement an extension method, which is an ability the .NET framework provides.</p>
+            </div>
+            <div class="paragraph">
+                <p>The following sample suggests a possible implementation to “wrap” the reader object so it would read the data, independent from query or data types.</p>
+            </div>
+            <div class="paragraph">
+                <p>Classes and list object are used to illustrate the functionality. This should be adjusted in your own program according to your needs.</p>
+            </div>
+            <div class="code">
+                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">    /// &lt;summary&gt;    /// Extension to a collection class which contains rows of data
+    /// &lt;/summary&gt;    public class SqreamCollectionEx
+    <span class="tok-o">{</span>
+        public List&lt;SqreamRowEx&gt; Rows<span class="tok-p">;</span>  
+    <span class="tok-o">}</span>
+
+    /// &lt;summary&gt;    /// Row of data which contains columns data
+    /// &lt;/summary&gt;    public class SqreamRowEx
+    <span class="tok-o">{</span>
+        public List&lt;SqreamColumnEx&gt; Columns<span class="tok-p">;</span>  
+    <span class="tok-o">}</span>
+
+    /// &lt;summary&gt;    /// Column Data
+    /// &lt;/summary&gt;
+    <span class="tok-o">[</span>DebuggerDisplay<span class="tok-o">(</span><span class="tok-s2">"Index: {Index} , Name: {Name} , Type: {TypeName} , Value: {Value}"</span><span class="tok-o">)]</span>
+    public class SqreamColumnEx
+    <span class="tok-o">{</span>
+        public int Index <span class="tok-o">{</span> get<span class="tok-p">;</span> set<span class="tok-p">;</span>  <span class="tok-o">}</span>
+        public string Name <span class="tok-o">{</span> get<span class="tok-p">;</span> set<span class="tok-p">;</span>  <span class="tok-o">}</span>
+        public string TypeName <span class="tok-o">{</span> get<span class="tok-p">;</span> set<span class="tok-p">;</span>  <span class="tok-o">}</span>
+        public object Value <span class="tok-o">{</span> get<span class="tok-p">;</span> set<span class="tok-p">;</span>  <span class="tok-o">}</span>  
+    <span class="tok-o">}</span>
+
+    /// &lt;summary&gt;    /// Reads the collection, extends sqream data reader
+    /// &lt;/summary&gt;    public static class SqreamNetEx
+    <span class="tok-o">{</span>
+        public static SqreamCollectionEx ReadCollectionEx<span class="tok-o">(</span>this SqreamDataReader reader<span class="tok-o">)</span>  
+        <span class="tok-o">{</span>
+            var <span class="tok-nv">result</span>  <span class="tok-o">=</span> new SqreamCollectionEx<span class="tok-o">()</span><span class="tok-p">;</span>
+            result.Rows <span class="tok-o">=</span> new List&lt;SqreamRowEx&gt;<span class="tok-o">()</span><span class="tok-p">;</span>  
+            <span class="tok-k">while</span>  <span class="tok-o">(</span>reader.Read<span class="tok-o">())</span>  
+            <span class="tok-o">{</span>
+                var <span class="tok-nv">row</span>  <span class="tok-o">=</span> new SqreamRowEx<span class="tok-o">()</span><span class="tok-p">;</span>
+                row.Columns <span class="tok-o">=</span> new List&lt;SqreamColumnEx&gt;<span class="tok-o">()</span><span class="tok-p">;</span>  
+                <span class="tok-k">for</span>  <span class="tok-o">(</span>int <span class="tok-nv">i</span>  <span class="tok-o">=</span>  <span class="tok-m">0</span><span class="tok-p">;</span> i &lt; reader.FieldCount<span class="tok-p">;</span> i++<span class="tok-o">)</span>  
+                <span class="tok-o">{</span>
+                    var <span class="tok-nv">column</span>  <span class="tok-o">=</span> new SqreamColumnEx<span class="tok-o">()</span><span class="tok-p">;</span>
+                    column.Index <span class="tok-o">=</span> i<span class="tok-p">;</span>
+                    column.TypeName <span class="tok-o">=</span> reader.GetDataTypeName<span class="tok-o">(</span>i<span class="tok-o">)</span><span class="tok-p">;</span>
+                    column.Name <span class="tok-o">=</span> reader.GetName<span class="tok-o">(</span>i<span class="tok-o">)</span><span class="tok-p">;</span>
+
+                    switch <span class="tok-o">(</span>reader.GetDataTypeName<span class="tok-o">(</span>i<span class="tok-o">))</span>  
+                    <span class="tok-o">{</span>  
+                        <span class="tok-k">case</span>  <span class="tok-s2">"Boolean"</span>:
+                            column.Value <span class="tok-o">=</span> reader.GetBoolean<span class="tok-o">(</span>i<span class="tok-o">)</span><span class="tok-p">;</span>
+                            break<span class="tok-p">;</span>  
+                        <span class="tok-k">case</span>  <span class="tok-s2">"Int32"</span>:
+                            column.Value <span class="tok-o">=</span> reader.GetInt32<span class="tok-o">(</span>i<span class="tok-o">)</span><span class="tok-p">;</span>
+                            break<span class="tok-p">;</span>  
+                        <span class="tok-k">case</span>  <span class="tok-s2">"Int64"</span>:
+                            column.Value <span class="tok-o">=</span> reader.GetInt64<span class="tok-o">(</span>i<span class="tok-o">)</span><span class="tok-p">;</span>
+                            break<span class="tok-p">;</span>  
+                        <span class="tok-k">case</span>  <span class="tok-s2">"Single"</span>:
+                            column.Value <span class="tok-o">=</span> reader.GetFloat<span class="tok-o">(</span>i<span class="tok-o">)</span><span class="tok-p">;</span>
+                            break<span class="tok-p">;</span>  
+                        <span class="tok-k">case</span>  <span class="tok-s2">"Double"</span>:
+                            column.Value <span class="tok-o">=</span> reader.GetDouble<span class="tok-o">(</span>i<span class="tok-o">)</span><span class="tok-p">;</span>
+                            break<span class="tok-p">;</span>  
+                        <span class="tok-k">case</span>  <span class="tok-s2">"DateTime"</span>:
+                            column.Value <span class="tok-o">=</span> reader.GetDateTime<span class="tok-o">(</span>i<span class="tok-o">)</span><span class="tok-p">;</span>
+                            break<span class="tok-p">;</span>  
+                        <span class="tok-k">case</span>  <span class="tok-s2">"String"</span>:
+                            column.Value <span class="tok-o">=</span> reader.GetString<span class="tok-o">(</span>i<span class="tok-o">)</span><span class="tok-p">;</span>
+                            break<span class="tok-p">;</span>
+                        default:
+                            throw new SqreamException<span class="tok-o">(</span>string.Format<span class="tok-o">(</span><span class="tok-s2">"invalid type in index: {0}"</span>, i<span class="tok-o">))</span><span class="tok-p">;</span>  
+                    <span class="tok-o">}</span>
+                    row.Columns.Add<span class="tok-o">(</span>column<span class="tok-o">)</span><span class="tok-p">;</span>  
+                <span class="tok-o">}</span>
+                result.Rows.Add<span class="tok-o">(</span>row<span class="tok-o">)</span><span class="tok-p">;</span>  
+            <span class="tok-o">}</span>  
+            <span class="tok-k">return</span> result<span class="tok-p">;</span>  
+        <span class="tok-o">}</span>  
+<span class="tok-o">}</span>
+
+// This code uses the extension method to retrieve the data:
+var <span class="tok-nv">sql</span>  <span class="tok-o">=</span>  <span class="tok-s2">"select id , title , author from books;"</span><span class="tok-p">;</span>
+var <span class="tok-nb">command</span>  <span class="tok-o">=</span> new SqreamCommand<span class="tok-o">(</span>sql, connection<span class="tok-o">)</span><span class="tok-p">;</span>
+var <span class="tok-nv">reader</span>  <span class="tok-o">=</span>  <span class="tok-o">(</span>SqreamDataReader<span class="tok-o">)</span>command.ExecuteReader<span class="tok-o">()</span><span class="tok-p">;</span>
+var <span class="tok-nv">result</span>  <span class="tok-o">=</span> reader.ReadCollectionEx<span class="tok-o">()</span><span class="tok-p">;</span></code></pre>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\Resources\MasterPages\Drivers.flmsp');">
+    <head>
+        <link href="../../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body class="article toc2 toc-left">
+        <div class="sect1">
+            <div class="sectionbody">
+                <div class="sect2">
+                    <h3 id="_helper_functions">Helper functions</h3>
+                    <table class="TableStyle-Default_Table" style="mc-table-style: url('../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                        <caption class="title">Table 3. Additional functions in order to accomplish a broader amount of operations or give access to some internal numbers. Their namespace is "sqream::" only</caption>
+                        <colgroup>
+                            <col>
+                            </col>
+                            <col>
+                            </col>
+                        </colgroup>
+                        <thead>
+                            <tr class="TableStyle-Default_Table-Head-Header1">
+                                <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Function</th>
+                                <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="TableStyle-Default_Table-Body-Body1">
+                                <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <div class="literal"><pre xml:space="preserve">new_query_execute(sqream::driver *drv,std::string sql_query)</pre>
+                                    </div>
+                                </td>
+                                <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                    <div class="literal"><pre xml:space="preserve">Operates the protocol until the statement is executed, this function is a shortcut and set_types or get_types functions can be executed right after</pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-Default_Table-Body-Body2">
+                                <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <div class="literal"><pre xml:space="preserve">void run_direct_query(sqream::driver *drv,std::string sql_query)</pre>
+                                    </div>
+                                </td>
+                                <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                    <div class="literal"><pre xml:space="preserve">Executes a query from start to end (closes the statement). This function is a shortcut for when you don't need to see any input/output like a DDL type of query ("create table" etc)</pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-Default_Table-Body-Body1">
+                                <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <div class="literal"><pre xml:space="preserve">std::vector&lt;sqream::column&gt; get_metadata(driver *drv)</pre>
+                                    </div>
+                                </td>
+                                <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                    <div class="literal"><pre xml:space="preserve">Returns the metadata of the current statement if available (after a Prepare) or else an empty vector</pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-Default_Table-Body-Body2">
+                                <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <div class="literal"><pre xml:space="preserve">uint32_t retrieve_statement_id(sqream::driver *drv)</pre>
+                                    </div>
+                                </td>
+                                <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                    <div class="literal"><pre xml:space="preserve">Returns the current statement id, will throw an error if no statement is executed</pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-Default_Table-Body-Body1">
+                                <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <div class="literal"><pre xml:space="preserve">sqream::CONSTS::statement_type retrieve_statement_type(sqream::driver *drv)</pre>
+                                    </div>
+                                </td>
+                                <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                    <div class="literal"><pre xml:space="preserve">Returns the enum representing the type of statement currently executing. A statement can be a select, an insert or a DML (direct)</pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-Default_Table-Body-Body2">
+                                <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <div class="literal"><pre xml:space="preserve">uint32_t date(int32_t year,int32_t month,int32_t day)</pre>
+                                    </div>
+                                </td>
+                                <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                    <div class="literal"><pre xml:space="preserve">Convert date to sqream date (Julian day number, stored in an uint)</pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-Default_Table-Body-Body1">
+                                <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <div class="literal"><pre xml:space="preserve">uint64_t datetime(int32_t year,int32_t month,int32_t day,int32_t hour,int32_t minute,int32_t second,int32_t millisecond)</pre>
+                                    </div>
+                                </td>
+                                <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                    <div class="literal"><pre xml:space="preserve">Convert datetime to sqream datetime (Julian day number, stored in an uint in the high 32 bits and Julian day fraction stored in an uint in the low 32 bits)</pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-Default_Table-Body-Body2">
+                                <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <div class="literal"><pre xml:space="preserve">sqream::date_t make_date(uint32_t date)</pre>
+                                    </div>
+                                </td>
+                                <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                    <div class="literal"><pre xml:space="preserve">Convert sqream date to sqream::date_t structure</pre>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-Default_Table-Body-Body1">
+                                <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                    <div class="literal"><pre xml:space="preserve">sqream::datetime_t make_datetime(uint64_t datetime)</pre>
+                                    </div>
+                                </td>
+                                <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
+                                    <div class="literal"><pre xml:space="preserve">Convert sqream datetime to sqream::datetime_t structure</pre>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="sect1">
+            <p>&#160;</p>
+        </div>
+    </body>
+</html>

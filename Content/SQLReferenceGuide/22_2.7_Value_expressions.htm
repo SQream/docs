@@ -1,0 +1,655 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\Resources\MasterPages\SQLReference.flmsp');">
+    <head>
+        <link href="../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body class="article toc2 toc-left">
+        <div id="content">
+            <div class="sect1">
+                <div class="sectionbody">
+                    <div class="sect2">
+                        <h3 id="value-expressions">Value expressions</h3>
+                        <div class="paragraph">
+                            <p>Value expressions are used in select lists, <strong>ON</strong> conditions, <strong>WHERE</strong>
+conditions, <strong>GROUP BY</strong> expressions, <strong>HAVING</strong> conditions and <strong>ORDER BY</strong>
+expressions.</p>
+                        </div>
+                        <div class="code">
+                            <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>value_expr</em></strong> ::=
+    <strong><em>string_literal</em></strong>
+    | <strong><em>number_literal</em></strong>
+    | NULL | TRUE | FALSE
+    | <strong><em>typed_literal</em></strong>
+    | <strong><em>value_expr</em></strong>  <strong><em>binary_operator</em></strong>  <strong><em>value_expr</em></strong>
+    | <strong><em>unary_operator</em></strong>  <strong><em>value_expr</em></strong>
+    | <strong><em>value_expr</em></strong>  <strong><em>postfix_unary_operator</em></strong>
+    | <strong><em>special_operator</em></strong>
+    | <strong><em>extract_operator</em></strong>
+    | <strong><em>case_expression</em></strong>
+    | <strong><em>conditional_expression</em></strong>
+    | ( <strong><em>value_expr</em></strong> )
+    | <strong><em>identifier</em></strong>
+    | <strong><em>star</em></strong>
+    | <strong><em>function_app</em></strong>
+    | <strong><em>aggregate_function_app</em></strong>
+    | <strong><em>window_function_app</em></strong>
+    | <strong><em>cast_operator</em></strong></code></pre>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="string-literal-def"><a name="String"></a>String literal</h4>
+                            <div class="paragraph">
+                                <p><code><strong><em>string_literal</em></strong></code> is delimited by single quotes ('), and can
+contain any printable character other than single quote.</p>
+                            </div>
+                            <div class="admonitionblock tip">
+                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-tip" title="Tip"></i>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <div class="olist arabic">
+                                                <ol class="arabic">
+                                                    <li>
+                                                        <p>To include a single quote within a string literal, write two adjacent single quotes, e.g., 'Database''s features'. Note that this is not the same as a double-quote character (")</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>Similarly, to avoid escaping the single quote, use the <em>dollar quoting</em> notation (see examples below)</p>
+                                                    </li>
+                                                </ol>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="code">
+                                <div class="title">Examples</div>
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-s1">'string literal'</span><span class="tok-p">;</span>  
+
+<span class="tok-k">SELECT</span>  <span class="tok-s1">'string literal ''with something'' quoted'</span>  <span class="tok-p">;</span>  
+<span class="tok-c1">-- this produces the string "string literal 'with something' quoted"</span>  
+
+<span class="tok-k">SELECT</span>  <span class="tok-s">$$string literal 'with something' quoted$$</span>  <span class="tok-p">;</span>  
+<span class="tok-c1">-- Same as above</span></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_number_literal">Number literal</h4>
+                            <div class="code">
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>number_literal</em></strong> ::=
+
+    <strong><em>digits</em></strong>
+    | <strong><em>digits</em></strong> . [ <strong><em>digits</em></strong> ] [ e [+-] <strong><em>digits</em></strong> ]
+    | [ <strong><em>digits</em></strong> ] . <strong><em>digits</em></strong> [ e [+-] <strong><em>digits</em></strong> ]
+    | <strong><em>digits</em></strong> e [+-] <strong><em>digits</em></strong></code></pre>
+                                </div>
+                            </div>
+                            <div class="code">
+                                <div class="title">Examples</div>
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db">  
+<span class="tok-mf">1234</span>  
+
+<span class="tok-mf">1234.56</span>  
+
+<span class="tok-mf">12.</span>  
+
+<span class="tok-mf">.34</span>  
+
+<span class="tok-mf">123.56e-45</span></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_typed_literal">Typed literal</h4>
+                            <div class="code">
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>typed_literal</em></strong> ::=
+    <strong><em>type_name</em></strong>  <strong><em>string_literal</em></strong></code></pre>
+                                </div>
+                            </div>
+                            <div class="paragraph">
+                                <p><code><strong><em>type_name</em></strong></code> is defined above in the <a href="21_2.6_Data_types.htm">type name
+definition</a> section.</p>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_binary_operator">Binary operator</h4>
+                            <div class="code">
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>binary_operator</em></strong> ::=
+    . | + | ^ | * | / | % | + | - | &gt;= | &lt;= | != | &lt;&gt; | ||
+    | LIKE | NOT LIKE | RLIKE | NOT RLIKE | &lt; | &gt; | = | OR | AND</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_unary_operator">Unary operator</h4>
+                            <div class="code">
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>unary_operator</em></strong> ::=
+    + | - | NOT</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_postfix_unary_operator">Postfix unary operator</h4>
+                            <div class="code">
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>postfix_unary_operator</em></strong> ::=
+
+    IS NULL | IS NOT NULL</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_special_operator">Special operator</h4>
+                            <div class="code">
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>special_operator</em></strong> ::=
+
+    <strong><em>value_expr</em></strong> IN ( <strong><em>value_expr</em></strong> [, ... ] )
+    | <strong><em>value_expr</em></strong> NOT IN ( <strong><em>value_expr</em></strong> [, ... ] )
+    | <strong><em>value_expr</em></strong> BETWEEN <strong><em>value_expr</em></strong> AND <strong><em>value_expr</em></strong>
+    | <strong><em>value_expr</em></strong> NOT BETWEEN <strong><em>value_expr</em></strong> AND <strong><em>value_expr</em></strong></code></pre>
+                                </div>
+                            </div>
+                            <div class="admonitionblock note">
+                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <div class="paragraph">
+                                                <p>SQream limits the number of 'in list' values to 500. It is highly recommended to avoid a large 'in list' (more than 20) and to use JOIN operation instead:</p>
+                                            </div>
+                                            <div class="code">
+                                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">INSERT</span>  <span class="tok-k">INTO</span>  <span class="tok-n">temp_table</span>  <span class="tok-k">VALUES</span>  <span class="tok-p">(</span><span class="tok-n">val1</span><span class="tok-p">,</span>  <span class="tok-n">val2</span><span class="tok-p">,</span>  <span class="tok-n">val3</span>  <span class="tok-mf">....</span>  <span class="tok-n">valN</span><span class="tok-p">);</span>  
+<span class="tok-k">SELECT</span>  <span class="tok-mf">..</span>  <span class="tok-k">FROM</span>  <span class="tok-n">my_table</span>  <span class="tok-k">JOIN</span>  <span class="tok-n">temp_table</span>  <span class="tok-k">ON</span>  <span class="tok-n">my_table_col</span><span class="tok-o">=</span><span class="tok-n">temp_table_in_list_column</span><span class="tok-p">;</span></code></pre>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="admonitionblock note">
+                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <div class="paragraph">
+                                                <p>To use AND in the middle of a <code><strong><em>value_expr</em></strong></code> with a BETWEEN operator,
+enclose the expression in parentheses:</p>
+                                            </div>
+                                            <div class="code">
+                                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-n">expr</span>  <span class="tok-k">BETWEEN</span>  <span class="tok-p">(</span>  <span class="tok-n">min_expr_with_and</span>  <span class="tok-p">)</span>  <span class="tok-k">AND</span>  <span class="tok-n">max_expr</span></code></pre>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="extract-operator"><a name="EXTRACT"></a>EXTRACT operator</h4>
+                            <div class="paragraph">
+                                <p>The extract operator can be used to extract parts of dates/times from
+date or datetime values.</p>
+                            </div>
+                            <div class="paragraph">
+                                <p>See also DATEPART in <a href="23_2.8_Functions_and_Operators.htm#Date">Date/time functions</a></p>
+                            </div>
+                            <div class="admonitionblock note">
+                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+This operator always returns a float.
+</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="code">
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>extract_operator</em></strong> ::=
+
+    EXTRACT ( <strong><em>extract_field</em></strong> FROM <strong><em>value_expr</em></strong> )
+
+<strong><em>extract_field</em></strong> ::=
+    YEAR
+  | MONTH
+  | WEEK
+  | DAY
+  | DOY
+  | HOUR
+  | MINUTE
+  | SECOND
+  | MILLISECONDS</code></pre>
+                                </div>
+                            </div>
+                            <div class="code">
+                                <div class="title">Example</div>
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db">  
+<span class="tok-k">SELECT</span>  <span class="tok-k">EXTRACT</span><span class="tok-p">(</span><span class="tok-k">hour</span>  <span class="tok-k">FROM</span>  <span class="tok-s1">'1997-06-02 15:30:00.000'</span><span class="tok-p">);</span>  
+<span class="tok-c1">-- Returns 15.00</span>  
+
+<span class="tok-k">SELECT</span>  <span class="tok-k">EXTRACT</span><span class="tok-p">(</span><span class="tok-k">year</span>  <span class="tok-k">FROM</span>  <span class="tok-s1">'1997-06-02 15:30:00.000'</span><span class="tok-p">);</span>  
+<span class="tok-c1">-- Returns 1997.00</span></code></pre>
+                                </div>
+                            </div>
+                            <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                                <caption class="title">Table 28. Example results</caption>
+                                <colgroup>
+                                    <col />
+                                    <col />
+                                    <col />
+                                </colgroup>
+                                <thead>
+                                    <tr class="TableStyle-Default_Table-Head-Header1">
+                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">extract_field</th>
+                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Syntax</th>
+                                        <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Result</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <div class="literal"><pre xml:space="preserve"> YEAR</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <div class="literal"><pre xml:space="preserve"> EXTRACT(YEAR FROM '1986-06-02 15:31:22.124')</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableblock">1986.00</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <div class="literal"><pre xml:space="preserve"> MONTH</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <div class="literal"><pre xml:space="preserve"> EXTRACT(MONTH FROM '1986-06-02 15:31:22.124')</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableblock">6.00</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <div class="literal"><pre xml:space="preserve"> WEEK</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <div class="literal"><pre xml:space="preserve"> EXTRACT(WEEK FROM '1986-06-02 15:31:22.124')</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableblock">23.00</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <div class="literal"><pre xml:space="preserve"> DAY</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <div class="literal"><pre xml:space="preserve"> EXTRACT(DAY FROM '1986-06-02 15:31:22.124')</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableblock">2.00</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <div class="literal"><pre xml:space="preserve"> DOY</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <div class="literal"><pre xml:space="preserve"> EXTRACT(DOY FROM '1986-06-02 15:31:22.124')</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableblock">153.00</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <div class="literal"><pre xml:space="preserve"> HOUR</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <div class="literal"><pre xml:space="preserve"> EXTRACT(HOUR FROM '1986-06-02 15:31:22.124')</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableblock">15.00</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <div class="literal"><pre xml:space="preserve"> MINUTE</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <div class="literal"><pre xml:space="preserve"> EXTRACT(MINUTE FROM '1986-06-02 15:31:22.124')</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableblock">31.00</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <div class="literal"><pre xml:space="preserve"> SECOND</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <div class="literal"><pre xml:space="preserve"> EXTRACT(SECOND FROM '1986-06-02 15:31:22.124')</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableblock">22.124</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                            <div class="literal"><pre xml:space="preserve"> MILLISECONDS</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                            <div class="literal"><pre xml:space="preserve"> EXTRACT(MILLISECONDS FROM '1986-06-02 15:31:22.124')</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
+                                            <p class="tableblock">22124.00</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_case_expression">CASE expression</h4>
+                            <div class="code">
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>case_expression</em></strong> ::=
+
+    <strong><em>searched_case</em></strong> | <strong><em>simple_case</em></strong>  
+
+<strong><em>searched_case</em></strong> ::=
+
+    CASE WHEN <strong><em>value_expr</em></strong> THEN <strong><em>value_expr</em></strong>
+        [WHEN ...]
+        [ELSE <strong><em>value_expr</em></strong>]
+    END
+
+<strong><em>simple_case</em></strong> ::=
+
+    CASE <strong><em>value_expr</em></strong>
+        WHEN <strong><em>value_expr</em></strong> THEN <strong><em>value_expr</em></strong>
+        [WHEN ...]
+        [ELSE <strong><em>value_expr</em></strong>]
+    END</code></pre>
+                                </div>
+                            </div>
+                            <div class="paragraph">
+                                <p>_searched_case_ works as follows:</p>
+                            </div>
+                            <div class="ulist">
+                                <ul>
+                                    <li>
+                                        <p>Each WHEN _value_expr_ is checked in order, the value of the CASE
+expression is the value of the THEN <code>_value_expr_</code> then for the
+first WHEN branch which evaluates to true;</p>
+                                    </li>
+                                    <li>
+                                        <p>If no WHEN branches evaluate to true, then the value is the value of
+the ELSE expression, or if there is no ELSE, then the value is
+NULL.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="paragraph">
+                                <p>The <code><strong><em>simple_case</em></strong></code> style is shorthand:</p>
+                            </div>
+                            <div class="code">
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">CASE</span>  <span class="tok-n">v0</span>  
+    <span class="tok-k">WHEN</span>  <span class="tok-n">v1</span>  <span class="tok-k">THEN</span>  <span class="tok-n">r1</span>  
+    <span class="tok-k">WHEN</span>  <span class="tok-n">v2</span>  <span class="tok-k">THEN</span>  <span class="tok-n">r2</span>  
+    <span class="tok-mf">...</span>  
+    <span class="tok-k">ELSE</span>  <span class="tok-n">e</span>  
+<span class="tok-k">END</span>  
+
+<span class="tok-c1">-- Is identical to:</span>  
+
+<span class="tok-k">CASE</span>  
+    <span class="tok-k">WHEN</span>  <span class="tok-n">v0</span>  <span class="tok-o">=</span>  <span class="tok-n">v1</span>  <span class="tok-k">THEN</span>  <span class="tok-n">r1</span>  
+    <span class="tok-k">WHEN</span>  <span class="tok-n">v0</span>  <span class="tok-o">=</span>  <span class="tok-n">v2</span>  <span class="tok-k">THEN</span>  <span class="tok-n">r2</span>  
+    <span class="tok-mf">...</span>  
+    <span class="tok-k">ELSE</span>  <span class="tok-n">e</span>  
+<span class="tok-k">END</span></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="identifier-def"><a name="identifier-definitions"></a>Identifier Rules</h4>
+                            <div class="paragraph">
+                                <p>Identifiers are typically used as database objects names, such as databases, tables, views or columns. In addition, identifiers can be used to change the resulting column name (column alias) with SELECT.</p>
+                            </div>
+                            <div class="paragraph">
+                                <p><code><strong><em>identifier</em></strong></code> is</p>
+                            </div>
+                            <div class="ulist">
+                                <ul>
+                                    <li>
+                                        <p>Unquoted identifier:</p>
+                                        <div class="ulist">
+                                            <ul>
+                                                <li>
+                                                    <p>Length can be up to 128 chars.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Must begin with any ASCII (A-Z) character (uppercase or lowercase) or underscore (_).</p>
+                                                </li>
+                                                <li>
+                                                    <p>Subsequent characters can be letters, underscores or digits.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Uppercase characters in unquoted identifiers are converted to lowercase, and kept in the SQream catalog as <strong>lowercase</strong>.</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>Quoted identifier:</p>
+                                        <div class="ulist">
+                                            <ul>
+                                                <li>
+                                                    <p>Length can be up to 128 chars.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Wrapped with double quotes (").</p>
+                                                </li>
+                                                <li>
+                                                    <p>May contain any printable character, except for <code><strong>@</strong></code>, <code><strong>$</strong></code> or <code><strong>"</strong></code> (double quotes).</p>
+                                                </li>
+                                                <li>
+                                                    <p>Quoted identifiers are kept in the SQream catalog as <strong>case sensitive</strong>.</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="code">
+                                <div class="title">Examples</div>
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">CREATE</span>  <span class="tok-k">TABLE</span>  <span class="tok-s tok-s-Name">"Customers"</span>  <span class="tok-p">(</span>  
+    <span class="tok-n">ID</span>  <span class="tok-nb">int</span><span class="tok-p">,</span>  
+    <span class="tok-s tok-s-Name">"Name"</span>  <span class="tok-nb">varchar</span><span class="tok-p">(</span><span class="tok-mf">50</span><span class="tok-p">)</span>  
+<span class="tok-p">);</span>  
+
+<span class="tok-k">SELECT</span>  <span class="tok-o">*</span>  <span class="tok-k">from</span>  <span class="tok-s tok-s-Name">"Customers"</span><span class="tok-p">;</span>  
+
+<span class="tok-k">CREATE</span>  <span class="tok-k">TABLE</span>  <span class="tok-n">customers</span>  <span class="tok-p">(</span>  
+    <span class="tok-n">ID</span>  <span class="tok-nb">int</span><span class="tok-p">,</span>  
+    <span class="tok-k">name</span>  <span class="tok-nb">varchar</span><span class="tok-p">(</span><span class="tok-mf">50</span><span class="tok-p">)</span>  
+<span class="tok-p">);</span>  
+
+<span class="tok-k">SELECT</span>  <span class="tok-n">col1</span>  <span class="tok-k">AS</span>  <span class="tok-s tok-s-Name">"My favourite column"</span><span class="tok-p">,</span>  <span class="tok-n">col2</span>  <span class="tok-k">as</span>  <span class="tok-s tok-s-Name">"I'm not really sure I like this column"</span>  <span class="tok-k">FROM</span>  <span class="tok-n">t</span><span class="tok-p">;</span></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_aggregate_function_app">Aggregate function app</h4>
+                            <div class="code">
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>aggregate_function_app</em></strong> ::=
+
+    <strong><em>agg_name</em></strong> ( [ <strong><em>value_expr</em></strong> [, ... ] ] )
+
+    | <strong><em>agg_name</em></strong> ( [ DISTINCT ] [ <strong><em>value_expr</em></strong> [, ... ] ] )
+
+<strong><em>agg_name</em></strong> ::= <strong><em>identifier</em></strong></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_window_function_app">Window function app</h4>
+                            <div class="code">
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>window_function_app</em></strong> ::=
+
+    <strong><em>window_fn_name</em></strong> ( [ <strong><em>value_expr</em></strong> [, ... ] ] )
+        OVER ( [ <strong><em>value_expr</em></strong> [, ... ] ]
+               [ PARTITION BY <strong><em>value_expr</em></strong> [, ... ] ]
+               [ ORDER BY <strong><em>value_expr</em></strong> [ ASC | DESC] [, ... ] ] )
+
+<strong><em>window_fn_name</em></strong> ::= <strong><em>identifier</em></strong></code></pre>
+                                </div>
+                            </div>
+                            <div class="paragraph">
+                                <div class="title">Examples</div>
+                                <p>See the <a href="23_2.8_Functions_and_Operators.htm#Window">Window functions</a> segment for examples.</p>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_operator_precedences">Operator precedences</h4>
+                            <div class="paragraph">
+                                <p>This table lists the operators in decreasing order of precedence. We
+recommend using parentheses rather than relying on precedences in
+anything other than trivial expressions.</p>
+                            </div>
+                            <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                                <caption class="title">Table 29. Operator precedences</caption>
+                                <colgroup>
+                                    <col style="width: 50%;" />
+                                    <col style="width: 50%;" />
+                                </colgroup>
+                                <tbody>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">Operator</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableblock">Associativity</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">.</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableblock">left</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">+ - (unary)</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">^</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableblock">left</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">* / %</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableblock">left</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">+ - (binary)</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableblock">left</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">||</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableblock">right</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock"><strong>BETWEEN</strong>, <strong>IN</strong>, <strong>LIKE</strong>, <strong>RLIKE</strong></p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">&lt; &gt; = &lt;= &gt;= &lt;&gt; !=</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock"><strong>IS NULL</strong>, <strong>IS NOT NULL</strong></p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock"><strong>NOT</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock"><strong>AND</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableblock">left</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                            <p class="tableblock"><strong>OR</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
+                                            <p class="tableblock">left</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="paragraph">
+                                <p>The <strong>NOT</strong> variations: <strong>NOT BETWEEN</strong>, <strong>NOT IN</strong>, <strong>NOT LIKE</strong>, <strong>NOT RLIKE</strong> have the
+same precedence as their non-<strong>NOT</strong> variations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

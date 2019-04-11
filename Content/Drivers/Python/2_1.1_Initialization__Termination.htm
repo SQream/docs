@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\Resources\MasterPages\Drivers.flmsp');">
+    <head>
+    </head>
+    <body class="article toc2 toc-left">
+        <h2 id="_api_reference">API Reference</h2>
+        <div class="sectionbody">
+            <div class="paragraph">
+                <p>All functions are accessed through the Connector class imported from SQream_python_connector.py</p>
+            </div>
+        </div>
+        <h3 id="_initialization_termination">Initialization - Termination</h3>
+        <div class="code">
+            <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="python"><span class="tok-kn">import</span>  <span class="tok-nn">SQream_python_connector</span>  
+<span class="tok-n">con</span>  <span class="tok-o">=</span>  <span class="tok-n">SQream_python_connector</span><span class="tok-o">.</span><span class="tok-n">Connector</span><span class="tok-p">()</span>  
+
+<span class="tok-c1"># arg types are: string, integer, string, string, string, boolean, integer, string(optional)</span>  
+<span class="tok-n">con</span><span class="tok-o">.</span><span class="tok-n">connect</span><span class="tok-p">(</span><span class="tok-n">ip</span><span class="tok-p">,</span>  <span class="tok-n">port</span><span class="tok-p">,</span>  <span class="tok-n">database</span><span class="tok-p">,</span>  <span class="tok-n">username</span><span class="tok-p">,</span>  <span class="tok-n">password</span><span class="tok-p">,</span>  <span class="tok-n">clustered</span><span class="tok-p">,</span>  <span class="tok-n">timeout</span><span class="tok-p">,</span>  <span class="tok-n">service</span><span class="tok-p">)</span>  
+
+<span class="tok-c1"># closes the statement (to do after execute + necessary fetch/put to close the statement and be able to open another one through prepare())</span>  
+<span class="tok-n">con</span><span class="tok-o">.</span><span class="tok-n">close</span><span class="tok-p">()</span>  
+
+<span class="tok-c1"># closes the connection completely, destructing the socket, a call to "connect(..)" needs to be done do continue</span>  
+<span class="tok-n">con</span><span class="tok-o">.</span><span class="tok-n">close_connection</span><span class="tok-p">()</span></code></pre>
+            </div>
+        </div>
+    </body>
+</html>

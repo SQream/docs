@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+    </head>
+    <body class="article toc2 toc-left">
+        <h2 id="_create_the_dashboard_role_for_sqream">Create the Dashboard Role (for SQream)</h2>
+        <div class="sectionbody">
+            <div class="paragraph">
+                <p>This step is required only during the first installation of Dashboard. During an upgrade this step is skipped.<br></br></p>
+            </div>
+            <div class="paragraph">
+                <p>Create the <strong>dashboard</strong> role for SQream. This role is used by the Administration Dashboard application to connect to SQream and perform all relevant database operations, such as stop statements, etc.
+Therefore, this role must have superuser permissions.</p>
+            </div>
+            <div class="ulist">
+                <ul>
+                    <li>
+                        <p>Connect to SQream. You can use the ClientCmd or any other supported client to log on to the master database of SQream.</p>
+                    </li>
+                    <li>
+                        <p>Run the following statements:</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="code">
+                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">CREATE</span>  <span class="tok-k">ROLE</span>  <span class="tok-n">dashboard</span><span class="tok-p">;</span>  
+<span class="tok-k">GRANT</span>  <span class="tok-n">superuser</span>  <span class="tok-k">TO</span>  <span class="tok-n">dashboard</span><span class="tok-p">;</span>  
+<span class="tok-k">GRANT</span>  <span class="tok-n">login</span>  <span class="tok-k">TO</span>  <span class="tok-n">dashboard</span><span class="tok-p">;</span>  
+<span class="tok-k">GRANT</span>  <span class="tok-k">PASSWORD</span>  <span class="tok-s1">'sqream'</span>  <span class="tok-k">to</span>  <span class="tok-n">dashboard</span><span class="tok-p">;</span></code></pre>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

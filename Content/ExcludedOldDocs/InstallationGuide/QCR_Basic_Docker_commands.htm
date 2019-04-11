@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic">
+    <head>
+    </head>
+    <body>
+        <h1>Basic Docker commands</h1>
+        <p>Use these Docker commands to find containers and images.</p>
+        <p>List all running containers (names, ID's etc.):</p>
+        <p class="code">docker ps</p>
+        <p>Log inside a running container:</p>
+        <p class="code">docker exec -it &lt;container-name or container-id&gt; bash</p>
+        <p>List all images installed on machine:</p>
+        <p class="code">docker images</p>
+        <p>Start a new container running on the same network (all sqream running containers are available by name via DNS):</p>
+        <p class="code">docker run -it --rm --network sqream_network &lt;sqream-image-name:tag&gt; bash</p>
+    </body>
+</html>

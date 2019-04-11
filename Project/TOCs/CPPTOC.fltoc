@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Drivers/CPP/1_CPP_Connector__Overview.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    ChapterNumberReset="reset"
+    ChapterNumber="1"
+    BreakType="chapter"
+    StartSection="false"
+    PageNumberReset="continue"
+    SectionNumberReset="continue"
+    VolumeNumberReset="same">
+    <TocEntry
+      Title="Overview"
+      Link="/Content/Drivers/CPP/1_CPP_Connector__Overview.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Drivers/CPP/2_1_API_Reference.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Drivers/CPP/3_1.1_Connection.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Drivers/CPP/4_1.2_Statement.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"></TocEntry>
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Drivers/CPP/5_1.3_Helper_functions.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Drivers/CPP/6_1.4_High_level_protocol_functions.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    </TocEntry>
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Drivers/CPP/7_2.1_Import_and_establish_a_connection.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+      <TocEntry
+        Title="Import and establish a connection"
+        Link="/Content/Drivers/CPP/7_2.1_Import_and_establish_a_connection.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+        ComputeToc="false" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Drivers/CPP/8_2.2_Run_a_query__Create_a_table.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"></TocEntry>
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Drivers/CPP/9_2.3_Run_a_query__Insert_values_into_table.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Drivers/CPP/10_2.4_Run_a_query__Get_column_values_from_table.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Drivers/CPP/11_2.5_Run_a_query__Use_bulk_insert.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"></TocEntry>
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Drivers/CPP/12_2.6_Run_a_query__Starting_and_finishing.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    </TocEntry>
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Drivers/CPP/13_Copyright.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+  </TocEntry>
+</CatapultToc>

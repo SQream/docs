@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\Resources\MasterPages\Drivers.flmsp');">
+    <head>
+    </head>
+    <body class="article toc2 toc-left">
+        <h3 id="_run_a_query_insert_values_into_table">Run a query - Insert values into table</h3>
+        <div class="code">
+            <div class="title">Example</div>
+            <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="java">      <span class="tok-n">String</span>  <span class="tok-n">statement</span>  <span class="tok-o">=</span>  <span class="tok-s">"insert into table_name(int_column) values (5), (6), (7), (8)"</span><span class="tok-o">;</span>  
+    <span class="tok-n">StatementHandle</span>  <span class="tok-n">stmt</span>  <span class="tok-o">=</span>  <span class="tok-k">new</span>  <span class="tok-n">StatementHandle</span><span class="tok-o">(</span><span class="tok-n">Client</span><span class="tok-o">,</span>  <span class="tok-n">statement</span><span class="tok-o">);</span>  
+    <span class="tok-n">stmt</span><span class="tok-o">.</span><span class="tok-na">prepare</span><span class="tok-o">();</span>  
+    <span class="tok-n">stmt</span><span class="tok-o">.</span><span class="tok-na">execute</span><span class="tok-o">();</span>  
+    <span class="tok-n">stmt</span><span class="tok-o">.</span><span class="tok-na">close</span><span class="tok-o">();</span></code></pre>
+            </div>
+        </div>
+    </body>
+</html>

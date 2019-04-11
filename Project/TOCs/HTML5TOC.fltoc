@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Home.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <TocEntry
+      Title="Guides"
+      Link="/Project/TOCs/GuidesTOC.fltoc"
+      ReplaceMergeNode="true" />
+    <TocEntry
+      Title="Concepts"
+      Link="/Project/TOCs/ConceptsTOC.fltoc"
+      StartSection="false"
+      ReplaceMergeNode="true" />
+    <TocEntry
+      Title="Reference"
+      Link="/Project/TOCs/SQLReferenceTOC.fltoc"
+      ReplaceMergeNode="true"
+      StartSection="false"
+      ComputeToc="false" />
+    <TocEntry
+      Title="Drivers"
+      Link="/Project/TOCs/DriversTOC.fltoc"
+      ComputeToc="false"
+      ComputedTocAction="Replace"
+      StartSection="false"
+      ReplaceMergeNode="true"
+      SectionNumberReset="continue"
+      VolumeNumberReset="same"
+      ChapterNumberReset="continue" />
+    <TocEntry
+      Title="Release Notes"
+      Link="/Project/TOCs/ReleaseNotesTOC.fltoc"
+      ReplaceMergeNode="true" />
+    <TocEntry
+      Title="FAQ"
+      Link="/Content/FAQ.html" />
+  </TocEntry>
+</CatapultToc>

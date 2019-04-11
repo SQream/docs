@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\Resources\MasterPages\Drivers.flmsp');">
+    <head>
+        <link href="../../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body class="article toc2 toc-left">
+        <h3 id="_high_level_protocol_functions">High level protocol functions</h3>
+        <table class="TableStyle-Default_Table" style="mc-table-style: url('../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+            <caption class="title">Table 4. Retrieve results from a select query by column index</caption>
+            <colgroup>
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr class="TableStyle-Default_Table-Head-Header1">
+                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Function</th>
+                    <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">is_null(size_t col_id)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">Check whether the value in column index col_id is a null</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">get_bool(size_t col_id)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">Get bool value from column index col_id at the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">get_ubyte(size_t col_id)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">Get uint8_t value from column index col_id at the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">get_short(size_t col_id)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">Get int16_t value from column index col_id at the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">get_int(size_t col_id)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">Get int32_t value from column index col_id at the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">get_long(size_t col_id)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">Get int64_t value from column index col_id at the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">get_float(size_t col_id)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">Get float value from column index col_id at the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">get_double(size_t col_id)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">Get double value from column index col_id at the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">get_date(size_t col_id)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">Get uint32_t value from column index col_id at the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">get_datetime(size_t col_id)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">Get uint64_t value from column index col_id at the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">get_varchar(size_t col_id)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">Get string value from column index col_id at the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">get_nvarchar(size_t col_id)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyA-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">Get string value from column index col_id at the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="TableStyle-Default_Table" style="mc-table-style: url('../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+            <caption class="title">Table 5. Retrieve results from a select query by column name</caption>
+            <colgroup>
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr class="TableStyle-Default_Table-Head-Header1">
+                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Function</th>
+                    <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">is_null(string col_name)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">Check whether the value in column named col_name is a null</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">get_bool(string col_name)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">Get Boolean value from column named col_name at the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">get_ubyte(String col_name)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">Get UByte value from column named col_name at the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">get_short(string col_name)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">Get Short value from column named col_name at the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">get_int(string col_name)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">Get Int value from column named col_name at the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">get_long(string col_name)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">Get Long value from column named col_name at the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">get_float(string col_name)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">Get Float value from column named col_name at the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">get_double(string col_name)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">Get Double value from column named col_name at the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">get_date(string col_name)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">Get Date value from column named col_name at the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">get_datetime(string col_name)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">Get Datetime value from column named col_name at the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">get_varchar(string col_name)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">Get Varchar value from column named col_name at the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">get_nvarchar(string col_name)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyA-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">Get Nvarchar value from column named col_name at the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="TableStyle-Default_Table" style="mc-table-style: url('../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+            <caption class="title">Table 6. Set data by index following a bulk insert query</caption>
+            <colgroup>
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr class="TableStyle-Default_Table-Head-Header1">
+                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Function</th>
+                    <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">set_null(size_t col)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">Set column at index col in the current row to null</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">set_bool(size_t col, bool val)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">Set column at index col of type Boolean in the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">set_ubyte(size_t col, uint8_t val)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">Set column at index col of type UByte in the current row - unsignted bytes only</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">set_short(size_t col, uint16_t val)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">Set column at index col of type Short in the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">set_int(size_t col, uint32_t val)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">Set column at index col of type Int in the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">set_long(size_t col, uint64_t val)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">Set column at index col of type Long in the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">set_float(size_t col, float val)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">Set column at index col of type Float in the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">set_double(size_t col, double val)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">Set column at index col of type Double in the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">set_date(size_t col, uint32_t val)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">Set column at index col of type Date in the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">set_datetime(size_t col, uint64_t val)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">Set column at index col of type Datetime in the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">set_varchar(size_t col, string val)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">Set column at index col of type Varchar in the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">set_nvarchar(size_t col, string val)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyA-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">Set column at index col of type Nvarchar in the current row</pre>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

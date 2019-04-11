@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+    </head>
+    <body class="article toc2 toc-left">
+        <h3 id="_setup_the_sqream_config_json_file">Setup the sqream_config.json file</h3>
+        <div class="paragraph">
+            <p>This step is required only during the first installation of Dashboard. During an upgrade this step is skipped.<br></br></p>
+        </div>
+        <div class="paragraph">
+            <p>The sqream_config.json configuration file is part of the SQream installation package.
+Location: <code>/etc/sqream/sqream_config.json</code></p>
+        </div>
+        <div class="paragraph">
+            <p>Edit the sqream_config.json file and configure the settings in the <strong>server</strong> block to match your local system. Typically this is the same configuration as done in <code>sqream1_config.json</code>, <code>sqream2_config.json</code> (etc).</p>
+        </div>
+        <div class="ulist">
+            <ul>
+                <li>
+                    <p><strong>licensePath</strong> - Points to the license file (path and file name).</p>
+                </li>
+                <li>
+                    <p><strong>cluster</strong> - Points to the SQream storage folder.</p>
+                </li>
+            </ul>
+        </div>
+        <div class="paragraph">
+            <p class="example">For Example:</p>
+        </div>
+        <div class="code">
+            <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="json"><span class="tok-s2">"server"</span><span class="tok-err">:</span>  <span class="tok-p">{</span>  
+    <span class="tok-nt">"licensePath"</span>  <span class="tok-p">:</span>  <span class="tok-s2">"/etc/sqream/license.enc"</span><span class="tok-p">,</span>  
+    <span class="tok-nt">"port"</span><span class="tok-p">:</span>  <span class="tok-mi">5000</span><span class="tok-p">,</span>  
+    <span class="tok-nt">"cluster"</span><span class="tok-p">:</span>  <span class="tok-s2">"/home/sqream/sqream_storage"</span><span class="tok-p">,</span>  
+    <span class="tok-nt">"gpu"</span><span class="tok-p">:</span>  <span class="tok-mi">0</span><span class="tok-p">,</span>  
+    <span class="tok-nt">"ssl_port"</span><span class="tok-p">:</span><span class="tok-mi">5100</span>  
+<span class="tok-p">}</span></code></pre>
+            </div>
+        </div>
+    </body>
+</html>

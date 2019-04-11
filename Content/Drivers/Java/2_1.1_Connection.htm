@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\Resources\MasterPages\Drivers.flmsp');">
+    <head>
+        <link href="../../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body class="article toc2 toc-left">
+        <h2 id="_api_reference">API Reference</h2>
+        <div class="sectionbody">
+            <div class="paragraph">
+                <p>To use the functions include the connector jar and import: "import com.sqream.connector;</p>
+            </div>
+            <div class="sect2">
+                <h3 id="_connection">Connection</h3>
+                <table class="TableStyle-Default_Table" style="mc-table-style: url('../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                    <caption class="title">Table 1. Initializing and closing connections</caption>
+                    <colgroup>
+                        <col />
+                        <col />
+                    </colgroup>
+                    <thead>
+                        <tr class="TableStyle-Default_Table-Head-Header1">
+                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Function</th>
+                            <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-Default_Table-Body-Body1">
+                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                <p class="tableCode">ConnectionHandle ('ip', port, 'database', 'username', 'password', useSsl, rowFlushSize, service)</p>
+                            </td>
+                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                <p class="tableCode">Creates a connection handle with all the connection informations and opens a socket to the ip, this object can be held to keep a connection alive to the sqream server.
+ip - IP address as a string.
+port - port number SQream is listening on.
+database - name of database to connect to.
+username, password - connection credentials. default is 'sqream' for both.
+useSsl - True / false. If true, connect to SQream using SSL port.
+rowFlushSize - Optional - amount of rows on which the connector flushes the data to SQream. Default is 10000
+service - Optional - the service name to connect to. Default is "sqream"</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Default_Table-Body-Body2">
+                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                <p class="tableCode">ConnectionHandle.connect()</p>
+                            </td>
+                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                <p class="tableCode">Connects the handle to the sqream, accessing its database.</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Default_Table-Body-Body1">
+                            <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                <p class="tableCode">ConnectionHandle.close()</p>
+                            </td>
+                            <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
+                                <p class="tableCode">Closes the connection handle.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

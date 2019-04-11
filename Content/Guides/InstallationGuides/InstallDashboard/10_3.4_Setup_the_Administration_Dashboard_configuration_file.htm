@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+    </head>
+    <body class="article toc2 toc-left">
+        <h3 id="_setup_the_administration_dashboard_configuration_file">Setup the Administration Dashboard configuration file</h3>
+        <div class="paragraph">
+            <p>This step is required only during the first installation of Dashboard. During an upgrade this step is skipped.<br></br></p>
+        </div>
+        <div class="paragraph">
+            <p>Edit the uiAppConfig.json and configure the following setting to match your local system:<br></br>* <strong>checkForUpdates</strong> - This flag handles the remote upgrade of Dashboard and Editor. Only for a cloud implementation this should be set to TRUE.<br></br>* <strong>upgradeEditor</strong> - This flag handles the remote upgrade of Editor. Only for a cloud implementation this should be set to TRUE.<br></br>* <strong>usersFolder</strong> - Points to the folder of the dashboard data files (SQLite)<br></br>* <strong>uploadFolder</strong> – Points to the working directory for CSV uploads (temp folder)<br></br>* <strong>csvFolder</strong> – Points to the destination folder for CSV uploads<br></br>* <strong>csvErrorLogFolder</strong> – Points the folder where the error log files are generated during CSV uploads<br></br>* <strong>sqreamLicenseUtilPath</strong> – Points to the license_check binary of the SQream DB</p>
+        </div>
+        <div class="paragraph">
+            <p>Configure the settings in the <strong>sqreamCluster</strong> block.
+Make sure to list the ports for all SQream instances (GPU).</p>
+        </div>
+        <div class="paragraph">
+            <p class="example">For Example:</p>
+        </div>
+        <div class="code">
+            <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="json"><span class="tok-s2">"sqreamCluster"</span><span class="tok-err">:</span>  <span class="tok-p">[</span>  
+        <span class="tok-p">{</span>  
+            <span class="tok-nt">"UI_Server"</span><span class="tok-p">:</span>  <span class="tok-kc">true</span><span class="tok-p">,</span>  
+            <span class="tok-nt">"serverIp"</span><span class="tok-p">:</span>  <span class="tok-s2">"1"</span><span class="tok-p">,</span>  
+            <span class="tok-nt">"config"</span><span class="tok-p">:</span>  <span class="tok-p">{</span>  
+                <span class="tok-nt">"sqreams"</span><span class="tok-p">:</span>  <span class="tok-p">[</span>  
+                    <span class="tok-mi">5000</span><span class="tok-p">,</span><span class="tok-mi">5001</span><span class="tok-p">,</span><span class="tok-mi">5002</span><span class="tok-p">,</span><span class="tok-mi">5003</span><span class="tok-p">,</span><span class="tok-mi">5004</span><span class="tok-p">,</span><span class="tok-mi">5005</span><span class="tok-p">,</span><span class="tok-mi">5006</span><span class="tok-p">,</span><span class="tok-mi">5007</span>  
+                <span class="tok-p">],</span></code></pre>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Guides/AdminGuides/UIGuideDashboard/1_Overview.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    ChapterNumberReset="reset"
+    ChapterNumber="1"
+    BreakType="chapter"
+    StartSection="false"
+    PageNumberReset="continue"
+    SectionNumberReset="continue"
+    VolumeNumberReset="same">
+    <TocEntry
+      Title="Overview"
+      Link="/Content/Guides/AdminGuides/UIGuideDashboard/1_Overview.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      StartSection="false" />
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Guides/AdminGuides/UIGuideDashboard/2_1_The_SQream_Dashboard.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Guides/AdminGuides/UIGuideDashboard/3_2_Login.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"></TocEntry>
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Guides/AdminGuides/UIGuideDashboard/4_3_The_Dashboard.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/AdminGuides/UIGuideDashboard/5_3.1_Hosting_Server.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/AdminGuides/UIGuideDashboard/6_3.2_Database_Disk_Distribution.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/AdminGuides/UIGuideDashboard/7_3.3_Disk_Usage.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/AdminGuides/UIGuideDashboard/8_3.4_Active_Statements.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/AdminGuides/UIGuideDashboard/9_3.5_Last_Statements.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    </TocEntry>
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Guides/AdminGuides/UIGuideDashboard/10_4_Import_Data_from_a_CSV_file.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/AdminGuides/UIGuideDashboard/11_4.1_Select_Source.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/AdminGuides/UIGuideDashboard/12_4.2_Import_Setting.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"></TocEntry>
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/AdminGuides/UIGuideDashboard/13_4.3_Select_Target.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/AdminGuides/UIGuideDashboard/14_4.4_Results.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/AdminGuides/UIGuideDashboard/15_4.5_Save_and_Load.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    </TocEntry>
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Guides/AdminGuides/UIGuideDashboard/15_5_Documentation.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Guides/AdminGuides/UIGuideDashboard/16_6_SQream_DB_Logs.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/AdminGuides/UIGuideDashboard/17_6.1_Filter_the_Statements.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/AdminGuides/UIGuideDashboard/18_6.2_Copy.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    </TocEntry>
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Guides/AdminGuides/UIGuideDashboard/19_7_Roles_and_Permissions.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/AdminGuides/UIGuideDashboard/20_7.1_Add_a_role.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"></TocEntry>
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/AdminGuides/UIGuideDashboard/21_7.2_Update_a_role.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/AdminGuides/UIGuideDashboard/22_7.3_Update_Role_Permissions.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/AdminGuides/UIGuideDashboard/23_7.4_Drop_a_Role.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    </TocEntry>
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Guides/AdminGuides/UIGuideDashboard/24_8_Show_Locks.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/AdminGuides/UIGuideDashboard/25_8.1_Show_Locks_and_Filter.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/AdminGuides/UIGuideDashboard/26_8.2_Release_a_lock.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    </TocEntry>
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Guides/AdminGuides/UIGuideDashboard/27_9_Dashboard_Users.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Guides/AdminGuides/UIGuideDashboard/28_10_Dashboard_Setup.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Guides/AdminGuides/UIGuideDashboard/29_11_About_Window.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Guides/AdminGuides/UIGuideDashboard/30_Copyright.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+  </TocEntry>
+</CatapultToc>

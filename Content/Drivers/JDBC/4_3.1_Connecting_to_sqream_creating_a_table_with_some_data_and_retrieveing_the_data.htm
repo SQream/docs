@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\Resources\MasterPages\Drivers.flmsp');">
+    <head>
+    </head>
+    <body class="article toc2 toc-left">
+        <h2 id="_code_samples">Code Samples</h2>
+        <div class="sectionbody">
+            <div class="sect2">
+                <h3 id="_connecting_to_sqream_creating_a_table_with_some_data_and_retrieveing_the_data">Connecting to sqream, creating a table with some data and retrieveing the data</h3>
+                <div class="code">
+                    <div class="title">Example</div>
+                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="java"><span class="tok-kn">import</span>  <span class="tok-nn">java.sql.Connection</span><span class="tok-o">;</span>  
+<span class="tok-kn">import</span>  <span class="tok-nn">java.sql.DatabaseMetaData</span><span class="tok-o">;</span>  
+<span class="tok-kn">import</span>  <span class="tok-nn">java.sql.DriverManager</span><span class="tok-o">;</span>  
+<span class="tok-kn">import</span>  <span class="tok-nn">java.sql.Statement</span><span class="tok-o">;</span>  
+<span class="tok-kn">import</span>  <span class="tok-nn">java.sql.ResultSet</span><span class="tok-o">;</span>  
+
+<span class="tok-kn">import</span>  <span class="tok-nn">java.io.IOException</span><span class="tok-o">;</span>  
+<span class="tok-kn">import</span>  <span class="tok-nn">java.security.KeyManagementException</span><span class="tok-o">;</span>  
+<span class="tok-kn">import</span>  <span class="tok-nn">java.security.NoSuchAlgorithmException</span><span class="tok-o">;</span>  
+<span class="tok-kn">import</span>  <span class="tok-nn">java.sql.SQLException</span><span class="tok-o">;</span>  
+
+
+<span class="tok-kd">public</span>  <span class="tok-kd">class</span>  <span class="tok-nc">SampleTest</span>  <span class="tok-o">{</span>  
+
+    <span class="tok-c1">// Replace with your respective URL</span>  
+    <span class="tok-kd">static</span>  <span class="tok-kd">final</span>  <span class="tok-n">String</span>  <span class="tok-n">url</span>  <span class="tok-o">=</span>  <span class="tok-s">"jdbc:Sqream://127.0.0.1:5000/master;user=sqream;password=sqream;cluster=false;ssl=false"</span><span class="tok-o">;</span>  
+
+    <span class="tok-n">Connection</span>  <span class="tok-n">conn</span>    <span class="tok-o">=</span>  <span class="tok-kc">null</span><span class="tok-o">;</span>  
+    <span class="tok-n">Statement</span>  <span class="tok-n">stmt</span>  <span class="tok-o">=</span>  <span class="tok-kc">null</span><span class="tok-o">;</span>  
+    <span class="tok-n">ResultSet</span>  <span class="tok-n">rs</span>  <span class="tok-o">=</span>  <span class="tok-kc">null</span><span class="tok-o">;</span>  
+    <span class="tok-n">DatabaseMetaData</span>  <span class="tok-n">dbmeta</span>  <span class="tok-o">=</span>  <span class="tok-kc">null</span><span class="tok-o">;</span>  
+
+    <span class="tok-kt">int</span>  <span class="tok-n">res</span>  <span class="tok-o">=</span>  <span class="tok-mi">0</span><span class="tok-o">;</span>  
+
+    <span class="tok-kd">public</span>  <span class="tok-kt">void</span>  <span class="tok-nf">testJDBC</span><span class="tok-o">()</span>  <span class="tok-kd">throws</span>  <span class="tok-n">SQLException</span><span class="tok-o">,</span>  <span class="tok-n">IOException</span>  <span class="tok-o">{</span>  
+
+        <span class="tok-n">conn</span>  <span class="tok-o">=</span>  <span class="tok-n">DriverManager</span><span class="tok-o">.</span><span class="tok-na">getConnection</span><span class="tok-o">(</span><span class="tok-n">url</span><span class="tok-o">,</span><span class="tok-s">"sqream"</span><span class="tok-o">,</span><span class="tok-s">"sqream"</span><span class="tok-o">);</span>  
+
+        <span class="tok-c1">// Create a table</span>  
+        <span class="tok-n">String</span>  <span class="tok-n">sql</span>  <span class="tok-o">=</span>  <span class="tok-s">"create or replace table test (x int)"</span><span class="tok-o">;</span>  
+        <span class="tok-n">stmt</span>  <span class="tok-o">=</span>  <span class="tok-n">conn</span><span class="tok-o">.</span><span class="tok-na">createStatement</span><span class="tok-o">();</span>  
+        <span class="tok-n">stmt</span><span class="tok-o">.</span><span class="tok-na">execute</span><span class="tok-o">(</span><span class="tok-n">sql</span><span class="tok-o">);</span>  
+        <span class="tok-n">stmt</span><span class="tok-o">.</span><span class="tok-na">close</span><span class="tok-o">();</span>  
+
+        <span class="tok-c1">// Insert some valuess</span>  
+        <span class="tok-n">sql</span>  <span class="tok-o">=</span>  <span class="tok-s">"insert into test values (5),(6)"</span><span class="tok-o">;</span>  
+        <span class="tok-n">stmt</span>  <span class="tok-o">=</span>  <span class="tok-n">conn</span><span class="tok-o">.</span><span class="tok-na">createStatement</span><span class="tok-o">();</span>  
+        <span class="tok-n">stmt</span><span class="tok-o">.</span><span class="tok-na">execute</span><span class="tok-o">(</span><span class="tok-n">sql</span><span class="tok-o">);</span>  
+        <span class="tok-n">stmt</span><span class="tok-o">.</span><span class="tok-na">close</span><span class="tok-o">();</span>  
+
+        <span class="tok-c1">// Retrieve</span>  
+        <span class="tok-n">sql</span>  <span class="tok-o">=</span>  <span class="tok-s">"select * from test"</span><span class="tok-o">;</span>  
+        <span class="tok-n">stmt</span>  <span class="tok-o">=</span>  <span class="tok-n">conn</span><span class="tok-o">.</span><span class="tok-na">createStatement</span><span class="tok-o">();</span>  
+        <span class="tok-n">rs</span>  <span class="tok-o">=</span>  <span class="tok-n">stmt</span><span class="tok-o">.</span><span class="tok-na">executeQuery</span><span class="tok-o">(</span><span class="tok-n">sql</span><span class="tok-o">);</span>  
+        <span class="tok-k">while</span><span class="tok-o">(</span><span class="tok-n">rs</span><span class="tok-o">.</span><span class="tok-na">next</span><span class="tok-o">())</span>  <span class="tok-o">{</span>  
+            <span class="tok-n">res</span>  <span class="tok-o">=</span>  <span class="tok-n">rs</span><span class="tok-o">.</span><span class="tok-na">getInt</span><span class="tok-o">(</span><span class="tok-mi">1</span><span class="tok-o">);</span>  
+            <span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-n">res</span><span class="tok-o">);</span>  
+        <span class="tok-o">}</span>  
+        <span class="tok-n">rs</span><span class="tok-o">.</span><span class="tok-na">close</span><span class="tok-o">();</span>  
+        <span class="tok-n">stmt</span><span class="tok-o">.</span><span class="tok-na">close</span><span class="tok-o">();</span>  
+
+        <span class="tok-c1">// Get table metadata</span>  
+        <span class="tok-n">dbmeta</span>  <span class="tok-o">=</span>  <span class="tok-n">conn</span><span class="tok-o">.</span><span class="tok-na">getMetaData</span><span class="tok-o">();</span>  
+        <span class="tok-n">rs</span>  <span class="tok-o">=</span>  <span class="tok-n">dbmeta</span><span class="tok-o">.</span><span class="tok-na">getTables</span><span class="tok-o">(</span><span class="tok-s">"master"</span><span class="tok-o">,</span>  <span class="tok-s">"public"</span><span class="tok-o">,</span>  <span class="tok-s">"test"</span>  <span class="tok-o">,</span><span class="tok-k">new</span>  <span class="tok-n">String</span><span class="tok-o">[]</span>  <span class="tok-o">{</span><span class="tok-s">"TABLE"</span><span class="tok-o">}</span>  <span class="tok-o">);</span>  
+        <span class="tok-k">while</span>  <span class="tok-o">(</span><span class="tok-n">rs</span><span class="tok-o">.</span><span class="tok-na">next</span><span class="tok-o">())</span>  <span class="tok-o">{</span>  
+
+            <span class="tok-n">ResultSet</span>  <span class="tok-n">rs2</span>  <span class="tok-o">=</span>  <span class="tok-n">dbmeta</span><span class="tok-o">.</span><span class="tok-na">getColumns</span><span class="tok-o">(</span><span class="tok-kc">null</span><span class="tok-o">,</span>  <span class="tok-kc">null</span><span class="tok-o">,</span>  <span class="tok-s">"test"</span><span class="tok-o">,</span>  <span class="tok-kc">null</span><span class="tok-o">);</span>  
+            <span class="tok-k">while</span>  <span class="tok-o">(</span><span class="tok-n">rs2</span><span class="tok-o">.</span><span class="tok-na">next</span><span class="tok-o">())</span>  <span class="tok-o">{</span>  
+                <span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-n">rs2</span><span class="tok-o">.</span><span class="tok-na">getString</span><span class="tok-o">(</span><span class="tok-mi">1</span><span class="tok-o">));</span>  
+            <span class="tok-o">}</span>  
+            <span class="tok-n">rs2</span><span class="tok-o">.</span><span class="tok-na">close</span><span class="tok-o">();</span>  
+        <span class="tok-o">}</span>  
+        <span class="tok-n">rs</span><span class="tok-o">.</span><span class="tok-na">close</span><span class="tok-o">();</span>  
+        <span class="tok-n">conn</span><span class="tok-o">.</span><span class="tok-na">close</span><span class="tok-o">();</span>  
+    <span class="tok-o">}</span>  
+
+
+    <span class="tok-kd">public</span>  <span class="tok-kd">static</span>  <span class="tok-kt">void</span>  <span class="tok-nf">main</span><span class="tok-o">(</span><span class="tok-n">String</span><span class="tok-o">[]</span>  <span class="tok-n">args</span><span class="tok-o">)</span>  <span class="tok-kd">throws</span>  <span class="tok-n">SQLException</span><span class="tok-o">,</span>  <span class="tok-n">KeyManagementException</span><span class="tok-o">,</span>  <span class="tok-n">NoSuchAlgorithmException</span><span class="tok-o">,</span>  <span class="tok-n">IOException</span><span class="tok-o">,</span>  <span class="tok-n">ClassNotFoundException</span><span class="tok-o">{</span>  
+
+        <span class="tok-c1">// Load JDBC driver - not needed with newer version</span>  
+        <span class="tok-n">Class</span><span class="tok-o">.</span><span class="tok-na">forName</span><span class="tok-o">(</span><span class="tok-s">"com.sqream.jdbc.SQDriver"</span><span class="tok-o">);</span>  
+
+        <span class="tok-n">SampleTest</span>  <span class="tok-n">test</span>  <span class="tok-o">=</span>  <span class="tok-k">new</span>  <span class="tok-n">SampleTest</span><span class="tok-o">();</span>  
+        <span class="tok-n">test</span><span class="tok-o">.</span><span class="tok-na">testJDBC</span><span class="tok-o">();</span>  
+    <span class="tok-o">}</span>  
+<span class="tok-o">}</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

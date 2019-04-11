@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Drivers/Python/1_The_SQream_Native_Python_Connector__Overview.htm">
+    <TocEntry
+      Title="Overview"
+      Link="/Content/Drivers/Python/2_1.1_Initialization__Termination.htm"></TocEntry>
+    <TocEntry
+      Title="API Reference"
+      Link="/Content/Drivers/Python/2_1.1_Initialization__Termination.htm">
+      <TocEntry
+        Title="Initialization - Termination"
+        Link="/Content/Drivers/Python/2_1.1_Initialization__Termination.htm"></TocEntry>
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Drivers/Python/3_1.2_Statement.htm"></TocEntry>
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Drivers/Python/4_1.3_High_level_protocol_functions.htm"></TocEntry>
+    </TocEntry>
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Drivers/Python/5_2.1_Import_and_establish_a_connection,_run_a_query.htm">
+      <TocEntry
+        Title="Import and establish a connection, run a query"
+        Link="/Content/Drivers/Python/5_2.1_Import_and_establish_a_connection,_run_a_query.htm"></TocEntry>
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Drivers/Python/6_2.2_Example_of_classic_Get_data_loop.htm"></TocEntry>
+      <TocEntry
+        Title="Example of classic Set data loop, using network streaming"
+        Link="/Content/Drivers/Python/7_2.3_Example_of_classic_Set_data_loop,_using_network_streaming_(also_called_Network_Insert).htm"></TocEntry>
+    </TocEntry>
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Drivers/Python/8_Copyright.htm"></TocEntry>
+  </TocEntry>
+</CatapultToc>

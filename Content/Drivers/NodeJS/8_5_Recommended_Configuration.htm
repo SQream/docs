@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\Resources\MasterPages\Drivers.flmsp');">
+    <head>
+    </head>
+    <body class="article toc2 toc-left">
+        <h2 id="_recommended_configuration">Recommended Configuration</h2>
+        <div class="sectionbody">
+            <div class="paragraph">
+                <p>The node application which utilizes the sqream connector should consider the heap size node configuration.</p>
+            </div>
+            <div class="paragraph">
+                <p>When processing large datasets, it is recommended to increase the application heap size with the "--max_old_space_size" node run flag:</p>
+            </div>
+            <div class="code">
+                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">node --max_old_space_size<span class="tok-o">={</span>heapSize<span class="tok-o">}</span> my-application.js</code></pre>
+                </div>
+            </div>
+            <div class="admonitionblock tip">
+                <table>
+                    <tr>
+                        <td class="icon"><i class="fa icon-tip" title="Tip"></i>
+                        </td>
+                        <td class="content">
+                            <div class="paragraph">
+                                <p>The following error message indicates that the heap size configured is not sufficient:</p>
+                            </div>
+                            <div class="paragraph">
+                                <p>FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory</p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

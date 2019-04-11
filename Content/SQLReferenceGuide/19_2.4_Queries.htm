@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\Resources\MasterPages\SQLReference.flmsp');">
+    <head>
+    </head>
+    <body class="article toc2 toc-left">
+        <div id="content">
+            <div class="sect1">
+                <div class="sectionbody">
+                    <div class="sect2">
+                        <h3 id="_queries">Queries</h3>
+                        <div class="paragraph">
+                            <p>Queries are used to retrieve data from the current database.</p>
+                        </div>
+                        <div class="code">
+                            <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>query_term</em></strong> ::=
+
+    SELECT
+        [ TOP <strong><em>num_rows</em></strong> ]
+        [ DISTINCT ]
+        <strong><em>select_list</em></strong>
+        [ FROM table_ref [, ... ]
+            [ WHERE <strong><em>value_expr</em></strong>
+	    | WHERE HIGH_SELECTIVITY( <strong><em>value_expr</em></strong> ) ]
+            [ GROUP BY <strong><em>value_expr</em></strong> [, ... ]
+                [ HAVING <strong><em>value_expr</em></strong> ]
+            ]
+        ]
+        [ <strong><em>query_hint</em></strong> ]
+    |
+    (VALUES ( <strong><em>value_expr</em></strong> [, ... ] ) [, ... ])
+
+<strong><em>select_list</em></strong> ::=
+
+    <strong><em>value_expr</em></strong> [  AS  <strong><em>column_alias</em></strong> ] [, ... ]
+
+<strong><em>column_alias</em></strong> ::= <strong><em>identifier</em></strong>  
+
+<strong><em>table_ref</em></strong> ::=
+
+    <strong><em>table_name</em></strong> [  AS  <strong><em>alias</em></strong> [ ( <strong><em>column_alias</em></strong> [, ... ] ) ] ]
+    | ( <strong><em>query</em></strong> ) [  AS  <strong><em>alias</em></strong> [ ( <strong><em>column_alias</em></strong> [, ... ] ) ] ]
+    | <strong><em>table_ref</em></strong>  <strong><em>join_type</em></strong>  <strong><em>table_ref</em></strong>
+        [ ON <strong><em>value_expr</em></strong> | USING ( <strong><em>join_column</em></strong> [, ... ] ) ]
+
+<strong><em>alias</em></strong> ::= <strong><em>identifier</em></strong>  
+
+<strong><em>join_type</em></strong> ::=
+
+    [ INNER ] [ <strong><em>join_hint</em></strong> ] JOIN
+    | LEFT [ OUTER ] [ <strong><em>join_hint</em></strong> ] JOIN
+    | RIGHT [ OUTER ] [ <strong><em>join_hint</em></strong> ] JOIN
+    | CROSS [ <strong><em>join_hint</em></strong> ] JOIN
+
+<strong><em>join_hint</em></strong> ::=
+
+    MERGE | LOOP
+
+<strong><em>order</em></strong> ::=
+
+    <strong><em>value_expr</em></strong> [ ASC | DESC ] [, ...]  [NULLS FIRST | LAST ]
+
+<strong><em>query_hint</em></strong> ::=
+
+    OPTION ( <strong><em>query_hint_option</em></strong> [, ... ] )
+<strong><em>query_hint_option</em></strong> ::=
+   SET DisableJoinOptTableA = [ TRUE | FALSE ]
+   | SET DisableJoinOptTableB = [ TRUE | FALSE ]</code></pre>
+                            </div>
+                        </div>
+                        <div class="admonitionblock note">
+                            <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                <tr class="TableStyle-Default_Table-Body-Body1">
+                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                    </td>
+                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+See also <a href="20_2.5_Manual_Query_Tuning.htm#WHERE"><strong>WHERE with HIGH_SELECTIVITY</strong></a></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_select_lists">SELECT lists</h4>
+                            <div class="paragraph">
+                                <p><strong>TOP</strong> is used to retrieve only the first rows from a query.</p>
+                            </div>
+                            <div class="admonitionblock note">
+                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1"><strong>TOP</strong> will be the last operation on the query execution. This means that SQream will limit the results to the end-user after executing the entire statement.
+</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="paragraph">
+                                <p><strong>DISTINCT</strong> removes duplicate rows.</p>
+                            </div>
+                            <div class="paragraph">
+                                <p>Value expressions in select lists support aggregate and window
+functions as well as normal value expressions (see below).</p>
+                            </div>
+                            <div class="code">
+                                <div class="title">Examples</div>
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db">  
+<span class="tok-k">select</span>  <span class="tok-o">*</span>  <span class="tok-k">from</span>  <span class="tok-n">t</span><span class="tok-p">;</span>  
+
+<span class="tok-k">select</span>  <span class="tok-mf">1</span>  <span class="tok-o">+</span>  <span class="tok-n">a</span>  <span class="tok-k">from</span>  <span class="tok-n">t</span><span class="tok-p">;</span>  
+
+<span class="tok-k">select</span>  <span class="tok-n">a</span>  <span class="tok-k">as</span>  <span class="tok-n">b</span>  <span class="tok-k">from</span>  <span class="tok-n">t</span><span class="tok-p">;</span>  
+
+<span class="tok-k">select</span>  <span class="tok-n">a</span><span class="tok-o">+</span><span class="tok-n">b</span><span class="tok-p">,</span>  <span class="tok-n">c</span><span class="tok-o">+</span><span class="tok-n">d</span>  <span class="tok-k">from</span>  <span class="tok-n">t</span><span class="tok-p">;</span>  
+
+<span class="tok-k">select</span>  <span class="tok-n">top</span>  <span class="tok-mf">10</span>  <span class="tok-n">col</span>  <span class="tok-k">from</span>  <span class="tok-n">tbl</span><span class="tok-p">;</span>  
+
+<span class="tok-k">select</span>  <span class="tok-n">col</span>  <span class="tok-k">from</span>  <span class="tok-n">tbl</span>  <span class="tok-k">limit</span>  <span class="tok-mf">10</span><span class="tok-p">;</span>  
+
+<span class="tok-k">select</span>  <span class="tok-k">distinct</span>  <span class="tok-n">a</span><span class="tok-p">,</span><span class="tok-n">b</span>  <span class="tok-k">from</span>  <span class="tok-n">t</span><span class="tok-p">;</span></code></pre>
+                                </div>
+                            </div>
+                            <div class="admonitionblock note">
+                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+Column at the <strong>SELECT</strong> list are separated with commas. Columns not separated will be considered as alias: (select a as a1, b as b1 from) can be written as (select a a1, b b1 from)
+</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_from">FROM</h4>
+                            <div class="paragraph">
+                                <p><strong>FROM</strong> is used to specify which tables to read in a query. FROM can either contain table/view names or subqueries.</p>
+                            </div>
+                            <div class="code">
+                                <div class="title">Examples</div>
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db">  
+<span class="tok-k">select</span>  <span class="tok-o">*</span>  <span class="tok-k">from</span>  <span class="tok-n">t</span><span class="tok-p">;</span>  
+
+<span class="tok-k">SELECT</span>  <span class="tok-n">column_name</span><span class="tok-p">(</span><span class="tok-n">s</span><span class="tok-p">)</span>  
+<span class="tok-k">FROM</span>  <span class="tok-n">table1</span>  
+<span class="tok-k">INNER</span>  <span class="tok-k">JOIN</span>  <span class="tok-n">table2</span>  
+<span class="tok-k">ON</span>  <span class="tok-n">table1</span><span class="tok-mf">.</span><span class="tok-n">column_name</span><span class="tok-o">=</span><span class="tok-n">table2</span><span class="tok-mf">.</span><span class="tok-n">column_name</span><span class="tok-p">;</span>  
+
+<span class="tok-k">SELECT</span>  <span class="tok-n">column_name</span><span class="tok-p">(</span><span class="tok-n">s</span><span class="tok-p">)</span>  
+<span class="tok-k">FROM</span>  <span class="tok-n">table1</span>  
+<span class="tok-k">LEFT</span>  <span class="tok-k">JOIN</span>  <span class="tok-n">table2</span>  
+<span class="tok-k">ON</span>  <span class="tok-n">table1</span><span class="tok-mf">.</span><span class="tok-n">column_name</span><span class="tok-o">=</span><span class="tok-n">table2</span><span class="tok-mf">.</span><span class="tok-n">column_name</span><span class="tok-p">;</span>  
+
+<span class="tok-k">SELECT</span>  <span class="tok-n">column_name</span><span class="tok-p">(</span><span class="tok-n">s</span><span class="tok-p">)</span>  
+<span class="tok-k">FROM</span>  <span class="tok-n">table1</span>  
+<span class="tok-k">RIGHT</span>  <span class="tok-k">JOIN</span>  <span class="tok-n">table2</span>  
+<span class="tok-k">ON</span>  <span class="tok-n">table1</span><span class="tok-mf">.</span><span class="tok-n">column_name</span><span class="tok-o">=</span><span class="tok-n">table2</span><span class="tok-mf">.</span><span class="tok-n">column_name</span><span class="tok-p">;</span>  
+
+<span class="tok-k">SELECT</span>  <span class="tok-o">*</span>  
+<span class="tok-k">FROM</span>  <span class="tok-n">table1</span><span class="tok-p">,</span><span class="tok-n">table2</span>  
+<span class="tok-k">WHERE</span>  <span class="tok-n">table1</span><span class="tok-mf">.</span><span class="tok-n">column_name</span><span class="tok-o">=</span><span class="tok-n">table2</span><span class="tok-mf">.</span><span class="tok-n">column_name</span><span class="tok-p">;</span></code></pre>
+                                </div>
+                            </div>
+                            <div class="paragraph">
+                                <p>Join hints can be used to override the query compiler and choose a
+particular join algorithm. The available algorithms are <strong>LOOP</strong>
+(corresponding to non-indexed nested loop join algorithm), and <strong>MERGE</strong>
+(corresponding to sort merge join algorithm).</p>
+                            </div>
+                            <div class="code">
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-o">*</span>  
+<span class="tok-k">FROM</span>  <span class="tok-n">table1</span>  
+<span class="tok-k">INNER</span>  <span class="tok-n">MERGE</span>  <span class="tok-k">JOIN</span>  <span class="tok-n">table2</span>  
+<span class="tok-k">ON</span>  <span class="tok-n">table1</span><span class="tok-mf">.</span><span class="tok-n">column_name</span><span class="tok-o">=</span><span class="tok-n">table2</span><span class="tok-mf">.</span><span class="tok-n">column_name</span><span class="tok-p">;</span>  
+
+<span class="tok-k">SELECT</span>  <span class="tok-o">*</span>  
+<span class="tok-k">FROM</span>  <span class="tok-n">table1</span>  
+<span class="tok-k">INNER</span>  <span class="tok-n">LOOP</span>  <span class="tok-k">JOIN</span>  <span class="tok-n">table2</span>  
+<span class="tok-k">ON</span>  <span class="tok-n">table1</span><span class="tok-mf">.</span><span class="tok-n">column_name</span><span class="tok-o">=</span><span class="tok-n">table2</span><span class="tok-mf">.</span><span class="tok-n">column_name</span><span class="tok-p">;</span></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_where">WHERE</h4>
+                            <div class="paragraph">
+                                <p><strong>WHERE</strong> is used to filter out rows.</p>
+                            </div>
+                            <div class="code">
+                                <div class="title">Examples</div>
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">Column1</span>  
+<span class="tok-k">FROM</span>  <span class="tok-n">table1</span>  
+<span class="tok-k">WHERE</span>  <span class="tok-n">column2</span>  <span class="tok-o">&lt;=</span>  <span class="tok-mf">1</span><span class="tok-p">;</span></code></pre>
+                                </div>
+                            </div>
+                            <div class="admonitionblock note">
+                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+See also <a href="20_2.5_Manual_Query_Tuning.htm#WHERE"><strong>WHERE with HIGH_SELECTIVITY</strong></a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_group_by">GROUP BY</h4>
+                            <div class="paragraph">
+                                <p><strong>GROUP BY</strong> is used to partition a table so that aggregates can be
+applied separately to each partition.</p>
+                            </div>
+                            <div class="code">
+                                <div class="title">Examples</div>
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">select</span>  <span class="tok-n">a</span><span class="tok-p">,</span><span class="tok-n">sum</span><span class="tok-p">(</span><span class="tok-n">b</span><span class="tok-p">)</span>  <span class="tok-k">from</span>  <span class="tok-n">t</span>  <span class="tok-k">group</span>  <span class="tok-k">by</span>  <span class="tok-n">a</span><span class="tok-p">;</span></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_having">HAVING</h4>
+                            <div class="paragraph">
+                                <p><strong>HAVING</strong> is used to filter out rows after GROUP BY processing.</p>
+                            </div>
+                            <div class="code">
+                                <div class="title">Examples</div>
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">select</span>  <span class="tok-n">a</span><span class="tok-p">,</span><span class="tok-n">sum</span><span class="tok-p">(</span><span class="tok-n">b</span><span class="tok-p">)</span>  <span class="tok-k">from</span>  <span class="tok-n">t</span>  <span class="tok-k">group</span>  <span class="tok-k">by</span>  <span class="tok-n">a</span>  <span class="tok-k">having</span>  <span class="tok-n">sum</span><span class="tok-p">(</span><span class="tok-n">b</span><span class="tok-p">)</span>  <span class="tok-o">&gt;</span>  <span class="tok-mf">5</span><span class="tok-p">;</span></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_order_by">ORDER BY</h4>
+                            <div class="paragraph">
+                                <p><strong>ORDER BY</strong> is used to order the results.</p>
+                            </div>
+                            <div class="code">
+                                <div class="title">Examples</div>
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">select</span>  <span class="tok-o">*</span>  <span class="tok-k">from</span>  <span class="tok-n">t</span>  <span class="tok-k">order</span>  <span class="tok-k">by</span>  <span class="tok-n">a</span>  <span class="tok-k">asc</span><span class="tok-p">,</span>  <span class="tok-n">b</span>  <span class="tok-k">desc</span><span class="tok-p">;</span></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_values">VALUES</h4>
+                            <div class="paragraph">
+                                <p><strong>VALUES</strong> is a way to create a 'literal table value'.</p>
+                            </div>
+                            <div class="code">
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db">  
+<span class="tok-k">values</span>  <span class="tok-p">(</span><span class="tok-mf">1</span><span class="tok-p">,</span><span class="tok-s1">'a'</span><span class="tok-p">),</span>  <span class="tok-p">(</span><span class="tok-mf">2</span><span class="tok-p">,</span><span class="tok-s1">'b'</span><span class="tok-p">);</span></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_set_operators">Set operators</h4>
+                            <div class="paragraph">
+                                <p><strong>UNION</strong> is used to concatenate two queries together. SQream currently supports <strong>UNION ALL</strong>, which doesn’t remove duplicate rows.</p>
+                            </div>
+                            <div class="code">
+                                <div class="title">Examples</div>
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">select</span>  <span class="tok-o">*</span>  <span class="tok-k">from</span>  <span class="tok-n">t</span>  
+<span class="tok-k">union</span>  <span class="tok-k">all</span>  
+<span class="tok-k">select</span>  <span class="tok-o">*</span>  <span class="tok-k">from</span>  <span class="tok-n">u</span><span class="tok-p">;</span></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_with_subqueries">WITH Subqueries</h4>
+                            <div class="paragraph">
+                                <p>The WITH query_name clause allow assigning names to subquery blocks for repeated use in the query.</p>
+                            </div>
+                            <div class="code">
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code>WITH <strong><em>alias_1</em></strong> AS (<strong><em>query_term</em></strong>)
+     [, ...]
+SELECT <strong><em>select_list</em></strong>
+FROM <strong><em>alias_1</em></strong>
+   [ JOIN <strong><em>alias_2</em></strong> ON <strong><em>join_condition</em></strong> ]
+   [ WHERE <strong><em>where_condition</em></strong> ]</code></pre>
+                                </div>
+                            </div>
+                            <div class="code">
+                                <div class="title">Examples</div>
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">WITH</span>  
+    <span class="tok-n">alias_a</span>  <span class="tok-k">as</span>  <span class="tok-p">(</span><span class="tok-k">select</span>  <span class="tok-o">*</span>  <span class="tok-k">from</span>  <span class="tok-n">sqream_catalog</span><span class="tok-mf">.</span><span class="tok-n">databases</span><span class="tok-p">),</span>  
+    <span class="tok-n">alias_b</span>  <span class="tok-k">as</span>  <span class="tok-p">(</span><span class="tok-k">select</span>  <span class="tok-o">*</span>  <span class="tok-k">from</span>  <span class="tok-n">sqream_catalog</span><span class="tok-mf">.</span><span class="tok-k">tables</span><span class="tok-p">)</span>  
+<span class="tok-k">SELECT</span>  <span class="tok-n">a</span><span class="tok-mf">.</span><span class="tok-n">database_name</span><span class="tok-p">,</span>  <span class="tok-n">b</span><span class="tok-mf">.</span><span class="tok-n">table_name</span>  
+<span class="tok-k">FROM</span>  <span class="tok-n">alias_a</span>  <span class="tok-n">a</span>  <span class="tok-k">inner</span>  <span class="tok-k">join</span>  <span class="tok-n">alias_b</span>  <span class="tok-n">b</span>  
+<span class="tok-k">ON</span>  <span class="tok-n">a</span><span class="tok-mf">.</span><span class="tok-n">database_name</span><span class="tok-o">=</span><span class="tok-n">b</span><span class="tok-mf">.</span><span class="tok-n">database_name</span><span class="tok-p">;</span></code></pre>
+                                </div>
+                            </div>
+                            <div class="admonitionblock note">
+                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1"><strong>WITH</strong> can not refer to a recursive alias (not self-referencing), that contains no 'order by' in its subquery.
+</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

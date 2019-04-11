@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Drivers/NodeJS/1_Node.js_Driver.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Drivers/NodeJS/2_1.1_Install_Node.js_10.x.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+      <TocEntry
+        Title="Install Node.js 10.x"
+        Link="/Content/Drivers/NodeJS/2_1.1_Install_Node.js_10.x.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    </TocEntry>
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Drivers/NodeJS/3_2.1_Create_a_node.js_file_to_configure_your_connection_and_database_query.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+      <TocEntry
+        Title="Create a node.js file to configure your connection and database query"
+        Link="/Content/Drivers/NodeJS/3_2.1_Create_a_node.js_file_to_configure_your_connection_and_database_query.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Drivers/NodeJS/4_2.2_Run_and_test_the_Node.js_file.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    </TocEntry>
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Drivers/NodeJS/5_3_Events.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      ComputeToc="false"
+      ComputedTocDepth="10"
+      ComputedTocAction="Replace">
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Drivers/NodeJS/6_3.4_Event_Examples.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+        ComputedTocAction="Insert"
+        ComputeToc="false"
+        ComputedTocDepth="10" />
+    </TocEntry>
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Drivers/NodeJS/7_4_Set_Statement_Flag.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Drivers/NodeJS/8_5_Recommended_Configuration.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Drivers/NodeJS/9_Copyright.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+  </TocEntry>
+</CatapultToc>

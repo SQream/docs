@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\Resources\MasterPages\Drivers.flmsp');">
+    <head>
+    </head>
+    <body class="article toc2 toc-left">
+        <h3 id="_run_a_query_create_a_table">Run a query - Create a table</h3>
+        <div class="code">
+            <div class="title">Example</div>
+            <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="cpp"><span class="tok-n">string</span>  <span class="tok-n">statement</span>  <span class="tok-o">=</span>  <span class="tok-s">"create or replace table table_name (int_column int)"</span><span class="tok-p">;</span>  
+<span class="tok-n">sqc</span><span class="tok-p">.</span><span class="tok-n">new_query</span><span class="tok-p">(</span><span class="tok-n">statement</span><span class="tok-p">);</span>  
+<span class="tok-n">sqc</span><span class="tok-p">.</span><span class="tok-n">execute_query</span><span class="tok-p">();</span>  
+<span class="tok-n">sqc</span><span class="tok-p">.</span><span class="tok-n">finish_query</span><span class="tok-p">();</span>  
+
+<span class="tok-n">OR</span>  
+
+<span class="tok-nf">run_direct_query</span><span class="tok-p">(</span><span class="tok-o">&amp;</span><span class="tok-n">sqc</span><span class="tok-p">,</span>  <span class="tok-s">"create or replace table table_name (int_column int)")</span><span class="tok-p">;</span></code></pre>
+            </div>
+        </div>
+    </body>
+</html>

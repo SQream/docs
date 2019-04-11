@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+    </head>
+    <body class="article toc2 toc-left">
+        <h2 id="_stand_alone_system_start_or_stop_the_administration_dashboard_application_as_a_service">Stand-alone system: Start or stop the Administration Dashboard application as a service</h2>
+        <div class="sectionbody">
+            <div class="paragraph">
+                <p>To start the node server as a service run the following command:</p>
+            </div>
+            <div class="code">
+                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash"><span class="tok-nv">NODE_ENV</span><span class="tok-o">=</span>production pm2 start ~/sqream_dashboard/server.js --name sqream_dashboard</code></pre>
+                </div>
+            </div>
+            <div class="paragraph">
+                <p>To stop the node server run the following command:</p>
+            </div>
+            <div class="code">
+                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash"><span class="tok-nv">NODE_ENV</span><span class="tok-o">=</span>production pm2 stop ~/sqream_dashboard/server.js --name sqream_dashboard</code></pre>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

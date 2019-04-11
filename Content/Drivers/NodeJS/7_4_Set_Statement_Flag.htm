@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\Resources\MasterPages\Drivers.flmsp');">
+    <head>
+    </head>
+    <body class="article toc2 toc-left">
+        <h2 id="_set_statement_flag">Set Statement Flag</h2>
+        <div class="sectionbody">
+            <div class="paragraph">
+                <p>You can add a 'SET' flag to statements inside 'runQuery'.</p>
+            </div>
+            <div class="code">
+                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">const <span class="tok-nv">setFlag</span>  <span class="tok-o">=</span>  <span class="tok-s1">'SET showfullexceptioninfo = true;'</span>
+
+const <span class="tok-nv">myConnection</span>  <span class="tok-o">=</span> new Connection<span class="tok-o">(</span>config<span class="tok-o">)</span><span class="tok-p">;</span>
+myConnection.runQuery<span class="tok-o">(</span>query1, <span class="tok-k">function</span>  <span class="tok-o">(</span>err, data<span class="tok-o">){</span>
+  console.log<span class="tok-o">(</span>err, data<span class="tok-o">)</span><span class="tok-p">;</span>  
+<span class="tok-o">}</span>, setFlag<span class="tok-o">)</span><span class="tok-p">;</span></code></pre>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+    </head>
+    <body class="article toc2 toc-left">
+        <h3 id="_setup_the_sql_editor_configuration_file">Setup the SQL Editor configuration file</h3>
+        <div class="paragraph">
+            <p>Edit the uiEditorConfig.json and configure the following setting to match your local system:</p>
+        </div>
+        <div class="ulist">
+            <ul>
+                <li>
+                    <p><strong>disabledSetSessionTag</strong> - If this flag is set to true, internal DB statements performed by the SQL Editor are not written to the statement log of the SQream server.</p>
+                </li>
+                <li>
+                    <p><strong>remoteLoginAvail</strong> - Allows remote login of SQL Editor to SQream DB. If set to false, the SQL Editor can logon to a local SQream DB only (SQream DB and SQL Editor on same machine). If true, the SQL Editor performs logon to a dedicated SQream server (remote), using the host, port and cluster configuration parameters of the file.</p>
+                </li>
+                <li>
+                    <p><strong>treeCatalogDisplay</strong> - possible values: “everybody” or “nobody”. Allows to display or hide the System Views (sqream_catalog) from the left tree.</p>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

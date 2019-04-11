@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic">
+    <head>
+        <link href="../../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body class="article toc2 toc-left">
+        <h2 id="hardware_requirements">Hardware requirements</h2>
+        <div class="sectionbody">
+            <table class="TableStyle-Default_Table" style="mc-table-style: url('../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                <caption class="title">Table 1. SQream hardware requirements</caption>
+                <colgroup>
+                    <col />
+                    <col />
+                </colgroup>
+                <thead>
+                    <tr class="TableStyle-Default_Table-Head-Header1">
+                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Component</th>
+                        <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Recommended</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-Default_Table-Body-Body1">
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <p class="tableblock"><strong>Chassis</strong>
+                            </p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                            <p class="tableblock">Rackmount chassis capable of housing 2 or more NVIDIA GPUs.<br /><strong>Examples</strong>:<br />Dell R730, Dell C4130, Cisco UCS C240 M4, HP DL380g9,<br />Lenovo System x3650 M5, Supermicro SYS-2028U / 6028U,<br />Supermicro SYS-2028GR, Gigabyte G250-G50, Gigabyte G190-H44</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Default_Table-Body-Body2">
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                            <p class="tableblock"><strong>CPU</strong>
+                            </p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                            <p class="tableblock">Dual Intel Xeon E5-2600 v4 processor with at least 8C/16HT, (each).<br /><strong>Suggested model</strong>: Intel Xeon E5-2697 v4</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Default_Table-Body-Body1">
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <p class="tableblock"><strong>RAM</strong>
+                            </p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                            <p class="tableblock">128 GB RAM per logical GPU</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Default_Table-Body-Body2">
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                            <p class="tableblock"><strong>GPU</strong>
+                            </p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                            <p class="tableblock">2x NVIDIA Tesla K80, P40, or P100</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Default_Table-Body-Body1">
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <p class="tableblock"><strong>Power</strong>
+                            </p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                            <p class="tableblock">2x 1100W redundant PSU</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Default_Table-Body-Body2">
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2" rowspan="2">
+                            <p class="tableblock"><strong>In-machine storage</strong>
+                            </p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                            <p class="tableblock">Hardware RAID card with battery/capacitor backup</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Default_Table-Body-Body1">
+                        <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
+                            <p class="tableblock">2x 100GB SSD (RAID1) for OS<br />2x 400GB SSD (RAID1) for fast spooling<br />See <a href="3_2_Storage_requirements.htm">Storage requirements</a> below for additional information about main database storage.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="admonitionblock tip">
+                <table>
+                    <tr>
+                        <td class="icon"><i class="fa icon-tip" title="Tip"></i>
+                        </td>
+                        <td class="content">
+                            <div class="ulist">
+                                <ul>
+                                    <li>
+                                        <p>SQream DB instances make use of CPU cores, RAM, and temporary spools.<br />Higher allocations will allow for better performance.</p>
+                                    </li>
+                                    <li>
+                                        <p>While SQream DB can run on standard desktops or even NVIDIA equipped laptops, this is not recommended.<br />The above requirements are designed for good balanced performance.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

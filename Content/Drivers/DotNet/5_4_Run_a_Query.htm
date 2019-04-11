@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\Resources\MasterPages\Drivers.flmsp');">
+    <head>
+    </head>
+    <body class="article toc2 toc-left">
+        <h2 id="_run_a_query">Run a Query</h2>
+        <div class="sectionbody">
+            <div class="paragraph">
+                <p>Reading data from SQream DB is achieved by using the SqreamDataReader Object which implements the IDataReader interface.</p>
+            </div>
+            <div class="paragraph">
+                <p>The following example shows how to read all the records in the <strong>books</strong> table.</p>
+            </div>
+            <div class="code">
+                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">public class Book
+<span class="tok-o">{</span>
+    public int Id <span class="tok-o">{</span> get<span class="tok-p">;</span> set<span class="tok-p">;</span>  <span class="tok-o">}</span>
+    public string Title <span class="tok-o">{</span> get<span class="tok-p">;</span> set<span class="tok-p">;</span>  <span class="tok-o">}</span>
+    public string Author <span class="tok-o">{</span> get<span class="tok-p">;</span> set<span class="tok-p">;</span>  <span class="tok-o">}</span>  
+<span class="tok-o">}</span>
+
+public List&lt;Book&gt; GetAllBooks<span class="tok-o">(</span>SqreamConnection connection<span class="tok-o">)</span>  
+<span class="tok-o">{</span>
+    var <span class="tok-nv">sql</span>  <span class="tok-o">=</span>  <span class="tok-s2">"select id , title , author from books;"</span><span class="tok-p">;</span>
+    var <span class="tok-nb">command</span>  <span class="tok-o">=</span> new SqreamCommand<span class="tok-o">(</span>sql, connection<span class="tok-o">)</span><span class="tok-p">;</span>
+    var <span class="tok-nv">reader</span>  <span class="tok-o">=</span>  <span class="tok-o">(</span>SqreamDataReader<span class="tok-o">)</span>command.ExecuteReader<span class="tok-o">()</span><span class="tok-p">;</span>
+    var <span class="tok-nv">result</span>  <span class="tok-o">=</span> new List&lt;Book&gt;<span class="tok-o">()</span><span class="tok-p">;</span>  
+    <span class="tok-k">while</span>  <span class="tok-o">(</span>reader.Read<span class="tok-o">())</span>  
+    <span class="tok-o">{</span>
+        var <span class="tok-nv">book</span>  <span class="tok-o">=</span> new Book
+        <span class="tok-o">{</span>  
+            <span class="tok-nv">Id</span>  <span class="tok-o">=</span> reader.GetInt32<span class="tok-o">(</span><span class="tok-m">0</span><span class="tok-o">)</span>,
+            <span class="tok-nv">Title</span>  <span class="tok-o">=</span> reader.GetString<span class="tok-o">(</span><span class="tok-m">1</span><span class="tok-o">)</span>,
+            <span class="tok-nv">Author</span>  <span class="tok-o">=</span> reader.GetString<span class="tok-o">(</span><span class="tok-m">2</span><span class="tok-o">)</span>  
+        <span class="tok-o">}</span><span class="tok-p">;</span>
+
+        result.Add<span class="tok-o">(</span>book<span class="tok-o">)</span><span class="tok-p">;</span>  
+    <span class="tok-o">}</span>  
+    <span class="tok-k">return</span> result<span class="tok-p">;</span>  
+<span class="tok-o">}</span></code></pre>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

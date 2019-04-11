@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic">
+    <head>
+    </head>
+    <body>
+        <h2>Installing the NVIDIA drivers</h2>
+        <ul>
+            <li><a href="#POWER9">POWER9 Setup</a>
+            </li>
+            <li><a href="#Troubles">Troubleshooting the NVIDIA driver</a>
+            </li>
+        </ul>
+        <ol>
+            <li>Follow this link to Nvidia Download center.<br /><a href="https://developer.nvidia.com/cuda-91-download-archive?target_os=Linux&amp;amp;target_arch=ppc64le&amp;amp;target_distro=RHEL&amp;amp;target_version=7&amp;amp;target_type=rpmlocal">https://developer.nvidia.com/cuda-91-download-archive?target_os=Linux&amp;amp;target_arch=ppc64le&amp;amp;target_distro=RHEL&amp;amp;target_version=7&amp;amp;target_type=rpmlocal</a></li>
+            <p>Download rpm (Local) for cuda 9.1 version. (ASK SQREAM)</p>
+            <li>Follow the installation instructions on the download page to install.</li>
+        </ol>
+        <h4><a name="POWER9"></a>POWER9 Setup</h4>
+        <p class="toDo">To complete the NVIDIA setup on Power9, follow these steps:</p>
+        <ol>
+            <li>Follow this link to NVIDIA CUDA Toolkit Documentation/POWER9 Setup and follow the instructions.<br /><a href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#power9-setup">https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#power9-setup</a></li>
+            <li>Run the following command:</li>
+            <p class="code">nvidia-smi</p>
+            <li>Reboot</li>
+        </ol>
+        <h3><a name="Troubles"></a>Troubleshooting the NVIDIA driver</h3>
+        <p>Sometimes, the NVIDIA driver will fail to install if SELINUX is enabled. SELINUX tends to interfere with NVIDIA driver installation and should be disabled by editing the <span class="emphasis">/etc/selinux/config</span> configuration file.</p>
+        <p class="toDo">To see whether SELINUX is enabled, run the following command:</p>
+        <p class="code"># sudo sestatus</p>
+        <p>If SELINUX enabled you can either disable it temporarily, for the current session only, or permanently (recommended).</p>
+        <p class="toDo">To temporarily disable SELINUX, run the following command:</p>
+        <p class="code"># sudo setenforce 0</p>
+        <p class="toDo">To permanently disable SELINUX (recommended):</p>
+        <ol>
+            <li>Run the following command to edit the <span class="emphasis">/etc/selinux/config</span> configuration file:</li>
+            <p class="code">sudo vim /etc/selinux/config</p>
+            <li>	Change the line that reads <span class="strong">SELINUX=enabled</span> to:</li>
+            <p class="code">SELINUX=disabled</p>
+            <li>Reboot</li>
+        </ol>
+    </body>
+</html>

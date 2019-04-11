@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\Resources\MasterPages\Drivers.flmsp');">
+    <head>
+    </head>
+    <body class="article toc2 toc-left">
+        <h2 id="_create_a_connection_to_sqream_db">Create a connection to SQream DB</h2>
+        <div class="sectionbody">
+            <div class="paragraph">
+                <p>Connecting to SQream DB is established by creating a SqreamConnection object with a connection string.</p>
+            </div>
+            <div class="paragraph">
+                <p>Import the SqreamNet namespace to your source code.</p>
+            </div>
+            <div class="paragraph">
+                <p>The following example shows how to connect to a server that listens on port 5000 on the local machine.</p>
+            </div>
+            <div class="paragraph">
+                <p class="example">Example:</p>
+            </div>
+            <div class="code">
+                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">using SqreamNet<span class="tok-p">;</span>
+
+var <span class="tok-nv">connectionString</span>  <span class="tok-o">=</span>  <span class="tok-s2">"Data Source=127.0.0.1,5000;User=sqream;Password=sqream;Initial \ Catalog=master;Integrated Security=true"</span><span class="tok-p">;</span>
+var <span class="tok-nv">connection</span>  <span class="tok-o">=</span> new SqreamConnection<span class="tok-o">(</span>connectionString<span class="tok-o">)</span><span class="tok-p">;</span>
+connection.Open<span class="tok-o">()</span><span class="tok-p">;</span>
+// Tip: Validate the connection was opened
+<span class="tok-k">if</span>  <span class="tok-o">(</span>connection.State !<span class="tok-o">=</span> System.Data.ConnectionState.Open<span class="tok-o">)</span>  
+<span class="tok-o">{</span>
+    throw new SqreamException<span class="tok-o">(</span>string.Format<span class="tok-o">(</span><span class="tok-s2">"failed to connect to sqream"</span><span class="tok-o">))</span><span class="tok-p">;</span>  
+<span class="tok-o">}</span></code></pre>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

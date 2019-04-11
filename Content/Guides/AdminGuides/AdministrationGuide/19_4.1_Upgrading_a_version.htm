@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+    </head>
+    <body>
+        <h2 id="_operations">Operations</h2>
+        <div class="sectionbody">
+            <div class="sect2">
+                <h3 id="_upgrading_a_version">Upgrading a version</h3>
+                <div class="paragraph">
+                    <p>Here are the necessary steps that ensure a smooth upgrade of your SQream DB version</p>
+                </div>
+                <div class="olist arabic">
+                    <ol class="arabic">
+                        <li>
+                            <p><a href="17_3.2_Setting_up_SQream_DB.htm#StartingAndStopping">Stop SQream instances on all servers</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>On each node that SQream is installed, unpack the new tarball<br></br>alongside the old SQream DB directory.<br></br>For example:<br></br></p>
+                        </li>
+                    </ol>
+                </div>
+                <div class="code">
+                    <div class="content"><pre xml:space="preserve">$ cd /home/sqream
+$ mv sqream sqream-old
+$ tar xf sqream-&lt;version&gt;.tar.gz</pre>
+                    </div>
+                </div>
+                <div class="olist arabic">
+                    <ol class="arabic" start="3">
+                        <li>
+                            <p>Repeat the above step for each node that the SQream DB executables exist</p>
+                        </li>
+                        <li>
+                            <p>It may be necessary to run the metadata upgrade utility.<br></br>(This may take a few moments)<br></br></p>
+                        </li>
+                    </ol>
+                </div>
+                <div class="code">
+                    <div class="content"><pre xml:space="preserve">$ cd sqream/bin
+$ ./upgrade_storage &lt;path to sqream storage cluster&gt;</pre>
+                    </div>
+                </div>
+                <div class="olist arabic">
+                    <ol class="arabic" start="5">
+                        <li>
+                            <p><a href="17_3.2_Setting_up_SQream_DB.htm#StartingAndStopping">Restart the services</a>
+                            </p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

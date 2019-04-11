@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\Resources\MasterPages\Drivers.flmsp');">
+    <head>
+        <link href="../../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body class="article toc2 toc-left">
+        <h3 id="_statement">Statement</h3>
+        <table class="TableStyle-Default_Table" style="mc-table-style: url('../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+            <caption class="title">Table 2. Statement execution</caption>
+            <colgroup>
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr class="TableStyle-Default_Table-Head-Header1">
+                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Function</th>
+                    <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <p class="tableCode">StatementHandle(ConnectionHandle, 'statement')</p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <p class="tableCode">Creates a statement object which purpose is to operate the different messages of the protocol in order to execute a query and its different functionalities.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <p class="tableCode">StatementHandle.prepare()</p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <p class="tableCode">Prepares the statement of the current StatementHandle.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <p class="tableCode">StatementHandle.execute()</p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <p class="tableCode">Executes the statement of the current StatementHandle. Comes after prepare().</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <p class="tableCode">StatementHandle.nextRow()</p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <p class="tableCode">On an insert query - start setting the next row for insertion. SQream does not support partial inserts. On a select query - move to next row index to start selecting items from various columns using get() functions</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                        <p class="tableCode">StatementHandle.close()</p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
+                        <p class="tableCode">Closes the StatementHandle.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

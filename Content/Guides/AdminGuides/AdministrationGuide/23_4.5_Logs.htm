@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+    </head>
+    <body>
+        <h3 id="_logs">Logs</h3>
+        <div class="paragraph">
+            <p>SQream DB generates the following log files for the DBA everyday work</p>
+        </div>
+        <div class="ulist">
+            <div class="title">Log files:</div>
+            <ul>
+                <li>
+                    <p><strong>clientLogger_statement</strong> - Keeps track of statements being run in the server, including success/failure, number of rows returned from the query and number of rows processed by the query.</p>
+                </li>
+                <li>
+                    <p><strong>clientLogger_server</strong> - Keeps track of server start/stop times</p>
+                </li>
+                <li>
+                    <p><strong>clientLogger_session</strong> - Keeps track of different sessions</p>
+                </li>
+                <li>
+                    <p><strong>clientLogger_login</strong> - Tracks user login times and IP addresses</p>
+                </li>
+                <li>
+                    <p><strong>clientLogger_exception</strong> - Tracks system exceptions</p>
+                </li>
+                <li>
+                    <p><strong>clientLogger_execution</strong> - Tracks heavy statements execution statistics (over nodeInfoLoggingSec flag)</p>
+                </li>
+                <li>
+                    <p><strong>clientLogger_debug</strong> - Logs debug information. Default debug log level = 4 (INFO). The debug log level can be changed running a statement (e.g., SET logDebugLevel = 6;). No need to restart the SQream instance.</p>
+                </li>
+                <li>
+                    <p><strong>metadata_server.log</strong> - Tracks metadata server status and executions queue</p>
+                </li>
+            </ul>
+        </div>
+        <div class="admonitionblock note">
+            <table>
+                <tr>
+                    <td class="icon"><i class="fa icon-note" title="Note"></i>
+                    </td>
+                    <td class="content">
+                        <div class="paragraph">
+                            <p>File names: Log file names contain a day and time stamp. For example: <strong>clientLogger_statement_20181108_000000.log</strong></p>
+                        </div>
+                        <div class="paragraph">
+                            <p>Statement log messages are cut at a length of 10,000 characters. This is to allow loading statements logs files (CSV) into External Tables of SQream. Remember: Row length is limited to 10,240 characters.</p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="paragraph">
+            <div class="title">Log file configuration:</div>
+            <p>From V2.18.1 the following default behavior is configured:</p>
+        </div>
+        <div class="ulist">
+            <ul>
+                <li>
+                    <p>Each SQream instance generates a separate set of log files into a dedicated folder (folder name contains IP and port). For example: /home/sqream/sqream_storage/sqreamdb/logs/<strong>127.0.0.1_5000</strong>.</p>
+                </li>
+                <li>
+                    <p>Log file rotation: One separate log file per calendar day. New file is generated at midnight.</p>
+                </li>
+            </ul>
+        </div>
+        <div class="paragraph">
+            <div class="title">Related runtimeGlobalflags:</div>
+        </div>
+        <div class="ulist">
+            <ul>
+                <li>
+                    <p><strong>useClientLog</strong>: This flag is set the TRUE (by default) to activate the new logging framework.</p>
+                </li>
+            </ul>
+        </div>
+        <div class="ulist">
+            <ul>
+                <li>
+                    <p><strong>useLogFileRotateHourOfDay</strong>: Enable/disable the rotation of log files. By default this flag is set to TRUE to allow seperate files for separate days.</p>
+                </li>
+                <li>
+                    <p><strong>logFileRotateHourOfDay</strong>: Rollover time parameter. By default this flag is set to 0 (=rotation at midnight). Set in the hour of the day. Possible range of values: 0-23.</p>
+                </li>
+                <li>
+                    <p><strong>enableLogDebug</strong>: Activate / deactivate the debug log. Default value = true;</p>
+                </li>
+                <li>
+                    <p><strong>logDebugLevel</strong>: Supported Log Levels are: 0 = [SYSTEM], 1 - [FATAL], 2 - [ERROR], 3 - [WARN], 4 - [INFO], 5 - [DEBUG], 6 - [TRACE]. Default = 4 (INFO);</p>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

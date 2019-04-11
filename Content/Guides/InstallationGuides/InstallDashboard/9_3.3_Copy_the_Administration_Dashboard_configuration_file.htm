@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+    </head>
+    <body class="article toc2 toc-left">
+        <h3 id="_copy_the_administration_dashboard_configuration_file">Copy the Administration Dashboard configuration file</h3>
+        <div class="paragraph">
+            <p>This step is required only during the first installation of Dashboard. During an upgrade this step is skipped.<br></br></p>
+        </div>
+        <div class="paragraph">
+            <p>The dashboard configuration file is part of the installation package.
+Location: <code>~sqream_dashboard/config/default/</code></p>
+        </div>
+        <div class="paragraph">
+            <p>Options:
+* <strong>uiAppConfig.json</strong> file is used for cloud installations only
+* <strong>uiAppConfigOnPrem.json</strong> file is used for on-premises installations</p>
+        </div>
+        <div class="paragraph">
+            <p>Copy the relevant JSON file into the /etc/sqream directory. This is the folder where typically all SQream related configuration files are stored. Note that the final file name must be <strong>uiAppConfig.json</strong>.</p>
+        </div>
+        <div class="paragraph">
+            <p class="example">For Example:</p>
+        </div>
+        <div class="code">
+            <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">sudo cp ~sqream_dashboard/config/default/uiAppConfigOnPrem.json /etc/sqream/uiAppConfig.json</code></pre>
+            </div>
+        </div>
+        <div class="paragraph">
+            <p>Change the owner of the uiAppConfig.json to user sqream.</p>
+        </div>
+        <div class="paragraph">
+            <p class="example">For Example:</p>
+        </div>
+        <div class="code">
+            <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">sudo chown sqream:sqream /etc/sqream/uiAppConfig.json</code></pre>
+            </div>
+        </div>
+    </body>
+</html>

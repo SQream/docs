@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\Resources\MasterPages\Drivers.flmsp');">
+    <head>
+    </head>
+    <body class="article toc2 toc-left">
+        <h3 id="_run_a_query_get_column_values_from_table">Run a query - Get column values from table</h3>
+        <div class="code">
+            <div class="title">Example</div>
+            <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="java">      <span class="tok-c1">// Retrieve data</span>  
+    <span class="tok-n">String</span>  <span class="tok-n">statement</span>  <span class="tok-o">=</span>  <span class="tok-s">"select int_column from table_name"</span><span class="tok-o">;</span>  
+    <span class="tok-n">StatementHandle</span>  <span class="tok-n">stmt</span>  <span class="tok-o">=</span>  <span class="tok-k">new</span>  <span class="tok-n">StatementHandle</span><span class="tok-o">(</span><span class="tok-n">Client</span><span class="tok-o">,</span>  <span class="tok-n">statement</span><span class="tok-o">);</span>  
+    <span class="tok-n">stmt</span><span class="tok-o">.</span><span class="tok-na">prepare</span><span class="tok-o">();</span>  
+    <span class="tok-n">stmt</span><span class="tok-o">.</span><span class="tok-na">execute</span><span class="tok-o">();</span>  
+
+    <span class="tok-c1">// Pull out the actual data</span>  
+    <span class="tok-k">while</span>  <span class="tok-o">(</span><span class="tok-n">stmt</span><span class="tok-o">.</span><span class="tok-na">nextRow</span><span class="tok-o">())</span>  
+        <span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-s">"Number recieved: "</span>  <span class="tok-o">+</span>  <span class="tok-n">stmt</span><span class="tok-o">.</span><span class="tok-na">getInt</span><span class="tok-o">(</span><span class="tok-mi">1</span><span class="tok-o">));</span>  
+
+    <span class="tok-n">stmt</span><span class="tok-o">.</span><span class="tok-na">close</span><span class="tok-o">();</span>  
+
+
+    <span class="tok-c1">// After running all statements</span>  
+    <span class="tok-c1">//  ----------------------------</span>  
+    <span class="tok-n">client</span><span class="tok-o">.</span><span class="tok-na">close</span><span class="tok-o">()</span>  
+<span class="tok-o">}</span></code></pre>
+            </div>
+        </div>
+    </body>
+</html>

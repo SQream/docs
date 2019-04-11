@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\Resources\MasterPages\Drivers.flmsp');">
+    <head>
+    </head>
+    <body class="article toc2 toc-left">
+        <h3 id="_run_a_query_use_bulk_insert_to_insert_large_amount_of_data_in_a_programmatic_way">Run a query - Use bulk insert to insert large amount of data in a programmatic way</h3>
+        <div class="code">
+            <div class="title">Example</div>
+            <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="cpp"><span class="tok-c1">// Example of classic Set data loop, using network streaming (also called Network Insert)</span>  
+<span class="tok-kt">int</span>  <span class="tok-n">len</span>  <span class="tok-o">=</span>  <span class="tok-mi">3</span><span class="tok-p">;</span>  
+<span class="tok-kt">int</span>  <span class="tok-n">row1</span><span class="tok-p">[</span><span class="tok-n">len</span><span class="tok-p">]</span>  <span class="tok-o">=</span>  <span class="tok-p">{</span><span class="tok-mi">1</span><span class="tok-p">,</span><span class="tok-mi">2</span><span class="tok-p">,</span><span class="tok-mi">3</span><span class="tok-p">};</span>  
+<span class="tok-n">string</span>  <span class="tok-n">row2</span><span class="tok-p">[</span><span class="tok-n">len</span><span class="tok-p">]</span>  <span class="tok-o">=</span>  <span class="tok-p">{</span><span class="tok-s">"s1"</span><span class="tok-p">,</span><span class="tok-s">"s2"</span><span class="tok-p">,</span><span class="tok-s">"s3"</span><span class="tok-p">};</span>  
+
+
+<span class="tok-n">string</span>  <span class="tok-n">statement</span>  <span class="tok-o">=</span>  <span class="tok-s">"create or replace table table_name (int_column int, varchar_column varchar(10))"</span><span class="tok-p">;</span>  
+<span class="tok-n">run_direct_query</span><span class="tok-p">(</span><span class="tok-o">&amp;</span><span class="tok-n">sqc</span><span class="tok-p">,</span>  <span class="tok-n">statement</span><span class="tok-p">);</span>  
+
+<span class="tok-c1">// each interrogation symbol represents a column to which the network insertion can push</span>  
+<span class="tok-n">statement</span>  <span class="tok-o">=</span>  <span class="tok-s">"insert into table_name(int_column, varchar_column) values(?, ?)"</span><span class="tok-p">;</span>  
+<span class="tok-n">sqc</span><span class="tok-p">.</span><span class="tok-n">new_query</span><span class="tok-p">(</span><span class="tok-n">statement</span><span class="tok-p">);</span>  
+<span class="tok-n">sqc</span><span class="tok-p">.</span><span class="tok-n">execute_query</span><span class="tok-p">();</span>  
+<span class="tok-k">for</span>  <span class="tok-p">(</span><span class="tok-kt">int</span>  <span class="tok-n">idx</span>  <span class="tok-o">=</span>  <span class="tok-mi">0</span><span class="tok-p">;</span>  <span class="tok-n">idx</span>  <span class="tok-o">&lt;</span>  <span class="tok-n">len</span><span class="tok-p">;</span>  <span class="tok-n">idx</span>  <span class="tok-o">++</span><span class="tok-p">)</span>  <span class="tok-p">{</span>  
+	<span class="tok-n">sqc</span><span class="tok-p">.</span><span class="tok-n">set_int</span><span class="tok-p">(</span><span class="tok-mi">0</span><span class="tok-p">,</span>  <span class="tok-n">row1</span><span class="tok-p">[</span><span class="tok-n">idx</span><span class="tok-p">]);</span>        <span class="tok-c1">// put a value at column 0 of the table</span>  
+	<span class="tok-n">sqc</span><span class="tok-p">.</span><span class="tok-n">set_varchar</span><span class="tok-p">(</span><span class="tok-mi">1</span><span class="tok-p">,</span>  <span class="tok-n">row2</span><span class="tok-p">[</span><span class="tok-n">idx</span><span class="tok-p">]);</span>    <span class="tok-c1">// put a value at column 1 of the table</span>  
+
+	<span class="tok-n">sqc</span><span class="tok-p">.</span><span class="tok-n">next_query_row</span><span class="tok-p">();</span>  
+<span class="tok-p">}</span>  
+
+<span class="tok-n">sqc</span><span class="tok-p">.</span><span class="tok-n">finish_query</span><span class="tok-p">();</span></code></pre>
+            </div>
+        </div>
+    </body>
+</html>

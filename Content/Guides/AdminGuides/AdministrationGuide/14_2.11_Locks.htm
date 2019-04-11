@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+        <link href="../../../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h3 id="locks">Locks</h3>
+        <div class="paragraph">
+            <p>SQream DB operates in two modes: <strong>exclusive</strong>, which sends a single operation at a time, and <strong>inclusive</strong> which is a multi operations mode. DDL operations are always exclusive.</p>
+        </div>
+        <div class="paragraph">
+            <p>DML are separated to <strong>DELETE/TRUNCATE</strong> as exclusive; and <strong>INSERT</strong> as inclusive. This allows
+ multiple inserts into the table, but prevents multiple <strong>DELETE</strong> operations.</p>
+        </div>
+        <div class="paragraph">
+            <p>Querying (<strong>SELECT</strong> operations) can coexists with both DDL and DML.</p>
+        </div>
+        <div class="sect3">
+            <h4 id="_locking">Locking</h4>
+            <table class="TableStyle-Default_Table" style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                <caption class="title">Table 19. Locks by SQream</caption>
+                <colgroup>
+                    <col style="width: 20%;">
+                    </col>
+                    <col style="width: 20%;">
+                    </col>
+                    <col style="width: 20%;">
+                    </col>
+                    <col style="width: 20%;">
+                    </col>
+                    <col style="width: 20%;">
+                    </col>
+                </colgroup>
+                <tbody>
+                    <tr class="TableStyle-Default_Table-Body-Body1">
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <p class="tableblock">Operation</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <p class="tableblock">Select</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <p class="tableblock">DML (Insert)</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <p class="tableblock">DML (Delete/Truncate)</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                            <p class="tableblock">DDL</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Default_Table-Body-Body2">
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                            <p class="tableblock">Select</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                            <p class="tableblock">No lock</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                            <p class="tableblock">No lock</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                            <p class="tableblock">No lock</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                            <p class="tableblock">No lock</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Default_Table-Body-Body1">
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <p class="tableblock">DML (insert)</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <p class="tableblock">No lock</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <p class="tableblock">No lock</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <p class="tableblock">No lock</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                            <p class="tableblock">Lock</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Default_Table-Body-Body2">
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                            <p class="tableblock">DML (delete/truncate)</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                            <p class="tableblock">No lock</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                            <p class="tableblock">No lock</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                            <p class="tableblock">Lock</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                            <p class="tableblock">Lock</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Default_Table-Body-Body1">
+                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                            <p class="tableblock">DDL</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                            <p class="tableblock">No lock</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                            <p class="tableblock">Lock</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                            <p class="tableblock">Lock</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
+                            <p class="tableblock">Lock</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="paragraph">
+                <p>By default, when a session is requesting a lock on an object and the object is busy,
+SQream will wait 3 seconds before it return an error message. This wait time is defined
+in the configuration JSON. See the <code>statementLockTimeout</code> parameter in SQream Administrator
+Guide for more information.</p>
+            </div>
+            <div class="admonitionblock note">
+                <table>
+                    <tr>
+                        <td class="icon"><i class="fa icon-note" title="Note"></i>
+                        </td>
+                        <td class="content">
+DDL on an object will prevent other DDL/DML to wait on a lock on the same object.
+</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="paragraph">
+                <p>For specific DDL operations, SQream uses global permissions
+that requires very short exclusive locks at the cluster level.
+Global permission will be used on operation such as <strong>CREATE DATABASE/TABLE/ROLE</strong>,
+<strong>ALTER ROLE/TABLE</strong>, <strong>DROP ROLE/TABLE/DATABASE</strong>, <strong>GRANT/REVOKE</strong>.</p>
+            </div>
+        </div>
+        <div class="sect3">
+            <h4 id="_viewing_locks">Viewing locks</h4>
+            <div class="paragraph">
+                <p>To view all existing locks in the SQream database use the utility function show_locks() :</p>
+            </div>
+            <div class="code">
+                <div class="title">Example</div>
+                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">show_locks</span><span class="tok-p">();</span></code></pre>
+                </div>
+            </div>
+        </div>
+        <div class="sect3">
+            <h4 id="_releasing_locks">Releasing locks</h4>
+            <div class="paragraph">
+                <p>To release a specific lock in an active SQream instance, use the <strong>stop_statement()</strong> utility function with the relevant statement_id. Use the statement_id returned by the <strong>show_locks()</strong> utility function.</p>
+            </div>
+            <div class="code">
+                <div class="title">Example</div>
+                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">stop_statement</span><span class="tok-p">(</span><span class="tok-mf">12009</span><span class="tok-p">);</span></code></pre>
+                </div>
+            </div>
+            <div class="paragraph">
+                <p>To release all locks in a suspect/inactive SQream instance, use the utility function <strong>release_defunct_locks()</strong> which will remove the instance from the cluster and release all its resources. To see all SQream instances status, use <strong>show_cluster_nodes()</strong>.</p>
+            </div>
+            <div class="admonitionblock note">
+                <table>
+                    <tr>
+                        <td class="icon"><i class="fa icon-note" title="Note"></i>
+                        </td>
+                        <td class="content">
+The utility function <strong>release_defunct_locks()</strong> works only for a system running the metadata server. In a single instance (no metadata server) it will not work.
+</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="code">
+                <div class="title">Example</div>
+                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">show_cluster_nodes</span><span class="tok-p">();</span>  
+<span class="tok-k">SELECT</span>  <span class="tok-n">release_defunct_locks</span><span class="tok-p">();</span></code></pre>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

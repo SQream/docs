@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic">
+    <head>
+    </head>
+    <body>
+        <h2>Configuring the OS language and timezone</h2>
+        <p>You must verify that the OS language is set to English, that the correct timezone is configured, and that NTP is synchronized.</p>
+        <ul>
+            <li><a href="#Configur">Configuring the OS locale</a>
+            </li>
+            <li><a href="#Configur2">Configuring the timezone</a>
+            </li>
+            <li><a href="#Configur3">Configuring NTP synchronization</a>
+            </li>
+        </ul>
+        <h3><a name="Configur"></a>Configuring the OS locale</h3>
+        <p class="toDo">To check the system locale specified on your CentOS VPS:</p>
+        <ol>
+            <li>Read the /etc/locale.conf file</li>
+            <p class="code"># cat /etc/locale.conf</p>
+            <li>Find the line:</li>
+            <p><span class="codeCH">LANG=</span>
+            </p>
+            <p>It should read:</p>
+            <p><span class="codeCH">LANG=en_US.utf8</span>
+            </p>
+        </ol>
+        <p>If it's not <span class="emphasis">en_US.utf8</span>, set it to that value:</p>
+        <p class="code"># sudo localectl set-locale LANG=en_US.UTF-8</p>
+        <h3><a name="Configur2"></a>Configuring the timezone</h3>
+        <p class="toDo">Run the following command to display all the available timezones:</p>
+        <p class="code"># timedatectl list-timezones</p>
+        <p>This will give you a list of the timezones available for your server. When you find the region/timezone setting that is correct for your server, run the following command to set it:</p>
+        <p class="code"># sudo timedatectl set-timezone region/timezone</p>
+        <h5>Example</h5>
+        <p>To set the timezone to United States Eastern time, type:</p>
+        <p class="code"># sudo timedatectl set-timezone America/New_York</p>
+        <h3><a name="Configur3"></a>Configuring NTP synchronization</h3>
+        <p>NTP synchronization allows your computer to stay in sync with other servers, optimizing predictability in operations that rely on having the correct time.</p>
+        <p class="toDo">To synchronize NTP do the following:</p>
+        <ol>
+            <li>Install the ntp service from the CentOS default repositories:</li>
+            <p class="code"># sudo yum install -y ntp</p>
+            <li>Start the service for this session.</li>
+            <p class="code"># sudo systemctl start ntpd</p>
+            <li>Enable the service so that it is automatically started each time the server boots:</li>
+            <p class="code"># sudo systemctl enable ntpd</p>
+            <li>Configure NTP service to sync against your NTP server or an Internet-based one. Your server will now automatically correct its system clock to align with the global servers.</li>
+        </ol>
+    </body>
+</html>

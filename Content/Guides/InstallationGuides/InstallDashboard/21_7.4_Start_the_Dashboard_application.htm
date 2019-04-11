@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+    </head>
+    <body class="article toc2 toc-left">
+        <h3 id="_start_the_dashboard_application">Start the Dashboard application</h3>
+        <div class="paragraph">
+            <p>To start the dashboard application run the following command:</p>
+        </div>
+        <div class="code">
+            <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash"><span class="tok-c1"># Stand-alone system:</span>  
+<span class="tok-nv">NODE_ENV</span><span class="tok-o">=</span>production pm2 start ~/sqream_dashboard/server.js --name sqream_dashboard
+
+<span class="tok-c1"># HA system with Pacemaker:</span>
+sudo pcs resource <span class="tok-nb">enable</span> dashboard</code></pre>
+            </div>
+        </div>
+    </body>
+</html>

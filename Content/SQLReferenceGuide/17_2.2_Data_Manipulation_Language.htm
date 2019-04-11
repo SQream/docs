@@ -1,0 +1,669 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\Resources\MasterPages\SQLReference.flmsp');">
+    <head>
+        <link href="../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body class="article toc2 toc-left">
+        <div id="content">
+            <div class="sect1">
+                <div class="sectionbody">
+                    <div class="sect2">
+                        <h3 id="_data_manipulation_language">Data Manipulation Language</h3>
+                        <div class="paragraph">
+                            <p>This section covers updates to the data in tables. Queries are in
+their own section which follows this one.</p>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_insert">INSERT</h4>
+                            <div class="paragraph">
+                                <p><strong>INSERT</strong> is used to add rows to a table.</p>
+                            </div>
+                            <div class="code">
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>insert_statement</em></strong> ::=
+
+    INSERT INTO [<strong>schema_name</strong>].<strong><em>table_name</em></strong>
+        [ ( <strong><em>column_name</em></strong> [, ... ] ) ]
+    <strong><em>query</em></strong> ;</code></pre>
+                                </div>
+                            </div>
+                            <div class="code">
+                                <div class="title">Examples</div>
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">INSERT</span>  <span class="tok-k">INTO</span>  <span class="tok-n">my_schema</span><span class="tok-mf">.</span><span class="tok-n">dst1</span>  <span class="tok-k">SELECT</span>  <span class="tok-n">a</span><span class="tok-p">,</span><span class="tok-n">b</span><span class="tok-p">,</span><span class="tok-n">c</span>  <span class="tok-k">from</span>  <span class="tok-n">src</span><span class="tok-p">;</span>  
+
+<span class="tok-k">INSERT</span>  <span class="tok-k">INTO</span>  <span class="tok-n">dst2</span><span class="tok-p">(</span><span class="tok-n">d1</span><span class="tok-p">,</span>  <span class="tok-n">d3</span><span class="tok-p">)</span>  <span class="tok-k">SELECT</span>  <span class="tok-n">d1</span><span class="tok-p">,</span><span class="tok-n">d3</span>  <span class="tok-k">from</span>  <span class="tok-n">src</span><span class="tok-p">;</span>  
+
+<span class="tok-k">INSERT</span>  <span class="tok-k">INTO</span>  <span class="tok-n">t</span><span class="tok-p">(</span><span class="tok-n">cint</span><span class="tok-p">,</span><span class="tok-n">cint_2</span><span class="tok-p">)</span>  <span class="tok-k">VALUES</span><span class="tok-p">(</span><span class="tok-mf">1</span><span class="tok-p">,</span><span class="tok-mf">3</span><span class="tok-p">);</span>  
+
+<span class="tok-k">INSERT</span>  <span class="tok-k">INTO</span>  <span class="tok-n">t</span>  <span class="tok-k">VALUES</span><span class="tok-p">(</span><span class="tok-mf">1</span><span class="tok-p">,</span><span class="tok-mf">3</span><span class="tok-p">);</span></code></pre>
+                                </div>
+                            </div>
+                            <div class="admonitionblock note">
+                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+When the insert statement does not include all the columns in the table, columns which aren’t explicitly mentioned will get their default values (string/number, NULL or identity)
+</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_copy_from_bulk_import"><a name="SQL_Ref_2.2.2._COPY_FROM_(bulk_import)"></a>COPY FROM (bulk import)</h4>
+                            <div class="paragraph">
+                                <p><strong>COPY FROM</strong> is used to quickly insert data from CSV files into a table. It is the recommended way to ingest data.</p>
+                            </div>
+                            <div class="paragraph">
+                                <p>The copy command will always insert data to one table. When using the directory option, all the files in that directory will be loaded into the same table.</p>
+                            </div>
+                            <div class="code">
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>copy_from_statement</em></strong> ::=
+
+    COPY [<strong>schema_name</strong>].<strong><em>table_name</em></strong> [ ( <strong><em>column_name</em></strong> [, ... ] ) ]
+        FROM '<strong><em>file_name</em> | <em>directory_path</em></strong>'
+        [ [ WITH ] ( <strong>option</strong> [ ...] ) ]
+        ;
+
+    with <strong>option</strong> can be one of:
+     	OFFSET <strong>N</strong>
+	LIMIT <strong>N</strong>
+	DELIMITER '<strong><em>delimiter</em></strong>'
+	RECORD DELIMITER '<strong><em>record delimiter</em></strong>'
+        ERROR_LOG '<strong><em>error_log_filename</em></strong>'
+        ERROR_VERBOSITY { 0 | 1 }
+	STOP AFTER <strong>N</strong> ERRORS
+        PARSERS { '[<strong><em>column_name</em></strong>=<strong><em>parser_format</em></strong>, ...]' }</code></pre>
+                                </div>
+                            </div>
+                            <div class="ulist">
+                                <ul>
+                                    <li>
+                                        <p><strong>Files/Directory</strong>:<br />Copy command can either load a specific file or load the entire directory. In both cases, the directory and the file should be available
+to the <a href="../Concepts/3_1.1_SQream_DB_Daemon.htm#top">server process</a> on the host machine.<br />You can use wildcard characters for file name and directory path. Standard wildcard characters for Linux are used.
+Hidden files (files with file names that start with a dot) are skipped.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="admonitionblock note">
+                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <div class="ulist">
+                                                <div class="title">Wildcard options:</div>
+                                                <ul>
+                                                    <li>
+                                                        <p><code>*</code> - Represent zero or more characters.</p>
+                                                    </li>
+                                                    <li>
+                                                        <p><code>?</code> - Represent a single character.</p>
+                                                    </li>
+                                                    <li>
+                                                        <p><code>[a-z]</code> - Represent a range of characters or numbers.</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="ulist">
+                                <ul>
+                                    <li>
+                                        <p><strong>Offset</strong>:<br />The load will start with the offset requested row number. When being used in copy from directory, the offset number will affect each file that is being loaded.</p>
+                                    </li>
+                                    <li>
+                                        <p><strong>Limit</strong>:<br />The load will stop with the requested limit row number. When being used in copy from directory, the limit will affect each file that is being loaded.</p>
+                                    </li>
+                                    <li>
+                                        <p><strong>Delimiter</strong>:<br />The default field delimiter is: <code>,</code> (comma).
+The field delimiter can be any single printable ascii character (32-127), or ascii characters between 1 and 126 enclosed by E'\' (for example: E'\001') excluding the following: '\', 'N', '-', ':', '"', ascii code 10, ascii code 13, all lower case characters, all digits.<br /></p>
+                                        <div class="admonitionblock tip">
+                                            <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                                <tr class="TableStyle-Default_Table-Body-Body1">
+                                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-tip" title="Tip"></i>
+                                                    </td>
+                                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                                        <div class="paragraph">
+                                                            <p>For loading string that contains the column delimiter in them (like a comma or tab), surround the whole string with double quotes ("string").</p>
+                                                        </div>
+                                                        <div class="paragraph">
+                                                            <p>For loading string that contains double quotes in them, enclose each of the double quotes (") with another double quotes (csv data: my""string will be loaded as my"string).<br />This is similar to the <a href="22_2.7_Value_expressions.htm#String">string literal escaping method</a></p>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p><strong>Record delimiter</strong>:<br />The record delimiter must be one of Windows (<code>\r\n</code>) / Linux (<code>\n</code>) / Mac (<code>\r</code>) new line characters.</p>
+                                        <div class="admonitionblock note">
+                                            <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                                <tr class="TableStyle-Default_Table-Body-Body1">
+                                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                                    </td>
+                                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+The copy command will always insert data to one table. When using the directory option, all the files in that directory will be loaded into the same table.
+</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p><strong>Error_log</strong>:<br />When not using error log, SQream will stop the load at the first error message and do rollback to the entire copy. For allowing SQream to load valid rows despite the errors, use the ERROR_LOG with the following options:</p>
+                                    </li>
+                                    <li>
+                                        <p><strong>Stop after N errors</strong>:+
+Stop after N errors allow to load valid rows and ignore errors up until a certain amount of errors (N). If the number of errors in the load reaches the given N, all will be rolled back.</p>
+                                    </li>
+                                    <li>
+                                        <p><strong>Error verbosity</strong>:<br /></p>
+                                        <div class="olist arabic">
+                                            <ol class="arabic">
+                                                <li>
+                                                    <p>0 - only the bad line is printed into the error log file (without the actual error message) - for replaying the error log back to the server.<br /></p>
+                                                </li>
+                                                <li>
+                                                    <p>1 - both bad line and error message are printed at the error log file - for debugging.</p>
+                                                    <div class="admonitionblock note">
+                                                        <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                                            <tr class="TableStyle-Default_Table-Body-Body1">
+                                                                <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                                                </td>
+                                                                <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+Using the COPY command without the ERROR_VERBOSITY option will fail the entire load upon the first error message.
+</td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p><strong>Parsers</strong>:<br />Parses allows specifying a different date-format than the default (ISO8601) for DATE or DATETIME columns. <br /></p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="code">
+                                <div class="title">Examples</div>
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-c1">-- Copy from row 2 (ignore header), and with Windows newline format</span>  
+<span class="tok-k">COPY</span>  <span class="tok-n">table_name</span>  <span class="tok-k">from</span>  <span class="tok-s1">'filename.csv'</span>  <span class="tok-k">with</span>  <span class="tok-k">DELIMITER</span>  <span class="tok-s1">','</span>  
+                                         <span class="tok-nb">RECORD</span>  <span class="tok-k">DELIMITER</span>  <span class="tok-s1">'\r\n'</span>  
+					 <span class="tok-k">OFFSET</span>  <span class="tok-mf">2</span>  
+                                         <span class="tok-n">error_log</span>  <span class="tok-s1">'error.log'</span>  
+                                         <span class="tok-n">error_verbosity</span>  <span class="tok-mf">0</span><span class="tok-p">;</span>  
+
+<span class="tok-k">COPY</span>  <span class="tok-n">table_name</span>  <span class="tok-k">from</span>  <span class="tok-s1">'filename.csv'</span>  <span class="tok-k">with</span>  <span class="tok-k">delimiter</span>  <span class="tok-s1">'|'</span>  
+                                         <span class="tok-n">error_log</span>  <span class="tok-s1">'/temp/load_err.log'</span>  
+                                         <span class="tok-k">offset</span>  <span class="tok-mf">10</span>  
+                                         <span class="tok-k">limit</span>  <span class="tok-mf">100</span>  
+                                         <span class="tok-n">stop</span>  <span class="tok-k">after</span>  <span class="tok-mf">5</span>  <span class="tok-n">errors</span><span class="tok-p">;</span>  
+
+<span class="tok-k">COPY</span>  <span class="tok-n">table_name</span>  <span class="tok-k">from</span>  <span class="tok-s1">'/full_path_directory/'</span>  <span class="tok-k">with</span>  <span class="tok-k">delimiter</span>  <span class="tok-s1">'|'</span>  
+                                                  <span class="tok-n">parsers</span>  <span class="tok-s1">'date_column=iso8601'</span><span class="tok-p">;</span>  
+
+<span class="tok-c1">-- Use wildcard characters to load one level of CSV files:</span>  
+<span class="tok-k">COPY</span>  <span class="tok-p">[</span><span class="tok-n">schema_name</span><span class="tok-p">]</span><span class="tok-mf">.</span><span class="tok-n">table_name</span>  <span class="tok-p">[</span>  <span class="tok-p">(</span>  <span class="tok-n">column_name</span>  <span class="tok-p">[,</span>  <span class="tok-mf">...</span>  <span class="tok-p">]</span>  <span class="tok-p">)</span>  <span class="tok-p">]</span>  
+        <span class="tok-k">FROM</span>  <span class="tok-s1">'/home/sqream/csv/*.csv'</span><span class="tok-p">;</span>  
+
+<span class="tok-c1">-- Load all files within the specified directory and its sub-directories:</span>  
+<span class="tok-k">COPY</span>  <span class="tok-p">[</span><span class="tok-n">schema_name</span><span class="tok-p">]</span><span class="tok-mf">.</span><span class="tok-n">table_name</span>  <span class="tok-p">[</span>  <span class="tok-p">(</span>  <span class="tok-n">column_name</span>  <span class="tok-p">[,</span>  <span class="tok-mf">...</span>  <span class="tok-p">]</span>  <span class="tok-p">)</span>  <span class="tok-p">]</span>  
+        <span class="tok-k">FROM</span>  <span class="tok-s1">'/home/sqream/csv/'</span><span class="tok-p">;</span>  
+
+<span class="tok-c1">-- Use wildcard characters to load all files in  a directory beginning with a, of format CSV:</span>  
+<span class="tok-k">COPY</span>  <span class="tok-p">[</span><span class="tok-n">schema_name</span><span class="tok-p">]</span><span class="tok-mf">.</span><span class="tok-n">table_name</span>  <span class="tok-p">[</span>  <span class="tok-p">(</span>  <span class="tok-n">column_name</span>  <span class="tok-p">[,</span>  <span class="tok-mf">...</span>  <span class="tok-p">]</span>  <span class="tok-p">)</span>  <span class="tok-p">]</span>  
+        <span class="tok-k">FROM</span>  <span class="tok-s1">'/home/sqream/a*/*.csv'</span><span class="tok-p">;</span>  
+
+<span class="tok-c1">-- Use wildcard characters to load all files, in CSV format, in a directory beginning with "Jan_" and followed by two characters. for example: "Jan_31:</span>  
+<span class="tok-k">COPY</span>  <span class="tok-p">[</span><span class="tok-n">schema_name</span><span class="tok-p">]</span><span class="tok-mf">.</span><span class="tok-n">table_name</span>  <span class="tok-p">[</span>  <span class="tok-p">(</span>  <span class="tok-n">column_name</span>  <span class="tok-p">[,</span>  <span class="tok-mf">...</span>  <span class="tok-p">]</span>  <span class="tok-p">)</span>  <span class="tok-p">]</span>  
+        <span class="tok-k">FROM</span>  <span class="tok-s1">'/home/sqream/Jan_??/*.csv'</span><span class="tok-p">;</span></code></pre>
+                                </div>
+                            </div>
+                            <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                                <caption class="title">Table 21. Supported date formats and their parsing</caption>
+                                <colgroup>
+                                    <col />
+                                    <col />
+                                    <col />
+                                    <col />
+                                </colgroup>
+                                <thead>
+                                    <tr class="TableStyle-Default_Table-Head-Header1">
+                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Format Name</th>
+                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Format Pattern</th>
+                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Example</th>
+                                        <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Note</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <div class="literal"><pre xml:space="preserve">ISO8601 or DEFAULT</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <div class="literal"><pre xml:space="preserve">YYYY-MM-DD [hh:mm:ss[.SSS]]</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <div class="literal"><pre xml:space="preserve">2017-12-31 11:12:13.456</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <div class="literal"><pre xml:space="preserve"></pre>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <div class="literal"><pre xml:space="preserve">ISO8601C</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <div class="literal"><pre xml:space="preserve">YYYY-MM-DD [hh:mm:ss[:SSS]]</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <div class="literal"><pre xml:space="preserve">2017-12-31 11:12:13:567</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <div class="literal"><pre xml:space="preserve">Milliseconds are separated by a colon (:).</pre>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <div class="literal"><pre xml:space="preserve">DMY</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <div class="literal"><pre xml:space="preserve">DD/MM/YYYY [hh:mm:ss[.SSS]]</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <div class="literal"><pre xml:space="preserve">31/12/2017 11:12:13.000</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <div class="literal"><pre xml:space="preserve">In versions prior to V2.11 this format was called "British".</pre>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <div class="literal"><pre xml:space="preserve">YMD</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <div class="literal"><pre xml:space="preserve">YYYY/MM/DD [hh:mm:ss[.SSS]]</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <div class="literal"><pre xml:space="preserve">2017/12/31 11:12:13.678</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <div class="literal"><pre xml:space="preserve"></pre>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                            <div class="literal"><pre xml:space="preserve">MDY</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                            <div class="literal"><pre xml:space="preserve">MM/DD/YYYY [hh:mm:ss[.SSS]]</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                            <div class="literal"><pre xml:space="preserve">12/31/2017 11:12:13.456</pre>
+                                            </div>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
+                                            <div class="literal"><pre xml:space="preserve"></pre>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="admonitionblock note">
+                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <div class="paragraph">
+                                                <p>Time parts in brackets [] are optional. If the time part is missing, it will be set to 00:00:00.000. If milliseconds are missing, they are set to 000.</p>
+                                            </div>
+                                            <div class="paragraph">
+                                                <p>Milliseconds are stored as 3 digits. If milliseconds are ingested with more than 3 digits, the system will round them to 3 digits.</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                                <caption class="title">Table 22. Date Format Pattern Syntax</caption>
+                                <colgroup>
+                                    <col />
+                                    <col />
+                                </colgroup>
+                                <thead>
+                                    <tr class="TableStyle-Default_Table-Head-Header1">
+                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Pattern</th>
+                                        <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Explanation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">YYYY</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableblock">four digit year representation (0000-9999)</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">MM</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableblock">two digit month representation (01-12)</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">DD</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableblock">two digit day of month representation (01-31)</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">m</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableblock">short month representation (Jan-Dec)</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">a</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableblock">short day of week representation (Sun-Sat).</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">hh</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableblock">two digit 24 hour representation (00-23)</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">h</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableblock">two digit 12 hour representation (00-12)</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">P</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableblock">uppercase AM/PM representation</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">mm</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableblock">two digit minute representation (00-59)</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">ss</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableblock">two digit seconds representation (00-59)</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                            <p class="tableblock">SSS</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
+                                            <p class="tableblock">3 digits fraction representation for milliseconds (000-999)</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="_copy_to_bulk_export">COPY TO (bulk export)</h4>
+                            <div class="paragraph">
+                                <p><strong>COPY TO</strong> is used to save query results to a file in CSV format.</p>
+                            </div>
+                            <div class="code">
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>copy_to_statement</em></strong> ::=
+
+    COPY ( <strong><em>query</em></strong> ) TO '<strong><em>path/file_name</em></strong>'
+        [ [ WITH ] ( <strong>option</strong> [...] ) ]
+	;
+
+	with <strong>option</strong> can be:
+		DELIMITER '<strong><em>delimiter</em></strong>'
+                HEADER</code></pre>
+                                </div>
+                            </div>
+                            <div class="admonitionblock warning">
+                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-warning" title="Warning"></i>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <div class="ulist">
+                                                <ul>
+                                                    <li>
+                                                        <p>The target path must be accessible by the <a href="../Concepts/3_1.1_SQream_DB_Daemon.htm">server process</a>.</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>If the specified file already exists, it will be overwritten.</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="ulist">
+                                <ul>
+                                    <li>
+                                        <p><strong>Delimiter</strong>:<br />The default field delimiter is: <code>,</code> (comma).
+The field delimiter can be any single printable ascii character (32-127), or ascii characters between 1 and 126 enclosed by E'\' (for example: E'\001') excluding the following: '\', 'N', '-', ':', '"', ascii code 10, ascii code 13, all lower case characters, all digits.<br /></p>
+                                    </li>
+                                    <li>
+                                        <p><strong>Header</strong>:<br />This option adds the column names as the first line (header line) of the output CSV file, using specified field and line delimiters. If COPY is done from a table it adds the natural column names as they appear in the metadata. If COPY is done from a query the system creates an alias name for calculated fields (e.g., SUM(amount)). For calculated fields it is therefore highly recommended to specify a column alias name. Column alias names follow the identifier rules (see <a href="22_2.7_Value_expressions.htm#identifier-definitions">identifier definition</a> section).</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="code">
+                                <div class="title">Examples</div>
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">COPY</span>  <span class="tok-n">my_table</span>  <span class="tok-k">TO</span>  <span class="tok-s1">'/path/file_name'</span><span class="tok-p">;</span>  
+<span class="tok-k">COPY</span>  <span class="tok-n">my_table</span>  <span class="tok-k">TO</span>  <span class="tok-s1">'/path/file_name'</span>  <span class="tok-k">with</span>  <span class="tok-k">HEADER</span><span class="tok-p">;</span>  
+<span class="tok-k">COPY</span>  <span class="tok-n">my_table</span>  <span class="tok-k">TO</span>  <span class="tok-s1">'/path/file_name'</span>  <span class="tok-k">with</span>  <span class="tok-k">DELIMITER</span>  <span class="tok-s1">'|'</span>  <span class="tok-k">HEADER</span><span class="tok-p">;</span>  
+<span class="tok-k">COPY</span>  <span class="tok-p">(</span><span class="tok-k">select</span>  <span class="tok-n">column_a</span><span class="tok-p">,</span>  <span class="tok-n">column_b</span>  <span class="tok-k">from</span>  <span class="tok-n">my_table</span>  <span class="tok-k">where</span>  <span class="tok-n">column_a</span><span class="tok-o">&gt;</span><span class="tok-s1">'2016/01/01'</span><span class="tok-p">)</span>    <span class="tok-k">TO</span>  <span class="tok-s1">'/path/file_name'</span><span class="tok-p">;</span>  
+<span class="tok-k">COPY</span>  <span class="tok-p">(</span><span class="tok-k">select</span>  <span class="tok-n">customer_id</span><span class="tok-p">,</span>  <span class="tok-n">sum</span><span class="tok-p">(</span><span class="tok-n">sales</span><span class="tok-p">)</span>  <span class="tok-k">as</span>  <span class="tok-n">sum_sales</span>  <span class="tok-k">from</span>  <span class="tok-n">sales</span>  <span class="tok-k">group</span>  <span class="tok-k">by</span>  <span class="tok-mf">1</span><span class="tok-p">)</span>  <span class="tok-k">TO</span>  <span class="tok-s1">'/path/file_name'</span>  <span class="tok-k">with</span>  <span class="tok-k">HEADER</span><span class="tok-p">;</span></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="truncate"><a name="TRUNCATE"></a>TRUNCATE TABLE</h4>
+                            <div class="paragraph">
+                                <p>The <strong>TRUNCATE TABLE</strong> command deletes all the rows from a table.
+It has the same effect as a &lt;&lt;delete,<strong>DELETE</strong>&gt; operation on the table without any conditions, but since it does not actually scan the structures, it is much faster.</p>
+                            </div>
+                            <div class="code">
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>truncate_statement</em></strong> ::=
+
+    TRUNCATE TABLE [<strong>schema_name</strong>].<strong><em>table_name</em></strong> [ RESTART IDENTITY | CONTINUE IDENTITY ] ;</code></pre>
+                                </div>
+                            </div>
+                            <div class="paragraph">
+                                <p>Using <strong>RESTART IDENTITY</strong> will reset the identity columns to their
+starting values. <strong>CONTINUE IDENTITY</strong> is the default.</p>
+                            </div>
+                            <div class="paragraph">
+                                <p>See also <a href="#DELETE"><strong>DELETE</strong></a> which provides the ability to delete rows that satisfy a predicate.</p>
+                            </div>
+                            <div class="code">
+                                <div class="title">Examples</div>
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">truncate</span>  <span class="tok-k">table</span>  <span class="tok-n">my_schema</span><span class="tok-mf">.</span><span class="tok-n">t</span><span class="tok-p">;</span></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sect3">
+                            <h4 id="delete"><a name="DELETE"></a>DELETE</h4>
+                            <div class="paragraph">
+                                <p>Delete rows from a table.</p>
+                            </div>
+                            <div class="paragraph">
+                                <p>The <strong>DELETE</strong> command performs a <em>logical</em> deletion of rows that satisfy the WHERE predicate from the specified table.
+As the delete command is only a <em>logical delete</em>, it retains data on disk until a clean-up process is performed.<br />To complete the logical delete with physical removal from disk, use the cleanup utilities (see below).</p>
+                            </div>
+                            <div class="admonitionblock note">
+                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+Only roles with the <strong>DELETE</strong> permission granted may delete from tables.
+</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="paragraph">
+                                <div class="title">Logical Delete</div>
+                                <p>The projected result set for queries will not contain the deleted data. Data is marked for deletion, but not physically deleted from disk.</p>
+                            </div>
+                            <div class="paragraph">
+                                <div class="title">Physical Delete (Cleanup)</div>
+                                <p>Files marked for deletion during the <em>logical deletion</em> stage are removed from disk.
+This is achieved by calling both utility function commands: <strong>CLEANUP_CHUNKS</strong> and <strong>CLEANUP_EXTENTS</strong> sequentially.</p>
+                            </div>
+                            <div class="admonitionblock note">
+                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+During physical delete some files might be rebuilt based on how the data was distributed on disk. This may use up some additional disk space.
+</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="code">
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>delete_statement</em></strong> ::=
+
+    DELETE FROM [<strong>schema_name</strong>].<strong><em>table_name</em></strong>
+         [ WHERE condition ] ;
+
+<strong><em>cleanup_utilities</em></strong> ::=
+
+    SELECT <strong><em>CLEANUP_CHUNKS</em></strong> ( <strong><em>schema_name</em></strong>, <strong><em>table_name</em></strong> ) ;
+
+    SELECT <strong><em>CLEANUP_EXTENTS</em></strong> ( <strong><em>schema_name</em></strong>, <strong><em>table_name</em></strong> ) ;</code></pre>
+                                </div>
+                            </div>
+                            <div class="admonitionblock tip">
+                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-tip" title="Tip"></i>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1"><a href="#TRUNCATE"><strong>TRUNCATE</strong></a> provides a much faster alternative to remove all rows from a table.
+</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="olist arabic">
+                                <div class="title">Best Practices</div>
+                                <ol class="arabic">
+                                    <li>
+                                        <p>Apply the <strong>WHERE</strong> condition to a sorted column where possible.</p>
+                                    </li>
+                                    <li>
+                                        <p>To clear an entire table, use <a href="#TRUNCATE"><strong>TRUNCATE</strong></a>.</p>
+                                    </li>
+                                    <li>
+                                        <p>To optimize performance, after the logical DELETE, run the cleanup (physical) delete.</p>
+                                    </li>
+                                </ol>
+                            </div>
+                            <div class="olist arabic">
+                                <div class="title">Known Limitations</div>
+                                <ol class="arabic">
+                                    <li>
+                                        <p>Unlike some other databases, this command does not return the number of rows affected or deleted.</p>
+                                    </li>
+                                    <li>
+                                        <p>It is not possible to ALTER a table that has not been cleaned up.</p>
+                                    </li>
+                                    <li>
+                                        <p>It is currently not possible to delete rows in a table using information contained in other tables in the database (subqueries or JOINs).</p>
+                                    </li>
+                                    <li>
+                                        <p>During the logical deletion process, the table is locked for TRUNCATE, ALTER, DROP and other DELETE commands.</p>
+                                    </li>
+                                    <li>
+                                        <p>A long delete operation will not execute if it exceeds SQream configuration setting.</p>
+                                    </li>
+                                </ol>
+                            </div>
+                            <div class="admonitionblock note">
+                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+Following the recommended best practices, the logical delete operation will first analyze and estimated time the delete should take based on the amount of I/O to delete and the data distribution. If SQream DB finds that the estimated time is beyond the best practices delete time, an error message will return and the user will have to do manual setting to overcome this and continue with the delete (see more information in the relevant error message).
+</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="code">
+                                <div class="title">Examples</div>
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db">  
+<span class="tok-c1">-- Delete all rows from 'books' table for books introduced before 2012</span>  
+<span class="tok-k">DELETE</span>  <span class="tok-k">FROM</span>  <span class="tok-n">books</span>  <span class="tok-k">WHERE</span>  <span class="tok-n">date_introduced</span>  <span class="tok-o">&lt;</span>  <span class="tok-s1">'2012-01-01'</span><span class="tok-p">;</span>  
+
+<span class="tok-c1">-- Clear the 'books' table completely:</span>  
+<span class="tok-k">DELETE</span>  <span class="tok-k">FROM</span>  <span class="tok-n">books</span><span class="tok-p">;</span>  
+
+<span class="tok-c1">-- Rearrange data on disk prior to physical deletion (SWEEP)</span>  
+<span class="tok-k">SELECT</span>  <span class="tok-n">CLEANUP_CHUNKS</span><span class="tok-p">(</span><span class="tok-s1">'public'</span><span class="tok-p">,</span><span class="tok-s1">'books'</span><span class="tok-p">);</span>  
+
+<span class="tok-c1">-- Delete leftover files (VACUUM)</span>  
+<span class="tok-k">SELECT</span>  <span class="tok-n">CLEANUP_EXTENTS</span><span class="tok-p">(</span><span class="tok-s1">'public'</span><span class="tok-p">,</span><span class="tok-s1">'books'</span><span class="tok-p">);</span></code></pre>
+                                </div>
+                            </div>
+                            <div style="page-break-after: always;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

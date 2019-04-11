@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\Resources\MasterPages\Drivers.flmsp');">
+    <head>
+        <link href="../../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body class="article toc2 toc-left">
+        <h3 id="_connection">Connection</h3>
+        <table class="TableStyle-Default_Table" style="mc-table-style: url('../../Resources/Table Styles/DefaultTable.css');border-left-style: solid;border-left-width: 1px;border-left-color: #0e978f;border-right-style: solid;border-right-width: 1px;border-right-color: #0e978f;border-top-style: solid;border-top-width: 1px;border-top-color: #0e978f;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #0e978f;margin-left: 0;margin-right: auto;" cellspacing="0">
+            <caption class="title">Table 1. Initializing and closing connections</caption>
+            <col class="TableStyle-Default_Table-Column-Column1" />
+            <col class="TableStyle-Default_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Default_Table-Head-Header1">
+                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Function</th>
+                    <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">driver()</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve"> The constructor creating the handle to the connection</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <p class="tableCode">connect(const std::string &amp;ipv4,int port,bool ssl,const std::string &amp;username,const std::string &amp;password,const std::string &amp;database),std::string &amp;service)</p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">Connects the handle to the sqream, accessing its database
+ipv4 - IP address as a string.
+port - port number SQream is listening on.
+ssl - True / false. If true, connect to SQream using SSL port.
+username, password - connection credentials. default is 'sqream' for both.
+database - name of database to connect to.
+service - name of the service to connect to.</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">disconnect()</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">Close the connection handle and reset the driver</pre>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

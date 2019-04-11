@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\Resources\MasterPages\Drivers.flmsp');">
+    <head>
+    </head>
+    <body class="article toc2 toc-left">
+        <h3 id="_add_a_dsn_for_your_sqream_db_database">Add a DSN for your SQream DB database</h3>
+        <div class="paragraph">
+            <p>Edit the odbc.ini file and add the ODBC DSN information.<br></br>Verify that the odbc.ini file contains the following lines:</p>
+        </div>
+        <div class="code">
+            <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash"><span class="tok-o">[{</span>DSN name<span class="tok-o">}]</span>  
+<span class="tok-nv">Driver</span><span class="tok-o">={</span>path of sqream_odbc.so<span class="tok-o">}</span>  
+<span class="tok-nv">Description</span><span class="tok-o">=</span>sqream64
+<span class="tok-nv">Server</span><span class="tok-o">={</span>IP address of the SQream server<span class="tok-o">}</span>  
+<span class="tok-nv">Port</span><span class="tok-o">={</span>Listener port of SQream<span class="tok-o">}</span>  
+<span class="tok-nv">Database</span><span class="tok-o">={</span>SQream database to connect to<span class="tok-o">}</span>  
+<span class="tok-nv">User</span><span class="tok-o">={</span>SQream DB user<span class="tok-o">}</span>  
+<span class="tok-nv">Password</span><span class="tok-o">={</span>password of the above SQream DB user<span class="tok-o">}</span>  
+<span class="tok-nv">Service</span><span class="tok-o">={</span>service to use when connecting<span class="tok-o">}</span>  
+<span class="tok-nv">Cluster</span><span class="tok-o">={</span><span class="tok-nb">true</span>  <span class="tok-p">|</span> false<span class="tok-o">}</span>  
+<span class="tok-nv">ssl</span><span class="tok-o">={</span><span class="tok-nb">true</span>  <span class="tok-p">|</span> false<span class="tok-o">}</span></code></pre>
+            </div>
+        </div>
+        <div class="paragraph">
+            <p class="example">For example:</p>
+        </div>
+        <div class="code">
+            <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash"><span class="tok-o">[</span>sqreamOn251<span class="tok-o">]</span>  
+<span class="tok-nv">Driver</span><span class="tok-o">=</span>/home/sqream/ODBC/sqream_odbc.so
+<span class="tok-nv">Description</span><span class="tok-o">=</span>sqream64
+<span class="tok-nv">Server</span><span class="tok-o">=</span><span class="tok-m">192</span>.168.0.251
+<span class="tok-nv">Port</span><span class="tok-o">=</span><span class="tok-m">3108</span>  
+<span class="tok-nv">Database</span><span class="tok-o">=</span>master
+<span class="tok-nv">User</span><span class="tok-o">=</span>sqream
+<span class="tok-nv">Password</span><span class="tok-o">=</span>sqream
+<span class="tok-nv">Service</span><span class="tok-o">=</span>sqream
+<span class="tok-nv">Cluster</span><span class="tok-o">=</span><span class="tok-nb">true</span>  
+<span class="tok-nv">ssl</span><span class="tok-o">=</span><span class="tok-nb">false</span></code></pre>
+            </div>
+        </div>
+    </body>
+</html>

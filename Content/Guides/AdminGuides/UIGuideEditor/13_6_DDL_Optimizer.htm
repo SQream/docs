@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+    </head>
+    <body>
+        <h2 id="_ddl_optimizer">DDL Optimizer</h2>
+        <div class="sectionbody">
+            <div class="paragraph">
+                <p>The DDL Optimizer module allows you to analyze your database tables and recommend possible optimization:</p>
+            </div>
+            <div class="ulist">
+                <ul>
+                    <li>
+                        <p>For varchar fields, it checks the actual data and may recommend a smaller size. For example, VARCHAR(25) instead of VARCHAR(100).</p>
+                    </li>
+                    <li>
+                        <p>For all fields that allow NULL, it checks whether the column actually contains NULL values. If not, it recommends to change the field to NOT allow NULL.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

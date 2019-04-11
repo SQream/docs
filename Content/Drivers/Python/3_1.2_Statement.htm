@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\Resources\MasterPages\Drivers.flmsp');">
+    <head>
+    </head>
+    <body class="article toc2 toc-left">
+        <h3 id="_statement">Statement</h3>
+        <div class="code">
+            <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="python"><span class="tok-n">con</span><span class="tok-o">.</span><span class="tok-n">prepare</span><span class="tok-p">(</span><span class="tok-n">statement</span><span class="tok-p">)</span>  <span class="tok-c1">#string of the query to run</span>  
+<span class="tok-n">con</span><span class="tok-o">.</span><span class="tok-n">execute</span><span class="tok-p">()</span>  
+
+<span class="tok-c1"># if the statement is an insert it produces a put and for select it produces a fetch, rows are incremented through that function (see Usage example)</span>  
+<span class="tok-n">con</span><span class="tok-o">.</span><span class="tok-n">next_row</span><span class="tok-p">()</span></code></pre>
+            </div>
+        </div>
+    </body>
+</html>

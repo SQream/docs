@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+    </head>
+    <body class="article toc2 toc-left">
+        <h3 id="_copy_the_dashboard_database_file_sqlite">Copy the Dashboard database file (SQLite)</h3>
+        <div class="paragraph">
+            <p>This step is required only during the first installation of Dashboard. During an upgrade this step is skipped.<br></br></p>
+        </div>
+        <div class="paragraph">
+            <p>Administration Dashboard uses a small file-based database (SQLite) to store the dashboard users, settings, etc.
+The initial database file is part of the dashboard package.
+Location: <code>~sqream_dashboard/users-data/user.db</code></p>
+        </div>
+        <div class="paragraph">
+            <p>Copy the initial database file to the folder you want to store the Administration Dashboard database (SQLite).
+Note that this file should be backed up on a regular basis, similar to the SQream data storage. Therefore, it is good practice to store the Administration Dashboard database file under the SQream storage which typically gets backed up on a regular basis.</p>
+        </div>
+        <div class="paragraph">
+            <p class="example">For example:</p>
+        </div>
+        <div class="code">
+            <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">cp ~/sqream_dashboard/users-data/users.db /media/big/storage/dashboard_data/</code></pre>
+            </div>
+        </div>
+    </body>
+</html>

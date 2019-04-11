@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet>
+  <Variable
+    Comment=""
+    Name="CompanyName"
+    EvaluatedDefinition="SQream">SQream</Variable>
+  <Variable
+    Name="Year"
+    Comment=""
+    Type="DateTime"
+    LastUpdated="2016-02-16T18:02:51.1357833-08:00"
+    EvaluatedDefinition="yyyy">yyyy</Variable>
+  <Variable
+    Name="Email"
+    Comment=""
+    EvaluatedDefinition="support@sqream.com">support@sqream.com</Variable>
+  <Variable
+    Name="LinkedIn"
+    Comment=""
+    EvaluatedDefinition="https://www.linkedin.com/company/sqream_">https://www.linkedin.com/company/sqream_</Variable>
+  <Variable
+    Name="Facebook"
+    Comment=""
+    EvaluatedDefinition="https://www.facebook.com/sqreamtech/">https://www.facebook.com/sqreamtech/</Variable>
+  <Variable
+    Name="Twitter"
+    Comment=""
+    EvaluatedDefinition="https://twitter.com/sqreamtech">https://twitter.com/sqreamtech</Variable>
+</CatapultVariableSet>

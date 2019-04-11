@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\Resources\MasterPages\Drivers.flmsp');">
+    <head>
+        <link href="../../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body class="article toc2 toc-left">
+        <h3 id="_statement">Statement</h3>
+        <table class="TableStyle-Default_Table" style="mc-table-style: url('../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+            <caption class="title">Table 2. Statement execution</caption>
+            <colgroup>
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr class="TableStyle-Default_Table-Head-Header1">
+                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Function</th>
+                    <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">new_query(const std::string &amp;sql_query)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">Starts a new statement resetting any statement related datas and follows it by Prepare</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">execute_query()</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">Executes the statement of the current statement. Needs to be called after new_query() (This advance the SQL query from Prepare -&gt; Execute).</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">next_query_row(const size_t min_put_size=CONSTS::MIN_PUT_SIZE)</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <div class="literal"><pre xml:space="preserve">On an insert query - start setting the next row for insertion. SQream does not support partial inserts. If min_put_size is set, the connector will flush and put the rows if the buffer size is bigger than this value. If the function is called without argument a default value of 67108864 bytes (64 MiB) is set for comparison with the buffer size.
+On a select query - move to next row index to start selecting items from various columns using get() functions, the min_put_size argument has no influence on select.</pre>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">finish_query()</pre>
+                        </div>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyA-Column1-Body2">
+                        <div class="literal"><pre xml:space="preserve">Closes the statement</pre>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

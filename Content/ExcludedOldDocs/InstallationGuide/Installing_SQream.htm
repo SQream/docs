@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic">
+    <head>
+    </head>
+    <body>
+        <h1>Installing SQream</h1>
+        <div class="tip">
+            <p>The steps below present the general forms of the sqream commands used for installation. For a complete description of the commands see <a href="QCR_sqream-console_commands.htm">Quick Command Reference sqream-console commands</a>.</p>
+        </div>
+        <ol>
+            <li class="heading2">Install the SQream console</li>
+            <p><span class="strong">sqream-console</span> is a management tool that allows you to install, set up, and run, a SQream cluster.</p>
+            <p class="toDo">To install sqream-console:</p>
+            <ol>
+                <li>Copy <span class="strong">sqream-console</span> from device to host:</li>
+                <p class="code">cp -r &lt;folder path on device&gt; &lt;destination path on host&gt;</p>
+                <li>Navigate to  <span class="strong">sqream-console directory:</span></li>
+                <p class="code">cd sqream-console</p>
+                <li>Run the following command to install the <span class="strong">sqream-console-install</span> application:</li>
+                <p class="code">./sqream-console-install.sh</p>
+            </ol>
+            <li class="heading2">Run the SQream console</li>
+            <p>Once the console is successfully installed, run the following executable bash to start the <span class="strong">sqream-console</span> application:</p>
+            <p class="code">./sqream-console</p>
+            <p>You are now ready to install and set up your SQream cluster using the tools provided by the console.</p>
+            <li class="heading2">Install SQream</li>
+            <p>Run the <span class="strong">sqream install</span> command to install SQream and create the storage cluster.</p>
+            <p class="code">sqream install --volume --create &lt;location&gt;</p>
+            <li class="heading2">Start the sqream master</li>
+            <p>Run the <span class="strong">sqream master</span> command to start the sqream master in the specified mode.</p>
+            <p class="code">sqream master --start --&lt;mode&gt;</p>
+            <li class="heading2">Start the sqream workers</li>
+            <p>Run the <span class="strong">sqream worker</span> command to start the sqream workers on the specified ports.</p>
+            <p>Default port is 5000. For multiple workers, the specified port will be assigned to the first worker and successive ports to the remaining workers.</p>
+            <p>You can also allocate a specified amount of memory to each worker.</p>
+            <p class="code">sqream worker --start &lt;number of workers&gt; -p &lt;port&gt; --memory &lt;GB of memory&gt;</p>
+            <div class="tip">
+                <p>You are now ready to connect SQream using the SQream command line. See <a href="../../Guides/AdminGuides/AdministrationGuide/17_3.2_Setting_up_SQream_DB.htm#connect-clientcmd">Connect to the SQream DB server with clientcmd</a>.<br />For other connecters, please see <a href="../../Drivers/Drivers.htm">Drivers</a>.</p>
+            </div>
+        </ol>
+    </body>
+</html>

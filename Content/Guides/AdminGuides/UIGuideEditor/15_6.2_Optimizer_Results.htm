@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+    </head>
+    <body>
+        <h3 id="_optimizer_results">Optimizer Results</h3>
+        <div class="imageblock">
+            <div class="content">
+                <img src="Images/optimizer1.png" alt="Optimizer Results">
+                </img>
+            </div>
+        </div>
+        <div class="paragraph">
+            <p>In the OPTIMIZED COLUMNS tab you can review the system recommendation to (1) decrease the length of VARCHAR fields or (2) remove the allow NULL option.
+In the OPTIMIZED DDL tab you can review the DDL statement to create the recommended table.</p>
+        </div>
+        <div class="ulist">
+            <ul>
+                <li>
+                    <p><strong>COPY DDL TO CLIPBOARD</strong> - Copies the DDL statement to create the recommended table to the clipboard</p>
+                </li>
+                <li>
+                    <p><strong>CREATE A NEW TABLE</strong> - Creates a new table in same database and schema as the original table. New table name = [table_name]_new. No data is populated to the new table.</p>
+                </li>
+                <li>
+                    <p><strong>CREATE AND INSERT INTO EXISTING DATA</strong> - Create a new table in same database and schema as the original table and populates the data.</p>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

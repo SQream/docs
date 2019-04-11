@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\Resources\MasterPages\Drivers.flmsp');">
+    <head>
+    </head>
+    <body class="article toc2 toc-left">
+        <h2 id="_test_the_sqream_odbc_driver">Test the SQream ODBC Driver</h2>
+        <div class="sectionbody">
+            <div class="sect2">
+                <h3 id="_use_the_isql_utility_to_test_the_driver">Use the ISQL utility to test the driver</h3>
+                <div class="paragraph">
+                    <p>ISQL is a unixODBC command-line interactive SQL tool and can be used as a tester. No additional installation is required (UnixODBC is a pre-requisite for SQream).<br></br><a href="https://www.systutorials.com/docs/linux/man/1-isql/" class="bare">https://www.systutorials.com/docs/linux/man/1-isql/</a></p>
+                </div>
+                <div class="paragraph">
+                    <p>On the command line, specify the DSN name:</p>
+                </div>
+                <div class="code">
+                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">isql <span class="tok-o">[</span>DSN name<span class="tok-o">]</span></code></pre>
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <p>For better error message:</p>
+                </div>
+                <div class="code">
+                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">isql -v <span class="tok-o">[</span>DSN name<span class="tok-o">]</span></code></pre>
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <p class="example">For the above example this would be:</p>
+                </div>
+                <div class="code">
+                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">isql sqreamOn251</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
