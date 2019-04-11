@@ -695,7 +695,7 @@ a.SQreamHomeSite, a.SQreamHomeSite:visited, a.SQreamHomeSite:link
 	border: none;
 	cursor: pointer;
 	text-align: left;
-	width: 80px;
+	width: 90px;
   }
 
 .dropdown {
@@ -707,7 +707,7 @@ a.SQreamHomeSite, a.SQreamHomeSite:visited, a.SQreamHomeSite:link
 	display: none;
 	position: absolute;
 	background-color: #159599;
-	width: 80px;
+	width: 90px;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	padding: 0px;
 	z-index: 1;
