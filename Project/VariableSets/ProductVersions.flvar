@@ -15,7 +15,7 @@
   <Variable
     Name="JDBC"
     Comment=""
-    EvaluatedDefinition="2.9.0">2.9.0</Variable>
+    EvaluatedDefinition="2.9.3">2.9.3</Variable>
   <Variable
     Name="NodeJS"
     Comment=""
@@ -35,5 +35,9 @@
   <Variable
     Name="SQream"
     Comment=""
-    EvaluatedDefinition="2.24">2.24</Variable>
+    EvaluatedDefinition="2019.1.2">2019.1.2</Variable>
+  <Variable
+    Name="ReleaseDate"
+    Comment=""
+    EvaluatedDefinition="2019-03-27">2019-03-27</Variable>
 </CatapultVariableSet>

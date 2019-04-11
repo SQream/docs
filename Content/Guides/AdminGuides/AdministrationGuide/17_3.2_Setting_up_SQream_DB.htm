@@ -130,6 +130,15 @@ sudo passwd sqream</pre>
             </div>
             <div class="ulist checklist">
                 <ul class="checklist">
+                    <li><i class="fa fa-square-o"></i> Update user sqream .bashrc with the following<br></br></li>
+                </ul>
+            </div>
+            <div class="code">
+                <div class="content"><pre xml:space="preserve">echo "alias sqream_status=\"ps axuwww | grep -v 'grep\|tail\|monitor' | grep -i </pre><pre xml:space="preserve">'sqreamd\|metadata_server\|server_pick\|monit'\"" &gt;&gt; ~sqream/.bashrc</pre><pre xml:space="preserve">echo "export PATH=$SQREAM_BIN_DIR:$PATH" &gt;&gt; ~sqream/.bashrc</pre><pre xml:space="preserve">echo "export LD_LIBRARY_PATH=$SQREAM_LIB_DIR:$LD_LIBRARY_PATH" &gt;&gt; ~sqream/.bashrc</pre>
+                </div>
+            </div>
+            <div class="ulist checklist">
+                <ul class="checklist">
                     <li>
                         <p><i class="fa fa-square-o"></i> Edit sudoers with ‘sudo visudo’ and add the following last line:<br></br></p>
                     </li>
