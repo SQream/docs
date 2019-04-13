@@ -3,5 +3,70 @@
   Version="1">
   <TocEntry
     Title="[%=System.LinkedTitle%]"
-    Link="/Content/Guides/InstallationGuides/SQream Installation Guides.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    Link="/Content/Guides/InstallationGuides/SQream Installation Guides.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Guides/InstallationGuides/Docker/1_Installing_SQream_via_Docker.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+      <TocEntry
+        Title="Before you start"
+        Link="/Content/Guides/InstallationGuides/Docker/1_Installing_SQream_via_Docker.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+        ComputeToc="false"
+        ComputedTocAction="Replace"
+        ComputedTocDepth="10" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/InstallationGuides/Docker/2_Preinstallation_procedures.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+        ComputeToc="true"
+        ComputedTocAction="Replace"
+        ComputedTocDepth="10" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/InstallationGuides/Docker/3_You_are_now_ready_to_install_SQream.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+        ComputeToc="true"
+        ComputedTocAction="Replace"
+        ComputedTocDepth="10" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/InstallationGuides/Docker/4_Console_Commands.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+        ComputeToc="true"
+        ComputedTocAction="Replace"
+        ComputedTocDepth="10" />
+      <TocEntry
+        Title="Moving from Docker to standard installation"
+        Link="/Content/Guides/InstallationGuides/Docker/5_Moving_from_Docker_to_standard_installation.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+        ComputeToc="true"
+        ComputedTocAction="Replace"
+        ComputedTocDepth="10" />
+    </TocEntry>
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Guides/InstallationGuides/RPM/1_SQream_via_RPM.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+      <TocEntry
+        Title="Before you start"
+        Link="/Content/Guides/InstallationGuides/RPM/1_SQream_via_RPM.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+        ComputeToc="false"
+        ComputedTocAction="Replace"
+        ComputedTocDepth="10"></TocEntry>
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/InstallationGuides/RPM/2_Preinstallation_procedures.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+        ComputedTocAction="Replace"
+        ComputeToc="true"
+        ComputedTocDepth="10"
+        SectionNumberReset="continue"
+        VolumeNumberReset="same"
+        ChapterNumberReset="continue"
+        ReplaceMergeNode="false" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/InstallationGuides/RPM/3_You_are_now_ready_to_install_SQream.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+        ComputedTocAction="Replace"
+        ComputeToc="true"
+        ComputedTocDepth="10"
+        SectionNumberReset="continue"
+        VolumeNumberReset="same"
+        ChapterNumberReset="continue"
+        ReplaceMergeNode="false" />
+    </TocEntry>
+  </TocEntry>
 </CatapultToc>

@@ -35,8 +35,7 @@
       Link="/Project/TOCs/StatementEditorTOC.fltoc"
       ReplaceMergeNode="true" />
     <TocEntry
-      Title="InstallGuidesTOC"
-      Link="/Project/TOCs/InstallGuidesTOC.fltoc" />
+      Title="InstallGuidesTOC" />
     <TocEntry
       Title="DashboardInstallTOC"
       Link="/Project/TOCs/DashboardInstallTOC.fltoc"
