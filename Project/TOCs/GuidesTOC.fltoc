@@ -35,8 +35,10 @@
       Link="/Project/TOCs/StatementEditorTOC.fltoc"
       ReplaceMergeNode="true" />
     <TocEntry
-      Title="[%=System.LinkedTitle%]"
-      Link="/Content/Guides/InstallationGuides/SQream Installation Guides.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      Title="InstallGuidesTOC"
+      ReplaceMergeNode="true"
+      Link="/Project/TOCs/InstallGuidesTOC.fltoc"
+      ComputeToc="false" />
     <TocEntry
       Title="DashboardInstallTOC"
       Link="/Project/TOCs/DashboardInstallTOC.fltoc"

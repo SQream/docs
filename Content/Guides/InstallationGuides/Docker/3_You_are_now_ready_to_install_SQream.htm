@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+        <link href="../../../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h2>You are now ready to install SQream</h2>
+        <h3>Download and run your Docker installer</h3>
+        <h4>Docker CE =18.03</h4>
+        <h5>CentOS:</h5>
+        <p><a href="https://docs.docker.com/install/linux/docker-ce/centos/">https://docs.docker.com/install/linux/docker-ce/centos/</a>
+        </p>
+        <h4>Nvidia Docker2</h4>
+        <h5>CentOS:</h5>
+        <p><a href="https://github.com/NVIDIA/nvidia-docker">https://github.com/NVIDIA/nvidia-docker</a>
+        </p>
+        <p>CentOS 7 (docker-ce), RHEL 7.4/7.5 (docker-ce), Amazon Linux 1/2</p>
+        <h3>Prepare the environment</h3>
+        <p>SQream Docker runs on the 'docker' user.</p>
+        <p>In order for sqream to be able to read and write its resources, it's important that the docker user has r/w access to the following directories:</p>
+        <ul>
+            <li>Log (default: <span class="emphasis">/var/log/sqream/</span>)</li>
+            <li>Configuration (default: <span class="emphasis">/etc/sqream/</span>)</li>
+            <li>Cluster (where sqream writes the DB system. Example <span class="emphasis">/mnt/sqreamdb</span>)</li>
+            <li>Ingest (where the data that should be loaded is located. Example <span class="emphasis">/mnt/data_source/</span>)</li>
+        </ul>
+        <p>If running SQream from a user different then the docker user, the local user should be added to docker group:</p>
+        <div class="code">
+            <p>sudo usermod -aG docker $USER</p>
+        </div>
+        <p>Logout or restart your ssh session.</p>
+        <h3>Download the SQream package (SQream Personnel only)</h3>
+        <p>Make sure your SQream package is downloaded and untarred. (See <a href="1_Installing_SQream_via_Docker.htm#Before">Before you start</a>.)</p>
+        <h3>Configure your environment</h3>
+        <p>Run the commands below from the place where you put the package directory, for example <span class="emphasis">/home/sqream/sqream-console-package/</span> under <span class="strong">sudo</span>:</p>
+        <div class="code">
+            <p>./sqream-install -i -f -c -v -l -d</p>
+        </div>
+        <h4>Flags</h4>
+        <table style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+            <thead>
+                <tr class="TableStyle-Default_Table-Head-Header1">
+                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">
+                        <p>Flag</p>
+                    </th>
+                    <th class="TableStyle-Default_Table-HeadD-Column1-Header1">
+                        <p>Explanation</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1" style="font-weight: bold;">
+                        <p>I</p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <p>Loads all the software from
+ hidden folder ".docker" <span class="emphasis">(see <a href="#Mandator">Comment #‎3</a> below).</span></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2" style="font-weight: bold;">
+                        <p>f</p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <p>Overwrite if folder already exists, </p>
+                        <p><span class="strong">Using f will overwrite all files in
+ mounted directories</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1" style="font-weight: bold;">
+                        <p>c</p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <p>Path <span class="emphasis">(see <a href="#If">Comment #‎1</a> below)</span> where to
+ write/read SQream configuration files from. (default: <span class="emphasis">/etc/sqream/</span>). </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2" style="font-weight: bold;">
+                        <p>v</p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <p>Location of sqream cluster. If cluster doesn’t exist it would be created, mounted if exists
+  <span class="emphasis">(see <a href="#Mandator">Comment #‎3</a> below).</span></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1" style="font-weight: bold;">
+                        <p>l</p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <p>Location of  SQream system startup logs (which contain
+ startup logs and docker logs, Default: <span class="emphasis">/var/log/sqream/)</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2" style="font-weight: bold;">
+                        <p>d</p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <p>The folder where the customer currently has data to
+ import/copy to sqream.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1" style="font-weight: bold;">
+                        <p>r</p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <p>Reset system configuration, run
+ without any other variables.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyB-Column1-Body2" style="font-weight: bold;">
+                        <p>h</p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyA-Column1-Body2">
+                        <p>Help, shows available flags</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h5>Comments</h5>
+        <ol>
+            <li>
+                <p><a name="If"></a>If you are installing docker on a server that already works with SQream do not use the default path. (See Flag – <span class="strong">c</span>)</p>
+            </li>
+            <li>
+                <p>If you are not running the sqream-install for the first time, please verify that all SQream docker containers are stopped.</p>
+            </li>
+            <li>
+                <p><a name="Mandator"></a>Mandatory flags for first run: (see flags –<span class="strong">i</span> and –<span class="strong">v</span>)</p>
+                <div class="code">
+                    <p>sudo ./sqream-install -i -v /sqreamcluster</p>
+                </div>
+            </li>
+            <li>
+                <p>The “-<span class="strong">d</span>” flag is not required when installing sqream, however if the flag is not used, SQream will not be able to read from any folder except the SQream Cluster.</p>
+                <p>If you did not use the “-<span class="strong">d</span>” flag in the original installation, you can run <span class="strong">sqream-install</span> with the -<span class="strong">d</span> flag at any time. Note that you will need to stop and start the <span class="strong">sqream worker</span> for the change to take effect.</p>
+                <h5>Example for best practice:</h5>
+                <div class="code">
+                    <p>sudo ./sqream-install -i -c /etc/sqream -v /home/sqream/sqreamdb -l /var/log/sqream -d /home/sqream/data_ingest</p>
+                </div>
+                <h5>Setting  data import folder example</h5>
+                <div class="code">
+                    <p>sudo ./sqream-install -d /home/sqream/data_in</p>
+                </div>
+                <h3>Start the SQream Console</h3>
+                <div class="code">
+                    <p>./sqream-console</p>
+                </div>
+            </li>
+        </ol>
+    </body>
+</html>
