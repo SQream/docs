@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+    </head>
+    <body>
+        <h2>Installation procedure</h2>
+        <h3>Preinstallation checks</h3>
+        <p>If you are on a preinstallation machine, run the following checks:</p>
+        <ul>
+            <li>
+                <p>Verify that the storage is mounted under <span class="emphasis">/mnt/sqream/</span></p>
+            </li>
+            <li>
+                <p>Run the following commands</p>
+                <div class="code">
+                    <p>cat /etc/os-release</p>
+                    <p>id sqream</p>
+                    <p>nvidia-smi</p>
+                    <p>sysctl -n fs.file-max     (should be more then 2097152)</p>
+                    <p>ulimit -c -u -n (run this command as user sqream)</p>
+                    <p>core file size      	(blocks, -c) unlimited</p>
+                    <p>max user processes          	(-u) 500000</p>
+                    <p>open files                  	(-n) 500000</p>
+                </div>
+            </li>
+        </ul>
+        <h3><a name="Install"></a>Install sqreamdb rpm</h3>
+        <p>Install the SQream package that you previously downloaded (see <a href="1_SQream_via_RPM.htm#Before">Before you start</a>).</p>
+        <p>For example, for <span class="strong">SQream V2019.1.1</span>, run the following:</p>
+        <div class="code">
+            <p>sudo rpm -Uvh SQream-DB-v2019.1.1.kepler.cuda-8.0.el7.x86_64.rpm</p>
+        </div>
+        <p>RPM will create SQream storage at <span class="emphasis">/mnt/sqream/sqreamdb</span></p>
+        <h3><a name="Start"></a>Start SQream daemons</h3>
+        <ol>
+            <li>
+                <p>Copy your SQream license to <span class="emphasis">/etc/sqream/</span> (see <a href="1_SQream_via_RPM.htm#Before">Before you start</a>)</p>
+            </li>
+            <li>
+                <p>Verify the number  of sqream deamons</p>
+                <div class="code">
+                    <p>(ls /etc/sqream/*.json)</p>
+                </div>
+            </li>
+            <li>
+                <p>Enable all deamons (see example below)</p>
+                <div class="code">
+                    <p>sudo systemctl enable metadataserver.service</p>
+                    <p>sudo systemctl enable serverpicker.service</p>
+                    <p>sudo systemctl enable sqream1.service</p>
+                    <p>sudo systemctl enable monit.service</p>
+                    <p>sudo systemctl start monit.service</p>
+                    <p>source /home/sqream/.bashrc</p>
+                    <p>sqream_status</p>
+                </div>
+            </li>
+            <li>
+                <p>Add equivalent ports to the firewall for all sqream daemons if necessary. (See <a href="2_Preinstallation_procedures.htm#Configur2">Configuring the firewall</a>)</p>
+                <div class="code">
+                    <p>ClientCmd --username sqream --password sqream -d master --port 3108 --clustered</p>
+                </div>
+            </li>
+        </ol>
+        <h3>Install SQream Editor and Dashboard</h3>
+        <div class="code">
+            <p>cd /home/sqream</p>
+            <p>wget https://rpm.nodesource.com/setup_10.x</p>
+            <p>chmod u+x setup_10.x</p>
+            <p>sudo ./setup_10.x</p>
+            <p>sudo yum install -y nodejs</p>
+            <p>node --version</p>
+            <p>sudo npm install pm2 -g</p>
+            <p>*******************************</p>
+            <p>npm config set proxy http://proxy.company.com:8080</p>
+            <p>npm config set https-proxy http://proxy.company.com:8080</p>
+            <p>*******************************</p>
+        </div>
+        <h4>Installing PM2: Online</h4>
+        <div class="code">
+            <p>wget https://rpm.nodesource.com/setup_10.x</p>
+            <p>chmod u+x setup_10.x</p>
+            <p>sudo ./setup_10.x</p>
+            <p>sudo yum install -y nodejs</p>
+            <p>node --version</p>
+        </div>
+        <p>If the server uses proxy to access the internet you should configure <span class="emphasis">npm proxy</span> as follows:</p>
+        <div class="code">
+            <p>npm config set proxy http://&lt;proxy.company.com&gt;:&lt;port&gt;</p>
+            <p>npm config set https-proxy http://&lt;proxy.company.com&gt;:&lt;port&gt;</p>
+        </div>
+        <p>Now install</p>
+        <div class="code">
+            <p>sudo npm install pm2 -g</p>
+        </div>
+        <h4>Installing PM2: Offline</h4>
+        <ol>
+            <li>
+                <p>Install pm2 on a machine that is online.</p>
+                <div class="code">
+                    <p>wget https://nodejs.org/dist/latest-v10.x/node-v10.15.3-linux-x64.tar.gz</p>
+                    <p>npm install pm2</p>
+                    <p>npm install -g npm-bundle</p>
+                    <p>npm-bundle pm2</p>
+                </div>
+            </li>
+            <li>
+                <p>Copy the <span class="emphasis">pm2 tgz</span> and the <span class="emphasis">node tar.gz</span> files to the offline server and run the following commands.</p>
+                <div class="code">
+                    <p>tar xvf node-v10.15.3-linux-x64.tar.gz -C /opt/</p>
+                    <p>chown -R sqream /opt/node-v10.15.3-linux-x64</p>
+                </div>
+            </li>
+            <li>
+                <p>Edit the <span class="emphasis">~./bashrc</span> file and add the following lines:</p>
+                <div class="code">
+                    <p>PATH=$PATH/opt/node-v10.15.3-linux-x64/bin</p>
+                    <p>source ~/.bashrc</p>
+                    <p>node --version</p>
+                </div>
+            </li>
+            <li>
+                <p>Verify version 10.15.3</p>
+                <div class="code">
+                    <p>npm install pm2-2.2.1.tgz</p>
+                    <p>npm install -g npm-bundle</p>
+                </div>
+            </li>
+            <li>
+                <p>Install</p>
+                <div class="code">
+                    <p>npm-bundle pm2</p>
+                </div>
+            </li>
+        </ol>
+        <h3>SQream Editor</h3>
+        <ol>
+            <li>
+                <p>Run the following:</p>
+                <div class="code">
+                    <p>sudo cp /opt/sqream_editor/config/default/uiEditorConfig.json /etc/sqream/</p>
+                    <p>sudo chown sqream  /etc/sqream/uiEditorConfig.json</p>
+                </div>
+            </li>
+            <li>
+                <p>Manual run</p>
+                <div class="code">
+                    <p>NODE_ENV=production node /opt/sqream_editor/server.js</p>
+                </div>
+            </li>
+            <li>
+                <p>Go to <a href="http://{server_ip}:3000">http://{server_ip}:3000</a></p>
+            </li>
+            <li>
+                <p>Auto-start:</p>
+                <div class="code">
+                    <p>NODE_ENV=production pm2 start /opt/sqream_editor/server.js --name sqream_editor</p>
+                    <p>pm2 list</p>
+                    <p>pm2 startup</p>
+                </div>
+            </li>
+            <li>
+                <p>After running <span class="strong">pm2 startup</span>, the appropriate setup command is generated and displayed.</p>
+                <p>(This command will vary depending on your specific installation. See the example below.)</p>
+            </li>
+        </ol>
+        <img src="Images/rpm1.jpg" />
+        <h3>SQream Dashboard</h3>
+        <ol>
+            <li>
+                <p>Create the dashboard role for SQream in SQreamDB:</p>
+                <div class="code">
+                    <p>ClientCmd --port=5000 --username=sqream --password=sqream -d master</p>
+                    <p>CREATE ROLE dashboard;</p>
+                    <p>GRANT superuser TO dashboard;</p>
+                    <p>GRANT login TO dashboard;</p>
+                    <p>GRANT PASSWORD 'sqream' to dashboard;</p>
+                </div>
+                <div class="code">
+                    <p>useradd -M -s /sbin/nologin sqream_dashboard</p>
+                    <p>usermod -aG sqream sqream_dashboard</p>
+                </div>
+            </li>
+            <li>
+                <p>Add the following line with visudo:</p>
+                <div class="code">
+                    <p>sqream_dashboard    	ALL=(ALL) NOPASSWD:ALL</p>
+                </div>
+            </li>
+            <li>
+                <p>Run the following commands:</p>
+                <div class="code">
+                    <p>sudo tar xvf sqream-dashboard-2.1.0.monit.tar.gz</p>
+                </div>
+                <div class="code">
+                    <p>sudo mv sqream_dashboard /opt/sqream-dashboard-2.1.0.monit</p>
+                </div>
+                <div class="code">
+                    <p>cd /opt</p>
+                </div>
+                <div class="code">
+                    <p>sudo ln -s sqream-dashboard-2.1.0.monit sqream_dashboard</p>
+                </div>
+                <div class="code">
+                    <p>sudo  ln -s sqream-dashboard-2.1.0.monit sqream-dashboard</p>
+                </div>
+                <div class="code">
+                    <p>mkdir  /opt/sqream-dashboard-2.1.0.monit/dashboard-api</p>
+                </div>
+                <div class="code">
+                    <p>mkdir /opt/sqream-dashboard/temp/</p>
+                    <p>cp /home/sqream/python-monit-api/*.py /opt/sqream-dashboard-2.1.0.monit/dashboard-api</p>
+                </div>
+                <div class="code">
+                    <p>cd /opt/sqream-dashboard</p>
+                </div>
+                <div class="code">
+                    <p>mkdir /mnt/sqream/sqreamdb/dashboard_data/</p>
+                </div>
+                <div class="code">
+                    <p>cp /opt/sqream_dashboard/users-data/users.db /mnt/sqream/sqreamdb/dashboard_data/</p>
+                </div>
+                <div class="code">
+                    <p>sed -i 's|home/sqream/sqream_testing_temp/sqreamdb|mnt/sqream/sqreamdb|g' bash/parse_statement_log.sh</p>
+                </div>
+                <div class="code">
+                    <p>sed -i 's|/home/erez/.sqream/sqream_config.json|/etc/sqream/sqream1_config.json|g' config/default/clusterConfig.demo</p>
+                </div>
+                <div class="code">
+                    <p>sed -i 's|/home/erez/.sqream/sqream_config.json|/etc/sqream/sqream1_config.json|g' config/default/sqreamClusterConfig.json.xxx</p>
+                </div>
+                <div class="code">
+                    <p>sed -i -e 's|/home/erez/.sqream/sqream_config.json|/etc/sqream/sqream1_config.json|g' -e 's|/home/erez/sqream_dashboard_data|/mnt/sqream/sqreamdb/dashboard_data|g' -e 's|/home/erez/temp/csv|/opt/sqream-dashboard/temp/|g' -e 's|/home/erez/sqream_dashboard_data/log|/var/log/sqream|g' -e 's|/home/sqream/versions/sqream_v_1_19_1/bin/license_check|/opt/sqream/bin/license_check|g' -e 's|/home/erez/.sqream/sqream_config.json|/etc/sqream/sqream1_config.json|g' config/default/uiAppConfig.json</p>
+                </div>
+                <div class="code">
+                    <p>sed -i  -e 's|/home/erez/.sqream/sqream_config.json|/etc/sqream/sqream1_config.json|g' -e 's|/home/erez/sqream_dashboard_data|/mnt/sqream/sqreamdb/dashboard_data|g' -e 's|/home/sqream/versions/sqream_v_1_19_1/bin/license_check|/opt/sqream/bin/license_check|g' -e 's|/home/erez/temp/csv|/opt/sqream-dashboard/temp/|g' config/default/uiAppConfig.json.multi</p>
+                </div>
+                <div class="code">
+                    <p>sed -i  -e 's|/home/sqream/sqream_dashboard_data|/mnt/sqream/sqreamdb/dashboard_data|g' -e 's|/home/sqream/temp/csv|/opt/sqream-dashboard/temp/|g' -e 's|/home/sqream/sqream_scheduler_log|/var/log/sqream|g' -e 's|/home/sqream/sqream/bin/license_check|/opt/sqream/bin/license_check|g' config/default/uiAppConfigOnPrem.json</p>
+                </div>
+                <div class="code">
+                    <p>sed -i  -e 's|/home/sqream/sqream_dashboard_data|/mnt/sqream/sqreamdb/dashboard_data|g' -e 's|/home/sqream/temp/csv|/opt/sqream-dashboard/temp/|g' -e 's|/home/sqream/sqream_scheduler_log|/var/log/sqream|g' -e 's|/home/sqream/sqream/bin/license_check|/opt/sqream/bin/license_check|g' config/default/uiAppConfigOnPrem.json.bak</p>
+                </div>
+                <div class="code">
+                    <p>sed -i -e 's|/usr/local/sqream/|/opt/sqream|g' -e 's|/home/sqream/.sqream/sq_monit_service_manager.py|/opt/sqream-dashboard/dashboard-api/sq_monit_service_manager.py|g' dashboard-api/sq_boot_helper.py</p>
+                </div>
+                <div class="code">
+                    <p>sed -i 's|/home/erez/sqream_dashboard_data|/mnt/sqream/sqreamdb/dashboard_data|g' models/scheduler/testConnection.js</p>
+                </div>
+                <div class="code">
+                    <p>sed -i 's|~/.sqream/sq_monit_service_manager.py|/opt/sqream-dashboard/dashboard-api/sq_monit_service_manager.py|g' models/sqreamApiModal.js</p>
+                </div>
+                <div class="code">
+                    <p>sed -i 's|/home/erez/rotem/|/var/log/sqream/|g' models/sqreamLogToFile_utility.js</p>
+                </div>
+                <div class="code">
+                    <p>sed -i 's|/home/sqream/tpch_scale_1_19/logs|/var/log/sqream/|g' models/sqreamStatementsLogModal.js</p>
+                </div>
+                <div class="code">
+                    <p>sed -i 's|/home/erez/sqream_testing_temp/sqreamdb/logs|/var/log/sqream/|g' models/sqreamStatementsLogModal.js</p>
+                </div>
+                <div class="code">
+                    <p>sed -i -e 's|/home/sqream/branches/v1.16.2/bin/sqreamd|/opt/sqream/bin/sqreamd|g' -e 's|/home/erez/dev/sqream_dashboard|/opt/sqream-dashboard|g' models/test_find_sqream_version.js</p>
+                </div>
+                <div class="code">
+                    <p>sed -i 's|sqream_config.json|sqream1_config.json|g' models/sqreamConfigModal.js</p>
+                </div>
+            </li>
+            <li>
+                <p>Manual run.</p>
+            </li>
+            <li>
+                <p>Go to <a href="http://{server_ip}:3000">http://{server_ip}:3000</a></p>
+            </li>
+            <li>
+                <p>Auto-start:</p>
+                <div class="code">
+                    <p>NODE_ENV=production pm2 start /opt/sqream-dashboard/server.js --name sqream_dashboard</p>
+                    <p>pm2 list</p>
+                    <p>pm2 startup</p>
+                </div>
+            </li>
+            <li>
+                <p>After running <span class="strong">pm2 startup</span>, the appropriate setup command is generated and displayed.</p>
+                <p>(This command will vary depending on your specific installation. See the example below.)</p>
+            </li>
+        </ol>
+        <img src="Images/rpm2.jpg" />
+        <p class="leftBig">Congratulations, you have successfully installed SQream DB and it is ready for use.  We recommend the following SQream quick guides:</p>
+        <ul>
+            <li><a href="../../Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Creating_Your_First_Database_In_SQream.htm">Quick guide to launching a SQream DB cluster</a>
+            </li>
+            <li><a href="../../Quick_Guides/Loading_Data_Into_Sqream/1_Loading_Data_Overview.htm">Quick guide to loading your data into a SQream database</a>
+            </li>
+            <li><a href="../../Quick_Guides/DWLM_Guide/1_HowToUseDWLM_Overview.htm">Quick guide to using the SQream Dynamic Workload Manager (DWLM)</a>
+            </li>
+            <li><a href="../../Quick_Guides/Quick_Administrator_Guide_-_Managing_your_SQream_DB_Cluster/1_QuickAdministratorGuide.htm">Quick guide to managing your SQream cluster</a>
+            </li>
+        </ul>
+    </body>
+</html>

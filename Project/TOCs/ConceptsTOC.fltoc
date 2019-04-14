@@ -78,7 +78,7 @@
       ComputeToc="true" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
-      Link="/Content/SQLReferenceGuide/25_Copyright.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      Link="/Content/SQL_Reference_Guide/25_Copyright.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputedTocAction="Insert"
       ComputeToc="false"
       ComputedTocDepth="10" />

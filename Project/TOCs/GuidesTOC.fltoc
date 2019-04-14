@@ -6,7 +6,7 @@
     Link="/Content/Guides/Guides.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
     <TocEntry
       Title="[%=System.LinkedTitle%]"
-      Link="/Content/Guides/QuickGuides/CreateYourFirstDatabase/Creating_Your_First_Database_In_SQream.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      Link="/Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Creating_Your_First_Database_In_SQream.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputeToc="true"
       ComputedTocAction="Replace"
       ComputedTocDepth="10"></TocEntry>

@@ -140,6 +140,13 @@ p.body
 	margin-top: 8px;
 }
 
+
+p.leftBig {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 2rem;
+  }
+
 p.code
 {
 	border: 1px dashed black;
