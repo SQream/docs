@@ -3,108 +3,108 @@
   Version="1">
   <TocEntry
     Title="[%=System.LinkedTitle%]"
-    Link="/Content/Guides/InstallationGuides/InstallEditor/1_Overview.htm">
+    Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/1_Overview.htm">
     <TocEntry
       Title="Overview"
-      Link="/Content/Guides/InstallationGuides/InstallEditor/1_Overview.htm"></TocEntry>
+      Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/1_Overview.htm"></TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
-      Link="/Content/Guides/InstallationGuides/InstallEditor/3_1.1_Install_Node.js_10.x.htm">
+      Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/3_1.1_Install_Node.js_10.x.htm">
       <TocEntry
         Title="Install Node.js 10.x"
-        Link="/Content/Guides/InstallationGuides/InstallEditor/3_1.1_Install_Node.js_10.x.htm"
+        Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/3_1.1_Install_Node.js_10.x.htm"
         ComputedTocAction="Replace"
         ComputeToc="true"
         ComputedTocDepth="10"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
-        Link="/Content/Guides/InstallationGuides/InstallEditor/4_1.2_Install_PM2_Node_Daemon_Manager.htm"
+        Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/4_1.2_Install_PM2_Node_Daemon_Manager.htm"
         ComputedTocAction="Replace"
         ComputeToc="true"
         ComputedTocDepth="10"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
-        Link="/Content/Guides/InstallationGuides/InstallEditor/5_1.3_Disable_the_Firewall.htm"
+        Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/5_1.3_Disable_the_Firewall.htm"
         ComputedTocAction="Replace"
         ComputeToc="true"
         ComputedTocDepth="10"></TocEntry>
     </TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
-      Link="/Content/Guides/InstallationGuides/InstallEditor/7_2.1_Install_the_SQL_Editor_application.htm">
+      Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/7_2.1_Install_the_SQL_Editor_application.htm">
       <TocEntry
         Title="Install the SQL Editor application"
-        Link="/Content/Guides/InstallationGuides/InstallEditor/7_2.1_Install_the_SQL_Editor_application.htm"
+        Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/7_2.1_Install_the_SQL_Editor_application.htm"
         ComputedTocAction="Replace"
         ComputeToc="true"
         ComputedTocDepth="10"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
-        Link="/Content/Guides/InstallationGuides/InstallEditor/8_2.2_Copy_the_SQL_Editor_configuration_file.htm"
+        Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/8_2.2_Copy_the_SQL_Editor_configuration_file.htm"
         ComputedTocAction="Replace"
         ComputeToc="true"
         ComputedTocDepth="10"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
-        Link="/Content/Guides/InstallationGuides/InstallEditor/9_2.3_Setup_the_SQL_Editor_configuration_file.htm"
+        Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/9_2.3_Setup_the_SQL_Editor_configuration_file.htm"
         ComputedTocAction="Replace"
         ComputeToc="true"
         ComputedTocDepth="10"></TocEntry>
     </TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
-      Link="/Content/Guides/InstallationGuides/InstallEditor/10_3_Test_the_installation.htm"
+      Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/10_3_Test_the_installation.htm"
       ComputedTocAction="Replace"
       ComputeToc="true"
       ComputedTocDepth="10"></TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
-      Link="/Content/Guides/InstallationGuides/InstallEditor/11_4_Start_or_stop_the_SQL_Editor.htm"
+      Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/11_4_Start_or_stop_the_SQL_Editor.htm"
       ComputedTocAction="Replace"
       ComputeToc="true"
       ComputedTocDepth="10"></TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
-      Link="/Content/Guides/InstallationGuides/InstallEditor/12_5_Add_Node_Daemon_Manager_PM2_to_startup_script.htm"
+      Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/12_5_Add_Node_Daemon_Manager_PM2_to_startup_script.htm"
       ComputedTocAction="Replace"
       ComputeToc="true"
       ComputedTocDepth="10"></TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
-      Link="/Content/Guides/InstallationGuides/InstallEditor/14_6.1_Stop_the_SQL_editor.htm">
+      Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/14_6.1_Stop_the_SQL_editor.htm">
       <TocEntry
         Title="Stop the SQL Editor"
-        Link="/Content/Guides/InstallationGuides/InstallEditor/14_6.1_Stop_the_SQL_editor.htm"
+        Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/14_6.1_Stop_the_SQL_editor.htm"
         ComputedTocAction="Replace"
         ComputeToc="true"
         ComputedTocDepth="10"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
-        Link="/Content/Guides/InstallationGuides/InstallEditor/15_6.2_Backup_current_folder.htm"
+        Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/15_6.2_Backup_current_folder.htm"
         ComputedTocAction="Replace"
         ComputeToc="true"
         ComputedTocDepth="10"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
-        Link="/Content/Guides/InstallationGuides/InstallEditor/16_6.3_Extract_the_tar_file.htm"
+        Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/16_6.3_Extract_the_tar_file.htm"
         ComputedTocAction="Replace"
         ComputeToc="true"
         ComputedTocDepth="10"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
-        Link="/Content/Guides/InstallationGuides/InstallEditor/17_6.4_Start_the_SQL_editor.htm"
+        Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/17_6.4_Start_the_SQL_editor.htm"
         ComputedTocAction="Replace"
         ComputeToc="true"
         ComputedTocDepth="10"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
-        Link="/Content/Guides/InstallationGuides/InstallEditor/18_6.5_Test_the_SQL_editor.htm"
+        Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/18_6.5_Test_the_SQL_editor.htm"
         ComputedTocAction="Replace"
         ComputeToc="true"
         ComputedTocDepth="10"></TocEntry>
     </TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
-      Link="/Content/Guides/InstallationGuides/InstallEditor/19_Copyright.htm"></TocEntry>
+      Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/19_Copyright.htm"></TocEntry>
   </TocEntry>
 </CatapultToc>

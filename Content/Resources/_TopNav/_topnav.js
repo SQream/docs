@@ -4,6 +4,7 @@ $(function() {
   $('.SQreamHomeSite').show();
   $('.VersionControl').appendTo('.logo-wrapper');
   $('.VersionControl').show();
+  $('.mp-search .VersionControl').hide();
     
   var mLabel;
   var mTarget;
@@ -35,3 +36,26 @@ $(function() {
       $('.home-page .SQreamHomeSite').prependTo('.navigation-wrapper');
       $('.home-page .SQreamHomeSite').show();
   });
+
+  $(function () {
+    
+     if ($('.mp-search').length) {
+     
+       var id = setInterval(function () {
+         if (!$('.total-results').text().length) return;
+         clearInterval(id);
+        
+                 if ($('.total-results').text() !== '0' && $('#resultList .url cite').length) {
+     
+       $('#resultList .url cite')
+         .each(function () {
+           $(this).html($(this).html().replace(/[^\/]+$/, ''));
+           $(this).html($(this).html().replace(/_/g, ' '));
+ console.log(this)
+           $(this).show();
+         });
+     
+     }
+       }, 100);
+     }
+   });
