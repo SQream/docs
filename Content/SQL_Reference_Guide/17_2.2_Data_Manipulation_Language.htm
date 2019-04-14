@@ -118,8 +118,7 @@ Hidden files (files with file names that start with a dot) are skipped.</p>
                                         <p><strong>Limit</strong>:<br />The load will stop with the requested limit row number. When being used in copy from directory, the limit will affect each file that is being loaded.</p>
                                     </li>
                                     <li>
-                                        <p><strong>Delimiter</strong>:<br />The default field delimiter is: `,` (comma).</p>
-                                        <p>The field delimiter can be any single printable ascii character (32-127), or ascii characters between 1 and 126 enclosed by E'\' (for example: E'\001') excluding the following: '"' (octal 042), '-' (octal 055), '.' (octal 056), ':' (octal 072), '\' (octal 134), Digits: '0-9' (octals 060-070), Letters: 'a-z' (octals 141-172, all lower case letters) and 'N' (octal 116), ASCII characters 10 (octal 012) and 13 (octal 015). +<br /></p>
+                                        <p><strong>Delimiter</strong>:<br />The default field delimiter is: , (comma). The field delimiter can be any single printable ascii character (32-127), or ascii characters between 1 and 126 enclosed by E'\' (for example: E'\001') excluding the following: '\', 'N', '-', ':', '"', ascii code 10, ascii code 13, all lower case characters, all digits.</p>
                                         <div class="admonitionblock tip">
                                             <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                                 <tr class="TableStyle-Default_Table-Body-Body1">
@@ -491,8 +490,7 @@ Using the COPY command without the ERROR_VERBOSITY option will fail the entire l
                             <div class="ulist">
                                 <ul>
                                     <li>
-                                        <p><strong>Delimiter</strong>:<br />The default field delimiter is: `,` (comma).</p>
-                                        <p>The field delimiter can be any single printable ascii character (32-127), or ascii characters between 1 and 126 enclosed by E'\' (for example: E'\001') excluding the following: '"' (octal 042), '-' (octal 055), '.' (octal 056), ':' (octal 072), '\' (octal 134), Digits: '0-9' (octals 060-070), Letters: 'a-z' (octals 141-172, all lower case letters) and 'N' (octal 116), ASCII characters 10 (octal 012) and 13 (octal 015). +</p>
+                                        <p><strong>Delimiter</strong>:<br />The default field delimiter is: , (comma). The field delimiter can be any single printable ascii character (32-127), or ascii characters between 1 and 126 enclosed by E'\' (for example: E'\001') excluding the following: '\', 'N', '-', ':', '"', ascii code 10, ascii code 13, all lower case characters, all digits.</p>
                                     </li>
                                     <li>
                                         <p><strong>Header</strong>:<br />This option adds the column names as the first line (header line) of the output CSV file, using specified field and line delimiters. If COPY is done from a table it adds the natural column names as they appear in the metadata. If COPY is done from a query the system creates an alias name for calculated fields (e.g., SUM(amount)). For calculated fields it is therefore highly recommended to specify a column alias name. Column alias names follow the identifier rules (see <a href="22_2.7_Value_expressions.htm#identifier-definitions">identifier definition</a> section).</p>
