@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+        <link href="../../../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h2>Preinstallation procedures</h2>
+        <p>There are a number of preliminary steps that you must perform before you can actually install SQream.</p>
+        <ul>
+            <li><a href="#Create">Creating the SQream user</a>
+            </li>
+            <li><a href="#Configur">Configuring the OS</a>
+            </li>
+            <li><a href="#Install">Installing NVIDIA driver</a>
+            </li>
+        </ul>
+        <h3><a name="Create"></a>Create and login as the SQream user</h3>
+        <p>Run the following commands to create the sqream user and assign a password:</p>
+        <div class="code"><pre><p>useradd -m -U sqream</p><p>passwd sqream</p><p>usermod -aG wheel sqream  ( can be removed from wheel after installation is complete )</p></pre>
+        </div>
+        <p>Now logout and login again as the sqream user.</p>
+        <h3><a name="Configur"></a>Configure the OS locale</h3>
+        <p>Set the system locale to <span class="emphasis">en_US.utf8:</span></p>
+        <div class="code">
+            <p># sudo localectl set-locale LANG=en_US.UTF-8</p>
+        </div>
+        <h3>Configure the time zone</h3>
+        <p><span class="strong">Run the following command to display all the available time zones:</span>
+        </p>
+        <div class="code">
+            <p># timedatectl list-timezones</p>
+        </div>
+        <p>This will give you a list of the time zones available for your server. When you find the region/time zone setting that is correct for your server, run the following command to set it:</p>
+        <div class="code">
+            <p># sudo timedatectl set-timezone region/timezone</p>
+        </div>
+        <p class="example">Example</p>
+        <p>To set the time zone to United States Eastern time, type:</p>
+        <div class="code">
+            <p># sudo timedatectl set-timezone America/New_York</p>
+        </div>
+        <h3>Add the EPEL repository</h3>
+        <div class="code">
+            <p>sudo rpm -Uvh <a href="http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm">http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm</a></p>
+        </div>
+        <h3>Install required packages</h3>
+        <div class="code">
+            <p>sudo yum install ntp  pciutils python36.x86_64 monit kernel-devel-$(uname -r) kernel-headers-$(uname -r) 	gcc  tuned firewalld</p>
+        </div>
+        <h3>Install recommended utilities (Optional)</h3>
+        <p>The following packages contain tools that are recommended but not required for using SQream.</p>
+        <ul>
+            <li>
+                <p><span class="strong">net tools:</span> tools for debugging</p>
+            </li>
+            <li>
+                <p><span class="strong">psmisc package:</span> utilities for managing processes</p>
+            </li>
+        </ul>
+        <p>net-tools contain the following tools for debugging the network:</p>
+        <ul>
+            <li>
+                <p>ifconfig</p>
+            </li>
+            <li>
+                <p>netstat</p>
+            </li>
+        </ul>
+        <p>The psmisc package contains the following utilities for managing processes on your system:</p>
+        <ul>
+            <li>
+                <p>pstree: displays a tree structure of all of the running processes on your system</p>
+            </li>
+            <li>
+                <p>killall: sends a specified signal (SIGTERM if nothing is specified) to processes identified by name</p>
+            </li>
+            <li>
+                <p>fuser: identifies the PIDs of processes that are using specified files or filesystems</p>
+            </li>
+        </ul>
+        <p><span class="strong">Run the following command to install the recommended tools</span>
+        </p>
+        <div class="code">
+            <p>sudo yum install bash-completion.noarch vim-enhanced.x86_64 vim-common.x86_64 net-tools iotop htop psmisc screen xfsprogs wget yum-utils deltarpm dos2unix</p>
+        </div>
+        <h3>Update to the latest release</h3>
+        <div class="code">
+            <p>sudo yum update</p>
+        </div>
+        <h3>Configure NTP</h3>
+        <p>NTP synchronization allows your computer to stay in sync with other servers, optimizing predictability in operations that rely on having the correct time.</p>
+        <p>If you have local NTP servers, add them to the NTP configuration.</p>
+        <div class="code">
+            <p>sudo systemctl enable ntpd</p>
+            <p>sudo systemctl start ntpd</p>
+            <p>sudo ntpq -p</p>
+        </div>
+        <h3>Configure the performance profile</h3>
+        <div class="code">
+            <p>sudo tuned-adm profile throughput-performance</p>
+            <p>sudo systemctl set-default multi-user.target</p>
+        </div>
+        <h3>Configure security limits</h3>
+        <p>On Linux systems, persistent limits can be set for a particular user by editing the <span class="emphasis">/etc/security/limits.conf</span> file. To set the maximum number of open files for the sqream user to 500,000, run the following command to edit this <span class="emphasis">limits.conf</span> file.</p>
+        <div class="code">
+            <p># echo -e "sqream soft nproc 500000\nsqream hard nproc 500000\nsqream soft nofile 500000\nsqream hard nofile 500000</p>
+        </div>
+        <h3>Tune kernel parameters</h3>
+        <p>Several kernel parameters can be tuned for better performance.</p>
+        <div class="code">
+            <p>echo -e "vm.dirty_background_ratio = 5 \n vm.dirty_ratio = 10 \n vm.swappiness = 10 \n vm.zone_reclaim_mode = 7 \n vm.vfs_cache_pressure = 200 \n"  &gt;&gt; /etc/sysctl.conf</p>
+        </div>
+        <p>Check the fs.file max value.</p>
+        <div class="code">
+            <p>sysctl -n fs.file-max</p>
+        </div>
+        <h4>Set the fs.file-max value</h4>
+        <p>If it is less than 2097152, run the following command.</p>
+        <div class="code">
+            <p>echo "fs.file-max=2097152" &gt;&gt; /etc/sysctl.conf</p>
+        </div>
+        <p class="tablecaption">Kernel Parameters</p>
+        <table style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+            <thead>
+                <tr class="TableStyle-Default_Table-Head-Header1">
+                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">
+                        <p>Parameter</p>
+                    </th>
+                    <th class="TableStyle-Default_Table-HeadD-Column1-Header1">
+                        <p>Explanation</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <p>vm.vfs_cache_pressure</p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <p>Controls
+ the tendency of the kernel to reclaim the memory used for VFS caches versus
+ pagecache and swap. Increasing this value increases the rate at which VFS
+ caches are reclaimed.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <p>vm.dirty_background_ratio</p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <p>Percentage of total system
+ memory. The number of pages at which the pdflush background writeback daemon
+ will start writing out dirty data. However, for a fast RAID-based disk system
+ this may cause large flushes of dirty memory pages. Larger values will result
+ in less frequent flushes.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <p>vm.swappiness</p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <p>Defines
+ how aggressively memory pages are swapped to disk. If you do not want
+ swapping, then lower this value. However, if your system process sleeps for a
+ long time you may benefit from an aggressive swapping behavior by increasing
+ this value. You can change swappiness behavior by increasing or decreasing
+ the value.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <p>vm.dirty_ratio</p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <p>Percentage of total system
+ memory. The number of pages at which a process that is generating disk writes
+ will itself start writing out dirty data. This is the ratio at which dirty
+ pages created by application disk writes will be flushed out to disk. A value
+ of 40 means that data will be written into system memory until the file
+ system cache has a size of 40% of the server RAM. So if the server has 12GB
+ of RAM, data will be written into system memory until the file system cache
+ has a size of 4.8G.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body1">
+                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <p>vm.zone_reclaim_mode </p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <p>Defines how aggressively memory will
+ be reclaimed when a zone runs out of memory. Allowing zone reclaim to write
+ out pages stops processes that are writing large amounts of data from
+ dirtying pages on other nodes.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Default_Table-Body-Body2">
+                    <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
+                        <p>fs.file-max</p>
+                    </td>
+                    <td class="TableStyle-Default_Table-BodyA-Column1-Body2">
+                        <p>file-max is the maximum
+ number of File Descriptors (FD) enforced on a kernel level that cannot be
+ exceeded by all combined processes without increasing. .</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3><a name="Configur2"></a>Configuring the firewall</h3>
+        <p>If SQream DB runs on an internet-accessible server, we recommend that the public SQream database ports not be exposed to the internet. As with any application, the best strategy is to lock down everything that you do not have a good reason to keep open.</p>
+        <p>CentOS ships with a firewall called <span class="strong">firewalld</span>. The <span class="strong">firewalld</span> service has the ability to make modifications without dropping current connections, so you can turn it on before creating exceptions.</p>
+        <p><span class="strong">Run this command to start the firewalld service.</span>
+        </p>
+        <div class="code">
+            <p>systemctl start firewalld</p>
+        </div>
+        <p>Now add a firewall "exception" to each SQream database port.</p>
+        <ul>
+            <li>
+                <p>If the server is to run the Metadata Server and Load Balancer, open ports 3105 and 3108.</p>
+            </li>
+            <li>
+                <p>If the server is to run SQream database daemons, open the relevant ports for these daemons.</p>
+            </li>
+        </ul>
+        <p>For example, for a server hosting all services and SQream database ports 5000-5003 run the following commands:</p>
+        <div class="code">
+            <p>firewall-cmd --zone=public --permanent --add-port=2812/tcp</p>
+            <p>firewall-cmd --zone=public --permanent --add-port=3000/tcp</p>
+            <p>firewall-cmd --zone=public --permanent --add-port=3001/tcp</p>
+            <p>firewall-cmd --zone=public --permanent --add-port=3105/tcp</p>
+            <p>firewall-cmd --zone=public --permanent --add-port=3108/tcp</p>
+            <p>firewall-cmd --zone=public --permanent --add-port=5000-5003/tcp</p>
+            <p>firewall-cmd --zone=public --permanent --add-port=5100-5103/tcp</p>
+        </div>
+        <p><span class="strong">When you are finished, run the following command to see the list of the exceptions that will be implemented:</span>
+        </p>
+        <div class="code">
+            <p>firewall-cmd --permanent --list-all</p>
+        </div>
+        <p><span class="strong">When you are ready to implement the changes, run this command to reload the firewall:</span>
+        </p>
+        <div class="code">
+            <p>firewall-cmd --reload</p>
+        </div>
+        <p><span class="strong">If, after testing, everything works as expected, run this command to make sure the firewall will be started at boot:</span>
+        </p>
+        <div class="code">
+            <p>systemctl enable firewalld</p>
+        </div>
+        <div class="tip">
+            <p>You will have to explicitly open the firewall (with services or ports) for any additional services that you may configure in the future</p>
+        </div>
+        <h3><a name="Install"></a>Install NVIDIA CUDA driver</h3>
+        <ol>
+            <li>
+                <p>Reboot the servers.</p>
+            </li>
+            <li>
+                <p>Verify that your GPU is CUDA-capable.</p>
+                <div class="code">
+                    <p>lspci | grep -i nvidia</p>
+                </div>
+                <p>The expected result is something like:</p>
+                <div class="code">
+                    <p>06:00.0 3D controller: NVIDIA Corporation device [Tesla V100] (rev a1)</p>
+                    <p>07:00.0 3D controller: NVIDIA Corporation device [Tesla V100] (rev a1)</p>
+                </div>
+                <p>If nothing appears, your GPU might not be installed correctly.</p>
+            </li>
+            <li>
+                <p>Make sure the upstream open-source nvidia driver (module) is not running.</p>
+                <ol style="list-style-type: lower-alpha;">
+                    <li>
+                        <p>Check to see whether the upstream open-source nvidia driver (nouveau) is running:</p>
+                        <div class="code">
+                            <p>lsmod | grep nouveau</p>
+                        </div>
+                    </li>
+                    <li>
+                        <p>If it is running, disable it:</p>
+                        <div class="code"> <p>echo "blacklist nouveau" &gt; /etc/modprobe.d/blacklist-nouveau.conf</p><p>echo "options nouveau modeset=0"  &gt;&gt; /etc/modprobe.d/blacklist-nouveau.conf</p><p>dracut --force</p><p>modprobe --showconfig | grep nouveau</p></div>
+                    </li>
+                    <li>
+                        <p>Reboot the server and verify that now the nouveau module is not loaded:</p>
+                        <div class="code">
+                            <p>lsmod | grep nouveau</p>
+                        </div>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>Install the CUDA repository.</p>
+                <div class="code">
+                    <p>sudo rpm -Uvh https://developer.download.nvidia.com/compute/cuda/repos/rhel7/x86_64/cuda-repo-rhel7-10.0.130-1.x86_64.rpm</p>
+                </div>
+                <p>OR</p>
+                <p>In advance,-prepare the cuda 10.0 offline repo - from a server that is connected to the cuda repo:</p>
+                <div class="code">
+                    <p>reposync -g -l -m --repoid=cuda --download_path=/var/cuda-repo-10.0-local</p>
+                </div>
+                <p>Copy the repository to the installation server then run:</p>
+                <div class="code">
+                    <p>createrepo -g comps.xml  /var/cuda-repo-10.0-local</p>
+                </div>
+                <p>Add a repo configuration file in <span class="emphasis">/etc/yum.repos.d/:</span></p>
+                <div class="code">
+                    <p>vim /etc/yum.repos.d/cuda-10.0-local.repo</p>
+                    <p>[cuda-10.0-local]</p>
+                    <p>name=cuda-10.0-local</p>
+                    <p>baseurl=file:///var/cuda-repo-10.0-local</p>
+                    <p>enabled=1</p>
+                    <p>gpgcheck=1</p>
+                    <p>gpgkey=file:///var/cuda-repo-10.0-local/7fa2af80.pub</p>
+                </div>
+            </li>
+            <li>
+                <p>Install the actual CUDA:</p>
+                <div class="code">
+                    <p>sudo bash</p>
+                    <p>yum install cuda-10-0.x86_64</p>
+                </div>
+            </li>
+            <li>
+                <p>Add some performance tuning to <span class="emphasis">rc.local</span></p>
+                <div class="code">
+                    <p>vim /etc/rc.local</p>
+                </div>
+                <p>Add these lines to the file:</p>
+                <p><span class="strong">[V100]</span>
+                </p>
+                <div class="code">
+                    <p>nvidia-persistenced</p>
+                </div>
+                <p><span class="strong">[NOT V100]</span>
+                </p>
+                <div class="code">
+                    <p>nvidia-persistenced</p>
+                    <p>nvidia-smi -pm 1</p>
+                    <p>nvidia-smi -acp 0</p>
+                    <p>nvidia-smi --auto-boost-permission=0</p>
+                    <p>nvidia-smi --auto-boost-default=0</p>
+                </div>
+            </li>
+            <li>
+                <p>Reboot the server and run:</p>
+                <div class="code">
+                    <p>nvidia-smi</p>
+                </div>
+            </li>
+        </ol>
+        <h3>Disable automatic bug reporting tools</h3>
+        <div class="code">
+            <p>for i in abrt-ccpp.service abrtd.service abrt-oops.service abrt-pstoreoops.service abrt-vmcore.service abrt-xorg.service ; do sudo systemctl disable $i; sudo systemctl stop $i; done</p>
+        </div>
+        <p class="centerBig">You are now ready to install SQream.
+        </p>
+    </body>
+</html>

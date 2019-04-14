@@ -1,0 +1,821 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+        <link href="../../../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    </head>
+    <body>
+        <h3 id="_setting_up_sqream_db">Setting up SQream DB</h3>
+        <div class="paragraph">
+            <p>If you would like to deploy SQream DB on AWS or Azure please contact SQream directly at <a href="mailto:info@sqream.com">info@sqream.com</a>.</p>
+        </div>
+        <div class="paragraph">
+            <p>Make sure that you are running on a 64-bit Linux operating system, and have an Nvidia GPU installed.<br></br>See the Hardware Requirements page to verify your system meets the minimum
+requirements for running SQream DB.</p>
+        </div>
+        <div class="imageblock">
+            <div class="content">
+                <img src="Images/settingup1.png" alt="gen connecting to sqream" width="368" height="347">
+                </img>
+            </div>
+        </div>
+        <div class="sect3">
+            <h4 id="_bios_and_raid_checklist">BIOS and RAID (Checklist)</h4>
+            <div class="sect4">
+                <h5 id="_out_of_band_management_interface">Out-of-band management interface</h5>
+                <div class="ulist checklist">
+                    <ul class="checklist">
+                        <li>
+                            <p><i class="fa fa-square-o"></i> Ensure connection to management console, Linux host and verify credentials</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sect4">
+                <h5 id="_raid">RAID</h5>
+                <div class="ulist checklist">
+                    <ul class="checklist">
+                        <li>
+                            <p><i class="fa fa-square-o"></i> Ensure all drives are connected and appear in RAID interface</p>
+                        </li>
+                        <li>
+                            <p><i class="fa fa-square-o"></i> Configure RAID drives as required</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sect4">
+                <h5 id="_bios_settings">BIOS settings</h5>
+                <div class="admonitionblock note">
+                    <table>
+                        <tr>
+                            <td class="icon"><i class="fa icon-note" title="Note"></i>
+                            </td>
+                            <td class="content">
+Ignore settings where not applicable - some are Dell or HP specific
+</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="ulist checklist">
+                    <ul class="checklist">
+                        <li>
+                            <p><i class="fa fa-square-o"></i> (For Dell PowerEdge servers) Enable Memory Map I/O Over 4GB</p>
+                        </li>
+                        <li>
+                            <p><i class="fa fa-square-o"></i> Set power profile to maximum performance</p>
+                        </li>
+                        <li>
+                            <p><i class="fa fa-square-o"></i> Set power regulator to high performance mode</p>
+                        </li>
+                        <li>
+                            <p><i class="fa fa-square-o"></i> Enable Intel Turbo Boost and Hyperthreading</p>
+                        </li>
+                        <li>
+                            <p><i class="fa fa-square-o"></i> Disable Intel Virtualization Technology</p>
+                        </li>
+                        <li>
+                            <p><i class="fa fa-square-o"></i> Disable Intel VT-d</p>
+                        </li>
+                        <li>
+                            <p><i class="fa fa-square-o"></i> Disable processor C-States (Minimum processor idle power core state)</p>
+                        </li>
+                        <li>
+                            <p><i class="fa fa-square-o"></i> Set Energy/Performance bias to maximum performance</p>
+                        </li>
+                        <li>
+                            <p><i class="fa fa-square-o"></i> Disable dynamic power capping</p>
+                        </li>
+                        <li>
+                            <p><i class="fa fa-square-o"></i> Set DIMM voltage to Optimized for Performance</p>
+                        </li>
+                        <li>
+                            <p><i class="fa fa-square-o"></i> Set memory power savings mode to Maximum performance</p>
+                        </li>
+                        <li>
+                            <p><i class="fa fa-square-o"></i> Enable ACPI SLIT</p>
+                        </li>
+                        <li>
+                            <p><i class="fa fa-square-o"></i> Set QPI Snoop configuration to Home-Snoop or Early-Snoop</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="sect3">
+            <h4 id="_os"><a name="OS"></a>OS</h4>
+            <div class="paragraph">
+                <p>We recommend CentOS 7.3, Amazon Linux 2017.03 or Ubuntu 16.04.</p>
+            </div>
+            <div class="ulist checklist">
+                <ul class="checklist">
+                    <li>
+                        <p><i class="fa fa-square-o"></i> For CentOS 7.3, install DEVEL with basic video driver</p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-square-o"></i> Edit your <code>fstab</code> to mount all RAID LUNs as required</p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-square-o"></i> Configure networking as desired</p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-square-o"></i> Add <code>sqream</code> user and set password:<br></br></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="code">
+                <div class="content"><pre xml:space="preserve">sudo useradd -m -U sqream
+sudo passwd sqream</pre>
+                </div>
+            </div>
+            <div class="ulist checklist">
+                <ul class="checklist">
+                    <li><i class="fa fa-square-o"></i> Update user sqream .bashrc with the following<br></br></li>
+                </ul>
+            </div>
+            <div class="code">
+                <div class="content"><pre xml:space="preserve">echo "alias sqream_status=\"ps axuwww | grep -v 'grep\|tail\|monitor' | grep -i </pre><pre xml:space="preserve">'sqreamd\|metadata_server\|server_pick\|monit'\"" &gt;&gt; ~sqream/.bashrc</pre><pre xml:space="preserve">echo "export PATH=$SQREAM_BIN_DIR:$PATH" &gt;&gt; ~sqream/.bashrc</pre><pre xml:space="preserve">echo "export LD_LIBRARY_PATH=$SQREAM_LIB_DIR:$LD_LIBRARY_PATH" &gt;&gt; ~sqream/.bashrc</pre>
+                </div>
+            </div>
+            <div class="ulist checklist">
+                <ul class="checklist">
+                    <li>
+                        <p><i class="fa fa-square-o"></i> Edit sudoers with ‘sudo visudo’ and add the following last line:<br></br></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="code">
+                <div class="content"><pre xml:space="preserve">sqream ALL=(ALL)    ALL</pre>
+                </div>
+            </div>
+            <div class="ulist checklist">
+                <ul class="checklist">
+                    <li>
+                        <p><i class="fa fa-square-o"></i> Set UTF8 as system language<br></br></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="code">
+                <div class="content"><pre xml:space="preserve">export LANG=en_US.UTF-8</pre>
+                </div>
+            </div>
+            <div class="ulist checklist">
+                <ul class="checklist">
+                    <li>
+                        <p><i class="fa fa-square-o"></i> Disable X/GUI<br></br></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="code">
+                <div class="content"><pre xml:space="preserve">systemctl set-default multi-user.target</pre>
+                </div>
+            </div>
+            <div class="ulist checklist">
+                <ul class="checklist">
+                    <li>
+                        <p><i class="fa fa-square-o"></i> Add some vm settings to sysctl to prevent kernel panic<br></br></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="code">
+                <div class="content"><pre xml:space="preserve">echo -e " fs.file-max=200000\n vm.dirty_background_ratio = 5 \n vm.dirty_ratio = 10 \n vm.swappiness = 10 \n vm.zone_reclaim_mode = 7 \n vm.vfs_cache_pressure = 200 \n"  &gt;&gt; /etc/sysctl.conf</pre>
+                </div>
+            </div>
+            <div class="ulist checklist">
+                <ul class="checklist">
+                    <li>
+                        <p><i class="fa fa-square-o"></i> Open network ports:<br></br>For each installation of SQream DB, make sure ports 3105, 3108 and 5000 are open.<br></br>Port 3105 is used by <code>metadata_server</code>, port 3108 is used by <code>server_picker</code>, and a single port is<br></br>used for every <code>sqreamd</code> instance (5000 is the default port).<br></br>You may also choose to disable <code>firewalld</code> completely.</p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-square-o"></i> Disable SELINUX:<br></br>Configure <code>SELINUX=disabled</code> in the /etc/selinux/config file.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sect3">
+            <h4 id="_obtain_the_tarball_from_sqream">Obtain the tarball from SQream</h4>
+            <div class="ulist checklist">
+                <ul class="checklist">
+                    <li>
+                        <p><i class="fa fa-square-o"></i> Obtain the latest compressed SQream DB tarball from SQream.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sect3">
+            <h4 id="_install_prerequisite_libraries_and_kernel_headers">Install prerequisite libraries and kernel headers</h4>
+            <div class="sect4">
+                <h5 id="_on_centosrhel">On CentOS/RHEL</h5>
+                <div class="code">
+                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">sudo yum install -y zlib-devel openssl openssl-devel nano bzip2 bzip2-devel <span class="tok-se">\</span>
+python python-devel libffi libffi-devel apr apr-util apr-devel apr-util-devel <span class="tok-se">\</span>
+readline readline-devel gmp-devel libmp3-devel wget gcc kernel-headers kernel-devel</code></pre>
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <p>Reboot your machine to enable the new kernel.</p>
+                </div>
+            </div>
+            <div class="sect4">
+                <h5 id="_on_ubuntu">On Ubuntu</h5>
+                <div class="code">
+                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">sudo apt-get install zlib1g-dev libssl libssl-dev libbz2 libbz2-dev python <span class="tok-se">\</span>
+python-dev libffi libffi-dev libapr1 libapr1-dev libreadline6 libreadline6-dev <span class="tok-se">\</span>
+libgmp libgmp-dev wget gcc linux-headers-<span class="tok-sb">`</span>uname -r<span class="tok-sb">`</span></code></pre>
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <p>Reboot your machine to enable the new kernel.</p>
+                </div>
+            </div>
+        </div>
+        <div class="sect3">
+            <h4 id="_install_the_latest_nvidia_driver_for_your_gpu">Install the latest NVIDIA driver for your GPU</h4>
+            <div class="olist arabic">
+                <ol class="arabic">
+                    <li>
+                        <p>Stop any running UI by stopping X<br></br>(<code>sudo init 3</code> or <code>sudo systemctl set-default multi-user.target</code>)</p>
+                    </li>
+                    <li>
+                        <p>Get the latest NVIDIA driver<br></br><code>wget <a href="https://developer.nvidia.com/compute/cuda/8.0/prod/local_installers/cuda_8.0.44_linux-run" class="bare">https://developer.nvidia.com/compute/cuda/8.0/prod/local_installers/cuda_8.0.44_linux-run</a></code></p>
+                    </li>
+                    <li>
+                        <p>Run the installer<br></br><code>sudo sh ./cuda_8.0.44_linux-run</code></p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="sect3">
+            <h4 id="_install_the_sqream_db_daemon_on_the_machine"><a name="InstallTheSQreamDBDaemon"></a>Install the SQream DB daemon on the machine</h4>
+            <div class="olist arabic">
+                <ol class="arabic">
+                    <li>
+                        <p>Change to the newly created sqream user:<br></br><code>su sqream</code></p>
+                    </li>
+                    <li>
+                        <p>Unpack the tarball. This expands into the <code>sqream</code> directory.</p>
+                    </li>
+                    <li>
+                        <p>Unpacking
+<code>tar -xf sqream-&lt;version&gt;.tar.gz</code></p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="sect3">
+            <h4 id="_create_the_cluster"><a name="CreateTheCluster"></a>Create the cluster</h4>
+            <div class="olist arabic">
+                <ol class="arabic">
+                    <li>
+                        <p>Enter the <code>sqream</code> directory and create a storage cluster</p>
+                    </li>
+                    <li>
+                        <p><code>./bin/SqreamStorage -C -r &lt;full path to new cluster&gt;</code>
+                        </p>
+                    </li>
+                </ol>
+            </div>
+            <div class="paragraph">
+                <div class="title">Example: Create storage cluster</div>
+                <p>If your main storage is on <code>/mnt/storage</code>, you can run<br></br><code>./bin/SqreamStorage -C -r /mnt/storage/sqream_storage</code></p>
+            </div>
+        </div>
+        <div class="sect3">
+            <h4 id="_configure_the_instances">Configure the instances</h4>
+            <div class="paragraph">
+                <p>Each SQream DB daemon must run against a configuration file.</p>
+            </div>
+            <div class="paragraph">
+                <p>Below is a sample <strong>minimal</strong> configuration file. It is recommended that it be placed in <code>/etc/sqream/sqream_config.json</code>.
+This file will start the server on port <strong>5000</strong>, against GPU #<strong>0</strong>.</p>
+            </div>
+            <div class="code">
+                <div class="title">Example minimal configuration JSON</div>
+                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="json"><span class="tok-p">{</span>  
+    <span class="tok-nt">"compileFlags"</span><span class="tok-p">:</span>  <span class="tok-p">{</span>  
+    <span class="tok-p">},</span>  
+    <span class="tok-nt">"runtimeFlags"</span><span class="tok-p">:</span>  <span class="tok-p">{</span>  
+    <span class="tok-p">},</span>  
+    <span class="tok-nt">"runtimeGlobalFlags"</span><span class="tok-p">:</span>  <span class="tok-p">{</span>  
+    <span class="tok-p">},</span>  
+    <span class="tok-nt">"server"</span><span class="tok-p">:</span>  <span class="tok-p">{</span>  
+        <span class="tok-nt">"licensePath"</span>  <span class="tok-p">:</span>  <span class="tok-s2">"/etc/sqream/license.enc"</span><span class="tok-p">,</span>  
+        <span class="tok-nt">"port"</span><span class="tok-p">:</span>  <span class="tok-mi">5000</span><span class="tok-p">,</span>  
+        <span class="tok-nt">"cluster"</span><span class="tok-p">:</span>  <span class="tok-s2">"/mnt/storage/sqream_storage"</span><span class="tok-p">,</span>  
+        <span class="tok-nt">"gpu"</span><span class="tok-p">:</span>  <span class="tok-mi">0</span><span class="tok-p">,</span>  
+        <span class="tok-nt">"ssl_port"</span><span class="tok-p">:</span>  <span class="tok-mi">5100</span>  
+    <span class="tok-p">}</span>  
+<span class="tok-p">}</span></code></pre>
+                </div>
+            </div>
+            <div class="admonitionblock note">
+                <table>
+                    <tr>
+                        <td class="icon"><i class="fa icon-note" title="Note"></i>
+                        </td>
+                        <td class="content">
+                            <div class="ulist">
+                                <ul>
+                                    <li>
+                                        <p>JSON files can not contain any comments</p>
+                                    </li>
+                                    <li>
+                                        <p>When altering the JSON file, pay close attention to the field-separating commas at the end of the lines.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="paragraph">
+                <p>Permanent instance options may be placed in this file, based on consultation
+with SQream support or through the configuration utility.</p>
+            </div>
+        </div>
+        <div class="sect3">
+            <h4 id="_configuring_instances_parameters">Configuring instances parameters</h4>
+            <table class="TableStyle-Default_Table" style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                <caption class="title">Table 20. Common parameters setting</caption>
+                <colgroup>
+                    <col style="width: 20%;">
+                    </col>
+                    <col style="width: 20%;">
+                    </col>
+                    <col style="width: 20%;">
+                    </col>
+                    <col style="width: 20%;">
+                    </col>
+                    <col style="width: 20%;">
+                    </col>
+                </colgroup>
+                <thead>
+                    <tr class="TableStyle-Default_Table-Head-Header1">
+                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Flag Name</th>
+                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Description</th>
+                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Default Value</th>
+                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Range of Values</th>
+                        <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Remark</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-Default_Table-Body-Body1">
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <div class="literal"><pre xml:space="preserve">spoolmemorygb</pre>
+                            </div>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <p class="tableblock">Select what size spool SQream DB can use for writing intermediate results to RAM, in GB</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <div class="literal"><pre xml:space="preserve"> 128gb</pre>
+                            </div>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <div class="literal"><pre xml:space="preserve"> 1-machine ram size</pre>
+                            </div>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                            <p class="tableblock">Should consider total ram size and number of SQream instances</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Default_Table-Body-Body2">
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                            <div class="literal"><pre xml:space="preserve">insertParsers</pre>
+                            </div>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                            <p class="tableblock">Set the number of parsing threads to be launched for each file, during the bulk load process</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                            <div class="literal"><pre xml:space="preserve"> 4</pre>
+                            </div>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                            <div class="literal"><pre xml:space="preserve"> 1-32</pre>
+                            </div>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                            <p class="tableblock">Should consider total ram size and number of SQream instances</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Default_Table-Body-Body1">
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <div class="literal"><pre xml:space="preserve">insertCompressors</pre>
+                            </div>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <p class="tableblock">Set the number of compression threads to be launched for each file, during the bulk load process</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <div class="literal"><pre xml:space="preserve"> 4</pre>
+                            </div>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <div class="literal"><pre xml:space="preserve"> 1-32</pre>
+                            </div>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                            <p class="tableblock">Should consider total ram size and number of SQream instances</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Default_Table-Body-Body2">
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                            <div class="literal"><pre xml:space="preserve">statementLockTimeout</pre>
+                            </div>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                            <p class="tableblock">Set the number of seconds SQream will wait for a lock before returning an error</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                            <div class="literal"><pre xml:space="preserve"> 3</pre>
+                            </div>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                            <div class="literal"><pre xml:space="preserve"> 1-no limit</pre>
+                            </div>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Default_Table-Body-Body1">
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <div class="literal"><pre xml:space="preserve">showFullExceptionInfo</pre>
+                            </div>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <p class="tableblock">Show complete error message</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <div class="literal"><pre xml:space="preserve"> FALSE</pre>
+                            </div>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <div class="literal"><pre xml:space="preserve">TRUE/FALSE</pre>
+                            </div>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                            <p class="tableblock">Enabling this setting will often show more detailed error message</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Default_Table-Body-Body2">
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                            <div class="literal"><pre xml:space="preserve">initialSubscribedServices</pre>
+                            </div>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                            <p class="tableblock">List of services the instance will be subscribed to</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                            <div class="literal"><pre xml:space="preserve">sqream</pre>
+                            </div>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                            <div class="literal"><pre xml:space="preserve">list of strings</pre>
+                            </div>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                            <p class="tableblock">Example: "sqream,etl_service,query_service"</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Default_Table-Body-Body1">
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <div class="literal"><pre xml:space="preserve">useLogMaxFileSize</pre>
+                            </div>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <p class="tableblock">Defines whether SQream logs should be cycle every logMaxFileSizeMB size</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <div class="literal"><pre xml:space="preserve"> TRUE</pre>
+                            </div>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <div class="literal"><pre xml:space="preserve">TRUE/FALSE</pre>
+                            </div>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Default_Table-Body-Body2">
+                        <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
+                            <div class="literal"><pre xml:space="preserve">logMaxFileSizeMB</pre>
+                            </div>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
+                            <p class="tableblock">Set the size of SQream logs cycle</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
+                            <div class="literal"><pre xml:space="preserve"> 20</pre>
+                            </div>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
+                            <div class="literal"><pre xml:space="preserve"> &gt;0</pre>
+                            </div>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyA-Column1-Body2">
+                            <p class="tableblock">Set in MB</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="sect3">
+            <h4 id="service-start-stop"><a name="StartingAndStopping"></a>Starting and Stopping the SQream DB daemon</h4>
+            <div class="sect4">
+                <h5 id="_service">Service</h5>
+                <div class="paragraph">
+                    <p>The recommended way to run the daemon is via the service, which runs it through <code>monit</code>:</p>
+                </div>
+                <div class="admonitionblock note">
+                    <table>
+                        <tr>
+                            <td class="icon"><i class="fa icon-note" title="Note"></i>
+                            </td>
+                            <td class="content">
+                                <div class="title">Service permissions</div>
+                                <div class="paragraph">
+                                    <p>Altering the service state requires superuser access (<code>sudo</code>), but the SQream DB daemon
+will start as an unprivileged user.</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="sect5">
+                    <h6 id="_starting_the_service">Starting the service</h6>
+                    <div class="code">
+                        <div class="title">Starting the service</div>
+                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">sudo service sqream start</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="sect5">
+                    <h6 id="_stopping_the_service">Stopping the service</h6>
+                    <div class="code">
+                        <div class="title">Stopping the service</div>
+                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">sudo service sqream stop</code></pre>
+                        </div>
+                    </div>
+                    <div class="admonitionblock note">
+                        <table>
+                            <tr>
+                                <td class="icon"><i class="fa icon-note" title="Note"></i>
+                                </td>
+                                <td class="content">
+                                    <div class="title">Service permissions</div>
+                                    <div class="paragraph">
+                                        <p>Altering the service state requires superuser access (<code>sudo</code>), but the SQream DB daemon
+will start as an unprivileged user.</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="sect5">
+                    <h6 id="running-sqreamd"><a name="IdentifyingRunning"></a>Identifying which SQream daemons are running</h6>
+                    <div class="paragraph">
+                        <p>There are several methods for identifying running SQream daemons.
+In these examples, two daemons with metadata server and server-picker running.</p>
+                    </div>
+                    <div class="code">
+                        <div class="title">Using the service script</div>
+                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">~ $ sudo service sqream status
+
+Metadata Server is running, with pid <span class="tok-m">41203</span>                   <span class="tok-o">[</span>  OK  <span class="tok-o">]</span>
+Server picker is running at pid <span class="tok-m">41695</span>                        <span class="tok-o">[</span>  OK  <span class="tok-o">]</span>
+SQream DB is running, with pid <span class="tok-m">41309</span>.                      <span class="tok-o">[</span>  OK  <span class="tok-o">]</span>
+Running on GPU <span class="tok-m">0</span>, listening on port <span class="tok-m">5000</span>
+SQream DB is running, with pid <span class="tok-m">41444</span>.                      <span class="tok-o">[</span>  OK  <span class="tok-o">]</span>
+Running on GPU <span class="tok-m">1</span>, listening on port <span class="tok-m">5001</span></code></pre>
+                        </div>
+                    </div>
+                    <div class="code">
+                        <div class="title">Using ps</div>
+                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">~ $ ps aux <span class="tok-p">|</span> grep sqreamd
+sqream    <span class="tok-m">9841</span>    <span class="tok-m">0</span>.0  <span class="tok-m">0</span>.0 <span class="tok-m">112656</span>     <span class="tok-m">972</span> pts/0    S+   <span class="tok-m">12</span>:42   <span class="tok-m">0</span>:00 grep --color<span class="tok-o">=</span>auto sqreamd
+sqream   <span class="tok-m">41309</span>    <span class="tok-m">1</span>.5  <span class="tok-m">0</span>.7 <span class="tok-m">279354084</span>  <span class="tok-m">1037804</span> ?   Sl   Jun01 <span class="tok-m">110</span>:20 /home/sqream/sqream/bin/sqreamd -config /etc/sqream/sqream1_config.json
+sqream   <span class="tok-m">41444</span>    <span class="tok-m">0</span>.0  <span class="tok-m">0</span>.4 <span class="tok-m">248082604</span>  <span class="tok-m">547636</span> ?    Sl   Jun01   <span class="tok-m">4</span>:07 /home/sqream/sqream/bin/sqreamd -config /etc/sqream/sqream2_config.json</code></pre>
+                        </div>
+                    </div>
+                    <div class="code">
+                        <div class="title">Using nvidia-smi</div>
+                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">~ $ nvidia-smi
+Tue Jun  <span class="tok-m">6</span>  <span class="tok-m">12</span>:43:17 <span class="tok-m">2017</span>
++-----------------------------------------------------------------------------+
+<span class="tok-p">|</span> NVIDIA-SMI <span class="tok-m">367</span>.48                 Driver Version: <span class="tok-m">367</span>.48                    <span class="tok-p">|</span>  
+<span class="tok-p">|</span>-------------------------------+----------------------+----------------------+
+<span class="tok-p">|</span> GPU  Name        Persistence-M<span class="tok-p">|</span> Bus-Id        Disp.A <span class="tok-p">|</span> Volatile Uncorr. ECC <span class="tok-p">|</span>  
+<span class="tok-p">|</span> Fan  Temp  Perf  Pwr:Usage/Cap<span class="tok-p">|</span>         Memory-Usage <span class="tok-p">|</span> GPU-Util  Compute M. <span class="tok-p">|</span>  
+<span class="tok-p">|</span><span class="tok-o">===============================</span>+<span class="tok-o">======================</span>+<span class="tok-o">======================</span><span class="tok-p">|</span>  
+<span class="tok-p">|</span>     <span class="tok-m">0</span>  Tesla K40m          On   <span class="tok-p">|</span>  <span class="tok-m">0000</span>:04:00.0     Off <span class="tok-p">|</span>                     <span class="tok-m">0</span>* <span class="tok-p">|</span>  
+<span class="tok-p">|</span> N/A   48C    P0    67W / 235W <span class="tok-p">|</span>  11309MiB / 11439MiB <span class="tok-p">|</span>        <span class="tok-m">0</span>%      Default <span class="tok-p">|</span>
++-------------------------------+----------------------+----------------------+
+<span class="tok-p">|</span>     <span class="tok-m">1</span>  Tesla K40m          On   <span class="tok-p">|</span>  <span class="tok-m">0000</span>:42:00.0     Off <span class="tok-p">|</span>                     <span class="tok-m">0</span>* <span class="tok-p">|</span>  
+<span class="tok-p">|</span> N/A   54C    P0    68W / 235W <span class="tok-p">|</span>  11309MiB / 11439MiB <span class="tok-p">|</span>        <span class="tok-m">0</span>%      Default <span class="tok-p">|</span>
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+<span class="tok-p">|</span> Processes:                                                       GPU Memory <span class="tok-p">|</span>  
+<span class="tok-p">|</span>  GPU       PID  Type  Process name                               Usage      <span class="tok-p">|</span>  
+<span class="tok-p">|</span><span class="tok-o">=============================================================================</span><span class="tok-p">|</span>  
+<span class="tok-p">|</span>      <span class="tok-m">0</span>       <span class="tok-m">41309</span>    C   /home/sqream/sqream/bin/sqreamd              11305MiB <span class="tok-p">|</span>  
+<span class="tok-p">|</span>      <span class="tok-m">1</span>       <span class="tok-m">41444</span>    C   /home/sqream/sqream/bin/sqreamd              11305MiB <span class="tok-p">|</span>
++-----------------------------------------------------------------------------+</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="sect5">
+                    <h6 id="_restarting_a_specific_server_daemon">Restarting a specific server daemon</h6>
+                    <div class="paragraph">
+                        <p>Once you have identified a server that needs restarting, you may control it directly
+while keeping the rest of the cluster up.</p>
+                    </div>
+                    <div class="code">
+                        <div class="title">Restarting SQream daemon #2</div>
+                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">sudo service sqream2 restart</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sect4">
+                <h5 id="_temporarily_running_the_daemon">Temporarily running the daemon</h5>
+                <div class="paragraph">
+                    <p>You may start the daemon temporarily from any unprivileged user.</p>
+                </div>
+                <div class="admonitionblock warning">
+                    <table>
+                        <tr>
+                            <td class="icon"><i class="fa icon-warning" title="Warning"></i>
+                            </td>
+                            <td class="content">
+                                <div class="title">Running as superuser</div>
+                                <div class="paragraph">
+                                    <p>Running the server daemon as superuser is discouraged, as it may expose the entire filesystem to SQL users.
+SQream DB is designed to run as an unprivileged user.</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="sect5">
+                    <h6 id="_starting_the_daemon_temporarily">Starting the daemon temporarily</h6>
+                    <div class="paragraph">
+                        <p>To start the daemon temporarily, run it with <code>nohup</code>:<br></br></p>
+                    </div>
+                    <div class="code">
+                        <div class="title">Starting the daemon temporarily</div>
+                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">nohup ./bin/sqreamd -config /etc/sqream/sqream_config.json <span class="tok-p">&amp;</span></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="sect5">
+                    <h6 id="_stopping_the_daemon_temporarily">Stopping the daemon temporarily</h6>
+                    <div class="paragraph">
+                        <p>It is safe to shut down the server by killing it from the operating system; the system is designed to handle this. Any data committed will remain consistent, while uncommitted data will be removed upon the daemon’s next start-up.</p>
+                    </div>
+                    <div class="code">
+                        <div class="title">Stopping a temporarily running server from the command line</div>
+                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash"><span class="tok-nb">kill</span> -9 <span class="tok-sb">`</span>pid of sqreamd<span class="tok-sb">`</span></code></pre>
+                        </div>
+                    </div>
+                    <div class="code">
+                        <div class="title">Stopping a temporarily running server from the SQL interface</div>
+                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">shutdown_server</span><span class="tok-p">();</span></code></pre>
+                        </div>
+                    </div>
+                    <div class="admonitionblock note">
+                        <table>
+                            <tr>
+                                <td class="icon"><i class="fa icon-note" title="Note"></i>
+                                </td>
+                                <td class="content">
+                                    <div class="title">Overriding parameters</div>
+                                    <div class="paragraph">
+                                        <p>You may override the port, GPU and cluster parameters while retaining a configuration file settings by running</p>
+                                    </div>
+                                    <div class="code">
+                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">./bin/sqreamd &lt;path to different cluster&gt; &lt;GPU <span class="tok-c1">#&gt; &lt;Port #&gt; -config &lt;path to configuration json&gt;</span></code></pre>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sect3">
+            <h4 id="_connect_to_the_sqream_db_server_with_clientcmd"><a name="connect-clientcmd"></a>Connect to the SQream DB server with ClientCmd</h4>
+            <div class="paragraph">
+                <p>To connect to the database server, you may use the ClientCmd command line interface by running<br></br></p>
+            </div>
+            <div class="code">
+                <div class="title">ClientCmd command line arguments</div>
+                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">./bin/ClientCmd --user<span class="tok-o">=</span>&lt;username&gt; --password<span class="tok-o">=</span>&lt;password&gt; --database<span class="tok-o">=</span>&lt;database name&gt; --host<span class="tok-o">=</span>&lt;host&gt; --port<span class="tok-o">=</span>&lt;port&gt; --service<span class="tok-o">=</span>&lt;service_name&gt;</code></pre>
+                </div>
+            </div>
+            <div class="paragraph">
+                <p>Connect to the <code>master</code> database:</p>
+            </div>
+            <div class="code">
+                <div class="title">Connecting to <code>master</code> on a local host running SQream DB on port 5000 via service 'etl_service'</div>
+                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">./bin/ClientCmd --user<span class="tok-o">=</span>sqream --password<span class="tok-o">=</span>sqream --database<span class="tok-o">=</span>master --host<span class="tok-o">=</span><span class="tok-m">127</span>.0.0.1 --port<span class="tok-o">=</span><span class="tok-m">5000</span> --service<span class="tok-o">=</span>etl_service</code></pre>
+                </div>
+            </div>
+        </div>
+        <div class="sect3">
+            <h4 id="_using_ssl_server_authentication_with_sqream">Using SSL Server Authentication with SQream</h4>
+            <div class="paragraph">
+                <p>From version 2.1, SQream DB supports secure sockets layer (SSL) encryption and authentication for connections to its cluster via JDBC and ODBC drivers.</p>
+            </div>
+            <div class="paragraph">
+                <p>To use this option, the server must first be set-up to accept SSL connections.</p>
+            </div>
+            <div class="sect4">
+                <h5 id="_enabling_ssl_server_authentication_within_sqream_instance">Enabling SSL server authentication within SQream Instance:</h5>
+                <div class="paragraph">
+                    <p>Configure the SERVER flag ssl_port in the SQream instance configuration file to the needed port number. <br></br></p>
+                </div>
+                <div class="paragraph">
+                    <p class="example">For Example:</p>
+                </div>
+                <div class="code">
+                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="json"><span class="tok-p">{</span>  
+<span class="tok-nt">"server"</span><span class="tok-p">:{</span>  
+    <span class="tok-nt">"port"</span><span class="tok-p">:</span>  <span class="tok-mi">5001</span><span class="tok-p">,</span>  
+    <span class="tok-nt">"ssl_port"</span><span class="tok-p">:</span>  <span class="tok-mi">5100</span><span class="tok-p">,</span>  
+    <span class="tok-nt">"cluster"</span><span class="tok-p">:</span>  <span class="tok-s2">"/path/sqream_cluster"</span><span class="tok-p">,</span>  
+    <span class="tok-nt">"gpu"</span><span class="tok-p">:</span>  <span class="tok-mi">0</span><span class="tok-p">,</span>  
+    <span class="tok-nt">"licensePath"</span><span class="tok-p">:</span>  <span class="tok-s2">"/path/license.enc"</span>  
+<span class="tok-p">}</span>  
+<span class="tok-p">}</span></code></pre>
+                    </div>
+                </div>
+                <div class="admonitionblock note">
+                    <table>
+                        <tr>
+                            <td class="icon"><i class="fa icon-note" title="Note"></i>
+                            </td>
+                            <td class="content">
+Restart the SQream DB daemons after making this configuration change
+</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="sect4">
+                <h5 id="_configure_ssl_authentication_for_jdbcodbc_drivers">Configure SSL Authentication for JDBC/ODBC drivers</h5>
+                <div class="sect5">
+                    <h6 id="_adding_ssl_to_jdbc">Adding SSL to JDBC</h6>
+                    <div class="olist arabic">
+                        <ol class="arabic">
+                            <li>
+                                <p>Add ssl=true in the connection string</p>
+                            </li>
+                            <li>
+                                <p>Change the port to the SSL port</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="admonitionblock note">
+                        <table>
+                            <tr>
+                                <td class="icon"><i class="fa icon-note" title="Note"></i>
+                                </td>
+                                <td class="content">
+When connecting via load balancer, the default endpoint for SSH is port 3109
+</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="code">
+                        <div class="title">Example for direct connection</div>
+                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code>jdbc:Sqream://hostname:5100/master;user=sqream;password=mypassword;ssl=true;</code></pre>
+                        </div>
+                    </div>
+                    <div class="code">
+                        <div class="title">Example for connection to load balancer</div>
+                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code>jdbc:Sqream://hostname:3109/master;user=sqream;password=mypassword;service=sqream;cluster=true;ssl=true;</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="sect5">
+                    <h6 id="_adding_ssl_to_odbc">Adding SSL to ODBC</h6>
+                    <div class="paragraph">
+                        <p>In Windows, make sure the SSL checkbox is selected in the DSN settings.</p>
+                    </div>
+                    <div class="paragraph">
+                        <p>In Linux, add Ssl=true to the connection string</p>
+                    </div>
+                    <div class="code">
+                        <div class="title">Linux ODBC connection string sample</div>
+                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code>Driver={libODBCDrv.so}:Server=hostname:Port=5100:Database=master:User=sqream:Password=mypassword:Ssl=true:Service=sqream</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
