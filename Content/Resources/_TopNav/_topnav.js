@@ -1,11 +1,25 @@
-$(function() {
+﻿$(function() {
   $('.search-container').prependTo('.navigation-wrapper');
   $('.SQreamHomeSite').insertAfter('.search-container');
   $('.SQreamHomeSite').show();
   $('.VersionControl').appendTo('.logo-wrapper');
   $('.VersionControl').show();
   $('.mp-search .VersionControl').hide();
-    
+
+  
+  var $window = $(window);
+  function checkWidth() {
+    var windowsize = $window.width();
+    if (windowsize > 767) {
+      $('.search-container').show();
+    }
+    else {$('.search-container').hide();
+  
+    }
+  }
+
+  $(window).resize(checkWidth);
+
   var mLabel;
   var mTarget;
   var versionData='';
@@ -15,8 +29,6 @@ $(function() {
     mTarget = versionsData[v].url;
     versionData=versionData+"<a href='"+versionsData[v].url+"'>"+v+"</a>";
   }
-  
-  console.log(versionData);
 
     $(versionData).prependTo('.dropdown-content');
   
@@ -26,10 +38,8 @@ $(function() {
               $(this).hide();
           }
       });
-      
-    if ($(window).width() > 1280){
-        $('.search-container').show();
-    }
+
+
     });
   
   $(function() {
