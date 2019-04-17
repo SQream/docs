@@ -22,6 +22,9 @@
                 </div>
                 <div>
                     <MadCap:topicToolbarProxy style="mc-topic-toolbar-items: ;" data-mc-skin="/Project/Skins/TopicToolbar.flskn" />
+                    <div class="mobileMenu">
+                        <MadCap:menuProxy data-mc-skin="/Project/Skins/MobileMenu.flskn" mc-linked-toc="/Project/TOCs/GuidesTOC.fltoc" style="mc-toc-depth: 1;mc-context-sensitive: True;mc-include-parent: True;mc-include-siblings: True;mc-include-children: True;" />
+                    </div>
                     <MadCap:bodyProxy />
                 </div>
             </div>

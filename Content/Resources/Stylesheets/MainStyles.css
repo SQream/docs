@@ -36,8 +36,8 @@ nav.title-bar
 body
 {
 	color: #404040;
-	line-height: 1.4rem;
 	background-color: #fff;
+	/*line-height: 1.4em;*/
 	mc-hyphenate: never;
 	font-family: Lato;
 }
@@ -672,6 +672,10 @@ div.topic-layout > div:nth-child(2)
 	margin-left: 2%;
 }
 
+div.mobileMenu {
+	display: none;
+}
+
 /* Custom Home Link*/
 
 a.SQreamHomeSite, a.SQreamHomeSite:visited, a.SQreamHomeSite:link
@@ -819,36 +823,41 @@ Styles after this point are styles that are for specific mediums. If any additio
 {
 	.row.nav-search
 	{
-		display: block;
+		display: none;
 	}
 
 	div.search-container
 	{
 		display: none;
+		max-width: 100%;
 	}
 
 	div.topic-layout > div:nth-child(1)
 	{
+		display: block;
+	}
+
+	nav.title-bar .menu-icon {
 		display: none;
 	}
 
-	div.topic-layout > div:nth-child(2)
-	{
-		width: 98%;
-		margin-left: 2%;
+	.title-bar-layout .logo-wrapper {
+		flex-basis: auto;
 	}
+
+	.navigation-wrapper {
+		display: flex;
+	}
+
+
 }
 
 @media mobile
 {
-	div.top-bar
-	{
-		min-height: 0;
-	}
 
 	.row.nav-search
 	{
-		display: block;
+		display: none;
 	}
 
 	div.search-container
@@ -865,6 +874,20 @@ Styles after this point are styles that are for specific mediums. If any additio
 	{
 		width: 98%;
 		margin-left: 2%;
+	}
+
+	div.mobileMenu {
+		display: block;
+	}
+   
+	.buttons._Skins_TopicToolBar.mc-component {
+	   float: right;
+	   margin-right: -4px;
+	   margin-bottom: 0px;
+	}
+
+	ul.menu._Skins_MobileMenu.mc-component {
+		display: block;
 	}
 }
 
@@ -872,4 +895,35 @@ Styles after this point are styles that are for specific mediums. If any additio
 {
 	
 }
+/*
+@media only screen and (max-width: 1280px) {
+	
+	div.search-container
+	{
+		display: none;
+	}
+
+}
+
+@media only screen and (max-width: 767px) {
+ div.mobileMenu {
+	 display: block;
+ }
+
+ .buttons._Skins_TopicToolBar.mc-component {
+    float: right;
+    margin-right: -4px;
+    margin-bottom: 0px;
+ }
+
+ div.topic-layout > div:nth-child(2) {
+    width: 90%;
+	margin-left: 5%;
+ }
+
+ div.side-menu {
+	 display: none;
+ }
+
+}*/
 
