@@ -152,96 +152,10 @@
             </li>
         </ol>
         <h3>Start the SQream Console</h3>
-        <p>The sqream console allows the SQream DBA to manage and monitor SQream dockers.</p>
+        <p>The <a href="4_Console_Commands.htm">SQream-Console commands</a> allow the SQream DBA to manage and monitor SQream dockers.</p>
         <div class="code">
             <p>./sqream-console</p>
         </div>
-        <p class="note">Only a single sqream console instance at a time can be open on a server.</p>
-        <h4>Console Commands</h4>
-        <h5>Metadata &amp; Picker</h5>
-        <p>Start metadata and picker</p>
-        <p><span class="codeCH">sqream master --start --single-host</span>
-        </p>
-        <div class="code">
-            <p>sqream-console&gt;sqream master --start --single-host</p>
-            <p>sqream_single_host_master is up and listening on ports: 3105, 3108</p>
-        </div>
-        <h5>SQreamd</h5>
-        <p>Start and stop SQream</p>
-        <p><span class="codeCH">sqream worker --start X</span> (X is the number of GPUs you want to bind).</p>
-        <div class="code">
-            <p>sqream-console&gt;sqream worker --start 2</p>
-            <p>started sqream_single_host_worker_0 on port 5000, allocated gpu: 0</p>
-            <p>started sqream_single_host_worker_1 on port 5001, allocated gpu: 1</p>
-        </div>
-        <p><span class="codeCH">sqream worker --stop &lt;full worker name&gt;</span> ( run sqream master --list to get the worker name).</p>
-        <div class="code">
-            <p>sqream-console&gt;sqream worker --start 2</p>
-            <p>started sqream_single_host_worker_0 on port 5000, allocated gpu: 0</p>
-            <p>started sqream_single_host_worker_1 on port 5001, allocated gpu: 1</p>
-        </div>
-        <p><span class="codeCH">sqream worker --stop &lt;full worker name&gt;</span> ( run sqream master --list to get the worker name).</p>
-        <div class="code">
-            <p>sqream-console&gt;sqream worker --stop sqream_single_host_worker_0</p>
-            <p>stopped sqream_single_host_worker_0</p>
-        </div>
-        <h5>List running services</h5>
-        <p>View all running SQream services.</p>
-        <p><span class="codeCH">sqream master --list</span>
-        </p>
-        <div class="code">
-            <p>sqream-console&gt;sqream master --list</p>
-            <p>container name: sqream_single_host_worker_0, container id: c919e8fb78c8</p>
-            <p>container name: sqream_single_host_master, container id: ea7eef80e038</p>
-        </div>
-        <h5>Stop running services (Master and Workers)</h5>
-        <p>Stop all running SQream services</p>
-        <p><span class="codeCH">sqream master --stop</span>
-        </p>
-        <div class="code">
-            <p>sqream-console&gt;sqream master --stop</p>
-            <p>stopped container sqream_single_host_worker_0, id: 892a8f1a58c5</p>
-            <p>stopped container sqream_single_host_master, id: 55cb7e38eb22</p>
-        </div>
-        <h5>Sqream Editor</h5>
-        <p>Start SQream SQL Statement Editor</p>
-        <p><span class="codeCH">sqream editor --start</span>
-        </p>
-        <div class="code">
-            <p>sqream-console&gt;sqream editor --start</p>
-            <p>access sqream statement editor on your chrome web browser http://192.168.0.220:3000</p>
-            <p>Stop SQream editor</p>
-        </div>
-        <p><span class="codeCH">sqream editor --stop</span>
-        </p>
-        <div class="code">
-            <p>sqream-console&gt;sqream editor --stop</p>
-            <p>stopped sqream_editor</p>
-        </div>
-        <h5>SQream-Client</h5>
-        <p>To use the embedded SQream Client on the master node:</p>
-        <ul>
-            <li>
-                <p>Default port 3108, use -p for other master port.</p>
-            </li>
-            <li>
-                <p>Default database is master, use -d for different  database ) :</p>
-            </li>
-        </ul>
-        <div class="code">
-            <p>sqream client --master -u sqream -w sqream</p>
-        </div>
-        <p>To use the embedded SQream Client on worker node(s):</p>
-        <ul>
-            <li>
-                <p>Default port 5000, use -p for other worker port.</p>
-            </li>
-            <li>
-                <p>Default database  is master, use -d for a  different database )</p>
-            </li>
-        </ul>
-        <div class="code">
-            <p>sqream client --worker -u sqream -w sqream</p>
-        </div>
+        <p class="note"> Only a single sqream console instance at a time can be open on a server.</p>
     </body>
 </html>
