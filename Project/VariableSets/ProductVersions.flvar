@@ -35,5 +35,5 @@
   <Variable
     Name="SQream"
     Comment=""
-    EvaluatedDefinition="3.0">3.0</Variable>
+    EvaluatedDefinition="3.1">3.1</Variable>
 </CatapultVariableSet>

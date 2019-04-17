@@ -884,12 +884,11 @@ External tables allow SQream to access data that is stored outside the database 
     { SUPERUSER
     | LOGIN
     | PASSWORD '&lt;password&gt;'
-    | CREATE FUNCTION
     }
     TO &lt;role&gt; [, ...]
 
 -- Grant permissions at the database level:
-    GRANT { { CREATE | CONNECT | DDL | SUPERUSER } [, ...] | ALL [ PERMISSIONS ] }
+    GRANT { { CREATE | CONNECT | DDL | SUPERUSER | CREATE FUNCTION } [, ...] | ALL [ PERMISSIONS ] }
 	ON DATABASE &lt;database&gt; [, ...]
 	TO &lt;role&gt; [, ...]
 
@@ -952,7 +951,7 @@ The permissions LOGIN cannot be inherited and must be explicitly granted.
                                 <div class="code">
                                     <div class="title">Examples</div>
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">GRANT</span>  <span class="tok-n">LOGIN</span><span class="tok-p">,</span><span class="tok-n">superuser</span>  <span class="tok-k">TO</span>  <span class="tok-k">admin</span><span class="tok-p">;</span>  
-<span class="tok-k">GRANT</span>  <span class="tok-k">CREATE</span>  <span class="tok-k">FUNCTION</span>  <span class="tok-k">TO</span>  <span class="tok-k">admin</span><span class="tok-p">;</span>  
+<span class="tok-k">GRANT</span>  <span class="tok-k">CREATE</span>  <span class="tok-k">FUNCTION&#160;ON&#160;DATABASE&#160;test_db</span>  <span class="tok-k">TO</span>  <span class="tok-k">user1</span><span class="tok-p">;</span>  
 <span class="tok-k">GRANT</span>  <span class="tok-k">SELECT</span>  <span class="tok-k">ON</span>  <span class="tok-k">TABLE</span>  <span class="tok-k">admin</span><span class="tok-mf">.</span><span class="tok-n">table1</span>  <span class="tok-k">TO</span>  <span class="tok-n">userA</span><span class="tok-p">;</span>  
 <span class="tok-k">GRANT</span>  <span class="tok-k">EXECUTE</span>  <span class="tok-k">ON</span>  <span class="tok-k">FUNCTION</span>  <span class="tok-n">my_function</span>  <span class="tok-k">TO</span>  <span class="tok-n">userA</span><span class="tok-p">;</span>  
 <span class="tok-k">GRANT</span>  <span class="tok-k">ALL</span>  <span class="tok-k">ON</span>  <span class="tok-k">FUNCTION</span>  <span class="tok-n">my_function</span>  <span class="tok-k">TO</span>  <span class="tok-n">userA</span><span class="tok-p">;</span>  
@@ -979,12 +978,11 @@ The permissions LOGIN cannot be inherited and must be explicitly granted.
     { SUPERUSER
     | LOGIN
     | PASSWORD
-    | CREATE FUNCTION
     }
     FROM &lt;role&gt; [, ...]
 
 -- Revoke permissions at the database level:
-    REVOKE { { CREATE | CONNECT | DDL |  SUPERUSER } [, ...] | ALL [ PERMISSIONS ] }
+    REVOKE { { CREATE | CONNECT | DDL |  SUPERUSER |&#160;CREATE&#160;FUNCTION } [, ...] | ALL [ PERMISSIONS ] }
 	ON DATABASE &lt;database&gt; [, ...]
 	FROM &lt;role&gt; [, ...]
 
@@ -1007,7 +1005,7 @@ The permissions LOGIN cannot be inherited and must be explicitly granted.
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">REVOKE</span>  <span class="tok-n">superuser</span>  <span class="tok-k">on</span>  <span class="tok-k">schema</span>  <span class="tok-n">demo</span>  <span class="tok-k">from</span>  <span class="tok-n">userA</span><span class="tok-p">;</span>  
 <span class="tok-k">REVOKE</span>  <span class="tok-k">delete</span>  <span class="tok-k">on</span>  <span class="tok-k">admin</span><span class="tok-mf">.</span><span class="tok-n">table1</span>  <span class="tok-k">from</span>  <span class="tok-n">userB</span><span class="tok-p">;</span>  
 <span class="tok-k">REVOKE</span>  <span class="tok-n">login</span>  <span class="tok-k">from</span>  <span class="tok-n">role_test</span><span class="tok-p">;</span>  
-<span class="tok-k">REVOKE</span>  <span class="tok-k">CREATE</span>  <span class="tok-k">FUNCTION</span>  <span class="tok-k">FROM</span>  <span class="tok-k">admin</span><span class="tok-p">;</span></code></pre>
+<span class="tok-k">REVOKE</span>  <span class="tok-k">CREATE</span>  <span class="tok-k">FUNCTION ON&#160;DATABASE test_db</span>  <span class="tok-k">FROM</span>  <span class="tok-k">user1</span><span class="tok-p">;</span></code></pre>
                                     </div>
                                 </div>
                             </div>
