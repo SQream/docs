@@ -6,6 +6,25 @@
     Link="/Content/Guides/Installation_Guides/SQream Installation Guides.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
     <TocEntry
       Title="[%=System.LinkedTitle%]"
+      Link="/Content/Guides/Installation_Guides/Recommended_Hardware_and_Software_Specifications/1_Recommended_hardware_and_software_specifications_for_SQream_DB.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/Installation_Guides/Recommended_Hardware_and_Software_Specifications/2_1_Hardware_requirements.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/Installation_Guides/Recommended_Hardware_and_Software_Specifications/3_2_Storage_requirements.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/Installation_Guides/Recommended_Hardware_and_Software_Specifications/4_3_Software_requirements.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/Installation_Guides/Recommended_Hardware_and_Software_Specifications/5_4_Network_requirements.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/Guides/Installation_Guides/Recommended_Hardware_and_Software_Specifications/6_Copyright.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    </TocEntry>
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
       Link="/Content/Guides/Installation_Guides/Installing_SQream_via_Docker/1_Installing_SQream_via_Docker.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
       <TocEntry
         Title="Before you start"
@@ -26,14 +45,8 @@
         ComputedTocAction="Replace"
         ComputedTocDepth="10" />
       <TocEntry
-        Title="[%=System.LinkedTitle%]"
-        Link="/Content/Guides/Installation_Guides/Installing_SQream_via_Docker/4_Console_Commands.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-        ComputeToc="true"
-        ComputedTocAction="Replace"
-        ComputedTocDepth="10" />
-      <TocEntry
         Title="Moving from Docker to standard installation"
-        Link="/Content/Guides/Installation_Guides/Installing_SQream_via_Docker/5_Moving_from_Docker_to_standard_installation.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+        Link="/Content/Guides/Installation_Guides/Installing_SQream_via_Docker/4_Moving_from_Docker_to_standard_installation.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputeToc="true"
         ComputedTocAction="Replace"
         ComputedTocDepth="10" />
