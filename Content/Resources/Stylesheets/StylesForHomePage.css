@@ -451,193 +451,173 @@ Styles after this point are styles that are for specific mediums. If any additio
 [@media mobile] declares styles that will apply when the screen is in mobile view
 ===========================================================================================================================================================*/
 
+
 @media tablet
 {
-	a.home-button span
-	{
-		padding-top: 5%;
-		font-size: 2em;
-		padding-bottom: 5%;
+
+		
+	div.home-tiles > div:nth-child(1) {
+		width: 23%;
+		margin-left: 15%;
+	}
+	
+	div.home-tiles > div:nth-child(2) {
+		width: 23%;
+	}
+	
+	div.home-tiles > div:nth-child(3) {
+		width: 23%;
+	}
+	
+	p.info-title {
+		width: 80%;
 	}
 
-	a.home-button svg
-	{
-		padding-top: 5%;
+	div.info-section > div:nth-child(1) {
+		margin-left: 20%;
 	}
 
-	div.home-tiles > div:nth-child(1)
-	{
-		width: 32%;
-		margin-left: 1%;
+	div.info-section > div:nth-child(2) {
+		margin-left: 10%;
 	}
 
-	div.home-tiles > div:nth-child(2)
-	{
-		width: 32%;
-		margin-left: 1%;
+	.search-bar._Skins_SearchHome.mc-component {
+		width: 60%;
 	}
 
-	div.home-tiles > div:nth-child(3)
-	{
-		width: 32%;
-		margin-left: 1%;
+	nav.title-bar .menu-icon {
+		display: none;
 	}
 
-	div.info-section > div
-	{
-		text-align: center;
+	.title-bar-layout .logo-wrapper {
+		flex-basis: auto;
 	}
 
-	div.info-section > div:nth-child(1)
-	{
-		width: 100%;
-		margin-left: 0%;
-		margin-bottom: 10%;
-		margin-top: 5%;
-	}
-
-	div.info-section > div:nth-child(2)
-	{
-		width: 100%;
-		margin-left: 0%;
-		margin-bottom: 5%;
-	}
-
-	div.info-section > div:nth-child(3)
-	{
-		width: 100%;
-		margin-left: 0%;
-	}
-
-	p.info-title
-	{
-		font-size: 2em;
-	}
-
-	p.info-content
-	{
-		font-size: 1em;
-	}
-
-	div.footer
-	{
-		padding-top: 20px;
-		padding-bottom: 20px;
-	}
-
-	div.home-master-page-footer > div:nth-child(1)
-	{
-		width: 25%;
-		margin-left: 0%;
-	}
-
-	div.home-master-page-footer > div:nth-child(2)
-	{
-		width: 50%;
-		margin-left: 0%;
-	}
-
-	div.home-master-page-footer > div:nth-child(3)
-	{
-		width: 25%;
-		margin-left: 0%;
+	.navigation-wrapper {
+		display: flex;
 	}
 }
 
 @media mobile
 {
-	a.home-button span
-	{
-		padding-top: 5%;
-		font-size: 4em;
-		padding-bottom: 10%;
+
+	div.home-tiles > div:nth-child(1) {
+		width: 28%;
+		margin-left: 6%;
 	}
 
-	div.home-tiles > div
-	{
-		margin-top: 2%;
+	div.home-tiles > div:nth-child(2) {
+		width: 28%;
 	}
 
-	div.home-tiles > div:nth-child(1)
-	{
-		width: 90%;
-		margin-left: 5%;
+	div.home-tiles > div:nth-child(3) {
+		width: 28%;
 	}
 
-	div.home-tiles > div:nth-child(2)
-	{
-		width: 90%;
-		margin-left: 5%;
+	.search-bar._Skins_SearchHome.mc-component {
+		width: 80%;
 	}
 
-	div.home-tiles > div:nth-child(3)
-	{
-		width: 90%;
-		margin-left: 5%;
-	}
-
-	p.tile-title
-	{
-		font-size: 1.1em;
-	}
-
-	div.info-container
-	{
-		padding-bottom: 0;
-	}
-
-	div.info-section > div
-	{
-		text-align: center;
-	}
-
-	div.info-section > div:nth-child(1)
-	{
+	div.info-container {
 		width: 100%;
+	}
+	div.info-section > div:nth-child(1) {
+		width: 48%;
 		margin-left: 0%;
-		margin-bottom: 10%;
-		margin-top: 5%;
 	}
 
-	div.info-section > div:nth-child(2)
-	{
-		width: 100%;
+	div.info-section > div:nth-child(2) {
+		width: 48%;
 		margin-left: 0%;
-		margin-bottom: 10%;
 	}
 
-	div.info-section > div:nth-child(3)
-	{
-		width: 100%;
-		margin-left: 0%;
-		margin-bottom: 10%;
+	div.home-master-page-footer {
+		width: 80%;
 	}
 
-	p.info-title
-	{
-		font-size: 2em;
-	}
-
-	p.info-content
-	{
-		font-size: 1em;
-	}
-
-	div.home-master-page-footer > div:nth-child(1)
-	{
-		width: 100%;
-		border-bottom: 1px solid #d3d3d3;
-	}
-
-	div.home-master-page-footer > div:nth-child(2)
-	{
-		width: 100%;
-		border-bottom: 1px solid #d3d3d3;
-	}
-
-	div.home-master-page-footer > div:nth-child(3)
-	{
-		width: 100%;
+	nav.title-bar .menu-icon {
+		display: none;
 	}
 }
 
+/*
+@media only screen and (max-width: 1280px) {
+	
+	div.home-tiles > div:nth-child(1) {
+		width: 23%;
+		margin-left: 15%;
+	}
+	
+	div.home-tiles > div:nth-child(2) {
+		width: 23%;
+	}
+	
+	div.home-tiles > div:nth-child(3) {
+		width: 23%;
+	}
+	
+	p.info-title {
+		width: 80%;
+	}
+
+	div.info-section > div:nth-child(1) {
+		margin-left: 20%;
+	}
+
+	div.info-section > div:nth-child(2) {
+		margin-left: 10%;
+	}
+
+	.search-bar._Skins_SearchHome.mc-component {
+		width: 60%;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+
+	div.home-tiles > div:nth-child(1) {
+		width: 28%;
+		margin-left: 6%;
+	}
+
+	div.home-tiles > div:nth-child(2) {
+		width: 28%;
+	}
+
+	div.home-tiles > div:nth-child(3) {
+		width: 28%;
+	}
+
+	.search-bar._Skins_SearchHome.mc-component {
+		width: 80%;
+	}
+
+	div.info-container {
+		width: 100%;
+	}
+	div.info-section > div:nth-child(1) {
+		width: 48%;
+		margin-left: 0%;
+	}
+
+	div.info-section > div:nth-child(2) {
+		width: 48%;
+		margin-left: 0%;
+	}
+
+	div.home-master-page-footer {
+		width: 80%;
+	}
+
+	div.side-menu {
+		display: none;
+	}
+
+	.buttons.popup-container.clearfix.topicToolbarProxy._Skins_TopicToolBar.mc-component.nocontent {
+		margin-bottom: 0;
+	}
+
+	div.topic-layout > div:nth-child(2) {
+		width: 90%;
+		margin-left: 5%;
+	}*/
