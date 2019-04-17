@@ -15,7 +15,7 @@
   TopNavTocPath="true"
   SearchResultsSkin="/Project/Skins/SearchResults.flskn"
   ReplaceSpacesWithUnderscores="false"
-  OutputFolder="C:\Users\Rivka\Documents\My Projects\SQream_April_2019\Output\2.24\manual"
+  OutputFolder="C:\Users\Rivka\Documents\My Projects\SQream_April_2019\Output\2.24"
   TabletBreakpoint="767">
   <PrintedOutput
     CollapseMargins="true"
