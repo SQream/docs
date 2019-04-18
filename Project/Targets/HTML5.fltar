@@ -24,4 +24,9 @@
     GenerateIndexProxy="true"
     GenerateGlossaryProxy="true" />
   <Glossaries />
+  <Destinations>
+    <Destination
+      Link="/Project/Destinations/Docs.fldes"
+      Publish="true" />
+  </Destinations>
 </CatapultTarget>
