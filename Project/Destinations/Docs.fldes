@@ -5,7 +5,10 @@
   Host=""
   User="MyAccountId"
   Password=""
-  Directory="C:\Users\Rivka\Desktop\SQream in progress\Doc_Output\3.0"
+  Directory="C:\Users\Rivka\Desktop\SQream in progress\Doc_Output\3.0\manual"
   Port=""
   ViewUrl=""
-  Type="file"></CatapultDestination>
+  Type="file"
+  UploadLogFile="false"
+  RemoveStale="false"
+  ChangedOnly="false"></CatapultDestination>
