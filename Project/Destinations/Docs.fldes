@@ -5,10 +5,10 @@
   Host=""
   User="MyAccountId"
   Password=""
-  Directory="C:\Users\Rivka\Desktop\SQream in progress\Doc_Output\3.1"
+  Directory="C:\Users\Rivka\Desktop\SQream in progress\Doc_Output\3.1\manual"
   Port=""
   ViewUrl="http://www.madcapsoftware.com/"
   Type="file"
-  UploadLogFile="true"
-  RemoveStale="true"
-  ChangedOnly="true"></CatapultDestination>
+  UploadLogFile="false"
+  RemoveStale="false"
+  ChangedOnly="false"></CatapultDestination>
