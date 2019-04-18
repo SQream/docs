@@ -15,7 +15,7 @@
   TopNavTocPath="true"
   SearchResultsSkin="/Project/Skins/SearchResults.flskn"
   ReplaceSpacesWithUnderscores="false"
-  OutputFolder="C:\Users\Rivka\Documents\My Projects\SQream_April_2019\Output\2019.1.2"
+  OutputFolder="C:\Users\Rivka\Documents\My Projects\SQream_April_2019\Output\2.24"
   TabletBreakpoint="1280"
   MobileBreakpoint="767">
   <PrintedOutput
@@ -24,4 +24,9 @@
     GenerateIndexProxy="true"
     GenerateGlossaryProxy="true" />
   <Glossaries />
+  <Destinations>
+    <Destination
+      Link="/Project/Destinations/Docs.fldes"
+      Publish="true" />
+  </Destinations>
 </CatapultTarget>
