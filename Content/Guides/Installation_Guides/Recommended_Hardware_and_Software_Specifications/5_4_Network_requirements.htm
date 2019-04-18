@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
+    <head>
+        <link href="../../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body class="article toc2 toc-left">
+        <h2 id="_network_requirements">Network requirements</h2>
+        <div class="sectionbody">
+            <table class="TableStyle-Default_Table" style="mc-table-style: url('../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                <caption class="title">Table 4. SQream network requirements</caption>
+                <colgroup>
+                    <col />
+                    <col />
+                </colgroup>
+                <thead>
+                    <tr class="TableStyle-Default_Table-Head-Header1">
+                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Component</th>
+                        <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Recommended</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-Default_Table-Body-Body1">
+                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                            <p class="tableblock"><strong>Network</strong>
+                                <br />standalone</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                            <p class="tableblock">10 GbE</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Default_Table-Body-Body2">
+                        <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
+                            <p class="tableblock"><strong>Network</strong>
+                                <br />clustered</p>
+                        </td>
+                        <td class="TableStyle-Default_Table-BodyA-Column1-Body2">
+                            <p class="tableblock">SQream DB fabric - 2x 1 GbE, bonded<br />Storage fabric - 40 GbE or InfiniBand</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="paragraph">
+                <p>SQream DB has the following setup requirements:</p>
+            </div>
+            <div class="ulist">
+                <ul>
+                    <li>
+                        <p>Allow database end-points (your users, applications) to connect to the SQream DB server instance</p>
+                    </li>
+                    <li>
+                        <p>Allow all nodes in the cluster to talk to each other over the SQream protocol:<br />(Default ports <code>5000-5003</code>) and SQream DB metadata interface (ports <code>3105</code>-<code>3108</code>)</p>
+                    </li>
+                    <li>
+                        <p>We also highly recommend configuring your firewall to prevent other hosts on the Internet from connecting to SQream DB.</p>
+                    </li>
+                    <li>
+                        <p>On cloud instances, enhanced networking should be enabled.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
