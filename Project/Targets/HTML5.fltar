@@ -18,7 +18,7 @@
   OutputFolder="C:\Users\Rivka\Documents\My Projects\SQream_April_2019\Output\3.1"
   TabletBreakpoint="1280"
   MobileBreakpoint="767"
-  ConditionTagExpression="include[&quot;General.Audience A&quot;] exclude[&quot;General.Audience B&quot;] ">
+  ConditionTagExpression="exclude[General.Print_Only or General.Print_Only]">
   <PrintedOutput
     CollapseMargins="true"
     GenerateTOCProxy="true"

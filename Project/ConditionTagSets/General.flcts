@@ -7,7 +7,7 @@
     OriginalName="Web Only" />
   <ConditionTag
     Comment=""
-    Name="Print _Only"
+    Name="Print_Only"
     BackgroundColor="Red"
     OriginalName="Print Only" />
 </CatapultConditionTagSet>

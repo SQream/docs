@@ -14,13 +14,17 @@
   DeleteStale="false"
   DeleteUnreferenced="false"
   AutoSync="true"
-  LastImport="2019-05-08T18:01:30.6604935+03:00">
+  LastImport="2019-05-08T19:31:02.3760502+03:00">
   <Files>
     <Url
       Source="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/SQream_Global.flprj"
       AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/SQream_Global.flprj" />
   </Files>
-  <ExcludedFiles />
+  <ExcludedFiles>
+    <Url
+      Source="../ConditionTagSets/General.flcts"
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_April_2019/Project/ConditionTagSets/General.flcts" />
+  </ExcludedFiles>
   <CollectedSourceFiles>
     <Url
       Source="../../../SQream_Global/Content/FAQ.html"
