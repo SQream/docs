@@ -17,7 +17,7 @@
         Title="Install Node.js 10.x"
         Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/3_1.1_Install_Node.js_10.x.htm"
         ComputedTocAction="Replace"
-        ComputeToc="true"
+        ComputeToc="false"
         ComputedTocDepth="2"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
@@ -40,7 +40,7 @@
         Title="Install the SQL Editor application"
         Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/7_2.1_Install_the_SQL_Editor_application.htm"
         ComputedTocAction="Replace"
-        ComputeToc="true"
+        ComputeToc="false"
         ComputedTocDepth="2"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
@@ -81,7 +81,7 @@
         Title="Stop the SQL Editor"
         Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/14_6.1_Stop_the_SQL_editor.htm"
         ComputedTocAction="Replace"
-        ComputeToc="true"
+        ComputeToc="false"
         ComputedTocDepth="2"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"

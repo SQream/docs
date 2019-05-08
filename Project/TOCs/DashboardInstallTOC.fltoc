@@ -24,8 +24,8 @@
       ComputedTocDepth="2">
       <TocEntry
         Title="Install Node.js 10.x"
-        Link="/Content/Guides/Installation_Guides/Dashboard_Installation_Guide/1_Administration_Dashboard_Installation_Guide.htm"
-        ComputeToc="true"
+        Link="/Content/Guides/Installation_Guides/Dashboard_Installation_Guide/2_1.1_Install_Node.js_10.x.htm"
+        ComputeToc="false"
         ComputedTocAction="Replace"
         ComputedTocDepth="2"></TocEntry>
       <TocEntry
@@ -48,7 +48,7 @@
       <TocEntry
         Title="Install the Dashboard application"
         Link="/Content/Guides/Installation_Guides/Dashboard_Installation_Guide/7_3.1_Install_the_Dashboard_application.htm"
-        ComputeToc="true"
+        ComputeToc="false"
         ComputedTocAction="Replace"
         ComputedTocDepth="2"></TocEntry>
       <TocEntry
@@ -83,7 +83,7 @@
       <TocEntry
         Title="Stand-alone system"
         Link="/Content/Guides/Installation_Guides/Dashboard_Installation_Guide/13_4.1_Standalone_system.htm"
-        ComputeToc="true"
+        ComputeToc="false"
         ComputedTocAction="Replace"
         ComputedTocDepth="2"></TocEntry>
       <TocEntry
@@ -112,7 +112,7 @@
       <TocEntry
         Title="Stop the Dashboard application"
         Link="/Content/Guides/Installation_Guides/Dashboard_Installation_Guide/18_7.1_Stop_the_Dashboard_application.htm"
-        ComputeToc="true"
+        ComputeToc="false"
         ComputedTocAction="Replace"
         ComputedTocDepth="2"></TocEntry>
       <TocEntry
