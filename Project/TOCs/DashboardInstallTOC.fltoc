@@ -25,7 +25,7 @@
       ComputedTocDepth="2">
       <TocEntry
         Title="Install Node.js 10.x"
-        Link="/Content/Guides/Installation_Guides/Dashboard_Installation_Guide/1_Administration_Dashboard_Installation_Guide.htm"
+        Link="/Content/Guides/Installation_Guides/Dashboard_Installation_Guide/2_1.1_Install_Node.js_10.x.htm"
         ComputeToc="false"
         ComputedTocAction="Replace"
         ComputedTocDepth="2"></TocEntry>
