@@ -21,139 +21,144 @@
       Link="/Content/Guides/Administrator_Guides/Administration_Guide/2_1_Administration_Guide.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputeToc="true"
       ComputedTocAction="Replace"
-      ComputedTocDepth="10"></TocEntry>
+      ComputedTocDepth="2"></TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
-      Link="/Content/Guides/Administrator_Guides/Administration_Guide/3_2_Concepts.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+      Link="/Content/Guides/Administrator_Guides/Administration_Guide/3_2_Concepts.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      ComputedTocDepth="2">
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/4_2.1_SQream_DB_Daemon.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputeToc="true"
         ComputedTocAction="Replace"
-        ComputedTocDepth="10"></TocEntry>
+        ComputedTocDepth="2"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/5_2.2_Storage_Cluster.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputeToc="true"
         ComputedTocAction="Replace"
-        ComputedTocDepth="10" />
+        ComputedTocDepth="2" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/6_2.3_Databases.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputeToc="true"
         ComputedTocAction="Replace"
-        ComputedTocDepth="10" />
+        ComputedTocDepth="2" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/7_2.4_Schemas.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputeToc="true"
         ComputedTocAction="Replace"
-        ComputedTocDepth="10" />
+        ComputedTocDepth="2" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/8_2.5_Tables.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputeToc="true"
         ComputedTocAction="Replace"
-        ComputedTocDepth="10" />
+        ComputedTocDepth="2" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/9_2.6_Columns.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputeToc="true"
         ComputedTocAction="Replace"
-        ComputedTocDepth="10" />
+        ComputedTocDepth="2" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/10_2.7_External_Tables.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputeToc="true"
         ComputedTocAction="Replace"
-        ComputedTocDepth="10" />
+        ComputedTocDepth="2" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/11_2.8_User_Defined_Functions.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputeToc="true"
         ComputedTocAction="Replace"
-        ComputedTocDepth="10" />
+        ComputedTocDepth="2" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/12_2.9_Chunks_Compression_and_Metadata.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputeToc="true"
         ComputedTocAction="Replace"
-        ComputedTocDepth="10" />
+        ComputedTocDepth="2" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/13_2.10_Catalog_information_schema.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputeToc="true"
         ComputedTocAction="Replace"
-        ComputedTocDepth="10" />
+        ComputedTocDepth="2" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/14_2.11_Locks.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputeToc="true"
         ComputedTocAction="Replace"
-        ComputedTocDepth="10" />
+        ComputedTocDepth="2" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/15_2.12_Workload_Manager.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputeToc="true"
         ComputedTocAction="Replace"
-        ComputedTocDepth="10"></TocEntry>
+        ComputedTocDepth="2"></TocEntry>
     </TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
-      Link="/Content/Guides/Administrator_Guides/Administration_Guide/16_3.1_Understanding_the_SQream_DB_environment.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+      Link="/Content/Guides/Administrator_Guides/Administration_Guide/16_3.1_Understanding_the_SQream_DB_environment.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      ComputedTocDepth="2">
       <TocEntry
         Title="Understanding the SQream DB environment"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/16_3.1_Understanding_the_SQream_DB_environment.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-        ReplaceMergeNode="false"></TocEntry>
+        ReplaceMergeNode="false"
+        ComputedTocDepth="2"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/17_3.2_Setting_up_SQream_DB.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputedTocAction="Replace"
-        ComputedTocDepth="10"
+        ComputedTocDepth="2"
         ComputeToc="true" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/18_3.3_Highly_available_installations.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputedTocAction="Replace"
-        ComputedTocDepth="10"
+        ComputedTocDepth="2"
         ComputeToc="true" />
     </TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
-      Link="/Content/Guides/Administrator_Guides/Administration_Guide/19_4.1_Upgrading_a_version.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+      Link="/Content/Guides/Administrator_Guides/Administration_Guide/19_4.1_Upgrading_a_version.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      ComputedTocDepth="2">
       <TocEntry
         Title="Upgrading a version"
-        Link="/Content/Guides/Administrator_Guides/Administration_Guide/19_4.1_Upgrading_a_version.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"></TocEntry>
+        Link="/Content/Guides/Administrator_Guides/Administration_Guide/19_4.1_Upgrading_a_version.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+        ComputedTocDepth="2"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/20_4.2_Key_administration_concepts.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputedTocAction="Replace"
         ComputeToc="true"
-        ComputedTocDepth="10"></TocEntry>
+        ComputedTocDepth="2"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/21_4.3_Monitoring_the_system.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputedTocAction="Replace"
         ComputeToc="true"
-        ComputedTocDepth="10" />
+        ComputedTocDepth="2" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/22_4.4_Stopping_existing_statements.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputedTocAction="Replace"
         ComputeToc="true"
-        ComputedTocDepth="10" />
+        ComputedTocDepth="2" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/23_4.5_Logs.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputedTocAction="Replace"
         ComputeToc="true"
-        ComputedTocDepth="10" />
+        ComputedTocDepth="2" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/24_4.6_Support_Utilities.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputedTocAction="Replace"
         ComputeToc="true"
-        ComputedTocDepth="10" />
+        ComputedTocDepth="2" />
     </TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"

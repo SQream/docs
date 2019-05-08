@@ -4,7 +4,6 @@
   $('.SQreamHomeSite').show();
   $('.VersionControl').appendTo('.logo-wrapper');
   $('.VersionControl').show();
-  $('.mp-search .VersionControl').hide();
 
   
   var $window = $(window);
@@ -61,6 +60,7 @@
          .each(function () {
            $(this).html($(this).html().replace(/[^\/]+$/, ''));
            $(this).html($(this).html().replace(/_/g, ' '));
+           $(this).prepend('SQream_');
  console.log(this)
            $(this).show();
          });
