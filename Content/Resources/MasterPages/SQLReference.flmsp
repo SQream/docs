@@ -24,14 +24,12 @@
                     <MadCap:topicToolbarProxy style="mc-topic-toolbar-items: ;" data-mc-skin="/Project/Skins/TopicToolbar.flskn" />
                     <div class="mobileMenu">
                         <MadCap:menuProxy data-mc-skin="/Project/Skins/MobileMenu.flskn" mc-linked-toc="/Project/TOCs/SQLReferenceTOC.fltoc" style="mc-toc-depth: 1;mc-context-sensitive: True;mc-include-parent: True;mc-include-siblings: True;mc-include-children: True;" />
-                    </div>
-                    <MadCap:bodyProxy />
-                </div>
-            </div>
-        </div>
-        <p><a class="SQreamHomeSite" href="https://sqream.com" target="_blank">SQream.com</a> </p>
-        <MadCap:snippetBlock src="../Snippets/VersionControl.flsnp" />
-    </body>
+				</div><MadCap:bodyProxy /></div>
+			</div>
+		</div>
+		<p class="copyrightFooter">Copyright © 2010-2019. All rights reserved.</p><a class="SQreamHomeSite" href="https://sqream.com" target="_blank">SQream.com</a>
+		<MadCap:snippetBlock src="../Snippets/VersionControl.flsnp" />
+	</body>
     <script src="../_TopNav/_topnav.js">
     </script>
 </html>
