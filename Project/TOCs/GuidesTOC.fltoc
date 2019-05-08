@@ -41,7 +41,7 @@
       ComputeToc="false" />
     <TocEntry
       Title="DashboardInstallTOC"
-      Link="/Project/TOCs/DashboardInstallTOC.fltoc"
+      Link="/Project/TOCs/DashboardTOC.fltoc"
       ReplaceMergeNode="true" />
     <TocEntry
       Title="SQLEditorInstallTOC"

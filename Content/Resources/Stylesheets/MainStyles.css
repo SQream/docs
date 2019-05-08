@@ -170,8 +170,12 @@ p.code
 }
 
 p.copyrightFooter {
-	text-align: center;
-	margin: 0;
+    margin: 0;
+    text-align: center;
+    position: absolute;
+    bottom: 4px;
+    width: 100%;
+    left: 0;
 }
 
 span.colorBoldItalic
