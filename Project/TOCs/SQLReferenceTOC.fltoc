@@ -6,7 +6,7 @@
     Link="/Content/SQL_Reference_Guide/1_Overview.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
     ComputedTocAction="Insert"
     ComputeToc="false"
-    ComputedTocDepth="10"
+    ComputedTocDepth="2"
     BreakType="chapter"
     StartSection="false"
     PageNumberReset="continue"
@@ -20,7 +20,7 @@
       Link="/Content/SQL_Reference_Guide/1_Overview.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputedTocAction="Insert"
       ComputeToc="false"
-      ComputedTocDepth="10"
+      ComputedTocDepth="2"
       BreakType="chapter"
       StartSection="false"
       PageNumberReset="continue"
@@ -34,7 +34,7 @@
       Link="/Content/SQL_Reference_Guide/16_2.1_Data_Definition_Language.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputedTocAction="Replace"
       ComputeToc="true"
-      ComputedTocDepth="3"
+      ComputedTocDepth="2"
       StartSection="false"
       SectionNumberReset="continue"
       VolumeNumberReset="same"
@@ -44,55 +44,55 @@
       Title="[%=System.LinkedTitle%]"
       Link="/Content/SQL_Reference_Guide/17_2.2_Data_Manipulation_Language.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputeToc="true"
-      ComputedTocDepth="3"
+      ComputedTocDepth="2"
       ComputedTocAction="Replace" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/SQL_Reference_Guide/18_2.3_Operational_Commands.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputeToc="true"
-      ComputedTocDepth="3"
+      ComputedTocDepth="2"
       ComputedTocAction="Replace" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/SQL_Reference_Guide/19_2.4_Queries.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputeToc="true"
-      ComputedTocDepth="3"
+      ComputedTocDepth="2"
       ComputedTocAction="Replace" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/SQL_Reference_Guide/20_2.5_Manual_Query_Tuning.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputeToc="true"
-      ComputedTocDepth="3"
+      ComputedTocDepth="2"
       ComputedTocAction="Replace" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/SQL_Reference_Guide/21_2.6_Data_types.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputeToc="true"
-      ComputedTocDepth="3"
+      ComputedTocDepth="2"
       ComputedTocAction="Replace" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/SQL_Reference_Guide/22_2.7_Value_expressions.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputeToc="true"
-      ComputedTocDepth="3"
+      ComputedTocDepth="2"
       ComputedTocAction="Replace" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/SQL_Reference_Guide/23_2.8_Functions_and_Operators.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputeToc="true"
-      ComputedTocDepth="3"
+      ComputedTocDepth="2"
       ComputedTocAction="Replace" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/SQL_Reference_Guide/24_2.9_User_Defined_Functions.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputeToc="true"
-      ComputedTocDepth="3"
+      ComputedTocDepth="2"
       ComputedTocAction="Replace" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/SQL_Reference_Guide/25_Copyright.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputedTocAction="Insert"
       ComputeToc="false"
-      ComputedTocDepth="10" />
+      ComputedTocDepth="2" />
   </TocEntry>
 </CatapultToc>

@@ -3,78 +3,79 @@
   Version="1">
   <TocEntry
     Title="[%=System.LinkedTitle%]"
-    Link="/Content/Concepts/2_1_Concepts.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    Link="/Content/Concepts/2_1_Concepts.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    ComputedTocDepth="2">
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Concepts/3_1.1_SQream_DB_Daemon.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputedTocAction="Replace"
-      ComputedTocDepth="10"
+      ComputedTocDepth="2"
       ComputeToc="true" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Concepts/4_1.2_Storage_Cluster.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputedTocAction="Replace"
-      ComputedTocDepth="10"
+      ComputedTocDepth="2"
       ComputeToc="true"></TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Concepts/5_1.3_Databases.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputedTocAction="Replace"
-      ComputedTocDepth="10"
+      ComputedTocDepth="2"
       ComputeToc="true"></TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Concepts/6_1.4_Schemas.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputedTocAction="Replace"
-      ComputedTocDepth="10"
+      ComputedTocDepth="2"
       ComputeToc="true"></TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Concepts/7_1.5_Tables.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputedTocAction="Replace"
-      ComputedTocDepth="10"
+      ComputedTocDepth="2"
       ComputeToc="true" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Concepts/8_1.6_Columns.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputedTocAction="Replace"
-      ComputedTocDepth="10"
+      ComputedTocDepth="2"
       ComputeToc="true" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Concepts/9_1.7_External_Tables.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputedTocAction="Replace"
-      ComputedTocDepth="10"
+      ComputedTocDepth="2"
       ComputeToc="true" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Concepts/10_1.8_User_Defined_Functions.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputedTocAction="Replace"
-      ComputedTocDepth="10"
+      ComputedTocDepth="2"
       ComputeToc="true" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Concepts/11_1.9_Chunks_Compression_and_Metadata.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputedTocAction="Replace"
-      ComputedTocDepth="10"
+      ComputedTocDepth="2"
       ComputeToc="true" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Concepts/12_1.10_Catalog_(information_schema).htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputedTocAction="Replace"
-      ComputedTocDepth="10"
+      ComputedTocDepth="2"
       ComputeToc="true" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Concepts/13_1.11_Locks.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputedTocAction="Replace"
-      ComputedTocDepth="10"
+      ComputedTocDepth="2"
       ComputeToc="true" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Concepts/14_1.12_Workload_Manager.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputedTocAction="Replace"
-      ComputedTocDepth="10"
+      ComputedTocDepth="2"
       ComputeToc="true" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"

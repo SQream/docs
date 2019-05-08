@@ -14,7 +14,7 @@
   DeleteStale="false"
   DeleteUnreferenced="false"
   AutoSync="true"
-  LastImport="2019-04-29T19:38:59.6578194+03:00">
+  LastImport="2019-05-08T17:10:58.1421140+03:00">
   <Files>
     <Url
       Source="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/SQream_Global.flprj"
@@ -391,6 +391,21 @@
     <Url
       Source="../../../SQream_Global/Project/TOCs/QuickAdminGuideTOC.fltoc"
       AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Project/TOCs/QuickAdminGuideTOC.fltoc" />
+    <Url
+      Source="../../../SQream_Global/Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Quick_guide_to_launching_a_SQream_DB_cluster.pdf"
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Quick_guide_to_launching_a_SQream_DB_cluster.pdf" />
+    <Url
+      Source="../../../SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/DWLM_quick_guide.pdf"
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/DWLM_quick_guide.pdf" />
+    <Url
+      Source="../../../SQream_Global/Content/Guides/Quick_Guides/Loading_Data_Into_SQream/loading_your_data_into_SQream.pdf"
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/Loading_Data_Into_SQream/loading_your_data_into_SQream.pdf" />
+    <Url
+      Source="../../../SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/Quick_guide_to_managing_your_SQream_cluster.pdf"
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/Quick_guide_to_managing_your_SQream_cluster.pdf" />
+    <Url
+      Source="../../../SQream_Global/Project/TOCs/DWLMTOC.fltoc"
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Project/TOCs/DWLMTOC.fltoc" />
   </CollectedSourceFiles>
   <SkippedSourceFiles />
   <GeneratedFiles>
@@ -763,5 +778,20 @@
     <Url
       Source="../TOCs/QuickAdminGuideTOC.fltoc"
       TimeStamp="29-Apr-19 10:50:58 AM" />
+    <Url
+      Source="../../Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Quick_guide_to_launching_a_SQream_DB_cluster.pdf"
+      TimeStamp="08-May-19 3:12:58 PM" />
+    <Url
+      Source="../../Content/Guides/Quick_Guides/DWLM_Guide/DWLM_quick_guide.pdf"
+      TimeStamp="08-May-19 3:12:58 PM" />
+    <Url
+      Source="../../Content/Guides/Quick_Guides/Loading_Data_Into_SQream/loading_your_data_into_SQream.pdf"
+      TimeStamp="08-May-19 3:12:58 PM" />
+    <Url
+      Source="../../Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/Quick_guide_to_managing_your_SQream_cluster.pdf"
+      TimeStamp="08-May-19 3:12:58 PM" />
+    <Url
+      Source="../TOCs/DWLMTOC.fltoc"
+      TimeStamp="30-Apr-19 9:28:26 PM" />
   </GeneratedFiles>
 </CatapultProject>
