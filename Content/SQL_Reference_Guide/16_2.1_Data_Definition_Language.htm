@@ -54,7 +54,7 @@ During <strong>DROP DATABASE</strong>, no other DDL/DML operations can run
                         <div class="sect3">
                             <h4 id="_schemas">Schemas</h4>
                             <div class="sect4">
-                                <h5 id="_create_schema">CREATE SCHEMA</h5>
+                                <h5 id="_create_schema"><a name="CREATE6"></a>CREATE SCHEMA</h5>
                                 <div class="paragraph">
                                     <p><strong>CREATE SCHEMA</strong> will create a new schema in the current database.</p>
                                 </div>
@@ -864,7 +864,7 @@ External tables allow SQream to access data that is stored outside the database 
                                                 <div class="ulist">
                                                     <ul>
                                                         <li>
-                                                            <p>SQream allows passing privilege between roles by granting one role to another, with or without inherit.</p>
+                                                            <p>SQream allows passing privilege between roles by granting one role to another.</p>
                                                         </li>
                                                         <li>
                                                             <p>For a role to act as a user, it must be granted with *PASSWORD*, *LOGIN*, and *CONNECT* permission to the database it wishes to connect to.</p>
@@ -908,11 +908,8 @@ External tables allow SQream to access data that is stored outside the database 
 
 
 -- Pass privileges between roles by granting one role to another:
-    GRANT &lt;role1&gt; [, ...] TO &lt;role2&gt; [, ...] WITH [ INHERIT | NOINHERIT ]</code></pre>
+    GRANT &lt;role1&gt; [, ...] TO &lt;role2&gt;</code></pre>
                                     </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>SELECT: Allows to SELECT any column of the specified table.</p>
                                 </div>
                                 <div class="paragraph">
                                     <p>INSERT: Allows INSERT of a new row into the specified table using INSERT/COPY command.</p>
@@ -935,20 +932,6 @@ External tables allow SQream to access data that is stored outside the database 
                                 <div class="paragraph">
                                     <p>PASSWORD: Grant a new password for the role. Without a password the role cannot function as a USER and login.</p>
                                 </div>
-                                <div class="paragraph">
-                                    <p>INHERIT/NOINHERIT: While INHERIT is true (default), permissions belonging to the superclass role, will automatically be transferred to the heir role.</p>
-                                </div>
-                                <div class="admonitionblock note">
-                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-The permissions LOGIN cannot be inherited and must be explicitly granted.
-</td>
-                                        </tr>
-                                    </table>
-                                </div>
                                 <div class="code">
                                     <div class="title">Examples</div>
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">GRANT</span>  <span class="tok-n">LOGIN</span><span class="tok-p">,</span><span class="tok-n">superuser</span>  <span class="tok-k">TO</span>  <span class="tok-k">admin</span><span class="tok-p">;</span>  
@@ -959,7 +942,7 @@ The permissions LOGIN cannot be inherited and must be explicitly granted.
 <span class="tok-k">GRANT</span>  <span class="tok-n">DDL</span>  <span class="tok-k">ON</span>  <span class="tok-k">admin</span><span class="tok-mf">.</span><span class="tok-n">main_table</span>  <span class="tok-k">TO</span>  <span class="tok-n">userB</span><span class="tok-p">;</span>  
 <span class="tok-k">GRANT</span>  <span class="tok-k">ALL</span>  <span class="tok-k">ON</span>  <span class="tok-k">all</span>  <span class="tok-k">tables</span>  <span class="tok-k">IN</span>  <span class="tok-k">schema</span>  <span class="tok-n">public</span>  <span class="tok-k">TO</span>  <span class="tok-n">userB</span><span class="tok-p">;</span>  
 <span class="tok-k">GRANT</span>  <span class="tok-k">SELECT</span>  <span class="tok-k">ON</span>  <span class="tok-k">all</span>  <span class="tok-k">views</span>  <span class="tok-k">IN</span>  <span class="tok-k">schema</span>  <span class="tok-k">admin</span>  <span class="tok-k">TO</span>  <span class="tok-n">userA</span><span class="tok-p">;</span>  
-<span class="tok-k">GRANT</span>  <span class="tok-k">ROLE</span>  <span class="tok-k">admin</span>  <span class="tok-k">TO</span>  <span class="tok-n">userC</span>  <span class="tok-n">noinherit</span><span class="tok-p">;</span>  
+<span class="tok-k">GRANT</span>  <span class="tok-k">admin</span>  <span class="tok-k">TO</span>  <span class="tok-n">userC</span><span class="tok-p">;</span>  
 <span class="tok-k">GRANT</span>  <span class="tok-n">superuser</span>  <span class="tok-k">ON</span>  <span class="tok-k">schema</span>  <span class="tok-n">demo</span>  <span class="tok-k">TO</span>  <span class="tok-n">userA</span><span class="tok-p">;</span>  
 <span class="tok-k">GRANT</span>  <span class="tok-n">admin_role</span>  <span class="tok-k">TO</span>  <span class="tok-n">userB</span><span class="tok-p">;</span></code></pre>
                                     </div>

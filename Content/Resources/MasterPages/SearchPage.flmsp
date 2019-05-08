@@ -12,8 +12,7 @@
         </div>
         <div class="row collapse">
             <MadCap:bodyProxy />
-        </div>
-        <p><a class="SQreamHomeSite" href="https://sqream.com" target="_blank">SQream.com</a> </p>
+        </div><a class="SQreamHomeSite" href="https://sqream.com" target="_blank">SQream.com</a>
         <MadCap:snippetBlock src="../Snippets/VersionControl.flsnp" />
     </body>
     <script src="../_TopNav/_topnav.js">

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CatapultTarget
   Version="2"
-  Comment="SQream Pre and Installation Guides"
+  Comment=""
   Type="WebHelp2"
   Destinations=""
   GlossaryTermConversion="marked"
@@ -9,7 +9,6 @@
   DefaultUrl="/Content/Home.htm"
   MasterStylesheet="/Content/Resources/Stylesheets/MainStyles.css"
   MasterStylesheetOverride="true"
-  Skin="/Project/Skins/HTML5 - Top Navigation.flskn"
   MenuSkin="/Project/Skins/SideMenu.flskn"
   ExcludeUnreferencedContent="true"
   TopNavTocPath="true"
@@ -17,7 +16,8 @@
   ReplaceSpacesWithUnderscores="false"
   OutputFolder="C:\Users\Rivka\Documents\My Projects\SQream_April_2019\Output\2019.1.2"
   TabletBreakpoint="1280"
-  MobileBreakpoint="767">
+  MobileBreakpoint="767"
+  ConditionTagExpression="include[General.Web_Only] exclude[&quot;General.Print _Only&quot;] ">
   <PrintedOutput
     CollapseMargins="true"
     GenerateTOCProxy="true"

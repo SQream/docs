@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\Resources\MasterPages\Concepts.flmsp');">
     <head>
+        <link href="../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
     </head>
     <body class="article toc2 toc-left">
         <div id="content">
@@ -8,10 +9,15 @@
                 <h3 id="tables">Tables</h3>
                 <div class="paragraph">
                     <p>In SQream DB, a table is a set of data elements organized into horizontal rows and vertical columns. A table has a specified number of columns but can have any number of rows.</p>
+                    <ul>
+                        <li> To view tables, query the <a href="12_1.10_Catalog_(information_schema).htm">Catalog (information schema)</a>.</li>
+                        <li>	To create a new  table, query the <a href="../SQL_Reference_Guide/16_2.1_Data_Definition_Language.htm"><a href="../SQL_Reference_Guide/16_2.1_Data_Definition_Language.htm#CREATE3">CREATE TABLE</a></a> command.</li>
+                        <li>To manage tables permissions, query <a href="../SQL_Reference_Guide/16_2.1_Data_Definition_Language.htm#roles-and-permissions">Database Roles and Permissions</a>.</li>
+                    </ul>
                 </div>
                 <div class="imageblock">
                     <div class="content">
-                        <img src="../Images/tables1.jpg" alt="table" width="350" style="width: 350px;" />
+                        <img src="Images/tables1.jpg" alt="table" width="350" style="width: 350px;" />
                     </div>
                     <div class="title">Figure 2. Logical table 'customers'</div>
                 </div>
@@ -22,7 +28,7 @@
                     <p>In a columnar database, would be stored as:<br /><code>1,2,3,4,5</code> ;<br /><code>John,Jane,Sam,David,Susan</code> ;<br /><code>1997-01-01 15:30:30,1998-05-06 00:00:00,1956-06-02 14:31:00,2006-12-25 14:40:00,1975-10-21 02:20:00</code></p>
                 </div>
                 <div class="admonitionblock tip">
-                    <table style="mc-table-style: url('Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                         <tr class="TableStyle-Default_Table-Body-Body1">
                             <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-tip" title="Tip"></i>
                             </td>
