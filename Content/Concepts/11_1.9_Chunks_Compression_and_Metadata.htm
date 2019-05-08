@@ -9,19 +9,7 @@
                 <h3 id="chunks">Chunks, Compression and Metadata</h3>
                 <div class="sect3">
                     <h4 id="_chunks">Chunks</h4>
-                    <div class="paragraph">
-                        <p>SQream DB splits up columnar data into chunks. The chunk size will be the <strong>minimal</strong> bulk load into the GPU.</p>
-                    </div>
-                    <div class="paragraph">
-                        <p>For better performance, SQream DB rearranges previously loaded data in new chunks based on the desired <strong>chunk size</strong>.
-						While loading data into SQream DB, each bulk load (either <code>INSERT INTO</code> or <code>COPY</code>), will generate its own chunks (with sizes up to the chunk size).</p>
-                    </div>
-                    <div class="paragraph">
-                        <p>The chunk size is a parameter at the cluster level that must be set before the first insert to the cluster.
-							The default chunk size 1 million rows.
-							The parameter can be set at the database level, before any tables are created.
-						Ask your database administrator about setting the chunk size.</p>
-                    </div>
+                    <p>SQream DB splits columnar data into chunks. The chunk size will determine the minimum bulk load into the GPU. For better performance, SQream DB rearranges previously loaded data into new chunks based on the configured <span class="strong">chunk size</span>. When loading data into SQream DB, each bulk load (either <span class="codeCH">INSERT INTO</span> or <span class="codeCH">COPY</span>), will generate its own chunks (with sizes up to the chunk size). Chunk size is a parameter at the cluster level. It must be set before the first insert to the cluster. It can also be set at the database level, before any tables are created. Default chunk size is 1 million rows. Ask your database administrator about setting the chunk size. </p>
                     <div class="admonitionblock note">
                         <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                             <tr class="TableStyle-Default_Table-Body-Body1">
@@ -31,10 +19,7 @@
                                     <div class="ulist">
                                         <ul>
                                             <li>
-                                                <p>SQream DB, in its own time, will <strong>rechunk</strong> those chunks into the desired chunk size. During the rechunk operation SQream will rearrange and recompress the data using the most appropriate compression type (according to the data type and data distribution).</p>
-                                            </li>
-                                            <li>
-                                                <p>The chunk size has an influence on load/query time. Before tuning the parameter, consult your SQream account manager.</p>
+                                                <p>The chunk size influences load/query time. Before tuning the parameter, consult your SQream account manager.</p>
                                             </li>
                                         </ul>
                                     </div>
@@ -46,20 +31,16 @@
                 <div class="sect3">
                     <h4 id="_compression_specs">Compression specs</h4>
                     <div class="paragraph">
-                        <p>When <code>DEFAULT</code> compression spec (or no compression spec) is specified, each chunk may be compressed in a variety of different formats, based on the system’s understanding.
-						You may override the compression spec, but this is not recommended.</p>
+                        <p>When <code>DEFAULT</code> compression spec (or no compression spec) is specified, each chunk may be compressed in a variety of different formats, based on the system’s understanding. You may override the compression spec, but this is not recommended.</p>
                     </div>
                     <div class="paragraph">
-                        <p>See <a href="SQLReferenceGuide/16_2.1_Data_Definition_Language.htm#Compression_types">Compression types</a> in the SQL Manual for more information.</p>
+                        <p>See <a href="../SQL_Reference_Guide/16_2.1_Data_Definition_Language.htm#Compression_types">Compression types</a> in the SQL Manual for more information.</p>
                     </div>
                 </div>
                 <div class="sect3">
                     <h4 id="_metadata">Metadata</h4>
                     <div class="paragraph">
-                        <p>SQream DB gathers and saves metadata information regarding the columns data at the chunk level during <code>COPY</code>.
-						This information will serve the SQream optimizer while doing Data Skipping and other optimizations. This metadata is gathered automatically and transparently. It requires no user intervention.</p>
-                    </div>
-                    <div style="page-break-after: always;">
+                        <p>SQream DB gathers and saves metadata information regarding the columns data at the chunk level during <code>COPY</code>. This information will serve the SQream optimizer while doing Data Skipping and other optimizations. Gathering metadata is automatic and transparent and requires no user intervention.</p>
                     </div>
                 </div>
             </div>

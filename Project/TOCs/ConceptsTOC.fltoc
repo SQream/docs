@@ -7,7 +7,7 @@
     ComputedTocDepth="2">
     <TocEntry
       Title="[%=System.LinkedTitle%]"
-      Link="/Content/Concepts/3_1.1_SQream_DB_Daemon.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      Link="/Content/Concepts/3_1.1_SQream_Instance.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputedTocAction="Replace"
       ComputedTocDepth="2"
       ComputeToc="true" />
