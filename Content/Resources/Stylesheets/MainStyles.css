@@ -864,6 +864,16 @@ div.MCBreadcrumbsBox_0 {
 	padding-bottom: 0;
 }
 
+#resultList .url cite:before {
+	display:none;
+}
+
+#resultList .url cite.showing:before {
+	content: 'SQream_';
+	display:inline;
+}
+
+
 /* Hiding Flare Styles*/
 
 abbr,
