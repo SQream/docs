@@ -60,9 +60,8 @@
          .each(function () {
            $(this).html($(this).html().replace(/[^\/]+$/, ''));
            $(this).html($(this).html().replace(/_/g, ' '));
-           $(this).prepend('SQream_');
- console.log(this)
            $(this).show();
+           $(this).addClass("showing");
          });
      
      }
