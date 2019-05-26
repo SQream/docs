@@ -15,11 +15,12 @@
   TopNavTocPath="true"
   SearchResultsSkin="/Project/Skins/SearchResults.flskn"
   ReplaceSpacesWithUnderscores="false"
-  OutputFolder="C:\Users\Rivka\Documents\My Projects\SQream\SQream_Web\Output\3.2"
+  OutputFolder="C:\Users\Rivka\Documents\My Projects\SQream\SQream_Web\Output\3.3"
   TabletBreakpoint="1280"
   MobileBreakpoint="767"
   ConditionTagExpression="exclude[General.Print_Only or General.Print_Only]"
-  GetLatestBeforeCompile="true">
+  GetLatestBeforeCompile="false"
+  MakeFileLowerCase="true">
   <PrintedOutput
     CollapseMargins="true"
     GenerateTOCProxy="true"
