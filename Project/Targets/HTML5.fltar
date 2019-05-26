@@ -7,7 +7,7 @@
   GlossaryTermConversion="marked"
   MasterToc="/Project/TOCs/HTML5TOC.fltoc"
   DefaultUrl="/Content/Home.htm"
-  MasterStylesheet="/Content/Resources/Stylesheets/MainStyles.css"
+  MasterStylesheet="/Content/Resources/Stylesheets/MainStyles.css?v=2"
   MasterStylesheetOverride="true"
   Skin="/Project/Skins/HTML5 - Top Navigation.flskn"
   MenuSkin="/Project/Skins/SideMenu.flskn"
@@ -15,10 +15,11 @@
   TopNavTocPath="true"
   SearchResultsSkin="/Project/Skins/SearchResults.flskn"
   ReplaceSpacesWithUnderscores="false"
-  OutputFolder="C:\Users\Rivka\Documents\My Projects\SQream_April_2019\Output\3.2"
+  OutputFolder="C:\Users\Rivka\Documents\My Projects\SQream\SQream_Web\Output\3.2"
   TabletBreakpoint="1280"
   MobileBreakpoint="767"
-  ConditionTagExpression="exclude[General.Print_Only or General.Print_Only]">
+  ConditionTagExpression="exclude[General.Print_Only or General.Print_Only]"
+  GetLatestBeforeCompile="true">
   <PrintedOutput
     CollapseMargins="true"
     GenerateTOCProxy="true"
