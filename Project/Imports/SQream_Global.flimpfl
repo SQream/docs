@@ -14,403 +14,403 @@
   DeleteStale="false"
   DeleteUnreferenced="false"
   AutoSync="true"
-  LastImport="2019-05-09T09:35:41.4354914+03:00">
+  LastImport="2019-05-26T19:32:51.0581088+03:00">
   <Files>
     <Url
-      Source="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/SQream_Global.flprj"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/SQream_Global.flprj" />
+      Source="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/SQream_Global.flprj"
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/SQream_Global.flprj" />
   </Files>
   <ExcludedFiles />
   <CollectedSourceFiles>
     <Url
       Source="../../../SQream_Global/Content/FAQ.html"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/FAQ.html" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/FAQ.html" />
     <Url
       Source="../../../SQream_Global/Content/Home.htm"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Home.htm" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Home.htm" />
     <Url
       Source="../../../SQream_Global/Content/Search.htm"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Search.htm" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Search.htm" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Creating_Your_First_Database_In_SQream.htm"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Creating_Your_First_Database_In_SQream.htm" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Creating_Your_First_Database_In_SQream.htm" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/1_HowToUseDWLM_Overview.htm"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/1_HowToUseDWLM_Overview.htm" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/1_HowToUseDWLM_Overview.htm" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/2_ManagingWorkloads.htm"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/2_ManagingWorkloads.htm" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/2_ManagingWorkloads.htm" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/3_ManagingServices.htm"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/3_ManagingServices.htm" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/3_ManagingServices.htm" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/4_Subscribing_And_Unsubscribing_Services.htm"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/4_Subscribing_And_Unsubscribing_Services.htm" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/4_Subscribing_And_Unsubscribing_Services.htm" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/5_Subscribing_A_Service.htm"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/5_Subscribing_A_Service.htm" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/5_Subscribing_A_Service.htm" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/6_Unsubscribing_A_Service.htm"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/6_Unsubscribing_A_Service.htm" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/6_Unsubscribing_A_Service.htm" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/7_Monitoring_Services.htm"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/7_Monitoring_Services.htm" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/7_Monitoring_Services.htm" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/8_Connecting_To_A_Service.htm"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/8_Connecting_To_A_Service.htm" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/8_Connecting_To_A_Service.htm" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/Images/windows1.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/Images/windows1.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/Images/windows1.png" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/Loading_Data_Into_SQream/1_Loading_Data_Overview.htm"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/Loading_Data_Into_SQream/1_Loading_Data_Overview.htm" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/Loading_Data_Into_SQream/1_Loading_Data_Overview.htm" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/Loading_Data_Into_SQream/2_Comparing_import_methods.htm"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/Loading_Data_Into_SQream/2_Comparing_import_methods.htm" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/Loading_Data_Into_SQream/2_Comparing_import_methods.htm" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/Loading_Data_Into_SQream/3_Choosing_the_import_method.htm"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/Loading_Data_Into_SQream/3_Choosing_the_import_method.htm" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/Loading_Data_Into_SQream/3_Choosing_the_import_method.htm" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/1_QuickAdministratorGuide.htm"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/1_QuickAdministratorGuide.htm" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/1_QuickAdministratorGuide.htm" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/2_SQream_cluster_status.htm"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/2_SQream_cluster_status.htm" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/2_SQream_cluster_status.htm" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/3_SQream_version.htm"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/3_SQream_version.htm" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/3_SQream_version.htm" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/4_Sqream_active_session.htm"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/4_Sqream_active_session.htm" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/4_Sqream_active_session.htm" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/5_Session_statistics.htm"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/5_Session_statistics.htm" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/5_Session_statistics.htm" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/6_SQream_locks.htm"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/6_SQream_locks.htm" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/6_SQream_locks.htm" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/7_Stop_active_statement.htm"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/7_Stop_active_statement.htm" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/7_Stop_active_statement.htm" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/8_Query_execution_tree.htm"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/8_Query_execution_tree.htm" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/8_Query_execution_tree.htm" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Fonts/Lato.ttf"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Fonts/Lato.ttf" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Fonts/Lato.ttf" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/arrow.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/arrow.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/arrow.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/info.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/info.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/info.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/tip.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/tip.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/tip.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/warning.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/warning.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/warning.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/windows.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/windows.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/windows.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/Arrows/arrow-down-black.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/Arrows/arrow-down-black.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/Arrows/arrow-down-black.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/Arrows/arrow-down-gray.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/Arrows/arrow-down-gray.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/Arrows/arrow-down-gray.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/Arrows/arrow-left-black.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/Arrows/arrow-left-black.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/Arrows/arrow-left-black.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/Arrows/arrow-left-gray.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/Arrows/arrow-left-gray.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/Arrows/arrow-left-gray.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/Arrows/arrow-right-black.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/Arrows/arrow-right-black.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/Arrows/arrow-right-black.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/Arrows/arrow-right-gray.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/Arrows/arrow-right-gray.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/Arrows/arrow-right-gray.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/Arrows/arrow-up-black.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/Arrows/arrow-up-black.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/Arrows/arrow-up-black.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/Arrows/arrow-up-gray.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/Arrows/arrow-up-gray.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/Arrows/arrow-up-gray.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Clients-black.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Clients-black.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Clients-black.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Clients-gray.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Clients-gray.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Clients-gray.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Clients-white.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Clients-white.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Clients-white.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Contact-black.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Contact-black.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Contact-black.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Contact-gray.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Contact-gray.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Contact-gray.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Contact-white.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Contact-white.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Contact-white.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/FAQs-black.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/FAQs-black.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/FAQs-black.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/FAQs-gray.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/FAQs-gray.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/FAQs-gray.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/FAQs-white.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/FAQs-white.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/FAQs-white.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/HamburgerIcon-black.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/HamburgerIcon-black.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/HamburgerIcon-black.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/HamburgerIcon-gray.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/HamburgerIcon-gray.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/HamburgerIcon-gray.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/HamburgerIcon-white.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/HamburgerIcon-white.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/HamburgerIcon-white.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Hello-black.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Hello-black.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Hello-black.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Hello-gray.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Hello-gray.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Hello-gray.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Hello-white.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Hello-white.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Hello-white.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/ManageListsandFAQs-black.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/ManageListsandFAQs-black.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/ManageListsandFAQs-black.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/ManageListsandFAQs-gray.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/ManageListsandFAQs-gray.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/ManageListsandFAQs-gray.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/ManageListsandFAQs-white.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/ManageListsandFAQs-white.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/ManageListsandFAQs-white.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Notes-black.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Notes-black.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Notes-black.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Notes-gray.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Notes-gray.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Notes-gray.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Notes-white.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Notes-white.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Notes-white.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/PDFs-black.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/PDFs-black.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/PDFs-black.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/PDFs-gray.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/PDFs-gray.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/PDFs-gray.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/PDFs-white.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/PDFs-white.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/PDFs-white.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Search-black.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Search-black.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Search-black.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Search-gray.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Search-gray.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Search-gray.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Search-white.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Search-white.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Search-white.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Services-black.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Services-black.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Services-black.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Services-gray.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Services-gray.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Services-gray.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Services-white.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Services-white.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Services-white.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/SharedFiles-black.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/SharedFiles-black.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/SharedFiles-black.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/SharedFiles-gray.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/SharedFiles-gray.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/SharedFiles-gray.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/SharedFiles-white.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/SharedFiles-white.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/SharedFiles-white.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Solutions-black.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Solutions-black.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Solutions-black.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Solutions-gray.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Solutions-gray.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Solutions-gray.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Solutions-white.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Solutions-white.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Solutions-white.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Tips-black.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Tips-black.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Tips-black.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Tips-gray.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Tips-gray.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Tips-gray.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Tips-white.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Tips-white.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/Tips-white.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/VideosImages-black.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/VideosImages-black.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/VideosImages-black.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/VideosImages-gray.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/VideosImages-gray.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/VideosImages-gray.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/VideosImages-white.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/VideosImages-white.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/MainIcons/VideosImages-white.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/AddSM-black.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/AddSM-black.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/AddSM-black.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/AddSM-gray.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/AddSM-gray.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/AddSM-gray.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/AddSM-white.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/AddSM-white.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/AddSM-white.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/FB-black.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/FB-black.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/FB-black.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/FB-gray.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/FB-gray.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/FB-gray.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/FB-white.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/FB-white.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/FB-white.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/Insta-black.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/Insta-black.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/Insta-black.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/Insta-gray.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/Insta-gray.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/Insta-gray.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/Insta-white.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/Insta-white.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/Insta-white.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/LI-black.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/LI-black.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/LI-black.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/LI-gray.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/LI-gray.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/LI-gray.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/LI-white.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/LI-white.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/LI-white.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/Twitter-black.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/Twitter-black.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/Twitter-black.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/Twitter-gray.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/Twitter-gray.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/Twitter-gray.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/Twitter-white.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/Twitter-white.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Icons/SocialMedia/Twitter-white.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Logos/sqream_logo.pdf"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Logos/sqream_logo.pdf" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Logos/sqream_logo.pdf" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Logos/sqream_logo.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Logos/sqream_logo.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Logos/sqream_logo.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Images/Assets/Logos/sqream_logo_white.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Images/Assets/Logos/sqream_logo_white.png" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Assets/Logos/sqream_logo_white.png" />
     <Url
       Source="../../../SQream_Global/Content/Resources/MasterPages/Concepts.flmsp"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/MasterPages/Concepts.flmsp" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/MasterPages/Concepts.flmsp" />
     <Url
       Source="../../../SQream_Global/Content/Resources/MasterPages/Drivers.flmsp"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/MasterPages/Drivers.flmsp" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/MasterPages/Drivers.flmsp" />
     <Url
       Source="../../../SQream_Global/Content/Resources/MasterPages/Guides.flmsp"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/MasterPages/Guides.flmsp" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/MasterPages/Guides.flmsp" />
     <Url
       Source="../../../SQream_Global/Content/Resources/MasterPages/HomePage.flmsp"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/MasterPages/HomePage.flmsp" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/MasterPages/HomePage.flmsp" />
     <Url
       Source="../../../SQream_Global/Content/Resources/MasterPages/LandingPage.flmsp"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/MasterPages/LandingPage.flmsp" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/MasterPages/LandingPage.flmsp" />
     <Url
       Source="../../../SQream_Global/Content/Resources/MasterPages/ReleaseNotes.flmsp"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/MasterPages/ReleaseNotes.flmsp" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/MasterPages/ReleaseNotes.flmsp" />
     <Url
       Source="../../../SQream_Global/Content/Resources/MasterPages/SearchPage.flmsp"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/MasterPages/SearchPage.flmsp" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/MasterPages/SearchPage.flmsp" />
     <Url
       Source="../../../SQream_Global/Content/Resources/MasterPages/SQLReference.flmsp"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/MasterPages/SQLReference.flmsp" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/MasterPages/SQLReference.flmsp" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Snippets/VersionControl.flsnp"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Snippets/VersionControl.flsnp" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Snippets/VersionControl.flsnp" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Stylesheets/MainStyles.css"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Stylesheets/MainStyles.css" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Stylesheets/MainStyles.css" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Stylesheets/StylesForHomePage.css"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Stylesheets/StylesForHomePage.css" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Stylesheets/StylesForHomePage.css" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Table Styles/ConfigFileVariablesTable.css"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Table Styles/ConfigFileVariablesTable.css" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Table Styles/ConfigFileVariablesTable.css" />
     <Url
       Source="../../../SQream_Global/Content/Resources/Table Styles/DefaultTable.css"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/Table Styles/DefaultTable.css" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Table Styles/DefaultTable.css" />
     <Url
       Source="../../../SQream_Global/Content/Resources/_TopNav/_topnav.js"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Resources/_TopNav/_topnav.js" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/_TopNav/_topnav.js" />
     <Url
       Source="../../../SQream_Global/Project/ConditionTagSets/General.flcts"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Project/ConditionTagSets/General.flcts" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Project/ConditionTagSets/General.flcts" />
     <Url
       Source="../../../SQream_Global/Project/Skins/HTML5 - Top Navigation.flskn"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Project/Skins/HTML5 - Top Navigation.flskn" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Project/Skins/HTML5 - Top Navigation.flskn" />
     <Url
       Source="../../../SQream_Global/Project/Skins/MobileMenu.flskn"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Project/Skins/MobileMenu.flskn" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Project/Skins/MobileMenu.flskn" />
     <Url
       Source="../../../SQream_Global/Project/Skins/SearchHome.flskn"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Project/Skins/SearchHome.flskn" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Project/Skins/SearchHome.flskn" />
     <Url
       Source="../../../SQream_Global/Project/Skins/SearchResults.flskn"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Project/Skins/SearchResults.flskn" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Project/Skins/SearchResults.flskn" />
     <Url
       Source="../../../SQream_Global/Project/Skins/SearchTopics.flskn"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Project/Skins/SearchTopics.flskn" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Project/Skins/SearchTopics.flskn" />
     <Url
       Source="../../../SQream_Global/Project/Skins/SideMenu.flskn"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Project/Skins/SideMenu.flskn" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Project/Skins/SideMenu.flskn" />
     <Url
       Source="../../../SQream_Global/Project/Skins/TopicToolBar.flskn"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Project/Skins/TopicToolBar.flskn" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Project/Skins/TopicToolBar.flskn" />
     <Url
       Source="../../../SQream_Global/Project/TOCs/LoadingDataTOC.fltoc"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Project/TOCs/LoadingDataTOC.fltoc" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Project/TOCs/LoadingDataTOC.fltoc" />
     <Url
       Source="../../../SQream_Global/Project/TOCs/QuickAdminGuideTOC.fltoc"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Project/TOCs/QuickAdminGuideTOC.fltoc" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Project/TOCs/QuickAdminGuideTOC.fltoc" />
     <Url
       Source="../../../SQream_Global/Project/TOCs/DWLMTOC.fltoc"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Project/TOCs/DWLMTOC.fltoc" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Project/TOCs/DWLMTOC.fltoc" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Guides.htm"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Guides.htm" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Guides.htm" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Quick_guide_to_launching_a_SQream_DB_cluster.pdf"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Quick_guide_to_launching_a_SQream_DB_cluster.pdf" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Quick_guide_to_launching_a_SQream_DB_cluster.pdf" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/DWLM_quick_guide.pdf"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/DWLM_quick_guide.pdf" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/DWLM_quick_guide.pdf" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/Loading_Data_Into_SQream/loading_your_data_into_SQream.pdf"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/Loading_Data_Into_SQream/loading_your_data_into_SQream.pdf" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/Loading_Data_Into_SQream/loading_your_data_into_SQream.pdf" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/Quick_guide_to_managing_your_SQream_cluster.pdf"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/Quick_guide_to_managing_your_SQream_cluster.pdf" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/Quick_guide_to_managing_your_SQream_cluster.pdf" />
   </CollectedSourceFiles>
   <SkippedSourceFiles>
     <Url
       Source="../../../SQream_Global/Content/Guides/Guides.htm"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream_Global/Content/Guides/Guides.htm" />
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Guides.htm" />
   </SkippedSourceFiles>
   <GeneratedFiles>
     <Url

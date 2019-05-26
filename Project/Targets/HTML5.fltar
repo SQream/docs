@@ -17,7 +17,8 @@
   OutputFolder="C:\Users\Rivka\Documents\My Projects\SQream\SQream_Web\Output\2019.1.2"
   TabletBreakpoint="1280"
   MobileBreakpoint="767"
-  ConditionTagExpression="include[General.Web_Only] exclude[&quot;General.Print _Only&quot;] ">
+  ConditionTagExpression="include[General.Web_Only] exclude[&quot;General.Print _Only&quot;] "
+  GetLatestBeforeCompile="false">
   <PrintedOutput
     CollapseMargins="true"
     GenerateTOCProxy="true"
