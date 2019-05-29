@@ -23,6 +23,9 @@
       Link="/Project/TOCs/DWLMTOC.fltoc"
       ReplaceMergeNode="true"></TocEntry>
     <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Guides/Quick_Guides/Quick_guide_to_roles_and_permissions/Quick_guide_to_roles_and_permissions.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    <TocEntry
       Title="AdminGuideTOC"
       Link="/Project/TOCs/AdminGuideTOC.fltoc"
       ReplaceMergeNode="true" />

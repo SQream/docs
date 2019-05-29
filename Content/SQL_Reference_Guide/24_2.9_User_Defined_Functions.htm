@@ -73,7 +73,7 @@ $$ LANGUAGE python;</code></pre>
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-c1">-- Create a function that activates an external python script (writefile.py):</span>  
 <span class="tok-k">CREATE</span>  <span class="tok-k">or</span>  <span class="tok-k">replace</span>  <span class="tok-k">function</span>  <span class="tok-n">write_file_to_os</span><span class="tok-p">()</span>  <span class="tok-k">RETURNS</span>  <span class="tok-nb">int</span>    <span class="tok-k">as</span>  <span class="tok-s">$$</span>  
 <span class="tok-kn">import</span>  <span class="tok-nn">sys</span>  
-<span class="tok-n">sys</span><span class="tok-o">.</span><span class="tok-n">path</span><span class="tok-o">.</span><span class="tok-n">append</span><span class="tok-p">(</span><span class="tok-s2">"/home/galit/pythonpath"</span><span class="tok-p">)</span>  
+<span class="tok-n">sys</span><span class="tok-o">.</span><span class="tok-n">path</span><span class="tok-o">.</span><span class="tok-n">append</span><span class="tok-p">(</span><span class="tok-s2">"/home/sqream/pythonpath"</span><span class="tok-p">)</span>  
 <span class="tok-kn">import</span>  <span class="tok-nn">writefile</span>  <span class="tok-kn">as</span>  <span class="tok-nn">f</span>  
 <span class="tok-n">f</span><span class="tok-o">.</span><span class="tok-n">main</span><span class="tok-p">()</span>  
 <span class="tok-k">return</span>  <span class="tok-mi">1</span>  

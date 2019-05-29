@@ -7,7 +7,7 @@
   GlossaryTermConversion="marked"
   MasterToc="/Project/TOCs/HTML5TOC.fltoc"
   DefaultUrl="/Content/Home.htm"
-  MasterStylesheet="/Content/Resources/Stylesheets/MainStyles.css?v=2"
+  MasterStylesheet="/Content/Resources/Stylesheets/MainStyles.css?v=[%=Global.BuildTime%]"
   MasterStylesheetOverride="true"
   Skin="/Project/Skins/HTML5 - Top Navigation.flskn"
   MenuSkin="/Project/Skins/SideMenu.flskn"

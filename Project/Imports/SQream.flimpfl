@@ -14,7 +14,7 @@
   DeleteStale="false"
   DeleteUnreferenced="false"
   AutoSync="true"
-  LastImport="2019-05-27T14:21:49.6192809+03:00">
+  LastImport="2019-05-29T22:24:33.9066182+03:00">
   <Files>
     <Url
       Source="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/SQream_Global.flprj"
@@ -410,6 +410,54 @@
     <Url
       Source="../../../SQream_Global/Project/TOCs/DWLMTOC.fltoc"
       AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Project/TOCs/DWLMTOC.fltoc" />
+    <Url
+      Source="../../../SQream_Global/Content/Print_Common_Files/Copyright_For_Print.htm"
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Print_Common_Files/Copyright_For_Print.htm" />
+    <Url
+      Source="../../../SQream_Global/Content/Print_Common_Files/Images/sqream_cover_logo.png"
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Print_Common_Files/Images/sqream_cover_logo.png" />
+    <Url
+      Source="../../../SQream_Global/Content/Resources/PageLayouts/default-page-layout.flpgl"
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/PageLayouts/default-page-layout.flpgl" />
+    <Url
+      Source="../../../SQream_Global/Content/Resources/PageLayouts/front-matter-page-layout.flpgl"
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/PageLayouts/front-matter-page-layout.flpgl" />
+    <Url
+      Source="../../../SQream_Global/Content/Resources/_TopNav/Concepts.flmsp"
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/_TopNav/Concepts.flmsp" />
+    <Url
+      Source="../../../SQream_Global/Content/Resources/_TopNav/Drivers.flmsp"
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/_TopNav/Drivers.flmsp" />
+    <Url
+      Source="../../../SQream_Global/Content/Resources/_TopNav/Guides.flmsp"
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/_TopNav/Guides.flmsp" />
+    <Url
+      Source="../../../SQream_Global/Content/Resources/_TopNav/HomePage.flmsp"
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/_TopNav/HomePage.flmsp" />
+    <Url
+      Source="../../../SQream_Global/Content/Resources/_TopNav/LandingPage.flmsp"
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/_TopNav/LandingPage.flmsp" />
+    <Url
+      Source="../../../SQream_Global/Content/Resources/_TopNav/ReleaseNotes.flmsp"
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/_TopNav/ReleaseNotes.flmsp" />
+    <Url
+      Source="../../../SQream_Global/Content/Resources/_TopNav/SearchPage.flmsp"
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/_TopNav/SearchPage.flmsp" />
+    <Url
+      Source="../../../SQream_Global/Content/Resources/_TopNav/SQLReference.flmsp"
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/_TopNav/SQLReference.flmsp" />
+    <Url
+      Source="../../../SQream_Global/Project/VariableSets/Global.flvar"
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Project/VariableSets/Global.flvar" />
+    <Url
+      Source="../../../SQream_Global/Content/Guides/Quick_Guides/Quick_guide_to_roles_and_permissions/Quick_guide_to_roles_and_permissions.htm"
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/Quick_guide_to_roles_and_permissions/Quick_guide_to_roles_and_permissions.htm" />
+    <Url
+      Source="../../../SQream_Global/Content/Resources/Images/Quick start guide to roles and permissions 2nd draft/Quick start guide to roles and permissions 2nd draft.png"
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Quick start guide to roles and permissions 2nd draft/Quick start guide to roles and permissions 2nd draft.png" />
+    <Url
+      Source="../../../SQream_Global/Project/Imports/Quick start guide to roles and permissions 2nd draft.flimp"
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Project/Imports/Quick start guide to roles and permissions 2nd draft.flimp" />
   </CollectedSourceFiles>
   <SkippedSourceFiles>
     <Url
@@ -801,5 +849,53 @@
     <Url
       Source="../TOCs/DWLMTOC.fltoc"
       TimeStamp="30-Apr-19 9:28:26 PM" />
+    <Url
+      Source="../../Content/Print_Common_Files/Copyright_For_Print.htm"
+      TimeStamp="28-May-19 8:54:30 PM" />
+    <Url
+      Source="../../Content/Print_Common_Files/Images/sqream_cover_logo.png"
+      TimeStamp="29-May-19 9:27:57 AM" />
+    <Url
+      Source="../../Content/Resources/PageLayouts/default-page-layout.flpgl"
+      TimeStamp="28-May-19 8:47:29 PM" />
+    <Url
+      Source="../../Content/Resources/PageLayouts/front-matter-page-layout.flpgl"
+      TimeStamp="28-May-19 8:47:01 PM" />
+    <Url
+      Source="../../Content/Resources/_TopNav/Concepts.flmsp"
+      TimeStamp="29-May-19 8:16:44 PM" />
+    <Url
+      Source="../../Content/Resources/_TopNav/Drivers.flmsp"
+      TimeStamp="29-May-19 8:16:44 PM" />
+    <Url
+      Source="../../Content/Resources/_TopNav/Guides.flmsp"
+      TimeStamp="29-May-19 8:16:44 PM" />
+    <Url
+      Source="../../Content/Resources/_TopNav/HomePage.flmsp"
+      TimeStamp="29-May-19 8:16:44 PM" />
+    <Url
+      Source="../../Content/Resources/_TopNav/LandingPage.flmsp"
+      TimeStamp="29-May-19 8:16:44 PM" />
+    <Url
+      Source="../../Content/Resources/_TopNav/ReleaseNotes.flmsp"
+      TimeStamp="29-May-19 8:16:44 PM" />
+    <Url
+      Source="../../Content/Resources/_TopNav/SearchPage.flmsp"
+      TimeStamp="29-May-19 8:16:44 PM" />
+    <Url
+      Source="../../Content/Resources/_TopNav/SQLReference.flmsp"
+      TimeStamp="29-May-19 8:16:44 PM" />
+    <Url
+      Source="../VariableSets/Global.flvar"
+      TimeStamp="29-May-19 8:12:45 PM" />
+    <Url
+      Source="../../Content/Guides/Quick_Guides/Quick_guide_to_roles_and_permissions/Quick_guide_to_roles_and_permissions.htm"
+      TimeStamp="29-May-19 10:02:34 PM" />
+    <Url
+      Source="../../Content/Resources/Images/Quick start guide to roles and permissions 2nd draft/Quick start guide to roles and permissions 2nd draft.png"
+      TimeStamp="29-May-19 9:44:16 PM" />
+    <Url
+      Source="Quick start guide to roles and permissions 2nd draft.flimp"
+      TimeStamp="29-May-19 9:44:39 PM" />
   </GeneratedFiles>
 </CatapultProject>
