@@ -6,87 +6,143 @@
     Link="/Content/Guides/Administrator_Guides/Administration_Guide/1_Overview.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
     ChapterNumber="1"
     ChapterNumberReset="reset"
-    BreakType="chapter"
+    BreakType="pageLayout"
     StartSection="false"
     PageNumberReset="continue"
     SectionNumberReset="continue"
     VolumeNumberReset="same"
     ComputeToc="false"
-    ComputedTocDepth="2">
+    ComputedTocDepth="2"
+    PageNumber="1"
+    PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl">
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Print_Common_Files/TOC.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      conditions="General.Print_Only"
+      BreakType="pageLayout"
+      PageNumber="1"
+      PageLayout="/Content/Resources/PageLayouts/front-matter-page-layout.flpgl"
+      PageType="normal"
+      StartSection="false" />
     <TocEntry
       Title="Overview"
       Link="/Content/Guides/Administrator_Guides/Administration_Guide/1_Overview.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       StartSection="false"
-      ComputedTocDepth="2" />
+      ComputedTocDepth="2"
+      conditions="General.Web_Only"
+      BreakType="pageLayout"
+      PageNumber="1"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Guides/Administrator_Guides/Administration_Guide/2_1_Administration_Guide.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputeToc="true"
       ComputedTocAction="Replace"
-      ComputedTocDepth="2"></TocEntry>
+      ComputedTocDepth="2"
+      BreakType="pageLayout"
+      PageNumber="1"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"></TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Guides/Administrator_Guides/Administration_Guide/16_3.1_Understanding_the_SQream_DB_environment.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-      ComputedTocDepth="2">
+      ComputedTocDepth="2"
+      BreakType="pageLayout"
+      PageNumber="1"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl">
       <TocEntry
         Title="Understanding the SQream DB environment"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/16_3.1_Understanding_the_SQream_DB_environment.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ReplaceMergeNode="false"
-        ComputedTocDepth="2"></TocEntry>
+        ComputedTocDepth="2"
+        BreakType="pageLayout"
+        PageNumber="1"
+        PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
+        conditions="General.Web_Only"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/17_3.2_Setting_up_SQream_DB.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputedTocAction="Replace"
         ComputedTocDepth="2"
-        ComputeToc="true" />
+        ComputeToc="true"
+        BreakType="pageLayout"
+        PageNumber="1"
+        PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/18_3.3_Highly_available_installations.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputedTocAction="Replace"
         ComputedTocDepth="2"
-        ComputeToc="true" />
+        ComputeToc="true"
+        BreakType="pageLayout"
+        PageNumber="1"
+        PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl" />
     </TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Guides/Administrator_Guides/Administration_Guide/19_4.1_Upgrading_a_version.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-      ComputedTocDepth="2">
+      ComputedTocDepth="2"
+      BreakType="pageLayout"
+      PageNumber="1"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl">
       <TocEntry
         Title="Upgrading a version"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/19_4.1_Upgrading_a_version.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-        ComputedTocDepth="2"></TocEntry>
+        ComputedTocDepth="2"
+        BreakType="pageLayout"
+        PageNumber="1"
+        PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
+        conditions="General.Web_Only"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/20_4.2_Key_administration_concepts.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputedTocAction="Replace"
         ComputeToc="true"
-        ComputedTocDepth="2"></TocEntry>
+        ComputedTocDepth="2"
+        BreakType="pageLayout"
+        PageNumber="1"
+        PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/21_4.3_Monitoring_the_system.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputedTocAction="Replace"
         ComputeToc="true"
-        ComputedTocDepth="2" />
+        ComputedTocDepth="2"
+        BreakType="pageLayout"
+        PageNumber="1"
+        PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/22_4.4_Stopping_existing_statements.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputedTocAction="Replace"
         ComputeToc="true"
-        ComputedTocDepth="2" />
+        ComputedTocDepth="2"
+        BreakType="pageLayout"
+        PageNumber="1"
+        PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/23_4.5_Logs.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputedTocAction="Replace"
         ComputeToc="true"
-        ComputedTocDepth="2" />
+        ComputedTocDepth="2"
+        BreakType="pageLayout"
+        PageNumber="1"
+        PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Administrator_Guides/Administration_Guide/24_4.6_Support_Utilities.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputedTocAction="Replace"
         ComputeToc="true"
-        ComputedTocDepth="2" />
+        ComputedTocDepth="2"
+        BreakType="pageLayout"
+        PageNumber="1"
+        PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl" />
     </TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
-      Link="/Content/Guides/Administrator_Guides/Administration_Guide/25_Copyright.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      Link="/Content/Guides/Administrator_Guides/Administration_Guide/25_Copyright.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      BreakType="pageLayout"
+      PageNumber="1"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl" />
   </TocEntry>
 </CatapultToc>

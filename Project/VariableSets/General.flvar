@@ -26,4 +26,8 @@
     Name="Twitter"
     Comment=""
     EvaluatedDefinition="https://twitter.com/sqreamtech">https://twitter.com/sqreamtech</Variable>
+  <Variable
+    Name="DocumentName"
+    Comment=""
+    EvaluatedDefinition="" />
 </CatapultVariableSet>

@@ -804,225 +804,178 @@ External tables allow SQream to access data that is stored outside the database 
                             <h4 id="managing-roles-and-permissions"><a name="roles-and-permissions"></a>Database Roles and Permissions</h4>
                             <div class="paragraph">
                                 <p>SQream manages database access permissions using the concept of roles. A role can be thought of as either a database user, or a set of database permissions, depending on how the role is set up.</p>
-                            </div>
-                            <div class="paragraph">
-                                <p>Roles can have permissions and access database objects (for example, tables). <strong>SUPERUSER</strong> can grant membership in a role to another role, thus allowing the use of permissions assigned to the role it is a member of.</p>
-                            </div>
-                            <div class="paragraph">
-                                <p>Roles are global across all the databases.</p>
-                            </div>
-                            <div class="paragraph">
-                                <p>For a role to be used as a user, it must have <strong>PASSWORD</strong>, <strong>LOGIN</strong> and <strong>CONNECT</strong> permissions to a specified database(s).</p>
-                            </div>
-                            <div class="paragraph">
-                                <p>For a role to create and manage (read/write/alter) objects, it has to have the <strong>CREATE</strong> and <strong>USAGE</strong> permissions at the respective SCHEMA level.</p>
-                            </div>
-                            <div class="paragraph">
-                                <p>When creating an object, it will be created in the role’s default schema. Typically the 'default schema' is <strong>public</strong>. You can change the default schema with <strong>ALTER DEFAULT SCHEMA</strong>.</p>
-                            </div>
-                            <div class="paragraph">
-                                <p>The owner is normally the role that executed the creation statement. Once the object was created, only the owner (or a superuser) can perform read/write/alter operations on the object.</p>
-                            </div>
-                            <div class="paragraph">
-                                <p>To allow other roles perform these operations, permissions must be granted. These permissions can be given in advance for a given schema in a given role with the command <strong>ALTER DEFAULT PERMISSIONS</strong> (as long as they are sharing the same group).</p>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_public_role">PUBLIC Role</h5>
-                                <div class="paragraph">
-                                    <p>On database creation, SQream automatically generates the <strong>sqream</strong> user as a superuser and the <strong>PUBLIC</strong> schema and role. Each new user will automatically be granted with the PUBLIC role which cannot be revoked.</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>The PUBLIC role has USAGE and CREATE permissions on PUBLIC schema by default, therefore, new users can create and manage their own objects in the <strong>PUBLIC</strong> schema. To see/manage other users/role objects in PUBLIC schema, use the <strong>GRANT</strong> command while connected as the object owner or as a superuser.</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_grant_permissions">GRANT Permissions</h5>
-                                <div class="paragraph">
-                                    <p>The <strong>GRANT</strong> command assigns specific permissions to existing database objects or at the database level, to one or more roles.</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>The identifier name can be the role name or CURRENT_ROLE.</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Possible permissions at the cluster level: LOGIN, PASSWORD, CREATE FUNCTION</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Possible permissions at the database level: SUPERUSER, CONNECT, CREATE, USAGE</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Possible permissions at the schema level: USAGE, CREATE</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Possible permissions at object level: SELECT, INSERT, DELETE, DDL, EXECUTE, ALL.</p>
-                                </div>
-                                <div class="admonitionblock note">
-                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                <p class="note"><span class="strong">For an example of how to configure roles in a cluster, see</span> <a href="../Guides/Quick_Guides/Quick_guide_to_roles_and_permissions/Quick_guide_to_roles_and_permissions.htm">quick guide to roles and permissions.</a></p>
+                                <h6>Roles at a glance</h6>
+                                <ul>
+                                    <li>Roles are global across all databases in the cluster.</li>
+                                    <li>However, for a role to function as a user in a database, it must have <span class="strong">USAGE</span> permission on the specific database (as well as any other relevant permissions).</li>
+                                    <li>Roles are granted permissions and access to specific objects. The specified object can be any defined object such as a database or table.</li>
+                                    <li>Roles can be granted permissions to other roles, thus creating a hierarchy of role with increasingly specific or limited permissions for lower-level users.</li>
+                                </ul>
+                                <h6>Roles and users</h6>
+                                <p>For a role to be used as a user, it must have PASSWORD, LOGIN and CONNECT permissions to the database it wishes to connect to.</p>
+                                <p>When a role is assigned to a user (see GRANT PERMISSIONS), the user then has all the permissions granted to the role.</p>
+                                <h6>Roles and object permissions</h6>
+                                <p>For a role to create and manage (read/write/alter) objects, it has to have the CREATE and USAGE permissions at the respective SCHEMA level.</p>
+                                <p>The role that creates an object is normally the owner of the object. This means:</p>
+                                <ul>
+                                    <li>By default only that role can perform read/write/alter operations on the object.</li>
+                                    <li>The object will be created in the role's default schema (usually <span class="strong">public</span>).</li>
+                                </ul>
+                                <p>Any of the following can grant access permissions for an existing object to other roles. </p>
+                                <ul>
+                                    <li>object owner </li>
+                                    <li>superuser</li>
+                                    <li>user with relevant admin permission via the <span class="strong">A</span><span class="strong">D</span><span class="strong">MIN OPTION</span></li>
+                                </ul>
+                                <p>Note that granted permissions affect only the specific existing objects. To grant the desired permissions also to objects created in the future, you must modify the role's default schema using the ALTER DEFAULT PERMISSIONS command.</p>
+                                <h6>Roles and schema</h6>
+                                <p>Roles are created using the <span class="strong">PUBLIC</span> schema so new users can create and manage their own objects in the PUBLIC schema. Once the role is created you can change the schema by using either:</p>
+                                <ul>
+                                    <li><span class="strong">GRANT</span> command to assign a different schema with its assigned permissions</li>
+                                </ul>
+                                <ul>
+                                    <li><span class="strong">ALTER DEFAULT PERMISSIONS</span> command to modify the current default schema</li>
+                                </ul>
+                                <h5>Superuser</h5>
+                                <p>A SUPERUSER is like an admin user who can grant permissions to other users. The superuser can create a role, granting it the relevant permissions and then give specified roles the ability to assign this role to other users. (This is the function of the <span class="strong">ADMIN OPTION</span> option of the <span class="strong">GRANT</span> command.)</p>
+                                <h5>PUBLIC Role</h5>
+                                <p>On database creation, SQream automatically generates the sqream user as a superuser and the PUBLIC schema and role. Each new user will automatically be granted with the <span class="strong">PUBLIC</span> role which cannot be revoked.</p>
+                                <p>The <span class="strong">PUBLIC</span> role has <span class="strong">USAGE</span> and <span class="strong">CREATE</span> permissions on <span class="strong">PUBLIC</span> schema by default, therefore, new users can create and manage their own objects in the PUBLIC schema. To see/manage other users/role objects in <span class="strong">PUBLIC</span> schema, use the GRANT command while connected as any of the following:</p>
+                                <ul>
+                                    <li>object owner </li>
+                                    <li>superuser</li>
+                                    <li>user with relevant admin permission via the <span class="strong">A</span><span class="strong">D</span><span class="strong">MIN OPTION</span></li>
+                                </ul>
+                                <h5>GRANT Permissions</h5>
+                                <p>The GRANT command assigns specific permissions to existing database objects, schema, or databases to one or more roles.</p>
+                                <p>The identifier name can be the role name or CURRENT_ROLE.</p>
+                                <p>The following table lists the possible permissions for various levels in the cluster.</p>
+                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');margin-left: 0;margin-right: auto;" class="TableStyle-Default_Table" cellspacing="0">
+                                    <col class="TableStyle-Default_Table-Column-Column1" />
+                                    <col class="TableStyle-Default_Table-Column-Column1" />
+                                    <thead>
+                                        <tr class="TableStyle-Default_Table-Head-Header1">
+                                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">
+                                                <p>Level</p>
+                                            </th>
+                                            <th class="TableStyle-Default_Table-HeadD-Column1-Header1">
+                                                <p>Possible permissions </p>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
                                         <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                                <p>cluster </p>
                                             </td>
                                             <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-                                                <div class="ulist">
-                                                    <ul>
-                                                        <li>
-                                                            <p>SQream allows passing privilege between roles by granting one role to another.</p>
-                                                        </li>
-                                                        <li>
-                                                            <p>For a role to act as a user, it must be granted with *PASSWORD*, *LOGIN*, and *CONNECT* permission to the database it wishes to connect to.</p>
-                                                        </li>
-                                                        <li>
-                                                            <p>For a role to create and manage (read/write/alter) objects, it has to have the CREATE and USAGE permissions in that SCHEMA level.</p>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                                <p>LOGIN, PASSWORD, CREATE FUNCTION</p>
                                             </td>
                                         </tr>
-                                    </table>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code>-- Grant permissions at the cluster level:
-    GRANT
-    { SUPERUSER
-    | LOGIN
-    | PASSWORD '&lt;password&gt;'
-    }
-    TO &lt;role&gt; [, ...]
+                                        <tr class="TableStyle-Default_Table-Body-Body2">
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                                <p>database </p>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                                <p>SUPERUSER, CONNECT, CREATE, USAGE</p>
+                                            </td>
+                                        </tr>
+                                        <tr class="TableStyle-Default_Table-Body-Body1">
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                                <p>schema </p>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                                <p>USAGE, CREATE</p>
+                                            </td>
+                                        </tr>
+                                        <tr class="TableStyle-Default_Table-Body-Body2">
+                                            <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
+                                                <p>object </p>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyA-Column1-Body2">
+                                                <p>SELECT, INSERT, DELETE, DDL, EXECUTE, ALL</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div>
+                                    <div class="code"><pre xml:space="preserve">-- Grant permissions at the cluster level:
+	GRANT { SUPERUSER
+	| LOGIN 
+	| PASSWORD '&lt;password&gt;' 
+	| CREATE FUNCTION 
+	} 
+	TO &lt;role&gt; [, ...] 
 
 -- Grant permissions at the database level:
-    GRANT { { CREATE | CONNECT | DDL | SUPERUSER | CREATE FUNCTION } [, ...] | ALL [ PERMISSIONS ] }
 	ON DATABASE &lt;database&gt; [, ...]
+	TO &lt;role&gt; [, ...] 
+
+-- Grant permissions at the schema level: 
+	GRANT { { CREATE | DDL | USAGE | SUPERUSER } [, ...] | ALL [ 
+	PERMISSIONS ] } 
+	ON SCHEMA &lt;schema&gt; [, ...] 
+	TO &lt;role&gt; [, ...] 
+					
+-- Grant permissions at the object level: 
+	GRANT { { SELECT | INSERT | DELETE | DDL } [, ...] | ALL [ 
+	PERMISSIONS ] } 
+	ON { TABLE &lt;table_name&gt; [, ...] | ALL TABLES IN SCHEMA <br MadCap:conditions="General.Print _Only" />&lt;schema_name&gt; 
+	[, ...] } 
 	TO &lt;role&gt; [, ...]
-
--- Grant permissions at the schema level:
-    GRANT { { CREATE | DDL | USAGE | SUPERUSER } [, ...] | ALL [ PERMISSIONS ] }
-	ON SCHEMA &lt;schema&gt; [, ...]
-	TO &lt;role&gt; [, ...]
-
--- Grant permissions at the object level:
-    GRANT { { SELECT | INSERT | DELETE | DDL } [, ...] | ALL [ PERMISSIONS ] }
-	ON { TABLE &lt;table_name&gt; [, ...]  | ALL TABLES IN SCHEMA &lt;schema_name&gt; [, ...] }
-	TO &lt;role&gt; [, ...]
-
--- Grant execute function permission:
-    GRANT {ALL | EXECUTE | DDL} ON FUNCTION function_name TO role;
-
-
--- Pass privileges between roles by granting one role to another:
-    GRANT &lt;role1&gt; [, ...] TO &lt;role2&gt; [, ...]</code></pre>
+					
+-- Grant execute function permission: 
+	GRANT {ALL | EXECUTE | DDL} ON FUNCTION function_name 
+	TO role; 
+					
+-- Pass privileges between roles by granting one role to another: 
+	GRANT &lt;role1&gt; [, ...] 
+	TO &lt;role2&gt; 
+	[WITH ADMIN OPTION]</pre>
                                     </div>
                                 </div>
-                                <div class="paragraph">
-                                    <p>SELECT: Allows to SELECT any column of the specified table.</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>INSERT: Allows INSERT of a new row into the specified table using INSERT/COPY command.</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>DELETE: Allows to DELETE a row from the specified table. This privilege effects both DELETE and TRUNCATE commands.</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>DDL: Allows DROP/ALTER on a specified table.</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>SUPERUSER: The most privileged role in SQream cluster, allowing full control over the cluster. By default, SQream role is a superuser. Some utility functions can be used by superusers only.</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>SUPERUSER ON SCHEMA: Having maximum permissions on existing and new objects for a specific schema.</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>LOGIN: Grants the login permission. Without it, a role cannot function as a USER and login.</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>PASSWORD: Grant a new password for the role. Without a password the role cannot function as a USER and login.</p>
-                                </div>
-                                <div class="code">
-                                    <div class="title">Examples</div>
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">GRANT</span>  <span class="tok-n">LOGIN</span><span class="tok-p">,</span><span class="tok-n">superuser</span>  <span class="tok-k">TO</span>  <span class="tok-k">admin</span><span class="tok-p">;</span>  
-<span class="tok-k">GRANT</span>  <span class="tok-k">CREATE</span>  <span class="tok-k">FUNCTION&#160;ON&#160;DATABASE&#160;test_db</span>  <span class="tok-k">TO</span>  <span class="tok-k">user1</span><span class="tok-p">;</span>  
-<span class="tok-k">GRANT</span>  <span class="tok-k">SELECT</span>  <span class="tok-k">ON</span>  <span class="tok-k">TABLE</span>  <span class="tok-k">admin</span><span class="tok-mf">.</span><span class="tok-n">table1</span>  <span class="tok-k">TO</span>  <span class="tok-n">userA</span><span class="tok-p">;</span>  
-<span class="tok-k">GRANT</span>  <span class="tok-k">EXECUTE</span>  <span class="tok-k">ON</span>  <span class="tok-k">FUNCTION</span>  <span class="tok-n">my_function</span>  <span class="tok-k">TO</span>  <span class="tok-n">userA</span><span class="tok-p">;</span>  
-<span class="tok-k">GRANT</span>  <span class="tok-k">ALL</span>  <span class="tok-k">ON</span>  <span class="tok-k">FUNCTION</span>  <span class="tok-n">my_function</span>  <span class="tok-k">TO</span>  <span class="tok-n">userA</span><span class="tok-p">;</span>  
-<span class="tok-k">GRANT</span>  <span class="tok-n">DDL</span>  <span class="tok-k">ON</span>  <span class="tok-k">admin</span><span class="tok-mf">.</span><span class="tok-n">main_table</span>  <span class="tok-k">TO</span>  <span class="tok-n">userB</span><span class="tok-p">;</span>  
-<span class="tok-k">GRANT</span>  <span class="tok-k">ALL</span>  <span class="tok-k">ON</span>  <span class="tok-k">all</span>  <span class="tok-k">tables</span>  <span class="tok-k">IN</span>  <span class="tok-k">schema</span>  <span class="tok-n">public</span>  <span class="tok-k">TO</span>  <span class="tok-n">userB</span><span class="tok-p">;</span>  
-<span class="tok-k">GRANT</span>  <span class="tok-k">SELECT</span>  <span class="tok-k">ON</span>  <span class="tok-k">all</span>  <span class="tok-k">views</span>  <span class="tok-k">IN</span>  <span class="tok-k">schema</span>  <span class="tok-k">admin</span>  <span class="tok-k">TO</span>  <span class="tok-n">userA</span><span class="tok-p">;</span>  
-<span class="tok-k">GRANT</span>  <span class="tok-k">ROLE</span>  <span class="tok-k">admin</span>  <span class="tok-k">TO</span>  <span class="tok-n">userC</span><span class="tok-p">;</span>  
-<span class="tok-k">GRANT</span>  <span class="tok-n">superuser</span>  <span class="tok-k">ON</span>  <span class="tok-k">schema</span>  <span class="tok-n">demo</span>  <span class="tok-k">TO</span>  <span class="tok-n">userA</span><span class="tok-p">;</span>  
-<span class="tok-k">GRANT</span>  <span class="tok-n">admin_role</span>  <span class="tok-k">TO</span>  <span class="tok-n">userB</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_revoke_permissions">REVOKE Permissions</h5>
-                                <div class="paragraph">
-                                    <p>The <strong>REVOKE</strong> command removes permissions from one or more roles.</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>The identifier name can be the role name or CURRENT_ROLE.</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code>-- Revoke permissions at the cluster level:
-    REVOKE
-    { SUPERUSER
-    | LOGIN
-    | PASSWORD
-    }
-    FROM &lt;role&gt; [, ...]
-
+                                <p>INSERT: Allows INSERT of a new row into the specified table using INSERT/COPY command.</p>
+                                <p>DELETE: Allows DELETE of a row from the specified table. This privilege effects both DELETE and TRUNCATE commands.</p>
+                                <p>DDL: Allows DROP/ALTER.</p>
+                                <p>SUPERUSER: The most privileged role in SQream cluster, allowing full control over the cluster. By default, SQream role is a superuser. Some utility functions can be used by superusers only.</p>
+                                <p>SUPERUSER ON SCHEMA: Has maximum permissions on existing and new objects for a specific schema.</p>
+                                <p>LOGIN: Grants the login permission. Without it, a role cannot function as a USER and login.</p>
+                                <p>PASSWORD: Grants a new password for the role. Without a password the role cannot function as a USER and login.</p>
+                                <p>WITH ADMIN OPTION: Grants the ability to give a certain role permission to others. </p>
+                                <h5>REVOKE Permissions</h5>
+                                <p>The REVOKE command removes permissions from one or more roles.</p>
+                                <p>The identifier name can be the role name or CURRENT_ROLE.</p>
+                                <div>
+                                    <div class="code"><pre>-- Revoke permissions at the cluster level:
+	REVOKE
+	{ SUPERUSER
+	| LOGIN
+	| PASSWORD
+	| CREATE FUNCTION
+	}
+	FROM &lt;role&gt; [, ...]
+				
 -- Revoke permissions at the database level:
-    REVOKE { { CREATE | CONNECT | DDL |  SUPERUSER |&#160;CREATE&#160;FUNCTION } [, ...] | ALL [ PERMISSIONS ] }
+	REVOKE { { CREATE | CONNECT | DDL | SUPERUSER } [, ...] | <br MadCap:conditions="General.Print _Only" />ALL [ 
+	PERMISSIONS ] }
 	ON DATABASE &lt;database&gt; [, ...]
 	FROM &lt;role&gt; [, ...]
 
 -- Revoke permissions at the schema level:
-    REVOKE { { CREATE | DDL | USAGE |  SUPERUSER } [, ...] | ALL [ PERMISSIONS ] }
+	REVOKE { { CREATE | DDL | USAGE | SUPERUSER } [, ...] | <br MadCap:conditions="General.Print _Only" />ALL [ 
+	PERMISSIONS ] }
 	ON SCHEMA &lt;schema&gt; [, ...]
 	FROM &lt;role&gt; [, ...]
-
+				
 -- Revoke permissions at the object level:
-    REVOKE { { SELECT | INSERT | DELETE | DDL } [, ...] | ALL }
-	ON { [ TABLE ] &lt;table_name&gt; [, ...] | ALL TABLES IN SCHEMA &lt;schema_name&gt; [, ...] }
+	REVOKE { { SELECT | INSERT | DELETE | DDL } [, ...] | ALL }
+	ON { [ TABLE ] &lt;table_name&gt; [, ...] | ALL TABLES IN SCHEMA <br MadCap:conditions="General.Print _Only" />&lt;
+	schema_name&gt; [, ...] }
 	FROM &lt;role&gt; [, ...]
-
--- Pass privileges between roles by granting one role to another:
-    REVOKE &lt;role1&gt; [, ...] FROM &lt;role2&gt; [, ...]</code></pre>
-                                    </div>
-                                </div>
-                                <div class="code">
-                                    <div class="title">Examples</div>
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">REVOKE</span>  <span class="tok-n">superuser</span>  <span class="tok-k">on</span>  <span class="tok-k">schema</span>  <span class="tok-n">demo</span>  <span class="tok-k">from</span>  <span class="tok-n">userA</span><span class="tok-p">;</span>  
-<span class="tok-k">REVOKE</span>  <span class="tok-k">delete</span>  <span class="tok-k">on</span>  <span class="tok-k">admin</span><span class="tok-mf">.</span><span class="tok-n">table1</span>  <span class="tok-k">from</span>  <span class="tok-n">userB</span><span class="tok-p">;</span>  
-<span class="tok-k">REVOKE</span>  <span class="tok-n">login</span>  <span class="tok-k">from</span>  <span class="tok-n">role_test</span><span class="tok-p">;</span>  
-<span class="tok-k">REVOKE</span>  <span class="tok-k">CREATE</span>  <span class="tok-k">FUNCTION ON&#160;DATABASE test_db</span>  <span class="tok-k">FROM</span>  <span class="tok-k">user1</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_alter_default_permissions">Alter Default Permissions</h5>
-                                <div class="paragraph">
-                                    <p><strong>ALTER DEFAULT PERMISSIONS</strong> allow setting/removing permissions to objects created in the future as long as they are sharing the same group.
-By using this command, the role who run it controls which grants will be given on each object to each roles.</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code>    ALTER DEFAULT PERMISSIONS FOR role, ...
-    ( [IN schema, ...] FOR TABLES | FOR SCHEMAS )
-    ( GRANT | DROP GRANT ) ... TO xrole, ...;
-
-xrole := role | CREATOR_ROLE</code></pre>
-                                    </div>
-                                </div>
-                                <div class="code">
-                                    <div class="title">Examples</div>
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-c1">-- Anytime role DEMO creates a new schema, roles U1,U2 will get USAGE and CREATE permissions in the new schema:</span>  
-<span class="tok-k">ALTER</span>  <span class="tok-k">DEFAULT</span>  <span class="tok-n">PERMISSIONS</span>  <span class="tok-k">FOR</span>  <span class="tok-n">demo</span>  <span class="tok-k">FOR</span>  <span class="tok-n">SCHEMAS</span>  <span class="tok-k">GRANT</span>  <span class="tok-n">USAGE</span><span class="tok-p">,</span>  <span class="tok-k">CREATE</span>  <span class="tok-k">TO</span>  <span class="tok-n">u1</span><span class="tok-p">,</span><span class="tok-n">u2</span><span class="tok-p">;</span>  
-
-<span class="tok-c1">-- Anytime role DEMO create a new table in schema S1, roles U1,U2 will be granted with SELECT on it:</span>  
-<span class="tok-k">ALTER</span>  <span class="tok-k">DEFAULT</span>  <span class="tok-n">PERMISSIONS</span>  <span class="tok-k">FOR</span>  <span class="tok-n">demo</span>  <span class="tok-k">IN</span>  <span class="tok-n">s1</span>  <span class="tok-k">FOR</span>  <span class="tok-k">TABLES</span>  <span class="tok-k">GRANT</span>  <span class="tok-k">SELECT</span>  <span class="tok-k">TO</span>  <span class="tok-n">u1</span><span class="tok-p">,</span><span class="tok-n">u2</span><span class="tok-p">;</span>  
-
-<span class="tok-c1">-- To grant all schemas so they can all create and use all future schemas in all possible operations, use the following:</span>  
-<span class="tok-k">ALTER</span>  <span class="tok-k">DEFAULT</span>  <span class="tok-n">PERMISSIONS</span>  <span class="tok-k">FOR</span>  <span class="tok-n">public</span>  <span class="tok-k">for</span>  <span class="tok-n">schemas</span>  <span class="tok-k">GRANT</span>  <span class="tok-n">USAGE</span><span class="tok-p">,</span>  <span class="tok-k">CREATE</span>  <span class="tok-k">TO</span>  <span class="tok-n">public</span><span class="tok-p">;</span>  
-<span class="tok-k">ALTER</span>  <span class="tok-k">DEFAULT</span>  <span class="tok-n">PERMISSIONS</span>  <span class="tok-k">FOR</span>  <span class="tok-n">public</span>  <span class="tok-k">FOR</span>  <span class="tok-k">TABLES</span>  <span class="tok-k">GRANT</span>  <span class="tok-k">SELECT</span><span class="tok-p">,</span><span class="tok-n">DDL</span><span class="tok-p">,</span><span class="tok-k">INSERT</span><span class="tok-p">,</span><span class="tok-k">DELETE</span>  <span class="tok-k">TO</span>  <span class="tok-n">public</span><span class="tok-p">;</span>  
-
-<span class="tok-c1">-- To remove future grant, add the keyword DROP before the given grant:</span>  
-<span class="tok-k">ALTER</span>  <span class="tok-k">DEFAULT</span>  <span class="tok-n">PERMISSIONS</span>  <span class="tok-k">FOR</span>  <span class="tok-n">public</span>  <span class="tok-k">FOR</span>  <span class="tok-k">TABLES</span>  <span class="tok-k">DROP</span>  <span class="tok-k">GRANT</span>  <span class="tok-k">SELECT</span><span class="tok-p">,</span><span class="tok-n">DDL</span><span class="tok-p">,</span><span class="tok-k">INSERT</span><span class="tok-p">,</span><span class="tok-k">DELETE</span>  <span class="tok-k">TO</span>  <span class="tok-n">public</span><span class="tok-p">;</span></code></pre>
+				
+-- Revoke privileges from other roles by granting one role to another:
+	REVOKE &lt;role1&gt; [, ...] FROM &lt;role2&gt; [, ...] WITH ADMIN <br MadCap:conditions="General.Print _Only" />OPTION</pre>
                                     </div>
                                 </div>
                             </div>

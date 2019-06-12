@@ -7,28 +7,41 @@
     ComputedTocAction="Insert"
     ComputeToc="false"
     ComputedTocDepth="10"
-    BreakType="chapter"
+    BreakType="pageLayout"
     StartSection="false"
     PageNumberReset="continue"
     ChapterNumberReset="reset"
     ChapterNumber="1"
     SectionNumberReset="continue"
     VolumeNumberReset="same"
-    ReplaceMergeNode="false">
+    ReplaceMergeNode="false"
+    PageNumber="(multiple)"
+    PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl">
     <TocEntry
       Title="Overview"
       Link="/Content/SQL_Reference_Guide/1_Overview.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputedTocAction="Insert"
       ComputeToc="false"
       ComputedTocDepth="10"
-      BreakType="chapter"
+      BreakType="pageLayout"
       StartSection="false"
       PageNumberReset="continue"
       ChapterNumberReset="reset"
       ChapterNumber="1"
       SectionNumberReset="continue"
       VolumeNumberReset="same"
-      ReplaceMergeNode="false"></TocEntry>
+      ReplaceMergeNode="false"
+      PageNumber="(multiple)"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
+      conditions="General.Web_Only"></TocEntry>
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Print_Common_Files/TOC.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      conditions="General.Print_Only"
+      BreakType="pageLayout"
+      PageNumber="(multiple)"
+      PageLayout="/Content/Resources/PageLayouts/front-matter-page-layout.flpgl"
+      StartSection="false" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/SQL_Reference_Guide/16_2.1_Data_Definition_Language.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
@@ -39,60 +52,90 @@
       SectionNumberReset="continue"
       VolumeNumberReset="same"
       ChapterNumberReset="continue"
-      ReplaceMergeNode="false" />
+      ReplaceMergeNode="false"
+      BreakType="pageLayout"
+      PageNumber="(multiple)"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/SQL_Reference_Guide/17_2.2_Data_Manipulation_Language.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputeToc="true"
       ComputedTocDepth="2"
-      ComputedTocAction="Replace" />
+      ComputedTocAction="Replace"
+      BreakType="pageLayout"
+      PageNumber="(multiple)"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/SQL_Reference_Guide/18_2.3_Operational_Commands.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputeToc="true"
       ComputedTocDepth="2"
-      ComputedTocAction="Replace" />
+      ComputedTocAction="Replace"
+      BreakType="pageLayout"
+      PageNumber="(multiple)"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/SQL_Reference_Guide/19_2.4_Queries.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputeToc="true"
       ComputedTocDepth="2"
-      ComputedTocAction="Replace" />
+      ComputedTocAction="Replace"
+      BreakType="pageLayout"
+      PageNumber="(multiple)"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/SQL_Reference_Guide/20_2.5_Manual_Query_Tuning.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputeToc="true"
       ComputedTocDepth="2"
-      ComputedTocAction="Replace" />
+      ComputedTocAction="Replace"
+      BreakType="pageLayout"
+      PageNumber="(multiple)"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/SQL_Reference_Guide/21_2.6_Data_types.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputeToc="true"
       ComputedTocDepth="2"
-      ComputedTocAction="Replace" />
+      ComputedTocAction="Replace"
+      BreakType="pageLayout"
+      PageNumber="(multiple)"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/SQL_Reference_Guide/22_2.7_Value_expressions.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputeToc="true"
       ComputedTocDepth="2"
-      ComputedTocAction="Replace" />
+      ComputedTocAction="Replace"
+      BreakType="pageLayout"
+      PageNumber="(multiple)"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/SQL_Reference_Guide/23_2.8_Functions_and_Operators.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputeToc="true"
       ComputedTocDepth="2"
-      ComputedTocAction="Replace" />
+      ComputedTocAction="Replace"
+      BreakType="pageLayout"
+      PageNumber="(multiple)"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/SQL_Reference_Guide/24_2.9_User_Defined_Functions.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputeToc="true"
       ComputedTocDepth="2"
-      ComputedTocAction="Replace" />
+      ComputedTocAction="Replace"
+      BreakType="pageLayout"
+      PageNumber="(multiple)"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/SQL_Reference_Guide/25_Copyright.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputedTocAction="Insert"
       ComputeToc="false"
-      ComputedTocDepth="10" />
+      ComputedTocDepth="10"
+      BreakType="pageLayout"
+      PageNumber="(multiple)"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl" />
   </TocEntry>
 </CatapultToc>

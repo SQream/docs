@@ -11,10 +11,10 @@
   IncludePattern="*.*"
   AutoExcludeNonTaggedFiles="false"
   IncludeLinkedFiles="false"
-  DeleteStale="false"
+  DeleteStale="true"
   DeleteUnreferenced="false"
   AutoSync="true"
-  LastImport="2019-05-29T22:24:33.9066182+03:00">
+  LastImport="2019-06-12T09:51:23.2893371+03:00">
   <Files>
     <Url
       Source="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/SQream_Global.flprj"
@@ -35,9 +35,6 @@
     <Url
       Source="../../../SQream_Global/Content/Search.htm"
       AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Search.htm" />
-    <Url
-      Source="../../../SQream_Global/Content/Guides/Guides.htm"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Guides.htm" />
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Creating_Your_First_Database_In_SQream.htm"
       AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Creating_Your_First_Database_In_SQream.htm" />
@@ -390,12 +387,6 @@
       Source="../../../SQream_Global/Project/Skins/TopicToolBar.flskn"
       AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Project/Skins/TopicToolBar.flskn" />
     <Url
-      Source="../../../SQream_Global/Project/TOCs/LoadingDataTOC.fltoc"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Project/TOCs/LoadingDataTOC.fltoc" />
-    <Url
-      Source="../../../SQream_Global/Project/TOCs/QuickAdminGuideTOC.fltoc"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Project/TOCs/QuickAdminGuideTOC.fltoc" />
-    <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Quick_guide_to_launching_a_SQream_DB_cluster.pdf"
       AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Quick_guide_to_launching_a_SQream_DB_cluster.pdf" />
     <Url
@@ -407,9 +398,6 @@
     <Url
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/Quick_guide_to_managing_your_SQream_cluster.pdf"
       AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/Quick_guide_to_managing_your_SQream_cluster.pdf" />
-    <Url
-      Source="../../../SQream_Global/Project/TOCs/DWLMTOC.fltoc"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Project/TOCs/DWLMTOC.fltoc" />
     <Url
       Source="../../../SQream_Global/Content/Print_Common_Files/Copyright_For_Print.htm"
       AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Print_Common_Files/Copyright_For_Print.htm" />
@@ -453,11 +441,11 @@
       Source="../../../SQream_Global/Content/Guides/Quick_Guides/Quick_guide_to_roles_and_permissions/Quick_guide_to_roles_and_permissions.htm"
       AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Guides/Quick_Guides/Quick_guide_to_roles_and_permissions/Quick_guide_to_roles_and_permissions.htm" />
     <Url
-      Source="../../../SQream_Global/Content/Resources/Images/Quick start guide to roles and permissions 2nd draft/Quick start guide to roles and permissions 2nd draft.png"
-      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Resources/Images/Quick start guide to roles and permissions 2nd draft/Quick start guide to roles and permissions 2nd draft.png" />
-    <Url
       Source="../../../SQream_Global/Project/Imports/Quick start guide to roles and permissions 2nd draft.flimp"
       AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Project/Imports/Quick start guide to roles and permissions 2nd draft.flimp" />
+    <Url
+      Source="../../../SQream_Global/Content/Print_Common_Files/TOC.htm"
+      AbsoluteSource="file:///C:/Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Print_Common_Files/TOC.htm" />
   </CollectedSourceFiles>
   <SkippedSourceFiles>
     <Url
@@ -474,9 +462,6 @@
     <Url
       Source="../../Content/Search.htm"
       TimeStamp="10-Apr-19 9:31:47 AM" />
-    <Url
-      Source="../../Content/Guides/Guides.htm"
-      TimeStamp="29-Apr-19 10:50:38 AM" />
     <Url
       Source="../../Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Creating_Your_First_Database_In_SQream.htm"
       TimeStamp="29-Apr-19 10:50:43 AM" />
@@ -829,12 +814,6 @@
       Source="../Skins/TopicToolBar.flskn"
       TimeStamp="29-Apr-19 12:53:53 PM" />
     <Url
-      Source="../TOCs/LoadingDataTOC.fltoc"
-      TimeStamp="29-Apr-19 10:50:58 AM" />
-    <Url
-      Source="../TOCs/QuickAdminGuideTOC.fltoc"
-      TimeStamp="29-Apr-19 10:50:58 AM" />
-    <Url
       Source="../../Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Quick_guide_to_launching_a_SQream_DB_cluster.pdf"
       TimeStamp="08-May-19 3:12:58 PM" />
     <Url
@@ -846,9 +825,6 @@
     <Url
       Source="../../Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/Quick_guide_to_managing_your_SQream_cluster.pdf"
       TimeStamp="08-May-19 3:12:58 PM" />
-    <Url
-      Source="../TOCs/DWLMTOC.fltoc"
-      TimeStamp="30-Apr-19 9:28:26 PM" />
     <Url
       Source="../../Content/Print_Common_Files/Copyright_For_Print.htm"
       TimeStamp="28-May-19 8:54:30 PM" />
@@ -892,10 +868,10 @@
       Source="../../Content/Guides/Quick_Guides/Quick_guide_to_roles_and_permissions/Quick_guide_to_roles_and_permissions.htm"
       TimeStamp="29-May-19 10:02:34 PM" />
     <Url
-      Source="../../Content/Resources/Images/Quick start guide to roles and permissions 2nd draft/Quick start guide to roles and permissions 2nd draft.png"
-      TimeStamp="29-May-19 9:44:16 PM" />
-    <Url
       Source="Quick start guide to roles and permissions 2nd draft.flimp"
       TimeStamp="29-May-19 9:44:39 PM" />
+    <Url
+      Source="../../Content/Print_Common_Files/TOC.htm"
+      TimeStamp="29-May-19 11:17:45 PM" />
   </GeneratedFiles>
 </CatapultProject>

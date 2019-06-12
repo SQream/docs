@@ -2190,7 +2190,7 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                     <tr class="TableStyle-Default_Table-Head-Header1">
                                         <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Name</th>
                                         <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Syntax</th>
-                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Description</th>
+                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Description </th>
                                         <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Return data type</th>
                                     </tr>
                                 </thead>
@@ -2201,7 +2201,7 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <div class="literal"><pre xml:space="preserve">getdate()</pre>
+                                            <div class="literal"><span class="codeCH">getdate()</span>
                                             </div>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -2217,7 +2217,7 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <div class="literal"><pre xml:space="preserve">current_timestamp()</pre>
+                                            <div class="literal"><span class="codeCH">current_timestamp()</span>
                                             </div>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
@@ -2281,7 +2281,7 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <div class="literal"><pre xml:space="preserve">trunc(datetime_column,interval)</pre>
+                                            <div class="literal"><span class="codeCH">trunc(datetime_column,interval)</span>
                                             </div>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
@@ -2297,9 +2297,9 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <div class="literal"><pre xml:space="preserve">datepart(interval,date_column)
-                           datepart(interval,datetime_column)</pre>
-                                            </div>
+                                            <p><span class="codeCH">datepart(interval,date_column)
+                           datepart(interval,datetime_column)</span>
+                                            </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
                                             <p class="tableblock">Returns the number of a the specified datepart of a date or datetime.</p>
@@ -2314,8 +2314,7 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <div class="literal"><pre xml:space="preserve">datediff(interval,*startdate*,*enddate*)</pre>
-                                            </div>
+                                            <p class="tableCode">datediff(interval,*startdate*,*enddate*)</p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
                                             <p class="tableblock">Returns the difference between two dates based on the specified interval. Same as function EXTRACT.</p>
@@ -2330,9 +2329,8 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <div class="literal"><pre xml:space="preserve">dateadd(interval,number,date_column)
-                           dateadd(interval,number,datetime_column)</pre>
-                                            </div>
+                                            <p class="tableCode">dateadd(interval,number,date_column)
+                           dateadd(interval,number,datetime_column)</p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
                                             <p class="tableblock">Adds a time/date interval to a date.</p>
@@ -2636,7 +2634,7 @@ indicates how many points are actually used in the given row.</p>
                                 <caption class="title">Table 38. Geospatial functions</caption>
                                 <colgroup>
                                     <col style="width: 33.3333%;" />
-                                    <col style="width: 33.3333%;" />
+                                    <col />
                                     <col style="width: 33.3334%;" />
                                 </colgroup>
                                 <thead>
@@ -2649,18 +2647,16 @@ indicates how many points are actually used in the given row.</p>
                                 <tbody>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <div class="literal"><pre xml:space="preserve"> *point_in_polygon*</pre>
-                                            </div>
+                                            <div class="literal"> <span class="codeCH">*point_in_polygon*</span></div>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <div class="literal"><pre xml:space="preserve"> (_point_long_ *float*, _point_lat_ *float*,
+                                            <div class="literal"> <span class="codeCH">(_point_long_ *float*, _point_lat_ *float*,
    _poly_long1_ *float*, _poly_lat1_ *float*, +
    +
    ... +
    +
    _poly_long5_ *float*, _poly_lat5_ *float*)
-   *returns* *bool*</pre>
-                                            </div>
+   *returns* *bool*</span></div>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
                                             <p class="tableblock">point inside polygon</p>
@@ -2668,11 +2664,10 @@ indicates how many points are actually used in the given row.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
                                         <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
-                                            <div class="literal"><pre xml:space="preserve"> *line_crosses_polygon*</pre>
-                                            </div>
+                                            <div class="literal"> <span class="codeCH">*line_crosses_polygon*</span></div>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
-                                            <div class="literal"><pre xml:space="preserve"> (_number_of_points__ *int*,
+                                            <div class="literal"> <span class="codeCH">(_number_of_points__ *int*,
    _polyline_long1_ *float*, _polyline_lat1_ *float*, +
    +
    ... +
@@ -2683,8 +2678,7 @@ indicates how many points are actually used in the given row.</p>
    ... +
    +
    _poly_long5_ *float*, _poly_lat5_ *float*)
-   *returns* *bool*</pre>
-                                            </div>
+   *returns* *bool*</span></div>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyA-Column1-Body2">
                                             <p class="tableblock">line crosses polygon</p>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="2"
+  Comment="New Target"
+  Type="PDF"
+  Destinations=""
+  GlossaryTermConversion="marked"
+  MasterPageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
+  MasterToc="/Project/TOCs/QuickGuideRolesPermissions.fltoc"
+  MasterStylesheet="/Content/Resources/Stylesheets/mainstyles.css"
+  OutputFile="Quick_guide_to_roles_and_permissions"
+  OutputFolder="C:\Users\Rivka\Documents\My Projects\SQream\SQream_Web\Output\3.3"
+  ConditionTagExpression="include[General.Print_Only] exclude[General.Web_Only] ">
+  <PrintedOutput
+    CollapseMargins="true"
+    GenerateTOCProxy="false"
+    GenerateIndexProxy="false"
+    GenerateGlossaryProxy="false" />
+  <Destinations>
+    <Destination
+      Link="/Project/Destinations/pdf.fldes"
+      Publish="true" />
+  </Destinations>
+  <PDF
+    ShowUsedBookmarks="false" />
+  <Variables>
+    <Variable
+      Name="General/DocumentName">Quick guide to roles and permissions</Variable>
+  </Variables>
+</CatapultTarget>

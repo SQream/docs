@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="2"
+  Comment="New Target"
+  Type="PDF"
+  Destinations=""
+  GlossaryTermConversion="marked"
+  MasterToc="/Project/TOCs/SQLReferenceTOC.fltoc"
+  MasterPageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
+  PatchHeadingLevels="false"
+  MasterStylesheet="/Content/Resources/Stylesheets/mainstyles.css"
+  ConditionTagExpression="include[General.Print_Only] exclude[General.Web_Only] "
+  OutputFolder="C:\Users\Rivka\Documents\My Projects\SQream\SQream_Web\Output\3.3"
+  OutputFile="SQL_Reference">
+  <PrintedOutput
+    CollapseMargins="true"
+    GenerateTOCProxy="false"
+    GenerateIndexProxy="false"
+    GenerateGlossaryProxy="false" />
+  <PDF
+    ShowUsedBookmarks="false" />
+  <Destinations>
+    <Destination
+      Link="/Project/Destinations/pdf.fldes"
+      Publish="true" />
+  </Destinations>
+  <Variables>
+    <Variable
+      Name="General/DocumentName">SQL Reference Guide</Variable>
+  </Variables>
+</CatapultTarget>
