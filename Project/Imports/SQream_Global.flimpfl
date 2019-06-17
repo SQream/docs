@@ -14,7 +14,7 @@
   DeleteStale="true"
   DeleteUnreferenced="false"
   AutoSync="true"
-  LastImport="2019-06-12T16:45:22.5921188+03:00">
+  LastImport="2019-06-16T23:34:21.5302557+03:00">
   <Files>
     <Url
       Source="file:///C:/Clients/SQream/Global/SQream_Global/SQream_Global.flprj"
@@ -836,6 +836,9 @@
     <Url
       Source="../../../../Global/SQream_Global/Project/VariableSets/Global.flvar"
       AbsoluteSource="file:///C:/Clients/SQream/Global/SQream_Global/Project/VariableSets/Global.flvar" />
+    <Url
+      Source="../../../../Global/SQream_Global/Content/Print_Common_Files/Cover.htm"
+      AbsoluteSource="file:///C:/Clients/SQream/Global/SQream_Global/Content/Print_Common_Files/Cover.htm" />
   </CollectedSourceFiles>
   <SkippedSourceFiles>
     <Url
@@ -1656,5 +1659,8 @@
     <Url
       Source="../../../../../../Users/Rivka/Documents/My Projects/SQream/SQream_Global/Content/Print_Common_Files/TOC.htm"
       TimeStamp="29-May-19 11:19:32 PM" />
+    <Url
+      Source="../../Content/Print_Common_Files/Cover.htm"
+      TimeStamp="16-Jun-19 9:22:31 PM" />
   </GeneratedFiles>
 </CatapultProject>

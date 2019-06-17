@@ -9,8 +9,9 @@
   MasterPageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
   MasterToc="/Project/TOCs/AdminGuideTOC.fltoc"
   OutputFile="Admin_Guide"
-  OutputFolder="C:\Users\Rivka\Documents\My Projects\SQream\SQream_Web\Output\3.3"
-  ConditionTagExpression="include[General.Print_Only] exclude[General.Web_Only] ">
+  ConditionTagExpression="include[General.Print_Only] exclude[General.Web_Only] "
+  GetLatestBeforeCompile="false"
+  OutputFolder="C:\Clients\SQream\Web\SQream">
   <PrintedOutput
     CollapseMargins="true"
     GenerateTOCProxy="false"

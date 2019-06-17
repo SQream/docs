@@ -10,7 +10,7 @@
   PatchHeadingLevels="false"
   MasterStylesheet="/Content/Resources/Stylesheets/mainstyles.css"
   ConditionTagExpression="include[General.Print_Only] exclude[General.Web_Only] "
-  OutputFolder="C:\Users\Rivka\Documents\My Projects\SQream\SQream_Web\Output\3.3"
+  OutputFolder="C:\Clients\SQream\Web\SQream"
   OutputFile="SQL_Reference">
   <PrintedOutput
     CollapseMargins="true"

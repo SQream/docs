@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultBatchTarget
+  Version="1"
+  Comment="New Batch Target">
+  <Targets>
+    <Target
+      Icon="System.Drawing.Bitmap"
+      Name="Admin_Guide"
+      Type="PDF"
+      Build="true"
+      Publish="true" />
+    <Target
+      Icon="System.Drawing.Bitmap"
+      Name="HTML5"
+      Type="HTML5" />
+    <Target
+      Icon="System.Drawing.Bitmap"
+      Name="Quick_guide_to_roles_and_permissions"
+      Type="PDF"
+      Build="true"
+      Publish="true" />
+    <Target
+      Icon="System.Drawing.Bitmap"
+      Name="SQL_Reference"
+      Type="PDF"
+      Build="true"
+      Publish="true" />
+  </Targets>
+</CatapultBatchTarget>

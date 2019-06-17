@@ -6,11 +6,9 @@
   Destinations=""
   GlossaryTermConversion="marked"
   MasterPageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
-  MasterToc="/Project/TOCs/QuickGuideRolesPermissions.fltoc"
-  MasterStylesheet="/Content/Resources/Stylesheets/mainstyles.css"
-  OutputFile="Quick_guide_to_roles_and_permissions"
+  MasterToc="/Project/TOCs/QuickGuideLaunchingCluster.fltoc"
   OutputFolder="C:\Clients\SQream\Web\SQream"
-  ConditionTagExpression="include[General.Print_Only] exclude[General.Web_Only] ">
+  MasterStylesheet="/Content/Resources/Stylesheets/mainstyles.css">
   <PrintedOutput
     CollapseMargins="true"
     GenerateTOCProxy="false"
@@ -21,10 +19,8 @@
       Link="/Project/Destinations/pdf.fldes"
       Publish="true" />
   </Destinations>
-  <PDF
-    ShowUsedBookmarks="false" />
   <Variables>
     <Variable
-      Name="General/DocumentName">Quick guide to roles and permissions</Variable>
+      Name="General/DocumentName">Quick guide to launching a SQream DB Cluster</Variable>
   </Variables>
 </CatapultTarget>
