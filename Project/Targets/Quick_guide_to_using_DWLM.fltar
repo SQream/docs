@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="2"
+  Comment="New Target"
+  Type="PDF"
+  Destinations=""
+  GlossaryTermConversion="marked"
+  MasterPageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
+  MasterToc="/Project/TOCs/QuickDWLMTOC.fltoc"
+  OutputFolder="C:\Clients\SQream\Web\SQream"
+  MasterStylesheet="/Content/Resources/Stylesheets/mainstyles.css"
+  ConditionTagExpression="include[General.Print_Only] exclude[General.Web_Only] ">
+  <PrintedOutput
+    CollapseMargins="true"
+    GenerateTOCProxy="false"
+    GenerateIndexProxy="false"
+    GenerateGlossaryProxy="false" />
+  <Destinations>
+    <Destination
+      Link="/Project/Destinations/pdf.fldes"
+      Publish="true" />
+  </Destinations>
+  <Variables>
+    <Variable
+      Name="General/DocumentName">Quick guide to using SQream DWLM</Variable>
+  </Variables>
+  <PDF
+    ShowUsedBookmarks="false" />
+</CatapultTarget>

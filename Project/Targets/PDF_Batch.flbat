@@ -11,8 +11,32 @@
       Publish="true" />
     <Target
       Icon="System.Drawing.Bitmap"
+      Name="Concepts"
+      Type="PDF"
+      Build="true"
+      Publish="true"
+      LastBuilt="2019-06-16T22:50:23.8390030+03:00"
+      LastPublished="2019-06-16T22:50:27.9988124+03:00" />
+    <Target
+      Icon="System.Drawing.Bitmap"
+      Name="Dashboard_UI_Guide"
+      Type="PDF"
+      Build="true"
+      Publish="true"
+      LastBuilt="2019-06-17T21:15:17.6277579+03:00"
+      LastPublished="2019-06-17T21:15:18.2034279+03:00" />
+    <Target
+      Icon="System.Drawing.Bitmap"
       Name="HTML5"
       Type="HTML5" />
+    <Target
+      Icon="System.Drawing.Bitmap"
+      Name="Quick_guide_to_launching_a_cluster"
+      Type="PDF"
+      Build="true"
+      Publish="true"
+      LastBuilt="2019-06-16T23:35:01.8542232+03:00"
+      LastPublished="2019-06-16T23:35:02.6979133+03:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="Quick_guide_to_roles_and_permissions"
@@ -24,6 +48,8 @@
       Name="SQL_Reference"
       Type="PDF"
       Build="true"
-      Publish="true" />
+      Publish="true"
+      LastBuilt="2019-06-16T22:47:03.6578357+03:00"
+      LastPublished="2019-06-16T22:47:12.6946850+03:00" />
   </Targets>
 </CatapultBatchTarget>

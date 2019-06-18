@@ -3,6 +3,30 @@
   Version="1">
   <TocEntry
     Title="[%=System.LinkedTitle%]"
+    Link="/Content/Print_Common_Files/Cover.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    conditions="General.Print_Only"
+    StartSection="false"
+    BreakType="pageLayout"
+    PageType="title"
+    PageLayout="/Content/Resources/PageLayouts/front-matter-page-layout.flpgl" />
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Print_Common_Files/Copyright_For_Print.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    conditions="General.Print_Only"
+    StartSection="false"
+    BreakType="pageLayout"
+    PageLayout="/Content/Resources/PageLayouts/front-matter-page-layout.flpgl" />
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Print_Common_Files/TOC.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    conditions="General.Print_Only"
+    BreakType="pageLayout"
+    PageNumber="1"
+    PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
+    PageType="normal"
+    StartSection="false"></TocEntry>
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
     Link="/Content/Guides/Installation_Guides/Dashboard_Installation_Guide/1_Administration_Dashboard_Installation_Guide.htm"
     BreakType="chapter"
     ChapterNumber="1"
@@ -12,16 +36,25 @@
     SectionNumberReset="continue"
     VolumeNumberReset="same"
     ComputeToc="false"
-    ComputedTocDepth="2">
+    ComputedTocDepth="2"
+    PageNumber="1"
+    PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl">
     <TocEntry
       Title="Overview"
       Link="/Content/Guides/Installation_Guides/Dashboard_Installation_Guide/1_Administration_Dashboard_Installation_Guide.htm"
       StartSection="false"
-      ComputedTocDepth="2"></TocEntry>
+      ComputedTocDepth="2"
+      conditions="General.Web_Only"
+      BreakType="chapter"
+      PageNumber="1"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"></TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Guides/Installation_Guides/Dashboard_Installation_Guide/2_1.1_Install_Node.js_10.x.htm"
-      ComputedTocDepth="2">
+      ComputedTocDepth="2"
+      BreakType="chapter"
+      PageNumber="1"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl">
       <TocEntry
         Title="Install Node.js 10.x"
         Link="/Content/Guides/Installation_Guides/Dashboard_Installation_Guide/2_1.1_Install_Node.js_10.x.htm"
@@ -31,7 +64,8 @@
         StartSection="false"
         SectionNumberReset="continue"
         VolumeNumberReset="same"
-        ChapterNumberReset="continue"></TocEntry>
+        ChapterNumberReset="continue"
+        conditions="General.Web_Only"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Installation_Guides/Dashboard_Installation_Guide/4_1.2_Install_PM2__Node_Daemon_Manager.htm"
@@ -44,11 +78,17 @@
       Link="/Content/Guides/Installation_Guides/Dashboard_Installation_Guide/5_2_Create_the_Dashboard_Role.htm"
       ComputeToc="true"
       ComputedTocAction="Replace"
-      ComputedTocDepth="2"></TocEntry>
+      ComputedTocDepth="2"
+      BreakType="chapter"
+      PageNumber="1"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"></TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Guides/Installation_Guides/Dashboard_Installation_Guide/7_3.1_Install_the_Dashboard_application.htm"
-      ComputedTocDepth="2">
+      ComputedTocDepth="2"
+      BreakType="chapter"
+      PageNumber="1"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl">
       <TocEntry
         Title="Install the Dashboard application"
         Link="/Content/Guides/Installation_Guides/Dashboard_Installation_Guide/7_3.1_Install_the_Dashboard_application.htm"
@@ -58,7 +98,8 @@
         StartSection="false"
         SectionNumberReset="continue"
         VolumeNumberReset="same"
-        ChapterNumberReset="continue"></TocEntry>
+        ChapterNumberReset="continue"
+        conditions="General.Web_Only"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Installation_Guides/Dashboard_Installation_Guide/8_3.2_Copy_the_Dashboard_database_file_(SQLite).htm"
@@ -87,7 +128,10 @@
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Guides/Installation_Guides/Dashboard_Installation_Guide/13_4.1_Standalone_system.htm"
-      ComputedTocDepth="2">
+      ComputedTocDepth="2"
+      BreakType="chapter"
+      PageNumber="1"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl">
       <TocEntry
         Title="Stand-alone system"
         Link="/Content/Guides/Installation_Guides/Dashboard_Installation_Guide/13_4.1_Standalone_system.htm"
@@ -97,7 +141,8 @@
         StartSection="false"
         SectionNumberReset="continue"
         VolumeNumberReset="same"
-        ChapterNumberReset="continue"></TocEntry>
+        ChapterNumberReset="continue"
+        conditions="General.Web_Only"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Installation_Guides/Dashboard_Installation_Guide/14_4.2_HA_system_with_Pacemaker.htm"
@@ -110,17 +155,26 @@
       Link="/Content/Guides/Installation_Guides/Dashboard_Installation_Guide/15_5_Standalone_system_Start_or_stop.htm"
       ComputeToc="true"
       ComputedTocAction="Replace"
-      ComputedTocDepth="2"></TocEntry>
+      ComputedTocDepth="2"
+      BreakType="chapter"
+      PageNumber="1"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"></TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Guides/Installation_Guides/Dashboard_Installation_Guide/16_6_Standalone_system_Node_Daemon_Manager_(PM2)_to_startup_script.htm"
       ComputeToc="true"
       ComputedTocAction="Replace"
-      ComputedTocDepth="2"></TocEntry>
+      ComputedTocDepth="2"
+      BreakType="chapter"
+      PageNumber="1"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"></TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Guides/Installation_Guides/Dashboard_Installation_Guide/18_7.1_Stop_the_Dashboard_application.htm"
-      ComputedTocDepth="2">
+      ComputedTocDepth="2"
+      BreakType="chapter"
+      PageNumber="1"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl">
       <TocEntry
         Title="Stop the Dashboard application"
         Link="/Content/Guides/Installation_Guides/Dashboard_Installation_Guide/18_7.1_Stop_the_Dashboard_application.htm"
@@ -130,7 +184,8 @@
         StartSection="false"
         SectionNumberReset="continue"
         VolumeNumberReset="same"
-        ChapterNumberReset="continue"></TocEntry>
+        ChapterNumberReset="continue"
+        conditions="General.Web_Only"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Installation_Guides/Dashboard_Installation_Guide/19_7.2_Backup_the_current_application_folder.htm"
@@ -156,9 +211,5 @@
         ComputedTocAction="Replace"
         ComputedTocDepth="2"></TocEntry>
     </TocEntry>
-    <TocEntry
-      Title="[%=System.LinkedTitle%]"
-      Link="/Content/Guides/Installation_Guides/Dashboard_Installation_Guide/23_Copyright.htm"
-      ComputedTocDepth="2"></TocEntry>
   </TocEntry>
 </CatapultToc>

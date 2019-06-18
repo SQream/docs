@@ -3,24 +3,66 @@
   Version="1">
   <TocEntry
     Title="[%=System.LinkedTitle%]"
+    Link="/Content/Print_Common_Files/Cover.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    conditions="General.Print_Only"
+    StartSection="false"
+    BreakType="pageLayout"
+    PageType="title"
+    PageLayout="/Content/Resources/PageLayouts/front-matter-page-layout.flpgl" />
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Print_Common_Files/Copyright_For_Print.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    conditions="General.Print_Only"
+    StartSection="false"
+    BreakType="pageLayout"
+    PageLayout="/Content/Resources/PageLayouts/front-matter-page-layout.flpgl" />
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Print_Common_Files/TOC.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    conditions="General.Print_Only"
+    BreakType="pageLayout"
+    PageNumber="1"
+    PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
+    PageType="normal"
+    StartSection="false"></TocEntry>
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
     Link="/Content/Guides/Quick_Guides/DWLM_Guide/1_HowToUseDWLM_Overview.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-    ComputedTocDepth="2">
+    ComputedTocDepth="2"
+    BreakType="chapter"
+    StartSection="false"
+    PageNumberReset="continue"
+    PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl">
     <TocEntry
       Title="Overview"
       Link="/Content/Guides/Quick_Guides/DWLM_Guide/1_HowToUseDWLM_Overview.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-      ComputedTocDepth="2"></TocEntry>
+      ComputedTocDepth="2"
+      conditions="General.Web_Only"
+      StartSection="false"
+      ComputeToc="false"></TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Guides/Quick_Guides/DWLM_Guide/2_ManagingWorkloads.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-      ComputedTocDepth="2" />
+      ComputedTocDepth="2"
+      BreakType="chapter"
+      StartSection="false"
+      PageNumberReset="continue"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Guides/Quick_Guides/DWLM_Guide/3_ManagingServices.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-      ComputedTocDepth="2">
+      ComputedTocDepth="2"
+      BreakType="chapter"
+      StartSection="false"
+      PageNumberReset="continue"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl">
       <TocEntry
         Title="Creating a Service"
         Link="/Content/Guides/Quick_Guides/DWLM_Guide/3_ManagingServices.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-        ComputedTocDepth="2" />
+        ComputedTocDepth="2"
+        conditions="General.Web_Only"
+        StartSection="false"
+        ComputeToc="false" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Quick_Guides/DWLM_Guide/4_Subscribing_And_Unsubscribing_Services.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"

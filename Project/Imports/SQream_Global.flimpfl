@@ -14,7 +14,7 @@
   DeleteStale="true"
   DeleteUnreferenced="false"
   AutoSync="true"
-  LastImport="2019-06-17T21:14:35.8939519+03:00">
+  LastImport="2019-06-18T10:29:32.8144393+03:00">
   <Files>
     <Url
       Source="file:///C:/Clients/SQream/Global/SQream_Global/SQream_Global.flprj"
@@ -456,12 +456,6 @@
       Source="../../../../Global/SQream_Global/Content/Search.htm"
       AbsoluteSource="file:///C:/Clients/SQream/Global/SQream_Global/Content/Search.htm" />
     <Url
-      Source="../../../../Global/SQream_Global/Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Creating_Your_First_Database_In_SQream.htm"
-      AbsoluteSource="file:///C:/Clients/SQream/Global/SQream_Global/Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Creating_Your_First_Database_In_SQream.htm" />
-    <Url
-      Source="../../../../Global/SQream_Global/Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Quick_guide_to_launching_a_SQream_DB_cluster.pdf"
-      AbsoluteSource="file:///C:/Clients/SQream/Global/SQream_Global/Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Quick_guide_to_launching_a_SQream_DB_cluster.pdf" />
-    <Url
       Source="../../../../Global/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/1_HowToUseDWLM_Overview.htm"
       AbsoluteSource="file:///C:/Clients/SQream/Global/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/1_HowToUseDWLM_Overview.htm" />
     <Url
@@ -486,9 +480,6 @@
       Source="../../../../Global/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/8_Connecting_To_A_Service.htm"
       AbsoluteSource="file:///C:/Clients/SQream/Global/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/8_Connecting_To_A_Service.htm" />
     <Url
-      Source="../../../../Global/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/DWLM_quick_guide.pdf"
-      AbsoluteSource="file:///C:/Clients/SQream/Global/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/DWLM_quick_guide.pdf" />
-    <Url
       Source="../../../../Global/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/Images/windows1.png"
       AbsoluteSource="file:///C:/Clients/SQream/Global/SQream_Global/Content/Guides/Quick_Guides/DWLM_Guide/Images/windows1.png" />
     <Url
@@ -500,9 +491,6 @@
     <Url
       Source="../../../../Global/SQream_Global/Content/Guides/Quick_Guides/Loading_Data_Into_SQream/3_Choosing_the_import_method.htm"
       AbsoluteSource="file:///C:/Clients/SQream/Global/SQream_Global/Content/Guides/Quick_Guides/Loading_Data_Into_SQream/3_Choosing_the_import_method.htm" />
-    <Url
-      Source="../../../../Global/SQream_Global/Content/Guides/Quick_Guides/Loading_Data_Into_SQream/loading_your_data_into_SQream.pdf"
-      AbsoluteSource="file:///C:/Clients/SQream/Global/SQream_Global/Content/Guides/Quick_Guides/Loading_Data_Into_SQream/loading_your_data_into_SQream.pdf" />
     <Url
       Source="../../../../Global/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/1_QuickAdministratorGuide.htm"
       AbsoluteSource="file:///C:/Clients/SQream/Global/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/1_QuickAdministratorGuide.htm" />
@@ -527,9 +515,6 @@
     <Url
       Source="../../../../Global/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/8_Query_execution_tree.htm"
       AbsoluteSource="file:///C:/Clients/SQream/Global/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/8_Query_execution_tree.htm" />
-    <Url
-      Source="../../../../Global/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/Quick_guide_to_managing_your_SQream_cluster.pdf"
-      AbsoluteSource="file:///C:/Clients/SQream/Global/SQream_Global/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/Quick_guide_to_managing_your_SQream_cluster.pdf" />
     <Url
       Source="../../../../Global/SQream_Global/Content/Guides/Quick_Guides/Quick_guide_to_roles_and_permissions/Quick_guide_to_roles_and_permissions.htm"
       AbsoluteSource="file:///C:/Clients/SQream/Global/SQream_Global/Content/Guides/Quick_Guides/Quick_guide_to_roles_and_permissions/Quick_guide_to_roles_and_permissions.htm" />
@@ -839,6 +824,9 @@
     <Url
       Source="../../../../Global/SQream_Global/Content/Print_Common_Files/Cover.htm"
       AbsoluteSource="file:///C:/Clients/SQream/Global/SQream_Global/Content/Print_Common_Files/Cover.htm" />
+    <Url
+      Source="../../../../Global/SQream_Global/Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Creating_Your_First_Database_In_SQream.htm"
+      AbsoluteSource="file:///C:/Clients/SQream/Global/SQream_Global/Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Creating_Your_First_Database_In_SQream.htm" />
   </CollectedSourceFiles>
   <SkippedSourceFiles>
     <Url
@@ -855,9 +843,6 @@
     <Url
       Source="../../Content/Search.htm"
       TimeStamp="10-Apr-19 9:31:47 AM" />
-    <Url
-      Source="../../Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Creating_Your_First_Database_In_SQream.htm"
-      TimeStamp="29-Apr-19 10:50:43 AM" />
     <Url
       Source="../../Content/Guides/Quick_Guides/DWLM_Guide/1_HowToUseDWLM_Overview.htm"
       TimeStamp="14-Apr-19 5:54:41 PM" />
@@ -1206,18 +1191,6 @@
     <Url
       Source="../Skins/TopicToolBar.flskn"
       TimeStamp="29-Apr-19 12:53:53 PM" />
-    <Url
-      Source="../../Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Quick_guide_to_launching_a_SQream_DB_cluster.pdf"
-      TimeStamp="08-May-19 3:12:58 PM" />
-    <Url
-      Source="../../Content/Guides/Quick_Guides/DWLM_Guide/DWLM_quick_guide.pdf"
-      TimeStamp="08-May-19 3:12:58 PM" />
-    <Url
-      Source="../../Content/Guides/Quick_Guides/Loading_Data_Into_SQream/loading_your_data_into_SQream.pdf"
-      TimeStamp="08-May-19 3:12:58 PM" />
-    <Url
-      Source="../../Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/Quick_guide_to_managing_your_SQream_cluster.pdf"
-      TimeStamp="08-May-19 3:12:58 PM" />
     <Url
       Source="../../Content/Print_Common_Files/Copyright_For_Print.htm"
       TimeStamp="28-May-19 8:54:30 PM" />
@@ -1662,5 +1635,8 @@
     <Url
       Source="../../Content/Print_Common_Files/Cover.htm"
       TimeStamp="16-Jun-19 9:22:31 PM" />
+    <Url
+      Source="../../Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Creating_Your_First_Database_In_SQream.htm"
+      TimeStamp="18-Jun-19 9:38:16 AM" />
   </GeneratedFiles>
 </CatapultProject>

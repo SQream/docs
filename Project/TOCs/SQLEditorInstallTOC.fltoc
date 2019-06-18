@@ -3,20 +3,56 @@
   Version="1">
   <TocEntry
     Title="[%=System.LinkedTitle%]"
-    Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/1_Overview.htm">
+    Link="/Content/Print_Common_Files/Cover.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    conditions="General.Print_Only"
+    StartSection="false"
+    BreakType="pageLayout"
+    PageType="title"
+    PageLayout="/Content/Resources/PageLayouts/front-matter-page-layout.flpgl" />
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Print_Common_Files/Copyright_For_Print.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    conditions="General.Print_Only"
+    StartSection="false"
+    BreakType="pageLayout"
+    PageLayout="/Content/Resources/PageLayouts/front-matter-page-layout.flpgl" />
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Print_Common_Files/TOC.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    conditions="General.Print_Only"
+    BreakType="pageLayout"
+    PageNumber="1"
+    PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
+    PageType="normal"
+    StartSection="false"></TocEntry>
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/1_Overview.htm"
+    BreakType="chapter"
+    StartSection="false"
+    PageNumberReset="continue"
+    PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl">
     <TocEntry
       Title="Overview"
-      Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/1_Overview.htm"></TocEntry>
+      Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/1_Overview.htm"
+      conditions="General.Web_Only"
+      StartSection="false"></TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/3_1.1_Install_Node.js_10.x.htm"
-      ComputedTocDepth="2">
+      ComputedTocDepth="2"
+      BreakType="chapter"
+      StartSection="false"
+      PageNumberReset="continue"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl">
       <TocEntry
         Title="Install Node.js 10.x"
         Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/3_1.1_Install_Node.js_10.x.htm"
         ComputedTocAction="Replace"
         ComputeToc="false"
-        ComputedTocDepth="2"></TocEntry>
+        ComputedTocDepth="2"
+        conditions="General.Web_Only"
+        StartSection="false"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/4_1.2_Install_PM2_Node_Daemon_Manager.htm"
@@ -33,13 +69,19 @@
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/7_2.1_Install_the_SQL_Editor_application.htm"
-      ComputedTocDepth="2">
+      ComputedTocDepth="2"
+      BreakType="chapter"
+      StartSection="false"
+      PageNumberReset="continue"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl">
       <TocEntry
         Title="Install the SQL Editor application"
         Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/7_2.1_Install_the_SQL_Editor_application.htm"
         ComputedTocAction="Replace"
         ComputeToc="false"
-        ComputedTocDepth="2"></TocEntry>
+        ComputedTocDepth="2"
+        conditions="General.Web_Only"
+        StartSection="false"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/8_2.2_Copy_the_SQL_Editor_configuration_file.htm"
@@ -58,29 +100,47 @@
       Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/10_3_Test_the_installation.htm"
       ComputedTocAction="Replace"
       ComputeToc="true"
-      ComputedTocDepth="2"></TocEntry>
+      ComputedTocDepth="2"
+      BreakType="chapter"
+      StartSection="false"
+      PageNumberReset="continue"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"></TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/11_4_Start_or_stop_the_SQL_Editor.htm"
       ComputedTocAction="Replace"
       ComputeToc="true"
-      ComputedTocDepth="2"></TocEntry>
+      ComputedTocDepth="2"
+      BreakType="chapter"
+      StartSection="false"
+      PageNumberReset="continue"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"></TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/12_5_Add_Node_Daemon_Manager_PM2_to_startup_script.htm"
       ComputedTocAction="Replace"
       ComputeToc="true"
-      ComputedTocDepth="2"></TocEntry>
+      ComputedTocDepth="2"
+      BreakType="chapter"
+      StartSection="false"
+      PageNumberReset="continue"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"></TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/14_6.1_Stop_the_SQL_editor.htm"
-      ComputedTocDepth="2">
+      ComputedTocDepth="2"
+      BreakType="chapter"
+      StartSection="false"
+      PageNumberReset="continue"
+      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl">
       <TocEntry
         Title="Stop the SQL Editor"
         Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/14_6.1_Stop_the_SQL_editor.htm"
         ComputedTocAction="Replace"
         ComputeToc="false"
-        ComputedTocDepth="2"></TocEntry>
+        ComputedTocDepth="2"
+        conditions="General.Web_Only"
+        StartSection="false"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/15_6.2_Backup_current_folder.htm"
@@ -106,9 +166,5 @@
         ComputeToc="true"
         ComputedTocDepth="2"></TocEntry>
     </TocEntry>
-    <TocEntry
-      Title="[%=System.LinkedTitle%]"
-      Link="/Content/Guides/Installation_Guides/Editor_Installation_Guide/19_Copyright.htm"
-      ComputedTocDepth="2"></TocEntry>
   </TocEntry>
 </CatapultToc>
