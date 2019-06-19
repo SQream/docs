@@ -12,37 +12,7 @@
                         <div class="sect3">
                             <h4 id="_saved_queries">Saved queries</h4>
                             <div class="paragraph">
-                                <p>Saved queries allow SQream DB to save the query plan for a query. Saved query will save the compiler time on each execution, and therefore can help optimize the total query execution time.</p>
-                            </div>
-                            <div class="ulist">
-                                <div class="title">Examples</div>
-                                <ul>
-                                    <li>
-                                        <p>Save a query:</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="code">
-                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">select</span>  <span class="tok-n">save_query</span><span class="tok-p">(</span><span class="tok-s1">'q1'</span><span class="tok-p">,</span>  <span class="tok-s">$$select * from t where xint &gt; ? AND xdatetime &lt; ? AND xvarchar6 &lt;&gt; 'something'$$</span><span class="tok-p">)</span></code></pre>
-                                </div>
-                            </div>
-                            <div class="ulist">
-                                <ul>
-                                    <li>
-                                        <p>Execute the saved query</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="code">
-                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">select</span>  <span class="tok-n">execute_saved_query</span><span class="tok-p">(</span><span class="tok-s1">'q1'</span><span class="tok-p">,</span>  <span class="tok-mf">1</span><span class="tok-p">,</span>  <span class="tok-s1">'2013-12-02 12:01:22'</span><span class="tok-p">)</span></code></pre>
-                                </div>
-                            </div>
-                            <div class="paragraph">
-                                <p>The result: SQream DB will execute the query:</p>
-                            </div>
-                            <div class="code">
-                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">select</span>  <span class="tok-o">*</span>  <span class="tok-k">from</span>  <span class="tok-n">t</span>  <span class="tok-k">where</span>  <span class="tok-n">xint</span>  <span class="tok-o">&gt;</span>  <span class="tok-mf">1</span>  <span class="tok-k">AND</span>  <span class="tok-n">xdatetime</span>  <span class="tok-o">&lt;</span>  <span class="tok-s1">'2013-12-02 12:01:22'</span>  <span class="tok-k">AND</span>  <span class="tok-n">xvarchar6</span>  <span class="tok-o">&lt;&gt;</span>  <span class="tok-s1">'something'</span><span class="tok-p">;</span></code></pre>
-                                </div>
+                                <p>Saved queries allow SQream DB to save the query plan for a query. Saved queries save compiler time on each execution, and therefore can help optimize the total query execution time.<br />You must first save the query using parameters in the query string. You can then execute the saved query specifying the parameter values.</p>
                             </div>
                             <div class="admonitionblock caution">
                                 <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
@@ -50,8 +20,8 @@
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-caution" title="Caution"></i>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-The saved query names must be unique in the database and should be defined in lower case.
-</td>
+											The saved query names must be unique in the database and should be defined in lower case.
+										</td>
                                     </tr>
                                 </table>
                             </div>
@@ -59,27 +29,20 @@ The saved query names must be unique in the database and should be defined in lo
                         <div class="sect3">
                             <h4 id="_create_saved_query"><a name="Create"></a>Create saved query</h4>
                             <div class="code">
-                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code>SELECT <strong><em>save_query</em></strong> ( <strong><em>saved_query_name</em></strong> , <strong><em>parameterized_query_string</em></strong> ) ;
-
-<strong><em>saved_query_name</em></strong> ::= <strong><em>string_literal</em></strong>  
-
-<strong><em>parameterized_query_string</em></strong> ::= <strong><em>string_literal</em></strong></code></pre>
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code>SELECT <strong><em>save_query</em></strong> ( <strong><em>saved_query_name</em></strong> , <strong><em>parameterized_query_string</em></strong> ) ;</code></pre><pre class="pygments highlight" xml:space="preserve"><code><strong><em>saved_query_name</em></strong> ::= <strong><em>string_literal</em></strong>  					</code></pre><pre class="pygments highlight" xml:space="preserve"><code><strong><em>parameterized_query_string</em></strong> ::= <strong><em>string_literal</em></strong></code></pre>
                                 </div>
                             </div>
                             <div class="sect4">
                                 <h5 id="_execute_saved_query"><a name="Execute"></a>Execute saved query</h5>
                                 <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code>SELECT <strong><em>execute_saved_query</em></strong> ( <strong><em>saved_query_name</em></strong> [ , <strong><em>argument</em></strong> [ , ... ] ] ) ;
-
-<strong><em>argument</em></strong> ::= <strong><em>string_literal</em></strong> | <strong><em>number_literal</em></strong></code></pre>
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code>SELECT <strong><em>execute_saved_query</em></strong> ( <strong><em>saved_query_name</em></strong> [ , <strong><em>argument</em></strong> [ , ... ] ] ) ;</code></pre><pre class="pygments highlight" xml:space="preserve"><code><strong><em>argument</em></strong> ::= <strong><em>string_literal</em></strong> | <strong><em>number_literal</em></strong></code></pre>
                                     </div>
                                 </div>
                             </div>
                             <div class="sect4">
                                 <h5 id="_drop_saved_query">Drop saved query</h5>
                                 <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db">  
-<span class="tok-k">SELECT</span>  <span class="tok-n">drop_saved_query</span>  <span class="tok-p">(</span>  <span class="tok-s1">'saved_query_name'</span>  <span class="tok-p">)</span>  <span class="tok-p">;</span></code></pre>
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"> <span class="tok-k">SELECT</span>  <span class="tok-n">drop_saved_query</span>  <span class="tok-p">(</span>  <span class="tok-s1">'saved_query_name'</span>  <span class="tok-p">)</span>  <span class="tok-p">;</span></code></pre>
                                     </div>
                                 </div>
                             </div>
@@ -94,13 +57,23 @@ The saved query names must be unique in the database and should be defined in lo
                                 </div>
                             </div>
                             <div class="sect4">
-                                <h5 id="_list_saved_queries">list_saved_queries</h5>
+                                <h5 id="_list_saved_queries">List saved queries</h5>
                                 <div class="paragraph">
                                     <p>Show all the saved queries in the database.</p>
                                 </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">list_saved_queries</span>  <span class="tok-p">(</span>  <span class="tok-p">)</span>  <span class="tok-p">;</span></code></pre>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="title">Examples</div>
+                            <div class="code">
+                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-c1">-- Save a query using parameters in the query string</span>
+<span class="tok-k">SELECT</span>  <span class="tok-n">save_query</span><span class="tok-p">(</span><span class="tok-s1">'q1'</span><span class="tok-p">,</span>  <span class="tok-s">$$select * from t where xint &gt; ? AND xdatetime &lt; ? AND xvarchar6 &lt;&gt; 'something'$$</span><span class="tok-p">)</span></code></pre><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db">
+<span class="tok-c1">-- Execute the saved query with specific values</span>
+<span class="tok-k">SELECT</span>  <span class="tok-n">execute_saved_query</span><span class="tok-p">(</span><span class="tok-s1">'q1'</span><span class="tok-p">,</span>  <span class="tok-mf">1</span><span class="tok-p">,</span>  <span class="tok-s1">'2013-12-02 12:01:22'</span><span class="tok-p">)</span></code></pre><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db">
+<span class="tok-c1">-- The result: SQream DB will execute the query using the specified values:</span>
+<span class="tok-k">SELECT</span>  <span class="tok-o">*</span>  <span class="tok-k">from</span>  <span class="tok-n">t</span>  <span class="tok-k">where</span>  <span class="tok-n">xint</span>  <span class="tok-o">&gt;</span>  <span class="tok-mf">1</span>  <span class="tok-k">AND</span>  <span class="tok-n">xdatetime</span>  <span class="tok-o">&lt;</span>  <span class="tok-s1">'2013-12-02 12:01:22'</span>  <span class="tok-k">AND</span>  <span class="tok-n">xvarchar6</span>  <span class="tok-o">&lt;&gt;</span>  <span class="tok-s1">'something'</span><span class="tok-p">;</span></code></pre>
                                 </div>
                             </div>
                         </div>
