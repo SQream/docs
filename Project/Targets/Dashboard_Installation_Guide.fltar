@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="2"
+  Comment="New Target"
+  Type="PDF"
+  Destinations=""
+  GlossaryTermConversion="marked"
+  MasterToc="/Project/TOCs/DashboardInstallTOC.fltoc"
+  MasterPageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
+  MasterStylesheet="/Content/Resources/Stylesheets/mainstyles.css"
+  OutputFolder="C:\Clients\SQream\Web\SQream"
+  ConditionTagExpression="include[General.Print_Only] exclude[General.Web_Only] ">
+  <PrintedOutput
+    CollapseMargins="true"
+    GenerateTOCProxy="false"
+    GenerateIndexProxy="false"
+    GenerateGlossaryProxy="false" />
+  <Destinations>
+    <Destination
+      Link="/Project/Destinations/pdf.fldes"
+      Publish="true" />
+  </Destinations>
+  <Variables>
+    <Variable
+      Name="General/DocumentName">Dashboard Installation Guide</Variable>
+    <Variable
+      Name="ProductVersions/SQream">2.05</Variable>
+  </Variables>
+</CatapultTarget>

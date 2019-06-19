@@ -5,26 +5,27 @@
     Title="[%=System.LinkedTitle%]"
     Link="/Content/Guides/Guides.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
     <TocEntry
-      Title="[%=System.LinkedTitle%]"
-      Link="/Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Creating_Your_First_Database_In_SQream.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-      ComputeToc="true"
-      ComputedTocAction="Replace"
-      ComputedTocDepth="10"></TocEntry>
+      Title="QuickGuideLaunchingCluster"
+      Link="/Project/TOCs/QuickGuideLaunchingCluster.fltoc"
+      ComputeToc="false"
+      ReplaceMergeNode="true" />
     <TocEntry
       Title="LoadingDataTOC"
-      Link="/Project/TOCs/LoadingDataTOC.fltoc"
+      Link="/Project/TOCs/QuickGuideLoadingData.fltoc"
       ReplaceMergeNode="true" />
     <TocEntry
       Title="QuickAdminGuideTOC"
-      Link="/Project/TOCs/QuickAdminGuideTOC.fltoc"
+      Link="/Project/TOCs/QuickGuideManagingCluster.fltoc"
       ReplaceMergeNode="true" />
     <TocEntry
       Title="DWLMTOC"
-      Link="/Project/TOCs/DWLMTOC.fltoc"
+      Link="/Project/TOCs/QuickDWLMTOC.fltoc"
       ReplaceMergeNode="true"></TocEntry>
     <TocEntry
-      Title="[%=System.LinkedTitle%]"
-      Link="/Content/Guides/Quick_Guides/Quick_guide_to_roles_and_permissions/Quick_guide_to_roles_and_permissions.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      Title="QuickGuideRolesPermissions"
+      Link="/Project/TOCs/QuickGuideRolesPermissions.fltoc"
+      ReplaceMergeNode="true"
+      StartSection="false" />
     <TocEntry
       Title="AdminGuideTOC"
       Link="/Project/TOCs/AdminGuideTOC.fltoc"
@@ -32,16 +33,19 @@
     <TocEntry
       Title="DashboardTOC"
       Link="/Project/TOCs/DashboardTOC.fltoc"
-      ReplaceMergeNode="true" />
+      ReplaceMergeNode="true"></TocEntry>
     <TocEntry
       Title="StatementEditorTOC"
       Link="/Project/TOCs/StatementEditorTOC.fltoc"
       ReplaceMergeNode="true" />
     <TocEntry
-      Title="InstallGuidesTOC"
-      ReplaceMergeNode="true"
-      Link="/Project/TOCs/InstallGuidesTOC.fltoc"
-      ComputeToc="false" />
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Guides/Installation_Guides/SQream Installation Guides.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      ComputedTocDepth="2">
+      <TocEntry
+        Title="Installating_SQream_via_Docker"
+        Link="/Project/TOCs/Installating_SQream_via_Docker.fltoc" />
+    </TocEntry>
     <TocEntry
       Title="DashboardInstallTOC"
       Link="/Project/TOCs/DashboardInstallTOC.fltoc"

@@ -5,7 +5,7 @@
   Host=""
   User="MyAccountId"
   Password=""
-  Directory="C:\Users\Rivka\Desktop\Tech Tav\SQream\SQream in progress\Doc_Output\pdf\3.3"
+  Directory="C:\Clients\SQream\Published\PDF"
   Port=""
   ViewUrl="http://www.madcapsoftware.com/"
   Type="file"></CatapultDestination>

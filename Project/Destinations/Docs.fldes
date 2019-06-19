@@ -5,7 +5,7 @@
   Host=""
   User="MyAccountId"
   Password=""
-  Directory="C:\Users\Rivka\Desktop\Tech Tav\SQream\SQream in progress\Doc_Output\3.3\manual"
+  Directory="C:\Clients\SQream\Published\3.3\manual"
   Port=""
   ViewUrl="http://www.madcapsoftware.com/"
   Type="file"

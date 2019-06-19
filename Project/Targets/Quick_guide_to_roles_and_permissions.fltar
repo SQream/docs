@@ -9,7 +9,7 @@
   MasterToc="/Project/TOCs/QuickGuideRolesPermissions.fltoc"
   MasterStylesheet="/Content/Resources/Stylesheets/mainstyles.css"
   OutputFile="Quick_guide_to_roles_and_permissions"
-  OutputFolder="C:\Users\Rivka\Documents\My Projects\SQream\SQream_Web\Output\3.3"
+  OutputFolder="C:\Clients\SQream\Web\SQream"
   ConditionTagExpression="include[General.Print_Only] exclude[General.Web_Only] ">
   <PrintedOutput
     CollapseMargins="true"

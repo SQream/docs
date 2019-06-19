@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="2"
+  Comment="New Target"
+  Type="PDF"
+  Destinations=""
+  GlossaryTermConversion="marked"
+  OutputFolder="C:\Clients\SQream\Web\SQream"
+  MasterPageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
+  MasterToc="/Project/TOCs/ConceptsTOC.fltoc"
+  MasterStylesheet="/Content/Resources/Stylesheets/mainstyles.css">
+  <PrintedOutput
+    CollapseMargins="true"
+    GenerateTOCProxy="true"
+    GenerateIndexProxy="true"
+    GenerateGlossaryProxy="true" />
+  <Destinations>
+    <Destination
+      Link="/Project/Destinations/pdf.fldes"
+      Publish="true" />
+  </Destinations>
+  <Variables>
+    <Variable
+      Name="General/DocumentName">Concepts</Variable>
+  </Variables>
+</CatapultTarget>
