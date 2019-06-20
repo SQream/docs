@@ -22,9 +22,9 @@
                                     </colgroup>
                                     <thead>
                                         <tr class="TableStyle-Default_Table-Head-Header1">
-                                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Name</th>
-                                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Type</th>
-                                            <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Description</th>
+                                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Operator</th>
+                                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Description</th>
+                                            <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Example</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -34,10 +34,12 @@
                                                 </p>
                                             </td>
                                             <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                                <p class="tableblock">logical and</p>
                                                 <p class="tableblock">(<strong>bool</strong>, <strong>bool</strong>) <strong>returns</strong><strong>bool</strong></p>
                                             </td>
                                             <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-                                                <p class="tableblock">logical and</p>
+                                                <p class="tableblock"><code>TRUE AND FALSE</code>
+                                                </p>
                                             </td>
                                         </tr>
                                         <tr class="TableStyle-Default_Table-Body-Body2">
@@ -46,10 +48,12 @@
                                                 </p>
                                             </td>
                                             <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">(<strong>bool</strong>, <strong>bool</strong>) <strong>returns</strong><strong>bool</strong></p>
+                                                <p class="tableblock">logical or</p>
+                                                <p class="tableblock">(<strong>bool</strong>, <strong>bool</strong>) <strong>returns</strong> <strong>bool</strong></p>
                                             </td>
                                             <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
-                                                <p class="tableblock">logical or</p>
+                                                <p><code>a OR b</code>
+                                                </p>
                                             </td>
                                         </tr>
                                         <tr class="TableStyle-Default_Table-Body-Body1">
@@ -58,74 +62,29 @@
                                                 </p>
                                             </td>
                                             <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
-                                                <p class="tableblock">(<strong>bool</strong>) <strong>returns</strong><strong>bool</strong></p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
                                                 <p class="tableblock">logical not</p>
+                                                <p class="tableblock">(<strong>bool</strong>) <strong>returns</strong> <strong>bool</strong></p>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyA-Column1-Body1"><code>NOT TRUE</code>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
-                                <div class="sect5">
-                                    <h6 id="_and">AND</h6>
-                                    <div class="code">
-                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong>and</strong> (<strong>bool</strong>, <strong>bool</strong>) <strong>returns</strong>  <strong>bool</strong></code></pre>
-                                        </div>
-                                    </div>
-                                    <div class="paragraph">
-                                        <p>Logical and.</p>
-                                    </div>
-                                    <div class="code">
-                                        <div class="title">Examples</div>
-                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">TRUE</span>  <span class="tok-k">AND</span>  <span class="tok-k">FALSE</span></code></pre>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="sect5">
-                                    <h6 id="_or">OR</h6>
-                                    <div class="code">
-                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong>or</strong> (<strong>bool</strong>, <strong>bool</strong>) <strong>returns</strong>  <strong>bool</strong></code></pre>
-                                        </div>
-                                    </div>
-                                    <div class="paragraph">
-                                        <p>Logical or.</p>
-                                    </div>
-                                    <div class="code">
-                                        <div class="title">Examples</div>
-                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-n">a</span>  <span class="tok-k">OR</span>  <span class="tok-n">b</span></code></pre>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="sect5">
-                                    <h6 id="_not">NOT</h6>
-                                    <div class="code">
-                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong>not</strong> (<strong>bool</strong>) <strong>returns</strong>  <strong>bool</strong></code></pre>
-                                        </div>
-                                    </div>
-                                    <div class="paragraph">
-                                        <p>Logical not.</p>
-                                    </div>
-                                    <div class="code">
-                                        <div class="title">Examples</div>
-                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">NOT</span>  <span class="tok-k">TRUE</span></code></pre>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             <div class="sect4">
                                 <h5 id="_comparison">Comparison</h5>
                                 <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
                                     <caption class="title">Table 31. Comparison operators</caption>
                                     <colgroup>
-                                        <col style="width: 33.3333%;" />
-                                        <col style="width: 33.3333%;" />
-                                        <col style="width: 33.3334%;" />
+                                        <col style="width: 25%;" />
+                                        <col style="width: 40%;" />
+                                        <col style="width: 35%;" />
                                     </colgroup>
                                     <thead>
                                         <tr class="TableStyle-Default_Table-Head-Header1">
-                                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Name</th>
-                                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Type</th>
-                                            <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Description</th>
+                                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Operator</th>
+                                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Description</th>
+                                            <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Example</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -135,10 +94,15 @@
                                                 </p>
                                             </td>
                                             <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">(<strong><em>any</em></strong>, <strong><em>any</em></strong>) <strong>returns</strong><strong>bool</strong></p>
+                                                <p class="tableblock">Regular binary comparison operations</p>
+                                                <p class="tableblock">(<strong><em>any</em></strong>, <strong><em>any</em></strong>) <strong>returns</strong> <strong>bool</strong></p>
+                                                <p class="tableblock">Regular binary comparison operators. The two input types should be the
+same, but the system will insert valid implicit casts in many cases
+(see the <a href="#CAST">cast section</a>).</p>
                                             </td>
                                             <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-                                                <p class="tableblock">regular binary comparison operations</p>
+                                                <p class="tableblock"><code>binary_comparison_operator (any, any ) returns  bool</code>
+                                                </p>
                                             </td>
                                         </tr>
                                         <tr class="TableStyle-Default_Table-Body-Body2">
@@ -147,46 +111,51 @@
                                                 </p>
                                             </td>
                                             <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">(<em>exp</em><strong><em>any</em></strong>, <em>min</em><strong><em>any</em></strong>, <em>max</em><strong><em>any</em></strong>) <strong>returns</strong><strong>bool</strong></p>
+                                                <p class="tableblock">Exp is between min and max inclusive</p>
+                                                <p class="tableblock"><code>exp between min and max</code> is shorthand for <code>exp &gt;= min and exp &lt;= max</code>.</p>
+                                                <p class="tableblock">(<em>exp</em> <strong><em>any</em></strong>, <em>min</em> <strong><em>any</em></strong>, <em>max</em> <strong><em>any</em></strong>) <strong>returns</strong> <strong>bool</strong></p>
                                             </td>
                                             <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
-                                                <p class="tableblock">is <em>exp</em> between <em>min</em> and <em>max</em> inclusive</p>
+                                                <p><code data-lang="sqream db"><span class="tok-n">a</span> <span class="tok-k">between</span> <span class="tok-n">b</span> <span class="tok-k">and</span> <span class="tok-n">c</span></code>
+                                                </p>
                                             </td>
                                         </tr>
                                         <tr class="TableStyle-Default_Table-Body-Body1">
                                             <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock"><code><strong>not</strong><strong>between</strong></code>
+                                                <p class="tableblock"><code><strong>not</strong> <strong>between</strong></code>
                                                 </p>
                                             </td>
                                             <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">(<em>exp</em><strong><em>any</em></strong>, <em>min</em><strong><em>any</em></strong>, <em>max</em><strong><em>any</em></strong>) <strong>returns</strong><strong>bool</strong></p>
+                                                <p class="tableblock">Inverse of between</p>
+                                                <p class="tableblock"><code>exp not between min and max</code> is shorthand for not (<code>exp between min and max</code>)</p>
+                                                <p class="tableblock">(<em>exp</em> <strong><em>any</em></strong>, <em>min</em> <strong><em>any</em></strong>, <em>max</em> <strong><em>any</em></strong>) <strong>returns</strong> <strong>bool</strong></p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-                                                <p class="tableblock">inverse of between</p>
-                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">&#160;</td>
                                         </tr>
                                         <tr class="TableStyle-Default_Table-Body-Body2">
                                             <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock"><code><strong>is</strong><strong>null</strong></code>
+                                                <p class="tableblock"><code><strong>is</strong> <strong>null</strong></code>
                                                 </p>
                                             </td>
                                             <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">(<strong><em>any</em></strong>) <strong>returns</strong><strong>bool</strong></p>
+                                                <p class="tableblock">Checks if the argument is null.</p>
+                                                <p class="tableblock">(<strong><em>any</em></strong>) <strong>returns</strong> <strong>bool</strong></p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
-                                                <p class="tableblock">argument is null</p>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2"><code><span class="tok-p">(</span><span class="tok-mf">1</span><span class="tok-o">+</span><span class="tok-k">null</span><span class="tok-p">)</span> <span class="tok-k">is</span> <span class="tok-k">null</span></code>
                                             </td>
                                         </tr>
                                         <tr class="TableStyle-Default_Table-Body-Body1">
                                             <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock"><code><strong>is</strong><strong>not</strong><strong>null</strong></code>
+                                                <p class="tableblock"><code><strong>is</strong> <strong>not</strong> <strong>null</strong></code>
                                                 </p>
                                             </td>
                                             <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">(<strong><em>any</em></strong>) <strong>returns</strong><strong>bool</strong></p>
+                                                <p class="tableblock">Checks if the argument isn’t null.</p>
+                                                <p class="tableblock">(<strong><em>any</em></strong>) <strong>returns</strong> <strong>bool</strong></p>
                                             </td>
                                             <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-                                                <p class="tableblock">argument isn’t null</p>
+                                                <p class="tableblock"><code><span class="tok-p">(</span><span class="tok-n">a</span><span class="tok-o">*</span><span class="tok-n">b</span><span class="tok-p">)</span> <span class="tok-k">is</span> <span class="tok-k">not</span> <span class="tok-k">null</span></code>
+                                                </p>
                                             </td>
                                         </tr>
                                         <tr class="TableStyle-Default_Table-Body-Body2">
@@ -195,99 +164,28 @@
                                                 </p>
                                             </td>
                                             <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
-                                                <p class="tableblock">(<strong><em>any</em></strong> [, …​ ] ) <strong>returns</strong><strong>bool</strong></p>
+                                                <p class="tableblock">Tests for membership in a list. </p>
+                                                <p class="tableblock">(<strong><em>any</em></strong> [, …​ ] ) <strong>returns</strong> <strong>bool</strong></p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyA-Column1-Body2">
-                                                <p class="tableblock">list membership</p>
+                                            <td class="TableStyle-Default_Table-BodyA-Column1-Body2"><code data-lang="sqream db"><span class="tok-n">a</span> <span class="tok-k">in</span> <span class="tok-p">(</span><span class="tok-mf">1</span><span class="tok-p">,</span><span class="tok-mf">3</span><span class="tok-p">,</span><span class="tok-mf">5</span><span class="tok-p">,</span><span class="tok-mf">7</span><span class="tok-p">,</span><span class="tok-mf">11</span><span class="tok-p">)</span></code>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
-                                <div class="paragraph">
-                                    <p><strong><em>any</em></strong> is any type.</p>
-                                </div>
                                 <div class="sect5">
-                                    <h6 id="_binary_comparison_operators">Binary comparison operators</h6>
-                                    <div class="code">
-                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><em>binary_comparison_operator</em> (<strong><em>any</em></strong>, <strong><em>any</em></strong> ) <strong>returns</strong>  <strong>bool</strong>  
-
-<em>binary_comparison_operator</em> is one of &lt; &gt; &lt;= &gt;= == !=</code></pre>
-                                        </div>
-                                    </div>
-                                    <div class="paragraph">
-                                        <p>Regular binary comparison operators. The two input types should be the
-same, but the system will insert valid implicit casts in many cases
-(see the <a href="#CAST">cast section</a>).</p>
-                                    </div>
-                                </div>
-                                <div class="sect5">
-                                    <h6 id="_between_not_between">BETWEEN, NOT BETWEEN</h6>
-                                    <div class="paragraph">
-                                        <p><code><em>exp</em><strong>between</strong><em>min</em><strong>and</strong><em>max</em></code> is shorthand for <code><em>exp</em> &gt;= <em>min</em><strong>and</strong><em>exp</em> &lt;= <em>max</em></code>.</p>
-                                    </div>
-                                    <div class="paragraph">
-                                        <p><code><em>exp</em><strong>not</strong><strong>between</strong><em>min</em><strong>and</strong><em>max</em></code> is shorthand for <code><strong>not</strong>
-(<em>exp</em><strong>between</strong><em>min</em><strong>and</strong><em>max</em>)</code>.</p>
-                                    </div>
-                                    <div class="code">
-                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong>between</strong> (<em>exp</em>  <strong><em>any</em></strong>, <em>min</em>  <strong><em>any</em></strong>, <em>max</em>  <strong><em>any</em></strong>) <strong>returns</strong>  <strong>bool</strong></code></pre>
-                                        </div>
-                                    </div>
-                                    <div class="code">
-                                        <div class="title">Examples</div>
-                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-n">a</span>  <span class="tok-k">between</span>  <span class="tok-n">b</span>  <span class="tok-k">and</span>  <span class="tok-n">c</span></code></pre>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="sect5">
-                                    <h6 id="_is_null_is_not_null">IS NULL, IS NOT NULL</h6>
-                                    <div class="paragraph">
-                                        <p><strong>IS NULL</strong> checks if the argument is null.</p>
-                                    </div>
-                                    <div class="paragraph">
-                                        <p><strong>IS NOT NULL</strong> checks if the argument isn’t null.</p>
-                                    </div>
-                                    <div class="admonitionblock warning">
-                                        <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                            <tr class="TableStyle-Default_Table-Body-Body1">
-                                                <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-warning" title="Warning"></i>
-                                                </td>
-                                                <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-Testing for null using <code><em>exp</em> = NULL</code> will not work to check
-if a value is null, and testing for not null using <code><em>exp</em> &lt;&gt; NULL</code>
-will not work to check if a value is not null. You have to use the <strong>IS
-NULL</strong> and <strong>IS NOT NULL</strong> operators.
-</td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                    <div class="code">
-                                        <div class="title">Examples</div>
-                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-p">(</span><span class="tok-mf">1</span>  <span class="tok-o">+</span>  <span class="tok-k">null</span><span class="tok-p">)</span>  <span class="tok-k">is</span>  <span class="tok-k">null</span>  
-
-<span class="tok-p">(</span><span class="tok-n">a</span>  <span class="tok-o">*</span>  <span class="tok-n">b</span><span class="tok-p">)</span>  <span class="tok-k">is</span>  <span class="tok-k">not</span>  <span class="tok-k">null</span></code></pre>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="sect5">
-                                    <h6 id="_in">IN</h6>
-                                    <div class="paragraph">
-                                        <p><strong>IN</strong> tests for membership in a list.</p>
-                                    </div>
                                     <div class="admonitionblock note">
                                         <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                            <col style="width: 42px;" class="TableStyle-Default_Table-Column-Column1" />
+                                            <col class="TableStyle-Default_Table-Column-Column1" />
                                             <tr class="TableStyle-Default_Table-Body-Body1">
                                                 <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
                                                 </td>
-                                                <td class="TableStyle-Default_Table-BodyD-Column1-Body1"><strong>IN</strong> subqueries are not supported.
-</td>
+                                                <td class="TableStyle-Default_Table-BodyD-Column1-Body1"><strong>IN</strong> subqueries are not supported.<p><strong><em>any</em></strong> is any type.</p><p>Testing for null using <code><em>exp</em> = NULL</code> will not work to check
+if a value is null, and testing for not null using <code><em>exp</em> &lt;&gt; NULL</code>
+will not work to check if a value is not null. You have to use the <strong>IS
+NULL</strong> and <strong>IS NOT NULL</strong> o</p></td>
                                             </tr>
                                         </table>
-                                    </div>
-                                    <div class="code">
-                                        <div class="title">Examples</div>
-                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-n">a</span>  <span class="tok-k">in</span>  <span class="tok-p">(</span><span class="tok-mf">1</span><span class="tok-p">,</span><span class="tok-mf">3</span><span class="tok-p">,</span><span class="tok-mf">5</span><span class="tok-p">,</span><span class="tok-mf">7</span><span class="tok-p">,</span><span class="tok-mf">11</span><span class="tok-p">)</span></code></pre>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
