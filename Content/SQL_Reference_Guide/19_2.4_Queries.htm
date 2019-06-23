@@ -99,8 +99,8 @@ See also <a href="20_2.5_Manual_Query_Tuning.htm#WHERE"><strong>WHERE with HIGH_
                                 <p>Value expressions in select lists support aggregate and window
 functions as well as normal value expressions (see below).</p>
                             </div>
+                            <p class="example">Examples:</p>
                             <div class="code">
-                                <div class="title">Examples</div>
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db">  
 <span class="tok-k">select</span>  <span class="tok-o">*</span>  <span class="tok-k">from</span>  <span class="tok-n">t</span><span class="tok-p">;</span>  
 
@@ -134,8 +134,8 @@ Column at the <strong>SELECT</strong> list are separated with commas. Columns no
                             <div class="paragraph">
                                 <p><strong>FROM</strong> is used to specify which tables to read in a query. FROM can either contain table/view names or subqueries.</p>
                             </div>
+                            <p class="example">Examples:</p>
                             <div class="code">
-                                <div class="title">Examples</div>
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db">  
 <span class="tok-k">select</span>  <span class="tok-o">*</span>  <span class="tok-k">from</span>  <span class="tok-n">t</span><span class="tok-p">;</span>  
 
@@ -183,8 +183,8 @@ particular join algorithm. The available algorithms are <strong>LOOP</strong>
                             <div class="paragraph">
                                 <p><strong>WHERE</strong> is used to filter out rows.</p>
                             </div>
+                            <p class="example">Examples:</p>
                             <div class="code">
-                                <div class="title">Examples</div>
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">Column1</span>  
 <span class="tok-k">FROM</span>  <span class="tok-n">table1</span>  
 <span class="tok-k">WHERE</span>  <span class="tok-n">column2</span>  <span class="tok-o">&lt;=</span>  <span class="tok-mf">1</span><span class="tok-p">;</span></code></pre>
@@ -207,8 +207,8 @@ See also <a href="20_2.5_Manual_Query_Tuning.htm#WHERE"><strong>WHERE with HIGH_
                                 <p><strong>GROUP BY</strong> is used to partition a table so that aggregates can be
 applied separately to each partition.</p>
                             </div>
+                            <p class="example">Examples:</p>
                             <div class="code">
-                                <div class="title">Examples</div>
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">select</span>  <span class="tok-n">a</span><span class="tok-p">,</span><span class="tok-n">sum</span><span class="tok-p">(</span><span class="tok-n">b</span><span class="tok-p">)</span>  <span class="tok-k">from</span>  <span class="tok-n">t</span>  <span class="tok-k">group</span>  <span class="tok-k">by</span>  <span class="tok-n">a</span><span class="tok-p">;</span></code></pre>
                                 </div>
                             </div>
@@ -218,8 +218,8 @@ applied separately to each partition.</p>
                             <div class="paragraph">
                                 <p><strong>HAVING</strong> is used to filter out rows after GROUP BY processing.</p>
                             </div>
+                            <p class="example">Examples:</p>
                             <div class="code">
-                                <div class="title">Examples</div>
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">select</span>  <span class="tok-n">a</span><span class="tok-p">,</span><span class="tok-n">sum</span><span class="tok-p">(</span><span class="tok-n">b</span><span class="tok-p">)</span>  <span class="tok-k">from</span>  <span class="tok-n">t</span>  <span class="tok-k">group</span>  <span class="tok-k">by</span>  <span class="tok-n">a</span>  <span class="tok-k">having</span>  <span class="tok-n">sum</span><span class="tok-p">(</span><span class="tok-n">b</span><span class="tok-p">)</span>  <span class="tok-o">&gt;</span>  <span class="tok-mf">5</span><span class="tok-p">;</span></code></pre>
                                 </div>
                             </div>
@@ -229,8 +229,8 @@ applied separately to each partition.</p>
                             <div class="paragraph">
                                 <p><strong>ORDER BY</strong> is used to order the results.</p>
                             </div>
+                            <p class="example">Examples:</p>
                             <div class="code">
-                                <div class="title">Examples</div>
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">select</span>  <span class="tok-o">*</span>  <span class="tok-k">from</span>  <span class="tok-n">t</span>  <span class="tok-k">order</span>  <span class="tok-k">by</span>  <span class="tok-n">a</span>  <span class="tok-k">asc</span><span class="tok-p">,</span>  <span class="tok-n">b</span>  <span class="tok-k">desc</span><span class="tok-p">;</span></code></pre>
                                 </div>
                             </div>
@@ -251,8 +251,8 @@ applied separately to each partition.</p>
                             <div class="paragraph">
                                 <p><strong>UNION</strong> is used to concatenate two queries together. SQream currently supports <strong>UNION ALL</strong>, which doesn’t remove duplicate rows.</p>
                             </div>
+                            <p class="example">Examples:</p>
                             <div class="code">
-                                <div class="title">Examples</div>
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">select</span>  <span class="tok-o">*</span>  <span class="tok-k">from</span>  <span class="tok-n">t</span>  
 <span class="tok-k">union</span>  <span class="tok-k">all</span>  
 <span class="tok-k">select</span>  <span class="tok-o">*</span>  <span class="tok-k">from</span>  <span class="tok-n">u</span><span class="tok-p">;</span></code></pre>
@@ -273,8 +273,8 @@ FROM <strong><em>alias_1</em></strong>
    [ WHERE <strong><em>where_condition</em></strong> ]</code></pre>
                                 </div>
                             </div>
+                            <p class="example">Examples:</p>
                             <div class="code">
-                                <div class="title">Examples</div>
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">WITH</span>  
     <span class="tok-n">alias_a</span>  <span class="tok-k">as</span>  <span class="tok-p">(</span><span class="tok-k">select</span>  <span class="tok-o">*</span>  <span class="tok-k">from</span>  <span class="tok-n">sqream_catalog</span><span class="tok-mf">.</span><span class="tok-n">databases</span><span class="tok-p">),</span>  
     <span class="tok-n">alias_b</span>  <span class="tok-k">as</span>  <span class="tok-p">(</span><span class="tok-k">select</span>  <span class="tok-o">*</span>  <span class="tok-k">from</span>  <span class="tok-n">sqream_catalog</span><span class="tok-mf">.</span><span class="tok-k">tables</span><span class="tok-p">)</span>  

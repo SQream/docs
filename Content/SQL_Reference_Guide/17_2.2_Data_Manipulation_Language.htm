@@ -26,8 +26,8 @@ their own section which follows this one.</p>
     <strong><em>query</em></strong> ;</code></pre>
                                 </div>
                             </div>
+                            <p class="example">Examples:</p>
                             <div class="code">
-                                <div class="title">Examples</div>
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">INSERT</span>  <span class="tok-k">INTO</span>  <span class="tok-n">my_schema</span><span class="tok-mf">.</span><span class="tok-n">dst1</span>  <span class="tok-k">SELECT</span>  <span class="tok-n">a</span><span class="tok-p">,</span><span class="tok-n">b</span><span class="tok-p">,</span><span class="tok-n">c</span>  <span class="tok-k">from</span>  <span class="tok-n">src</span><span class="tok-p">;</span>  
 
 <span class="tok-k">INSERT</span>  <span class="tok-k">INTO</span>  <span class="tok-n">dst2</span><span class="tok-p">(</span><span class="tok-n">d1</span><span class="tok-p">,</span>  <span class="tok-n">d3</span><span class="tok-p">)</span>  <span class="tok-k">SELECT</span>  <span class="tok-n">d1</span><span class="tok-p">,</span><span class="tok-n">d3</span>  <span class="tok-k">from</span>  <span class="tok-n">src</span><span class="tok-p">;</span>  
@@ -186,8 +186,8 @@ Using the COPY command without the ERROR_VERBOSITY option will fail the entire l
                                     </li>
                                 </ul>
                             </div>
+                            <p class="example">Examples:</p>
                             <div class="code">
-                                <div class="title">Examples</div>
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-c1">-- Copy from row 2 (ignore header), and with Windows newline format</span>  
 <span class="tok-k">COPY</span>  <span class="tok-n">table_name</span>  <span class="tok-k">from</span>  <span class="tok-s1">'filename.csv'</span>  <span class="tok-k">with</span>  <span class="tok-k">DELIMITER</span>  <span class="tok-s1">','</span>  
                                          <span class="tok-nb">RECORD</span>  <span class="tok-k">DELIMITER</span>  <span class="tok-s1">'\r\n'</span>  
@@ -497,8 +497,8 @@ Using the COPY command without the ERROR_VERBOSITY option will fail the entire l
                                     </li>
                                 </ul>
                             </div>
+                            <p class="example">Examples:</p>
                             <div class="code">
-                                <div class="title">Examples</div>
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">COPY</span>  <span class="tok-n">my_table</span>  <span class="tok-k">TO</span>  <span class="tok-s1">'/path/file_name'</span><span class="tok-p">;</span>  
 <span class="tok-k">COPY</span>  <span class="tok-n">my_table</span>  <span class="tok-k">TO</span>  <span class="tok-s1">'/path/file_name'</span>  <span class="tok-k">with</span>  <span class="tok-k">HEADER</span><span class="tok-p">;</span>  
 <span class="tok-k">COPY</span>  <span class="tok-n">my_table</span>  <span class="tok-k">TO</span>  <span class="tok-s1">'/path/file_name'</span>  <span class="tok-k">with</span>  <span class="tok-k">DELIMITER</span>  <span class="tok-s1">'|'</span>  <span class="tok-k">HEADER</span><span class="tok-p">;</span>  
@@ -526,8 +526,8 @@ starting values. <strong>CONTINUE IDENTITY</strong> is the default.</p>
                             <div class="paragraph">
                                 <p>See also <a href="#DELETE"><strong>DELETE</strong></a> which provides the ability to delete rows that satisfy a predicate.</p>
                             </div>
+                            <p class="example">Examples:</p>
                             <div class="code">
-                                <div class="title">Examples</div>
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">truncate</span>  <span class="tok-k">table</span>  <span class="tok-n">my_schema</span><span class="tok-mf">.</span><span class="tok-n">t</span><span class="tok-p">;</span></code></pre>
                                 </div>
                             </div>
@@ -640,8 +640,8 @@ Following the recommended best practices, the logical delete operation will firs
                                     </tr>
                                 </table>
                             </div>
+                            <p class="example">Examples:</p>
                             <div class="code">
-                                <div class="title">Examples</div>
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db">  
 <span class="tok-c1">-- Delete all rows from 'books' table for books introduced before 2012</span>  
 <span class="tok-k">DELETE</span>  <span class="tok-k">FROM</span>  <span class="tok-n">books</span>  <span class="tok-k">WHERE</span>  <span class="tok-n">date_introduced</span>  <span class="tok-o">&lt;</span>  <span class="tok-s1">'2012-01-01'</span><span class="tok-p">;</span>  

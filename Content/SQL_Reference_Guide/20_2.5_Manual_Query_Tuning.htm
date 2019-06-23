@@ -38,8 +38,8 @@ This is best used when the column being filtered out is <strong>not sorted</stro
                                     </tr>
                                 </table>
                             </div>
+                            <p class="example">Examples:</p>
                             <div class="code">
-                                <div class="title">Examples</div>
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-c1">-- We know LOG_ID=5 is a small amount of values, so we will</span>  
 <span class="tok-c1">-- instruct the compiler about it:</span>  
 <span class="tok-k">select</span>  <span class="tok-o">*</span>  <span class="tok-k">from</span>  <span class="tok-n">logger</span>  <span class="tok-k">where</span>  <span class="tok-n">high_selectivity</span><span class="tok-p">(</span><span class="tok-n">log_id</span>  <span class="tok-o">=</span>  <span class="tok-mf">5</span><span class="tok-p">);</span>  

@@ -53,8 +53,8 @@ $$ LANGUAGE python;</code></pre>
                                     </tr>
                                 </table>
                             </div>
+                            <p class="example">Example 1:</p>
                             <div class="code">
-                                <div class="title">Example 1</div>
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-c1">-- Create a function to calculate distance based on existing data:</span>  
 <span class="tok-k">CREATE</span>  <span class="tok-k">OR</span>  <span class="tok-k">REPLACE</span>  <span class="tok-k">FUNCTION</span>  <span class="tok-n">py_distance</span>  <span class="tok-p">(</span><span class="tok-n">x1</span>  <span class="tok-k">float</span><span class="tok-p">,</span>  <span class="tok-n">y1</span>  <span class="tok-k">float</span><span class="tok-p">,</span>  <span class="tok-n">x2</span>  <span class="tok-k">float</span><span class="tok-p">,</span>  <span class="tok-n">y2</span>  <span class="tok-k">float</span><span class="tok-p">)</span>  <span class="tok-k">RETURNS</span>  <span class="tok-k">float</span>  <span class="tok-k">as</span>  <span class="tok-s">$$</span>  
 <span class="tok-kn">import</span>  <span class="tok-nn">math</span>  
@@ -68,8 +68,8 @@ $$ LANGUAGE python;</code></pre>
 <span class="tok-k">SELECT</span>  <span class="tok-n">city_name</span><span class="tok-p">,</span>  <span class="tok-n">current_location_name</span><span class="tok-p">,</span>  <span class="tok-n">py_distance</span><span class="tok-p">(</span><span class="tok-n">x1</span><span class="tok-p">,</span><span class="tok-n">y1</span><span class="tok-p">,</span><span class="tok-n">x2</span><span class="tok-p">,</span><span class="tok-n">y2</span><span class="tok-p">)</span>  <span class="tok-k">from</span>  <span class="tok-n">table1</span><span class="tok-p">;</span></code></pre>
                                 </div>
                             </div>
+                            <p class="example">Example 2:</p>
                             <div class="code">
-                                <div class="title">Example 2</div>
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-c1">-- Create a function that activates an external python script (writefile.py):</span>  
 <span class="tok-k">CREATE</span>  <span class="tok-k">or</span>  <span class="tok-k">replace</span>  <span class="tok-k">function</span>  <span class="tok-n">write_file_to_os</span><span class="tok-p">()</span>  <span class="tok-k">RETURNS</span>  <span class="tok-nb">int</span>    <span class="tok-k">as</span>  <span class="tok-s">$$</span>  
 <span class="tok-kn">import</span>  <span class="tok-nn">sys</span>  
@@ -92,8 +92,8 @@ $$ LANGUAGE python;</code></pre>
 DROP FUNCTION [IF EXISTS] function_name();</code></pre>
                                 </div>
                             </div>
+                            <p class="example">Examples:</p>
                             <div class="code">
-                                <div class="title">Examples</div>
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-c1">-- drop the user defined function 'py_distance' if it exists:</span>  
 <span class="tok-k">DROP</span>  <span class="tok-k">FUNCTION</span>  <span class="tok-k">IF</span>  <span class="tok-k">EXISTS</span>  <span class="tok-n">py_distance</span><span class="tok-p">();</span></code></pre>
                                 </div>
@@ -109,8 +109,8 @@ DROP FUNCTION [IF EXISTS] function_name();</code></pre>
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">select</span>  <span class="tok-n">get_function_ddl</span><span class="tok-p">(</span><span class="tok-s1">'user_function_name'</span><span class="tok-p">);</span></code></pre>
                                 </div>
                             </div>
+                            <p class="example">Examples:</p>
                             <div class="code">
-                                <div class="title">Example</div>
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">select</span>  <span class="tok-n">get_function_ddl</span><span class="tok-p">(</span><span class="tok-s1">'fn_full_name'</span><span class="tok-p">);</span>  
 <span class="tok-c1">-- returns:</span>  
 <span class="tok-k">create</span>  <span class="tok-k">function</span>  <span class="tok-s tok-s-Name">"fn_full_name_new"</span>  <span class="tok-p">(</span><span class="tok-n">fn</span>  <span class="tok-nb">varchar</span><span class="tok-p">,</span>  <span class="tok-n">ln</span>  <span class="tok-nb">varchar</span><span class="tok-p">)</span>  <span class="tok-k">returns</span>  <span class="tok-nb">varchar</span><span class="tok-p">(</span><span class="tok-mf">100</span><span class="tok-p">)</span>  <span class="tok-k">as</span>  <span class="tok-s">$$</span><span class="tok-k">return</span>  <span class="tok-n">fn</span><span class="tok-o">+</span><span class="tok-s2">" "</span><span class="tok-o">+</span><span class="tok-n">ln</span>  <span class="tok-s">$$</span>  <span class="tok-k">language</span>  <span class="tok-n">python</span>  <span class="tok-k">volatile</span><span class="tok-p">;</span></code></pre>

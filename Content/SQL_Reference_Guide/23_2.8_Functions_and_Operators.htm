@@ -16,8 +16,8 @@
                                 <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
                                     <caption class="title">Table 30. Logical operators</caption>
                                     <colgroup>
-                                        <col style="width: 33.3333%;" />
-                                        <col style="width: 33.3333%;" />
+                                        <col style="width: 146px;" />
+                                        <col style="width: 261px;" />
                                         <col style="width: 33.3334%;" />
                                     </colgroup>
                                     <thead>
@@ -35,7 +35,7 @@
                                             </td>
                                             <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
                                                 <p class="tableblock">logical and</p>
-                                                <p class="tableblock">(<strong>bool</strong>, <strong>bool</strong>) <strong>returns</strong><strong>bool</strong></p>
+                                                <p class="tableblock">(<strong>bool</strong>, <strong>bool</strong>) <strong>returns</strong> <strong>bool</strong></p>
                                             </td>
                                             <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
                                                 <p class="tableblock"><code>TRUE AND FALSE</code>
@@ -73,12 +73,12 @@
                             </div>
                             <div class="sect4">
                                 <h5 id="_comparison">Comparison</h5>
-                                <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                                <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');width: 731px;" cellspacing="0">
                                     <caption class="title">Table 31. Comparison operators</caption>
                                     <colgroup>
-                                        <col style="width: 25%;" />
-                                        <col style="width: 40%;" />
-                                        <col style="width: 35%;" />
+                                        <col style="width: 168px;" />
+                                        <col style="width: 308px;" />
+                                        <col style="width: 257px;" />
                                     </colgroup>
                                     <thead>
                                         <tr class="TableStyle-Default_Table-Head-Header1">
@@ -101,7 +101,7 @@ same, but the system will insert valid implicit casts in many cases
 (see the <a href="#CAST">cast section</a>).</p>
                                             </td>
                                             <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-                                                <p class="tableblock"><code>binary_comparison_operator (any, any ) returns  bool</code>
+                                                <p class="tableblock"><code>binary_comparison_operator (any, any) returns  bool</code>
                                                 </p>
                                             </td>
                                         </tr>
@@ -180,10 +180,9 @@ same, but the system will insert valid implicit casts in many cases
                                             <tr class="TableStyle-Default_Table-Body-Body1">
                                                 <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
                                                 </td>
-                                                <td class="TableStyle-Default_Table-BodyD-Column1-Body1"><strong>IN</strong> subqueries are not supported.<p><strong><em>any</em></strong> is any type.</p><p>Testing for null using <code><em>exp</em> = NULL</code> will not work to check
-if a value is null, and testing for not null using <code><em>exp</em> &lt;&gt; NULL</code>
-will not work to check if a value is not null. You have to use the <strong>IS
-NULL</strong> and <strong>IS NOT NULL</strong> o</p></td>
+                                                <td class="TableStyle-Default_Table-BodyD-Column1-Body1"><strong>IN</strong> subqueries are not supported.<p><strong><em>any</em></strong> is any type.</p><p>You cannot use <code><em>exp</em> = NULL</code> to test if a value is null, or <code><em>exp</em> &lt;&gt; NULL</code>
+to test if a value is not null. You must use <strong>IS
+NULL</strong> and <strong>IS NOT NULL</strong> .</p></td>
                                             </tr>
                                         </table>
                                     </div>

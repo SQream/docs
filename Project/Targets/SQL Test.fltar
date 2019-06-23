@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="2"
+  Comment="SQream SQL Ref Test"
+  Type="WebHelp2"
+  Destinations=""
+  GlossaryTermConversion="marked"
+  MasterToc="/Project/TOCs/SQLReferenceTOC.fltoc"
+  DefaultUrl="/Content/Home.htm"
+  MasterStylesheet="/Content/Resources/Stylesheets/MainStyles.css"
+  MasterStylesheetOverride="true"
+  Skin="/Project/Skins/HTML5 - Top Navigation.flskn"
+  MenuSkin="/Project/Skins/SideMenu.flskn"
+  ExcludeUnreferencedContent="true"
+  TopNavTocPath="true"
+  SearchResultsSkin="/Project/Skins/SearchResults.flskn"
+  ReplaceSpacesWithUnderscores="false"
+  OutputFolder="C:\Madcap Flare\Test zips"
+  TabletBreakpoint="1280"
+  MobileBreakpoint="767"
+  ConditionTagExpression="exclude[General.Print_Only or General.Print_Only]"
+  GetLatestBeforeCompile="false"
+  MakeFileLowerCase="true">
+  <PrintedOutput
+    CollapseMargins="true"
+    GenerateTOCProxy="true"
+    GenerateIndexProxy="true"
+    GenerateGlossaryProxy="true" />
+  <Glossaries />
+  <Destinations>
+    <Destination
+      Link="/Project/Destinations/Docs.fldes"
+      Publish="true" />
+  </Destinations>
+</CatapultTarget>
