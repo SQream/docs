@@ -16,9 +16,9 @@
                                 <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
                                     <caption class="title">Table 30. Logical operators</caption>
                                     <colgroup>
-                                        <col style="width: 146px;" />
-                                        <col style="width: 261px;" />
-                                        <col style="width: 33.3334%;" />
+                                        <col style="width: 111px;" />
+                                        <col style="width: 291px;" />
+                                        <col style="width: 33.334%;" />
                                     </colgroup>
                                     <thead>
                                         <tr class="TableStyle-Default_Table-Head-Header1">
@@ -73,12 +73,12 @@
                             </div>
                             <div class="sect4">
                                 <h5 id="_comparison">Comparison</h5>
-                                <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');width: 731px;" cellspacing="0">
+                                <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
                                     <caption class="title">Table 31. Comparison operators</caption>
                                     <colgroup>
-                                        <col style="width: 168px;" />
-                                        <col style="width: 308px;" />
-                                        <col style="width: 257px;" />
+                                        <col style="width: 164px;" />
+                                        <col style="width: 331px;" />
+                                        <col style="width: 33.334%;" />
                                     </colgroup>
                                     <thead>
                                         <tr class="TableStyle-Default_Table-Head-Header1">
@@ -180,9 +180,8 @@ same, but the system will insert valid implicit casts in many cases
                                             <tr class="TableStyle-Default_Table-Body-Body1">
                                                 <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
                                                 </td>
-                                                <td class="TableStyle-Default_Table-BodyD-Column1-Body1"><strong>IN</strong> subqueries are not supported.<p><strong><em>any</em></strong> is any type.</p><p>You cannot use <code><em>exp</em> = NULL</code> to test if a value is null, or <code><em>exp</em> &lt;&gt; NULL</code>
-to test if a value is not null. You must use <strong>IS
-NULL</strong> and <strong>IS NOT NULL</strong> .</p></td>
+                                                <td class="TableStyle-Default_Table-BodyD-Column1-Body1"><strong>IN</strong> subqueries are not supported.<br /><strong><em>any</em></strong> is any type.<br />You cannot use <code><em>exp</em> = NULL</code> to test if a value is null, or <code><em>exp</em> &lt;&gt; NULL</code>
+to test if a value is not null. You must use <strong>IS NULL</strong> and <strong>IS NOT NULL</strong>.</td>
                                             </tr>
                                         </table>
                                     </div>
@@ -409,396 +408,327 @@ Bitwise operators are supported for all Integer data types: TINYINT, SMALLINT, I
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
 When performing mathematical operations on an integer, SQream will round up the results and return an integer.
 In order to return a decimal number, make sure to use real or float with the operation itself or cast the integer to real/float.
-For example: (100/14) will result in 7 while (100.0/14) or (100/14.0) will result in 7.1429.
-</td>
+For example: (100/14) will result in 7 while (100.0/14) or (100/14.0) will result in 7.1429.</td>
                                     </tr>
                                 </table>
                             </div>
-                            <div class="sect4">
-                                <h5 id="_sqrt">SQRT</h5>
-                                <div class="paragraph">
-                                    <p><strong>SQRT</strong> - Square root of the argument to the function</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">SQRT</span>  <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-Float/Double (All other numbers available via implicit casting)</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-Float/Double</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_abs">ABS</h5>
-                                <div class="paragraph">
-                                    <p><strong>ABS</strong> - |x|- Absolute (positive) value of the argument</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">ABS</span>  <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-Float/Double (All other numbers available via implicit casting)
-Returns
-Float/Double</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_round">ROUND</h5>
-                                <div class="paragraph">
-                                    <p><strong>ROUND</strong> - Rounds the number to the nearest precision</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">ROUND</span>  <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">,</span><span class="tok-mf">2</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-Float/Double (All other numbers available via implicit casting)
-Int32T 	Precision (number of places after the decimal point)</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-Float/Double</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_asin">ASIN</h5>
-                                <div class="paragraph">
-                                    <p><strong>ASIN</strong> sin-1 (x) – Arcsine
-(angle in radians whose sine is the argument of the function)</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">ASIN</span>  <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-Float/Double (All other numbers available via implicit casting)
-Returns
-Float/Double</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_atan">ATAN</h5>
-                                <div class="paragraph">
-                                    <p><strong>ATAN</strong> tg-1 (x)- Arctangent
-(angle in radians whose tangent is the argument of the function)</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">atan</span><span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-Float/Double (All other numbers available via implicit casting)</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-Float/Double</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_atn2_arctangent">ATN2 – Arctangent</h5>
-                                <div class="paragraph">
-                                    <p><strong>ATN2</strong>
-(angle in radians between positive X-axis and the ray from the origin where x and y are the first and second arguments)</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">ATN2</span>  <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">,</span><span class="tok-n">cfloat2</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-Float/Double (All other numbers available via implicit casting)
-Float/Double (All other numbers available via implicit casting)</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-Float/Double</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_cos">COS</h5>
-                                <div class="paragraph">
-                                    <p><strong>COS</strong> - cos x- - trigonometric cosine of the angle in radians</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">COS</span>  <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-Float/Double (All other numbers available via implicit casting)</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-Float/Double</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_cot">COT</h5>
-                                <div class="paragraph">
-                                    <p><strong>COT</strong>  - cot x - Cotangent - trigonometric cotangent of the angle in radians</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">COT</span>  <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-Float/Double (All other numbers available via implicit casting)</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-Float/Double</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_ceiling_or_ceil">CEILING or CEIL</h5>
-                                <div class="paragraph">
-                                    <p><strong>CEILING</strong> or <strong>CEIL</strong> - Return the smallest integer value that is greater than or equal to the argument</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">CEILING</span>  <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span>  
-<span class="tok-k">SELECT</span>  <span class="tok-n">CEIL</span>  <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-Float/Double (All other numbers available via implicit casting)</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-Float/Double</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_log10">LOG10</h5>
-                                <div class="paragraph">
-                                    <p><strong>LOG10</strong> - log10 x- base 10 logarithm of the argument</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">LOG10</span>  <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-Float/Double (All other numbers available via implicit casting)</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-Float/Double</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_log">LOG</h5>
-                                <div class="paragraph">
-                                    <p><strong>LOG</strong> - ln x - Natural base logarithm (ln or loge) of the argument</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">LOG</span>  <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-Float/Double (All other numbers available via implicit casting)</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-Float/Double</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_log_base_y">LOG (base-y)</h5>
-                                <div class="paragraph">
-                                    <p><strong>LOG base=y</strong> - Base-y logarithm of the x parameter, where x,y are the arguments</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">LOG</span>  <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">,</span><span class="tok-n">cint</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span>  
-<span class="tok-k">SELECT</span>  <span class="tok-n">LOG</span>  <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">,</span><span class="tok-mf">8</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-Float/Double	argument
-(all other numbers available via implicit casting)
-Integer Base</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-Float/Double</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_mod">MOD</h5>
-                                <div class="paragraph">
-                                    <p><strong>MOD</strong> - returns the remainder from a division of argument#1 by argument #2.</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">MOD</span>  <span class="tok-p">(</span><span class="tok-n">cint</span><span class="tok-p">,</span><span class="tok-n">cint</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-Integer</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-Integer</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_floor">FLOOR</h5>
-                                <div class="paragraph">
-                                    <p><strong>FLOOR</strong> - Floor returns the smallest integer to the argument</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">FLOOR</span>  <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-Float/Double (All other numbers available via implicit casting)</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-Float/Double</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_sin">SIN</h5>
-                                <div class="paragraph">
-                                    <p><strong>SIN</strong> - trigonometric sine of the angle in radians</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">SIN</span>  <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-Float/Double (All other numbers available via implicit casting)</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-Float/Double</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_square">SQUARE</h5>
-                                <div class="paragraph">
-                                    <p><strong>SQUARE</strong> - x2 - the square of the argument</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">SQUARE</span>  <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-Float/Double (All other numbers available via implicit casting)</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-Float/Double</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_tan">TAN</h5>
-                                <div class="paragraph">
-                                    <p><strong>TAN</strong> - Tangent of the argument</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">tan</span><span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-Float/Double (All other numbers available via implicit casting)</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-Float/Double</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_pi">PI</h5>
-                                <div class="paragraph">
-                                    <p><strong>PI</strong> - mathematical constant</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">PI</span>  <span class="tok-p">()</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-none</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-Double value of Pi to 10 digits after the decimal point</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_power">POWER</h5>
-                                <div class="paragraph">
-                                    <p><strong>POWER</strong> - perform a power of one value over the other
-(x raised to the power of y)</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">POWER</span>  <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">,</span><span class="tok-n">cfloat2</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-Float/Double (All other numbers available via implicit casting)
-Float/Double (All other numbers available via implicit casting)</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-Float/Double</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_to_hex">TO_HEX</h5>
-                                <div class="paragraph">
-                                    <p><strong>TO_HEX</strong> - Converts an integer to its base-16 string representation</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">TO_HEX</span>  <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-Int/Long parameter</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-VarChar - Base-16 string representation</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_trunc">TRUNC</h5>
-                                <div class="paragraph">
-                                    <p><strong>TRUNC</strong> - TRUNC (float/double) returns the argument truncated to a whole number.</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">TRUNC</span>  <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-Float/Double</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-Float/Double (same data type as parameter)</p>
-                                </div>
-                            </div>
+                            <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                                <caption class="title">Table 33. Mathematical functions and operators</caption>
+                                <colgroup>
+                                    <col />
+                                    <col style="width: 319px;" />
+                                    <col style="width: 251px;" />
+                                </colgroup>
+                                <thead>
+                                    <tr class="TableStyle-Default_Table-Head-Header1">
+                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Operator</th>
+                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Description</th>
+                                        <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody"><code>SQRT</code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">Square root of the argument to the function</p>
+                                            <p class="tableblock">Parameters: Float/Double (All other numbers available via implicit casting).<br />Returns: Float/Double.</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">SQRT</span> <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody"><code>ABS</code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">|x|- Absolute (positive) value of the argument</p>
+                                            <p class="tableblock">Parameter:s Float/Double (All other numbers available via implicit casting).<br />Returns: Float/Double.</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">ABS</span> <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody"><code>ROUND</code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">Rounds the number to the nearest precision</p>
+                                            <p class="tableblock">Parameters: Float/Double (All other numbers available via implicit casting). Int32T Precision (number of places after the decimal point)<br />Returns: Float/Double.</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">ROUND</span> <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">,</span><span class="tok-mf">2</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody"><code>ASIN</code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">sin-1 (x) – Arcsine
+											(angle in radians whose sine is the argument of the function)</p>
+                                            <p class="tableblock">Parameters: Float/Double (All other numbers available via implicit casting).<br />Returns: Float/Double.</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">ASIN</span> <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody"><code>ATAN</code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">tg-1 (x)- Arctangent
+											(angle in radians whose tangent is the argument of the function)</p>
+                                            <p class="tableblock">Parameters: Float/Double (All other numbers available via implicit casting).<br />Returns: Float/Double.</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">ATAN</span> <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody"><code>ATN2</code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">Angle in radians between positive X-axis and the ray from the origin where x and y are the first and second arguments.</p>
+                                            <p class="tableblock">Parameters: Float/Double (All other numbers available via implicit casting) / Float/Double (All other numbers available via implicit casting).<br />Returns: Float/Double.</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">ATN2</span> <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">,</span><span class="tok-n">cfloat2</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody"><code>COS</code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">cos x- - Trigonometric cosine of the angle in radians</p>
+                                            <p class="tableblock">Parameters: Float/Double (All other numbers available via implicit casting).<br />Returns: Float/Double.</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">COS</span> <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody"><code>COT</code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">cot x - Trigonometric cotangent of the angle in radians</p>
+                                            <p class="tableblock">Parameters: Float/Double (All other numbers available via implicit casting).<br />Returns: Float/Double.</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">COT</span> <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>s
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody"><code>CEILING or CEIL</code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">Returns the smallest integer value that is greater than or equal to the argument.</p>
+                                            <p class="tableblock">Parameters: Float/Double (All other numbers available via implicit casting).<br />Returns: Float/Double.</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">CEILING</span> <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">CEIL</span> <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody"><code>LOG10</code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">log10 x- Base 10 logarithm of the argument</p>
+                                            <p class="tableblock">Parameters: Float/Double (All other numbers available via implicit casting).<br />Returns: Float/Double.</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">LOG10</span> <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody"><code>LOG</code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">ln x - Natural base logarithm (ln or loge) of the argument</p>
+                                            <p class="tableblock">Parameters: Float/Double (All other numbers available via implicit casting).<br />Returns: Float/Double.</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">LOG</span> <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody"><code>LOG (base-y)</code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">Base-y Logarithm of the x parameter, where x,y are the arguments</p>
+                                            <p class="tableblock">Parameters: Float/Double (All other numbers available via implicit casting). Integer Base<br />Returns: Float/Double.</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">LOG</span> <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-n">,</span><span class="tok-n">cint</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">LOG</span> <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-n">,</span><span class="tok-n">8</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody"><code>MOD</code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">Returns the remainder from a division of argument#1 by argument #2.</p>
+                                            <p class="tableblock">Parameters: Integer<br />Returns: Integer</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">MOD</span> <span class="tok-p">(</span><span class="tok-n">cint</span><span class="tok-n">,</span><span class="tok-n">cint</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody"><code>FLOOR</code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">Returns the smallest integer to the argument.</p>
+                                            <p class="tableblock">Parameters: Float/Double (All other numbers available via implicit casting).<br />Returns: Float/Double.</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">FLOOR</span> <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody"><code>SIN</code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">Trigonometric sine of the angle in radians</p>
+                                            <p class="tableblock">Parameters: Float/Double (All other numbers available via implicit casting).<br />Returns: Float/Double.</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">SIN</span> <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody"><code>SQUARE</code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">x<sup>2</sup> - Square of the argument</p>
+                                            <p class="tableblock">Parameters: Float/Double (All other numbers available via implicit casting).<br />Returns: Float/Double.</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">SQUARE</span> <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody"><code>TAN</code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">Tangent of the argument</p>
+                                            <p class="tableblock">Parameters: Float/Double (All other numbers available via implicit casting).<br />Returns: Float/Double.</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">TAN</span> <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody"><code>PI</code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">Mathematical constant</p>
+                                            <p class="tableblock">Parameters: None<br />Returns: Double (value of Pi to 10 digits after the decimal point).</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">PI</span> <span class="tok-p">(</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody"><code>POWER</code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">Performs a power of one value over the other (x raised to the power of y).</p>
+                                            <p class="tableblock">Parameters: Float/Double (All other numbers available via implicit casting) / Float/Double (All other numbers available via implicit casting).<br />Returns: Float/Double.</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">POWER</span> <span class="tok-p">(</span><span class="tok-n">cfloat1</span><span class="tok-n">,</span><span class="tok-n">cfloat2</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody"><code>TO_HEX</code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">Converts an integer to its base-16 string representation.</p>
+                                            <p class="tableblock">Parameters: Int/Long parameter.<br />Returns: VarChar - Base-16 string representation.</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">TO_HEX</span> <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                            <p class="tableBody"><code>TRUNC</code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                            <p class="tableblock">Returns the argument truncated to a whole number.</p>
+                                            <p class="tableblock">Parameters: Float/Double (All other numbers available via implicit casting).<br />Returns: Float/Double (same data type as parameter).</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">TRUNC</span> <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                         <div class="sect3">
                             <h4 id="_check_functions">Check functions</h4>
@@ -839,8 +769,8 @@ a single value of the same data type as parameter.</p>
     <strong><em>value_expr</em></strong> :: <strong><em>typename</em></strong></code></pre>
                                     </div>
                                 </div>
+                                <p class="example">Examples:</p>
                                 <div class="code">
-                                    <div class="title">Examples</div>
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-k">CAST</span><span class="tok-p">(</span><span class="tok-mf">1234</span>  <span class="tok-k">as</span>  <span class="tok-k">FLOAT</span><span class="tok-p">);</span>  
 
 <span class="tok-k">SELECT</span>  <span class="tok-p">(</span><span class="tok-mf">1234</span>  <span class="tok-o">::</span>  <span class="tok-k">FLOAT</span><span class="tok-p">);</span>  
@@ -853,7 +783,7 @@ a single value of the same data type as parameter.</p>
                                     </div>
                                 </div>
                                 <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
-                                    <caption class="title">Table 33. Supported conversions, both implicit and explicit</caption>
+                                    <caption class="title">Table 34. Supported conversions, both implicit and explicit</caption>
                                     <colgroup>
                                         <col />
                                         <col />
@@ -1870,7 +1800,7 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                         <div class="sect3">
                             <h4 id="_pattern_matching_syntax">Pattern matching syntax</h4>
                             <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
-                                <caption class="title">Table 34. Pattern matching syntax</caption>
+                                <caption class="title">Table 35. Pattern matching syntax</caption>
                                 <colgroup>
                                     <col />
                                     <col />
@@ -1951,7 +1881,7 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                         <div class="sect3">
                             <h4 id="_regular_expression_pattern_matching_syntax">Regular Expression Pattern Matching Syntax</h4>
                             <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
-                                <caption class="title">Table 35. Regular expression pattern matching syntax</caption>
+                                <caption class="title">Table 36. Regular expression pattern matching syntax</caption>
                                 <colgroup>
                                     <col />
                                     <col />
@@ -2076,7 +2006,7 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                         <div class="sect3">
                             <h4 id="date-time-functions"><a name="Date"></a>Date and Datetime</h4>
                             <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
-                                <caption class="title">Table 36. Date and Datetime functions</caption>
+                                <caption class="title">Table 37. Date and Datetime functions</caption>
                                 <colgroup>
                                     <col />
                                     <col />
@@ -2323,7 +2253,7 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                 <p>See also <a href="22_2.7_Value_expressions.htm#EXTRACT">EXTRACT</a></p>
                             </div>
                             <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
-                                <caption class="title">Table 37. Interval Options</caption>
+                                <caption class="title">Table 38. Interval Options</caption>
                                 <colgroup>
                                     <col />
                                     <col />
@@ -2528,7 +2458,7 @@ indicates how many points are actually used in the given row.</p>
                                 </div>
                             </div>
                             <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
-                                <caption class="title">Table 38. Geospatial functions</caption>
+                                <caption class="title">Table 39. Geospatial functions</caption>
                                 <colgroup>
                                     <col style="width: 33.3333%;" />
                                     <col />
@@ -2607,7 +2537,7 @@ arguments can either be all columns or all literals.</p>
                         <div class="sect3">
                             <h4 id="_aggregate_functions">Aggregate functions</h4>
                             <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
-                                <caption class="title">Table 39. Aggregate functions</caption>
+                                <caption class="title">Table 40. Aggregate functions</caption>
                                 <colgroup>
                                     <col />
                                     <col />
@@ -2744,7 +2674,7 @@ Mathematical operations on integer types may perform rounding. For precise resul
                         <div class="sect3">
                             <h4 id="window-functions"><a name="Window"></a>Window functions</h4>
                             <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
-                                <caption class="title">Table 40. Window functions</caption>
+                                <caption class="title">Table 41. Window functions</caption>
                                 <colgroup>
                                     <col style="width: 100%;" />
                                 </colgroup>
@@ -2803,8 +2733,8 @@ Mathematical operations on integer types may perform rounding. For precise resul
                                     </li>
                                 </ul>
                             </div>
+                            <p class="example">Examples:</p>
                             <div class="code">
-                                <div class="title">Examples</div>
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">select</span>  <span class="tok-n">col_a</span><span class="tok-p">,</span><span class="tok-n">col_c</span><span class="tok-p">,</span>  <span class="tok-n">rank</span><span class="tok-p">()</span>  <span class="tok-k">over</span>  <span class="tok-p">(</span>  <span class="tok-k">partition</span>  <span class="tok-k">by</span>  <span class="tok-n">col_c</span>  <span class="tok-k">order</span>  <span class="tok-k">by</span>  <span class="tok-n">col_c</span><span class="tok-p">)</span>    <span class="tok-k">from</span>  <span class="tok-n">my_table</span><span class="tok-p">;</span>  
 <span class="tok-k">select</span>  <span class="tok-n">sum</span><span class="tok-p">(</span><span class="tok-n">col_a</span><span class="tok-p">)</span>  <span class="tok-k">over</span>  <span class="tok-p">(</span>  <span class="tok-k">partition</span>  <span class="tok-k">by</span>  <span class="tok-n">col_c</span>  <span class="tok-k">order</span>  <span class="tok-k">by</span>  <span class="tok-n">col_c</span><span class="tok-p">)</span>    <span class="tok-k">from</span>  <span class="tok-n">my_table</span><span class="tok-p">;</span>  
 <span class="tok-k">select</span>  <span class="tok-n">sum</span><span class="tok-p">(</span><span class="tok-n">col1</span><span class="tok-p">)</span>  <span class="tok-k">over</span>  <span class="tok-p">(</span><span class="tok-k">partition</span>  <span class="tok-k">by</span>  <span class="tok-n">col2</span><span class="tok-p">)</span>  <span class="tok-k">from</span>  <span class="tok-p">(</span><span class="tok-k">select</span>  <span class="tok-n">count</span><span class="tok-p">(</span><span class="tok-o">*</span><span class="tok-p">)</span>  <span class="tok-k">as</span>  <span class="tok-n">col1</span><span class="tok-p">,</span><span class="tok-n">col2</span>  <span class="tok-k">from</span>  <span class="tok-n">my_table</span>  <span class="tok-k">group</span>  <span class="tok-k">by</span>  <span class="tok-mf">1</span><span class="tok-p">,</span><span class="tok-mf">2</span><span class="tok-p">);</span>  
