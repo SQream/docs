@@ -75,16 +75,18 @@
                                 <h5 id="_comparison">Comparison</h5>
                                 <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
                                     <caption class="title">Table 31. Comparison operators</caption>
-                                    <colgroup>
-                                        <col style="width: 164px;" />
-                                        <col style="width: 331px;" />
-                                        <col style="width: 33.334%;" />
-                                    </colgroup>
+                                    <col style="width: 164px;" class="TableStyle-Default_Table-Column-Column1" />
+                                    <col style="width: 331px;" class="TableStyle-Default_Table-Column-Column1" />
+                                    <col style="width: 33.334%;" class="TableStyle-Default_Table-Column-Column1" />
+                                    <col style="width: 33.334%;" class="TableStyle-Default_Table-Column-Column1" />
                                     <thead>
                                         <tr class="TableStyle-Default_Table-Head-Header1">
                                             <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Operator</th>
                                             <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Description</th>
-                                            <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Example</th>
+                                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Example</th>
+                                            <th class="TableStyle-Default_Table-HeadD-Column1-Header1">
+                                                <p class="tableBody">Comments</p>
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -100,9 +102,12 @@
 same, but the system will insert valid implicit casts in many cases
 (see the <a href="#CAST">cast section</a>).</p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
                                                 <p class="tableblock"><code>binary_comparison_operator (any, any) returns  bool</code>
                                                 </p>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                                <p class="tableBody">&#160;</p>
                                             </td>
                                         </tr>
                                         <tr class="TableStyle-Default_Table-Body-Body2">
@@ -115,9 +120,12 @@ same, but the system will insert valid implicit casts in many cases
                                                 <p class="tableblock"><code>exp between min and max</code> is shorthand for <code>exp &gt;= min and exp &lt;= max</code>.</p>
                                                 <p class="tableblock">(<em>exp</em> <strong><em>any</em></strong>, <em>min</em> <strong><em>any</em></strong>, <em>max</em> <strong><em>any</em></strong>) <strong>returns</strong> <strong>bool</strong></p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
                                                 <p class="tableBody"><code data-lang="sqream db"><span class="tok-n">a</span> <span class="tok-k">between</span> <span class="tok-n">b</span> <span class="tok-k">and</span> <span class="tok-n">c</span></code>
                                                 </p>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                                <p class="tableBody">&#160;</p>
                                             </td>
                                         </tr>
                                         <tr class="TableStyle-Default_Table-Body-Body1">
@@ -130,7 +138,10 @@ same, but the system will insert valid implicit casts in many cases
                                                 <p class="tableblock"><code>exp not between min and max</code> is shorthand for not (<code>exp between min and max</code>)</p>
                                                 <p class="tableblock">(<em>exp</em> <strong><em>any</em></strong>, <em>min</em> <strong><em>any</em></strong>, <em>max</em> <strong><em>any</em></strong>) <strong>returns</strong> <strong>bool</strong></p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">&#160;</td>
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">&#160;</td>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                                <p class="tableBody">&#160;</p>
+                                            </td>
                                         </tr>
                                         <tr class="TableStyle-Default_Table-Body-Body2">
                                             <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
@@ -141,7 +152,10 @@ same, but the system will insert valid implicit casts in many cases
                                                 <p class="tableblock">Checks if the argument is null.</p>
                                                 <p class="tableblock">(<strong><em>any</em></strong>) <strong>returns</strong> <strong>bool</strong></p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2"><code><span class="tok-p">(</span><span class="tok-mf">1</span><span class="tok-o">+</span><span class="tok-k">null</span><span class="tok-p">)</span> <span class="tok-k">is</span> <span class="tok-k">null</span></code>
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2"><code><span class="tok-p">(</span><span class="tok-mf">1</span><span class="tok-o">+</span><span class="tok-k">null</span><span class="tok-p">)</span> <span class="tok-k">is</span> <span class="tok-k">null</span></code>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                                <p class="tableBody">&#160;</p>
                                             </td>
                                         </tr>
                                         <tr class="TableStyle-Default_Table-Body-Body1">
@@ -153,9 +167,13 @@ same, but the system will insert valid implicit casts in many cases
                                                 <p class="tableblock">Checks if the argument isn’t null.</p>
                                                 <p class="tableblock">(<strong><em>any</em></strong>) <strong>returns</strong> <strong>bool</strong></p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
                                                 <p class="tableblock"><code><span class="tok-p">(</span><span class="tok-n">a</span><span class="tok-o">*</span><span class="tok-n">b</span><span class="tok-p">)</span> <span class="tok-k">is</span> <span class="tok-k">not</span> <span class="tok-k">null</span></code>
                                                 </p>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                                <p class="tableBody">You cannot use <code><em>exp</em> = NULL</code> to test if a value is null, or <code><em>exp</em> &lt;&gt; NULL</code>
+to test if a value is not null. You must use <strong>IS NULL</strong> and <strong>IS NOT NULL</strong></p>
                                             </td>
                                         </tr>
                                         <tr class="TableStyle-Default_Table-Body-Body2">
@@ -167,7 +185,10 @@ same, but the system will insert valid implicit casts in many cases
                                                 <p class="tableblock">Tests for membership in a list. </p>
                                                 <p class="tableblock">(<strong><em>any</em></strong> [, …​ ] ) <strong>returns</strong> <strong>bool</strong></p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyA-Column1-Body2"><code data-lang="sqream db"><span class="tok-n">a</span> <span class="tok-k">in</span> <span class="tok-p">(</span><span class="tok-mf">1</span><span class="tok-p">,</span><span class="tok-mf">3</span><span class="tok-p">,</span><span class="tok-mf">5</span><span class="tok-p">,</span><span class="tok-mf">7</span><span class="tok-p">,</span><span class="tok-mf">11</span><span class="tok-p">)</span></code>
+                                            <td class="TableStyle-Default_Table-BodyB-Column1-Body2"><code data-lang="sqream db"><span class="tok-n">a</span> <span class="tok-k">in</span> <span class="tok-p">(</span><span class="tok-mf">1</span><span class="tok-p">,</span><span class="tok-mf">3</span><span class="tok-p">,</span><span class="tok-mf">5</span><span class="tok-p">,</span><span class="tok-mf">7</span><span class="tok-p">,</span><span class="tok-mf">11</span><span class="tok-p">)</span></code>
+                                            </td>
+                                            <td class="TableStyle-Default_Table-BodyA-Column1-Body2">
+                                                <p class="tableBody"><strong>IN</strong> subqueries are not supported.</p>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -180,8 +201,7 @@ same, but the system will insert valid implicit casts in many cases
                                             <tr class="TableStyle-Default_Table-Body-Body1">
                                                 <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
                                                 </td>
-                                                <td class="TableStyle-Default_Table-BodyD-Column1-Body1"><strong>IN</strong> subqueries are not supported.<br /><strong><em>any</em></strong> is any type.<br />You cannot use <code><em>exp</em> = NULL</code> to test if a value is null, or <code><em>exp</em> &lt;&gt; NULL</code>
-to test if a value is not null. You must use <strong>IS NULL</strong> and <strong>IS NOT NULL</strong>.</td>
+                                                <td class="TableStyle-Default_Table-BodyD-Column1-Body1"><strong><em>any</em></strong> is any type..</td>
                                             </tr>
                                         </table>
                                     </div>
@@ -1248,8 +1268,8 @@ a single compatible type.</p>
                                 <caption class="title">Table 35. String functions and operators on VARCHAR</caption>
                                 <colgroup>
                                     <col style="width: 74px;" />
-                                    <col style="width: 201px;" />
-                                    <col style="width: 204px;" />
+                                    <col style="width: 179px;" />
+                                    <col style="width: 281px;" />
                                     <col style="width: 204px;" />
                                 </colgroup>
                                 <thead>
@@ -1268,14 +1288,14 @@ a single compatible type.</p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
                                             <p class="tableblock">Converts a string to lowercase
-                                            </p>
+.                                            </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableblock">
+                                            <p class="tableblock"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">LOWER</span> <span class="tok-p">(</span><span class="tok-n">varchar_column</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-                                            <p class="tableblock">
+                                            <p class="tableblock">&#160;
                                             </p>
                                         </td>
                                     </tr>
@@ -1285,15 +1305,15 @@ a single compatible type.</p>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableblock">
+                                            <p class="tableblock">Converts a string to uppercase.
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableblock">
+                                            <p class="tableblock"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">UPPER</span> <span class="tok-p">(</span><span class="tok-n">varchar_column</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
-                                            <p class="tableblock">
+                                            <p class="tableblock">&#160;
                                             </p>
                                         </td>
                                     </tr>
@@ -1303,15 +1323,14 @@ a single compatible type.</p>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableblock">
-                                            </p>
+                                            <p class="tableblock">Returns the length of a varchar.<![CDATA[                                            ]]></p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableblock">
+                                            <p class="tableblock"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">LEN</span> <span class="tok-p">(</span><span class="tok-n">varchar_column</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-                                            <p class="tableblock">
+                                            <p class="tableblock">Trailing whitespace on the right is ignored: LEN on 'abc' and 'abc ' will both return 3
                                             </p>
                                         </td>
                                     </tr>
@@ -1321,15 +1340,17 @@ a single compatible type.</p>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableblock">
+                                            <p class="tableblock">Checks if a string matches a LIKE pattern. Also used as <strong>NOT LIKE</strong>.
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableblock">
+                                            <p class="tableblock"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-o">*</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span> <span class="tok-k">WHERE</span> <span class="tok-n">varchar_column</span> <span class="tok-k">LIKE</span> <span class="tok-s1">'%string%'</span><span class="tok-p">;</span></code>
+                                            </p>
+                                            <p class="tableblock"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-o">*</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span> <span class="tok-k">WHERE</span> <span class="tok-n">varchar_column</span> <span class="tok-k">NOT</span> <span class="tok-k">LIKE</span> <span class="tok-s1">'%string%'</span><span class="tok-p">;</span></code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
-                                            <p class="tableblock">
+                                            <p class="tableblock">Only literal patterns are supported. Column references are not supported as a pattern. 
                                             </p>
                                         </td>
                                     </tr>
@@ -1339,15 +1360,15 @@ a single compatible type.</p>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableblock">
+                                            <p class="tableblock">Checks if a string matches a regex pattern.
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableblock">
+                                            <p class="tableblock"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-o">*</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span> <span class="tok-k">WHERE</span> <span class="tok-n">varchar_column</span> <span class="tok-n">RLIKE</span> <span class="tok-s1">'[0-9]+$'</span><span class="tok-p">;</span></code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-                                            <p class="tableblock">
+                                            <p class="tableblock">Does not work on NVARCHAR columns
                                             </p>
                                         </td>
                                     </tr>
@@ -1357,16 +1378,19 @@ a single compatible type.</p>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableblock">
+                                            <p class="tableblock">Returns a specific substring of a string.
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableblock">
+                                            <p class="tableblock"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-k">SUBSTRING</span> <span class="tok-p">(</span><span class="tok-n">varchar_column</span><span class="tok-p">,</span><span class="tok-k">start</span><span class="tok-p">,</span><span class="tok-n">length</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
-                                            <p class="tableblock">
-                                            </p>
+                                            <ul style="list-style-type: circle;">
+                                                <li>Parameters: See <a href="#Paramete">String Parameters</a></li>
+                                                <li>Returns: String of the resulting substring operation</li>
+                                            </ul>
+                                            <p class="tableblock">If <code>start ⇐1</code>, then the substring begins from the first character but the length is reduced.<br /><code>substring('abc',1,2) == 'ab'</code><br /><code>substring('abc',0,2) == substring('abc',1,1) == 'a'</code></p>
                                         </td>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
@@ -1375,13 +1399,18 @@ a single compatible type.</p>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableBody">&#160;</p>
+                                            <p class="tableBody">Counts regex matches in string. </p>
+                                            <p class="tableBody">For example, the pattern '[1-9]' appears once in '01' and twice in '12'.</p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableBody">&#160;</p>
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">REGEXP_COUNT</span> <span class="tok-p">(</span><span class="tok-n">col</span><span class="tok-p">,</span><span class="tok-s1">'[0-9]'</span><span class="tok-p">,</span><span class="tok-mf">2</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-                                            <p class="tableBody">&#160;</p>
+                                            <ul style="list-style-type: circle;">
+                                                <li>Parameters: See <a href="#Paramete">String Parameters</a></li>
+                                                <li>Returns: Number of matches of the regex pattern in the string (int)</li>
+                                            </ul>
                                         </td>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
@@ -1390,13 +1419,23 @@ a single compatible type.</p>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableBody">&#160;</p>
+                                            <p class="tableBody">Matches regex and returns the position in a string of the n-th occurrence.</p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableBody">&#160;</p>
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">REGEXP_INSTR</span> <span class="tok-p">(</span><span class="tok-n">varchar_column</span><span class="tok-p">,</span><span class="tok-s1">'[0-9]'</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">REGEXP_INSTR</span> <span class="tok-p">(</span><span class="tok-n">varchar_column</span><span class="tok-p">,</span><span class="tok-s1">'[0-9]'</span><span class="tok-p">,</span><span class="tok-mf">2</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">REGEXP_INSTR</span> <span class="tok-p">(</span><span class="tok-n">varchar_column</span><span class="tok-p">,</span><span class="tok-s1">'[0-9]'</span><span class="tok-p">,</span><span class="tok-mf">2</span><span class="tok-p">,</span><span class="tok-mf">2</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">REGEXP_INSTR</span> <span class="tok-p">(</span><span class="tok-n">col</span><span class="tok-p">,</span><span class="tok-s1">'[0-9]'</span><span class="tok-p">,</span><span class="tok-mf">2</span><span class="tok-p">,</span><span class="tok-mf">2</span><span class="tok-p">,</span><span class="tok-mf">1</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
-                                            <p class="tableBody">&#160;</p>
+                                            <ul style="list-style-type: circle;">
+                                                <li>Parameters: See <a href="#Paramete">String Parameters</a></li>
+                                                <li>Returns: Position of the first occurrence of the regex pattern (int)</li>
+                                            </ul>
                                         </td>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
@@ -1405,13 +1444,21 @@ a single compatible type.</p>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableBody">&#160;</p>
+                                            <p class="tableBody">Matches regex and returns it.</p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableBody">&#160;</p>
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">REGEXP_SUBSTR</span> <span class="tok-p">(</span><span class="tok-n">varchar_column</span><span class="tok-p">,</span><span class="tok-s1">'[0-9]'</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">REGEXP_SUBSTR</span> <span class="tok-p">(</span><span class="tok-n">varchar_column</span><span class="tok-p">,</span><span class="tok-s1">'[0-9]'</span><span class="tok-p">,</span><span class="tok-mf">2</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">REGEXP_SUBSTR</span> <span class="tok-p">(</span><span class="tok-n">varchar_column</span><span class="tok-p">,</span><span class="tok-s1">'[0-9]'</span><span class="tok-p">,</span><span class="tok-mf">2</span><span class="tok-p">,</span><span class="tok-mf">2</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-                                            <p class="tableBody">&#160;</p>
+                                            <ul style="list-style-type: circle;">
+                                                <li>Parameters: See <a href="#Paramete">String Parameters</a></li>
+                                                <li>Returns: String of the matched column</li>
+                                            </ul>
                                         </td>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
@@ -1420,13 +1467,15 @@ a single compatible type.</p>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableBody">&#160;</p>
+                                            <p class="tableBody">Checks if one string is a prefix of the other.</p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableBody">&#160;</p>
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">ISPREFIXOF</span> <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">,</span><span class="tok-n">y</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span></code>
+                                            </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
-                                            <p class="tableBody">&#160;</p>
+                                            <p class="tableBody">Internal function.</p>
+                                            <p class="tableBody"> "isprefix(x,y)" is equivalent to "y LIKE x + '%' ", but more efficient.</p>
                                         </td>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
@@ -1435,14 +1484,15 @@ a single compatible type.</p>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableBody">
+                                            <p class="tableBody">String concatenation - concatenates two string values.
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableBody">&#160;</p>
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">fname</span> <span class="tok-o">||</span> <span class="tok-s1">'_'</span> <span class="tok-o">||</span> <span class="tok-n">lname</span> <span class="tok-k">FROM</span> <span class="tok-n">customers</span><span class="tok-p">;</span></code>
+                                            </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-                                            <p class="tableBody">&#160;</p>
+                                            <p>&#160;</p>
                                         </td>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
@@ -1451,13 +1501,17 @@ a single compatible type.</p>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableBody">&#160;</p>
+                                            <p class="tableBody">Returns the position of a subexpression in an expression.</p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableBody">&#160;</p>
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">CHARINDEX</span><span class="tok-p">(</span><span class="tok-n">y</span><span class="tok-p">,</span><span class="tok-n">x</span><span class="tok-p">,</span><span class="tok-mf">1</span><span class="tok-p">)</span><span class="tok-k">FROM</span><span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
-                                            <p class="tableBody">&#160;</p>
+                                            <ul style="list-style-type: circle;">
+                                                <li>Parameters: VarChar - the subexpression. either a scalar or a column. VarChar- the expression. Int (optional) - starts the search from this index</li>
+                                                <li>Returns: Int - the position of the subexpression in the expression or 0 if it wasn’t found</li>
+                                            </ul>
                                         </td>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
@@ -1465,11 +1519,18 @@ a single compatible type.</p>
                                             <p class="tableBody"><strong>PATINDEX</strong>
                                             </p>
                                         </td>
-                                       <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableBody">&#160;</p>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody">Returns the position of a pattern in an expression.</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">PATINDEX</span> <span class="tok-p">(</span><span class="tok-s1">'%[0-9]%'</span><span class="tok-p">,</span><span class="tok-n">x</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-                                            <p class="tableBody">&#160;</p>
+                                            <ul style="list-style-type: circle;">
+                                                <li>Parameters: VarChar (literal) - the subexpression<br /> VarChar - the expression</li>
+                                                <li>Returns: Int - the position of the first match of the pattern in the expression or 0 if there’s no match</li>
+                                            </ul>
                                         </td>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
@@ -1478,13 +1539,17 @@ a single compatible type.</p>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableBody">&#160;</p>
+                                            <p class="tableBody">Trims leading whitespace from the left side of the string.</p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableBody">&#160;</p>
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">LTRIM</span> <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
-                                            <p class="tableBody">&#160;</p>
+                                            <ul style="list-style-type: circle;">
+                                                <li>Parameters: VarChar </li>
+                                                <li>Returns: VarChar </li>
+                                            </ul>
                                         </td>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
@@ -1493,13 +1558,17 @@ a single compatible type.</p>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableBody">&#160;</p>
+                                            <p class="tableBody">Reverses a string.</p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableBody">&#160;</p>
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">REVERSE</span> <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-                                            <p class="tableBody">&#160;</p>
+                                            <ul style="list-style-type: circle;">
+                                                <li>Parameters: VarChar </li>
+                                                <li>Returns: VarChar </li>
+                                            </ul>
                                         </td>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
@@ -1508,13 +1577,17 @@ a single compatible type.</p>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableBody">&#160;</p>
+                                            <p class="tableBody">Trims trailing whitespace from the right side of the string.</p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableBody">&#160;</p>
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">RTRIM</span> <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
-                                            <p class="tableBody">&#160;</p>
+                                            <ul style="list-style-type: circle;">
+                                                <li>Parameters: VarChar </li>
+                                                <li>Returns: VarChar </li>
+                                            </ul>
                                         </td>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
@@ -1522,184 +1595,24 @@ a single compatible type.</p>
                                             <p class="tableBody">&#160;<strong>TRIM</strong></p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
-                                            <p class="tableBody">&#160;</p>
+                                            <p class="tableBody">Removes any whitespace from the beginning and end of a string (leading and trailing).</p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
-                                            <p class="tableBody">&#160;</p>
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">TRIM</span> <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
-                                            <p class="tableBody">&#160;</p>
+                                            <ul style="list-style-type: circle;">
+                                                <li>Parameters: VarChar </li>
+                                                <li>Returns: VarChar </li>
+                                            </ul>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                             <div class="sect4">
-                                <h5 id="_lower">LOWER</h5>
-                                <div class="paragraph">
-                                    <p><strong>LOWER</strong> - Converts a string to lowercase</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">LOWER</span>  <span class="tok-p">(</span><span class="tok-n">varchar_column</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_upper">UPPER</h5>
-                                <div class="paragraph">
-                                    <p><strong>UPPER</strong> - Converts a string to uppercase</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">UPPER</span>  <span class="tok-p">(</span><span class="tok-n">varchar_column</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_len">LEN</h5>
-                                <div class="paragraph">
-                                    <p><strong>LEN</strong> - Returns the length of a varchar.</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">LEN</span>  <span class="tok-p">(</span><span class="tok-n">varchar_column</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Remarks
-Trailing whitespace on the right are ignored:
-LEN on 'abc' and 'abc ' will both return 3.</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_like">LIKE</h5>
-                                <div class="paragraph">
-                                    <p><strong>LIKE</strong> - Checks if a string matches a LIKE pattern. Also used as <strong>NOT LIKE</strong>.</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-o">*</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span>  <span class="tok-k">WHERE</span>  <span class="tok-n">varchar_column</span>  <span class="tok-k">LIKE</span>  <span class="tok-s1">'%string%'</span><span class="tok-p">;</span>  
-<span class="tok-k">SELECT</span>  <span class="tok-o">*</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span>  <span class="tok-k">WHERE</span>  <span class="tok-n">varchar_column</span>  <span class="tok-k">NOT</span>  <span class="tok-k">LIKE</span>  <span class="tok-s1">'%string%'</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="admonitionblock note">
-                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-Only literal patterns are supported. Column references are not supported as a pattern.
-</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_rlike">RLIKE</h5>
-                                <div class="paragraph">
-                                    <p><strong>RLIKE</strong> - Checks if a string matches a regex pattern</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-o">*</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span>  <span class="tok-k">WHERE</span>  <span class="tok-n">varchar_column</span>  <span class="tok-n">RLIKE</span>  <span class="tok-s1">'[0-9]+$'</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="admonitionblock note">
-                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-Does not work on NVARCHAR columns.
-</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_substring">SUBSTRING</h5>
-                                <div class="paragraph">
-                                    <p><strong>SUBSTRING</strong> - Returns a specific substring of a string</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-k">SUBSTRING</span>  <span class="tok-p">(</span><span class="tok-n">varchar_column</span><span class="tok-p">,</span><span class="tok-k">start</span><span class="tok-p">,</span><span class="tok-n">length</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
                                 <div class="olist arabic">
-                                    <div class="title">Parameters</div>
-                                    <ol class="arabic">
-                                        <li>
-                                            <p>col_ref - (varchar) the string column to substring</p>
-                                        </li>
-                                        <li>
-                                            <p>start_position - (int) the starting point of the substring, while the value 1 represent the first character.</p>
-                                        </li>
-                                        <li>
-                                            <p>length - (int) the length of the substring to take</p>
-                                        </li>
-                                    </ol>
-                                </div>
-                                <div class="ulist">
-                                    <div class="title">Returns</div>
-                                    <ul>
-                                        <li>
-                                            <p>String of the resulting substring operation</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="admonitionblock note">
-                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-If <code>start ⇐1</code>, then the substring begins from the first character but the length is reduced.<br /><code>substring('abc',1,2) == 'ab'</code><br /><code>substring('abc',0,2) == substring('abc',1,1) == 'a'</code></td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_regexp_count">REGEXP_COUNT</h5>
-                                <div class="paragraph">
-                                    <p><strong>REGEXP_COUNT</strong> - Counts regex matches in string.
-For example, the pattern '[1-9]' appears once in '01' and twice in '12'.</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">REGEXP_COUNT</span>  <span class="tok-p">(</span><span class="tok-n">col</span><span class="tok-p">,</span><span class="tok-s1">'[0-9]'</span><span class="tok-p">,</span><span class="tok-mf">2</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="olist arabic">
-                                    <div class="title">Parameters</div>
-                                    <ol class="arabic">
-                                        <li>
-                                            <p>col_ref - (varchar) the string column to match</p>
-                                        </li>
-                                        <li>
-                                            <p>pattern - (string literal) the regex (literal only)</p>
-                                        </li>
-                                        <li>
-                                            <p>start_pos - starting location (Optional. When unset, default is 1)</p>
-                                        </li>
-                                    </ol>
-                                </div>
-                                <div class="ulist">
-                                    <div class="title">Returns</div>
-                                    <ul>
-                                        <li>
-                                            <p>Amount of matches of the regex pattern in the string (int)</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_regexp_instr">REGEXP_INSTR</h5>
-                                <div class="paragraph">
-                                    <p><strong>REGEXP_INSTR</strong> - Matches regex and returns the position in a string of the n-th occurence.</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">REGEXP_INSTR</span>  <span class="tok-p">(</span><span class="tok-n">varchar_column</span><span class="tok-p">,</span><span class="tok-s1">'[0-9]'</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span>  
-<span class="tok-k">SELECT</span>  <span class="tok-n">REGEXP_INSTR</span>  <span class="tok-p">(</span><span class="tok-n">varchar_column</span><span class="tok-p">,</span><span class="tok-s1">'[0-9]'</span><span class="tok-p">,</span><span class="tok-mf">2</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span>  
-<span class="tok-k">SELECT</span>  <span class="tok-n">REGEXP_INSTR</span>  <span class="tok-p">(</span><span class="tok-n">varchar_column</span><span class="tok-p">,</span><span class="tok-s1">'[0-9]'</span><span class="tok-p">,</span><span class="tok-mf">2</span><span class="tok-p">,</span><span class="tok-mf">2</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span>  
-<span class="tok-k">SELECT</span>  <span class="tok-n">REGEXP_INSTR</span>  <span class="tok-p">(</span><span class="tok-n">col</span><span class="tok-p">,</span><span class="tok-s1">'[0-9]'</span><span class="tok-p">,</span><span class="tok-mf">2</span><span class="tok-p">,</span><span class="tok-mf">2</span><span class="tok-p">,</span><span class="tok-mf">1</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="olist arabic">
-                                    <div class="title">Parameters</div>
+                                    <div class="title"><a name="Paramete"></a>String Parameters</div>
                                     <ol class="arabic">
                                         <li>
                                             <p>col_ref - (varchar) the string column to match</p>
@@ -1718,132 +1631,6 @@ For example, the pattern '[1-9]' appears once in '01' and twice in '12'.</p>
                                         </li>
                                     </ol>
                                 </div>
-                                <div class="ulist">
-                                    <div class="title">Returns</div>
-                                    <ul>
-                                        <li>
-                                            <p>Position of the first occurence of the regex pattern (int)</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_regexp_substr">REGEXP_SUBSTR</h5>
-                                <div class="paragraph">
-                                    <p><strong>REGEXP_SUBSTR</strong> - matches regex and returns it.</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">REGEXP_SUBSTR</span>  <span class="tok-p">(</span><span class="tok-n">varchar_column</span><span class="tok-p">,</span><span class="tok-s1">'[0-9]'</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span>  
-<span class="tok-k">SELECT</span>  <span class="tok-n">REGEXP_SUBSTR</span>  <span class="tok-p">(</span><span class="tok-n">varchar_column</span><span class="tok-p">,</span><span class="tok-s1">'[0-9]'</span><span class="tok-p">,</span><span class="tok-mf">2</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span>  
-<span class="tok-k">SELECT</span>  <span class="tok-n">REGEXP_SUBSTR</span>  <span class="tok-p">(</span><span class="tok-n">varchar_column</span><span class="tok-p">,</span><span class="tok-s1">'[0-9]'</span><span class="tok-p">,</span><span class="tok-mf">2</span><span class="tok-p">,</span><span class="tok-mf">2</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="olist arabic">
-                                    <div class="title">Parameters</div>
-                                    <ol class="arabic">
-                                        <li>
-                                            <p>col_ref - the string column to match</p>
-                                        </li>
-                                        <li>
-                                            <p>VarChar - the regex (literal only)</p>
-                                        </li>
-                                        <li>
-                                            <p>Int - starting location (Optional. When unset, default is 1)</p>
-                                        </li>
-                                        <li>
-                                            <p>Int - which occurrence of the pattern (Optional. When unset, default is 1)</p>
-                                        </li>
-                                    </ol>
-                                </div>
-                                <div class="ulist">
-                                    <div class="title">Returns</div>
-                                    <ul>
-                                        <li>
-                                            <p>String of the matched column</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_isprefixof">ISPREFIXOF</h5>
-                                <div class="paragraph">
-                                    <p><strong>ISPREFIXOF</strong> - Checks if one string is a prefix of the other.</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">ISPREFIXOF</span>  <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">,</span><span class="tok-n">y</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Remarks
-Internal function. "isprefix(x,y)" is equivalent to "y LIKE x + '%' ", but more efficient</p>
-                                </div>
-                                <div class="sect5">
-                                    <h6 id="_concatenation">Concatenation (||)</h6>
-                                    <div class="paragraph">
-                                        <p><strong>||</strong> - String concatenation - concatenates two string values</p>
-                                    </div>
-                                    <div class="code">
-                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">fname</span>  <span class="tok-o">||</span>  <span class="tok-s1">'_'</span>  <span class="tok-o">||</span>  <span class="tok-n">lname</span>  <span class="tok-k">FROM</span>  <span class="tok-n">customers</span><span class="tok-p">;</span></code></pre>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_charindex">CHARINDEX</h5>
-                                <div class="paragraph">
-                                    <p><strong>CHARINDEX</strong> - Returns the position of a subexpression in an expression</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">CHARINDEX</span>  <span class="tok-p">(</span><span class="tok-n">y</span><span class="tok-p">,</span><span class="tok-n">x</span><span class="tok-p">,</span><span class="tok-mf">1</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-VarChar -	the subexpression. Either a scalar or a column
-VarChar -	the expression
-Int (optional) -	starts the search from this index</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-Int - the position of the subexpression in the expression or 0 if it wasn’t found</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_patindex">PATINDEX</h5>
-                                <div class="paragraph">
-                                    <p><strong>PATINDEX</strong> - Returns the position of a pattern in an expression</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">PATINDEX</span>  <span class="tok-p">(</span><span class="tok-s1">'%[0-9]%'</span><span class="tok-p">,</span><span class="tok-n">x</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-VarChar (literal) -	the subexpression
-VarChar - the expression</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-Int -	the position of the first match of the pattern in the expression or 0 if there’s no match</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_reverse">REVERSE</h5>
-                                <div class="paragraph">
-                                    <p><strong>REVERSE</strong> - Reverses a string</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">REVERSE</span>  <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-VarChar</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-VarChar</p>
-                                </div>
                             </div>
                         </div>
                         <div class="sect3">
@@ -1851,239 +1638,293 @@ VarChar</p>
                             <div class="paragraph">
                                 <p><strong>NVARCHAR</strong> data type is intended to support multiple languages with UTF8 encoding. All function parameters must be either NVARCHAR or VARCHAR. SQream does not support casting between this two types.</p>
                             </div>
-                            <div class="sect4">
-                                <h5 id="_lower_2">LOWER</h5>
-                                <div class="paragraph">
-                                    <p><strong>LOWER</strong> - Converts ASCII string to lowercase. Note that in non-ascii characters the function will return the original column data.</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">LOWER</span>  <span class="tok-p">(</span><span class="tok-n">nvarchar_column</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_upper_2">UPPER</h5>
-                                <div class="paragraph">
-                                    <p><strong>UPPER</strong> - Converts ASCII string to uppercase. Note that in non-ascii characters the function will return the original column data.</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">UPPER</span>  <span class="tok-p">(</span><span class="tok-n">nvarchar_column</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_len_2">LEN</h5>
-                                <div class="paragraph">
-                                    <p><strong>LEN</strong> - Returns the length of a nvarchar while trimming whitespaces.</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">LEN</span>  <span class="tok-p">(</span><span class="tok-n">nvarchar_column</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_char_length">CHAR_LENGTH</h5>
-                                <div class="paragraph">
-                                    <p><strong>CHAR_LENGTH</strong> Returns the length of a nvarchar without trimming whitespaces.</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">CHAR_LENGTH</span>  <span class="tok-p">(</span><span class="tok-n">nvarchar_column</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_like_2">LIKE</h5>
-                                <div class="paragraph">
-                                    <p><strong>LIKE</strong> - Checks if a string matches a LIKE pattern. For NVARCHAR columns the following options for like function exists: '%string', 'string%', '%string%'. Can be used also as <strong>NOT LIKE</strong>.</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-o">*</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span>  <span class="tok-k">WHERE</span>  <span class="tok-n">nvarchar_column</span>  <span class="tok-k">LIKE</span>  <span class="tok-s1">'%string'</span><span class="tok-p">;</span>  
-<span class="tok-k">SELECT</span>  <span class="tok-o">*</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span>  <span class="tok-k">WHERE</span>  <span class="tok-n">nvarchar_column</span>  <span class="tok-k">NOT</span>  <span class="tok-k">LIKE</span>  <span class="tok-s1">'%string%'</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="admonitionblock note">
-                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-Currently SQream only support literal pattern.
-</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_substring_2">SUBSTRING</h5>
-                                <div class="paragraph">
-                                    <p><strong>SUBSTRING</strong> - Returns a specific substring of a string</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-k">SUBSTRING</span>  <span class="tok-p">(</span><span class="tok-n">nvarchar_column</span><span class="tok-p">,</span><span class="tok-k">start</span><span class="tok-p">,</span><span class="tok-n">length</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-start - the starting point of the substring, while the value 1 represent the first character.
-length - the length of the substring</p>
-                                </div>
-                                <div class="admonitionblock note">
-                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-If <code>start ⇐1</code>, then the substring begins from the first character but the length is reduced.<br /><code>substring('abc',1,2) == 'ab'</code><br /><code>substring('abc',0,2) == substring('abc',1,1) == 'a'</code></td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_concatenation_2">Concatenation (||)</h5>
-                                <div class="paragraph">
-                                    <p><strong>||</strong> - String columns concatenation - concatenates two string column values</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">fname</span>  <span class="tok-o">||</span>  <span class="tok-n">lname</span>  <span class="tok-k">FROM</span>  <span class="tok-n">customers</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_charindex_2">CHARINDEX</h5>
-                                <div class="paragraph">
-                                    <p><strong>CHARINDEX</strong> - Searches an expression in a string nvarchar column and returns its starting position if found.</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">CHARINDEX</span>  <span class="tok-p">(</span><span class="tok-s1">'text to look'</span><span class="tok-p">,</span><span class="tok-n">col_x</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span>  
-<span class="tok-k">SELECT</span>  <span class="tok-n">CHARINDEX</span>  <span class="tok-p">(</span><span class="tok-s1">'text to look'</span><span class="tok-p">,</span><span class="tok-n">col_x</span><span class="tok-p">,</span><span class="tok-mf">10</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-NVarChar -	the subexpression as a scalar
-NVarChar -	the column name
-Int (optional) -	starts the search from this index</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-Int - the position of the subexpression in the expression or 0 if it wasn’t found</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_left">LEFT</h5>
-                                <div class="paragraph">
-                                    <p><strong>LEFT</strong> - Returns the left part of a character string with the specified number of characters.</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-k">LEFT</span>  <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">,</span><span class="tok-mf">3</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-NVarChar</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-NVarChar</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_replace">REPLACE</h5>
-                                <div class="paragraph">
-                                    <p>SQream supports a limited version of the <strong>REPLACE()</strong> function on NVARCHAR. Replaces a sub-string with another sub-string of the same size.</p>
-                                </div>
-                                <div class="admonitionblock note">
-                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-                                                <div class="ulist">
-                                                    <div class="title">Limitations:</div>
-                                                    <ul>
-                                                        <li>
-                                                            <p>At this stage the REPLACE() function is only supported for replacing a sub-string with another sub-string of the same size. Meaning, the 'from' and 'to' arguments must be string literals of the same length.</p>
-                                                        </li>
-                                                        <li>
-                                                            <p>Works for NVARCHAR only.</p>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-k">REPLACE</span><span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">,</span><span class="tok-s1">'a'</span><span class="tok-p">,</span><span class="tok-s1">'b'</span><span class="tok-p">)</span>  <span class="tok-k">from</span>  <span class="tok-k">table</span><span class="tok-p">;</span>  
-<span class="tok-k">SELECT</span>  <span class="tok-k">REPLACE</span><span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">,</span><span class="tok-s1">'1'</span><span class="tok-p">,</span><span class="tok-s1">'*'</span><span class="tok-p">)</span>  <span class="tok-k">from</span>  <span class="tok-k">table</span><span class="tok-p">;</span>  
-<span class="tok-k">SELECT</span>  <span class="tok-k">REPLACE</span><span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">,</span><span class="tok-s1">'123'</span><span class="tok-p">,</span><span class="tok-s1">'321'</span><span class="tok-p">)</span>  <span class="tok-k">from</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-NVarChar</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-NVarChar</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_reverse_2">REVERSE</h5>
-                                <div class="paragraph">
-                                    <p><strong>REVERSE</strong> - Reverses a string</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">REVERSE</span>  <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-NVarChar</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-NVarChar</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_right">RIGHT</h5>
-                                <div class="paragraph">
-                                    <p><strong>RIGHT</strong> - Returns the right part of a character string with the specified number of characters.</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-k">RIGHT</span>  <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">,</span><span class="tok-mf">3</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Parameters
-NVarChar</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Returns
-NVarChar</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_octet_length">OCTET_LENGTH</h5>
-                                <div class="paragraph">
-                                    <p><strong>OCTET_LENGTH</strong> - Returns the length in bytes (octets) of the nvarchar column value (being the number of bytes in binary string).</p>
-                                </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">OCTET_LENGTH</span>  <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
-                                    </div>
-                                </div>
-                                <div class="admonitionblock note">
-                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                            <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                                <caption class="title">Table 36 String functions and operators on NVARCHAR</caption>
+                                <colgroup>
+                                    <col style="width: 74px;" />
+                                    <col style="width: 179px;" />
+                                    <col style="width: 281px;" />
+                                    <col style="width: 204px;" />
+                                </colgroup>
+                                <thead>
+                                    <tr class="TableStyle-Default_Table-Head-Header1">
+                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Name</th>
+                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Description</th>
+                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Example</th>
+                                        <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Comment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock"><strong>LOWER</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">Converts ASCII string to lowercase
+											</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">LOWER</span> <span class="tok-p">(</span><span class="tok-n">nvarchar_column</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableblock">For non-ASCII characters the function will return the original column data.&#160;
+											</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock"><strong>UPPER</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">Converts ASCII  string to uppercase
+											</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">UPPER</span> <span class="tok-p">(</span><span class="tok-n">nvarchar_column</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableblock">&#160;
+										For non-ASCII characters the function will return the original column data.	</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock"><strong>LEN</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">Returns the length of a nvarchar while trimming whitespace.											</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">LEN</span> <span class="tok-p">(</span><span class="tok-n">nvarchar_column</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableblock"><![CDATA[											]]></p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody"><strong>CHAR_LENGTH</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody">Returns the length of a nvarchar without trimming whitespaces.</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">CHAR_LENGTH</span> <span class="tok-p">(</span><span class="tok-n">nvarchar_column</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock"><strong>LIKE</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">Checks if a string matches a LIKE pattern.</p>
+                                            <p class="tableblock">For NVARCHAR columns the following options for like function exists:</p>
+                                            <ul>
+                                                <li> '%string'</li>
+                                                <li> 'string%'</li>
+                                                <li> '%string%'</li>
+                                            </ul>
+                                            <p class="tableblock"> Also used as <strong>NOT LIKE</strong>.
+											</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-o">*</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span> <span class="tok-k">WHERE</span> <span class="tok-n">nvarchar_column</span> <span class="tok-k">LIKE</span> <span class="tok-s1">'%string%'</span><span class="tok-p">;</span></code>
+                                            </p>
+                                            <p class="tableblock"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-o">*</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span> <span class="tok-k">WHERE</span> <span class="tok-n">nvarchar_column</span> <span class="tok-k">NOT</span> <span class="tok-k">LIKE</span> <span class="tok-s1">'%string%'</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableblock">Only literal patterns are supported. Column references are not supported as a pattern. 
+											</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock"><strong>SUBSTRING</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">Returns a specific substring of a string
+											</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-k">SUBSTRING</span> <span class="tok-p">(</span><span class="tok-n">nvarchar_column</span><span class="tok-p">,</span><span class="tok-k">start</span><span class="tok-p">,</span><span class="tok-n">length</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableblock">Parameters:
+									 	   </p>
+                                            <ul style="list-style-type: circle;">
+                                                <li>start - the starting point of the substring.  A value 1 represents the first character. </li>
+                                                <li>Returns: String of the resulting substring operation</li>
+                                            </ul>
+                                            <p class="tableblock">If <code>start ⇐1</code>, then the substring begins from the first character but the length is reduced.<br /><code>substring('abc',1,2) == 'ab'</code><br /><code>substring('abc',0,2) == substring('abc',1,1) == 'a'</code></p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody"><strong>|| (Concatenation)</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody">String concatenation - concatenates two string values
+											</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">fname</span> <span class="tok-o">||</span><![CDATA[   ]]><span class="tok-n">lname</span> <span class="tok-k">FROM</span> <span class="tok-n">customers</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p>&#160;</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody"><strong>CHARINDEX</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p>Searches an expression in a string nvarchar column and returns its starting position if found.</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">CHARINDEX</span><span class="tok-p">(</span><span class="tok-n">y</span><span class="tok-p">,</span><span class="tok-n">x</span><span class="tok-p">,</span><span class="tok-mf">1</span><span class="tok-p">)</span><span class="tok-k">FROM</span><span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <ul style="list-style-type: circle;">
+                                                <li>Parameters: NVarChar - the subexpression. as a scalar. NVarChar - the column name. Int (optional) - starts the search from this index</li>
+                                                <li>Returns: Int - the position of the subexpression in the expression or 0 if it wasn’t found</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody"><strong>LEFT</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody">Returns the left part of a character string with the specified number of characters.</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">LTRIM</span> <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <ul style="list-style-type: circle;">
+                                                <li>Parameters: VarChar </li>
+                                                <li>Returns: VarChar </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody"><strong>REPLACE</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody">Replaces a sub-string with another sub-string of the same size.</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-k">REPLACE</span> <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">,</span><span class="tok-s1">'a'</span><span class="tok-p">,</span><span class="tok-s1">'b'</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-k">REPLACE</span> <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">,</span><span class="tok-s1">'1'</span><span class="tok-p">,</span><span class="tok-s1">'*'</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-k">REPLACE</span> <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">,</span><span class="tok-s1">'123'</span><span class="tok-p">,</span><span class="tok-s1">'321'</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <ul style="list-style-type: circle;">
+                                                <li>Parameters: NVarChar </li>
+                                                <li>Returns: NVarChar </li>
+                                            </ul>
+                                            <p class="tableBody">LIMITATIONS</p>
+                                            <ul>
+                                                <li>
+                                                    <p> A sub-string can only be replaced with another sub-string of the same size. Meaning, the 'from' and 'to' arguments must be string literals of the same length.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Works for NVARCHAR only.</p>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody"><strong>REVERSE</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody">Reverses a string;</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">REVERSE</span> <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <ul style="list-style-type: circle;">
+                                                <li>Parameters: NVarChar </li>
+                                                <li>Returns: NVarChar </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody"><strong>RIGHT</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody">Returns the right part of a character string with the specified number of characters.</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">RIGHT</span> <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">,</span><span class="tok-s1">3</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <ul style="list-style-type: circle;">
+                                                <li>Parameters: NVarChar </li>
+                                                <li>Returns: NVarChar </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                            <p class="tableBody">&#160;<strong>OCTET_LENGTH</strong></p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                            <p class="tableBody">Returns the length in bytes (octets) of the nvarchar column value (being the number of bytes in binary string).</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">OCTET_LENGTH</span> <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
+                                            <p>&#160;</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="admonitionblock note">
+                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-note" title="Note"></i>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
 In some of the NVARCHAR functions, SQream does not support the use of literals. In others, the use in literals will have to be explicitly wrapped in 'cast(…​ as nvarchar)' function.
 </td>
-                                        </tr>
-                                    </table>
-                                </div>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                         <div class="sect3">
@@ -2666,8 +2507,8 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                     </tr>
                                 </tbody>
                             </table>
+                            <p class="example">Examples:</p>
                             <div class="code">
-                                <div class="title">Examples</div>
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">select</span>  <span class="tok-n">datepart</span><span class="tok-p">(</span><span class="tok-n">q</span><span class="tok-p">,</span><span class="tok-n">date_column_name</span><span class="tok-p">)</span>  <span class="tok-k">from</span>  <span class="tok-n">table_a</span><span class="tok-p">;</span>  
 <span class="tok-k">select</span>  <span class="tok-n">datepart</span><span class="tok-p">(</span><span class="tok-n">dd</span><span class="tok-p">,</span><span class="tok-n">date_column_name</span><span class="tok-p">)</span>  <span class="tok-k">from</span>  <span class="tok-n">table_a</span><span class="tok-p">;</span>  
 
@@ -2684,8 +2525,8 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
 <span class="tok-k">select</span>  <span class="tok-n">datediff</span><span class="tok-p">(</span><span class="tok-n">q</span><span class="tok-p">,</span><span class="tok-s1">'2016-01-01 13:00:00'</span><span class="tok-p">,</span><span class="tok-n">date_column_b</span><span class="tok-p">)</span>  <span class="tok-k">from</span>  <span class="tok-n">table_a</span><span class="tok-p">;</span></code></pre>
                                 </div>
                             </div>
+                            <p class="example">Examples for TRUNC(date/datetime,interval)</p>
                             <div class="code">
-                                <div class="title">Examples for TRUNC(date/datetime,interval)</div>
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">select</span>  <span class="tok-n">xdatetime</span><span class="tok-p">,</span><span class="tok-n">trunc</span><span class="tok-p">(</span><span class="tok-n">xdatetime</span><span class="tok-p">,</span>  <span class="tok-k">month</span><span class="tok-p">)</span>  <span class="tok-k">from</span>  <span class="tok-k">table</span><span class="tok-p">;</span>  
 <span class="tok-c1">-- Returns the first day of the month:</span>  
 <span class="tok-n">xdatetime</span><span class="tok-p">,</span>  <span class="tok-n">trunc</span>  
@@ -2748,16 +2589,18 @@ indicates how many points are actually used in the given row.</p>
                             </div>
                             <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
                                 <caption class="title">Table 39. Geospatial functions</caption>
-                                <colgroup>
-                                    <col style="width: 33.3333%;" />
-                                    <col />
-                                    <col style="width: 33.3334%;" />
-                                </colgroup>
+                                <col style="width: 33.3333%;" class="TableStyle-Default_Table-Column-Column1" />
+                                <col class="TableStyle-Default_Table-Column-Column1" />
+                                <col style="width: 33.3334%;" class="TableStyle-Default_Table-Column-Column1" />
+                                <col style="width: 33.3334%;" class="TableStyle-Default_Table-Column-Column1" />
                                 <thead>
                                     <tr class="TableStyle-Default_Table-Head-Header1">
                                         <th class="TableStyle-Default_Table-HeadE-Column1-Header1"> Name</th>
                                         <th class="TableStyle-Default_Table-HeadE-Column1-Header1"> Type</th>
-                                        <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Description</th>
+                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Description</th>
+                                        <th class="TableStyle-Default_Table-HeadD-Column1-Header1">
+                                            <p class="tableBody">LIMITATIONS</p>
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -2774,8 +2617,11 @@ indicates how many points are actually used in the given row.</p>
    _poly_long5_ *float*, _poly_lat5_ *float*)
    *returns* *bool*</span></div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
                                             <p class="tableblock">point inside polygon</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableBody">The point arguments cannot be literals. The polygon arguments can either be all columns or all literals.</p>
                                         </td>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
@@ -2796,32 +2642,15 @@ indicates how many points are actually used in the given row.</p>
    _poly_long5_ *float*, _poly_lat5_ *float*)
    *returns* *bool*</span></div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyA-Column1-Body2">
+                                        <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
                                             <p class="tableblock">line crosses polygon</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyA-Column1-Body2">
+                                            <p class="tableBody">The polyline arguments cannot be literals. The polygon arguments can either be all columns or all literals.</p>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <div class="sect4">
-                                <h5 id="_point_in_polygon">POINT_IN_POLYGON</h5>
-                                <div class="paragraph">
-                                    <p>Returns true if the point is inside the polygon.</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Limitations: the point arguments cannot be literals. The polygon
-arguments can either be all columns or all literals.</p>
-                                </div>
-                            </div>
-                            <div class="sect4">
-                                <h5 id="_line_crosses_polygon">LINE_CROSSES_POLYGON</h5>
-                                <div class="paragraph">
-                                    <p>Returns true if the line crosses the polygon.</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>Limitations: the polyline arguments cannot be literals. The polygon
-arguments can either be all columns or all literals.</p>
-                                </div>
-                            </div>
                         </div>
                         <div class="sect3">
                             <h4 id="_aggregate_functions">Aggregate functions</h4>
