@@ -52,7 +52,7 @@
                                                 <p class="tableblock">(<strong>bool</strong>, <strong>bool</strong>) <strong>returns</strong> <strong>bool</strong></p>
                                             </td>
                                             <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
-                                                <p><code>a OR b</code>
+                                                <p class="tableblock"><code>a OR b</code>
                                                 </p>
                                             </td>
                                         </tr>
@@ -116,7 +116,7 @@ same, but the system will insert valid implicit casts in many cases
                                                 <p class="tableblock">(<em>exp</em> <strong><em>any</em></strong>, <em>min</em> <strong><em>any</em></strong>, <em>max</em> <strong><em>any</em></strong>) <strong>returns</strong> <strong>bool</strong></p>
                                             </td>
                                             <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
-                                                <p><code data-lang="sqream db"><span class="tok-n">a</span> <span class="tok-k">between</span> <span class="tok-n">b</span> <span class="tok-k">and</span> <span class="tok-n">c</span></code>
+                                                <p class="tableBody"><code data-lang="sqream db"><span class="tok-n">a</span> <span class="tok-k">between</span> <span class="tok-n">b</span> <span class="tok-k">and</span> <span class="tok-n">c</span></code>
                                                 </p>
                                             </td>
                                         </tr>
@@ -416,12 +416,12 @@ For example: (100/14) will result in 7 while (100.0/14) or (100/14.0) will resul
                                 <caption class="title">Table 33. Mathematical functions and operators</caption>
                                 <colgroup>
                                     <col />
-                                    <col style="width: 319px;" />
-                                    <col style="width: 251px;" />
+                                    <col style="width: 373px;" />
+                                    <col style="width: 399px;" />
                                 </colgroup>
                                 <thead>
                                     <tr class="TableStyle-Default_Table-Head-Header1">
-                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Operator</th>
+                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Name</th>
                                         <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Description</th>
                                         <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Example</th>
                                     </tr>
@@ -785,10 +785,10 @@ a single value of the same data type as parameter.</p>
                                 <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
                                     <caption class="title">Table 34. Supported conversions, both implicit and explicit</caption>
                                     <colgroup>
-                                        <col />
-                                        <col />
-                                        <col />
-                                        <col />
+                                        <col style="width: 110px;" />
+                                        <col style="width: 111px;" />
+                                        <col style="width: 109px;" />
+                                        <col style="width: 507px;" />
                                     </colgroup>
                                     <thead>
                                         <tr class="TableStyle-Default_Table-Head-Header1">
@@ -1235,7 +1235,7 @@ a single compatible type.</p>
                                     </ul>
                                 </div>
                                 <div class="paragraph">
-                                    <p>It is based on the implicit casting rules for the equals operator.</p>
+                                    <p>It is based on the imsplicit casting rules for the equals operator.</p>
                                 </div>
                             </div>
                         </div>
@@ -1244,6 +1244,295 @@ a single compatible type.</p>
                             <div class="paragraph">
                                 <p><strong>VARCHAR</strong> data type is intended to ASCII character set. All function parameters must be either NVARCHAR or VARCHAR. SQream does not support casting between this two types.</p>
                             </div>
+                            <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                                <caption class="title">Table 35. String functions and operators on VARCHAR</caption>
+                                <colgroup>
+                                    <col style="width: 74px;" />
+                                    <col style="width: 201px;" />
+                                    <col style="width: 204px;" />
+                                    <col style="width: 204px;" />
+                                </colgroup>
+                                <thead>
+                                    <tr class="TableStyle-Default_Table-Head-Header1">
+                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Name</th>
+                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Description</th>
+                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Example</th>
+                                        <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Comment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock"><strong>LOWER</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">Converts a string to lowercase
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableblock">
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock"><strong>UPPER</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableblock">
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock"><strong>LEN</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableblock">
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock"><strong>LIKE</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableblock">
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock"><strong>RLIKE</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableblock">
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock"><strong>SUBSTRING</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableblock">
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody"><strong>REGEXP_COUNT</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody"><strong>REGEXP_INSTR</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody"><strong>REGEXP_SUBSTR</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody"><strong>ISPREFIXOF</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody"><strong>|| (Concatenation)</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody">
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody"><strong>CHARINDEX</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody"><strong>PATINDEX</strong>
+                                            </p>
+                                        </td>
+                                       <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody"><strong>LTRIM</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody"><strong>REVERSE</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody"><strong>RTRIM</strong>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                            <p class="tableBody">&#160;<strong>TRIM</strong></p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                             <div class="sect4">
                                 <h5 id="_lower">LOWER</h5>
                                 <div class="paragraph">
