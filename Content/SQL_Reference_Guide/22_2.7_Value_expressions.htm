@@ -10,9 +10,17 @@
                     <div class="sect2">
                         <h3 id="value-expressions">Value expressions</h3>
                         <div class="paragraph">
-                            <p>Value expressions are used in select lists, <strong>ON</strong> conditions, <strong>WHERE</strong>
-conditions, <strong>GROUP BY</strong> expressions, <strong>HAVING</strong> conditions and <strong>ORDER BY</strong>
-expressions.</p>
+                            <p>Value expressions are used in the following:</p>
+                            <ul>
+                                <li>Select lists</li>
+                                <li><strong>ON</strong> conditions</li>
+                                <li><strong>WHERE</strong>
+conditions</li>
+                                <li><strong>GROUP BY</strong> expressions</li>
+                                <li><strong>HAVING</strong> conditions</li>
+                                <li><strong>ORDER BY</strong>
+expressions</li>
+                            </ul>
                         </div>
                         <div class="code">
                             <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>value_expr</em></strong> ::=
@@ -36,110 +44,234 @@ expressions.</p>
     | <strong><em>cast_operator</em></strong></code></pre>
                             </div>
                         </div>
-                        <div class="sect3">
-                            <h4 id="string-literal-def"><a name="String"></a>String literal</h4>
-                            <div class="paragraph">
-                                <p><code><strong><em>string_literal</em></strong></code> is delimited by single quotes ('), and can
-contain any printable character other than single quote.</p>
-                            </div>
-                            <div class="admonitionblock tip">
-                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><i class="fa icon-tip" title="Tip"></i>
-                                        </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-                                            <div class="olist arabic">
-                                                <ol class="arabic">
-                                                    <li>
-                                                        <p>To include a single quote within a string literal, write two adjacent single quotes, e.g., 'Database''s features'. Note that this is not the same as a double-quote character (")</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>Similarly, to avoid escaping the single quote, use the <em>dollar quoting</em> notation (see examples below)</p>
-                                                    </li>
-                                                </ol>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <p class="example">Examples:</p>
-                            <div class="code">
-                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-s1">'string literal'</span><span class="tok-p">;</span>  
-
-<span class="tok-k">SELECT</span>  <span class="tok-s1">'string literal ''with something'' quoted'</span>  <span class="tok-p">;</span>  
-<span class="tok-c1">-- this produces the string "string literal 'with something' quoted"</span>  
-
-<span class="tok-k">SELECT</span>  <span class="tok-s">$$string literal 'with something' quoted$$</span>  <span class="tok-p">;</span>  
-<span class="tok-c1">-- Same as above</span></code></pre>
-                                </div>
-                            </div>
+                        <div class="paragraph">
+                            <p>The following table describes the value expressions.</p>
+                            <p>See below for more information regarding:</p>
+                            <ul>
+                                <li><a href="#Special">Special operator</a>
+                                </li>
+                                <li><a href="#EXTRACT">EXTRACT operator</a>
+                                </li>
+                                <li><a href="#CASE">CASE expression</a>
+                                </li>
+                                <li><a href="#CASE">CASE expression</a>
+                                </li>
+                                <li><a href="#identifier-definitions">Identifier rules</a>
+                                </li>
+                                <li><a href="#Operator">Operator precedences</a> </li>
+                            </ul>
                         </div>
-                        <div class="sect3">
-                            <h4 id="_number_literal">Number literal</h4>
-                            <div class="code">
-                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>number_literal</em></strong> ::=
-
-    <strong><em>digits</em></strong>
-    | <strong><em>digits</em></strong> . [ <strong><em>digits</em></strong> ] [ e [+-] <strong><em>digits</em></strong> ]
-    | [ <strong><em>digits</em></strong> ] . <strong><em>digits</em></strong> [ e [+-] <strong><em>digits</em></strong> ]
-    | <strong><em>digits</em></strong> e [+-] <strong><em>digits</em></strong></code></pre>
-                                </div>
-                            </div>
-                            <p class="example">Examples:</p>
-                            <div class="code">
-                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db">  
-<span class="tok-mf">1234</span>  
-
-<span class="tok-mf">1234.56</span>  
-
-<span class="tok-mf">12.</span>  
-
-<span class="tok-mf">.34</span>  
-
-<span class="tok-mf">123.56e-45</span></code></pre>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sect3">
-                            <h4 id="_typed_literal">Typed literal</h4>
-                            <div class="code">
-                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>typed_literal</em></strong> ::=
-    <strong><em>type_name</em></strong>  <strong><em>string_literal</em></strong></code></pre>
-                                </div>
-                            </div>
-                            <div class="paragraph">
-                                <p><code><strong><em>type_name</em></strong></code> is defined above in the <a href="21_2.6_Data_types.htm">type name
+                        <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                            <caption class="title">Table xx. Value expressions</caption>
+                            <col class="TableStyle-Default_Table-Column-Column1" style="width: 130px;" />
+                            <col class="TableStyle-Default_Table-Column-Column1" style="width: 415px;" />
+                            <col class="TableStyle-Default_Table-Column-Column1" style="width: 275px;" />
+                            <thead>
+                                <tr class="TableStyle-Default_Table-Head-Header1">
+                                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Name</th>
+                                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Example</th>
+                                    <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Comment</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="TableStyle-Default_Table-Body-Body1">
+                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <p class="tableblock">String literal</p>
+                                    </td>
+                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-s1">'string literal'</span><span class="tok-p">;</span></code>
+                                        </p>
+                                        <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-s1">'string literal ''with something'' quoted'</span><span class="tok-p">;</span></code>
+                                        </p>
+                                        <p class="tableBody"><code data-lang="sqream db"><span class="tok-c1">-- this produces the string "string literal 'with something' quoted"</span></code>
+                                        </p>
+                                        <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-s">$$string literal 'with something' quoted$$</span><span class="tok-p">;</span></code>
+                                        </p>
+                                        <p class="tableBody"><code data-lang="sqream db"><span class="tok-c1">-- Same as above</span></code>
+                                        </p>
+                                    </td>
+                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                        <p class="tableblock">Delimited by single quotes ('), and can contain any printable character other than single quote
+										</p>
+                                        <p class="tableblock">To include a single quote within a string literal, write two adjacent single quotes, e.g., 'Database''s features'. Note that this is not the same as a double-quote character (")
+										</p>
+                                        <p class="tableblock">Similarly, to avoid  the single quote issue, use the <em>dollar quoting</em> notation (see examples)
+										</p>
+                                    </td>
+                                </tr>
+                                <tr class="TableStyle-Default_Table-Body-Body2">
+                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                        <p class="tableblock">Number literal</p>
+                                    </td>
+                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                        <p class="tableBody"><code><strong><em>digits</em></strong></code>
+                                        </p>
+                                        <p class="tableBody"><code>
+												| <strong><em>digits</em></strong> . [ <strong><em>digits</em></strong> ] [ e [+-] <strong><em>digits</em></strong> ]
+												</code>
+                                        </p>
+                                        <p class="tableBody"><code>| [ <strong><em>digits</em></strong> ] . <strong><em>digits</em></strong> [ e [+-] <strong><em>digits</em></strong></code>
+                                        </p>
+                                        <p class="tableBody"><code><strong><em>digits</em></strong> e [+-] <strong><em>digits</em></strong></code>
+                                        </p>
+                                    </td>
+                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                        <p class="tableBody"><code data-lang="sqream db"><span class="tok-mf">1234</span></code>
+                                        </p>
+                                        <p class="tableBody"><code data-lang="sqream db"><span class="tok-mf">1234.56</span></code>
+                                        </p>
+                                        <p class="tableBody"><code data-lang="sqream db"><span class="tok-mf">12.</span></code>
+                                        </p>
+                                        <p class="tableBody"><code data-lang="sqream db"><span class="tok-mf">.34</span></code>
+                                        </p>
+                                        <p class="tableBody"><code data-lang="sqream db"><span class="tok-mf">123.56e-45</span></code>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr class="TableStyle-Default_Table-Body-Body1">
+                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <p class="tableblock">Typed literal                                        </p>
+                                    </td>
+                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <p class="tableblock"><code><strong><em>type_name</em></strong> <strong><em>string_literal</em></strong></code>
+                                        </p>
+                                    </td>
+                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                        <p class="tableblock"><code><strong><em>type_name</em></strong></code> is defined above in the <a href="21_2.6_Data_types.htm">type name
 definition</a> section.</p>
-                            </div>
-                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="TableStyle-Default_Table-Body-Body2">
+                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                        <p class="tableblock">Binary operator
+                                        </p>
+                                    </td>
+                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                        <p class="tableBody"><code>	. | + | ^ | * | / | % | + | - | &gt;= | &lt;= | != | &lt;&gt; | ||
+											| LIKE | NOT LIKE | RLIKE | NOT RLIKE | &lt; | &gt; | = | OR | AND</code>
+                                        </p>
+                                    </td>
+                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                        <p class="tableBody">&#160;
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr class="TableStyle-Default_Table-Body-Body1">
+                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <p class="tableblock">Unary operator
+										</p>
+                                    </td>
+                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <p class="tableblock"><code>+ | - | NOT</code>
+                                        </p>
+                                    </td>
+                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                        <p class="tableBody">&#160;
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr class="TableStyle-Default_Table-Body-Body2">
+                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                        <p class="tableblock">Postfix unary operator</p>
+                                    </td>
+                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                        <p class="tableblock"><code>IS NULL | IS NOT NULL</code>
+                                        </p>
+                                    </td>
+                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                        <p class="tableBody">&#160;
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr class="TableStyle-Default_Table-Body-Body1">
+                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <p class="tableBody">Special operator</p>
+                                    </td>
+                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <p class="tableBody">See <a href="#Special">Special operator</a></p>
+                                    </td>
+                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                        <p class="tableBody">&#160;
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr class="TableStyle-Default_Table-Body-Body2">
+                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                        <p class="tableBody">EXTRACT operator</p>
+                                    </td>
+                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                        <p class="tableBody">See <a href="#EXTRACT">EXTRACT operator</a></p>
+                                    </td>
+                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                        <p class="tableBody">&#160;
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr class="TableStyle-Default_Table-Body-Body1">
+                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <p>CASE expression</p>
+                                    </td>
+                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <p class="tableBody">See <a href="#CASE">CASE expression</a></p>
+                                    </td>
+                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                        <p class="tableBody">&#160;
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr class="TableStyle-Default_Table-Body-Body2">
+                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                        <p class="tableBody">Identifier Rules</p>
+                                    </td>
+                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                        <p class="tableBody">See <a href="#identifier-definitions">Identifier rules</a></p>
+                                    </td>
+                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                        <p class="tableBody">&#160;</p>
+                                    </td>
+                                </tr>
+                                <tr class="TableStyle-Default_Table-Body-Body1">
+                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <p class="tableBody">Aggregate function app</p>
+                                    </td>
+                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <p class="tableBody"><code><strong><em>agg_name</em></strong> ( [ <strong><em>value_expr</em></strong> [, ... ] ] )
+</code>
+                                        </p>
+                                        <p class="tableBody"><code>												| <strong><em>agg_name</em></strong> ( [ DISTINCT ] [ <strong><em>value_expr</em></strong> [, ... ] ] )
+</code>
+                                        </p>
+                                        <p class="tableBody"><code><strong><em>agg_name</em></strong> ::= <strong><em>identifier</em></strong></code>
+                                        </p>
+                                    </td>
+                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                        <p class="tableBody">&#160;</p>
+                                    </td>
+                                </tr>
+                                <tr class="TableStyle-Default_Table-Body-Body2">
+                                    <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
+                                        <p class="tableBody">Window function app</p>
+                                    </td>
+                                    <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
+                                        <p class="tableBody"><code><strong><em>window_fn_name</em></strong> ( [ <strong><em>value_expr</em></strong> [, ... ] ]</code>
+                                        </p>
+                                        <p class="tableBody"><code>)	OVER ( [ <strong><em>value_expr</em></strong> [, ... ] ]</code>
+                                        </p>
+                                        <p class="tableBody"><code>[ PARTITION BY <strong><em>value_expr</em></strong> [, ... ] ]</code>
+                                        </p>
+                                        <p class="tableBody"><code>     [ ORDER BY <strong><em>value_expr</em></strong> [ ASC | DESC] [, ... ] ] )</code>
+                                        </p>
+                                        <p class="tableBody"><code><strong><em>window_fn_name</em></strong> ::= <strong><em>identifier</em></strong></code>
+                                        </p>
+                                    </td>
+                                    <td class="TableStyle-Default_Table-BodyA-Column1-Body2">
+                                        <p class="tableBody">See the <a href="23_2.8_Functions_and_Operators.htm#Window">Window functions</a> segment for examples.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                         <div class="sect3">
-                            <h4 id="_binary_operator">Binary operator</h4>
-                            <div class="code">
-                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>binary_operator</em></strong> ::=
-    . | + | ^ | * | / | % | + | - | &gt;= | &lt;= | != | &lt;&gt; | ||
-    | LIKE | NOT LIKE | RLIKE | NOT RLIKE | &lt; | &gt; | = | OR | AND</code></pre>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sect3">
-                            <h4 id="_unary_operator">Unary operator</h4>
-                            <div class="code">
-                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>unary_operator</em></strong> ::=
-    + | - | NOT</code></pre>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sect3">
-                            <h4 id="_postfix_unary_operator">Postfix unary operator</h4>
-                            <div class="code">
-                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>postfix_unary_operator</em></strong> ::=
-
-    IS NULL | IS NOT NULL</code></pre>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sect3">
-                            <h4 id="_special_operator">Special operator</h4>
+                            <h4 id="_special_operator"><a name="Special"></a>Special operator</h4>
                             <div class="code">
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>special_operator</em></strong> ::=
 
@@ -369,7 +501,7 @@ This operator always returns a float.
                             </table>
                         </div>
                         <div class="sect3">
-                            <h4 id="_case_expression">CASE expression</h4>
+                            <h4 id="_case_expression"><a name="CASE"></a>CASE expression</h4>
                             <div class="code">
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>case_expression</em></strong> ::=
 
@@ -499,38 +631,7 @@ NULL.</p>
                             </div>
                         </div>
                         <div class="sect3">
-                            <h4 id="_aggregate_function_app">Aggregate function app</h4>
-                            <div class="code">
-                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>aggregate_function_app</em></strong> ::=
-
-    <strong><em>agg_name</em></strong> ( [ <strong><em>value_expr</em></strong> [, ... ] ] )
-
-    | <strong><em>agg_name</em></strong> ( [ DISTINCT ] [ <strong><em>value_expr</em></strong> [, ... ] ] )
-
-<strong><em>agg_name</em></strong> ::= <strong><em>identifier</em></strong></code></pre>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sect3">
-                            <h4 id="_window_function_app">Window function app</h4>
-                            <div class="code">
-                                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>window_function_app</em></strong> ::=
-
-    <strong><em>window_fn_name</em></strong> ( [ <strong><em>value_expr</em></strong> [, ... ] ] )
-        OVER ( [ <strong><em>value_expr</em></strong> [, ... ] ]
-               [ PARTITION BY <strong><em>value_expr</em></strong> [, ... ] ]
-               [ ORDER BY <strong><em>value_expr</em></strong> [ ASC | DESC] [, ... ] ] )
-
-<strong><em>window_fn_name</em></strong> ::= <strong><em>identifier</em></strong></code></pre>
-                                </div>
-                            </div>
-                            <p class="example">Examples:</p>
-                            <div class="paragraph">
-                                <p>See the <a href="23_2.8_Functions_and_Operators.htm#Window">Window functions</a> segment for examples.</p>
-                            </div>
-                        </div>
-                        <div class="sect3">
-                            <h4 id="_operator_precedences">Operator precedences</h4>
+                            <h4 id="_operator_precedences"><a name="Operator"></a>Operator precedences</h4>
                             <div class="paragraph">
                                 <p>This table lists the operators in decreasing order of precedence. We
 recommend using parentheses rather than relying on precedences in

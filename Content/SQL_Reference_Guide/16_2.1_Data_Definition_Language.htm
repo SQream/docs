@@ -11,10 +11,19 @@
                         <h3 id="_data_definition_language">Data Definition Language</h3>
                         <div class="sect3">
                             <h4 id="_databases">Databases</h4>
+                            <div class="paragraph">
+                                <p>The following database commands are available:</p>
+                                <ul>
+                                    <li><a href="#CREATE">CREATE DATABASE</a>
+                                    </li>
+                                    <li><a href="#DROP">DROP DATABASE</a>
+                                    </li>
+                                </ul>
+                            </div>
                             <div class="sect4">
                                 <h5 id="_create_database"><a name="CREATE"></a>CREATE DATABASE</h5>
                                 <div class="paragraph">
-                                    <p><strong>CREATE DATABASE</strong> will create a new database in the current cluster
+                                    <p>Creates a new database in the current cluster
 storage set. To use the new database, disconnect and reconnect to the new database.</p>
                                 </div>
                                 <div class="code">
@@ -32,9 +41,9 @@ storage set. To use the new database, disconnect and reconnect to the new databa
                                 </div>
                             </div>
                             <div class="sect4">
-                                <h5 id="_drop_database">DROP DATABASE</h5>
+                                <h5 id="_drop_database"><a name="DROP"></a>DROP DATABASE</h5>
                                 <div class="paragraph">
-                                    <p><strong>DROP DATABASE</strong> will delete a database and all of its files.
+                                    <p>Deletes a database and all of its files.
 During <strong>DROP DATABASE</strong>, no other DDL/DML operations can run
  on the database, and subsequent connections to it will fail.</p>
                                 </div>
@@ -54,9 +63,18 @@ During <strong>DROP DATABASE</strong>, no other DDL/DML operations can run
                         <div class="sect3">
                             <h4 id="_schemas">Schemas</h4>
                             <div class="sect4">
-                                <h5 id="_create_schema">CREATE SCHEMA</h5>
                                 <div class="paragraph">
-                                    <p><strong>CREATE SCHEMA</strong> will create a new schema in the current database.</p>
+                                    <p>The following schema commands are available:</p>
+                                    <ul>
+                                        <li><a href="#CREATE6">CREATE SCHEMA</a> </li>
+                                        <li><a href="#DROP2">DROP SCHEMA</a>
+                                        </li>
+                                        <li><a href="#ALTER">ALTER DEFAULT SCHEMA</a> </li>
+                                    </ul>
+                                </div>
+                                <h5 id="_create_schema"><a name="CREATE6"></a>CREATE SCHEMA</h5>
+                                <div class="paragraph">
+                                    <p>Creates a new schema in the current database.</p>
                                 </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>create_schema_statement</em></strong> ::=
@@ -82,12 +100,12 @@ New tables should be explicitly associated to an existing schema, or implicitly 
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">create</span>  <span class="tok-k">schema</span>  <span class="tok-n">my_schema</span><span class="tok-p">;</span></code></pre>
                                     </div>
                                 </div>
-                                <div class="paragraph">
-                                    <p><strong>DROP SCHEMA</strong> will delete an empty schema from the database.</p>
-                                </div>
                             </div>
                             <div class="sect4">
-                                <h5 id="_drop_schema">DROP SCHEMA</h5>
+                                <h5 id="_drop_schema"><a name="DROP2"></a>DROP SCHEMA</h5>
+                                <div class="paragraph">
+                                    <p>Deletes an empty schema in the current database.</p>
+                                </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>drop_schema_statement</em></strong> ::=
 
@@ -112,10 +130,10 @@ The PUBLIC schema can not be dropped.
                                 </div>
                             </div>
                             <div class="sect4">
-                                <h5 id="_alter_default_schema">ALTER DEFAULT SCHEMA</h5>
+                                <h5 id="_alter_default_schema"><a name="ALTER"></a>ALTER DEFAULT SCHEMA</h5>
                                 <div class="paragraph">
-                                    <p>Change the default schema for a specific role.
-Alter default schema should be used to change the user/role default schema to a different schema name.</p>
+                                    <p>Changes the default schema for a specific role.
+Use this command to change the user/role default schema to a different schema name.</p>
                                 </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>alter_default_schema_statement</em></strong> ::=
@@ -124,17 +142,44 @@ Alter default schema should be used to change the user/role default schema to a 
                                 </div>
                                 <p class="example">Examples:</p>
                                 <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">ALTER</span>  <span class="tok-k">DEFAULT</span>  <span class="tok-k">SCHEMA</span>  <span class="tok-k">FOR</span>  <span class="tok-n">user_a</span>  <span class="tok-k">TO</span>  <span class="tok-n">schema_a</span><span class="tok-p">;</span></code></pre>
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">ALTER</span> <span class="tok-k">DEFAULT</span> <span class="tok-k">SCHEMA</span>  <span class="tok-k">FOR</span>  <span class="tok-n">user_a</span>  <span class="tok-k">TO</span>  <span class="tok-n">schema_a</span><span class="tok-p">;</span></code></pre>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="sect3">
                             <h4 id="_tables">Tables</h4>
+                            <div class="paragraph">
+                                <p>The following table commands are available:</p>
+                                <ul>
+                                    <li><a href="#CREATE3">CREATE TABLE</a>
+                                        <ul>
+                                            <li><a href="#Create">Create Or Replace Table</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#ALTER2">ALTER TABLE</a>
+                                        <ul>
+                                            <li><a href="#Rename">Rename table</a>
+                                            </li>
+                                            <li><a href="#Rename2">Rename column</a> </li>
+                                            <li><a href="#Add">Add column</a>
+                                            </li>
+                                            <li><a href="#Drop">Drop column</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#DROP3">DROP TABLE</a>
+                                        <ul>
+                                            <li><a href="#Dropx">Drop Table If Exists</a> </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
                             <div class="sect4">
                                 <h5 id="_create_table"><a name="CREATE3"></a>CREATE TABLE</h5>
                                 <div class="paragraph">
-                                    <p>CREATE TABLE creates a new table in the current database under a specific schema.</p>
+                                    <p>Creates a new table in the current database under a specific schema.</p>
                                 </div>
                                 <div class="admonitionblock note">
                                     <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
@@ -277,9 +322,13 @@ For example, <code>check ('CS "p4d"')</code>.<br />Please contact SQream support
                                     </div>
                                 </div>
                                 <div class="sect5">
-                                    <h6 id="_create_or_replace_table">Create Or Replace Table</h6>
+                                    <h6 id="_create_or_replace_table"><a name="Create"></a>Create Or Replace Table</h6>
                                     <div class="paragraph">
-                                        <p>CREATE OR REPLACE TABLE will either create a new table (if the same table doesn’t already exists) or DROP and CREATE the table with its new definition.</p>
+                                        <p>Does one of the following</p>
+                                        <ul>
+                                            <li>If the table does not exist: creates a new table </li>
+                                            <li>If the table does exist: drops and creates the table with the new definition.</li>
+                                        </ul>
                                     </div>
                                     <p class="example">Examples:</p>
                                     <div class="code">
@@ -306,9 +355,9 @@ If the CREATE TABLE operation does not complete successfully, the replaced table
                                 </div>
                             </div>
                             <div class="sect4">
-                                <h5 id="_alter_table">ALTER TABLE</h5>
+                                <h5 id="_alter_table"><a name="ALTER2"></a>ALTER TABLE</h5>
                                 <div class="paragraph">
-                                    <p>ALTER TABLE is used to alter the structure of an existing table.</p>
+                                    <p>Alters the structure of an existing table.</p>
                                 </div>
                                 <div class="admonitionblock note">
                                     <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
@@ -322,9 +371,9 @@ This operation will require exclusive lock on the table.
                                     </table>
                                 </div>
                                 <div class="sect5">
-                                    <h6 id="_rename_table">Rename table</h6>
+                                    <h6 id="_rename_table"><a name="Rename"></a>Rename table</h6>
                                     <div class="paragraph">
-                                        <p>This form of alter table allows you to rename a table within the same schema.</p>
+                                        <p>Renames a table within the same schema.</p>
                                     </div>
                                     <div class="code">
                                         <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>alter_table_statement_rename_table</em></strong> ::=
@@ -339,9 +388,9 @@ This operation will require exclusive lock on the table.
                                     </div>
                                 </div>
                                 <div class="sect5">
-                                    <h6 id="_rename_column">Rename column</h6>
+                                    <h6 id="_rename_column"><a name="Rename2"></a>Rename column</h6>
                                     <div class="paragraph">
-                                        <p>This form of alter table allows you to rename a column in an existing
+                                        <p>Renames a column in an existing
 table.</p>
                                     </div>
                                     <div class="code">
@@ -358,9 +407,9 @@ table.</p>
                                     </div>
                                 </div>
                                 <div class="sect5">
-                                    <h6 id="_add_column">Add column</h6>
+                                    <h6 id="_add_column"><a name="Add"></a>Add column</h6>
                                     <div class="paragraph">
-                                        <p>Add a new column to an existing table.</p>
+                                        <p>Adds a new column to an existing table.</p>
                                     </div>
                                     <div class="olist arabic">
                                         <div class="title">Known Limitations</div>
@@ -396,10 +445,9 @@ to be specified, even if the table is empty.</p>
                                     </div>
                                 </div>
                                 <div class="sect5">
-                                    <h6 id="_drop_column">Drop column</h6>
+                                    <h6 id="_drop_column"><a name="Drop"></a>Drop column</h6>
                                     <div class="paragraph">
-                                        <p>Drop a column from an existing table
-This form of alter table allows you to drop a column from an existing table.</p>
+                                        <p>Drops a column from an existing table.</p>
                                     </div>
                                     <div class="code">
                                         <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>alter_table_statement_rename_table</em></strong> ::=
@@ -415,10 +463,10 @@ This form of alter table allows you to drop a column from an existing table.</p>
                                 </div>
                             </div>
                             <div class="sect4">
-                                <h5 id="_drop_table">DROP TABLE</h5>
+                                <h5 id="_drop_table"><a name="DROP3"></a>DROP TABLE</h5>
                                 <div class="paragraph">
-                                    <p><strong>DROP TABLE</strong> will delete a table or external table and all its data.
-Note that this operation will require exclusive lock on the table.</p>
+                                    <p>Deletes a table or external table and all its data.
+Note that this operation requires an exclusive lock on the table.</p>
                                 </div>
                                 <div class="admonitionblock note">
                                     <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
@@ -440,25 +488,28 @@ Note that this operation will require exclusive lock on the table.</p>
                                         </tr>
                                     </table>
                                 </div>
-                                <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>drop_table</em></strong> ::=
-
-    DROP TABLE [IF EXISTS] [<strong><em>schema_name</em></strong>].<strong><em>table_name</em></strong> ;
-    DROP TABLE [IF EXISTS] [<strong><em>schema_name</em></strong>].<strong><em>external_table_name</em></strong> ;</code></pre>
-                                    </div>
-                                </div>
                                 <p class="example">Examples:</p>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">DROP</span>  <span class="tok-k">TABLE</span>  <span class="tok-n">my_schema</span><span class="tok-mf">.</span><span class="tok-n">my_table</span><span class="tok-p">;</span></code></pre>
                                     </div>
                                 </div>
-                                <div class="paragraph">
-                                    <p>DROP TABLE IF EXISTS will either drop the table if it exists, or
-do nothing (other than returning an error that the table do not exists).</p>
+                                <div class="sect5">
+                                    <h6 id="_drop_column"><a name="Dropx"></a>Drop Table If Exists</h6>
+                                    <div class="paragraph">
+                                        <p>Drops a table if it exists, or
+does nothing (returns an error that the table does not exist).</p>
+                                    </div>
+                                </div>
+                                <div class="code">
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>drop_table</em></strong> ::=
+
+	DROP TABLE [IF EXISTS] [<strong><em>schema_name</em></strong>].<strong><em>table_name</em></strong> ;
+	DROP TABLE [IF EXISTS] [<strong><em>schema_name</em></strong>].<strong><em>external_table_name</em></strong> ;</code></pre>
+                                    </div>
                                 </div>
                                 <p class="example">Examples:</p>
                                 <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">drop</span>  <span class="tok-k">table</span>  <span class="tok-k">if</span>  <span class="tok-k">exists</span>  <span class="tok-n">my_schema</span><span class="tok-mf">.</span><span class="tok-n">my_table</span><span class="tok-p">;</span></code></pre>
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">DROP</span>  <span class="tok-k">TABLE</span> <span class="tok-k">IF</span> <span class="tok-k">EXISTS</span> <span class="tok-n">my_schema</span><span class="tok-mf">.</span><span class="tok-n">my_table</span><span class="tok-p">;</span></code></pre>
                                     </div>
                                 </div>
                             </div>
@@ -466,10 +517,16 @@ do nothing (other than returning an error that the table do not exists).</p>
                         <div class="sect3">
                             <h4 id="_external_tables"><a name="External_tables"></a>External Tables</h4>
                             <div class="sect4">
+                                <div class="paragraph">
+                                    <p>The following external table commands are available:</p>
+                                    <ul>
+                                        <li><a href="#CREATE4">CREATE EXTERNAL TABLE</a> </li>
+                                    </ul>
+                                </div>
                                 <h5 id="_create_external_table"><a name="CREATE4"></a>CREATE EXTERNAL TABLE</h5>
                                 <div class="paragraph">
-                                    <p>CREATE EXTERNAL TABLE creates a new external table in the current database under a specific schema.
-External tables allow SQream to access data that is stored outside the database in a none-SQream format, and to query it via SQL commands.<br />While creating it, the user should specify the files format and location, these will be used by SQream while accessing it at the query execution time.<br /></p>
+                                    <p>Creates a new external table in the current database under a specific schema.
+External tables allow SQream to access data that is stored outside the database in a non-SQream format, and to query it via SQL commands.<br />While creating it, the user should specify the files format and location, these will be used by SQream while accessing it at the query execution time.<br /></p>
                                 </div>
                                 <div class="admonitionblock note">
                                     <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
@@ -537,10 +594,10 @@ External tables allow SQream to access data that is stored outside the database 
                                 <div class="ulist">
                                     <ul>
                                         <li>
-                                            <p><strong>FIELD DELIMITER</strong>:<br />Allows to specify a character(s) as delimiter between fields in a row. Default is <code>,</code> (comma) the CSV standard field delimiter.</p>
+                                            <p><strong>FIELD DELIMITER</strong>:<br />Specifies a character(s) as delimiter between fields in a row. Default is <code>,</code> (comma) the CSV standard field delimiter.</p>
                                         </li>
                                         <li>
-                                            <p><strong>RECORD DELIMITER</strong>:<br />Allows to specify a character(s) as delimiter between lines. Default is <code>\n</code>, the CSV standard record delimiter.</p>
+                                            <p><strong>RECORD DELIMITER</strong>:<br />Specifies a character(s) as delimiter between lines. Default is <code>\n</code>, the CSV standard record delimiter.</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -679,9 +736,19 @@ External tables allow SQream to access data that is stored outside the database 
                         <div class="sect3">
                             <h4 id="_views">Views</h4>
                             <div class="sect4">
+                                <div class="paragraph">
+                                    <p>The following view commands are available:</p>
+                                    <ul>
+                                        <li><a href="#CREATE5">CREATE VIEW</a> </li>
+                                        <li><a href="#DROP4">DROP VIEW</a>
+                                        </li>
+                                        <li><a href="#RECOMPIL">RECOMPILE VIEW</a>
+                                        </li>
+                                    </ul>
+                                </div>
                                 <h5 id="_create_view"><a name="CREATE5"></a>CREATE VIEW</h5>
                                 <div class="paragraph">
-                                    <p><strong>CREATE VIEW</strong> creates a new view in the current database.</p>
+                                    <p>Creates a new view in the current database.</p>
                                 </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>create_view_statement</em></strong> ::=
@@ -700,9 +767,9 @@ External tables allow SQream to access data that is stored outside the database 
                                 </div>
                             </div>
                             <div class="sect4">
-                                <h5 id="_drop_view">DROP VIEW</h5>
+                                <h5 id="_drop_view"><a name="DROP4"></a>DROP VIEW</h5>
                                 <div class="paragraph">
-                                    <p><strong>DROP VIEW</strong> will delete a view from the current database.</p>
+                                    <p>Deletes a view from the current database.</p>
                                 </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>drop_view_statement</em></strong> ::=
@@ -717,7 +784,7 @@ External tables allow SQream to access data that is stored outside the database 
                                 </div>
                             </div>
                             <div class="sect4">
-                                <h5 id="_recompile_view">RECOMPILE VIEW</h5>
+                                <h5 id="_recompile_view"><a name="RECOMPIL"></a>RECOMPILE VIEW</h5>
                                 <div class="paragraph">
                                     <p>Use the utility function <strong>RECOMPILE_VIEW</strong> to recompile an invalid view in the current database.</p>
                                 </div>
@@ -735,16 +802,31 @@ External tables allow SQream to access data that is stored outside the database 
                         </div>
                         <div class="sect3">
                             <h4 id="roles"><a name="roles"></a>Users/Roles</h4>
+                            <div class="paragraph">
+                                <p>SQream manages users by <em>roles</em>.</p>
+                            </div>
+                            <div class="paragraph">
+                                <p>When the <strong>ROLE</strong> is used as a <strong>USER</strong>, it has to be granted a password, with login and connect privilege to the relevant databases.</p>
+                            </div>
+                            <div class="paragraph">
+                                <p>For more information regarding <strong>ROLES</strong> and permissions, see <a href="#roles-and-permissions">Managing Database Roles and Permissions</a></p>
+                            </div>
+                            <div class="paragraph">
+                                <p>The following role commands are available:</p>
+                                <ul>
+                                    <li><a href="#CREATE2">CREATE ROLE</a> </li>
+                                    <li><a href="#DROP5">DROP ROLE</a> </li>
+                                    <li><a href="#ALTER3">ALTER ROLE</a> </li>
+                                    <li><a href="#GRANT">GRANT Permissions</a>
+                                    </li>
+                                    <li><a href="#REVOKE">REVOKE Permissions</a>
+                                    </li>
+                                </ul>
+                            </div>
                             <div class="sect4">
                                 <h5 id="_create_role"><a name="CREATE2"></a>CREATE ROLE</h5>
                                 <div class="paragraph">
-                                    <p>SQream manages users by <em>roles</em>. <strong>CREATE ROLE</strong> adds a new user/role to the cluster.</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>When the <strong>ROLE</strong> is used as a <strong>USER</strong>, it has to be granted a password, with login and connect privilege to the relevant databases.</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>For more information regarding <strong>ROLES</strong> and permissions, see <a href="#roles-and-permissions">Managing Database Roles and Permissions</a></p>
+                                    <p>Adds a new user/role to the cluster.</p>
                                 </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>create_role_statement</em></strong> ::=
@@ -765,9 +847,9 @@ External tables allow SQream to access data that is stored outside the database 
                                 </div>
                             </div>
                             <div class="sect4">
-                                <h5 id="_drop_role">DROP ROLE</h5>
+                                <h5 id="_drop_role"><a name="DROP5"></a>DROP ROLE</h5>
                                 <div class="paragraph">
-                                    <p><strong>DROP ROLE</strong> deletes a role/user.</p>
+                                    <p>Deletes a role/user.</p>
                                 </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>drop_role_statement</em></strong> ::=
@@ -782,9 +864,9 @@ External tables allow SQream to access data that is stored outside the database 
                                 </div>
                             </div>
                             <div class="sect4">
-                                <h5 id="_alter_role">ALTER ROLE</h5>
+                                <h5 id="_alter_role"><a name="ALTER3"></a>ALTER ROLE</h5>
                                 <div class="paragraph">
-                                    <p>Use <strong>ALTER ROLE</strong> to rename an existing role.</p>
+                                    <p>Renames an existing role.</p>
                                 </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>alter_role_statement</em></strong> ::=
@@ -846,8 +928,8 @@ External tables allow SQream to access data that is stored outside the database 
                                     <li>superuser</li>
                                     <li>user with relevant admin permission via the <span class="strong">A</span><span class="strong">D</span><span class="strong">MIN OPTION</span></li>
                                 </ul>
-                                <h5>GRANT Permissions</h5>
-                                <p>The GRANT command assigns specific permissions to existing database objects, schema, or databases to one or more roles.</p>
+                                <h5><a name="GRANT"></a>GRANT Permissions</h5>
+                                <p>Assigns specific permissions to existing database objects, schema, or databases to one or more roles.</p>
                                 <p>The identifier name can be the role name or CURRENT_ROLE.</p>
                                 <p>The following table lists the possible permissions for various levels in the cluster.</p>
                                 <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');margin-left: 0;margin-right: auto;" class="TableStyle-Default_Table" cellspacing="0">
@@ -935,16 +1017,18 @@ External tables allow SQream to access data that is stored outside the database 
 	[WITH ADMIN OPTION]</pre>
                                     </div>
                                 </div>
-                                <p>INSERT: Allows INSERT of a new row into the specified table using INSERT/COPY command.</p>
-                                <p>DELETE: Allows DELETE of a row from the specified table. This privilege effects both DELETE and TRUNCATE commands.</p>
-                                <p>DDL: Allows DROP/ALTER.</p>
-                                <p>SUPERUSER: The most privileged role in SQream cluster, allowing full control over the cluster. By default, SQream role is a superuser. Some utility functions can be used by superusers only.</p>
-                                <p>SUPERUSER ON SCHEMA: Has maximum permissions on existing and new objects for a specific schema.</p>
-                                <p>LOGIN: Grants the login permission. Without it, a role cannot function as a USER and login.</p>
-                                <p>PASSWORD: Grants a new password for the role. Without a password the role cannot function as a USER and login.</p>
-                                <p>WITH ADMIN OPTION: Grants the ability to give a certain role permission to others. </p>
-                                <h5>REVOKE Permissions</h5>
-                                <p>The REVOKE command removes permissions from one or more roles.</p>
+                                <ul>
+                                    <li>INSERT: Allows INSERT of a new row into the specified table using INSERT/COPY command.</li>
+                                    <li>DELETE: Allows DELETE of a row from the specified table. This privilege effects both DELETE and TRUNCATE commands.</li>
+                                    <li>DDL: Allows DROP/ALTER.</li>
+                                    <li>SUPERUSER: The most privileged role in SQream cluster, allowing full control over the cluster. By default, SQream role is a superuser. Some utility functions can be used by superusers only.</li>
+                                    <li>SUPERUSER ON SCHEMA: Has maximum permissions on existing and new objects for a specific schema.</li>
+                                    <li>LOGIN: Grants the login permission. Without it, a role cannot function as a USER and login.</li>
+                                    <li>PASSWORD: Grants a new password for the role. Without a password the role cannot function as a USER and login.</li>
+                                    <li>WITH ADMIN OPTION: Grants the ability to give a certain role permission to others. </li>
+                                </ul>
+                                <h5><a name="REVOKE"></a>REVOKE Permissions</h5>
+                                <p>Removes permissions from one or more roles.</p>
                                 <p>The identifier name can be the role name or CURRENT_ROLE.</p>
                                 <div>
                                     <p class="example">Examples:</p>
@@ -988,9 +1072,19 @@ External tables allow SQream to access data that is stored outside the database 
                             </div>
                         </div>
                         <div class="sect3">
-                            <h4 id="_ddl_for_a_whole_database_or_single_database_object">DDL for a whole database or single database object</h4>
+                            <h4 id="_ddl_for_a_whole_database_or_single_database_object">Generating the DDL </h4>
                             <div class="paragraph">
-                                <div class="title">Generate the DDL for all objects of a database</div>
+                                <p>You can generate the DDL for any of the following:</p>
+                                <ul>
+                                    <li>A whole database (See <a href="#Generati">Generating the DDL for all objects of a database</a></li>
+                                    <li>A specific database object (See <a href="#Generati3">Generating the DDL of a single table, external table or view</a></li>
+                                    <li>A specific user defined function (UDF) (See <a href="#Generati2">Generating the DDL of a single user defined function (UDF)</a></li>
+                                </ul>
+                            </div>
+                            <div class="paragraph">
+                                <div class="title">
+                                    <p><a name="Generati"></a>Generating the DDL for all objects of a database</p>
+                                </div>
                                 <p>Use the utility function <strong>dump_database_ddl()</strong> to generate the DDL for all tables and views of the database you are currently connected to.</p>
                             </div>
                             <div class="code">
@@ -1002,7 +1096,9 @@ External tables allow SQream to access data that is stored outside the database 
                                 </div>
                             </div>
                             <div class="paragraph">
-                                <div class="title">Generate the DDL of a single table, external table or view</div>
+                                <div class="title">
+                                    <p><a name="Generati3"></a>Generating the DDL of a single table, external table or view</p>
+                                </div>
                                 <p>Use the utility function <strong>get_ddl('table_name')</strong> or <strong>get_view_ddl('view_name')</strong> to generate the DDL for a specified table, external table or view.</p>
                             </div>
                             <div class="admonitionblock note">
@@ -1029,7 +1125,9 @@ If the table name has a numeric prefix (e.g. "2018_my_table"), the name must be 
                                 </div>
                             </div>
                             <div class="paragraph">
-                                <div class="title">Generate the DDL of a single user defined function (UDF)</div>
+                                <div class="title">
+                                    <p><a name="Generati2"></a>Generating the DDL of a single user defined function (UDF)</p>
+                                </div>
                                 <p>Use the utility function <strong>get_function_ddl()</strong> to generate the DDL for a specified UDF.</p>
                             </div>
                             <div class="code">
