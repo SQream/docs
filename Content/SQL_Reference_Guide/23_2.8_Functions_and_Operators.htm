@@ -290,7 +290,7 @@ to test if a value is not null. You must use <strong>IS NULL</strong> and <stron
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2" />
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2" />
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableblock"><code>5 &amp; 6</code>
+                                            <p class="tableblock"><code>5 | 6</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
@@ -755,7 +755,7 @@ For example: (100/14) will result in 7 while (100.0/14) or (100/14.0) will resul
                             <div class="sect4">
                                 <h5 id="_coalesce">COALESCE</h5>
                                 <div class="paragraph">
-                                    <p><strong>COALESCE</strong> - Returns the first non-null value of the list of arguments to the function.</p>
+                                    <p> Returns the first non-null value of the list of arguments to the function.</p>
                                 </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-k">COALESCE</span>  <span class="tok-p">(</span><span class="tok-n">cfloat</span><span class="tok-p">,</span>  <span class="tok-n">cfloat</span>  <span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span>  
@@ -764,10 +764,10 @@ For example: (100/14) will result in 7 while (100.0/14) or (100/14.0) will resul
                                     </div>
                                 </div>
                                 <div class="paragraph">
-                                    <p>Parameters can be of any data type, but must be of same one.</p>
+                                    <p>Parameters: can be of any data type, but must all be the same type.</p>
                                 </div>
                                 <div class="paragraph">
-                                    <p>Returns
+                                    <p>Returns:
 a single value of the same data type as parameter.</p>
                                 </div>
                             </div>
@@ -777,10 +777,373 @@ a single value of the same data type as parameter.</p>
                             <div class="paragraph">
                                 <p>These functions support data type casting and conversion from one data type to another. In addition to explicit conversions, the systems performs implicit conversions and casts different data types in an expressions automatically according to the rules (see table below).</p>
                             </div>
+                            <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                                <caption class="title">Table 34. Supported conversions, both implicit and explicit</caption>
+                                <colgroup>
+                                    <col style="width: 110px;" />
+                                    <col style="width: 111px;" />
+                                    <col style="width: 109px;" />
+                                    <col style="width: 507px;" />
+                                </colgroup>
+                                <thead>
+                                    <tr class="TableStyle-Default_Table-Head-Header1">
+                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">From type</th>
+                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">To Type</th>
+                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Context</th>
+                                        <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Comments</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td rowspan="5" class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">int</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">bigint</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">implicit</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">bool</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">explicit</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">datetime</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">none</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">date</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">none</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">varchar</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">explicit</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td rowspan="5" class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">bigint</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">int</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">explicit</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">bool</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">explicit</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">datetime</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">none</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">date</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">none</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">varchar</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">explicit</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td rowspan="6" class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">float/real</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">int</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">implicit</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableblock">Truncates the value to Integer.</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">bigint</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">implicit</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableblock">Truncates the value to BIGINT.</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">bool</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">explicit</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">datetime</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">none</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">date</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">none</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">varchar</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">explicit</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <p class="tableblock">Rounds the value to 4 digits after the decimal point and then converts it to a character. See example above.</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td rowspan="4" class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">bool</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">int</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">implicit</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">bigint</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">implicit</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">datetime</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">none</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">date</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">none</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td rowspan="5" class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">date</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">int</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">none</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">bigint</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">none</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">bool</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">none</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">datetime</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">implicit</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">varchar</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">explicit</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td rowspan="5" class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">datetime**</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">int</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">none</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">bigint</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">none</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">bool</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">none</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">date</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">implicit</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <p class="tableblock">Truncates the time part.</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">varchar</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">explicit</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td rowspan="5" class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">varchar***</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">int</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">explicit</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">bigint</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">explicit</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">datetime</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <p class="tableblock">explicit</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body2">
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">date</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <p class="tableblock">explicit</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                    </tr>
+                                    <tr class="TableStyle-Default_Table-Body-Body1">
+                                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                            <p class="tableblock">varchar</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                            <p class="tableblock">explicit</p>
+                                        </td>
+                                        <td class="TableStyle-Default_Table-BodyA-Column1-Body1" />
+                                    </tr>
+                                </tbody>
+                            </table>
                             <div class="sect4">
                                 <h5 id="_cast"><a name="CAST"></a>CAST</h5>
                                 <div class="paragraph">
-                                    <p>This function converts an expression from one data type to another.</p>
+                                    <p>Converts an expression from one data type to another.</p>
                                 </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>cast_operator</em></strong> ::=
@@ -802,369 +1165,6 @@ a single value of the same data type as parameter.</p>
 <span class="tok-c1">-- returns: varchar 1234.5679</span></code></pre>
                                     </div>
                                 </div>
-                                <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
-                                    <caption class="title">Table 34. Supported conversions, both implicit and explicit</caption>
-                                    <colgroup>
-                                        <col style="width: 110px;" />
-                                        <col style="width: 111px;" />
-                                        <col style="width: 109px;" />
-                                        <col style="width: 507px;" />
-                                    </colgroup>
-                                    <thead>
-                                        <tr class="TableStyle-Default_Table-Head-Header1">
-                                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">From type</th>
-                                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">To Type</th>
-                                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Context</th>
-                                            <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Comments</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1" rowspan="5">
-                                                <p class="tableblock">int</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">bigint</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">implicit</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body2">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">bool</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">explicit</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">datetime</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">none</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body2">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">date</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">none</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">varchar</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">explicit</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body2">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2" rowspan="5">
-                                                <p class="tableblock">bigint</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">int</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">explicit</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">bool</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">explicit</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body2">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">datetime</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">none</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">date</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">none</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body2">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">varchar</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">explicit</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1" rowspan="6">
-                                                <p class="tableblock">float/real</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">int</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">implicit</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-                                                <p class="tableblock">Truncates the value to Integer.</p>
-                                            </td>
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body2">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">bigint</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">implicit</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
-                                                <p class="tableblock">Truncates the value to BIGINT.</p>
-                                            </td>
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">bool</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">explicit</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body2">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">datetime</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">none</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">date</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">none</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body2">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">varchar</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">explicit</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
-                                                <p class="tableblock">Rounds the value to 4 digits after the decimal point and then converts it to a character. See example above.</p>
-                                            </td>
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1" rowspan="4">
-                                                <p class="tableblock">bool</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">int</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">implicit</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body2">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">bigint</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">implicit</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">datetime</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">none</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body2">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">date</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">none</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1" rowspan="5">
-                                                <p class="tableblock">date</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">int</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">none</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body2">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">bigint</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">none</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">bool</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">none</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body2">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">datetime</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">implicit</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">varchar</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">explicit</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body2">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2" rowspan="5">
-                                                <p class="tableblock">datetime**</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">int</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">none</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">bigint</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">none</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body2">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">bool</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">none</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">date</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">implicit</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-                                                <p class="tableblock">Truncates the time part.</p>
-                                            </td>
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body2">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">varchar</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">explicit</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1" rowspan="5">
-                                                <p class="tableblock">varchar***</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">int</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">explicit</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body2">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">bigint</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">explicit</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">datetime</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                                <p class="tableblock">explicit</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body2">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">date</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                                <p class="tableblock">explicit</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
-                                        </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
-                                                <p class="tableblock">varchar</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
-                                                <p class="tableblock">explicit</p>
-                                            </td>
-                                            <td class="TableStyle-Default_Table-BodyA-Column1-Body1" />
-                                        </tr>
-                                    </tbody>
-                                </table>
                                 <div class="paragraph">
                                     <p>** There are conversion functions to convert part of a date or
  datetime to integer, or to convert the whole date/datetime to unix
@@ -1180,7 +1180,7 @@ a single value of the same data type as parameter.</p>
                             <div class="sect4">
                                 <h5 id="_utf8_to_ascii">UTF8_TO_ASCII</h5>
                                 <div class="paragraph">
-                                    <p><strong>UTF8_TO_ASCII</strong> - Converts an ascii-only nvarchar column to a varchar. To complete this function, use the function <strong>IS_ASCII</strong> to verify the column data indeed contains only ascii characters.</p>
+                                    <p>Converts an ascii-only nvarchar column to a varchar. To complete this function, use the function <strong>IS_ASCII</strong> to verify the column data indeed contains only ascii characters.</p>
                                 </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">UTF8_TO_ASCII</span><span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span>  <span class="tok-k">where</span>  <span class="tok-n">IS_ASCII</span><span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">);</span>  
@@ -1188,11 +1188,11 @@ a single value of the same data type as parameter.</p>
                                     </div>
                                 </div>
                                 <div class="paragraph">
-                                    <p>Parameters
+                                    <p>Parameters:
 NVarChar</p>
                                 </div>
                                 <div class="paragraph">
-                                    <p>Returns
+                                    <p>Returns:
 VarChar</p>
                                 </div>
                                 <div class="admonitionblock note">
@@ -1210,25 +1210,25 @@ IS_ASCII will only work on NOT NULL columns. If your column definition allows NU
                             <div class="sect4">
                                 <h5 id="_crc64">CRC64</h5>
                                 <div class="paragraph">
-                                    <p><strong>CRC64</strong> - Converts values of a varchar or nvarchar column to bigint (hash key) using the crc64 hash function.</p>
+                                    <p>Converts values of a varchar or nvarchar column to bigint (hash key) using the crc64 hash function.</p>
                                 </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">CRC64</span><span class="tok-p">(</span><span class="tok-n">text_column</span><span class="tok-p">)</span>  <span class="tok-k">FROM</span>  <span class="tok-k">table</span><span class="tok-p">;</span></code></pre>
                                     </div>
                                 </div>
                                 <div class="paragraph">
-                                    <p>Parameters
+                                    <p>Parameters:
 NVarChar or Varchar</p>
                                 </div>
                                 <div class="paragraph">
-                                    <p>Returns
+                                    <p>Returns:
 Bigint</p>
                                 </div>
                             </div>
                             <div class="sect4">
                                 <h5 id="_assignment_resolution">Assignment resolution</h5>
                                 <div class="paragraph">
-                                    <p>This is a different kind of implicit cast which applies when you are
+                                    <p>A type of implicit cast which applies when you are
 inserting one type of expression into a column with a different
 type. The casting rules are essentially the same as the implicit
 casting in value expressions for the equals operator.</p>
@@ -1255,7 +1255,7 @@ a single compatible type.</p>
                                     </ul>
                                 </div>
                                 <div class="paragraph">
-                                    <p>It is based on the imsplicit casting rules for the equals operator.</p>
+                                    <p>It is based on the implicit casting rules for the equals operator.</p>
                                 </div>
                             </div>
                         </div>
@@ -2543,8 +2543,9 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                             <h4 id="_geospatial">Geospatial</h4>
                             <div class="paragraph">
                                 <div class="title">Point</div>
-                                <p>Points are represented as longitude and latitude columns. Example:</p>
+                                <p>Points are represented as longitude and latitude columns.</p>
                             </div>
+                            <p class="example">Example:</p>
                             <div class="code">
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">create</span>  <span class="tok-k">table</span>  <span class="tok-nb">point</span>  <span class="tok-p">(</span>  
        <span class="tok-n">longitude</span>  <span class="tok-k">float</span>  <span class="tok-k">not</span>  <span class="tok-k">null</span><span class="tok-p">,</span>  
@@ -2556,6 +2557,7 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                 <div class="title">Polygon</div>
                                 <p>Polygons are N number of points:</p>
                             </div>
+                            <p class="example">Example:</p>
                             <div class="code">
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">create</span>  <span class="tok-k">table</span>  <span class="tok-nb">polygon</span>  <span class="tok-p">(</span>  
     <span class="tok-n">long1</span>  <span class="tok-k">float</span>  <span class="tok-k">not</span>  <span class="tok-k">null</span><span class="tok-p">,</span>  
@@ -2574,6 +2576,7 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
 points. We represent it as twenty points plus a count column which
 indicates how many points are actually used in the given row.</p>
                             </div>
+                            <p class="example">Example:</p>
                             <div class="code">
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">create</span>  <span class="tok-k">table</span>  <span class="tok-n">polyline</span>  <span class="tok-p">(</span>  
     <span class="tok-n">num_of_points</span>  <span class="tok-nb">int</span>  <span class="tok-k">not</span>  <span class="tok-k">null</span><span class="tok-p">,</span>  
