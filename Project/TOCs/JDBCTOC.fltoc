@@ -3,25 +3,69 @@
   Version="1">
   <TocEntry
     Title="[%=System.LinkedTitle%]"
-    Link="/Content/Drivers/JDBC/1_The_SQream_JDBC_Connector__Overview.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    Link="/Content/Print_Common_Files/Cover.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    conditions="General.Print_Only"
+    StartSection="false"
+    BreakType="pageLayout"
+    PageType="title"
+    PageLayout="/Content/Resources/PageLayouts/front-matter-page-layout.flpgl" />
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Print_Common_Files/Copyright_For_Print.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    conditions="General.Print_Only"
+    StartSection="false"
+    BreakType="pageLayout"
+    PageLayout="/Content/Resources/PageLayouts/front-matter-page-layout.flpgl" />
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Print_Common_Files/TOC.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    conditions="General.Print_Only"
+    BreakType="pageLayout"
+    PageNumber="1"
+    PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
+    PageType="normal"
+    StartSection="false"></TocEntry>
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Drivers/JDBC/1_The_SQream_JDBC_Connector__Overview.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    BreakType="chapter"
+    StartSection="false"
+    PageNumberReset="continue">
     <TocEntry
       Title="Overview"
-      Link="/Content/Drivers/JDBC/1_The_SQream_JDBC_Connector__Overview.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      Link="/Content/Drivers/JDBC/1_The_SQream_JDBC_Connector__Overview.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      conditions="General.Web_Only"
+      StartSection="false"
+      BreakType="none"
+      PageNumber="1" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
-      Link="/Content/Drivers/JDBC/2_1_API_Reference.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      Link="/Content/Drivers/JDBC/2_1_API_Reference.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      BreakType="none"
+      StartSection="false"
+      PageNumberReset="continue"
+      PageNumber="1" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
-      Link="/Content/Drivers/JDBC/3_2_Installation_Instructions.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      Link="/Content/Drivers/JDBC/3_2_Installation_Instructions.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      BreakType="none"
+      StartSection="false"
+      PageNumberReset="continue"
+      PageNumber="1" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
-      Link="/Content/Drivers/JDBC/4_3.1_Connecting_to_sqream_creating_a_table_with_some_data_and_retrieveing_the_data.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+      Link="/Content/Drivers/JDBC/4_3.1_Connecting_to_sqream_creating_a_table_with_some_data_and_retrieveing_the_data.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      BreakType="none"
+      StartSection="false"
+      PageNumberReset="continue"
+      PageNumber="1">
       <TocEntry
         Title="Connecting, creating a table with data, retrieveing the data"
-        Link="/Content/Drivers/JDBC/4_3.1_Connecting_to_sqream_creating_a_table_with_some_data_and_retrieveing_the_data.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+        Link="/Content/Drivers/JDBC/4_3.1_Connecting_to_sqream_creating_a_table_with_some_data_and_retrieveing_the_data.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+        conditions="General.Web_Only"
+        StartSection="false"
+        BreakType="none"
+        PageNumber="1" />
     </TocEntry>
-    <TocEntry
-      Title="[%=System.LinkedTitle%]"
-      Link="/Content/Drivers/JDBC/5_Copyright.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
   </TocEntry>
 </CatapultToc>

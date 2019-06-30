@@ -2,11 +2,39 @@
 <CatapultToc
   Version="1">
   <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Print_Common_Files/Cover.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    conditions="General.Print_Only"
+    StartSection="false"
+    BreakType="pageLayout"
+    PageType="title"
+    PageLayout="/Content/Resources/PageLayouts/front-matter-page-layout.flpgl" />
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Print_Common_Files/Copyright_For_Print.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    conditions="General.Print_Only"
+    StartSection="false"
+    BreakType="pageLayout"
+    PageLayout="/Content/Resources/PageLayouts/front-matter-page-layout.flpgl" />
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Print_Common_Files/TOC.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    conditions="General.Print_Only"
+    BreakType="pageLayout"
+    PageNumber="1"
+    PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
+    PageType="normal"
+    StartSection="false"></TocEntry>
+  <TocEntry
     Title=".NET Connector"
-    Link="/Content/Drivers/DotNet/1_.NET_Connector.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    Link="/Content/Drivers/DotNet/1_.NET_Connector.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    BreakType="chapter"
+    StartSection="false"
+    PageNumberReset="continue">
     <TocEntry
       Title="Overview"
-      Link="/Content/Drivers/DotNet/1_.NET_Connector.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      Link="/Content/Drivers/DotNet/1_.NET_Connector.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      conditions="General.Web_Only" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Drivers/DotNet/2_1_Prerequisites.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"></TocEntry>
@@ -25,8 +53,5 @@
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Drivers/DotNet/7_6_Error_Handling.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
-    <TocEntry
-      Title="[%=System.LinkedTitle%]"
-      Link="/Content/Drivers/DotNet/8_Copyright.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
   </TocEntry>
 </CatapultToc>

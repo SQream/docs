@@ -3,20 +3,51 @@
   Version="1">
   <TocEntry
     Title="[%=System.LinkedTitle%]"
-    Link="/Content/Drivers/NodeJS/1_Node.js_Driver.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    Link="/Content/Print_Common_Files/Cover.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    conditions="General.Print_Only"
+    StartSection="false"
+    BreakType="pageLayout"
+    PageType="title"
+    PageLayout="/Content/Resources/PageLayouts/front-matter-page-layout.flpgl" />
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Print_Common_Files/Copyright_For_Print.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    conditions="General.Print_Only"
+    StartSection="false"
+    BreakType="pageLayout"
+    PageLayout="/Content/Resources/PageLayouts/front-matter-page-layout.flpgl" />
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Print_Common_Files/TOC.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    conditions="General.Print_Only"
+    BreakType="pageLayout"
+    PageNumber="1"
+    PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
+    PageType="normal"
+    StartSection="false"></TocEntry>
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Drivers/NodeJS/1_Node.js_Driver.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    BreakType="chapter"
+    StartSection="false"
+    PageNumberReset="continue">
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Drivers/NodeJS/2_1.1_Install_Node.js_10.x.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
       <TocEntry
         Title="Install Node.js 10.x"
-        Link="/Content/Drivers/NodeJS/2_1.1_Install_Node.js_10.x.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+        Link="/Content/Drivers/NodeJS/2_1.1_Install_Node.js_10.x.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+        conditions="General.Web_Only"
+        StartSection="false" />
     </TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Drivers/NodeJS/3_2.1_Create_a_node.js_file_to_configure_your_connection_and_database_query.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
       <TocEntry
         Title="Create a node.js file to configure your connection and database query"
-        Link="/Content/Drivers/NodeJS/3_2.1_Create_a_node.js_file_to_configure_your_connection_and_database_query.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+        Link="/Content/Drivers/NodeJS/3_2.1_Create_a_node.js_file_to_configure_your_connection_and_database_query.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+        conditions="General.Web_Only"
+        StartSection="false" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Drivers/NodeJS/4_2.2_Run_and_test_the_Node.js_file.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
@@ -40,8 +71,5 @@
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Drivers/NodeJS/8_5_Recommended_Configuration.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
-    <TocEntry
-      Title="[%=System.LinkedTitle%]"
-      Link="/Content/Drivers/NodeJS/9_Copyright.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
   </TocEntry>
 </CatapultToc>

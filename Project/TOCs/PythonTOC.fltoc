@@ -3,16 +3,45 @@
   Version="1">
   <TocEntry
     Title="[%=System.LinkedTitle%]"
-    Link="/Content/Drivers/Python/1_The_SQream_Native_Python_Connector__Overview.htm">
+    Link="/Content/Print_Common_Files/Cover.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    conditions="General.Print_Only"
+    StartSection="false"
+    BreakType="pageLayout"
+    PageType="title"
+    PageLayout="/Content/Resources/PageLayouts/front-matter-page-layout.flpgl" />
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Print_Common_Files/Copyright_For_Print.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    conditions="General.Print_Only"
+    StartSection="false"
+    BreakType="pageLayout"
+    PageLayout="/Content/Resources/PageLayouts/front-matter-page-layout.flpgl" />
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Print_Common_Files/TOC.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    conditions="General.Print_Only"
+    BreakType="pageLayout"
+    PageNumber="1"
+    PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
+    PageType="normal"
+    StartSection="false"></TocEntry>
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Drivers/Python/1_The_SQream_Native_Python_Connector__Overview.htm"
+    BreakType="chapter"
+    StartSection="false"
+    PageNumberReset="continue">
     <TocEntry
       Title="Overview"
-      Link="/Content/Drivers/Python/2_1.1_Initialization__Termination.htm"></TocEntry>
+      Link="/Content/Drivers/Python/2_1.1_Initialization__Termination.htm"
+      conditions="General.Web_Only"></TocEntry>
     <TocEntry
       Title="API Reference"
       Link="/Content/Drivers/Python/2_1.1_Initialization__Termination.htm">
       <TocEntry
         Title="Initialization - Termination"
-        Link="/Content/Drivers/Python/2_1.1_Initialization__Termination.htm"></TocEntry>
+        Link="/Content/Drivers/Python/2_1.1_Initialization__Termination.htm"
+        conditions="General.Web_Only"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Drivers/Python/3_1.2_Statement.htm"></TocEntry>
@@ -25,7 +54,8 @@
       Link="/Content/Drivers/Python/5_2.1_Import_and_establish_a_connection,_run_a_query.htm">
       <TocEntry
         Title="Import and establish a connection, run a query"
-        Link="/Content/Drivers/Python/5_2.1_Import_and_establish_a_connection,_run_a_query.htm"></TocEntry>
+        Link="/Content/Drivers/Python/5_2.1_Import_and_establish_a_connection,_run_a_query.htm"
+        conditions="General.Web_Only"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Drivers/Python/6_2.2_Example_of_classic_Get_data_loop.htm"></TocEntry>
@@ -33,8 +63,5 @@
         Title="Example of classic Set data loop, using network streaming"
         Link="/Content/Drivers/Python/7_2.3_Example_of_classic_Set_data_loop,_using_network_streaming_(also_called_Network_Insert).htm"></TocEntry>
     </TocEntry>
-    <TocEntry
-      Title="[%=System.LinkedTitle%]"
-      Link="/Content/Drivers/Python/8_Copyright.htm"></TocEntry>
   </TocEntry>
 </CatapultToc>
