@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\Resources\MasterPages\SQLReference.flmsp');">
     <head>
         <link href="../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
@@ -14,9 +14,13 @@
                             <div class="paragraph">
                                 <p>The following database commands are available:</p>
                                 <ul>
-                                    <li><a href="#CREATE">CREATE DATABASE</a>
+                                    <li>
+                                        <p><a href="#CREATE">CREATE DATABASE</a>
+                                        </p>
                                     </li>
-                                    <li><a href="#DROP">DROP DATABASE</a>
+                                    <li>
+                                        <p><a href="#DROP">DROP DATABASE</a>
+                                        </p>
                                     </li>
                                 </ul>
                             </div>
@@ -66,10 +70,18 @@ During <strong>DROP DATABASE</strong>, no other DDL/DML operations can run
                                 <div class="paragraph">
                                     <p>The following schema commands are available:</p>
                                     <ul>
-                                        <li><a href="#CREATE6">CREATE SCHEMA</a> </li>
-                                        <li><a href="#DROP2">DROP SCHEMA</a>
+                                        <li>
+                                            <p><a href="#CREATE6">CREATE SCHEMA</a>
+                                            </p>
                                         </li>
-                                        <li><a href="#ALTER">ALTER DEFAULT SCHEMA</a> </li>
+                                        <li>
+                                            <p><a href="#DROP2">DROP SCHEMA</a>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p><a href="#ALTER">ALTER DEFAULT SCHEMA</a>
+                                            </p>
+                                        </li>
                                     </ul>
                                 </div>
                                 <h5 id="_create_schema"><a name="CREATE6"></a>CREATE SCHEMA</h5>
@@ -87,7 +99,6 @@ During <strong>DROP DATABASE</strong>, no other DDL/DML operations can run
                                 <div class="admonitionblock note">
                                     <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                         <tr class="TableStyle-Default_Table-Body-Body1">
-                                            
                                             <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
 New tables should be explicitly associated to an existing schema, or implicitly associated to the PUBLIC default schema.
 </td>
@@ -114,7 +125,6 @@ New tables should be explicitly associated to an existing schema, or implicitly 
                                 <div class="admonitionblock note">
                                     <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                         <tr class="TableStyle-Default_Table-Body-Body1">
-                                            
                                             <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
 The PUBLIC schema can not be dropped.
 </td>
@@ -150,26 +160,46 @@ Use this command to change the user/role default schema to a different schema na
                             <div class="paragraph">
                                 <p>The following table commands are available:</p>
                                 <ul>
-                                    <li><a href="#CREATE3">CREATE TABLE</a>
+                                    <li>
+                                        <p><a href="#CREATE3">CREATE TABLE</a>
+                                        </p>
                                         <ul>
-                                            <li><a href="#Create">Create Or Replace Table</a>
+                                            <li>
+                                                <p><a href="#Create">Create Or Replace Table</a>
+                                                </p>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="#ALTER2">ALTER TABLE</a>
+                                    <li>
+                                        <p><a href="#ALTER2">ALTER TABLE</a>
+                                        </p>
                                         <ul>
-                                            <li><a href="#Rename">Rename table</a>
+                                            <li>
+                                                <p><a href="#Rename">Rename table</a>
+                                                </p>
                                             </li>
-                                            <li><a href="#Rename2">Rename column</a> </li>
-                                            <li><a href="#Add">Add column</a>
+                                            <li>
+                                                <p><a href="#Rename2">Rename column</a>
+                                                </p>
                                             </li>
-                                            <li><a href="#Drop">Drop column</a>
+                                            <li>
+                                                <p><a href="#Add">Add column</a>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p><a href="#Drop">Drop column</a>
+                                                </p>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="#DROP3">DROP TABLE</a>
+                                    <li>
+                                        <p><a href="#DROP3">DROP TABLE</a>
+                                        </p>
                                         <ul>
-                                            <li><a href="#Dropx">Drop Table If Exists</a> </li>
+                                            <li>
+                                                <p><a href="#Dropx">Drop Table If Exists</a>
+                                                </p>
+                                            </li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -182,7 +212,6 @@ Use this command to change the user/role default schema to a different schema na
                                 <div class="admonitionblock note">
                                     <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                         <tr class="TableStyle-Default_Table-Body-Body1">
-                                            
                                             <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
                                                 <div class="ulist">
                                                     <ul>
@@ -203,7 +232,6 @@ Use this command to change the user/role default schema to a different schema na
                                 </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code><strong><em>create_table_statement</em></strong> ::=
-
     CREATE TABLE [<strong><em>schema_name</em></strong>].<strong><em>table_name</em></strong> (
         { <strong><em>column_name</em></strong>  <strong><em>type_name</em></strong> [ <strong><em>default</em></strong> ]
           [ <strong><em>column_constraint</em></strong> ] }
@@ -242,23 +270,15 @@ Use this command to change the user/role default schema to a different schema na
                                         <p>The <code><strong><em>default_value</em></strong></code> can be NULL or a literal.</p>
                                     </div>
                                     <div class="paragraph">
-                                        <p>The common sequence generator options can be comma or whitespace
-separated.</p>
+                                        <p>The common sequence generator options can be comma or whitespace separated.</p>
                                     </div>
                                     <div class="admonitionblock warning">
-                                        <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                            <tr class="TableStyle-Default_Table-Body-Body1">
-                                                
-                                                <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-                                                    <div class="paragraph">
-                                                        <p>Identity columns are only supported for columns of type BIGINT.</p>
-                                                    </div>
-                                                    <div class="paragraph">
-                                                        <p>Identity does not enforce uniqueness of the value. When the value in the identity column reaches the maximum number for the specific column datatype limitation, the next number in the identity will restart as 1.</p>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </table>
+                                        <div class="paragraph">
+                                            <p>Identity columns are only supported for columns of type BIGINT.</p>
+                                        </div>
+                                        <div class="paragraph">
+                                            <p>Identity does not enforce uniqueness of the value. When the value in the identity column reaches the maximum number for the specific column datatype limitation, the next number in the identity will restart as 1.</p>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="sect5">
@@ -275,7 +295,6 @@ specification, which defaults to automatic compression.</p>
                                     <div class="admonitionblock note">
                                         <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                             <tr class="TableStyle-Default_Table-Body-Body1">
-                                                
                                                 <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
 You may override the default compression by specifying the <code>check</code> modifier.
 For example, <code>check ('CS "p4d"')</code>.<br />Please contact SQream support for more information about recommended compressions.
@@ -319,10 +338,14 @@ For example, <code>check ('CS "p4d"')</code>.<br />Please contact SQream support
                                 <div class="sect5">
                                     <h6 id="_create_or_replace_table"><a name="Create"></a>Create Or Replace Table</h6>
                                     <div class="paragraph">
-                                        <p>Does one of the following</p>
+                                        <p>Does one of the following:</p>
                                         <ul>
-                                            <li>If the table does not exist: creates a new table </li>
-                                            <li>If the table does exist: drops and creates the table with the new definition.</li>
+                                            <li>
+                                                <p>If the table does not exist: creates a new table</p>
+                                            </li>
+                                            <li>
+                                                <p>If the table does exist: drops and creates the table with the new definition.</p>
+                                            </li>
                                         </ul>
                                     </div>
                                     <p class="example">Examples:</p>
@@ -339,7 +362,6 @@ For example, <code>check ('CS "p4d"')</code>.<br />Please contact SQream support
                                     <div class="admonitionblock warning">
                                         <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                             <tr class="TableStyle-Default_Table-Body-Body1">
-                                                
                                                 <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
 If the CREATE TABLE operation does not complete successfully, the replaced table (<code>t</code> in this example) will no longer exist.
 </td>
@@ -356,7 +378,6 @@ If the CREATE TABLE operation does not complete successfully, the replaced table
                                 <div class="admonitionblock note">
                                     <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                         <tr class="TableStyle-Default_Table-Body-Body1">
-                                            
                                             <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
 This operation will require exclusive lock on the table.
 </td>
@@ -464,7 +485,6 @@ Note that this operation requires an exclusive lock on the table.</p>
                                 <div class="admonitionblock note">
                                     <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                         <tr class="TableStyle-Default_Table-Body-Body1">
-                                            
                                             <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
                                                 <div class="ulist">
                                                     <ul>
@@ -512,7 +532,10 @@ does nothing (returns an error that the table does not exist).</p>
                                 <div class="paragraph">
                                     <p>The following external table commands are available:</p>
                                     <ul>
-                                        <li><a href="#CREATE4">CREATE EXTERNAL TABLE</a> </li>
+                                        <li>
+                                            <p><a href="#CREATE4">CREATE EXTERNAL TABLE</a>
+                                            </p>
+                                        </li>
                                     </ul>
                                 </div>
                                 <h5 id="_create_external_table"><a name="CREATE4"></a>CREATE EXTERNAL TABLE</h5>
@@ -523,7 +546,6 @@ External tables allow SQream to access data that is stored outside the database 
                                 <div class="admonitionblock note">
                                     <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                         <tr class="TableStyle-Default_Table-Body-Body1">
-                                            
                                             <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
                                                 <div class="ulist">
                                                     <ul>
@@ -561,7 +583,6 @@ External tables allow SQream to access data that is stored outside the database 
                                 <div class="admonitionblock note">
                                     <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                         <tr class="TableStyle-Default_Table-Body-Body1">
-                                            
                                             <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
                                                 <div class="ulist">
                                                     <div class="title">Wildcard options:</div>
@@ -729,10 +750,17 @@ External tables allow SQream to access data that is stored outside the database 
                                 <div class="paragraph">
                                     <p>The following view commands are available:</p>
                                     <ul>
-                                        <li><a href="#CREATE5">CREATE VIEW</a> </li>
-                                        <li><a href="#DROP4">DROP VIEW</a>
+                                        <li>
+                                            <p><a href="#CREATE5">CREATE VIEW</a>
+                                            </p>
                                         </li>
-                                        <li><a href="#RECOMPIL">RECOMPILE VIEW</a>
+                                        <li>
+                                            <p><a href="#DROP4">DROP VIEW</a>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p><a href="#RECOMPIL">RECOMPILE VIEW</a>
+                                            </p>
                                         </li>
                                     </ul>
                                 </div>
@@ -804,12 +832,25 @@ External tables allow SQream to access data that is stored outside the database 
                             <div class="paragraph">
                                 <p>The following role commands are available:</p>
                                 <ul>
-                                    <li><a href="#CREATE2">CREATE ROLE</a> </li>
-                                    <li><a href="#DROP5">DROP ROLE</a> </li>
-                                    <li><a href="#ALTER3">ALTER ROLE</a> </li>
-                                    <li><a href="#GRANT">GRANT Permissions</a>
+                                    <li>
+                                        <p><a href="#CREATE2">CREATE ROLE</a>
+                                        </p>
                                     </li>
-                                    <li><a href="#REVOKE">REVOKE Permissions</a>
+                                    <li>
+                                        <p><a href="#DROP5">DROP ROLE</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#ALTER3">ALTER ROLE</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#GRANT">GRANT Permissions</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#REVOKE">REVOKE Permissions</a>
+                                        </p>
                                     </li>
                                 </ul>
                             </div>
@@ -1008,14 +1049,30 @@ External tables allow SQream to access data that is stored outside the database 
                                     </div>
                                 </div>
                                 <ul>
-                                    <li>INSERT: Allows INSERT of a new row into the specified table using INSERT/COPY command.</li>
-                                    <li>DELETE: Allows DELETE of a row from the specified table. This privilege effects both DELETE and TRUNCATE commands.</li>
-                                    <li>DDL: Allows DROP/ALTER.</li>
-                                    <li>SUPERUSER: The most privileged role in SQream cluster, allowing full control over the cluster. By default, SQream role is a superuser. Some utility functions can be used by superusers only.</li>
-                                    <li>SUPERUSER ON SCHEMA: Has maximum permissions on existing and new objects for a specific schema.</li>
-                                    <li>LOGIN: Grants the login permission. Without it, a role cannot function as a USER and login.</li>
-                                    <li>PASSWORD: Grants a new password for the role. Without a password the role cannot function as a USER and login.</li>
-                                    <li>WITH ADMIN OPTION: Grants the ability to give a certain role permission to others. </li>
+                                    <li>
+                                        <p>INSERT: Allows INSERT of a new row into the specified table using INSERT/COPY command.</p>
+                                    </li>
+                                    <li>
+                                        <p>DELETE: Allows DELETE of a row from the specified table. This privilege effects both DELETE and TRUNCATE commands.</p>
+                                    </li>
+                                    <li>
+                                        <p>DDL: Allows DROP/ALTER.</p>
+                                    </li>
+                                    <li>
+                                        <p>SUPERUSER: The most privileged role in SQream cluster, allowing full control over the cluster. By default, SQream role is a superuser. Some utility functions can be used by superusers only.</p>
+                                    </li>
+                                    <li>
+                                        <p>SUPERUSER ON SCHEMA: Has maximum permissions on existing and new objects for a specific schema.</p>
+                                    </li>
+                                    <li>
+                                        <p>LOGIN: Grants the login permission. Without it, a role cannot function as a USER and login.</p>
+                                    </li>
+                                    <li>
+                                        <p>PASSWORD: Grants a new password for the role. Without a password the role cannot function as a USER and login.</p>
+                                    </li>
+                                    <li>
+                                        <p>WITH ADMIN OPTION: Grants the ability to give a certain role permission to others.</p>
+                                    </li>
                                 </ul>
                                 <h5><a name="REVOKE"></a>REVOKE Permissions</h5>
                                 <p>Removes permissions from one or more roles.</p>
@@ -1066,9 +1123,15 @@ External tables allow SQream to access data that is stored outside the database 
                             <div class="paragraph">
                                 <p>You can generate the DDL for any of the following:</p>
                                 <ul>
-                                    <li>A whole database (See <a href="#Generati">Generating the DDL for all objects of a database</a></li>
-                                    <li>A specific database object (See <a href="#Generati3">Generating the DDL of a single table, external table or view</a></li>
-                                    <li>A specific user defined function (UDF) (See <a href="#Generati2">Generating the DDL of a single user defined function (UDF)</a></li>
+                                    <li>
+                                        <p>A whole database (See <a href="#Generati">Generating the DDL for all objects of a database</a></p>
+                                    </li>
+                                    <li>
+                                        <p>A specific database object (See <a href="#Generati3">Generating the DDL of a single table, external table or view</a></p>
+                                    </li>
+                                    <li>
+                                        <p>A specific user defined function (UDF) (See <a href="#Generati2">Generating the DDL of a single user defined function (UDF)</a></p>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="paragraph">
@@ -1094,7 +1157,6 @@ External tables allow SQream to access data that is stored outside the database 
                             <div class="admonitionblock note">
                                 <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                     <tr class="TableStyle-Default_Table-Body-Body1">
-                                        
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
 If the table name has a numeric prefix (e.g. "2018_my_table"), the name must be wrapped with single and double quotes. If the schema name or table/view name is case sensitive, they must be wrapped with single and double quotes. See examples below.
 </td>

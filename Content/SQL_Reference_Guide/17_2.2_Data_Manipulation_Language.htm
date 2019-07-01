@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\Resources\MasterPages\SQLReference.flmsp');">
     <head>
         <link href="../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
@@ -40,7 +40,6 @@ their own section which follows this one.</p>
                             <div class="admonitionblock note">
                                 <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                     <tr class="TableStyle-Default_Table-Body-Body1">
-                                        
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
 When the insert statement does not include all the columns in the table, columns which aren’t explicitly mentioned will get their default values (string/number, NULL or identity)
 </td>
@@ -87,7 +86,6 @@ Hidden files (files with file names that start with a dot) are skipped.</p>
                             <div class="admonitionblock note">
                                 <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                     <tr class="TableStyle-Default_Table-Body-Body1">
-                                        
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
                                             <div class="ulist">
                                                 <div class="title">Wildcard options:</div>
@@ -120,7 +118,6 @@ Hidden files (files with file names that start with a dot) are skipped.</p>
                                         <div class="admonitionblock tip">
                                             <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                                 <tr class="TableStyle-Default_Table-Body-Body1">
-                                                    
                                                     <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
                                                         <div class="paragraph">
                                                             <p>For loading string that contains the column delimiter in them (like a comma or tab), surround the whole string with double quotes ("string").</p>
@@ -138,7 +135,6 @@ Hidden files (files with file names that start with a dot) are skipped.</p>
                                         <div class="admonitionblock note">
                                             <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                                 <tr class="TableStyle-Default_Table-Body-Body1">
-                                                    
                                                     <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
 The copy command will always insert data to one table. When using the directory option, all the files in that directory will be loaded into the same table.
 </td>
@@ -165,7 +161,6 @@ Stop after N errors allow to load valid rows and ignore errors up until a certai
                                                     <div class="admonitionblock note">
                                                         <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                                             <tr class="TableStyle-Default_Table-Body-Body1">
-                                                                
                                                                 <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
 Using the COPY command without the ERROR_VERBOSITY option will fail the entire load upon the first error message.
 </td>
@@ -328,7 +323,6 @@ Using the COPY command without the ERROR_VERBOSITY option will fail the entire l
                             <div class="admonitionblock note">
                                 <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                     <tr class="TableStyle-Default_Table-Body-Body1">
-                                        
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
                                             <div class="paragraph">
                                                 <p>Time parts in brackets [] are optional. If the time part is missing, it will be set to 00:00:00.000. If milliseconds are missing, they are set to 000.</p>
@@ -464,7 +458,6 @@ Using the COPY command without the ERROR_VERBOSITY option will fail the entire l
                             <div class="admonitionblock warning">
                                 <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                     <tr class="TableStyle-Default_Table-Body-Body1">
-                                        
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
                                             <div class="ulist">
                                                 <ul>
@@ -537,7 +530,6 @@ As the delete command is only a <em>logical delete</em>, it retains data on disk
                             <div class="admonitionblock note">
                                 <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                     <tr class="TableStyle-Default_Table-Body-Body1">
-                                        
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
 Only roles with the <strong>DELETE</strong> permission granted may delete from tables.
 </td>
@@ -556,7 +548,6 @@ This is achieved by calling both utility function commands: <strong>CLEANUP_CHUN
                             <div class="admonitionblock note">
                                 <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                     <tr class="TableStyle-Default_Table-Body-Body1">
-                                        
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
 During physical delete some files might be rebuilt based on how the data was distributed on disk. This may use up some additional disk space.
 </td>
@@ -579,7 +570,6 @@ During physical delete some files might be rebuilt based on how the data was dis
                             <div class="admonitionblock tip">
                                 <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                     <tr class="TableStyle-Default_Table-Body-Body1">
-                                        
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body1"><a href="#TRUNCATE"><strong>TRUNCATE</strong></a> provides a much faster alternative to remove all rows from a table.
 </td>
                                     </tr>
@@ -622,7 +612,6 @@ During physical delete some files might be rebuilt based on how the data was dis
                             <div class="admonitionblock note">
                                 <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                     <tr class="TableStyle-Default_Table-Body-Body1">
-                                        
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
 Following the recommended best practices, the logical delete operation will first analyze and estimated time the delete should take based on the amount of I/O to delete and the data distribution. If SQream DB finds that the estimated time is beyond the best practices delete time, an error message will return and the user will have to do manual setting to overcome this and continue with the delete (see more information in the relevant error message).
 </td>
