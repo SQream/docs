@@ -16,9 +16,9 @@
                                 <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
                                     <caption class="title">Logical operators</caption>
                                     <colgroup>
-                                        <col style="width: 111px;" />
-                                        <col style="width: 291px;" />
-                                        <col style="width: 33.334%;" />
+                                        <col style="width: 25%;" />
+                                        <col style="width: 50%;" />
+                                        <col style="width: 25%;" />
                                     </colgroup>
                                     <thead>
                                         <tr class="TableStyle-Default_Table-Head-Header1">
@@ -75,10 +75,10 @@
                                 <h5 id="_comparison">Comparison</h5>
                                 <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
                                     <caption class="title">Comparison operators</caption>
-                                    <col style="width: 164px;" class="TableStyle-Default_Table-Column-Column1" />
-                                    <col style="width: 331px;" class="TableStyle-Default_Table-Column-Column1" />
-                                    <col style="width: 33.334%;" class="TableStyle-Default_Table-Column-Column1" />
-                                    <col style="width: 33.334%;" class="TableStyle-Default_Table-Column-Column1" />
+                                    <col style="width: 25%;" class="TableStyle-Default_Table-Column-Column1" />
+                                    <col style="width: 30%;" class="TableStyle-Default_Table-Column-Column1" />
+                                    <col style="width: 25%;" class="TableStyle-Default_Table-Column-Column1" />
+                                    <col style="width: 20%;" class="TableStyle-Default_Table-Column-Column1" />
                                     <thead>
                                         <tr class="TableStyle-Default_Table-Head-Header1">
                                             <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Operator</th>
@@ -97,7 +97,7 @@
                                             </td>
                                             <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
                                                 <p class="tableblock">Regular binary comparison operations</p>
-                                                <p class="tableblock">(<strong><em>any</em></strong>, <strong><em>any</em></strong>) <strong>returns</strong> <strong>bool</strong></p>
+                                                <p class="tableblock">(<strong><em>any</em></strong>) <strong>returns</strong> <strong>bool</strong></p>
                                                 <p class="tableblock">Regular binary comparison operators. The two input types should be the
 same, but the system will insert valid implicit casts in many cases
 (see the <a href="#CAST">cast section</a>).</p>
@@ -193,17 +193,6 @@ to test if a value is not null. You must use <strong>IS NULL</strong> and <stron
                                         </tr>
                                     </tbody>
                                 </table>
-                                <div class="sect5">
-                                    <div class="admonitionblock note">
-                                        <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                            <col style="width: 42px;" class="TableStyle-Default_Table-Column-Column1" />
-                                            <col class="TableStyle-Default_Table-Column-Column1" />
-                                            <tr class="TableStyle-Default_Table-Body-Body1">
-                                                <td class="TableStyle-Default_Table-BodyE-Column1-Body1"><strong><em>any</em></strong> is any type..</td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="sect3">
@@ -232,7 +221,7 @@ to test if a value is not null. You must use <strong>IS NULL</strong> and <stron
                                 <tbody>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableblock"><code><code>&amp;</code></code>
+                                            <p class="tableblock"><code>&amp;</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -429,9 +418,9 @@ For example: (100/14) will result in 7 while (100.0/14) or (100/14.0) will resul
                             <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
                                 <caption class="title">Mathematical functions and operators</caption>
                                 <colgroup>
-                                    <col />
-                                    <col style="width: 373px;" />
-                                    <col style="width: 399px;" />
+                                    <col style="width: 20%;" />
+                                    <col style="width: 40%;" />
+                                    <col style="width: 40%;" />
                                 </colgroup>
                                 <thead>
                                     <tr class="TableStyle-Default_Table-Head-Header1">
@@ -774,10 +763,10 @@ a single value of the same data type as parameter.</p>
                             <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
                                 <caption class="title">Supported conversions, both implicit and explicit</caption>
                                 <colgroup>
-                                    <col style="width: 110px;" />
-                                    <col style="width: 111px;" />
-                                    <col style="width: 109px;" />
-                                    <col style="width: 507px;" />
+                                    <col style="width: 20%;" />
+                                    <col style="width: 20%;" />
+                                    <col style="width: 20%;" />
+                                    <col style="width: 40%;" />
                                 </colgroup>
                                 <thead>
                                     <tr class="TableStyle-Default_Table-Head-Header1">
@@ -1146,7 +1135,9 @@ a single value of the same data type as parameter.</p>
     <strong><em>value_expr</em></strong> :: <strong><em>typename</em></strong></code></pre>
                                     </div>
                                 </div>
-                                <p class="example">Examples:</p>
+                                <div class="paragraph">
+                                    <p class="example">Examples:</p>
+                                </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-k">CAST</span><span class="tok-p">(</span><span class="tok-mf">1234</span>  <span class="tok-k">as</span>  <span class="tok-k">FLOAT</span><span class="tok-p">);</span>  
 
@@ -1259,10 +1250,10 @@ a single compatible type.</p>
                             <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
                                 <caption class="title">String functions and operators on VARCHAR</caption>
                                 <colgroup>
-                                    <col style="width: 74px;" />
-                                    <col style="width: 179px;" />
-                                    <col style="width: 281px;" />
-                                    <col style="width: 204px;" />
+                                    <col style="width: 17%;" />
+                                    <col style="width: 23%;" />
+                                    <col style="width: 30%;" />
+                                    <col style="width: 26%;" />
                                 </colgroup>
                                 <thead>
                                     <tr class="TableStyle-Default_Table-Head-Header1">
@@ -1275,7 +1266,7 @@ a single compatible type.</p>
                                 <tbody>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableblock"><strong>LOWER</strong>
+                                            <p class="tableblock"><code>LOWER</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -1293,7 +1284,7 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableblock"><strong>UPPER</strong>
+                                            <p class="tableblock"><code>UPPER</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
@@ -1311,7 +1302,7 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableblock"><strong>LEN</strong>
+                                            <p class="tableblock"><code>LEN</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -1328,11 +1319,11 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableblock"><strong>LIKE</strong>
+                                            <p class="tableblock"><code>LIKE</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableblock">Checks if a string matches a LIKE pattern. Also used as <strong>NOT LIKE</strong>.
+                                            <p class="tableblock">Checks if a string matches a LIKE pattern. Also used as <code>NOT LIKE</code>.
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
@@ -1348,7 +1339,7 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableblock"><strong>RLIKE</strong>
+                                            <p class="tableblock"><code>RLIKE</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -1366,7 +1357,7 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableblock"><strong>SUBSTRING</strong>
+                                            <p class="tableblock"><code>SUBSTRING</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
@@ -1387,7 +1378,7 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableBody"><strong>REGEXP_COUNT</strong>
+                                            <p class="tableBody"><code>REGEXP_COUNT</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -1407,7 +1398,7 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableBody"><strong>REGEXP_INSTR</strong>
+                                            <p class="tableBody"><code>REGEXP_INSTR</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
@@ -1432,7 +1423,7 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableBody"><strong>REGEXP_SUBSTR</strong>
+                                            <p class="tableBody"><code>REGEXP_SUBSTR</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -1455,7 +1446,7 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableBody"><strong>ISPREFIXOF</strong>
+                                            <p class="tableBody"><code>ISPREFIXOF</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
@@ -1472,7 +1463,7 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableBody"><strong>|| (Concatenation)</strong>
+                                            <p class="tableBody"><code>|| (Concatenation)</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -1489,7 +1480,7 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableBody"><strong>CHARINDEX</strong>
+                                            <p class="tableBody"><code>CHARINDEX</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
@@ -1508,7 +1499,7 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableBody"><strong>PATINDEX</strong>
+                                            <p class="tableBody"><code>PATINDEX</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -1527,7 +1518,7 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableBody"><strong>LTRIM</strong>
+                                            <p class="tableBody"><code>LTRIM</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
@@ -1546,7 +1537,7 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableBody"><strong>REVERSE</strong>
+                                            <p class="tableBody"><code>REVERSE</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -1565,7 +1556,7 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableBody"><strong>RTRIM</strong>
+                                            <p class="tableBody"><code>RTRIM</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
@@ -1584,7 +1575,8 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
-                                            <p class="tableBody">&#160;<strong>TRIM</strong></p>
+                                            <p class="tableBody"><code>TRIM</code>
+                                            </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
                                             <p class="tableBody">Removes any whitespace from the beginning and end of a string (leading and trailing).</p>
@@ -1633,10 +1625,10 @@ a single compatible type.</p>
                             <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
                                 <caption class="title">String functions and operators on NVARCHAR</caption>
                                 <colgroup>
-                                    <col style="width: 74px;" />
-                                    <col style="width: 179px;" />
-                                    <col style="width: 281px;" />
-                                    <col style="width: 204px;" />
+                                    <col style="width: 17%;" />
+                                    <col style="width: 23%;" />
+                                    <col style="width: 30%;" />
+                                    <col style="width: 26%;" />
                                 </colgroup>
                                 <thead>
                                     <tr class="TableStyle-Default_Table-Head-Header1">
@@ -1649,7 +1641,7 @@ a single compatible type.</p>
                                 <tbody>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableblock"><strong>LOWER</strong>
+                                            <p class="tableblock"><code>LOWER</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -1667,7 +1659,7 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableblock"><strong>UPPER</strong>
+                                            <p class="tableblock"><code>UPPER</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
@@ -1685,7 +1677,7 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableblock"><strong>LEN</strong>
+                                            <p class="tableblock"><code>LEN</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -1696,12 +1688,12 @@ a single compatible type.</p>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-                                            <p class="tableblock"><![CDATA[											]]></p>
+                                            <p class="tableblock">&#160;</p>
                                         </td>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableBody"><strong>CHAR_LENGTH</strong>
+                                            <p class="tableBody"><code>CHAR_LENGTH</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
@@ -1717,7 +1709,7 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableblock"><strong>LIKE</strong>
+                                            <p class="tableblock"><code>LIKE</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -1728,7 +1720,7 @@ a single compatible type.</p>
                                                 <li> 'string%'</li>
                                                 <li> '%string%'</li>
                                             </ul>
-                                            <p class="tableblock"> Also used as <strong>NOT LIKE</strong>.
+                                            <p class="tableblock"> Also used as <code>NOT LIKE</code>.
 											</p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -1744,7 +1736,7 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableblock"><strong>SUBSTRING</strong>
+                                            <p class="tableblock"><code>SUBSTRING</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
@@ -1767,7 +1759,7 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableBody"><strong>|| (Concatenation)</strong>
+                                            <p class="tableBody"><code>|| (Concatenation)</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -1784,7 +1776,7 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableBody"><strong>CHARINDEX</strong>
+                                            <p class="tableBody"><code>CHARINDEX</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
@@ -1803,7 +1795,7 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableBody"><strong>LEFT</strong>
+                                            <p class="tableBody"><code>LEFT</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -1822,7 +1814,7 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableBody"><strong>REPLACE</strong>
+                                            <p class="tableBody"><code>REPLACE</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
@@ -1854,7 +1846,7 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableBody"><strong>REVERSE</strong>
+                                            <p class="tableBody"><code>REVERSE</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -1873,7 +1865,7 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableBody"><strong>RIGHT</strong>
+                                            <p class="tableBody"><code>RIGHT</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
@@ -1892,7 +1884,7 @@ a single compatible type.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
-                                            <p class="tableBody"><strong>OCTET_LENGTH</strong>
+                                            <p class="tableBody"><code>OCTET_LENGTH</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
@@ -2145,7 +2137,7 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                 <tbody>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableblock"><strong>getdate</strong>
+                                            <p class="tableblock"><code>getdate</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -2161,7 +2153,7 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableblock"><strong>current_timestamp</strong>
+                                            <p class="tableblock"><code>current_timestamp</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
@@ -2177,7 +2169,7 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableblock"><strong>current_date</strong>
+                                            <p class="tableblock"><code>current_date</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -2193,7 +2185,7 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableblock"><strong>curdate</strong>
+                                            <p class="tableblock"><code>curdate</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
@@ -2209,7 +2201,7 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableblock"><strong>trunc</strong>
+                                            <p class="tableblock"><code>trunc</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -2225,7 +2217,7 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableblock"><strong>trunc</strong>
+                                            <p class="tableblock"><code>trunc</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
@@ -2241,7 +2233,7 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableblock"><strong>datepart</strong>
+                                            <p class="tableblock"><code>datepart</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -2258,7 +2250,7 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableblock"><strong>datediff</strong>
+                                            <p class="tableblock"><code>datediff</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
@@ -2273,7 +2265,7 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableblock"><strong>dateadd</strong>
+                                            <p class="tableblock"><code>dateadd</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -2289,7 +2281,7 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableblock"><strong>to_unixts</strong>
+                                            <p class="tableblock"><code>to_unixts</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
@@ -2305,7 +2297,7 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableblock"><strong>to_unixtsms</strong>
+                                            <p class="tableblock"><code>to_unixtsms</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -2321,7 +2313,7 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableblock"><strong>from_unixts</strong>
+                                            <p class="tableblock"><code>from_unixts</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
@@ -2337,7 +2329,7 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableblock"><strong>from_unixtsms</strong>
+                                            <p class="tableblock"><code>from_unixtsms</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -2353,7 +2345,7 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
                                         <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
-                                            <p class="tableblock"><strong>eomonth</strong>
+                                            <p class="tableblock"><code>eomonth</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
@@ -2498,7 +2490,9 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                     </tr>
                                 </tbody>
                             </table>
-                            <p class="example">Examples:</p>
+                            <div class="paragraph">
+                                <p class="example">Examples:</p>
+                            </div>
                             <div class="code">
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">select</span>  <span class="tok-n">datepart</span><span class="tok-p">(</span><span class="tok-n">q</span><span class="tok-p">,</span><span class="tok-n">date_column_name</span><span class="tok-p">)</span>  <span class="tok-k">from</span>  <span class="tok-n">table_a</span><span class="tok-p">;</span>  
 <span class="tok-k">select</span>  <span class="tok-n">datepart</span><span class="tok-p">(</span><span class="tok-n">dd</span><span class="tok-p">,</span><span class="tok-n">date_column_name</span><span class="tok-p">)</span>  <span class="tok-k">from</span>  <span class="tok-n">table_a</span><span class="tok-p">;</span>  
@@ -2516,7 +2510,9 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
 <span class="tok-k">select</span>  <span class="tok-n">datediff</span><span class="tok-p">(</span><span class="tok-n">q</span><span class="tok-p">,</span><span class="tok-s1">'2016-01-01 13:00:00'</span><span class="tok-p">,</span><span class="tok-n">date_column_b</span><span class="tok-p">)</span>  <span class="tok-k">from</span>  <span class="tok-n">table_a</span><span class="tok-p">;</span></code></pre>
                                 </div>
                             </div>
-                            <p class="example">Examples for TRUNC(date/datetime,interval)</p>
+                            <div class="paragraph">
+                                <p class="example">Examples for TRUNC(date/datetime,interval)</p>
+                            </div>
                             <div class="code">
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">select</span>  <span class="tok-n">xdatetime</span><span class="tok-p">,</span><span class="tok-n">trunc</span><span class="tok-p">(</span><span class="tok-n">xdatetime</span><span class="tok-p">,</span>  <span class="tok-k">month</span><span class="tok-p">)</span>  <span class="tok-k">from</span>  <span class="tok-k">table</span><span class="tok-p">;</span>  
 <span class="tok-c1">-- Returns the first day of the month:</span>  
@@ -2536,7 +2532,9 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                 <div class="title">Point</div>
                                 <p>Points are represented as longitude and latitude columns.</p>
                             </div>
-                            <p class="example">Example:</p>
+                            <div class="paragraph">
+                                <p class="example">Examples:</p>
+                            </div>
                             <div class="code">
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">create</span>  <span class="tok-k">table</span>  <span class="tok-nb">point</span>  <span class="tok-p">(</span>  
        <span class="tok-n">longitude</span>  <span class="tok-k">float</span>  <span class="tok-k">not</span>  <span class="tok-k">null</span><span class="tok-p">,</span>  
@@ -2548,7 +2546,9 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
                                 <div class="title">Polygon</div>
                                 <p>Polygons are N number of points:</p>
                             </div>
-                            <p class="example">Example:</p>
+                            <div class="paragraph">
+                                <p class="example">Examples:</p>
+                            </div>
                             <div class="code">
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">create</span>  <span class="tok-k">table</span>  <span class="tok-nb">polygon</span>  <span class="tok-p">(</span>  
     <span class="tok-n">long1</span>  <span class="tok-k">float</span>  <span class="tok-k">not</span>  <span class="tok-k">null</span><span class="tok-p">,</span>  
@@ -2567,7 +2567,9 @@ In some of the NVARCHAR functions, SQream does not support the use of literals. 
 points. We represent it as twenty points plus a count column which
 indicates how many points are actually used in the given row.</p>
                             </div>
-                            <p class="example">Example:</p>
+                            <div class="paragraph">
+                                <p class="example">Examples:</p>
+                            </div>
                             <div class="code">
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">create</span>  <span class="tok-k">table</span>  <span class="tok-n">polyline</span>  <span class="tok-p">(</span>  
     <span class="tok-n">num_of_points</span>  <span class="tok-nb">int</span>  <span class="tok-k">not</span>  <span class="tok-k">null</span><span class="tok-p">,</span>  
@@ -2667,7 +2669,7 @@ indicates how many points are actually used in the given row.</p>
                                 <tbody>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableblock"><code><strong>avg</strong></code>
+                                            <p class="tableblock"><code>avg</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -2684,7 +2686,7 @@ indicates how many points are actually used in the given row.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableblock"><code><strong>count</strong></code>
+                                            <p class="tableblock"><code>count</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
@@ -2701,7 +2703,7 @@ indicates how many points are actually used in the given row.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableblock"><code><strong>max</strong></code>
+                                            <p class="tableblock"><code>max</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -2718,7 +2720,7 @@ indicates how many points are actually used in the given row.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                            <p class="tableblock"><code><strong>min</strong></code>
+                                            <p class="tableblock"><code>min</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
@@ -2735,7 +2737,7 @@ indicates how many points are actually used in the given row.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body1">
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                            <p class="tableblock"><code><strong>sum</strong></code>
+                                            <p class="tableblock"><code>sum</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
@@ -2752,7 +2754,7 @@ indicates how many points are actually used in the given row.</p>
                                     </tr>
                                     <tr class="TableStyle-Default_Table-Body-Body2">
                                         <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
-                                            <p class="tableblock"><code><strong>stddev</strong></code>
+                                            <p class="tableblock"><code>stddev</code>
                                             </p>
                                         </td>
                                         <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
@@ -2843,7 +2845,9 @@ Mathematical operations on integer types may perform rounding. For precise resul
                                     </li>
                                 </ul>
                             </div>
-                            <p class="example">Examples:</p>
+                            <div class="paragraph">
+                                <p class="example">Examples:</p>
+                            </div>
                             <div class="code">
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">select</span>  <span class="tok-n">col_a</span><span class="tok-p">,</span><span class="tok-n">col_c</span><span class="tok-p">,</span>  <span class="tok-n">rank</span><span class="tok-p">()</span>  <span class="tok-k">over</span>  <span class="tok-p">(</span>  <span class="tok-k">partition</span>  <span class="tok-k">by</span>  <span class="tok-n">col_c</span>  <span class="tok-k">order</span>  <span class="tok-k">by</span>  <span class="tok-n">col_c</span><span class="tok-p">)</span>    <span class="tok-k">from</span>  <span class="tok-n">my_table</span><span class="tok-p">;</span>  
 <span class="tok-k">select</span>  <span class="tok-n">sum</span><span class="tok-p">(</span><span class="tok-n">col_a</span><span class="tok-p">)</span>  <span class="tok-k">over</span>  <span class="tok-p">(</span>  <span class="tok-k">partition</span>  <span class="tok-k">by</span>  <span class="tok-n">col_c</span>  <span class="tok-k">order</span>  <span class="tok-k">by</span>  <span class="tok-n">col_c</span><span class="tok-p">)</span>    <span class="tok-k">from</span>  <span class="tok-n">my_table</span><span class="tok-p">;</span>  

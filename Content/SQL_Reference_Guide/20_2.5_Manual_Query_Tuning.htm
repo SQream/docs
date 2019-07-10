@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\Resources\MasterPages\SQLReference.flmsp');">
     <head>
         <link href="../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
@@ -21,7 +21,6 @@ This is best used when the column being filtered out is <strong>not sorted</stro
                             <div class="admonitionblock tip">
                                 <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                     <tr class="TableStyle-Default_Table-Body-Body1">
-                                        
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
                                             <div class="ulist">
                                                 <ul>
@@ -37,7 +36,9 @@ This is best used when the column being filtered out is <strong>not sorted</stro
                                     </tr>
                                 </table>
                             </div>
-                            <p class="example">Examples:</p>
+                            <div class="paragraph">
+                                <p class="example">Examples:</p>
+                            </div>
                             <div class="code">
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-c1">-- We know LOG_ID=5 is a small amount of values, so we will</span>  
 <span class="tok-c1">-- instruct the compiler about it:</span>  
@@ -51,7 +52,6 @@ This is best used when the column being filtered out is <strong>not sorted</stro
                             <div class="admonitionblock note">
                                 <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                     <tr class="TableStyle-Default_Table-Body-Body1">
-                                        
                                         <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
 From V2.5 the hint is called HIGH_SELECTIVITY. In lower versions this hint was called LOW_SELECTIVITY.
 </td>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\Resources\MasterPages\Concepts.flmsp');">
     <head>
         <link href="../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
@@ -24,15 +24,16 @@
                         <div class="admonitionblock note">
                             <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                 <tr class="TableStyle-Default_Table-Body-Body1">
-                                    
                                     <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
 										Instance ID is a unique identifier, defined by SQream at the installation, for each instance in SQream cluster.
 									</td>
                                 </tr>
                             </table>
                         </div>
+                        <div class="paragraph">
+                            <p class="example">Example</p>
+                        </div>
                         <div class="code">
-                            <div class="title">Example</div>
                             <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">select</span>    <span class="tok-n">show_subscribed_instances</span><span class="tok-p">(</span><span class="tok-s1">'etl_service'</span><span class="tok-p">);</span>  
 <span class="tok-k">select</span>    <span class="tok-n">show_subscribed_instances</span><span class="tok-p">();</span></code></pre>
                             </div>
@@ -43,28 +44,31 @@
                         <div class="paragraph">
                             <p><code>select subscribe_service('instance_id', 'service_name'); </code> ;<br /></p>
                         </div>
+                        <div class="paragraph">
+                            <p class="example">Example</p>
+                        </div>
                         <div class="code">
-                            <div class="title">Example</div>
                             <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">select</span>  <span class="tok-n">subscribe_service</span><span class="tok-p">(</span><span class="tok-s1">'node_11'</span><span class="tok-p">,</span>  <span class="tok-s1">'etl_service'</span><span class="tok-p">);</span></code></pre>
                             </div>
                         </div>
                     </div>
                     <div class="sect4">
-                        <h5 id="_remove_services_to_an_existing_instance">Remove services to an existing instance</h5>
+                        <h5 id="_remove_services_to_an_existing_instance">Remove services from an existing instance</h5>
                         <div class="paragraph">
                             <p><code>select unsubscribe_service('instance_id', 'service_name'); </code> ;<br /></p>
                         </div>
+                        <div class="paragraph">
+                            <p class="example">Example</p>
+                        </div>
                         <div class="code">
-                            <div class="title">Example</div>
                             <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">select</span>  <span class="tok-n">unsubscribe_service</span><span class="tok-p">(</span><span class="tok-s1">'node_11'</span><span class="tok-p">,</span>  <span class="tok-s1">'etl_service'</span><span class="tok-p">);</span></code></pre>
                             </div>
                         </div>
                         <div class="admonitionblock note">
                             <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
                                 <tr class="TableStyle-Default_Table-Body-Body1">
-                                    
                                     <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-										You can’t unsubscribe the last instance from existing service with working/waiting statements in it’s queue.
+										You cannot unsubscribe the last instance from an existing service that has working/waiting statements in its queue.
 									</td>
                                 </tr>
                             </table>

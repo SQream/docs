@@ -38,7 +38,9 @@ storage set. To use the new database, disconnect and reconnect to the new databa
 <strong><em>database_name</em></strong> ::= <strong><em>identifier</em></strong></code></pre>
                                     </div>
                                 </div>
-                                <p class="example">Examples:</p>
+                                <div class="paragraph">
+                                    <p class="example">Examples:</p>
+                                </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">create</span>  <span class="tok-k">database</span>  <span class="tok-n">my_database</span><span class="tok-p">;</span></code></pre>
                                     </div>
@@ -57,7 +59,9 @@ During <strong>DROP DATABASE</strong>, no other DDL/DML operations can run
     DROP DATABASE <strong><em>database_name</em></strong> ;</code></pre>
                                     </div>
                                 </div>
-                                <p class="example">Examples:</p>
+                                <div class="paragraph">
+                                    <p class="example">Examples:</p>
+                                </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">drop</span>  <span class="tok-k">database</span>  <span class="tok-n">my_database</span><span class="tok-p">;</span></code></pre>
                                     </div>
@@ -105,7 +109,9 @@ New tables should be explicitly associated to an existing schema, or implicitly 
                                         </tr>
                                     </table>
                                 </div>
-                                <p class="example">Examples:</p>
+                                <div class="paragraph">
+                                    <p class="example">Examples:</p>
+                                </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">create</span>  <span class="tok-k">schema</span>  <span class="tok-n">my_schema</span><span class="tok-p">;</span></code></pre>
                                     </div>
@@ -131,7 +137,9 @@ The PUBLIC schema can not be dropped.
                                         </tr>
                                     </table>
                                 </div>
-                                <p class="example">Examples:</p>
+                                <div class="paragraph">
+                                    <p class="example">Examples:</p>
+                                </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">DROP</span>  <span class="tok-k">SCHEMA</span>  <span class="tok-n">my_schema</span><span class="tok-p">;</span></code></pre>
                                     </div>
@@ -148,7 +156,9 @@ Use this command to change the user/role default schema to a different schema na
     ALTER DEFAULT SCHEMA FOR  <strong><em>role_name</em></strong> TO <strong><em>schema_name</em></strong>;</code></pre>
                                     </div>
                                 </div>
-                                <p class="example">Examples:</p>
+                                <div class="paragraph">
+                                    <p class="example">Examples:</p>
+                                </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">ALTER</span> <span class="tok-k">DEFAULT</span> <span class="tok-k">SCHEMA</span>  <span class="tok-k">FOR</span>  <span class="tok-n">user_a</span>  <span class="tok-k">TO</span>  <span class="tok-n">schema_a</span><span class="tok-p">;</span></code></pre>
                                     </div>
@@ -302,7 +312,9 @@ For example, <code>check ('CS "p4d"')</code>.<br />Please contact SQream support
                                             </tr>
                                         </table>
                                     </div>
-                                    <p class="example">Examples:</p>
+                                    <div class="paragraph">
+                                        <p class="example">Examples:</p>
+                                    </div>
                                     <div class="code">
                                         <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">create</span>  <span class="tok-k">table</span>  <span class="tok-n">t</span>  <span class="tok-p">(</span>  
     <span class="tok-n">a</span>  <span class="tok-nb">bigint</span>  <span class="tok-k">identity</span>  <span class="tok-p">(</span><span class="tok-mf">1</span><span class="tok-p">,</span><span class="tok-mf">1</span><span class="tok-p">)</span>  <span class="tok-k">CHECK</span>  <span class="tok-p">(</span>  <span class="tok-s1">'CS "default"'</span>  <span class="tok-p">),</span>  
@@ -348,7 +360,9 @@ For example, <code>check ('CS "p4d"')</code>.<br />Please contact SQream support
                                             </li>
                                         </ul>
                                     </div>
-                                    <p class="example">Examples:</p>
+                                    <div class="paragraph">
+                                        <p class="example">Examples:</p>
+                                    </div>
                                     <div class="code">
                                         <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">create</span>  <span class="tok-k">or</span>  <span class="tok-k">replace</span>  <span class="tok-k">table</span>  <span class="tok-n">t</span>  <span class="tok-p">(</span>  
     <span class="tok-n">a</span>  <span class="tok-nb">bigint</span>  <span class="tok-k">identity</span>  <span class="tok-p">(</span><span class="tok-mf">1</span><span class="tok-p">,</span><span class="tok-mf">1</span><span class="tok-p">),</span>  
@@ -395,7 +409,9 @@ This operation will require exclusive lock on the table.
     ALTER TABLE [<strong><em>schema_name</em></strong>].<strong><em>table_name</em></strong> RENAME TO <strong><em>new_table_name</em></strong> ;</code></pre>
                                         </div>
                                     </div>
-                                    <p class="example">Examples:</p>
+                                    <div class="paragraph">
+                                        <p class="example">Examples:</p>
+                                    </div>
                                     <div class="code">
                                         <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">ALTER</span>  <span class="tok-k">TABLE</span>  <span class="tok-n">my_table</span>  <span class="tok-k">RENAME</span>  <span class="tok-k">TO</span>  <span class="tok-n">your_table</span><span class="tok-p">;</span></code></pre>
                                         </div>
@@ -414,7 +430,9 @@ table.</p>
         RENAME COLUMN <strong><em>column_name</em></strong> TO <strong><em>new_column_name</em></strong> ;</code></pre>
                                         </div>
                                     </div>
-                                    <p class="example">Examples:</p>
+                                    <div class="paragraph">
+                                        <p class="example">Examples:</p>
+                                    </div>
                                     <div class="code">
                                         <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">ALTER</span>  <span class="tok-k">TABLE</span>  <span class="tok-n">my_table</span>  <span class="tok-k">RENAME</span>  <span class="tok-k">COLUMN</span>  <span class="tok-n">col1</span>  <span class="tok-k">to</span>  <span class="tok-n">col2</span><span class="tok-p">;</span></code></pre>
                                         </div>
@@ -444,7 +462,9 @@ to be specified, even if the table is empty.</p>
     ;</code></pre>
                                         </div>
                                     </div>
-                                    <p class="example">Examples:</p>
+                                    <div class="paragraph">
+                                        <p class="example">Examples:</p>
+                                    </div>
                                     <div class="code">
                                         <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db">  
 <span class="tok-k">ALTER</span>  <span class="tok-k">TABLE</span>  <span class="tok-n">my_table</span>  <span class="tok-k">ADD</span>  <span class="tok-k">COLUMN</span>  <span class="tok-n">new_supercool_column</span>  <span class="tok-nb">BIGINT</span>  <span class="tok-k">default</span>  <span class="tok-mf">1</span><span class="tok-p">;</span>  
@@ -469,7 +489,9 @@ to be specified, even if the table is empty.</p>
     ALTER TABLE [<strong><em>schema_name</em></strong>].<strong><em>table_name</em></strong> drop column <strong><em>column_name</em></strong> ;</code></pre>
                                         </div>
                                     </div>
-                                    <p class="example">Examples:</p>
+                                    <div class="paragraph">
+                                        <p class="example">Examples:</p>
+                                    </div>
                                     <div class="code">
                                         <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">ALTER</span>  <span class="tok-k">TABLE</span>  <span class="tok-n">my_table</span>  <span class="tok-k">DROP</span>  <span class="tok-n">dreadful_column_i_never_even_wanted_in_my_table</span><span class="tok-p">;</span></code></pre>
                                         </div>
@@ -500,7 +522,9 @@ Note that this operation requires an exclusive lock on the table.</p>
                                         </tr>
                                     </table>
                                 </div>
-                                <p class="example">Examples:</p>
+                                <div class="paragraph">
+                                    <p class="example">Examples:</p>
+                                </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">DROP</span>  <span class="tok-k">TABLE</span>  <span class="tok-n">my_schema</span><span class="tok-mf">.</span><span class="tok-n">my_table</span><span class="tok-p">;</span></code></pre>
                                     </div>
@@ -519,7 +543,9 @@ does nothing (returns an error that the table does not exist).</p>
 	DROP TABLE [IF EXISTS] [<strong><em>schema_name</em></strong>].<strong><em>external_table_name</em></strong> ;</code></pre>
                                     </div>
                                 </div>
-                                <p class="example">Examples:</p>
+                                <div class="paragraph">
+                                    <p class="example">Examples:</p>
+                                </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">DROP</span>  <span class="tok-k">TABLE</span> <span class="tok-k">IF</span> <span class="tok-k">EXISTS</span> <span class="tok-n">my_schema</span><span class="tok-mf">.</span><span class="tok-n">my_table</span><span class="tok-p">;</span></code></pre>
                                     </div>
@@ -612,7 +638,9 @@ External tables allow SQream to access data that is stored outside the database 
                                         </li>
                                     </ul>
                                 </div>
-                                <p class="example">Examples:</p>
+                                <div class="paragraph">
+                                    <p class="example">Examples:</p>
+                                </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">CREATE</span>  <span class="tok-k">OR</span>  <span class="tok-k">REPLACE</span>  <span class="tok-k">EXTERNAL</span>  <span class="tok-k">TABLE</span>  <span class="tok-n">my_ext_table</span>  <span class="tok-p">(</span><span class="tok-n">column1</span>  <span class="tok-nb">int</span><span class="tok-p">,</span>  <span class="tok-n">column2</span>  <span class="tok-nb">varchar</span><span class="tok-p">(</span><span class="tok-mf">10</span><span class="tok-p">),</span>  <span class="tok-n">column3</span>  <span class="tok-nb">date</span><span class="tok-p">)</span>  
 <span class="tok-k">USING</span>  <span class="tok-n">FORMAT</span>  <span class="tok-k">csv</span>  
@@ -778,7 +806,9 @@ External tables allow SQream to access data that is stored outside the database 
 <strong><em>view_name</em></strong> ::= <strong><em>identifier</em></strong></code></pre>
                                     </div>
                                 </div>
-                                <p class="example">Examples:</p>
+                                <div class="paragraph">
+                                    <p class="example">Examples:</p>
+                                </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">CREATE</span>  <span class="tok-k">VIEW</span>  <span class="tok-p">[</span><span class="tok-n">schema_name</span><span class="tok-p">]</span><span class="tok-mf">.</span><span class="tok-n">my_view</span>  <span class="tok-k">as</span>  <span class="tok-k">select</span>  <span class="tok-o">*</span>  <span class="tok-k">from</span>  <span class="tok-n">my_schema</span><span class="tok-mf">.</span><span class="tok-n">t</span>  <span class="tok-k">where</span>  <span class="tok-n">x</span>  <span class="tok-o">&gt;</span>  <span class="tok-mf">5</span><span class="tok-p">;</span></code></pre>
                                     </div>
@@ -795,7 +825,9 @@ External tables allow SQream to access data that is stored outside the database 
     DROP VIEW [<strong><em>schema_name</em></strong>].<strong><em>view_name</em></strong> ;</code></pre>
                                     </div>
                                 </div>
-                                <p class="example">Examples:</p>
+                                <div class="paragraph">
+                                    <p class="example">Examples:</p>
+                                </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">DROP</span>  <span class="tok-k">VIEW</span>  <span class="tok-n">my_schema</span><span class="tok-mf">.</span><span class="tok-n">my_view</span><span class="tok-p">;</span></code></pre>
                                     </div>
@@ -811,7 +843,9 @@ External tables allow SQream to access data that is stored outside the database 
     SELECT RECOMPILE_VIEW([<strong><em>schema_name</em></strong>].<strong><em>view_name</em></strong>) ;</code></pre>
                                     </div>
                                 </div>
-                                <p class="example">Examples:</p>
+                                <div class="paragraph">
+                                    <p class="example">Examples:</p>
+                                </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">recompile_view</span><span class="tok-p">(</span><span class="tok-s1">'my_view_name'</span><span class="tok-p">);</span></code></pre>
                                     </div>
@@ -868,7 +902,9 @@ External tables allow SQream to access data that is stored outside the database 
     GRANT CONNECT ON DATABASE <strong><em>database_name</em></strong> to <strong><em>role_name</em></strong> ;</code></pre>
                                     </div>
                                 </div>
-                                <p class="example">Examples:</p>
+                                <div class="paragraph">
+                                    <p class="example">Examples:</p>
+                                </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">CREATE</span>  <span class="tok-k">ROLE</span>  <span class="tok-n">new_role_name</span>  <span class="tok-p">;</span>  
 <span class="tok-k">GRANT</span>  <span class="tok-n">LOGIN</span>  <span class="tok-k">TO</span>  <span class="tok-n">new_role_name</span><span class="tok-p">;</span>  
@@ -888,7 +924,9 @@ External tables allow SQream to access data that is stored outside the database 
     DROP ROLE <strong><em>role_name</em></strong> ;</code></pre>
                                     </div>
                                 </div>
-                                <p class="example">Examples:</p>
+                                <div class="paragraph">
+                                    <p class="example">Examples:</p>
+                                </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">DROP</span>  <span class="tok-k">ROLE</span>  <span class="tok-n">admin_role</span><span class="tok-p">;</span></code></pre>
                                     </div>
@@ -905,7 +943,9 @@ External tables allow SQream to access data that is stored outside the database 
     ALTER ROLE <strong><em>role_name</em></strong> RENAME TO <strong><em>new_role_name</em></strong> ;</code></pre>
                                     </div>
                                 </div>
-                                <p class="example">Examples:</p>
+                                <div class="paragraph">
+                                    <p class="example">Examples:</p>
+                                </div>
                                 <div class="code">
                                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">ALTER</span>  <span class="tok-k">ROLE</span>  <span class="tok-n">admin_role</span>  <span class="tok-k">RENAME</span>  <span class="tok-k">TO</span>  <span class="tok-n">copy_role</span><span class="tok-p">;</span></code></pre>
                                     </div>
@@ -1012,7 +1052,9 @@ External tables allow SQream to access data that is stored outside the database 
                                     </tbody>
                                 </table>
                                 <div>
-                                    <p class="example">Examples:</p>
+                                    <div class="paragraph">
+                                        <p class="example">Examples:</p>
+                                    </div>
                                     <div class="code"><pre xml:space="preserve">-- Grant permissions at the cluster level:
 	GRANT { SUPERUSER
 	| LOGIN 
@@ -1078,7 +1120,9 @@ External tables allow SQream to access data that is stored outside the database 
                                 <p>Removes permissions from one or more roles.</p>
                                 <p>The identifier name can be the role name or CURRENT_ROLE.</p>
                                 <div>
-                                    <p class="example">Examples:</p>
+                                    <div class="paragraph">
+                                        <p class="example">Examples:</p>
+                                    </div>
                                     <div class="code"><pre>-- Revoke permissions at the cluster level:
 	REVOKE
 	{ SUPERUSER
