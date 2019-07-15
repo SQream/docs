@@ -69,9 +69,9 @@
                             </div>
                         </div>
                         <div class="admonitionblock note">
-                            <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                <tr class="TableStyle-Default_Table-Body-Body1">
-                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                            <table>
+                                <tr>
+                                    <td>
 See also <a href="20_2.5_Manual_Query_Tuning.htm#WHERE"><strong>WHERE with HIGH_SELECTIVITY</strong></a></td>
                                 </tr>
                             </table>
@@ -112,66 +112,66 @@ See also <a href="20_2.5_Manual_Query_Tuning.htm#WHERE"><strong>WHERE with HIGH_
                                 <li> <a href="#WITH">WITH subqueries </a></li>
                             </ul>
                         </div>
-                        <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                        <table class="TableStyle-DefaultTable" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
                             <caption class="title">QUERY options</caption>
-                            <col class="TableStyle-Default_Table-Column-Column1" style="width: 166px;" />
-                            <col class="TableStyle-Default_Table-Column-Column1" style="width: 349px;" />
-                            <col class="TableStyle-Default_Table-Column-Column1" style="width: 467px;" />
+                            <col class="TableStyle-DefaultTable-Column-Column1" style="width: 166px;" />
+                            <col class="TableStyle-DefaultTable-Column-Column1" style="width: 349px;" />
+                            <col class="TableStyle-DefaultTable-Column-Column1" style="width: 467px;" />
                             <thead>
-                                <tr class="TableStyle-Default_Table-Head-Header1">
-                                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Name</th>
-                                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Description</th>
-                                    <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Example</th>
+                                <tr class="TableStyle-DefaultTable-Head-Header1">
+                                    <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">Name</th>
+                                    <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">Description</th>
+                                    <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">Example</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="TableStyle-Default_Table-Body-Body1">
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                <tr class="TableStyle-DefaultTable-Body-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                         <p><span class="code">TOP</span>
                                         </p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                         <p class="tableblock">Retrieves only the first rows from a query.</p>
                                         <p class="tableblock">TOP will be the last operation of the query execution. This means that SQream will limit the results to the end-user after executing the entire statement.</p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                         <p class="tableblock">&#160;</p>
                                     </td>
                                 </tr>
-                                <tr class="TableStyle-Default_Table-Body-Body2">
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                <tr class="TableStyle-DefaultTable-Body-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                         <p class="tableblock"><span class="code">DISTINCT</span>
                                         </p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                         <p class="tableblock">Removes duplicate rows.</p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                                         <p class="tableblock">&#160;</p>
                                     </td>
                                 </tr>
-                                <tr class="TableStyle-Default_Table-Body-Body1">
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                <tr class="TableStyle-DefaultTable-Body-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                         <p class="tableblock"><span class="code">FROM</span>
                                         </p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                         <p class="tableblock">Specifies which tables to read in a query. FROM can either contain table/view names or subqueries.</p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                         <p class="tableblock">&#160;</p>
                                     </td>
                                 </tr>
-                                <tr class="TableStyle-Default_Table-Body-Body2">
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                <tr class="TableStyle-DefaultTable-Body-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                         <p class="tableblock"><span class="code">WHERE</span>
                                         </p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                         <p class="tableBody">Filters out rows. </p>
                                         <p class="tableBody">See also <a href="20_2.5_Manual_Query_Tuning.htm#WHERE"><strong>WHERE with HIGH_SELECTIVITY</strong></a></p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                                         <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">Column1</span></code>
                                         </p>
                                         <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">FROM</span> <span class="tok-n">table1</span></code>
@@ -180,64 +180,64 @@ See also <a href="20_2.5_Manual_Query_Tuning.htm#WHERE"><strong>WHERE with HIGH_
                                         </p>
                                     </td>
                                 </tr>
-                                <tr class="TableStyle-Default_Table-Body-Body1">
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                <tr class="TableStyle-DefaultTable-Body-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                         <p class="tableblock"><span class="code">GROUP&#160;BY</span>
                                         </p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                         <p class="tableblock">Partitions a table so that aggregates can be
 applied separately to each partition.</p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                         <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">select</span> <span class="tok-n">a</span><span class="tok-p">,</span><span class="tok-n">sum</span><span class="tok-p">(</span><span class="tok-n">b</span><span class="tok-p">)</span> <span class="tok-k">from</span> <span class="tok-n">t</span> <span class="tok-k">group</span> <span class="tok-k">by</span> <span class="tok-n">a</span><span class="tok-p">;</span></code>
                                         </p>
                                     </td>
                                 </tr>
-                                <tr class="TableStyle-Default_Table-Body-Body2">
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                <tr class="TableStyle-DefaultTable-Body-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                         <p class="tableblock">HAVING</p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                         <p class="tableblock">Filters out rows after GROUP BY processing.</p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                                         <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">select</span> <span class="tok-n">a</span><span class="tok-p">,</span><span class="tok-n">sum</span><span class="tok-p">(</span><span class="tok-n">b</span><span class="tok-p">)</span> <span class="tok-k">from</span> <span class="tok-n">t</span> <span class="tok-k">group</span> <span class="tok-k">by</span> <span class="tok-n">a</span> <span class="tok-k">having</span><span class="tok-n">sum</span><span class="tok-p">(</span><span class="tok-n">b</span><span class="tok-p">)</span> <span class="tok-o">&gt;</span> <span class="tok-mf">5</span><span class="tok-p">;</span></code>
                                         </p>
                                     </td>
                                 </tr>
-                                <tr class="TableStyle-Default_Table-Body-Body1">
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                <tr class="TableStyle-DefaultTable-Body-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                         <p class="tableBody">ORDER BY</p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                         <p class="tableBody">Orders the results.</p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                         <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">select</span> <span class="tok-o">*</span> <span class="tok-k">from</span> <span class="tok-n">t</span> <span class="tok-k">order</span> <span class="tok-k">by</span> <span class="tok-n">a</span> <span class="tok-k">asc</span><span class="tok-p">,</span> <span class="tok-n">b</span> <span class="tok-k">desc</span><span class="tok-p">;</span></code>
                                         </p>
                                     </td>
                                 </tr>
-                                <tr class="TableStyle-Default_Table-Body-Body2">
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                <tr class="TableStyle-DefaultTable-Body-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                         <p class="tableBody">VALUES</p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                         <p class="tableBody">Creates a 'literal table value'.</p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                                         <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">values</span> <span class="tok-p">(</span><span class="tok-mf">1</span><span class="tok-p">,</span><span class="tok-s1">'a'</span><span class="tok-p">),</span> <span class="tok-p">(</span><span class="tok-mf">2</span><span class="tok-p">,</span><span class="tok-s1">'b'</span><span class="tok-p">);</span></code>
                                         </p>
                                     </td>
                                 </tr>
-                                <tr class="TableStyle-Default_Table-Body-Body1">
-                                    <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                <tr class="TableStyle-DefaultTable-Body-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
                                         <p class="tableBody">UNION</p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
                                         <p class="tableBody">Concatenates two queries together. SQream currently supports <strong>UNION ALL</strong>, which doesn’t remove duplicate rows.</p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyA-Column1-Body1">
                                         <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">select</span> <span class="tok-o">*</span> <span class="tok-k">from</span> <span class="tok-n">t</span></code>
                                         </p>
                                         <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">union</span> <span class="tok-k">all</span> </code>
@@ -251,9 +251,9 @@ applied separately to each partition.</p>
                         <div class="sect3">
                             <div class="paragraph">
                                 <div class="admonitionblock note">
-                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                    <table>
+                                        <tr>
+                                            <td>
 Column at the <strong>SELECT</strong> list are separated with commas. Columns not separated will be considered as alias: (select a as a1, b as b1 from) can be written as (select a a1, b b1 from)
 </td>
                                         </tr>
@@ -332,9 +332,9 @@ FROM <strong><em>alias_1</em></strong>
                                 </div>
                             </div>
                             <div class="admonitionblock note">
-                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1"><strong>WITH</strong> can not refer to a recursive alias (not self-referencing), that contains no 'order by' in its subquery.
+                                <table>
+                                    <tr>
+                                        <td><strong>WITH</strong> can not refer to a recursive alias (not self-referencing), that contains no 'order by' in its subquery.
 </td>
                                     </tr>
                                 </table>

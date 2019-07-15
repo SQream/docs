@@ -40,9 +40,9 @@ their own section which follows this one.</p>
                                 </div>
                             </div>
                             <div class="admonitionblock note">
-                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                <table>
+                                    <tr>
+                                        <td>
 When the insert statement does not include all the columns in the table, columns which aren’t explicitly mentioned will get their default values (string/number, NULL or identity)
 </td>
                                     </tr>
@@ -86,9 +86,9 @@ Hidden files (files with file names that start with a dot) are skipped.</p>
                                 </ul>
                             </div>
                             <div class="admonitionblock note">
-                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                <table style="width: 487px;">
+                                    <tr>
+                                        <td>
                                             <div class="ulist">
                                                 <div class="title">Wildcard options:</div>
                                                 <ul>
@@ -118,9 +118,9 @@ Hidden files (files with file names that start with a dot) are skipped.</p>
                                     <li>
                                         <p><strong>Delimiter</strong>:<br />The default field delimiter is: , (comma). The field delimiter can be any single printable ascii character (32-127), or ascii characters between 1 and 126 enclosed by E'\' (for example: E'\001') excluding the following: '\', 'N', '-', ':', '"', ascii code 10, ascii code 13, all lower case characters, all digits.</p>
                                         <div class="admonitionblock tip">
-                                            <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                                <tr class="TableStyle-Default_Table-Body-Body1">
-                                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <table>
+                                                <tr>
+                                                    <td>
                                                         <div class="paragraph">
                                                             <p>For loading string that contains the column delimiter in them (like a comma or tab), surround the whole string with double quotes ("string").</p>
                                                         </div>
@@ -135,9 +135,9 @@ Hidden files (files with file names that start with a dot) are skipped.</p>
                                     <li>
                                         <p><strong>Record delimiter</strong>:<br />The record delimiter must be one of Windows (<code>\r\n</code>) / Linux (<code>\n</code>) / Mac (<code>\r</code>) new line characters.</p>
                                         <div class="admonitionblock note">
-                                            <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                                <tr class="TableStyle-Default_Table-Body-Body1">
-                                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <table>
+                                                <tr>
+                                                    <td>
 The copy command will always insert data to one table. When using the directory option, all the files in that directory will be loaded into the same table.
 </td>
                                                 </tr>
@@ -161,9 +161,9 @@ Stop after N errors allow to load valid rows and ignore errors up until a certai
                                                 <li>
                                                     <p>1 - both bad line and error message are printed at the error log file - for debugging.</p>
                                                     <div class="admonitionblock note">
-                                                        <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                                            <tr class="TableStyle-Default_Table-Body-Body1">
-                                                                <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                                        <table>
+                                                            <tr>
+                                                                <td>
 Using the COPY command without the ERROR_VERBOSITY option will fail the entire load upon the first error message.
 </td>
                                                             </tr>
@@ -215,7 +215,7 @@ Using the COPY command without the ERROR_VERBOSITY option will fail the entire l
         <span class="tok-k">FROM</span>  <span class="tok-s1">'/home/sqream/Jan_??/*.csv'</span><span class="tok-p">;</span></code></pre>
                                 </div>
                             </div>
-                            <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                            <table class="TableStyle-DefaultTable" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
                                 <caption class="title">Supported date formats and their parsing</caption>
                                 <colgroup>
                                     <col />
@@ -224,100 +224,100 @@ Using the COPY command without the ERROR_VERBOSITY option will fail the entire l
                                     <col />
                                 </colgroup>
                                 <thead>
-                                    <tr class="TableStyle-Default_Table-Head-Header1">
-                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Format Name</th>
-                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Format Pattern</th>
-                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Example</th>
-                                        <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Note</th>
+                                    <tr class="TableStyle-DefaultTable-Head-Header1">
+                                        <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">Format Name</th>
+                                        <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">Format Pattern</th>
+                                        <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">Example</th>
+                                        <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">Note</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <div class="literal"><pre xml:space="preserve">ISO8601 or DEFAULT</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <div class="literal"><pre xml:space="preserve">YYYY-MM-DD [hh:mm:ss[.SSS]]</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <div class="literal"><pre xml:space="preserve">2017-12-31 11:12:13.456</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                             <div class="literal"><pre xml:space="preserve"></pre>
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body2">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                             <div class="literal"><pre xml:space="preserve">ISO8601C</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                             <div class="literal"><pre xml:space="preserve">YYYY-MM-DD [hh:mm:ss[:SSS]]</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                             <div class="literal"><pre xml:space="preserve">2017-12-31 11:12:13:567</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                                             <div class="literal"><pre xml:space="preserve">Milliseconds are separated by a colon (:).</pre>
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <div class="literal"><pre xml:space="preserve">DMY</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <div class="literal"><pre xml:space="preserve">DD/MM/YYYY [hh:mm:ss[.SSS]]</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <div class="literal"><pre xml:space="preserve">31/12/2017 11:12:13.000</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                             <div class="literal"><pre xml:space="preserve">In versions prior to V2.11 this format was called "British".</pre>
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body2">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                             <div class="literal"><pre xml:space="preserve">YMD</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                             <div class="literal"><pre xml:space="preserve">YYYY/MM/DD [hh:mm:ss[.SSS]]</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                             <div class="literal"><pre xml:space="preserve">2017/12/31 11:12:13.678</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                                             <div class="literal"><pre xml:space="preserve"></pre>
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
                                             <div class="literal"><pre xml:space="preserve">MDY</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
                                             <div class="literal"><pre xml:space="preserve">MM/DD/YYYY [hh:mm:ss[.SSS]]</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
                                             <div class="literal"><pre xml:space="preserve">12/31/2017 11:12:13.456</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyA-Column1-Body1">
                                             <div class="literal"><pre xml:space="preserve"></pre>
                                             </div>
                                         </td>
@@ -325,9 +325,9 @@ Using the COPY command without the ERROR_VERBOSITY option will fail the entire l
                                 </tbody>
                             </table>
                             <div class="admonitionblock note">
-                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                <table>
+                                    <tr>
+                                        <td>
                                             <div class="paragraph">
                                                 <p>Time parts in brackets [] are optional. If the time part is missing, it will be set to 00:00:00.000. If milliseconds are missing, they are set to 000.</p>
                                             </div>
@@ -338,104 +338,104 @@ Using the COPY command without the ERROR_VERBOSITY option will fail the entire l
                                     </tr>
                                 </table>
                             </div>
-                            <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                            <table class="TableStyle-DefaultTable" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
                                 <caption class="title">Date format pattern syntax</caption>
                                 <colgroup>
                                     <col />
                                     <col />
                                 </colgroup>
                                 <thead>
-                                    <tr class="TableStyle-Default_Table-Head-Header1">
-                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Pattern</th>
-                                        <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Explanation</th>
+                                    <tr class="TableStyle-DefaultTable-Head-Header1">
+                                        <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">Pattern</th>
+                                        <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">Explanation</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <p class="tableblock">YYYY</p>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                             <p class="tableblock">four digit year representation (0000-9999)</p>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body2">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                             <p class="tableblock">MM</p>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                                             <p class="tableblock">two digit month representation (01-12)</p>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <p class="tableblock">DD</p>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                             <p class="tableblock">two digit day of month representation (01-31)</p>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body2">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                             <p class="tableblock">m</p>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                                             <p class="tableblock">short month representation (Jan-Dec)</p>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <p class="tableblock">a</p>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                             <p class="tableblock">short day of week representation (Sun-Sat).</p>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body2">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                             <p class="tableblock">hh</p>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                                             <p class="tableblock">two digit 24 hour representation (00-23)</p>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <p class="tableblock">h</p>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                             <p class="tableblock">two digit 12 hour representation (00-12)</p>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body2">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                             <p class="tableblock">P</p>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                                             <p class="tableblock">uppercase AM/PM representation</p>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <p class="tableblock">mm</p>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                             <p class="tableblock">two digit minute representation (00-59)</p>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body2">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                             <p class="tableblock">ss</p>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                                             <p class="tableblock">two digit seconds representation (00-59)</p>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
                                             <p class="tableblock">SSS</p>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyA-Column1-Body1">
                                             <p class="tableblock">3 digits fraction representation for milliseconds (000-999)</p>
                                         </td>
                                     </tr>
@@ -459,23 +459,15 @@ Using the COPY command without the ERROR_VERBOSITY option will fail the entire l
                 HEADER</code></pre>
                                 </div>
                             </div>
-                            <div class="admonitionblock warning">
-                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-                                            <div class="ulist">
-                                                <ul>
-                                                    <li>
-                                                        <p>The target path must be accessible by the <a href="../Concepts/3_1.1_SQream_Instance.htm">server process</a>.</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>If the specified file already exists, it will be overwritten.</p>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
+                            <div class="warning">
+                                <ul>
+                                    <li>
+                                        <p>The target path must be accessible by the <a href="../Concepts/3_1.1_SQream_Instance.htm">server process</a>.</p>
+                                    </li>
+                                    <li>
+                                        <p>If the specified file already exists, it will be overwritten.</p>
+                                    </li>
+                                </ul>
                             </div>
                             <div class="ulist">
                                 <ul>
@@ -536,9 +528,9 @@ starting values. <strong>CONTINUE IDENTITY</strong> is the default.</p>
 As the delete command is only a <em>logical delete</em>, it retains data on disk until a clean-up process is performed.<br />To complete the logical delete with physical removal from disk, use the cleanup utilities (see below).</p>
                             </div>
                             <div class="admonitionblock note">
-                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                <table>
+                                    <tr>
+                                        <td>
 Only roles with the <strong>DELETE</strong> permission granted may delete from tables.
 </td>
                                     </tr>
@@ -554,9 +546,9 @@ Only roles with the <strong>DELETE</strong> permission granted may delete from t
 This is achieved by calling both utility function commands: <strong>CLEANUP_CHUNKS</strong> and <strong>CLEANUP_EXTENTS</strong> sequentially.</p>
                             </div>
                             <div class="admonitionblock note">
-                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                <table>
+                                    <tr>
+                                        <td>
 During physical delete some files might be rebuilt based on how the data was distributed on disk. This may use up some additional disk space.
 </td>
                                     </tr>
@@ -576,9 +568,9 @@ During physical delete some files might be rebuilt based on how the data was dis
                                 </div>
                             </div>
                             <div class="admonitionblock tip">
-                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1"><a href="#TRUNCATE"><strong>TRUNCATE</strong></a> provides a much faster alternative to remove all rows from a table.
+                                <table>
+                                    <tr>
+                                        <td><a href="#TRUNCATE"><strong>TRUNCATE</strong></a> provides a much faster alternative to remove all rows from a table.
 </td>
                                     </tr>
                                 </table>
@@ -618,9 +610,9 @@ During physical delete some files might be rebuilt based on how the data was dis
                                 </ol>
                             </div>
                             <div class="admonitionblock note">
-                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                <table>
+                                    <tr>
+                                        <td>
 Following the recommended best practices, the logical delete operation will first analyze and estimated time the delete should take based on the amount of I/O to delete and the data distribution. If SQream DB finds that the estimated time is beyond the best practices delete time, an error message will return and the user will have to do manual setting to overcome this and continue with the delete (see more information in the relevant error message).
 </td>
                                     </tr>

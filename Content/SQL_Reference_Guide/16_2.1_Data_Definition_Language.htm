@@ -101,9 +101,9 @@ During <strong>DROP DATABASE</strong>, no other DDL/DML operations can run
                                     </div>
                                 </div>
                                 <div class="admonitionblock note">
-                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                    <table>
+                                        <tr>
+                                            <td>
 New tables should be explicitly associated to an existing schema, or implicitly associated to the PUBLIC default schema.
 </td>
                                         </tr>
@@ -129,9 +129,9 @@ New tables should be explicitly associated to an existing schema, or implicitly 
                                     </div>
                                 </div>
                                 <div class="admonitionblock note">
-                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                    <table>
+                                        <tr>
+                                            <td>
 The PUBLIC schema can not be dropped.
 </td>
                                         </tr>
@@ -220,9 +220,9 @@ Use this command to change the user/role default schema to a different schema na
                                     <p>Creates a new table in the current database under a specific schema.</p>
                                 </div>
                                 <div class="admonitionblock note">
-                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                    <table>
+                                        <tr>
+                                            <td>
                                                 <div class="ulist">
                                                     <ul>
                                                         <li>
@@ -303,9 +303,9 @@ Use this command to change the user/role default schema to a different schema na
 specification, which defaults to automatic compression.</p>
                                     </div>
                                     <div class="admonitionblock note">
-                                        <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                            <tr class="TableStyle-Default_Table-Body-Body1">
-                                                <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                        <table>
+                                            <tr>
+                                                <td>
 You may override the default compression by specifying the <code>check</code> modifier.
 For example, <code>check ('CS "p4d"')</code>.<br />Please contact SQream support for more information about recommended compressions.
 </td>
@@ -374,9 +374,9 @@ For example, <code>check ('CS "p4d"')</code>.<br />Please contact SQream support
                                         </div>
                                     </div>
                                     <div class="admonitionblock warning">
-                                        <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                            <tr class="TableStyle-Default_Table-Body-Body1">
-                                                <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                        <table>
+                                            <tr>
+                                                <td>
 If the CREATE TABLE operation does not complete successfully, the replaced table (<code>t</code> in this example) will no longer exist.
 </td>
                                             </tr>
@@ -390,9 +390,9 @@ If the CREATE TABLE operation does not complete successfully, the replaced table
                                     <p>Alters the structure of an existing table.</p>
                                 </div>
                                 <div class="admonitionblock note">
-                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                    <table>
+                                        <tr>
+                                            <td>
 This operation will require exclusive lock on the table.
 </td>
                                         </tr>
@@ -505,9 +505,9 @@ to be specified, even if the table is empty.</p>
 Note that this operation requires an exclusive lock on the table.</p>
                                 </div>
                                 <div class="admonitionblock note">
-                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                    <table>
+                                        <tr>
+                                            <td>
                                                 <div class="ulist">
                                                     <ul>
                                                         <li>
@@ -570,9 +570,9 @@ does nothing (returns an error that the table does not exist).</p>
 External tables allow SQream to access data that is stored outside the database in a non-SQream format, and to query it via SQL commands.<br />While creating it, the user should specify the files format and location, these will be used by SQream while accessing it at the query execution time.<br /></p>
                                 </div>
                                 <div class="admonitionblock note">
-                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                    <table>
+                                        <tr>
+                                            <td>
                                                 <div class="ulist">
                                                     <ul>
                                                         <li>
@@ -607,9 +607,9 @@ External tables allow SQream to access data that is stored outside the database 
                                     </ul>
                                 </div>
                                 <div class="admonitionblock note">
-                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                    <table style="width: 440px;">
+                                        <tr>
+                                            <td>
                                                 <div class="ulist">
                                                     <div class="title">Wildcard options:</div>
                                                     <ul>
@@ -670,100 +670,100 @@ External tables allow SQream to access data that is stored outside the database 
                             </div>
                             <div class="sect4">
                                 <h5 id="_conversion_table_for_datatypes_of_external_tables_over_parquet">CONVERSION TABLE FOR DATATYPES OF EXTERNAL TABLES OVER PARQUET</h5>
-                                <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                                <table class="TableStyle-DefaultTable" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
                                     <colgroup>
                                         <col style="width: 215px;" />
                                         <col style="width: 132px;" />
                                         <col style="width: 330px;" />
                                     </colgroup>
                                     <thead>
-                                        <tr class="TableStyle-Default_Table-Head-Header1">
-                                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Data type in Parquet</th>
-                                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Matching data type in SQream</th>
-                                            <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Comments</th>
+                                        <tr class="TableStyle-DefaultTable-Head-Header1">
+                                            <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">Data type in Parquet</th>
+                                            <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">Matching data type in SQream</th>
+                                            <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">Comments</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <tr class="TableStyle-DefaultTable-Body-Body1">
+                                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                                 <p class="tableblock">BOOLEAN</p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                                 <p class="tableblock">BOOL</p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                            <td class="TableStyle-DefaultTable-BodyD-Column1-Body1" />
                                         </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body2">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                        <tr class="TableStyle-DefaultTable-Body-Body2">
+                                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                                 <p class="tableblock">INT16</p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                                 <p class="tableblock">SMALLINT</p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                            <td class="TableStyle-DefaultTable-BodyD-Column1-Body2" />
                                         </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <tr class="TableStyle-DefaultTable-Body-Body1">
+                                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                                 <p class="tableblock">INT32</p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                                 <p class="tableblock">INT</p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                            <td class="TableStyle-DefaultTable-BodyD-Column1-Body1" />
                                         </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body2">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                        <tr class="TableStyle-DefaultTable-Body-Body2">
+                                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                                 <p class="tableblock">INT64</p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                                 <p class="tableblock">BIGINT</p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                            <td class="TableStyle-DefaultTable-BodyD-Column1-Body2" />
                                         </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <tr class="TableStyle-DefaultTable-Body-Body1">
+                                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                                 <p class="tableblock">FLOAT</p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                                 <p class="tableblock">REAL</p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                            <td class="TableStyle-DefaultTable-BodyD-Column1-Body1" />
                                         </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body2">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                        <tr class="TableStyle-DefaultTable-Body-Body2">
+                                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                                 <p class="tableblock">DOUBLE</p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                                 <p class="tableblock">DOUBLE</p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                            <td class="TableStyle-DefaultTable-BodyD-Column1-Body2" />
                                         </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <tr class="TableStyle-DefaultTable-Body-Body1">
+                                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                                 <p class="tableblock">BYTE_ARRAY with annotation UTF8</p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                                 <p class="tableblock">VARCHAR or NVARCHAR</p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                            <td class="TableStyle-DefaultTable-BodyD-Column1-Body1" />
                                         </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body2">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                        <tr class="TableStyle-DefaultTable-Body-Body2">
+                                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                                 <p class="tableblock">DATE</p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                                 <p class="tableblock">DATE</p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                            <td class="TableStyle-DefaultTable-BodyD-Column1-Body2" />
                                         </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                        <tr class="TableStyle-DefaultTable-Body-Body1">
+                                            <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
                                                 <p class="tableblock">INT 96 (TIMESTAMP_MILLIS)</p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                            <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
                                                 <p class="tableblock">DATETIME</p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
+                                            <td class="TableStyle-DefaultTable-BodyA-Column1-Body1">
                                                 <p class="tableblock">INT96 may contain microseconds. As DATETIME in SQream supports milliseconds only, the microseconds are rounded to milliseconds.</p>
                                             </td>
                                         </tr>
@@ -1002,49 +1002,49 @@ External tables allow SQream to access data that is stored outside the database 
                                 <p>Assigns specific permissions to existing database objects, schema, or databases to one or more roles.</p>
                                 <p>The identifier name can be the role name or CURRENT_ROLE.</p>
                                 <p>The following table lists the possible permissions for various levels in the cluster.</p>
-                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');margin-left: 0;margin-right: auto;" class="TableStyle-Default_Table" cellspacing="0">
-                                    <col class="TableStyle-Default_Table-Column-Column1" />
-                                    <col class="TableStyle-Default_Table-Column-Column1" style="width: 383px;" />
+                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');margin-left: 0;margin-right: auto;" class="TableStyle-DefaultTable" cellspacing="0">
+                                    <col class="TableStyle-DefaultTable-Column-Column1" />
+                                    <col class="TableStyle-DefaultTable-Column-Column1" style="width: 383px;" />
                                     <thead>
-                                        <tr class="TableStyle-Default_Table-Head-Header1">
-                                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">
+                                        <tr class="TableStyle-DefaultTable-Head-Header1">
+                                            <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
                                                 <p>Level</p>
                                             </th>
-                                            <th class="TableStyle-Default_Table-HeadD-Column1-Header1">
+                                            <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">
                                                 <p>Possible permissions </p>
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <tr class="TableStyle-DefaultTable-Body-Body1">
+                                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                                 <p>cluster </p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                                 <p>LOGIN, PASSWORD, CREATE FUNCTION</p>
                                             </td>
                                         </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body2">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                        <tr class="TableStyle-DefaultTable-Body-Body2">
+                                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                                 <p>database </p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                            <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                                                 <p>SUPERUSER, CONNECT, CREATE, USAGE</p>
                                             </td>
                                         </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body1">
-                                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <tr class="TableStyle-DefaultTable-Body-Body1">
+                                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                                 <p>schema </p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                            <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                                 <p>USAGE, CREATE</p>
                                             </td>
                                         </tr>
-                                        <tr class="TableStyle-Default_Table-Body-Body2">
-                                            <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
+                                        <tr class="TableStyle-DefaultTable-Body-Body2">
+                                            <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
                                                 <p>object </p>
                                             </td>
-                                            <td class="TableStyle-Default_Table-BodyA-Column1-Body2">
+                                            <td class="TableStyle-DefaultTable-BodyA-Column1-Body2">
                                                 <p>SELECT, INSERT, DELETE, DDL, EXECUTE, ALL</p>
                                             </td>
                                         </tr>
@@ -1198,9 +1198,9 @@ External tables allow SQream to access data that is stored outside the database 
                                 <p>Use the utility function <strong>get_ddl('table_name')</strong> or <strong>get_view_ddl('view_name')</strong> to generate the DDL for a specified table, external table or view.</p>
                             </div>
                             <div class="admonitionblock note">
-                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                <table>
+                                    <tr>
+                                        <td>
 If the table name has a numeric prefix (e.g. "2018_my_table"), the name must be wrapped with single and double quotes. If the schema name or table/view name is case sensitive, they must be wrapped with single and double quotes. See examples below.
 </td>
                                     </tr>

@@ -61,24 +61,24 @@ expressions</li>
                                 <li><a href="#Operator">Operator precedences</a> </li>
                             </ul>
                         </div>
-                        <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                        <table class="TableStyle-DefaultTable" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
                             <caption class="title">Value expressions</caption>
-                            <col class="TableStyle-Default_Table-Column-Column1" style="width: 130px;" />
-                            <col class="TableStyle-Default_Table-Column-Column1" style="width: 415px;" />
-                            <col class="TableStyle-Default_Table-Column-Column1" style="width: 275px;" />
+                            <col class="TableStyle-DefaultTable-Column-Column1" style="width: 130px;" />
+                            <col class="TableStyle-DefaultTable-Column-Column1" style="width: 415px;" />
+                            <col class="TableStyle-DefaultTable-Column-Column1" style="width: 275px;" />
                             <thead>
-                                <tr class="TableStyle-Default_Table-Head-Header1">
-                                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Name</th>
-                                    <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Example</th>
-                                    <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Comment</th>
+                                <tr class="TableStyle-DefaultTable-Head-Header1">
+                                    <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">Name</th>
+                                    <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">Example</th>
+                                    <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">Comment</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="TableStyle-Default_Table-Body-Body1">
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                <tr class="TableStyle-DefaultTable-Body-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                         <p class="tableblock">String literal</p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                         <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-s1">'string literal'</span><span class="tok-p">;</span></code>
                                         </p>
                                         <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-s1">'string literal ''with something'' quoted'</span><span class="tok-p">;</span></code>
@@ -90,7 +90,7 @@ expressions</li>
                                         <p class="tableBody"><code data-lang="sqream db"><span class="tok-c1">-- Same as above</span></code>
                                         </p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                         <p class="tableblock">Delimited by single quotes ('), and can contain any printable character other than single quote
 										</p>
                                         <p class="tableblock">To include a single quote within a string literal, write two adjacent single quotes, e.g., 'Database''s features'. Note that this is not the same as a double-quote character (")
@@ -99,11 +99,11 @@ expressions</li>
 										</p>
                                     </td>
                                 </tr>
-                                <tr class="TableStyle-Default_Table-Body-Body2">
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                <tr class="TableStyle-DefaultTable-Body-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                         <p class="tableblock">Number literal</p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                         <p class="tableBody"><code><strong><em>digits</em></strong></code>
                                         </p>
                                         <p class="tableBody"><code>
@@ -115,7 +115,7 @@ expressions</li>
                                         <p class="tableBody"><code><strong><em>digits</em></strong> e [+-] <strong><em>digits</em></strong></code>
                                         </p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                                         <p class="tableBody"><code data-lang="sqream db"><span class="tok-mf">1234</span></code>
                                         </p>
                                         <p class="tableBody"><code data-lang="sqream db"><span class="tok-mf">1234.56</span></code>
@@ -128,113 +128,113 @@ expressions</li>
                                         </p>
                                     </td>
                                 </tr>
-                                <tr class="TableStyle-Default_Table-Body-Body1">
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                <tr class="TableStyle-DefaultTable-Body-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                         <p class="tableblock">Typed literal                                        </p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                         <p class="tableblock"><code><strong><em>type_name</em></strong> <strong><em>string_literal</em></strong></code>
                                         </p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                         <p class="tableblock"><code><strong><em>type_name</em></strong></code> is defined above in the <a href="21_2.6_Data_types.htm">type name
 definition</a> section.</p>
                                     </td>
                                 </tr>
-                                <tr class="TableStyle-Default_Table-Body-Body2">
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                <tr class="TableStyle-DefaultTable-Body-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                         <p class="tableblock">Binary operator
                                         </p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                         <p class="tableBody"><code>	. | + | ^ | * | / | % | + | - | &gt;= | &lt;= | != | &lt;&gt; | ||
 											| LIKE | NOT LIKE | RLIKE | NOT RLIKE | &lt; | &gt; | = | OR | AND</code>
                                         </p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                                         <p class="tableBody">&#160;
                                         </p>
                                     </td>
                                 </tr>
-                                <tr class="TableStyle-Default_Table-Body-Body1">
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                <tr class="TableStyle-DefaultTable-Body-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                         <p class="tableblock">Unary operator
 										</p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                         <p class="tableblock"><code>+ | - | NOT</code>
                                         </p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                         <p class="tableBody">&#160;
                                         </p>
                                     </td>
                                 </tr>
-                                <tr class="TableStyle-Default_Table-Body-Body2">
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                <tr class="TableStyle-DefaultTable-Body-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                         <p class="tableblock">Postfix unary operator</p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                         <p class="tableblock"><code>IS NULL | IS NOT NULL</code>
                                         </p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                                         <p class="tableBody">&#160;
                                         </p>
                                     </td>
                                 </tr>
-                                <tr class="TableStyle-Default_Table-Body-Body1">
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                <tr class="TableStyle-DefaultTable-Body-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                         <p class="tableBody">Special operator</p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                         <p class="tableBody">See <a href="#Special">Special operator</a></p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                         <p class="tableBody">&#160;
                                         </p>
                                     </td>
                                 </tr>
-                                <tr class="TableStyle-Default_Table-Body-Body2">
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                <tr class="TableStyle-DefaultTable-Body-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                         <p class="tableBody">EXTRACT operator</p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                         <p class="tableBody">See <a href="#EXTRACT">EXTRACT operator</a></p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                                         <p class="tableBody">&#160;
                                         </p>
                                     </td>
                                 </tr>
-                                <tr class="TableStyle-Default_Table-Body-Body1">
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                <tr class="TableStyle-DefaultTable-Body-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                         <p>CASE expression</p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                         <p class="tableBody">See <a href="#CASE">CASE expression</a></p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                         <p class="tableBody">&#160;
                                         </p>
                                     </td>
                                 </tr>
-                                <tr class="TableStyle-Default_Table-Body-Body2">
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                <tr class="TableStyle-DefaultTable-Body-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                         <p class="tableBody">Identifier Rules</p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                         <p class="tableBody">See <a href="#identifier-definitions">Identifier rules</a></p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                                         <p class="tableBody">&#160;</p>
                                     </td>
                                 </tr>
-                                <tr class="TableStyle-Default_Table-Body-Body1">
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                <tr class="TableStyle-DefaultTable-Body-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                         <p class="tableBody">Aggregate function app</p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                         <p class="tableBody"><code><strong><em>agg_name</em></strong> ( [ <strong><em>value_expr</em></strong> [, ... ] ] )
 </code>
                                         </p>
@@ -244,15 +244,15 @@ definition</a> section.</p>
                                         <p class="tableBody"><code><strong><em>agg_name</em></strong> ::= <strong><em>identifier</em></strong></code>
                                         </p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                         <p class="tableBody">&#160;</p>
                                     </td>
                                 </tr>
-                                <tr class="TableStyle-Default_Table-Body-Body2">
-                                    <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
+                                <tr class="TableStyle-DefaultTable-Body-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
                                         <p class="tableBody">Window function app</p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
                                         <p class="tableBody"><code><strong><em>window_fn_name</em></strong> ( [ <strong><em>value_expr</em></strong> [, ... ] ]</code>
                                         </p>
                                         <p class="tableBody"><code>)	OVER ( [ <strong><em>value_expr</em></strong> [, ... ] ]</code>
@@ -264,7 +264,7 @@ definition</a> section.</p>
                                         <p class="tableBody"><code><strong><em>window_fn_name</em></strong> ::= <strong><em>identifier</em></strong></code>
                                         </p>
                                     </td>
-                                    <td class="TableStyle-Default_Table-BodyA-Column1-Body2">
+                                    <td class="TableStyle-DefaultTable-BodyA-Column1-Body2">
                                         <p class="tableBody">See the <a href="23_2.8_Functions_and_Operators.htm#Window">Window functions</a> segment for examples.</p>
                                     </td>
                                 </tr>
@@ -282,9 +282,9 @@ definition</a> section.</p>
                                 </div>
                             </div>
                             <div class="admonitionblock note">
-                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                <table>
+                                    <tr>
+                                        <td>
                                             <div class="paragraph">
                                                 <p>SQream limits the number of 'in list' values to 500. It is highly recommended to avoid a large 'in list' (more than 20) and to use JOIN operation instead:</p>
                                             </div>
@@ -298,9 +298,9 @@ definition</a> section.</p>
                                 </table>
                             </div>
                             <div class="admonitionblock note">
-                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                <table>
+                                    <tr>
+                                        <td>
                                             <div class="paragraph">
                                                 <p>To use AND in the middle of a <code><strong><em>value_expr</em></strong></code> with a BETWEEN operator,
 enclose the expression in parentheses:</p>
@@ -324,9 +324,9 @@ date or datetime values.</p>
                                 <p>See also DATEPART in <a href="23_2.8_Functions_and_Operators.htm#Date">Date/time functions</a></p>
                             </div>
                             <div class="admonitionblock note">
-                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                <table>
+                                    <tr>
+                                        <td>
 This operator always returns a float.
 </td>
                                     </tr>
@@ -361,7 +361,7 @@ This operator always returns a float.
 <span class="tok-c1">-- Returns 1997.00</span></code></pre>
                                 </div>
                             </div>
-                            <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                            <table class="TableStyle-DefaultTable" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
                                 <caption class="title">Example results</caption>
                                 <colgroup>
                                     <col />
@@ -369,127 +369,127 @@ This operator always returns a float.
                                     <col />
                                 </colgroup>
                                 <thead>
-                                    <tr class="TableStyle-Default_Table-Head-Header1">
-                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">extract_field</th>
-                                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Syntax</th>
-                                        <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Result</th>
+                                    <tr class="TableStyle-DefaultTable-Head-Header1">
+                                        <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">extract_field</th>
+                                        <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">Syntax</th>
+                                        <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">Result</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <div class="literal"><pre xml:space="preserve"> YEAR</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <div class="literal"><pre xml:space="preserve"> EXTRACT(YEAR FROM '1986-06-02 15:31:22.124')</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                             <p class="tableblock">1986.00</p>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body2">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                             <div class="literal"><pre xml:space="preserve"> MONTH</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                             <div class="literal"><pre xml:space="preserve"> EXTRACT(MONTH FROM '1986-06-02 15:31:22.124')</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                                             <p class="tableblock">6.00</p>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <div class="literal"><pre xml:space="preserve"> WEEK</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <div class="literal"><pre xml:space="preserve"> EXTRACT(WEEK FROM '1986-06-02 15:31:22.124')</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                             <p class="tableblock">23.00</p>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body2">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                             <div class="literal"><pre xml:space="preserve"> DAY</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                             <div class="literal"><pre xml:space="preserve"> EXTRACT(DAY FROM '1986-06-02 15:31:22.124')</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                                             <p class="tableblock">2.00</p>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <div class="literal"><pre xml:space="preserve"> DOY</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <div class="literal"><pre xml:space="preserve"> EXTRACT(DOY FROM '1986-06-02 15:31:22.124')</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                             <p class="tableblock">153.00</p>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body2">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                             <div class="literal"><pre xml:space="preserve"> HOUR</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                             <div class="literal"><pre xml:space="preserve"> EXTRACT(HOUR FROM '1986-06-02 15:31:22.124')</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                                             <p class="tableblock">15.00</p>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <div class="literal"><pre xml:space="preserve"> MINUTE</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <div class="literal"><pre xml:space="preserve"> EXTRACT(MINUTE FROM '1986-06-02 15:31:22.124')</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                             <p class="tableblock">31.00</p>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body2">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                             <div class="literal"><pre xml:space="preserve"> SECOND</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                             <div class="literal"><pre xml:space="preserve"> EXTRACT(SECOND FROM '1986-06-02 15:31:22.124')</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                                             <p class="tableblock">22.124</p>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
                                             <div class="literal"><pre xml:space="preserve"> MILLISECONDS</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
                                             <div class="literal"><pre xml:space="preserve"> EXTRACT(MILLISECONDS FROM '1986-06-02 15:31:22.124')</pre>
                                             </div>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyA-Column1-Body1">
                                             <p class="tableblock">22124.00</p>
                                         </td>
                                     </tr>
@@ -635,107 +635,107 @@ NULL.</p>
 recommend using parentheses rather than relying on precedences in
 anything other than trivial expressions.</p>
                             </div>
-                            <table class="TableStyle-Default_Table" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                            <table class="TableStyle-DefaultTable" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
                                 <caption class="title">Operator precedences</caption>
                                 <colgroup>
                                     <col style="width: 50%;" />
                                     <col style="width: 50%;" />
                                 </colgroup>
                                 <tbody>
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <p class="tableblock">Operator</p>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                             <p class="tableblock">Associativity</p>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body2">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                             <p class="tableblock">.</p>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                                             <p class="tableblock">left</p>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <p class="tableblock">+ - (unary)</p>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1" />
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body2">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                             <p class="tableblock">^</p>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                                             <p class="tableblock">left</p>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <p class="tableblock">* / %</p>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                             <p class="tableblock">left</p>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body2">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                             <p class="tableblock">+ - (binary)</p>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                                             <p class="tableblock">left</p>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <p class="tableblock">||</p>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                             <p class="tableblock">right</p>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body2">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                             <p class="tableblock"><strong>BETWEEN</strong>, <strong>IN</strong>, <strong>LIKE</strong>, <strong>RLIKE</strong></p>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2" />
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <p class="tableblock">&lt; &gt; = &lt;= &gt;= &lt;&gt; !=</p>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1" />
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body2">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                             <p class="tableblock"><strong>IS NULL</strong>, <strong>IS NOT NULL</strong></p>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2" />
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2" />
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <p class="tableblock"><strong>NOT</strong>
                                             </p>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1" />
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1" />
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body2">
-                                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                                             <p class="tableblock"><strong>AND</strong>
                                             </p>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                                             <p class="tableblock">left</p>
                                         </td>
                                     </tr>
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
                                             <p class="tableblock"><strong>OR</strong>
                                             </p>
                                         </td>
-                                        <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyA-Column1-Body1">
                                             <p class="tableblock">left</p>
                                         </td>
                                     </tr>

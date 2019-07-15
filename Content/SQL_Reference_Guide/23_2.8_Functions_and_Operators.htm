@@ -391,9 +391,9 @@ to test if a value is not null. You must use <strong>IS NULL</strong> and <stron
                                 </tbody>
                             </table>
                             <div class="admonitionblock note">
-                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-DefaultTable" cellspacing="0">
-                                    <tr class="TableStyle-DefaultTable-Body-Body1">
-                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                                <table>
+                                    <tr>
+                                        <td>
 Bitwise operators are supported for all Integer data types: TINYINT, SMALLINT, INT, and BIGINT.
 </td>
                                     </tr>
@@ -403,9 +403,9 @@ Bitwise operators are supported for all Integer data types: TINYINT, SMALLINT, I
                         <div class="sect3">
                             <h4 id="_mathematical_functions_and_operators">Mathematical functions and operators</h4>
                             <div class="admonitionblock note">
-                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-DefaultTable" cellspacing="0">
-                                    <tr class="TableStyle-DefaultTable-Body-Body1">
-                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                                <table>
+                                    <tr>
+                                        <td>
 When performing mathematical operations on an integer, SQream will round up the results and return an integer.
 In order to return a decimal number, make sure to use real or float with the operation itself or cast the integer to real/float.
 For example: (100/14) will result in 7 while (100.0/14) or (100/14.0) will result in 7.1429.</td>
@@ -1177,9 +1177,9 @@ NVarChar</p>
 VarChar</p>
                                 </div>
                                 <div class="admonitionblock note">
-                                    <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-DefaultTable" cellspacing="0">
-                                        <tr class="TableStyle-DefaultTable-Body-Body1">
-                                            <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                                    <table>
+                                        <tr>
+                                            <td>
 IS_ASCII will only work on NOT NULL columns. If your column definition allows NULL, use ISNULL to convert it: is_ascii(isnull(x,''))
 </td>
                                         </tr>
@@ -2765,9 +2765,9 @@ indicates how many points are actually used in the given row.</p>
                                 <p><code>any</code> can be any type as defined in <a href="21_2.6_Data_types.htm">Data types</a>.<br /><code>anynumber</code> is any numeric type, as defined in <a href="21_2.6_Data_types.htm#Numeric">Numeric Types</a></p>
                             </div>
                             <div class="admonitionblock warning">
-                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-DefaultTable" cellspacing="0">
-                                    <tr class="TableStyle-DefaultTable-Body-Body1">
-                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                                <table>
+                                    <tr>
+                                        <td>
 Mathematical operations on integer types may perform rounding. For precise results as a decimal number, a cast is recommended:<br />For example, <code>SELECT AVG(int_column :: FLOAT) from table;</code></td>
                                     </tr>
                                 </table>

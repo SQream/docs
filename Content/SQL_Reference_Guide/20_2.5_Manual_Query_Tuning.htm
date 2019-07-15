@@ -19,19 +19,17 @@ This is best used when the column being filtered out is <strong>not sorted</stro
                                 <p>This hint tells the compiler that this WHERE condition is going to filter out more than 60% (for example) of the table rows. It does not affect the query results, but when used correctly can improve query performance.</p>
                             </div>
                             <div class="admonitionblock tip">
-                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-                                            <div class="ulist">
-                                                <ul>
-                                                    <li>
-                                                        <p>This feature is less effective when the condition is on a sorted column, since it<br />will overlap with other optimizations, thereby making it redundant.</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>If there’s no reason to believe that the WHERE clause is going to filter a majority<br />of the records, this optimization can be omitted</p>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td>
+                                            <ul>
+                                                <li>
+                                                    <p>This feature is less effective when the condition is on a sorted column, since it will overlap with other optimizations, thereby making it redundant.</p>
+                                                </li>
+                                                <li>
+                                                    <p>If there’s no reason to believe that the WHERE clause is going to filter a majority of the records, this optimization can be omitted</p>
+                                                </li>
+                                            </ul>
                                         </td>
                                     </tr>
                                 </table>
@@ -50,9 +48,9 @@ This is best used when the column being filtered out is <strong>not sorted</stro
                                 </div>
                             </div>
                             <div class="admonitionblock note">
-                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-Default_Table" cellspacing="0">
-                                    <tr class="TableStyle-Default_Table-Body-Body1">
-                                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                                <table>
+                                    <tr>
+                                        <td>
 From V2.5 the hint is called HIGH_SELECTIVITY. In lower versions this hint was called LOW_SELECTIVITY.
 </td>
                                     </tr>
