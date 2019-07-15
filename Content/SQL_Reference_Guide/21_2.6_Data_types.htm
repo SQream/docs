@@ -393,7 +393,7 @@ Milliseconds are stored as 3 digits. If milliseconds are ingested with more than
                                         <p>NVARCHAR data type supports multiple languages with UTF8 encoding.</p>
                                     </li>
                                     <li>
-                                        <p>Restriction: Both VARCHAR and NVARCHAR do not support the ASCII character 0 (=NULL).</p>
+                                        <p>Restriction: Neither VARCHAR nor NVARCHAR supports the ASCII character 0 (=NULL).</p>
                                     </li>
                                 </ul>
                             </div>
@@ -410,7 +410,7 @@ Milliseconds are stored as 3 digits. If milliseconds are ingested with more than
                                                         <p>NVARCHAR column can not be aggregated or used as a join key between data sets.</p>
                                                     </li>
                                                     <li>
-                                                        <p>VARCHAR/NVARCHAR column size can not exceed the SQream max row length (10239 bytes).</p>
+                                                        <p>VARCHAR/NVARCHAR column size can not exceed the SQream max row length (100,000 characters).</p>
                                                     </li>
                                                 </ul>
                                             </div>
