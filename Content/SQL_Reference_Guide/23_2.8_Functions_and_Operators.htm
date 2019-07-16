@@ -105,7 +105,7 @@ same, but the system will insert valid implicit casts in many cases
                                                 </p>
                                             </td>
                                             <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
-                                                <p class="tableBody">&#160;</p>
+                                                <p class="tableBody">Not supported for NVARCHAR&#160;data type.</p>
                                             </td>
                                         </tr>
                                         <tr class="TableStyle-DefaultTable-Body-Body2">
@@ -1070,8 +1070,9 @@ a single value of the same data type as parameter.</p>
                                         <td class="TableStyle-DefaultTable-BodyD-Column1-Body2" />
                                     </tr>
                                     <tr class="TableStyle-DefaultTable-Body-Body1">
-                                        <td rowspan="5" class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                        <td rowspan="6" class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <p class="tableblock">varchar***</p>
+                                            <p class="tableBody">&#160;</p>
                                         </td>
                                         <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <p class="tableblock">int</p>
@@ -1109,16 +1110,38 @@ a single value of the same data type as parameter.</p>
                                         <td class="TableStyle-DefaultTable-BodyD-Column1-Body2" />
                                     </tr>
                                     <tr class="TableStyle-DefaultTable-Body-Body1">
-                                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <p class="tableblock">varchar</p>
                                         </td>
-                                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <p class="tableblock">explicit</p>
                                         </td>
-                                        <td class="TableStyle-DefaultTable-BodyA-Column1-Body1" />
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1" />
+                                    </tr>
+                                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                        <td class="TableStyle-DefaultTable-BodyA-Column1-Body2">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
+                            <div class="paragraph">
+                                <p>** There are conversion functions to convert part of a date or
+									datetime to integer, or to convert the whole date/datetime to unix
+									timestamps but these are not considered casts and are not available using the
+								cast syntax</p>
+                            </div>
+                            <div class="paragraph">
+                                <p>*** String literals without an explicit type are
+									considered unknown type (not varchar) and will implicitly cast
+								to any type.</p>
+                            </div>
                             <div class="sect4">
                                 <h5 id="_cast"><a name="CAST"></a>CAST</h5>
                                 <div class="paragraph">
@@ -1145,17 +1168,6 @@ a single value of the same data type as parameter.</p>
 <span class="tok-k">SELECT</span>  <span class="tok-k">CAST</span><span class="tok-p">(</span><span class="tok-mf">1234.56789</span>  <span class="tok-k">as</span>  <span class="tok-nb">VARCHAR</span><span class="tok-p">(</span><span class="tok-mf">10</span><span class="tok-p">));</span>  
 <span class="tok-c1">-- returns: varchar 1234.5679</span></code></pre>
                                     </div>
-                                </div>
-                                <div class="paragraph">
-                                    <p>** There are conversion functions to convert part of a date or
- datetime to integer, or to convert the whole date/datetime to unix
- timestamps but these are not considered casts or available using the
- cast syntax</p>
-                                </div>
-                                <div class="paragraph">
-                                    <p>*** String literals without an explicit type are
- considered unknown type (and not varchar) and will implicitly cast
- to any type.</p>
                                 </div>
                             </div>
                             <div class="sect4">
@@ -1241,7 +1253,7 @@ a single compatible type.</p>
                         <div class="sect3">
                             <h4 id="_string_functions_and_operators_on_varchar">String functions and operators on VARCHAR</h4>
                             <div class="paragraph">
-                                <p><strong>VARCHAR</strong> data type is intended to ASCII character set. All function parameters must be either NVARCHAR or VARCHAR. SQream does not support casting between this two types.</p>
+                                <p><strong>VARCHAR</strong> data type is intended to ASCII character set. All function parameters must be either NVARCHAR or VARCHAR. SQream does not support casting between these two types.</p>
                             </div>
                             <table class="TableStyle-DefaultTable" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
                                 <colgroup>
@@ -1569,22 +1581,37 @@ a single compatible type.</p>
                                         </td>
                                     </tr>
                                     <tr class="TableStyle-DefaultTable-Body-Body1">
-                                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <p class="tableBody"><code>TRIM</code>
                                             </p>
                                         </td>
-                                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <p class="tableBody">Removes any whitespace from the beginning and end of a string (leading and trailing).</p>
                                         </td>
-                                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">TRIM</span> <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
                                             </p>
                                         </td>
-                                        <td class="TableStyle-DefaultTable-BodyA-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                             <ul style="list-style-type: circle;">
                                                 <li>Parameters: VarChar </li>
                                                 <li>Returns: VarChar </li>
                                             </ul>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                            <p class="tableBody"><code>CAST</code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                            <p class="tableBody">Converts an expression from VARCHAR to the specified data type.</p>
+                                        </td>
+                                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                            <p class="tableBody">&#160;</p>
+                                        </td>
+                                        <td class="TableStyle-DefaultTable-BodyA-Column1-Body2">
+                                            <p class="tableBody">&#160;</p>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -1603,7 +1630,7 @@ a single compatible type.</p>
                                             <p>Start position - (int) - Optional. When unset, default is 1</p>
                                         </li>
                                         <li>
-                                            <p>Occurence number - (int) - which occurrence of the pattern - optional. When unset, default is 1 - first occurence</p>
+                                            <p>Occurrence number - (int) - which occurrence of the pattern - optional. When unset, default is 1 - first occurrence</p>
                                         </li>
                                         <li>
                                             <p>Match start/end position - (int) - 0 for match’s start position, 1 for its end - optional. When unset, default is 0</p>
@@ -1895,11 +1922,11 @@ a single compatible type.</p>
                                 </tbody>
                             </table>
                             <div class="admonitionblock note">
-                                <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-DefaultTable" cellspacing="0">
-                                    <tr class="TableStyle-DefaultTable-Body-Body1">
-                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
-In some of the NVARCHAR functions, SQream does not support the use of literals. In others, the use in literals will have to be explicitly wrapped in 'cast(…​ as nvarchar)' function.
-</td>
+                                <table>
+                                    <tr>
+                                        <td>
+											In some of the NVARCHAR functions, SQream does not support the use of literals. In others,  literals must be explicitly wrapped in 'cast(…​ as nvarchar)' function.
+										</td>
                                     </tr>
                                 </table>
                             </div>

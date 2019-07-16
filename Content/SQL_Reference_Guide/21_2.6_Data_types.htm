@@ -387,16 +387,6 @@ Milliseconds are stored as 3 digits. If milliseconds are ingested with more than
                                     </tr>
                                 </tbody>
                             </table>
-                            <div class="ulist">
-                                <ul>
-                                    <li>
-                                        <p>NVARCHAR data type supports multiple languages with UTF8 encoding.</p>
-                                    </li>
-                                    <li>
-                                        <p>Restriction: Neither VARCHAR nor NVARCHAR supports the ASCII character 0 (=NULL).</p>
-                                    </li>
-                                </ul>
-                            </div>
                             <div class="admonitionblock note">
                                 <table style="width: 100%;">
                                     <tr>
@@ -407,16 +397,53 @@ Milliseconds are stored as 3 digits. If milliseconds are ingested with more than
                                                         <p>VARCHAR is right-padded with spaces. These trailing spaces are ignored when used in functions.</p>
                                                     </li>
                                                     <li>
-                                                        <p>NVARCHAR column can not be aggregated or used as a join key between data sets.</p>
+                                                        <p>NVARCHAR supports multiple languages with UTF8 encoding.</p>
                                                     </li>
                                                     <li>
-                                                        <p>VARCHAR/NVARCHAR column size can not exceed the SQream max row length (100,000 characters).</p>
+                                                        <p>VARCHAR/NVARCHAR column size cannot exceed the SQream max row length (100,000 characters).</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>Neither VARCHAR nor NVARCHAR supports the ASCII character 0 (=NULL).</p>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </td>
                                     </tr>
                                 </table>
+                            </div>
+                            <div class="paragraph">
+                                <p>Please note the following NVARCHAR restrictions:</p>
+                            </div>
+                            <div class="ulist">
+                                <ul>
+                                    <li>
+                                        <p>NVARCHAR columns cannot be used as group-by keys where there are multiple count distincts in the query.</p>
+                                    </li>
+                                    <li>
+                                        <p>NVARCHAR cannot be used in a <code>SELECT</code> statement together with window function expressions ( "select x,WINDOW from ..." where x is an NVARCHAR ).</p>
+                                    </li>
+                                    <li>
+                                        <p>Regular expression functions (rlike, not rlike, regexp_count, regexp_substr, regexp_instr) are not supported</p>
+                                    </li>
+                                    <li>
+                                        <p>LIKE with NVARCHAR supports only the following patterns: "%abc", "%abc%" and "abc%".</p>
+                                    </li>
+                                    <li>
+                                        <p>NVARCHAR is not supported as a join key.<br />As a workaround, customers are advised to use the <code>CRC64</code> function (crc64(nvarchar_column)= crc64(nvarchar_column))</p>
+                                    </li>
+                                    <li>
+                                        <p><code>Add column</code> with a non-empty NVARCHAR value is not supported </p>
+                                    </li>
+                                    <li>
+                                        <p>Casts between NVARCHAR and other types are not supported </p>
+                                    </li>
+                                    <li>
+                                        <p>Aggregate functions on NVARCHAR (other than count) are not supported </p>
+                                    </li>
+                                    <li>
+                                        <p>Scalar functions are not supported (chr, patindex, isprefixof, issuffixof, isinfixof, comparison operators (&gt;,&gt;=,&lt;,&lt;=)).</p>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
