@@ -507,7 +507,7 @@ to be specified, even if the table is empty.</p>
                                         <p class="example">Examples:</p>
                                     </div>
                                     <div class="code">
-                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">ALTER</span>  <span class="tok-k">TABLE</span>  <span class="tok-n">my_table</span>  <span class="tok-k">DROP</span>  <span class="tok-n">dreadful_column_i_never_even_wanted_in_my_table</span><span class="tok-p">;</span></code></pre>
+                                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">ALTER</span>  <span class="tok-k">TABLE</span>  <span class="tok-n">my_table</span>  <span class="tok-k">DROP</span> <span class="tok-k">COLUMN</span> <span class="tok-n">dreadful_column_i_never_even_wanted_in_my_table</span><span class="tok-p">;</span></code></pre>
                                         </div>
                                     </div>
                                 </div>
@@ -608,8 +608,7 @@ External tables allow SQream to access data that is stored outside the database 
                                     </table>
                                 </div>
                                 <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code>CREATE [OR REPLACE] EXTERNAL TABLE [schema_name.]table_name
-		(column_name column_type [, ...])
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code>CREATE [OR REPLACE] EXTERNAL TABLE [schema_name.]table_name</code></pre><pre class="pygments highlight" xml:space="preserve"> <code>(column_name column_type [, ...])
    USING FORMAT {PARQUET | CSV}
    WITH PATH '{file_name | directory_path}'
    [FIELD DELIMITER 'delimiter']
@@ -971,8 +970,15 @@ External tables allow SQream to access data that is stored outside the database 
                         <div class="sect3">
                             <h4 id="managing-roles-and-permissions"><a name="roles-and-permissions"></a>Database Roles and Permissions</h4>
                             <div class="paragraph">
-                                <p>SQream manages database access permissions using the concept of roles. A role can be thought of as either a database user, or a set of database permissions, depending on how the role is set up.</p>
-                                <p class="note"><span class="strong">For an example of how to configure roles in a cluster, see</span> <a href="../Guides/Quick_Guides/Quick_guide_to_roles_and_permissions/Quick_guide_to_roles_and_permissions.htm">quick guide to roles and permissions.</a></p>
+                                <p>SQream manages database access permissions using the concept of roles. A role can be thought of as either a database user, or a set of database permissions, depending on how the role is set up. </p>
+                                <div class="admonitionblock note">
+                                    <table>
+                                        <tr>
+                                            <td>
+												For an example of how to configure roles in a cluster, see <a href="../Guides/Quick_Guides/Quick_guide_to_roles_and_permissions/Quick_guide_to_roles_and_permissions.htm">quick guide to roles and permissions.</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
                                 <h6>Roles at a glance</h6>
                                 <ul>
                                     <li>Roles are global across all databases in the cluster.</li>
@@ -1072,28 +1078,27 @@ External tables allow SQream to access data that is stored outside the database 
                                         <p class="example">Examples:</p>
                                     </div>
                                     <div class="code"><pre xml:space="preserve">-- Grant permissions at the cluster level:
-	GRANT { SUPERUSER
+	GRANT </pre><pre xml:space="preserve">
+	{ SUPERUSER
 	| LOGIN 
 	| PASSWORD '&lt;password&gt;' 
-	| CREATE FUNCTION 
 	} 
 	TO &lt;role&gt; [, ...] 
 
 -- Grant permissions at the database level:
+      GRANT {{CREATE | CONNECT| DDL | SUPERUSER | CREATE FUNCTION} [, ...] | ALL [PERMISSIONS]}</pre><pre xml:space="preserve">
 	ON DATABASE &lt;database&gt; [, ...]
 	TO &lt;role&gt; [, ...] 
 
 -- Grant permissions at the schema level: 
-	GRANT { { CREATE | DDL | USAGE | SUPERUSER } [, ...] | ALL [ 
-	PERMISSIONS ] } 
+	GRANT {{ CREATE | DDL | USAGE | SUPERUSER } [, ...] | ALL [ 
+	PERMISSIONS ]} 
 	ON SCHEMA &lt;schema&gt; [, ...] 
 	TO &lt;role&gt; [, ...] 
 					
 -- Grant permissions at the object level: 
-	GRANT { { SELECT | INSERT | DELETE | DDL } [, ...] | ALL [ 
-	PERMISSIONS ] } 
-	ON { TABLE &lt;table_name&gt; [, ...] | ALL TABLES IN SCHEMA <br MadCap:conditions="General.Print _Only" />&lt;schema_name&gt; 
-	[, ...] } 
+	GRANT {{SELECT | INSERT | DELETE | DDL } [, ...] | ALL [PERMISSIONS]} 
+	ON { TABLE &lt;table_name&gt; [, ...] | ALL TABLES IN SCHEMA &lt;schema_name&gt; [, ...]} 
 	TO &lt;role&gt; [, ...]
 					
 -- Grant execute function permission: 
@@ -1104,6 +1109,13 @@ External tables allow SQream to access data that is stored outside the database 
 	GRANT &lt;role1&gt; [, ...] 
 	TO &lt;role2&gt; 
 	[WITH ADMIN OPTION]</pre>
+                                    </div>
+                                </div>
+                                <div class="paragraph">
+                                    <p class="example">Examples:</p>
+                                </div>
+                                <div class="code">
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">GRANT</span> <span class="tok-k">CREATE FUNCTION</span> <span class="tok-k">ON</span> <span class="tok-k">DATABASE</span> <span class="tok-n">TEST_DB</span> <span class="tok-k">TO</span> <span class="tok-k">USER1</span><span class="tok-p">;</span></code></pre>
                                     </div>
                                 </div>
                                 <ul>
@@ -1139,37 +1151,41 @@ External tables allow SQream to access data that is stored outside the database 
                                     <div class="paragraph">
                                         <p class="example">Examples:</p>
                                     </div>
-                                    <div class="code"><pre>-- Revoke permissions at the cluster level:
+                                    <div class="code"><pre xml:space="preserve">-- Revoke permissions at the cluster level:
 	REVOKE
 	{ SUPERUSER
 	| LOGIN
 	| PASSWORD
-	| CREATE FUNCTION
 	}
 	FROM &lt;role&gt; [, ...]
 				
 -- Revoke permissions at the database level:
-	REVOKE { { CREATE | CONNECT | DDL | SUPERUSER } [, ...] | <br MadCap:conditions="General.Print _Only" />ALL [ 
-	PERMISSIONS ] }
+	REVOKE {{CREATE | CONNECT | DDL | SUPERUSER |&#160;CREATE&#160;FUNCTION}[, ...] |ALL [PERMISSIONS]}
 	ON DATABASE &lt;database&gt; [, ...]
 	FROM &lt;role&gt; [, ...]
 
 -- Revoke permissions at the schema level:
-	REVOKE { { CREATE | DDL | USAGE | SUPERUSER } [, ...] | <br MadCap:conditions="General.Print _Only" />ALL [ 
-	PERMISSIONS ] }
+	REVOKE { { CREATE | DDL | USAGE | SUPERUSER } [, ...] | ALL [PERMISSIONS]}
 	ON SCHEMA &lt;schema&gt; [, ...]
 	FROM &lt;role&gt; [, ...]
 				
 -- Revoke permissions at the object level:
 	REVOKE { { SELECT | INSERT | DELETE | DDL } [, ...] | ALL }
-	ON { [ TABLE ] &lt;table_name&gt; [, ...] | ALL TABLES IN SCHEMA <br MadCap:conditions="General.Print _Only" />&lt;
-	schema_name&gt; [, ...] }
+	ON { [ TABLE ] &lt;table_name&gt; [, ...] | ALL TABLES IN SCHEMA</pre><pre xml:space="preserve">
+       &lt;schema_name&gt; [, ...] }
 	FROM &lt;role&gt; [, ...]
 				
 -- Revoke privileges from other roles by granting one role to another:
-	REVOKE &lt;role1&gt; [, ...] FROM &lt;role2&gt; [, ...] WITH ADMIN <br MadCap:conditions="General.Print _Only" />OPTION</pre>
+	REVOKE &lt;role1&gt; [, ...] FROM &lt;role2&gt; [, ...] WITH ADMIN OPTION</pre>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <p class="example">Examples:</p>
+                        </div>
+                        <div class="code">
+                            <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">REVOKE</span> <span class="tok-k">CREATE FUNCTION</span> <span class="tok-k">ON</span> <span class="tok-k">DATABASE</span> <span class="tok-n">TEST_DB</span> <span class="tok-k">FROM</span> <span class="tok-k">USER1</span><span class="tok-p">;</span></code></pre>
                             </div>
                         </div>
                         <div class="sect3">

@@ -343,9 +343,9 @@ Milliseconds are stored as 3 digits. If milliseconds are ingested with more than
                             <table class="TableStyle-DefaultTable" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
                                 <colgroup>
                                     <col />
-                                    <col style="width: 299px;" />
-                                    <col style="width: 104px;" />
-                                    <col style="width: 115px;" />
+                                    <col />
+                                    <col />
+                                    <col />
                                 </colgroup>
                                 <thead>
                                     <tr class="TableStyle-DefaultTable-Head-Header1">
@@ -417,7 +417,7 @@ Milliseconds are stored as 3 digits. If milliseconds are ingested with more than
                             <div class="ulist">
                                 <ul>
                                     <li>
-                                        <p>NVARCHAR columns cannot be used as group-by keys where there are multiple count distincts in the query.</p>
+                                        <p>NVARCHAR columns cannot be used as group-by keys where there are multiple count (distinct)s in the query.</p>
                                     </li>
                                     <li>
                                         <p>NVARCHAR cannot be used in a <code>SELECT</code> statement together with window function expressions ( "select x,WINDOW from ..." where x is an NVARCHAR ).</p>

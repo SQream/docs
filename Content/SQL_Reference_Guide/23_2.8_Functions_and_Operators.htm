@@ -1120,10 +1120,10 @@ a single value of the same data type as parameter.</p>
                                     </tr>
                                     <tr class="TableStyle-DefaultTable-Body-Body2">
                                         <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
-                                            <p class="tableBody">&#160;</p>
+                                            <p class="tableBody">nvarchar</p>
                                         </td>
                                         <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
-                                            <p class="tableBody">&#160;</p>
+                                            <p class="tableBody">explicit</p>
                                         </td>
                                         <td class="TableStyle-DefaultTable-BodyA-Column1-Body2">
                                             <p class="tableBody">&#160;</p>
@@ -1586,7 +1586,7 @@ a single compatible type.</p>
                                             </p>
                                         </td>
                                         <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
-                                            <p class="tableBody">Removes any whitespace from the beginning and end of a string (leading and trailing).</p>
+                                            <p class="tableBody">Removes any whitespace from both beginning and end of a string (leading and trailing).</p>
                                         </td>
                                         <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">TRIM</span> <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
@@ -1608,7 +1608,8 @@ a single compatible type.</p>
                                             <p class="tableBody">Converts an expression from VARCHAR to the specified data type.</p>
                                         </td>
                                         <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
-                                            <p class="tableBody">&#160;</p>
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span>CAST<span class="tok-p">(</span><span class="tok-n">a</span><span class="tok-n">as</span>nvarchar(50)<span class="tok-p">)</span><span class="tok-k">FROM</span><span class="tok-k">mytable</span><span class="tok-p">;</span></code>
+                                            </p>
                                         </td>
                                         <td class="TableStyle-DefaultTable-BodyA-Column1-Body2">
                                             <p class="tableBody">&#160;</p>
@@ -1904,19 +1905,76 @@ a single compatible type.</p>
                                         </td>
                                     </tr>
                                     <tr class="TableStyle-DefaultTable-Body-Body1">
-                                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <p class="tableBody"><code>OCTET_LENGTH</code>
                                             </p>
                                         </td>
-                                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <p class="tableBody">Returns the length in bytes (octets) of the nvarchar column value (being the number of bytes in binary string).</p>
                                         </td>
-                                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">OCTET_LENGTH</span> <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
                                             </p>
                                         </td>
-                                        <td class="TableStyle-DefaultTable-BodyA-Column1-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                                             <p>&#160;</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                                            <p class="tableBody"><code>LTRIM</code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                                            <p class="tableBody">Trims leading whitespace from the left side of the string.</p>
+                                        </td>
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">LTRIM</span> <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                                            <ul style="list-style-type: circle;">
+                                                <li>Parameters: NVarChar </li>
+                                                <li>Returns: NVarChar </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                            <p class="tableBody"><code>RTRIM</code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                            <p class="tableBody">Trims trailing whitespace from the right side of the string.</p>
+                                        </td>
+                                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">RTRIM</span> <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                                            <ul style="list-style-type: circle;">
+                                                <li>Parameters: NVarChar </li>
+                                                <li>Returns: NVarChar </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                            <p class="tableBody"><code>TRIM</code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                            <p class="tableBody">Removes any whitespace from both beginning and end of a string (leading and trailing).</p>
+                                        </td>
+                                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                            <p class="tableBody"><code data-lang="sqream db"><span class="tok-k">SELECT</span> <span class="tok-n">TRIM</span> <span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">)</span> <span class="tok-k">FROM</span> <span class="tok-k">table</span><span class="tok-p">;</span></code>
+                                            </p>
+                                        </td>
+                                        <td class="TableStyle-DefaultTable-BodyA-Column1-Body2">
+                                            <ul style="list-style-type: circle;">
+                                                <li>Parameters: NVarChar </li>
+                                                <li>Returns: NVarChar </li>
+                                            </ul>
                                         </td>
                                     </tr>
                                 </tbody>
