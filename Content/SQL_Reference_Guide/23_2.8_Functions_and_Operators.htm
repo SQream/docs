@@ -402,22 +402,12 @@ Bitwise operators are supported for all Integer data types: TINYINT, SMALLINT, I
                         </div>
                         <div class="sect3">
                             <h4 id="_mathematical_functions_and_operators">Mathematical functions and operators</h4>
-                            <div class="admonitionblock note">
-                                <table>
-                                    <tr>
-                                        <td>
+                            <div class="note">
 When performing mathematical operations on an integer, SQream will round up the results and return an integer.
 In order to return a decimal number, make sure to use real or float with the operation itself or cast the integer to real/float.
-For example: (100/14) will result in 7 while (100.0/14) or (100/14.0) will result in 7.1429.</td>
-                                    </tr>
-                                </table>
+For example: (100/14) will result in 7 while (100.0/14) or (100/14.0) will result in 7.1429.
                             </div>
                             <table class="TableStyle-DefaultTable" style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
-                                <colgroup>
-                                    <col style="width: 20%;" />
-                                    <col style="width: 40%;" />
-                                    <col style="width: 40%;" />
-                                </colgroup>
                                 <thead>
                                     <tr class="TableStyle-DefaultTable-Head-Header1">
                                         <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">Name</th>
@@ -1116,7 +1106,9 @@ a single value of the same data type as parameter.</p>
                                         <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                                             <p class="tableblock">explicit</p>
                                         </td>
-                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1" />
+                                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                                            <p classs="tableblock" class="tableBody">Must specify new column width <br /><span class="codeCH">cast (colA as varchar(100));</span></p>
+                                        </td>
                                     </tr>
                                     <tr class="TableStyle-DefaultTable-Body-Body2">
                                         <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
@@ -1126,7 +1118,7 @@ a single value of the same data type as parameter.</p>
                                             <p class="tableBody">explicit</p>
                                         </td>
                                         <td class="TableStyle-DefaultTable-BodyA-Column1-Body2">
-                                            <p class="tableBody">&#160;</p>
+                                            <p classs="tableblock" class="tableBody">Must specify new column width <br /><span class="codeCH">cast (colA as nvarchar(100));</span></p>
                                         </td>
                                     </tr>
                                 </tbody>
