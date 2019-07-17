@@ -27,6 +27,11 @@
       ReplaceMergeNode="true"
       StartSection="false" />
     <TocEntry
+      Title="QuickGuideOptimizingSQream"
+      Link="/Project/TOCs/QuickGuideOptimizingSQream.fltoc"
+      ReplaceMergeNode="true"
+      StartSection="false" />
+    <TocEntry
       Title="AdminGuideTOC"
       Link="/Project/TOCs/AdminGuideTOC.fltoc"
       ReplaceMergeNode="true" />

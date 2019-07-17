@@ -14,7 +14,7 @@
   DeleteStale="true"
   DeleteUnreferenced="false"
   AutoSync="true"
-  LastImport="2019-07-17T16:19:27.7720193+03:00">
+  LastImport="2019-07-17T21:32:55.5032283+03:00">
   <Files>
     <Url
       Source="file:///C:/Clients/SQream/Global/SQream_Global/SQream_Global.flprj"
@@ -1208,6 +1208,18 @@
     <Url
       Source="../../../SQream_Global/Project/Skins/TopicToolBar.flskn"
       AbsoluteSource="file:///C:/Clients/SQream/Web/SQream_Global/Project/Skins/TopicToolBar.flskn" />
+    <Url
+      Source="../../../../Global/SQream_Global/Content/Guides/Quick_Guides/Quick_guide_to_optimizing_sqream/1_Performance_tuning_best_practices.htm"
+      AbsoluteSource="file:///C:/Clients/SQream/Global/SQream_Global/Content/Guides/Quick_Guides/Quick_guide_to_optimizing_sqream/1_Performance_tuning_best_practices.htm" />
+    <Url
+      Source="../../../../Global/SQream_Global/Content/Guides/Quick_Guides/Quick_guide_to_optimizing_sqream/2_Loading_Data.htm"
+      AbsoluteSource="file:///C:/Clients/SQream/Global/SQream_Global/Content/Guides/Quick_Guides/Quick_guide_to_optimizing_sqream/2_Loading_Data.htm" />
+    <Url
+      Source="../../../../Global/SQream_Global/Content/Guides/Quick_Guides/Quick_guide_to_optimizing_sqream/3_Data_Definition.htm"
+      AbsoluteSource="file:///C:/Clients/SQream/Global/SQream_Global/Content/Guides/Quick_Guides/Quick_guide_to_optimizing_sqream/3_Data_Definition.htm" />
+    <Url
+      Source="../../../../Global/SQream_Global/Content/Guides/Quick_Guides/Quick_guide_to_optimizing_sqream/4_Query_processing_SQL_usage.htm"
+      AbsoluteSource="file:///C:/Clients/SQream/Global/SQream_Global/Content/Guides/Quick_Guides/Quick_guide_to_optimizing_sqream/4_Query_processing_SQL_usage.htm" />
   </CollectedSourceFiles>
   <SkippedSourceFiles>
     <Url
@@ -2376,5 +2388,17 @@
     <Url
       Source="../../Content/Guides/Quick_Guides/Create_Your_First_Database_-_Launching_a_SQream_DB_Cluster/Creating_Your_First_Database_In_SQream.htm"
       TimeStamp="18-Jun-19 9:38:16 AM" />
+    <Url
+      Source="../../Content/Guides/Quick_Guides/Quick_guide_to_optimizing_sqream/1_Performance_tuning_best_practices.htm"
+      TimeStamp="17-Jul-19 7:34:06 PM" />
+    <Url
+      Source="../../Content/Guides/Quick_Guides/Quick_guide_to_optimizing_sqream/2_Loading_Data.htm"
+      TimeStamp="17-Jul-19 7:34:50 PM" />
+    <Url
+      Source="../../Content/Guides/Quick_Guides/Quick_guide_to_optimizing_sqream/3_Data_Definition.htm"
+      TimeStamp="17-Jul-19 7:49:41 PM" />
+    <Url
+      Source="../../Content/Guides/Quick_Guides/Quick_guide_to_optimizing_sqream/4_Query_processing_SQL_usage.htm"
+      TimeStamp="17-Jul-19 8:10:28 PM" />
   </GeneratedFiles>
 </CatapultProject>
