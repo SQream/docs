@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('../Resources/MasterPages/Guides.flmsp');">
+    <head>
+        <link href="../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" /><title></title>
+    </head>
+    <body>
+        <h3>Utility Functions </h3>
+        <p>Use the SQream Utility Functions (UF) to monitor and manage SQream cluster. </p>
+        <p>Utility functions cannot be used as a part of a query. Use the following syntax: </p>
+        <div class="code">select utility_function_name(); </div>
+        <p>To see the list of all existing UF: </p>
+        <div class="code">select list_utility_functions(); </div>
+        <p>To see the UF columns: </p>
+        <div class="code">select show_uf_column_names(‘utility_function_name’);</div>
+        <p class="example">Example: </p>
+        <div class="code">select show_uf_column_names('show_server_status');</div>
+        <h4 class="Heading4">Commonly Used UF: </h4>
+        <table style="mc-table-style: url('../Resources/Table Styles/DefaultTable.css');" class="TableStyle-DefaultTable" cellspacing="0">
+            <thead>
+                <tr class="TableStyle-DefaultTable-Head-Header1">
+                    <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
+                        <p class="tableHeading">Utility Function </p>
+                    </th>
+                    <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
+                        <p class="tableHeading">Usage </p>
+                    </th>
+                    <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">
+                        <p class="tableHeading">Comment </p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-DefaultTable-Body-Body1">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p class="tableCode">show_server_status</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>Show all connections to the server and their current status</p>
+                    </td>
+                    <td rowspan="7" class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                        <p><a href="../Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/1_QuickAdministratorGuide.htm">See quick guide to managing and monitoring SQream cluster</a> </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body2">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p class="tableCode">show_node_info</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>Show progress of a specific statement ID</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body1">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p class="tableCode">show_cluster_nodes</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>Show all the instances in SQream cluster</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body2">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p class="tableCode">show_locks</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>Show all current locks</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body1">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p class="tableCode">show_conf</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>Show current cluster internal parameter settings</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body2">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p class="tableCode">get_chunk_size</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>Show the current database chunk size</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body1">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p class="tableCode">backup_storage</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>Backup the cluster (and all its databases)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body2">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p class="tableCode">get_ddl</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>Generate the table DDL command</p>
+                    </td>
+                    <td rowspan="3" class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                        <p><a href="../SQL_Reference_Guide/16_2.1_Data_Definition_Language.htm#Generati4">See get metadata in SQL Reference</a> </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body1">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p class="tableCode">get_view_ddl</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>Generate the view DDL command</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body2">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p class="tableCode">dump_database_ddl</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>Generate DDL command for all tables and views in the DB</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body1">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p class="tableCode">subscribe_service</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>Subscribe a service to an instance </p>
+                    </td>
+                    <td rowspan="3" class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                        <p><a href="14_1.12_Workload_Manager.htm#Workload_Manager_..285">See Workload Manager</a>  &amp; <a href="../Guides/Quick_Guides/DWLM_Guide/1_HowToUseDWLM_Overview.htm">DWLM Quick Guide</a> </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body2">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p class="tableCode">unsubscribe_service</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>Unsubscribe a service to an instance</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body1">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p class="tableCode">show_subscribed_instances</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>List all instances/services in the cluster</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body2">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p class="tableCode">list_saved_queries</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>List all saved queries (ID &amp; name)</p>
+                    </td>
+                    <td rowspan="3" class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                        <p><a href="../SQL_Reference_Guide/18_2.3_Operational_Commands.htm#Saved">See Saved Queries</a>&#160; </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body1">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p class="tableCode">execute_saved_query</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>Execute a specific saved query</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body2">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p class="tableCode">drop_saved_query</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>Drop a specific saved query</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body1">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p class="tableCode">cleanup_chunks</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>Physical delete of deleted rows at chunk level</p>
+                    </td>
+                    <td rowspan="2" class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                        <p>See <a href="../SQL_Reference_Guide/17_2.2_Data_Manipulation_Language.htm#DELETE">DELETE command</a> </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body2">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p class="tableCode">cleanup_extents</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>Physical delete of deleted rows at extent level</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body1">
+                    <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                        <p class="tableCode">discard_results</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                        <p>Option to run the select (or UF??) without showing the output </p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyA-Column1-Body1">
+                        <p>Example<span class="emphasis">:</span></p>
+                        <p><span class="codeCH">SELECT discard_results </span><span class="emphasis"><span class="codeCH">(‘write your query’ here); </span></span>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="note">
+            <p>For utility functions that require the use of single quotation marks to wrap an SQL statement, you might find it useful to wrap the statement in '$$' to avoid quotation mark issues</p>
+        </div>
+        <p class="example">Example</p>
+        <div class="code">select discard_results($$ select c_custkey from customer where c_name=’John’ $$);</div>
+    </body>
+</html>

@@ -1,96 +1,491 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
     <head>
+        <link href="../../../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
     </head>
     <body>
-        <h3 id="_logs">Logs</h3>
-        <div class="paragraph">
-            <p>SQream DB generates the following log files for the DBA everyday work</p>
+        <h3><a name="top"></a>Logs</h3>
+        <p>Each SQream instance generates its own set of log files based on the log rotation policy (see <a href="#Log">Log rotation policy</a>). The files will be located in a dedicated folder (folder name contains IP and port). </p>
+        <p>For example: <span class="emphasis">/home/sqream/sqream_storage/sqreamdb/logs/</span><span class="strong">127.0.0.1_5000</span>.</p>
+        <div class="tip">
+            <p>SQream recommends storing the log files in the shared storage&#160; so they can be all analyzed in a single tool (e.g: SQream external table, Kibana etc.). </p>
         </div>
-        <div class="ulist">
-            <div class="title">Log files:</div>
-            <ul>
-                <li>
-                    <p><strong>clientLogger_statement</strong> - Keeps track of statements being run in the server, including success/failure, number of rows returned from the query and number of rows processed by the query.</p>
-                </li>
-                <li>
-                    <p><strong>clientLogger_server</strong> - Keeps track of server start/stop times</p>
-                </li>
-                <li>
-                    <p><strong>clientLogger_session</strong> - Keeps track of different sessions</p>
-                </li>
-                <li>
-                    <p><strong>clientLogger_login</strong> - Tracks user login times and IP addresses</p>
-                </li>
-                <li>
-                    <p><strong>clientLogger_exception</strong> - Tracks system exceptions</p>
-                </li>
-                <li>
-                    <p><strong>clientLogger_execution</strong> - Tracks heavy statements execution statistics (over nodeInfoLoggingSec flag)</p>
-                </li>
-                <li>
-                    <p><strong>clientLogger_debug</strong> - Logs debug information. Default debug log level = 4 (INFO). The debug log level can be changed running a statement (e.g., SET logDebugLevel = 6;). No need to restart the SQream instance.</p>
-                </li>
-                <li>
-                    <p><strong>metadata_server.log</strong> - Tracks metadata server status and executions queue</p>
-                </li>
-            </ul>
+        <p>To generate an external table over the log files, use the command: </p>
+        <div class="code">
+            <p>create or replace external table t</p>
+            <p>(&#160; start_message varchar(4), </p>
+            <p>&#160;&#160;&#160; row_id bigint, </p>
+            <p>&#160;&#160;&#160; timestamp datetime, </p>
+            <p>&#160;&#160;&#160; message_level nvarchar(6),<br />&#160;&#160;&#160; thread_id nvarchar(40), </p>
+            <p>&#160;&#160;&#160; ip nvarchar(15), </p>
+            <p>&#160;&#160;&#160; port int, </p>
+            <p>&#160;&#160;&#160; connection_id int,<br />&#160;&#160;&#160; db_name nvarchar(128), </p>
+            <p>&#160;&#160;&#160; user_name nvarchar(128), </p>
+            <p>&#160;&#160;&#160; statement_id int,</p>
+            <p>
+                <br />
+            </p>
+            <p>&#160;&#160;&#160; service_name nvarchar(128), </p>
+            <p>&#160;&#160;&#160; message_type_id int, </p>
+            <p>&#160;&#160;&#160; message nvarchar(10000),<br />&#160;&#160;&#160; end_message varchar(5))</p>
+            <p>using format csv with path</p>
+            <p>'/home/sqream/sqream_storage/sqreamdb/logs/*.log' field delimiter '|');</p>
         </div>
-        <div class="admonitionblock note">
-            <table>
-                <tr>
-                    <td class="icon"><i class="fa icon-note" title="Note"></i>
+        <h4>Log file format: </h4>
+        <p>Delimited text format with the following column list: </p>
+        <ul>
+            <li>Row Id</li>
+            <li>Timestamp</li>
+            <li>Message Level</li>
+            <li>Thread id</li>
+            <li>IP</li>
+            <li>Port</li>
+            <li>Connection Id</li>
+            <li>DB name</li>
+            <li>User Id</li>
+            <li>Statement Id</li>
+            <li>Service name</li>
+            <li>Message type id</li>
+            <li>Message</li>
+        </ul>
+        <p class="tableHeader">Message type/contents:&#160;</p>
+        <table style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" class="TableStyle-DefaultTable" cellspacing="0">
+            <thead>
+                <tr class="TableStyle-DefaultTable-Head-Header1">
+                    <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
+                        <p>Message Type Code</p>
+                    </th>
+                    <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
+                        <p>Message Type</p>
+                    </th>
+                    <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
+                        <p>Message Content</p>
+                    </th>
+                    <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">
+                        <p>Log level</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-DefaultTable-Body-Body1">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>1</p>
                     </td>
-                    <td class="content">
-                        <div class="paragraph">
-                            <p>File names: Log file names contain a day and time stamp. For example: <strong>clientLogger_statement_20181108_000000.log</strong></p>
-                        </div>
-                        <div class="paragraph">
-                            <p>Statement log messages are cut at a length of 10,000 characters. This is to allow loading statements logs files (CSV) into External Tables of SQream. Remember: Row length is limited to 10,240 characters.</p>
-                        </div>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>Statement started</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>Statement</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                        <p>Info</p>
                     </td>
                 </tr>
-            </table>
-        </div>
-        <div class="paragraph">
-            <div class="title">Log file configuration:</div>
-            <p>From V2.18.1 the following default behavior is configured:</p>
-        </div>
-        <div class="ulist">
-            <ul>
-                <li>
-                    <p>Each SQream instance generates a separate set of log files into a dedicated folder (folder name contains IP and port). For example: /home/sqream/sqream_storage/sqreamdb/logs/<strong>127.0.0.1_5000</strong>.</p>
-                </li>
-                <li>
-                    <p>Log file rotation: One separate log file per calendar day. New file is generated at midnight.</p>
-                </li>
-            </ul>
-        </div>
-        <div class="paragraph">
-            <div class="title">Related runtimeGlobalflags:</div>
-        </div>
-        <div class="ulist">
-            <ul>
-                <li>
-                    <p><strong>useClientLog</strong>: This flag is set the TRUE (by default) to activate the new logging framework.</p>
-                </li>
-            </ul>
-        </div>
-        <div class="ulist">
-            <ul>
-                <li>
-                    <p><strong>useLogFileRotateHourOfDay</strong>: Enable/disable the rotation of log files. By default this flag is set to TRUE to allow seperate files for separate days.</p>
-                </li>
-                <li>
-                    <p><strong>logFileRotateHourOfDay</strong>: Rollover time parameter. By default this flag is set to 0 (=rotation at midnight). Set in the hour of the day. Possible range of values: 0-23.</p>
-                </li>
-                <li>
-                    <p><strong>enableLogDebug</strong>: Activate / deactivate the debug log. Default value = true;</p>
-                </li>
-                <li>
-                    <p><strong>logDebugLevel</strong>: Supported Log Levels are: 0 = [SYSTEM], 1 - [FATAL], 2 - [ERROR], 3 - [WARN], 4 - [INFO], 5 - [DEBUG], 6 - [TRACE]. Default = 4 (INFO);</p>
-                </li>
-            </ul>
-        </div>
+                <tr class="TableStyle-DefaultTable-Body-Body2">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>2</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>Statement reconstruct</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>Statement</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                        <p>Info</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body1">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>4</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>Statement execution</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>"Executing"</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                        <p>Info</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body2">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>10</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>Statement ended</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>"Success" / "Failed"</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                        <p>Info</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body1">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>20</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>Compilation error</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>Error text</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                        <p>Info</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body2">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>21</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>Execution error</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>Error text</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                        <p>Info</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body1">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>30</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>Size</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>#MB</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                        <p>Info</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body2">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>31</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>Result Set Rows</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>#records</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                        <p>Info</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body1">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>32</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>Processed Rows</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>#records</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                        <p>Info</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body2">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>100</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>Session started</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>Client IP address</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                        <p>Info</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body1">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>101</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>Login</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>"Success" / "Failed"</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                        <p>Info</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body2">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>110</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>Session ended</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>"Session ended"</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                        <p>Info</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body1">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>200</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>Node info</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>Node info lines</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                        <p>Info</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body2">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>500</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>Exception</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>Exception data</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                        <p>Error</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body1">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>1000</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>Server startup</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>"Server startup"</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                        <p>System</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body2">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>1002</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>Metadata</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>Metadata server location</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                        <p>System</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body1">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>1003</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>Configuration</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>Configuration flags</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                        <p>System</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body2">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>1004</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>STORAGE VERSION</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>storage version number</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                        <p>System</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body1">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>1010</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>Server Error</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>Error message</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                        <p>fatal</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body2">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>1090</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>Set config</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>Successful set config &lt;flag_name&gt; to value: &lt;value&gt;</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                        <p>info</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body1">
+                    <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                        <p>1100</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                        <p>Server shutdown</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                        <p>Server shutdown</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyA-Column1-Body1">
+                        <p>System</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4><a name="Log"></a>Log rotation policy</h4>
+        <table style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" class="TableStyle-DefaultTable" cellspacing="0">
+            <thead>
+                <tr class="TableStyle-DefaultTable-Head-Header1">
+                    <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
+                        <p>Parameter </p>
+                    </th>
+                    <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                    <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
+                        <p>Possible Values </p>
+                    </th>
+                    <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
+                        <p>Default Value </p>
+                    </th>
+                    <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">
+                        <p>Comment </p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-DefaultTable-Body-Body1">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1"><span class="strong">useLogMaxFileSize</span>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>Apply rotation based on log file size limit</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>TRUE / FALSE</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>FALSE</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                        <p>When set to ‘TRUE’ <span class="strong">logRotateSizeMB</span> configuration parameter is enabled. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body2">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2"><span class="strong">logMaxFileSizeMB</span>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>Log file size in MB. </p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>Integer between 1-1024</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                        <p>20</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                        <p>&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body1">
+                    <td class="TableStyle-DefaultTable-BodyB-Column1-Body1"><span class="strong">logFileRotateTimeFrequency</span>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                        <p>Frequency of log rotation</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                        <p>Daily | Weekly |&#160; Monthly | Never</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                        <p>Never</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyA-Column1-Body1">
+                        <p>Not case sensitive</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Log Levels</h4>
+        <table style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" class="TableStyle-DefaultTable" cellspacing="0">
+            <p class="tableheading">Message type/contents:</p>
+            <thead>
+                <tr class="TableStyle-DefaultTable-Head-Header1">
+                    <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
+                        <p>Parameter </p>
+                    </th>
+                    <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                    <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
+                        <p>Possible Values </p>
+                    </th>
+                    <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">
+                        <p>Default Value </p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-DefaultTable-Body-Body1">
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1"><span class="strong">logClientLevel</span>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>Log level </p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                        <p>0 SYSTEM |</p>
+                        <p>1 FATAL&#160;&#160;&#160; |</p>
+                        <p>2 ERROR&#160;&#160; |</p>
+                        <p>3 WARNING |</p>
+                        <p>4 INFO&#160;&#160;&#160;&#160; </p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                        <p>4 (INFO)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-DefaultTable-Body-Body2">
+                    <td class="TableStyle-DefaultTable-BodyB-Column1-Body2"><span class="strong">nodeInfoLoggingSec</span>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                        <p>Theshold for writing from execution log to the instance log </p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                        <p>Number to represent seconds</p>
+                    </td>
+                    <td class="TableStyle-DefaultTable-BodyA-Column1-Body2">
+                        <p>60 </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </body>
 </html>
