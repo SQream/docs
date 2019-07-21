@@ -82,19 +82,6 @@
       PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
-      Link="/Content/Guides/Administrator_Guides/Editor_UI_Guide/10_5_Show_Locks.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-      BreakType="chapter"
-      PageNumberReset="continue"
-      PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl">
-      <TocEntry
-        Title="[%=System.LinkedTitle%]"
-        Link="/Content/Guides/Administrator_Guides/Editor_UI_Guide/11_5.1_Show_Locks_and_Filter.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
-      <TocEntry
-        Title="[%=System.LinkedTitle%]"
-        Link="/Content/Guides/Administrator_Guides/Editor_UI_Guide/12_5.2_Release_Locks.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
-    </TocEntry>
-    <TocEntry
-      Title="[%=System.LinkedTitle%]"
       Link="/Content/Guides/Administrator_Guides/Editor_UI_Guide/13_6_DDL_Optimizer.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       BreakType="chapter"
       PageNumberReset="continue"
