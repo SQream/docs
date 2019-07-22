@@ -3,17 +3,15 @@
     <head>
     </head>
     <body class="article toc2 toc-left">
-        <h3 id="_copy_the_sqream_odbc_driver">Copy the SQream ODBC driver</h3>
-        <div class="paragraph">
-            <p>Copy the <strong>sqream_odbc.so</strong> file to the directory you want the SQream ODBC driver to reside.<br></br></p>
-            <p class="example">For example:</p>
-        </div>
-        <div class="code">
-            <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">/home/sqream/ODBC/sqream_odbc.so</code></pre>
-            </div>
-        </div>
-        <div class="paragraph">
-            <p>This is the path and file name you will use in next steps.</p>
+        <h2>Testing the SQream ODBC Driver</h2>
+        <p>Use the ISQL utility to test the driver: </p>
+        <p>On the command line, specify the DSN name:</p>
+        <div class="code">isql [DSN name]</div>
+        <p>For the above example this would be:</p>
+        <div class="code">isql SqreamODBC</div>
+        <div class="note">
+            <p>ISQL is a unixODBC command-line interactive SQL tool that can be used as a tester. No additional installation is required (UnixODBC is a pre-requisite for SQream). </p>
+            <p>For more information, see https://www.systutorials.com/docs/linux/man/1-isq/l</p>
         </div>
     </body>
 </html>
