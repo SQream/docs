@@ -178,7 +178,7 @@
       LastPublished="2019-07-17T10:49:39.0317997+03:00" />
     <Target
       Icon="System.Drawing.Bitmap"
-      Name="SQream_Connector_ODBC_JDBC_Windows"
+      Name="SQream_Connector_JDBC_Windows"
       Type="PDF"
       Build="true"
       Publish="true"

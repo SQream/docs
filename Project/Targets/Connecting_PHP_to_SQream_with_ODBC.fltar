@@ -5,12 +5,13 @@
   Type="PDF"
   Destinations=""
   GlossaryTermConversion="marked"
-  MasterToc="/Project/TOCs/JDBCWindowsTOC.fltoc"
+  MasterToc="/Project/TOCs/PHP_ODBCTOC.fltoc"
   MasterPageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
   MasterStylesheet="/Content/Resources/Stylesheets/mainstyles.css"
   OutputFolder="C:\Clients\SQream\Web\SQream"
   ConditionTagExpression="include[General.Print_Only] exclude[General.Web_Only] "
-  PatchHeadingLevels="true">
+  PatchHeadingLevels="true"
+  MasterStylesheetOverride="true">
   <PrintedOutput
     CollapseMargins="true"
     GenerateTOCProxy="false"
@@ -18,9 +19,7 @@
     GenerateGlossaryProxy="false" />
   <Variables>
     <Variable
-      Name="General/DocumentName">SQream ODBC/JDBC Connectors (Windows)</Variable>
-    <Variable
-      Name="ProductVersions/SQream">2.9.0</Variable>
+      Name="General/DocumentName">Connecting PHP to SQream with ODBC</Variable>
   </Variables>
   <Destinations>
     <Destination
