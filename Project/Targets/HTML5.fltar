@@ -20,7 +20,9 @@
   MobileBreakpoint="767"
   ConditionTagExpression="exclude[General.Print_Only or General.Print_Only]"
   GetLatestBeforeCompile="false"
-  MakeFileLowerCase="true">
+  MakeFileLowerCase="true"
+  PartialWordSearch="true"
+  MinimumWordSize="3">
   <PrintedOutput
     CollapseMargins="true"
     GenerateTOCProxy="true"

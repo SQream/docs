@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us">
+    <head><title></title>
+    </head>
+    <body>
+        <h2>Configuring an existing Workbench installation manually </h2>
+        <h3>(Linux/MacOS)</h3>
+        <ol>
+            <li>
+                <p><a href="http://www.sql-workbench.net/downloads.html">Install SQL Workbench</a> according to the instructions relevant to your OS.</p>
+            </li>
+            <li>
+                <p>Download the SQream JARs, and unpack them into a directory of your choice. </p>
+                <p>You can obtain the latest JARs here:&#160;<a href="https://sqream.com/product/client-drivers/">https://sqream.com/product/client-drivers/</a></p>
+            </li>
+            <li>
+                <p>Open SQL Workbench, and define a connection profile:</p>
+            </li>
+            <li>
+                <p>Click&#160;<span class="strong">File -&gt; Connect window (Alt+C)</span></p>
+                <p>
+                    <img src="../../Resources/Images/Configuring the SQL Workbench Client/Configuring an existing Workbench.jpg" style="visibility: visible;mso-wrap-style: square;width: 658px;height: 447px;" alt="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/03-21/fb6695ff-6453-4e28-ba54-d0b694068e82/first.JPG" />
+                </p>
+            </li>
+            <li>
+                <p>Click <span class="strong">Manage Drivers</span><span class="strong">.</span></p>
+                <p><span class="strong"><img src="../../Resources/Images/Configuring the SQL Workbench Client/Configuring an existing Workbench_1.jpg" style="visibility: visible;mso-wrap-style: square;width: 620px;height: 464px;" alt="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/03-21/8720612d-13d6-4eb7-83d4-0cb4c32bfad7/workbench-driver.JPG" /></span>
+                </p>
+            </li>
+            <li>
+                <p>In the&#160;Manage Drivers&#160;window do the following:</p>
+                <ol style="list-style-type: lower-alpha;">
+                    <li>
+                        <p>Click <span class="strong">Add new driver</span> (white paper icon)</p>
+                    </li>
+                    <li>
+                        <p>Name the driver.</p>
+                    </li>
+                    <li>
+                        <p>Enter the location of the JDBC drivers.</p>
+                        <p>If you used the SQream installer, they should be located in</p>
+                        <p><span class="strong">C:\Program Files\SQream Technologies\JDBC Driver\</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p>The class name should appear as <span class="strong">sql.SQDriver</span> automatically</p>
+                    </li>
+                    <li>
+                        <p>Click <span class="strong">OK</span> to save and return to the <span class="strong">New Connection</span> screen.</p>
+                    </li>
+                </ol>
+                <p>
+                    <img src="../../Resources/Images/Configuring the SQL Workbench Client/Configuring an existing Workbench.png" style="visibility: visible;mso-wrap-style: square;width: 576px;height: 271px;" />
+                </p>
+            </li>
+            <li>
+                <p>Create a connection to your service/DB:</p>
+                <ol style="list-style-type: lower-alpha;">
+                    <li>
+                        <p>Create a new connection.</p>
+                    </li>
+                    <li>
+                        <p>Name the connection.</p>
+                    </li>
+                    <li>
+                        <p>Select the SQream Driver you created in Step 6.</p>
+                    </li>
+                    <li>
+                        <p>Fill in the JDBC connection URL (obtained from SQream). </p>
+                        <p>It is typically in the general format:</p>
+                        <p><span class="emphasis">jdbc:Sqream://&lt;ip&gt;:&lt;port&gt;/&lt;db_name&gt;;user=&lt;user&gt;;password=&lt;pass&gt;;</span><span class="emphasis">service</span><span class="emphasis">=&lt;service&gt;;</span><span class="emphasis">cluster=&lt;true or false&gt;</span><span class="emphasis">;use_ssl=&lt;true or false&gt;</span><span class="emphasis">;</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p>Save the connection settings.</p>
+                    </li>
+                    <li>
+                        <p>Click <span class="strong">OK</span> to connect your service/DB.</p>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+        <p>The following additional steps are recommended after closing SQL Workbench:</p>
+        <ol>
+            <li>
+                <p>Locate your <span class="strong">workbench.settings</span> file:</p>
+                <ul>
+                    <li>
+                        <p>On Windows, typically<span class="emphasis">:&#160;%HOMEPATH%\.sqlworkbench\workbench.settings</span></p>
+                    </li>
+                    <li>
+                        <p>On *nix,&#160;<span class="emphasis">$HOME/.sqlworkbench</span></p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>Add the following line at the end of the file:</p>
+                <p class="code">workbench.db.sqreamdb.schema.retrieve.change.catalog=true</p>
+            </li>
+        </ol>
+    </body>
+</html>

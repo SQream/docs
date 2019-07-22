@@ -6,7 +6,7 @@
     Link="/Content/Drivers/Drivers.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
     <TocEntry
       Title="ODBC_JDBCTOC"
-      Link="/Project/TOCs/ODBC_JDBCTOC.fltoc"
+      Link="/Project/TOCs/JDBCWindowsTOC.fltoc"
       ReplaceMergeNode="true" />
     <TocEntry
       Title="ODBCLinuxTOC"
@@ -35,6 +35,15 @@
     <TocEntry
       Title="JavaTOC"
       Link="/Project/TOCs/JavaTOC.fltoc"
+      ReplaceMergeNode="true" />
+    <TocEntry
+      Title="SQLWorkbenchClientTOC"
+      Link="/Project/TOCs/SQLWorkbenchClientTOC.fltoc"
+      ReplaceMergeNode="true"
+      StartSection="false" />
+    <TocEntry
+      Title="ConnectingRJDBCTOC"
+      Link="/Project/TOCs/ConnectingRJDBCTOC.fltoc"
       ReplaceMergeNode="true" />
   </TocEntry>
 </CatapultToc>

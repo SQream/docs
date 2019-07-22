@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Installing the ODBC Linux Driver"
+    Link="/Content/ODBC Linux installation Guide/Installing the ODBC Linux.htm" />
+  <TocEntry
+    Title="Installing JDBC driver using the Windows installer"
+    Link="/Content/ODBC Linux installation Guide/Installing_JDBC_driver_using_Windows.htm" />
+</CatapultToc>

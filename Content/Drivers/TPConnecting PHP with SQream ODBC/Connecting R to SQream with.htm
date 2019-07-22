@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us">
+    <head><title></title>
+        <link href="../Resources/Stylesheets/mainstyles_1.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1>Connecting R to SQream with ODBC</h1>
+        <p>This article describes how to create a new connection to SQream in R via the RODBC driver.</p>
+        <p>This article assumes you have R installed on Windows. The Linux version should be similar, but requires installation of the unixODBC package.</p>
+        <p>To obtain the SQream ODBC driver, please contact <a href="mailto:support@sqream.com">SQream support.</a></p>
+        <h3>Make sure RODBC is installed:</h3>
+        <ol style="list-style-type: decimal;margin-left: 18pt;" start="1">
+            <li>
+                <p>In the R console, type:</p>
+                <div class="code">&gt; library(RODBC)</div>
+                <p>If this succeeds, skip to the <a href="#Create">next section</a>.</p>
+            </li>
+        </ol>
+        <ol style="list-style-type: decimal;margin-left: 18pt;" start="2">
+            <li>
+                <p> If it did not succeed, install RODBC by typing:</p>
+                <div class="code">&gt; install.packages("RODBC")</div>
+            </li>
+        </ol>
+        <ol style="list-style-type: decimal;margin-left: 18pt;" start="3">
+            <li>
+                <p>Then run the <span class="codeCH">library</span> command  again to verify that the install succeeded:</p>
+                <div classs="code" class="code">&gt; library(RODBC)</div>
+            </li>
+        </ol>
+        <h3><a name="Create"></a>Create a sample connection for testing</h3>
+        <p>Below is a sample connection script.</p>
+        <p>Note the following:</p>
+        <ul style="list-style-type: disc;margin-left: 18pt;">
+            <li style="list-style-type: disc;">
+                <p>Make sure to substitute your DSN, as configured using the Windows ODBC Data Sources tool. </p>
+                <p>The example connects to an existing DSN named <span class="strong">sqream64</span>. </p>
+            </li>
+        </ul>
+        <ul style="list-style-type: disc;margin-left: 18pt;">
+            <li style="list-style-type: disc;">Note the configuration flag <span class="strong">believeNRows=F</span>. This is an important flag, and the ODBC driver will not work properly without it.</li>
+        </ul>
+        <ul style="list-style-type: disc;margin-left: 18pt;">
+            <li style="list-style-type: disc;">The example queries a table as follows:</li>
+        </ul>
+        <ul style="list-style-type: disc;margin-left: 36pt;">
+            <li style="list-style-type: disc;">Table name = 't' </li>
+        </ul>
+        <ul style="list-style-type: disc;margin-left: 36pt;">
+            <li style="list-style-type: disc;">4 int type columns (named xint, xtinyint, xsmallint, xbigint,) </li>
+        </ul>
+        <div classs="code" class="code">
+            <p>&gt; library("RODBC")</p>
+            <p>&gt; ch &lt;- odbcConnect("sqream64",believeNRows=F)</p>
+            <p>&gt; sqlQuery(ch,"select top 5 * from t")</p>
+            <p>&#160; xint xtinyint xsmallint xbigint </p>
+            <p>1&#160;&#160;&#160; 1&#160;&#160;&#160;&#160;&#160;&#160; 82&#160;&#160;&#160;&#160;&#160; 5067&#160;&#160;&#160;&#160;&#160;&#160; 1 </p>
+            <p>2&#160;&#160;&#160; 2&#160;&#160;&#160;&#160;&#160;&#160; 14&#160;&#160;&#160;&#160;&#160; 1756&#160;&#160;&#160;&#160;&#160;&#160; 2 </p>
+            <p>3&#160;&#160;&#160; 3&#160;&#160;&#160;&#160;&#160;&#160; 91&#160;&#160;&#160;&#160; 22356&#160;&#160;&#160;&#160;&#160;&#160; 3 </p>
+            <p>4&#160;&#160;&#160; 4&#160;&#160;&#160;&#160;&#160;&#160; 84&#160;&#160;&#160;&#160; 17232&#160;&#160;&#160;&#160;&#160;&#160; 4 </p>
+            <p>5&#160;&#160;&#160; 5&#160;&#160;&#160;&#160;&#160;&#160; 13&#160;&#160;&#160;&#160; 14315&#160;&#160;&#160;&#160;&#160;&#160; 5 </p>
+            <p>&gt; close(ch)</p>
+        </div>
+        <p>For further assistance please contact <a href="mailto:support@sqream.com">SQream support</a>.</p>
+    </body>
+</html>
