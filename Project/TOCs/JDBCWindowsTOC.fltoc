@@ -26,17 +26,6 @@
     PageType="normal"
     StartSection="false"></TocEntry>
   <TocEntry
-    Title="[%=System.LinkedTitle%]" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-    BreakType="chapter"
-    StartSection="false"
-    PageNumberReset="continue">
-    <TocEntry
-      Title="[%=System.LinkedTitle%]" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
-    <TocEntry
-      Title="Overview" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-      conditions="General.Web_Only"
-      StartSection="false" />
-    <TocEntry
-      Title="[%=System.LinkedTitle%]" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
-  </TocEntry>
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Drivers/JDBC_Windows/Installing_JDBC_driver_using_Windows.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
 </CatapultToc>

@@ -5,7 +5,7 @@
   Type="PDF"
   Destinations=""
   GlossaryTermConversion="marked"
-  MasterToc="/Project/TOCs/ODBC_JDBCTOC.fltoc"
+  MasterToc="/Project/TOCs/JDBCWindowsTOC.fltoc"
   MasterPageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
   MasterStylesheet="/Content/Resources/Stylesheets/mainstyles.css"
   OutputFolder="C:\Clients\SQream\Web\SQream"
