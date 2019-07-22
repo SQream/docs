@@ -44,10 +44,10 @@
       Link="/Content/Drivers/ODBC_Linux/2_1_Prerequisites_Install_UnixODBC.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
-      Link="/Content/Drivers/ODBC_Linux/3_2.1_Download_the_SQream_ODBC_driver.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+      Link="/Content/Drivers/ODBC_Linux/3_2.1_Installing_the_SQream_ODBC_driver.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
       <TocEntry
         Title="Download the SQream ODBC driver"
-        Link="/Content/Drivers/ODBC_Linux/3_2.1_Download_the_SQream_ODBC_driver.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+        Link="/Content/Drivers/ODBC_Linux/3_2.1_Installing_the_SQream_ODBC_driver.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         conditions="General.Web_Only"
         StartSection="false"
         SectionNumberReset="continue"
@@ -55,7 +55,7 @@
         ChapterNumberReset="continue" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"
-        Link="/Content/Drivers/ODBC_Linux/4_2.2_Copy_the_SQream_ODBC_driver.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+        Link="/Content/Drivers/ODBC_Linux/4_2.2_Testing_the_SQream_ODBC_driver.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
       <TocEntry
         Title="[%=System.LinkedTitle%]" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
       <TocEntry
