@@ -14,7 +14,7 @@
   DeleteStale="true"
   DeleteUnreferenced="false"
   AutoSync="true"
-  LastImport="2019-07-18T09:26:10.4886367+03:00">
+  LastImport="2019-07-22T23:02:13.2574639+03:00">
   <Files>
     <Url
       Source="file:///C:/Clients/SQream/Global/SQream_Global/SQream_Global.flprj"
@@ -1220,6 +1220,9 @@
     <Url
       Source="../../../../Global/SQream_Global/Content/Guides/Quick_Guides/Quick_guide_to_optimizing_sqream/4_Query_processing_SQL_usage.htm"
       AbsoluteSource="file:///C:/Clients/SQream/Global/SQream_Global/Content/Guides/Quick_Guides/Quick_guide_to_optimizing_sqream/4_Query_processing_SQL_usage.htm" />
+    <Url
+      Source="../../../../Global/SQream_Global/Content/Resources/MasterPages/FAQ.flmsp"
+      AbsoluteSource="file:///C:/Clients/SQream/Global/SQream_Global/Content/Resources/MasterPages/FAQ.flmsp" />
   </CollectedSourceFiles>
   <SkippedSourceFiles>
     <Url
@@ -2400,5 +2403,8 @@
     <Url
       Source="../../Content/Guides/Quick_Guides/Quick_guide_to_optimizing_sqream/4_Query_processing_SQL_usage.htm"
       TimeStamp="17-Jul-19 8:10:28 PM" />
+    <Url
+      Source="../../Content/Resources/MasterPages/FAQ.flmsp"
+      TimeStamp="22-Jul-19 9:38:03 PM" />
   </GeneratedFiles>
 </CatapultProject>
