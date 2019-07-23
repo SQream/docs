@@ -45,5 +45,20 @@
       Title="ConnectingRJDBCTOC"
       Link="/Project/TOCs/ConnectingRJDBCTOC.fltoc"
       ReplaceMergeNode="true" />
+    <TocEntry
+      Title="TableauTOC"
+      Link="/Project/TOCs/TableauTOC.fltoc"
+      ReplaceMergeNode="true"
+      ComputeToc="false" />
+    <TocEntry
+      Title="R_ODBCTOC"
+      Link="/Project/TOCs/R_ODBCTOC.fltoc"
+      ReplaceMergeNode="true"
+      ComputeToc="false" />
+    <TocEntry
+      Title="PHP_ODBCTOC"
+      Link="/Project/TOCs/PHP_ODBCTOC.fltoc"
+      ReplaceMergeNode="true"
+      ComputeToc="false" />
   </TocEntry>
 </CatapultToc>
