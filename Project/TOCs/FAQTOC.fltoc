@@ -6,5 +6,6 @@
     Link="/Content/FAQ.html"
     ComputedTocAction="Replace"
     ComputeToc="true"
-    ReplaceMergeNode="false" />
+    ReplaceMergeNode="false"
+    ComputedTocDepth="3" />
 </CatapultToc>
