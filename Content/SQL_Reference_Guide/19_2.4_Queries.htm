@@ -283,7 +283,7 @@ functions as well as normal value expressions (see below).</p>
                                 <p>Join hints can be used to override the query compiler and choose a
 particular join algorithm. The available algorithms are <strong>LOOP</strong>
 (corresponding to non-indexed nested loop join algorithm), and <strong>MERGE</strong>
-(corresponding to sort merge join algorithm).</p>
+(corresponding to sort merge join algorithm). If no algorithm is specified, a loop join is performed by default.</p>
                             </div>
                             <div class="code">
                                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-o">*</span>  
