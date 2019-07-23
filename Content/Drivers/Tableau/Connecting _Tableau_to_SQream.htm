@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us">
     <head><title></title>
-        <link href="../../Resources/Stylesheets/mainstyles_1.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/mainstyles.css" rel="stylesheet" />
     </head>
     <body>
         <h1>Connecting Tableau to SQream DB</h1>
@@ -14,8 +14,7 @@
         <div class="note">
             <p>You should already have a DSN relevant to your current database on SQream. If you do not, please set it up now. See the following:</p>
             <ul style="list-style-type: disc;margin-left: 36pt;">
-                <li style="list-style-type: disc;">Linux: Add a DSN for your SQream DB database</li>
-                <li style="list-style-type: disc;">Windows: Create and configure the ODBC Data Source</li>
+                <li style="list-style-type: disc;">Linux: <a href="../ODBC_Linux/3_2.1_Installing_the_SQream_ODBC_driver.htm">Add a DSN for your SQream DB database</a></li>
             </ul>
         </div>
         <ol style="list-style-type: decimal;margin-left: 18pt;" start="1">
@@ -25,7 +24,7 @@
                 <p><span class="emphasis">C:\Users\&lt;User name&gt;\Documents\My Tableau Repository\Datasources</span>.</p>
                 <p>Verify this in the <span class="strong">Run</span> dialog (<span class="strong">Start -&gt; Run</span> or <span class="strong">⊞</span><span class="strong">&#160;Win&#160;+ R</span>&#160;from your keyboard). Type in:</p>
                 <p><span class="codeCH">%HOMEPATH%\Documents\My Tableau Repository\Datasources</span>.</p>
-                <p><a href="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/04-03/ef12fe3e-bfe9-4291-94aa-a4ffc26a1247/2016-04-03 (1).png"><img src="../../Resources/Images/TPConnecting PHP with SQream ODBC/Connecting Tableau to SQream.png" style="visibility: visible;mso-wrap-style: square;width: 269px;height: 139px;" alt="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/04-03/ef12fe3e-bfe9-4291-94aa-a4ffc26a1247/2016-04-03%20%281%29.png" /></a>
+                <p><a href="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/04-03/ef12fe3e-bfe9-4291-94aa-a4ffc26a1247/2016-04-03 (1).png"><img src="Images/tableau_run.png" style="visibility: visible;mso-wrap-style: square;width: 269px;height: 139px;" alt="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/04-03/ef12fe3e-bfe9-4291-94aa-a4ffc26a1247/2016-04-03%20%281%29.png" /></a>
                 </p>
             </li>
         </ol>
@@ -33,7 +32,7 @@
             <li>
                 <p>Download <a href="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2018/01-25/4eec979f-4b2f-4e00-a20c-68af970eee16/odbc-sqream.tdc">odbc-sqream.tdc</a> and save to the <span class="strong">Datasources</span> directory.</p>
                 <p>This file is required to ensure compatibility with SQream DB.</p>
-                <p><a href="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/04-03/cc3ed025-c859-40a3-a845-9d704ba4d58d/2016-04-03.png"><img src="../../Resources/Images/TPConnecting PHP with SQream ODBC/Connecting Tableau to SQream_1.png" style="visibility: visible;mso-wrap-style: square;width: 535px;height: 275px;" alt="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/04-03/cc3ed025-c859-40a3-a845-9d704ba4d58d/2016-04-03.png" /></a>
+                <p><a href="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/04-03/cc3ed025-c859-40a3-a845-9d704ba4d58d/2016-04-03.png"><img src="Images/tableau_compatibility.png" style="visibility: visible;mso-wrap-style: square;width: 535px;height: 275px;" alt="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/04-03/cc3ed025-c859-40a3-a845-9d704ba4d58d/2016-04-03.png" /></a>
                 </p>
             </li>
         </ol>
@@ -48,7 +47,7 @@
         <ol style="list-style-type: decimal;margin-left: 18pt;" start="4">
             <li>
                 <p>Open Tableau.</p>
-                <p><a href="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/03-30/bb246c06-cdc0-4c27-9610-c073489eb6d9/2016-03-30 (2).png"><img src="../../Resources/Images/TPConnecting PHP with SQream ODBC/Connecting Tableau to SQream_2.png" style="visibility: visible;mso-wrap-style: square;width: 483px;height: 598px;" alt="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/03-30/bb246c06-cdc0-4c27-9610-c073489eb6d9/2016-03-30%20%282%29.png" /></a>
+                <p><a href="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/03-30/bb246c06-cdc0-4c27-9610-c073489eb6d9/2016-03-30 (2).png"><img src="Images/tableau_open.png" style="visibility: visible;mso-wrap-style: square;width: 483px;height: 598px;" alt="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/03-30/bb246c06-cdc0-4c27-9610-c073489eb6d9/2016-03-30%20%282%29.png" /></a>
                 </p>
             </li>
         </ol>
@@ -56,21 +55,21 @@
             <li>
                 <p>Click <span class="strong">Other Database (ODBC)</span>. If it does not appear in the menu, click <span class="strong">More Servers...</span>as illustrated below.</p>
                 <p>
-                    <img src="../../Resources/Images/TPConnecting PHP with SQream ODBC/Connecting Tableau to SQream_3.png" style="visibility: visible;mso-wrap-style: square;width: 576px;height: 639px;" />
+                    <img src="Images/tableau_more_servers.png" style="visibility: visible;mso-wrap-style: square;width: 576px;height: 639px;" />
                 </p>
             </li>
         </ol>
         <ol style="list-style-type: decimal;margin-left: 18pt;" start="6">
             <li>
                 <p>Select the DSN you created earlier and click <span class="strong">Connect</span>.</p>
-                <p><a href="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/03-30/e879c7ba-1a19-485d-8a38-f5e96e6008ed/2016-03-30 (4).png"><img src="../../Resources/Images/TPConnecting PHP with SQream ODBC/Connecting Tableau to SQream_4.png" style="visibility: visible;mso-wrap-style: square;width: 468px;height: 686px;" alt="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/03-30/e879c7ba-1a19-485d-8a38-f5e96e6008ed/2016-03-30%20%284%29.png" /></a>
+                <p><a href="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/03-30/e879c7ba-1a19-485d-8a38-f5e96e6008ed/2016-03-30 (4).png"><img src="Images/tableau_odbc.png" style="visibility: visible;mso-wrap-style: square;width: 468px;height: 686px;" alt="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/03-30/e879c7ba-1a19-485d-8a38-f5e96e6008ed/2016-03-30%20%284%29.png" /></a>
                 </p>
             </li>
         </ol>
         <ol style="list-style-type: decimal;margin-left: 18pt;" start="7">
             <li>
                 <p>Verify that the details are correct and click <span class="strong">OK</span><span class="strong">.</span></p>
-                <p><a href="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/03-30/d9f6a0dd-f276-4862-8fa1-4795d542f4f7/2016-03-30 (5).png"><img src="../../Resources/Images/TPConnecting PHP with SQream ODBC/Connecting Tableau to SQream_5.png" style="visibility: visible;mso-wrap-style: square;width: 468px;height: 686px;" alt="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/03-30/d9f6a0dd-f276-4862-8fa1-4795d542f4f7/2016-03-30%20%285%29.png" /></a>
+                <p><a href="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/03-30/d9f6a0dd-f276-4862-8fa1-4795d542f4f7/2016-03-30 (5).png"><img src="Images/tableau_ok.png" style="visibility: visible;mso-wrap-style: square;width: 468px;height: 686px;" alt="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/03-30/d9f6a0dd-f276-4862-8fa1-4795d542f4f7/2016-03-30%20%285%29.png" /></a>
                 </p>
             </li>
         </ol>
@@ -78,7 +77,7 @@
             <li>
                 <p>You should see your tables from the database listed on the left. </p>
                 <p>You can now start creating your dashboards.</p>
-                <p><a href="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/03-30/f8bdb24c-7e12-4b46-a4f6-9ed220b7219a/2016-03-30 (6).png"><img src="../../Resources/Images/TPConnecting PHP with SQream ODBC/Connecting Tableau to SQream_6.png" style="visibility: visible;mso-wrap-style: square;width: 734px;height: 429px;" alt="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/03-30/f8bdb24c-7e12-4b46-a4f6-9ed220b7219a/2016-03-30%20%286%29.png" /></a>
+                <p><a href="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/03-30/f8bdb24c-7e12-4b46-a4f6-9ed220b7219a/2016-03-30 (6).png"><img src="Images/tableau_finish.png" style="visibility: visible;mso-wrap-style: square;width: 734px;height: 429px;" alt="https://hf-files-oregon.s3.amazonaws.com/hdpsqream_kb_attachments/2016/03-30/f8bdb24c-7e12-4b46-a4f6-9ed220b7219a/2016-03-30%20%286%29.png" /></a>
                 </p>
             </li>
         </ol>
