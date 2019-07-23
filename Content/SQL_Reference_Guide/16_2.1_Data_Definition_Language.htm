@@ -1200,19 +1200,20 @@ External tables allow SQream to access data that is stored outside the database 
                                 <p>You can generate the DDL for any of the following:</p>
                                 <ul>
                                     <li>
-                                        <p>A whole database (See <a href="#Generati">Generating the DDL for all objects of a database</a></p>
+                                        <p>A whole database (See <a href="#Generati">Generating the DDL for all objects of a database</a>)</p>
                                     </li>
                                     <li>
-                                        <p>A specific database object (See <a href="#Generati3">Generating the DDL of a single table, external table or view</a></p>
+                                        <p>A specific database object (See <a href="#Generati3">Generating the DDL of a single table, external table or view</a>)</p>
                                     </li>
                                     <li>
-                                        <p>A specific user defined function (UDF) (See <a href="#Generati2">Generating the DDL of a single user defined function (UDF)</a></p>
+                                        <p>A specific user defined function (UDF) (See <a href="#Generati2">Generating the DDL of a single user defined function (UDF)</a>)</p>
                                     </li>
                                 </ul>
                             </div>
                             <div class="paragraph">
                                 <div class="title">
-                                    <p><a name="Generati"></a>Generating the DDL for all objects of a database</p>
+                                    <p><a name="Generati"></a><span class="strong">Generating the DDL for all objects of a database</span>
+                                    </p>
                                 </div>
                                 <p>Use the utility function <strong>dump_database_ddl()</strong> to generate the DDL for all tables and views of the database you are currently connected to.</p>
                             </div>
@@ -1226,7 +1227,8 @@ External tables allow SQream to access data that is stored outside the database 
                             </div>
                             <div class="paragraph">
                                 <div class="title">
-                                    <p><a name="Generati3"></a>Generating the DDL of a single table, external table or view</p>
+                                    <p><a name="Generati3"></a><span class="strong">Generating the DDL of a single table, external table or view</span>
+                                    </p>
                                 </div>
                                 <p>Use the utility function <strong>get_ddl('table_name')</strong> or <strong>get_view_ddl('view_name')</strong> to generate the DDL for a specified table, external table or view.</p>
                             </div>
@@ -1253,7 +1255,8 @@ If the table name has a numeric prefix (e.g. "2018_my_table"), the name must be 
                             </div>
                             <div class="paragraph">
                                 <div class="title">
-                                    <p><a name="Generati2"></a>Generating the DDL of a single user defined function (UDF)</p>
+                                    <p><a name="Generati2"></a><span class="strong">Generating the DDL of a single user defined function (UDF)</span>
+                                    </p>
                                 </div>
                                 <p>Use the utility function <strong>get_function_ddl()</strong> to generate the DDL for a specified UDF.</p>
                             </div>
