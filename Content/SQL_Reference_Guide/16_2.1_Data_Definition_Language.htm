@@ -1019,7 +1019,7 @@ External tables allow SQream to access data that is stored outside the database 
                                 <ul>
                                     <li>object owner </li>
                                     <li>superuser</li>
-                                    <li>user with relevant admin permission via the <span class="strong">A</span><span class="strong">D</span><span class="strong">MIN OPTION</span></li>
+                                    <li>user with relevant admin permission via the <span class="strong">ADMIN OPTION</span></li>
                                 </ul>
                                 <h5><a name="GRANT"></a>GRANT Permissions</h5>
                                 <p>Assigns specific permissions to existing database objects, schema, or databases to one or more roles.</p>
@@ -1074,9 +1074,6 @@ External tables allow SQream to access data that is stored outside the database 
                                     </tbody>
                                 </table>
                                 <div>
-                                    <div class="paragraph">
-                                        <p class="example">Examples:</p>
-                                    </div>
                                     <div class="code"><pre xml:space="preserve">-- Grant permissions at the cluster level:
 	GRANT </pre><pre xml:space="preserve">
 	{ SUPERUSER
@@ -1115,42 +1112,25 @@ External tables allow SQream to access data that is stored outside the database 
                                     <p class="example">Examples:</p>
                                 </div>
                                 <div class="code">
-                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">GRANT</span> <span class="tok-k">CREATE FUNCTION</span> <span class="tok-k">ON</span> <span class="tok-k">DATABASE</span> <span class="tok-n">TEST_DB</span> <span class="tok-k">TO</span> <span class="tok-k">USER1</span><span class="tok-p">;</span></code></pre>
+                                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">GRANT</span>  <span class="tok-n">LOGIN</span><span class="tok-p">,</span><span class="tok-n">superuser</span>  <span class="tok-k">TO</span>  <span class="tok-k">admin</span><span class="tok-p">;</span></code></pre><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">GRANT</span>  <span class="tok-k">CREATE</span>  <span class="tok-k">FUNCTION</span>  <span class="tok-k">TO</span>  <span class="tok-k">admin</span><span class="tok-p">;</span></code></pre><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">GRANT</span>  <span class="tok-k">SELECT</span>  <span class="tok-k">ON</span>  <span class="tok-k">TABLE</span>  <span class="tok-k">admin</span><span class="tok-mf">.</span><span class="tok-n">table1</span>  <span class="tok-k">TO</span>  <span class="tok-n">userA</span><span class="tok-p">;</span></code></pre><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">GRANT</span>  <span class="tok-k">EXECUTE</span>  <span class="tok-k">ON</span>  <span class="tok-k">FUNCTION</span>  <span class="tok-n">my_function</span>  <span class="tok-k">TO</span>  <span class="tok-n">userA</span><span class="tok-p">;</span></code></pre><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">GRANT</span>  <span class="tok-k">ALL</span>  <span class="tok-k">ON</span>  <span class="tok-k">FUNCTION</span>  <span class="tok-n">my_function</span>  <span class="tok-k">TO</span>  <span class="tok-n">userA</span><span class="tok-p">;</span></code></pre><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">GRANT</span>  <span class="tok-n">DDL</span>  <span class="tok-k">ON</span>  <span class="tok-k">admin</span><span class="tok-mf">.</span><span class="tok-n">main_table</span>  <span class="tok-k">TO</span>  <span class="tok-n">userB</span><span class="tok-p">;</span></code></pre><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">GRANT</span>  <span class="tok-k">ALL</span>  <span class="tok-k">ON</span>  <span class="tok-k">all</span>  <span class="tok-k">tables</span>  <span class="tok-k">IN</span>  <span class="tok-k">schema</span>  <span class="tok-n">public</span>  <span class="tok-k">TO</span>  <span class="tok-n">userB</span><span class="tok-p">;</span></code></pre><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">GRANT</span>  <span class="tok-k">SELECT</span>  <span class="tok-k">ON</span>  <span class="tok-k">all</span>  <span class="tok-k">views</span>  <span class="tok-k">IN</span>  <span class="tok-k">schema</span>  <span class="tok-k">admin</span>  <span class="tok-k">TO</span>  <span class="tok-n">userA</span><span class="tok-p">;</span></code></pre><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">GRANT</span>  <span class="tok-k">admin</span>  <span class="tok-k">TO</span>  <span class="tok-n">userC</span><span class="tok-p">;</span></code></pre><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">GRANT</span>  <span class="tok-n">superuser</span>  <span class="tok-k">ON</span>  <span class="tok-k">schema</span>  <span class="tok-n">demo</span>  <span class="tok-k">TO</span>  <span class="tok-n">userA</span></code></pre><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">GRANT</span>  <span class="tok-n">admin_role</span>  <span class="tok-k">TO</span>  <span class="tok-n">userB</span><span class="tok-p">;</span></code></pre>
                                     </div>
                                 </div>
-                                <ul>
-                                    <li>
-                                        <p>INSERT: Allows INSERT of a new row into the specified table using INSERT/COPY command.</p>
-                                    </li>
-                                    <li>
-                                        <p>DELETE: Allows DELETE of a row from the specified table. This privilege effects both DELETE and TRUNCATE commands.</p>
-                                    </li>
-                                    <li>
-                                        <p>DDL: Allows DROP/ALTER.</p>
-                                    </li>
-                                    <li>
-                                        <p>SUPERUSER: The most privileged role in SQream cluster, allowing full control over the cluster. By default, SQream role is a superuser. Some utility functions can be used by superusers only.</p>
-                                    </li>
-                                    <li>
-                                        <p>SUPERUSER ON SCHEMA: Has maximum permissions on existing and new objects for a specific schema.</p>
-                                    </li>
-                                    <li>
-                                        <p>LOGIN: Grants the login permission. Without it, a role cannot function as a USER and login.</p>
-                                    </li>
-                                    <li>
-                                        <p>PASSWORD: Grants a new password for the role. Without a password the role cannot function as a USER and login.</p>
-                                    </li>
-                                    <li>
-                                        <p>WITH ADMIN OPTION: Grants the ability to give a certain role permission to others.</p>
-                                    </li>
-                                </ul>
+                                <div class="title"><span class="strong">Permission Options</span>
+                                </div>
+                                <div class="paragraph">
+                                    <p>INSERT: Allows INSERT of a new row into the specified table using INSERT/COPY command.</p>
+                                    <p>DELETE: Allows DELETE of a row from the specified table. This privilege effects both DELETE and TRUNCATE commands.</p>
+                                    <p>DDL: Allows DROP/ALTER.</p>
+                                    <p>SUPERUSER: The most privileged role in SQream cluster, allowing full control over the cluster. By default, SQream role is a superuser. Some utility functions can be used by superusers only.</p>
+                                    <p>SUPERUSER ON SCHEMA: Has maximum permissions on existing and new objects for a specific schema.</p>
+                                    <p>LOGIN: Grants the login permission. Without it, a role cannot function as a USER and login.</p>
+                                    <p>PASSWORD: Grants a new password for the role. Without a password the role cannot function as a USER and login.</p>
+                                    <p>WITH ADMIN OPTION: Grants the ability to give a certain role permission to others.</p>
+                                </div>
                                 <h5><a name="REVOKE"></a>REVOKE Permissions</h5>
                                 <p>Removes permissions from one or more roles.</p>
                                 <p>The identifier name can be the role name or CURRENT_ROLE.</p>
                                 <div>
-                                    <div class="paragraph">
-                                        <p class="example">Examples:</p>
-                                    </div>
                                     <div class="code"><pre xml:space="preserve">-- Revoke permissions at the cluster level:
 	REVOKE
 	{ SUPERUSER
@@ -1179,13 +1159,6 @@ External tables allow SQream to access data that is stored outside the database 
 	REVOKE &lt;role1&gt; [, ...] FROM &lt;role2&gt; [, ...] WITH ADMIN OPTION</pre>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="paragraph">
-                            <p class="example">Examples:</p>
-                        </div>
-                        <div class="code">
-                            <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">REVOKE</span> <span class="tok-k">CREATE FUNCTION</span> <span class="tok-k">ON</span> <span class="tok-k">DATABASE</span> <span class="tok-n">TEST_DB</span> <span class="tok-k">FROM</span> <span class="tok-k">USER1</span><span class="tok-p">;</span></code></pre>
                             </div>
                         </div>
                         <div class="sect3">
