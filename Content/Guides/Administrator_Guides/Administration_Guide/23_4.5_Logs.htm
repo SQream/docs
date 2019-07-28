@@ -12,7 +12,7 @@
         </div>
         <p>To generate an external table over the log files, use the command: </p>
         <div class="code">
-            <p>create or replace external table t</p>
+            <p>create or replace external table external_logs</p>
             <p>(&#160; start_message varchar(4), </p>
             <p>&#160;&#160;&#160; row_id bigint, </p>
             <p>&#160;&#160;&#160; timestamp datetime, </p>
@@ -27,7 +27,9 @@
             <p>&#160;&#160;&#160; message_type_id int, </p>
             <p>&#160;&#160;&#160; message nvarchar(10000),<br />&#160;&#160;&#160; end_message varchar(5))</p>
             <p>using format csv with path</p>
-            <p>'/home/sqream/sqream_storage/sqreamdb/logs/*.log' field delimiter '|');</p>
+            <p>'/home/sqream/sqream_storage/sqreamdb/logs/sqream*.log'</p>
+            <p>field delimiter '|'</p>
+            <p>;</p>
         </div>
         <h4>Log file format: </h4>
         <p>Delimited text format with the following column list: </p>

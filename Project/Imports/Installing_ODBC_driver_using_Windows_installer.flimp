@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MsWordImport
+  PreserveSourceStyles="false"
+  KeepSourceLinks="false"
+  ConvertInlineFormatting="true"
+  AddContinuedLinks="false"
+  AddContinuedFromLinks="false"
+  ContinuedLinkFormat="(continued in {title})"
+  ContinuedFromLinkFormat="(continued from {title})"
+  UseMaxCharLimit="false"
+  UseMinCharLimit="true"
+  MaxCharLimit="10000"
+  MinCharLimit="50"
+  FilenameLength="24"
+  GeneratePageLayouts="false"
+  UseFirstHeadingAsTopicTitle="true"
+  ConvertEquations="true"
+  LastCollectTime="2019-07-28T18:53:44.5054756+03:00"
+  ProjectName="SQream"
+  ProjectFolder="C:\Clients\SQream\Web\SQream\"
+  AutoSync="false"
+  AutoFitTables="true"
+  UseHeaderRows="true"
+  Stylesheet="../../../../Global/SQream_Global/Content/Resources/Stylesheets/mainstyles.css"
+  LastImport="2019-07-28T18:55:26.5824692+03:00">
+  <Files>
+    <Url
+      Source="../../../../../../Users/Rivka/Downloads/Installing_ODBC_driver_using_Windows_installer.docx"
+      AbsoluteSource="file:///C:/Users/Rivka/Downloads/Installing_ODBC_driver_using_Windows_installer.docx" />
+  </Files>
+  <ExcludedFiles />
+  <CollectedSourceFiles />
+  <SkippedSourceFiles />
+  <GeneratedFiles>
+    <Url
+      Source="../../Content/Installing_ODBC_driver_using_Windows_installer/Installing ODBC driver using.htm"
+      TimeStamp="28-Jul-19 6:55:21 PM" />
+    <Url
+      Source="../../Content/Resources/Images/Installing_ODBC_driver_using_Windows_installer/Install the driver.png"
+      TimeStamp="28-Jul-19 6:55:20 PM" />
+    <Url
+      Source="../../Content/Resources/Images/Installing_ODBC_driver_using_Windows_installer/Install the driver_1.png"
+      TimeStamp="28-Jul-19 6:55:20 PM" />
+    <Url
+      Source="../../Content/Resources/Images/Installing_ODBC_driver_using_Windows_installer/Install the driver_2.png"
+      TimeStamp="28-Jul-19 6:55:20 PM" />
+    <Url
+      Source="../../Content/Installing_ODBC_driver_using_Windows_installer/Install the driver.htm"
+      TimeStamp="28-Jul-19 6:55:21 PM" />
+    <Url
+      Source="../../Content/Resources/Images/Installing_ODBC_driver_using_Windows_installer/Create and configure the ODBC.png"
+      TimeStamp="28-Jul-19 6:55:20 PM" />
+    <Url
+      Source="../../Content/Resources/Images/Installing_ODBC_driver_using_Windows_installer/Create and configure the ODBC_1.png"
+      TimeStamp="28-Jul-19 6:55:20 PM" />
+    <Url
+      Source="../../Content/Resources/Images/Installing_ODBC_driver_using_Windows_installer/Create and configure the ODBC_2.png"
+      TimeStamp="28-Jul-19 6:55:20 PM" />
+    <Url
+      Source="../../Content/Resources/Images/Installing_ODBC_driver_using_Windows_installer/Create and configure the ODBC_3.png"
+      TimeStamp="28-Jul-19 6:55:20 PM" />
+    <Url
+      Source="../../Content/Installing_ODBC_driver_using_Windows_installer/Create and configure the ODBC.htm"
+      TimeStamp="28-Jul-19 6:55:21 PM" />
+    <Url
+      Source="../TOCs/Installing_ODBC_driver_using_Windows_installer.fltoc"
+      TimeStamp="28-Jul-19 6:55:20 PM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/mainstyles_1.css"
+      TimeStamp="28-Jul-19 6:55:20 PM" />
+  </GeneratedFiles>
+  <ParagraphStyles>
+    <Map
+      From="Heading 1"
+      To="h1" />
+    <Map
+      From="Heading 2"
+      To="h2" />
+    <Map
+      From="Heading 3"
+      To="h3.Heading 3" />
+    <Map
+      From="Heading 4"
+      To="h4.Heading 4" />
+    <Map
+      From="Heading 5"
+      To="h5.Heading 5" />
+  </ParagraphStyles>
+  <CharacterStyles>
+    <Map
+      From="Hyperlink"
+      To="a" />
+    <Map
+      From="Intense Emphasis"
+      To="span.colorBoldItalic" />
+    <Map
+      From="Strong"
+      To="span.strong" />
+  </CharacterStyles>
+  <NewTopicStyles>
+    <StyleName
+      Name="Heading 2" />
+  </NewTopicStyles>
+  <UsedParagraphStyles>
+    <StyleName
+      Name="Heading 1" />
+    <StyleName
+      Name="Heading 2" />
+    <StyleName
+      Name="List Continue" />
+    <StyleName
+      Name="List Number" />
+  </UsedParagraphStyles>
+  <UsedCharacterStyles>
+    <StyleName
+      Name="Hyperlink" />
+    <StyleName
+      Name="Intense Emphasis" />
+    <StyleName
+      Name="List Continue Char" />
+    <StyleName
+      Name="Strong" />
+  </UsedCharacterStyles>
+</MsWordImport>
