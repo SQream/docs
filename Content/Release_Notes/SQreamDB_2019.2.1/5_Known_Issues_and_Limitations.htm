@@ -5,8 +5,24 @@
     <body>
         <h1>Known Issues and Limitations</h1>
         <ul>
-            <li>SQream DB dashboard: Only works with a HA clustered installation</li>
-            <li>SQream DB editor: External tables and UDFs don’t appear in the DB Tree</li>
+            <li>
+                <p>NVARCHAR columns cannot be used as a GROUP BY key when there are multiple COUNT (DISTINCT …) operations in a query</p>
+            </li>
+            <li>
+                <p>NVARCHAR columns cannot be used in a statement containing window functions</p>
+            </li>
+            <li>
+                <p>NVARCHAR is not supported as a join key</p>
+            </li>
+            <li>
+                <p>The following functions are not supported on NVARCHAR column types: <span class="codeCH">chr, min, max, patindex, to_binary, to_hex, rlike, regexp_count, regexp_instr, regexp_substr</span></p>
+            </li>
+            <li>
+                <p>SQream DB dashboard: Only works with a HA clustered installation</p>
+            </li>
+            <li>
+                <p>SQream DB editor: External tables and UDFs don’t appear in the DB Tree but do appear in the relevant <span class="codeCH">sqream_catalog</span> entries.</p>
+            </li>
         </ul>
     </body>
 </html>

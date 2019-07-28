@@ -4,10 +4,67 @@
     </head>
     <body>
         <h1>Fixes</h1>
+        <p>250 bugs and issues fixed, including:</p>
         <ul>
-            <li>Using UDFs to select varchar/nvarchar when used as part of a <span class="codeCH">CREATE TABLE AS...</span> statement now works</li>
-            <li>Fixed situation where some InfiniBand network cards would prevent SQream DB from starting</li>
-            <li>Fixed problem when a query might fail due to “bad index”, when run immediately after a <span class="codeCH">CREATE TABLE AS…</span> containing a specific <span class="codeCH">ORDER BY</span> clause.</li>
+            <li>
+                <p>Variety of performance improvements:</p>
+                <ul>
+                    <li>
+                        <p>Improved performance of <span class="codeCH">NVARCHAR</span> by up to 315% for a variety of scenarios, including <span class="codeCH">COPY FROM, INNER JOIN, LEFT JOIN</span>.</p>
+                    </li>
+                    <li>
+                        <p>Improved load performance from previous versions</p>
+                    </li>
+                    <li>
+                        <p>Faster compilation times for very complex queries</p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>DWLM:</p>
+                <ul>
+                    <li>
+                        <p>Fixed situation where queries were not distributed correctly among all available instances</p>
+                    </li>
+                    <li>
+                        <p>Fixed "<span class="codeCH">cannot execute - reconnectDb error</span>" error</p>
+                    </li>
+                    <li>
+                        <p>Fixed occasional hanging statement</p>
+                    </li>
+                    <li>
+                        <p>Fixed occasional “<span class="codeCH">Connection refused</span>”</p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>Window functions:</p>
+                <ul>
+                    <li>
+                        <p>Fixed window function edge-case error “<span class="codeCH">WindowA with no functions</span>”</p>
+                    </li>
+                    <li>
+                        <p>Fixed situations where the SUM window function is applied on a column, partitioned by a second, and sorted by a third would return wrong results when scanning very large datasets</p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>Other bugs:</p>
+                <ul>
+                    <li>
+                        <p>Fixed situation where many concurrent statements running would result in “<span class="codeCH">map::at</span>” appearing</p>
+                    </li>
+                    <li>
+                        <p>Fixed situation where SQream DB would restart when force-stopping an <span class="codeCH">INSERT</span> over the network</p>
+                    </li>
+                    <li>
+                        <p>Fixed situation where RAM wasn’t released immediately after statement has been executed</p>
+                    </li>
+                    <li>
+                        <p>Fixed “<span class="codeCH">Type doesn’t have a fixed size</span>” error that appeared when using an external table joined with a standard SQream DB table</p>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </body>
 </html>

@@ -5,8 +5,17 @@
     <body>
         <h1>Operations</h1>
         <ul>
-            <li>If upgrading from SQream DB v2.23 or lower, you must upgrade the storage version by using the storage upgrade utility:<br /><span class="codeCH">./bin/upgrade_storage /path/to/storage/sqreamdb/</span></li>
-            <li>To use the new ODBC driver in Windows environments, some DSNs will have to be recreated after upgrading. Users are urged to recreate all affected DSNs.<br />Linux environments are unaffected.</li>
+            <li>
+                <p>The client-server protocol has been updated to support a wider range of encodings. End users are required to use only the latest ClientCmd, JDBC, and ODBC drivers delivered with this version.</p>
+            </li>
+            <li>
+                <p>Clients such as SecureCRT and other shells must have locale set as cp874 or equivalent</p>
+            </li>
+            <li>
+                <p>When upgrading from SQream DB v3.2 or lower, you must upgrade the storage version by using the storage upgrade utility:</p>
+                <p><span class="codeCH">./bin/upgrade_storage /path/to/storage/sqreamdb/</span>
+                </p>
+            </li>
         </ul>
     </body>
 </html>
