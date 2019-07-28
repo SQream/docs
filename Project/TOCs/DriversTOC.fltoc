@@ -9,6 +9,10 @@
       Link="/Project/TOCs/JDBCWindowsTOC.fltoc"
       ReplaceMergeNode="true" />
     <TocEntry
+      Title="ODBCWindowsTOC"
+      Link="/Project/TOCs/ODBCWindowsTOC.fltoc"
+      ReplaceMergeNode="true" />
+    <TocEntry
       Title="ODBCLinuxTOC"
       Link="/Project/TOCs/ODBCLinuxTOC.fltoc"
       ReplaceMergeNode="true" />

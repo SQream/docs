@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<CatapultToc Version="1">
-    <TocEntry Title="Installing ODBC driver using the Windows installer" Link="/Content/Installing_ODBC_driver_using_Windows_installer/Installing ODBC driver using.htm" />
-    <TocEntry Title="Install the driver" Link="/Content/Installing_ODBC_driver_using_Windows_installer/Install the driver.htm" />
-    <TocEntry Title="Create and configure the ODBC Data Source" Link="/Content/Installing_ODBC_driver_using_Windows_installer/Create and configure the ODBC.htm" />
-</CatapultToc>
