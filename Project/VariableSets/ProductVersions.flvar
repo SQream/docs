@@ -35,7 +35,7 @@
   <Variable
     Name="SQream"
     Comment=""
-    EvaluatedDefinition="2019.2">2019.2</Variable>
+    EvaluatedDefinition="2019.2.1">2019.2.1</Variable>
   <Variable
     Name="ReleaseDate"
     Comment=""
