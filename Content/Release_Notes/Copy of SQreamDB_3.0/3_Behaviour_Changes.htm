@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\Resources\MasterPages\ReleaseNotes.flmsp');">
+    <head>
+    </head>
+    <body>
+        <h1>Improvements</h1>
+        <ul>
+            <li>Better performance with concurrent I/O readers.</li>
+            <li>We’ve revamped our parallel I/O algorithms to get better performance when reading very large tables.</li>
+            <li>Better error messages when an invalid syntax is used to create tables, such as when using VARCHAR with no length specified</li>
+            <li>Better reflection of instance status when using the load balancer</li>
+            <li>We’ve added a flag to allow SQream DB’s CSV parser to skip rows containing newlines, even when the field is quoted. This is useful for several of our customers experiencing CSV parsing issues. This flag is named <span class="codeCH">‘hardRowDelimiter’</span> and is disabled by default.</li>
+            <li>Statement tree information (<span class="codeCH">show_node_info</span>) can now be viewed from any instance in the cluster</li>
+            <li>We’ve renamed some statement tree chunk-producer names to better reflect their role in the query.</li>
+        </ul>
+    </body>
+</html>
