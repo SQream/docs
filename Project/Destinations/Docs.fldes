@@ -5,7 +5,7 @@
   Host=""
   User="MyAccountId"
   Password=""
-  Directory="C:\Clients\SQream\Published\2019.2\manual"
+  Directory="C:\Clients\SQream\Published\2019.2.1\manual"
   Port=""
   ViewUrl="http://www.madcapsoftware.com/"
   Type="file"
