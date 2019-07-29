@@ -26,21 +26,17 @@
     PageType="normal"
     StartSection="false"></TocEntry>
   <TocEntry
-    Title="[%=System.LinkedTitle%]"
-    Link="/Content/Drivers/ODBC_JDBC_Windows/1_ODBC_and_JDBC_for_Windows_x64_Driver_Package_instructions.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    Title="[%=System.LinkedTitle%]" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
     BreakType="chapter"
     StartSection="false"
     PageNumberReset="continue">
     <TocEntry
-      Title="[%=System.LinkedTitle%]"
-      Link="/Content/Drivers/ODBC_JDBC_Windows/2_1_Install_JDBC_and_ODBC_drives_using_the_Windows_installer.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      Title="[%=System.LinkedTitle%]" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
     <TocEntry
-      Title="Overview"
-      Link="/Content/Drivers/ODBC_JDBC_Windows/1_ODBC_and_JDBC_for_Windows_x64_Driver_Package_instructions.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      Title="Overview" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       conditions="General.Web_Only"
       StartSection="false" />
     <TocEntry
-      Title="[%=System.LinkedTitle%]"
-      Link="/Content/Drivers/ODBC_JDBC_Windows/3_2_Create_and_configure_the_ODBC_Data_Source.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      Title="[%=System.LinkedTitle%]" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
   </TocEntry>
 </CatapultToc>
