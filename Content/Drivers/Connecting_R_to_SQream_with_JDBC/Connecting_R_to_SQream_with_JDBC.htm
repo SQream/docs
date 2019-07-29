@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" style="mc-master-page: url('..\..\Resources\MasterPages\Drivers.flmsp');">
+    <head><title></title>
+    </head>
+    <body>
+        <h1>Connecting R to SQream with JDBC</h1>
+        <p MadCap:conditions="General.Web_Only"><a href="../../Built_PDFs/Connecting_R_to_SQream_with_JDBC.pdf">Download as PDF</a>
+        </p>
+        <p>This article describes how to create a new connection to SQream in R via the JDBC driver.</p>
+        <h3>Make sure RJDBC is installed:</h3>
+        <ol style="list-style-type: decimal;margin-left: 18pt;" start="1">
+            <li>
+                <p>In the R console, type:</p>
+                <p class="code">&gt; library(RJDBC)</p>
+                <p>If this succeeds, skip to the <a href="#_Obtain_the_SQream">next section.</a></p>
+            </li>
+            <li>
+                <p>If it did not succeed, install RJDBC by typing:</p>
+                <p class="code">&gt; install.packages("RJDBC")</p>
+            </li>
+            <li>
+                <p>Then run the <span class="codeCH">library</span> command  again to verify that the install succeeded:</p>
+                <p class="code">&gt; library(RJDBC)</p>
+            </li>
+        </ol>
+        <h3><a name="_Obtain_the_SQream"></a>Obtain the SQream JDBC JAR </h3>
+        <p>Download the following JAR file:</p>
+        <ul style="list-style-type: disc;margin-left: 18pt;">
+            <li style="list-style-type: disc;"><a href="https://sqream.com/product/client-drivers/">SqreamJDBC.jar</a>
+            </li>
+        </ul>
+        <p>The example below assumes that the driver is copied to <span class="emphasis">C:\Program Files\SQream Technologies\JDBC Driver</span>  (Windows).</p>
+        <p>For Linux, copy to an appropriate working directory.</p>
+        <h3>Create a connection and test it&#160;</h3>
+        <p>Below is a sample connection script to do the following:</p>
+        <ul style="list-style-type: disc;margin-left: 18pt;">
+            <li style="list-style-type: disc;">Create a classpath</li>
+        </ul>
+        <ul style="list-style-type: disc;margin-left: 18pt;">
+            <li style="list-style-type: disc;">Initialize the java runtime around it</li>
+        </ul>
+        <ul style="list-style-type: disc;margin-left: 18pt;">
+            <li style="list-style-type: disc;">Create a new connection</li>
+        </ul>
+        <p>Note the following:</p>
+        <ul style="list-style-type: disc;margin-left: 18pt;">
+            <li style="list-style-type: disc;">Make sure to substitute your appropriate connection and java classpath information. </li>
+        </ul>
+        <p>Specifically, note:</p>
+        <ul style="list-style-type: disc;margin-left: 36pt;">
+            <li style="list-style-type: disc;">&lt;your server address&gt;</li>
+        </ul>
+        <ul style="list-style-type: disc;margin-left: 36pt;">
+            <li style="list-style-type: disc;">&lt;your server port&gt;</li>
+        </ul>
+        <ul style="list-style-type: disc;margin-left: 36pt;">
+            <li style="list-style-type: disc;">&lt;your database name&gt;</li>
+        </ul>
+        <ul style="list-style-type: disc;margin-left: 36pt;">
+            <li style="list-style-type: disc;">&lt;SQream user name&gt;</li>
+        </ul>
+        <ul style="list-style-type: disc;margin-left: 36pt;">
+            <li style="list-style-type: disc;">&lt;SQream user password&gt;.</li>
+        </ul>
+        <ul style="list-style-type: disc;margin-left: 18pt;">
+            <li style="list-style-type: disc;">The example uses the SQream default service name (<span class="strong">sqream</span>). </li>
+        </ul>
+        <ul style="list-style-type: disc;margin-left: 18pt;">
+            <li style="list-style-type: disc;">The example queries a table as follows:</li>
+        </ul>
+        <ul style="list-style-type: disc;margin-left: 36pt;">
+            <li style="list-style-type: disc;">Table name = 'test_table' </li>
+        </ul>
+        <ul style="list-style-type: disc;margin-left: 36pt;">
+            <li style="list-style-type: disc;">2 columns, x and y </li>
+        </ul>
+        <ul style="list-style-type: disc;margin-left: 36pt;">
+            <li style="list-style-type: disc;">2 rows of data</li>
+        </ul>
+        <div class="code">
+            <p>&gt; cp = c("C:\\Program Files\\SQream Technologies\\JDBC Driver\\SqreamJDBC.jar")</p>
+            <p>&#160;</p>
+            <p>&gt; .jinit(classpath=cp)</p>
+            <p>[1] 0</p>
+            <p>&#160;</p>
+            <p>&gt; drv &lt;- JDBC("com.sqream.jdbc.SQDriver"," C:\\Program Files\\SQream Technologies\\JDBC Driver\\SqreamJDBC.jar")</p>
+            <p>&#160;</p>
+            <p>&gt; con &lt;- dbConnect(drv,"jdbc:Sqream://&lt;your server address&gt;:&lt;your server port&gt;/&lt;your database name&gt;;user=&lt;SQream user name&gt;;password=&lt;SQream user password&gt; ;service=sqream;cluster=&lt;TRUE/FALSE&gt;;ssl=&lt;TRUE/FALSE&gt;")</p>
+            <p>&gt; dbGetQuery(con,"SELECT COUNT(*) as cnt FROM test_table")</p>
+            <p>&#160;&#160;&#160; cnt</p>
+            <p>1&#160;&#160; 2</p>
+            <p>&gt; dbGetQuery(con,"SELECT * FROM test_table")</p>
+            <p>&#160;&#160; x y</p>
+            <p>1 1 5</p>
+            <p>2 4 6</p>
+        </div>
+        <p>For further assistance please contact <a href="mailto:support@sqream.com">SQream support</a>.</p>
+    </body>
+</html>

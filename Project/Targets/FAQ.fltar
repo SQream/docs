@@ -5,22 +5,22 @@
   Type="PDF"
   Destinations=""
   GlossaryTermConversion="marked"
-  MasterToc="/Project/TOCs/ODBCLinuxTOC.fltoc"
+  MasterToc="/Project/TOCs/FAQTOC.fltoc"
   MasterPageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
   MasterStylesheet="/Content/Resources/Stylesheets/mainstyles.css"
   OutputFolder="C:\Clients\SQream\Web\SQream"
   ConditionTagExpression="include[General.Print_Only] exclude[General.Web_Only] "
-  PatchHeadingLevels="true">
+  PatchHeadingLevels="true"
+  MasterStylesheetOverride="true">
   <PrintedOutput
     CollapseMargins="true"
     GenerateTOCProxy="false"
     GenerateIndexProxy="false"
-    GenerateGlossaryProxy="false" />
+    GenerateGlossaryProxy="false"
+    ExpandingTextConversion="expand" />
   <Variables>
     <Variable
-      Name="General/DocumentName">SQream ODBC Connector (Linux)</Variable>
-    <Variable
-      Name="ProductVersions/SQream">2019.2.1</Variable>
+      Name="General/DocumentName">FAQ</Variable>
   </Variables>
   <Destinations>
     <Destination

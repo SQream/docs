@@ -6,7 +6,11 @@
     Link="/Content/Drivers/Drivers.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
     <TocEntry
       Title="ODBC_JDBCTOC"
-      Link="/Project/TOCs/ODBC_JDBCTOC.fltoc"
+      Link="/Project/TOCs/JDBCWindowsTOC.fltoc"
+      ReplaceMergeNode="true" />
+    <TocEntry
+      Title="ODBCWindowsTOC"
+      Link="/Project/TOCs/ODBCWindowsTOC.fltoc"
       ReplaceMergeNode="true" />
     <TocEntry
       Title="ODBCLinuxTOC"
@@ -36,5 +40,29 @@
       Title="JavaTOC"
       Link="/Project/TOCs/JavaTOC.fltoc"
       ReplaceMergeNode="true" />
+    <TocEntry
+      Title="SQLWorkbenchClientTOC"
+      Link="/Project/TOCs/SQLWorkbenchClientTOC.fltoc"
+      ReplaceMergeNode="true"
+      StartSection="false" />
+    <TocEntry
+      Title="ConnectingRJDBCTOC"
+      Link="/Project/TOCs/ConnectingRJDBCTOC.fltoc"
+      ReplaceMergeNode="true" />
+    <TocEntry
+      Title="TableauTOC"
+      Link="/Project/TOCs/TableauTOC.fltoc"
+      ReplaceMergeNode="true"
+      ComputeToc="false" />
+    <TocEntry
+      Title="R_ODBCTOC"
+      Link="/Project/TOCs/R_ODBCTOC.fltoc"
+      ReplaceMergeNode="true"
+      ComputeToc="false" />
+    <TocEntry
+      Title="PHP_ODBCTOC"
+      Link="/Project/TOCs/PHP_ODBCTOC.fltoc"
+      ReplaceMergeNode="true"
+      ComputeToc="false" />
   </TocEntry>
 </CatapultToc>

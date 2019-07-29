@@ -35,6 +35,7 @@
       ReplaceMergeNode="true" />
     <TocEntry
       Title="FAQ"
-      Link="/Content/FAQ.html" />
+      Link="/Project/TOCs/FAQTOC.fltoc"
+      ReplaceMergeNode="true" />
   </TocEntry>
 </CatapultToc>

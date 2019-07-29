@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\Resources\MasterPages\Drivers.flmsp');">
+    <head>
+    </head>
+    <body class="article toc2 toc-left">
+        <h2>Installing the SQream ODBC Driver </h2>
+        <ol style="list-style-type: decimal;margin-left: 18pt;" start="1">
+            <li>
+                <p>Contact <a href="mailto:support@sqream.com">SQream support</a> for the ODBC Linux driver and download it. </p>
+            </li>
+        </ol>
+        <ol style="list-style-type: decimal;margin-left: 18pt;" start="2">
+            <li>
+                <p>Run the following to install the driver: </p>
+                <div class="code">
+                    <p>mkdir sqream_odbc64</p>
+                    <p>tar -xfsqream_odbc64.tar.gz -C sqream_odbc64</p>
+                </div>
+                <p>The folder contains a <span class="strong">sqream_odbc64.so</span> file (this is the ODBC driver file) along with the libraries the driver uses in "<span class="emphasis">./lib</span>".</p>
+                <p>The folder also contains the <span class="strong">ErrorMessages</span> files that the drivers use to print errors. You'll configure those later.</p>
+            </li>
+        </ol>
+        <h3>Automatic installation via script</h3>
+        <p>An easy-to-use installation script is provided with the driver.</p>
+        <div class="tip">
+            <p>You can see all the usage details by running <span class="codeCH">./odbc_install.sh --help</span>.</p>
+        </div>
+        <p>If you want to quickly install the driver run the following commands (run the command appropriate to your environment):</p>
+        <div class="code">
+            <p>cd sqream_odbc64</p>
+            <p>./odbc_install.sh --install</p>
+            <p># OR, if you have a preexisting configuration of ODBC sources use</p>
+            <p>./odbc_install.sh --install --append</p>
+        </div>
+        <p>You are now ready to test the driver.</p>
+        <h3>Manual installation </h3>
+        <ol style="list-style-type: decimal;margin-left: 18pt;" start="1">
+            <li>
+                <p>Copy the configuration files .<span class="emphasis">odbc.ini</span>, .<span class="emphasis">odbcinst.ini</span>, and <span class="emphasis">.sqream_odbc.ini</span> from the Configuration folder.</p>
+                <p>Or modify the existing ones if you already have a SQream ODBC configuration.</p>
+            </li>
+        </ol>
+        <ol style="list-style-type: decimal;margin-left: 18pt;" start="2">
+            <li>
+                <p>Open each of these configuration files and replace <span class="emphasis">[PATH_ODBC]</span> with the path to the location of the driver, the lib folder and the ErrorMessages folder.</p>
+                <div class="warning">
+                    <p>If you compiled unixODBC with the flag "<span class="strong">-DSQL_WCHART_CONVERT</span>" or "<span class="strong">UTF-16</span>", the <span class="strong">DriverManagerEncoding</span> field of <span class="emphasis">.sqream_odbc.ini</span> must be configured to "<span class="strong">UTF-32</span>".</p>
+                </div>
+            </li>
+        </ol>
+        <ol style="list-style-type: decimal;margin-left: 18pt;" start="3">
+            <li>
+                <p>Modify the DSN to point to your SQream DB database</p>
+                <p>You can edit the default DSN from the <span class="emphasis">.odbc.ini</span> file or add additional DSNs.</p>
+                <p>The default DSN is accessible through the configuration sample and is named "S<span class="strong">qreamODBC</span>".</p>
+                <p>A valid DSN should follow this template:</p>
+                <div class="code">
+                    <p>[source,bash]</p>
+                    <p>[{DSN name}]</p>
+                    <p>Driver={path of sqream_odbc.so}</p>
+                    <p>Description=sqream64</p>
+                    <p>Server={IP address of the SQream server}</p>
+                    <p>Port={Listener port of SQream}</p>
+                    <p>Database={SQream database to connect to}</p>
+                    <p>Service={SQream service to connect to, if not present default to "sqream"} – optional </p>
+                    <p>User={SQream DB user}</p>
+                    <p>Password={password of the above SQream DB user}</p>
+                    <p>Cluster={true | false}</p>
+                    <p>Ssl={true | false}</p>
+                </div>
+            </li>
+        </ol>
+        <ol style="list-style-type: decimal;margin-left: 18pt;" start="4">
+            <li>
+                <p>Define the environment parameters: </p>
+                <p>Declare the lib/ path to the environment.</p>
+                <p>In order for <span class="emphasis">sqream_driver64.so</span> to find the furnished libraries, please run the following command where [PATH_EXTRACT] is the path to the location of the driver:</p>
+                <div class="code">export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:[PATH_EXTRACT]/lib</div>
+            </li>
+        </ol>
+    </body>
+</html>

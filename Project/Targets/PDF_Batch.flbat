@@ -9,103 +9,133 @@
       Type="PDF"
       Build="true"
       Publish="true"
-      LastBuilt="2019-07-17T10:47:59.0779479+03:00"
-      LastPublished="2019-07-17T10:48:00.0074157+03:00" />
+      LastBuilt="2019-07-23T08:36:44.1896406+03:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="Concepts"
       Type="PDF"
       Build="true"
       Publish="true"
-      LastBuilt="2019-07-17T10:45:51.9386805+03:00"
-      LastPublished="2019-07-17T10:45:55.8104667+03:00" />
+      LastBuilt="2019-07-23T08:36:52.6265561+03:00" />
+    <Target
+      Icon="System.Drawing.Bitmap"
+      Name="Configuring_SQL_Workbench_Client"
+      Type="PDF"
+      Build="true"
+      Publish="true"
+      LastBuilt="2019-07-23T08:37:44.4198430+03:00" />
+    <Target
+      Icon="System.Drawing.Bitmap"
+      Name="Connecting_PHP_to_SQream_with_ODBC"
+      Type="PDF"
+      Build="true"
+      Publish="true"
+      LastBuilt="2019-07-23T08:37:36.9984818+03:00" />
+    <Target
+      Icon="System.Drawing.Bitmap"
+      Name="Connecting_R_to_SQream_with_JDBC"
+      Type="PDF"
+      Build="true"
+      Publish="true"
+      LastBuilt="2019-07-23T08:38:17.7903147+03:00" />
+    <Target
+      Icon="System.Drawing.Bitmap"
+      Name="Connecting_R_to_SQream_with_ODBC"
+      Type="PDF"
+      Build="true"
+      Publish="true"
+      LastBuilt="2019-07-23T08:38:28.1020977+03:00" />
+    <Target
+      Icon="System.Drawing.Bitmap"
+      Name="Connecting_Tableau_to_SQream_DB"
+      Type="PDF"
+      Build="true"
+      Publish="true"
+      LastBuilt="2019-07-23T08:38:46.5502660+03:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="Dashboard_Installation_Guide"
       Type="PDF"
       Build="true"
       Publish="true"
-      LastBuilt="2019-07-17T10:46:17.5300410+03:00"
-      LastPublished="2019-07-17T10:46:17.9817812+03:00" />
+      LastBuilt="2019-07-23T08:38:51.7530412+03:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="Dashboard_UI_Guide"
       Type="PDF"
       Build="true"
       Publish="true"
-      LastBuilt="2019-07-17T10:46:32.7213491+03:00"
-      LastPublished="2019-07-17T10:46:33.0851406+03:00" />
+      LastBuilt="2019-07-23T08:39:33.7813801+03:00" />
+    <Target
+      Icon="System.Drawing.Bitmap"
+      Name="FAQ"
+      Type="PDF"
+      Build="true"
+      Publish="true"
+      LastBuilt="2019-07-23T08:39:16.8762882+03:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="HTML5"
       Type="HTML5"
       Build="false"
       Publish="false"
-      LastBuilt="2019-07-17T21:35:13.5052605+03:00" />
+      LastBuilt="2019-07-23T23:53:44.4145926+03:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="Installing_SQream_via_Docker"
       Type="PDF"
       Build="true"
       Publish="true"
-      LastBuilt="2019-07-17T10:46:54.1900686+03:00"
-      LastPublished="2019-07-17T10:46:54.7027740+03:00" />
+      LastBuilt="2019-07-23T08:39:40.9995975+03:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="Installing_SQream_via_RPM"
       Type="PDF"
       Build="true"
       Publish="true"
-      LastBuilt="2019-07-17T10:46:55.4383519+03:00"
-      LastPublished="2019-07-17T10:46:55.8181363+03:00" />
+      LastBuilt="2019-07-23T08:40:03.6074156+03:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="Quick_guide_to_launching_a_cluster"
       Type="PDF"
       Build="true"
       Publish="true"
-      LastBuilt="2019-07-17T10:47:34.0962374+03:00"
-      LastPublished="2019-07-17T10:47:34.6858996+03:00" />
+      LastBuilt="2019-07-23T08:40:08.7789250+03:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="Quick_guide_to_loading_data_into_SQream"
       Type="PDF"
       Build="true"
       Publish="true"
-      LastBuilt="2019-07-17T10:47:11.6270916+03:00"
-      LastPublished="2019-07-17T10:47:12.0298611+03:00" />
+      LastBuilt="2019-07-23T08:40:27.7463912+03:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="Quick_guide_to_managing_your_SQream_cluster"
       Type="PDF"
       Build="true"
       Publish="true"
-      LastBuilt="2019-07-17T20:30:17.7990933+03:00"
-      LastPublished="2019-07-17T20:30:27.5927650+03:00" />
+      LastBuilt="2019-07-23T08:40:32.4022904+03:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="Quick_guide_to_performance_tuning_best_practices"
       Type="PDF"
       Build="true"
       Publish="true"
-      LastBuilt="2019-07-17T20:41:54.8847306+03:00"
-      LastPublished="2019-07-17T20:41:55.2805059+03:00" />
+      LastBuilt="2019-07-23T08:40:51.9321826+03:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="Quick_guide_to_roles_and_permissions"
       Type="PDF"
       Build="true"
       Publish="true"
-      LastBuilt="2019-07-17T10:47:30.5392787+03:00"
-      LastPublished="2019-07-17T10:47:31.3947859+03:00" />
+      LastBuilt="2019-07-23T08:40:57.6349141+03:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="Quick_guide_to_using_DWLM"
       Type="PDF"
       Build="true"
       Publish="true"
-      LastBuilt="2019-07-17T10:46:34.0096117+03:00"
-      LastPublished="2019-07-17T10:46:34.3434203+03:00" />
+      LastBuilt="2019-07-23T08:41:19.9771311+03:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="SQL Test"
@@ -118,87 +148,84 @@
       Type="PDF"
       Build="true"
       Publish="true"
-      LastBuilt="2019-07-17T10:49:14.6966833+03:00"
-      LastPublished="2019-07-17T10:49:15.4032804+03:00" />
+      LastBuilt="2019-07-23T08:41:23.7737303+03:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="SQL_Reference"
       Type="PDF"
       Build="true"
       Publish="true"
-      LastBuilt="2019-07-17T16:20:34.2793709+03:00"
-      LastPublished="2019-07-17T16:20:35.6107534+03:00" />
+      LastBuilt="2019-07-23T08:42:21.0197631+03:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="SQream_Connector_DotNet"
       Type="PDF"
       Build="true"
       Publish="true"
-      LastBuilt="2019-07-17T10:48:24.5134031+03:00"
-      LastPublished="2019-07-17T10:48:25.3789071+03:00" />
+      LastBuilt="2019-07-23T08:41:51.0374945+03:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="SQream_Connector_JDBC"
       Type="PDF"
       Build="true"
       Publish="true"
-      LastBuilt="2019-07-17T10:48:48.8314817+03:00"
-      LastPublished="2019-07-17T10:48:49.3971585+03:00" />
+      LastBuilt="2019-07-23T08:42:15.8794968+03:00" />
+    <Target
+      Icon="System.Drawing.Bitmap"
+      Name="SQream_Connector_JDBC_Windows"
+      Type="PDF"
+      Build="true"
+      Publish="true"
+      LastBuilt="2019-07-23T08:42:42.9869941+03:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="SQream_Connector_Native_CPP"
       Type="PDF"
       Build="true"
       Publish="true"
-      LastBuilt="2019-07-17T10:49:16.0289211+03:00"
-      LastPublished="2019-07-17T10:49:16.6595638+03:00" />
+      LastBuilt="2019-07-23T08:42:47.1898425+03:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="SQream_Connector_Native_Java"
       Type="PDF"
       Build="true"
       Publish="true"
-      LastBuilt="2019-07-17T10:49:38.6829992+03:00"
-      LastPublished="2019-07-17T10:49:39.0727775+03:00" />
+      LastBuilt="2019-07-23T08:43:05.4073414+03:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="SQream_Connector_Native_Python"
       Type="PDF"
       Build="true"
       Publish="true"
-      LastBuilt="2019-07-17T10:45:46.0060788+03:00"
-      LastPublished="2019-07-17T10:45:48.6085882+03:00" />
+      LastBuilt="2019-07-23T08:43:10.4069805+03:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="SQream_Connector_NodeJS"
       Type="PDF"
       Build="true"
       Publish="true"
-      LastBuilt="2019-07-17T10:49:38.6650095+03:00"
-      LastPublished="2019-07-17T10:49:39.0317997+03:00" />
-    <Target
-      Icon="System.Drawing.Bitmap"
-      Name="SQream_Connector_ODBC_JDBC_Windows"
-      Type="PDF"
-      Build="true"
-      Publish="true"
-      LastBuilt="2019-07-17T10:49:55.2156637+03:00"
-      LastPublished="2019-07-17T10:49:56.7107523+03:00" />
+      LastBuilt="2019-07-23T08:43:25.9215464+03:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="SQream_Connector_ODBC_Linux"
       Type="PDF"
       Build="true"
       Publish="true"
-      LastBuilt="2019-07-17T10:49:54.0952901+03:00"
-      LastPublished="2019-07-17T10:49:54.3931197+03:00" />
+      LastBuilt="2019-07-23T08:43:31.7648676+03:00" />
+    <Target
+      Icon="System.Drawing.Bitmap"
+      Name="SQream_Connector_ODBC_Windows"
+      Type="PDF"
+      Build="true"
+      Publish="true"
+      LastBuilt="2019-07-28T19:34:38.2886353+03:00"
+      LastPublished="2019-07-28T19:27:01.1898228+03:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="Statement_Editor_UI_Guide"
       Type="PDF"
       Build="true"
       Publish="true"
-      LastBuilt="2019-07-17T10:48:06.8035242+03:00"
-      LastPublished="2019-07-17T10:48:07.0503830+03:00" />
+      LastBuilt="2019-07-23T08:44:13.5588409+03:00" />
   </Targets>
 </CatapultBatchTarget>
