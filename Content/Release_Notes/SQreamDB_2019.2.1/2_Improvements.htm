@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\Resources\MasterPages\ReleaseNotes.flmsp');">
+    <head>
+    </head>
+    <body>
+        <h1>Improvements</h1>
+        <ul>
+            <li>
+                <p>We’ve updated the <span class="codeCH">SHOW_SERVER_STATUS</span> function to more accurately reflect the status of statements across the cluster:</p>
+                <ul>
+                    <li>
+                        <p><span class="codeCH">Preparing</span> – Initial validation</p>
+                    </li>
+                    <li>
+                        <p><span class="codeCH">In queue</span> – Waiting for execution</p>
+                    </li>
+                    <li>
+                        <p><span class="codeCH">Initializing</span> – Pre-execution processing</p>
+                    </li>
+                    <li>
+                        <p><span class="codeCH">Executing</span> – statement is running</p>
+                    </li>
+                    <li>
+                        <p>We’ve improved our log files and have unified them into a single file per instance, per date. Each message type has a unique code which can help identify potential issues. See the documentation for full details on the changes to the log structures.</p>
+                    </li>
+                    <li>
+                        <p><span class="codeCH">WITH ADMIN OPTION</span> added in GRANT/REVOKE operations, allowing roles to grant their own permissions to others.</p>
+                    </li>
+                    <li>
+                        <p>HA cluster fully supports qualified hostnames, and no longer requires explicit IP addresses.</p>
+                    </li>
+                    <li>
+                        <p>SQream DB CLI’s history can be disabled, by passing <span class="codeCH">--no-history</span></p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </body>
+</html>

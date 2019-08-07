@@ -44,39 +44,12 @@
       Link="/Content/Drivers/ODBC_Linux/2_1_Prerequisites_Install_UnixODBC.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
     <TocEntry
       Title="[%=System.LinkedTitle%]"
-      Link="/Content/Drivers/ODBC_Linux/3_2.1_Download_the_SQream_ODBC_driver.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
-      <TocEntry
-        Title="Download the SQream ODBC driver"
-        Link="/Content/Drivers/ODBC_Linux/3_2.1_Download_the_SQream_ODBC_driver.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-        conditions="General.Web_Only"
-        StartSection="false"
-        SectionNumberReset="continue"
-        VolumeNumberReset="same"
-        ChapterNumberReset="continue" />
-      <TocEntry
-        Title="[%=System.LinkedTitle%]"
-        Link="/Content/Drivers/ODBC_Linux/4_2.2_Copy_the_SQream_ODBC_driver.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
-      <TocEntry
-        Title="[%=System.LinkedTitle%]"
-        Link="/Content/Drivers/ODBC_Linux/5_2.3_Locate_the_ODBC_configuration_files.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
-      <TocEntry
-        Title="[%=System.LinkedTitle%]"
-        Link="/Content/Drivers/ODBC_Linux/6_2.4_Add_the_SQream_DB_driver_as_a_data_provider_for_unixODBC.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
-      <TocEntry
-        Title="[%=System.LinkedTitle%]"
-        Link="/Content/Drivers/ODBC_Linux/7_2.5_Add_a_DSN_for_your_SQream_DB_database.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
-    </TocEntry>
+      Link="/Content/Drivers/ODBC_Linux/3_2.1_Installing_the_SQream_ODBC_driver.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      ComputeToc="true"
+      ComputedTocAction="Replace"
+      StartSection="false"></TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
-      Link="/Content/Drivers/ODBC_Linux/8_3.1_Use_the_ISQL_utility_to_test_the_driver.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
-      <TocEntry
-        Title="Use the ISQL utility to test the driver"
-        Link="/Content/Drivers/ODBC_Linux/8_3.1_Use_the_ISQL_utility_to_test_the_driver.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-        conditions="General.Web_Only"
-        StartSection="false"
-        SectionNumberReset="continue"
-        VolumeNumberReset="same"
-        ChapterNumberReset="continue" />
-    </TocEntry>
+      Link="/Content/Drivers/ODBC_Linux/4_2.2_Testing_the_SQream_ODBC_driver.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
   </TocEntry>
 </CatapultToc>

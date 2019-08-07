@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Print_Common_Files/Cover.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    conditions="General.Print_Only"
+    StartSection="false"
+    BreakType="pageLayout"
+    PageType="title"
+    PageLayout="/Content/Resources/PageLayouts/front-matter-page-layout.flpgl" />
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Print_Common_Files/Copyright_For_Print.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    conditions="General.Print_Only"
+    StartSection="false"
+    BreakType="pageLayout"
+    PageLayout="/Content/Resources/PageLayouts/front-matter-page-layout.flpgl" />
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Print_Common_Files/TOC.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    conditions="General.Print_Only"
+    BreakType="pageLayout"
+    PageNumber="1"
+    PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
+    PageType="normal"
+    StartSection="false"></TocEntry>
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Drivers/Configuring_SQL_Workbench/Recommended_method_-_Fresh_install.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <TocEntry
+      Title="Recommended method - Fresh install "
+      Link="/Content/Drivers/Configuring_SQL_Workbench/Recommended_method_-_Fresh_install.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      ReplaceMergeNode="false"
+      conditions="General.Web_Only"></TocEntry>
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Drivers/Configuring_SQL_Workbench/Configuring_an_existing_Workbench.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"></TocEntry>
+  </TocEntry>
+</CatapultToc>

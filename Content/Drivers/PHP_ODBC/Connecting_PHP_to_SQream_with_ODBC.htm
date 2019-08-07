@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" style="mc-master-page: url('..\..\Resources\MasterPages\Drivers.flmsp');">
+    <head><title></title>
+        <link href="../../Resources/Stylesheets/mainstyles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1>Connecting PHP to SQream with ODBC</h1>
+        <p MadCap:conditions="General.Web_Only"><a href="../../Built_PDFs/Connecting_PHP_to_SQream_with_ODBC.pdf">Download as PDF</a>
+        </p>
+        <p>This article describes how to create a new connection to SQream via the PHP ODBC driver.</p>
+        <p>This article assumes you have a webserver with PHP installed on Windows. The Linux version should be similar, but requires installation of the unixODBC package.</p>
+        <p>To obtain the SQream ODBC driver, please contact <a href="mailto:support@sqream.com">SQream support.</a></p>
+        <h3>Make sure php uodbc is enabled:</h3>
+        <p>Follow <a href="http://nl3.php.net/manual/en/intro.uodbc.php">these instructions</a> on the PHP documentation website.</p>
+        <h3>Create a sample connection for testing</h3>
+        <p>Below is a sample PHP file you can use to test your connection.</p>
+        <ul style="list-style-type: disc;margin-left: 18pt;">
+            <li style="list-style-type: disc;">Make sure to substitute your appropriate connection information such as. </li>
+        </ul>
+        <ul style="list-style-type: disc;margin-left: 36pt;">
+            <li style="list-style-type: disc;">&lt;your server address&gt;</li>
+            <li style="list-style-type: disc;">&lt;your server port&gt;</li>
+            <li style="list-style-type: disc;">&lt;your&#160; username&gt;</li>
+            <li style="list-style-type: disc;">&lt;your password&gt;</li>
+        </ul>
+        <ul style="list-style-type: disc;margin-left: 18pt;">
+            <li style="list-style-type: disc;">The example uses the SQream default service name (<span class="strong">sqream</span>). </li>
+        </ul>
+        <div class="code">
+            <p>&lt;?php</p>
+            <p>$dsn = "odbc:Driver={SQreamDriver64};Server=&lt;your server address&gt;;Port=&lt;your server port&gt;;Database=master;User=&lt;your username&gt;;Password=&lt;your password&gt;;Service=sqream";</p>
+            <p>$conn = odbc_connect($dsn,'','',);</p>
+            <p>if (!($conn)) { </p>
+            <p>&#160; echo "Connection to DB via ODBC failed: " . odbc_errormsg ($conn );</p>
+            <p>}</p>
+            <p>$sql = "SELECT 1 as test, 2 as other_test";</p>
+            <p>$rs = odbc_exec($conn,$sql);</p>
+            <p>while ($row = odbc_fetch_object($rs)) </p>
+            <p>{</p>
+            <p>&#160;&#160;&#160; echo ($row-&gt;test . "," . $row-&gt;other_test);</p>
+            <p>&#160;&#160;&#160; // ...</p>
+            <p>}</p>
+            <p>odbc_close($conn);</p>
+            <p>?&gt;</p>
+        </div>
+        <h3>Open the webpage you just created in your browser</h3>
+        <p>If everything was successful, you should see:</p>
+        <div class="code">1,2</div>
+        <p>If something else appears or you get an error, please contact <a href="mailto:support@sqream.com">SQream support</a>.</p>
+    </body>
+</html>

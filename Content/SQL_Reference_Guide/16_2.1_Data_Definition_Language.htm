@@ -285,9 +285,11 @@ Use this command to change the user/role default schema to a different schema na
                                     <div class="admonitionblock warning">
                                         <div class="paragraph">
                                             <p>Identity columns are only supported for columns of type BIGINT.</p>
-                                        </div>
-                                        <div class="paragraph">
-                                            <p>Identity does not enforce uniqueness of the value. When the value in the identity column reaches the maximum number for the specific column datatype limitation, the next number in the identity will restart as 1.</p>
+                                            <p>Identity does not enforce uniqueness of the value. Uniqueness can be ignored in the following cases:</p>
+                                            <ul>
+                                                <li>When the value in the identity column exceeds the maximum number for the specific column datatype limitation. In this case, the identity numbering will restart at 1.</li>
+                                                <li>When data is inserted manually into a column (as opposed to use the default values).</li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -575,6 +577,9 @@ External tables allow SQream to access data that is stored outside the database 
                                             <td>
                                                 <div class="ulist">
                                                     <ul>
+                                                        <li>
+                                                            <p>External tables are commonly used for transforming the source files while loading data or for loading partial sources. For more details, see <a href="../Guides/Quick_Guides/Loading_Data_Into_SQream/1_Loading_Data_Overview.htm">Quick guide to loading data into SQream.</a></p>
+                                                        </li>
                                                         <li>
                                                             <p>SQream accesses the files only at execution time, hence, errors in case of file/DDL mismatch will not be captured during table creation time.</p>
                                                         </li>
