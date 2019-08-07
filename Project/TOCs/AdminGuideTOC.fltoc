@@ -49,8 +49,7 @@
       PageNumber="1"
       PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl" />
     <TocEntry
-      Title="[%=System.LinkedTitle%]"
-      Link="/Content/Guides/Administrator_Guides/Administration_Guide/2_1_Administration_Guide.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      Title="[%=System.LinkedTitle%]" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputeToc="true"
       ComputedTocAction="Replace"
       ComputedTocDepth="2"
@@ -118,8 +117,7 @@
         conditions="General.Web_Only"
         StartSection="false"></TocEntry>
       <TocEntry
-        Title="[%=System.LinkedTitle%]"
-        Link="/Content/Guides/Administrator_Guides/Administration_Guide/20_4.2_Key_administration_concepts.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+        Title="[%=System.LinkedTitle%]" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
         ComputedTocAction="Replace"
         ComputeToc="true"
         ComputedTocDepth="2"

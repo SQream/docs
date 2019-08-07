@@ -20,6 +20,10 @@ requirements for running SQream DB.</p>
         </div>
         <div class="sect3">
             <h4 id="_create_the_cluster"><a name="CreateTheCluster"></a>Create the cluster</h4>
+            <div class="admonitionblock note">
+                <p>In a multi-node cluster, the SQream cluster must be created in a directory in a device accessible by all nodes in the cluster.
+                </p>
+            </div>
             <div class="olist arabic">
                 <ol class="arabic">
                     <li>
@@ -91,7 +95,7 @@ with SQream support or through the configuration utility.</p>
         </div>
         <div class="sect3">
             <h4 id="_configuring_instances_parameters">Configuring instances parameters</h4>
-            <table class="TableStyle-Default_Table" style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+            <table class="TableStyle-DefaultTable" style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
                 <caption class="title">Table 20. Common parameters setting</caption>
                 <colgroup>
                     <col style="width: 20%;">
@@ -106,170 +110,170 @@ with SQream support or through the configuration utility.</p>
                     </col>
                 </colgroup>
                 <thead>
-                    <tr class="TableStyle-Default_Table-Head-Header1">
-                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Flag Name</th>
-                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Description</th>
-                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Default Value</th>
-                        <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Range of Values</th>
-                        <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Remark</th>
+                    <tr class="TableStyle-DefaultTable-Head-Header1">
+                        <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">Flag Name</th>
+                        <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">Description</th>
+                        <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">Default Value</th>
+                        <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">Range of Values</th>
+                        <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">Remark</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="TableStyle-Default_Table-Body-Body1">
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                             <div class="literal"><pre xml:space="preserve">spoolmemorygb</pre>
                             </div>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                            <p class="tableblock">Select what size spool SQream DB can use for writing intermediate results to RAM, in GB</p>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>Controls the amount of RAM allocated by a SQream instance for intermediate results before writing them to disk</p>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                             <div class="literal"><pre xml:space="preserve"> 128gb</pre>
                             </div>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                             <div class="literal"><pre xml:space="preserve"> 1-machine ram size</pre>
                             </div>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                             <p class="tableblock">Should consider total ram size and number of SQream instances</p>
                         </td>
                     </tr>
-                    <tr class="TableStyle-Default_Table-Body-Body2">
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                             <div class="literal"><pre xml:space="preserve">insertParsers</pre>
                             </div>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                            <p class="tableblock">Set the number of parsing threads to be launched for each file, during the bulk load process</p>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p class="tableblock">Sets the number of parsing threads to be launched for each file during the bulk load process</p>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                             <div class="literal"><pre xml:space="preserve"> 4</pre>
                             </div>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                             <div class="literal"><pre xml:space="preserve"> 1-32</pre>
                             </div>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                             <p class="tableblock">Should consider total ram size and number of SQream instances</p>
                         </td>
                     </tr>
-                    <tr class="TableStyle-Default_Table-Body-Body1">
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                             <div class="literal"><pre xml:space="preserve">insertCompressors</pre>
                             </div>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                            <p class="tableblock">Set the number of compression threads to be launched for each file, during the bulk load process</p>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p class="tableblock">Sets the number of compression threads to be launched for each file during the bulk load process</p>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                             <div class="literal"><pre xml:space="preserve"> 4</pre>
                             </div>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                             <div class="literal"><pre xml:space="preserve"> 1-32</pre>
                             </div>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                             <p class="tableblock">Should consider total ram size and number of SQream instances</p>
                         </td>
                     </tr>
-                    <tr class="TableStyle-Default_Table-Body-Body2">
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                             <div class="literal"><pre xml:space="preserve">statementLockTimeout</pre>
                             </div>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                            <p class="tableblock">Set the number of seconds SQream will wait for a lock before returning an error</p>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p class="tableblock">Sets the number of seconds SQream will wait for a lock before returning an error</p>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                             <div class="literal"><pre xml:space="preserve"> 3</pre>
                             </div>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                             <div class="literal"><pre xml:space="preserve"> 1-no limit</pre>
                             </div>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                         </td>
                     </tr>
-                    <tr class="TableStyle-Default_Table-Body-Body1">
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                             <div class="literal"><pre xml:space="preserve">showFullExceptionInfo</pre>
                             </div>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                            <p class="tableblock">Show complete error message</p>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p class="tableblock">Shows complete error message</p>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                             <div class="literal"><pre xml:space="preserve"> FALSE</pre>
                             </div>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                             <div class="literal"><pre xml:space="preserve">TRUE/FALSE</pre>
                             </div>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                             <p class="tableblock">Enabling this setting will often show more detailed error message</p>
                         </td>
                     </tr>
-                    <tr class="TableStyle-Default_Table-Body-Body2">
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                             <div class="literal"><pre xml:space="preserve">initialSubscribedServices</pre>
                             </div>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                             <p class="tableblock">List of services the instance will be subscribed to</p>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                             <div class="literal"><pre xml:space="preserve">sqream</pre>
                             </div>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                             <div class="literal"><pre xml:space="preserve">list of strings</pre>
                             </div>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
                             <p class="tableblock">Example: "sqream,etl_service,query_service"</p>
                         </td>
                     </tr>
-                    <tr class="TableStyle-Default_Table-Body-Body1">
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                             <div class="literal"><pre xml:space="preserve">useLogMaxFileSize</pre>
                             </div>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                            <p class="tableblock">Defines whether SQream logs should be cycle every logMaxFileSizeMB size</p>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p class="tableblock">Defines whether SQream logs should be cycled every logMaxFileSizeMB size</p>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                             <div class="literal"><pre xml:space="preserve"> TRUE</pre>
                             </div>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                             <div class="literal"><pre xml:space="preserve">TRUE/FALSE</pre>
                             </div>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
                         </td>
                     </tr>
-                    <tr class="TableStyle-Default_Table-Body-Body2">
-                        <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
+                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
                             <div class="literal"><pre xml:space="preserve">logMaxFileSizeMB</pre>
                             </div>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
-                            <p class="tableblock">Set the size of SQream logs cycle</p>
+                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                            <p class="tableblock">Sets the size of SQream logs cycle</p>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
+                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
                             <div class="literal"><pre xml:space="preserve"> 20</pre>
                             </div>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
+                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
                             <div class="literal"><pre xml:space="preserve"> &gt;0</pre>
                             </div>
                         </td>
-                        <td class="TableStyle-Default_Table-BodyA-Column1-Body2">
+                        <td class="TableStyle-DefaultTable-BodyA-Column1-Body2">
                             <p class="tableblock">Set in MB</p>
                         </td>
                     </tr>

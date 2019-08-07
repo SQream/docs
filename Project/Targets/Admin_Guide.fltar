@@ -1,27 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CatapultTarget
   Version="2"
-  Comment="New Target"
-  Type="PDF"
+  Comment="Testing Target"
+  Type="WebHelp2"
   Destinations=""
   GlossaryTermConversion="marked"
-  MasterStylesheet="/Content/Resources/Stylesheets/mainstyles.css"
+  MasterStylesheet="/Content/Resources/Stylesheets/MainStyles.css"
   MasterPageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
   MasterToc="/Project/TOCs/AdminGuideTOC.fltoc"
   OutputFile="Admin_Guide"
   ConditionTagExpression="include[General.Print_Only] exclude[General.Web_Only] "
   GetLatestBeforeCompile="false"
-  OutputFolder="C:\Clients\SQream\Web\SQream">
+  OutputFolder="C:\Madcap Flare\Test zips">
   <PrintedOutput
     CollapseMargins="true"
     GenerateTOCProxy="false"
     GenerateIndexProxy="false"
     GenerateGlossaryProxy="false" />
-  <Destinations>
-    <Destination
-      Link="/Project/Destinations/pdf.fldes"
-      Publish="true" />
-  </Destinations>
+  <Destinations></Destinations>
   <PDF
     ShowUsedBookmarks="false" />
   <Variables>

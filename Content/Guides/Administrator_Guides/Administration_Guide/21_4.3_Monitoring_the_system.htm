@@ -7,108 +7,38 @@
         <h3 id="_monitoring_the_system">Monitoring the system</h3>
         <div class="paragraph">
             <p>Because SQream DB can be run in a distributed setting, all nodes should be monitored to ensure
-smooth operation. It is possible to monitor SQream DB with third party tools like Zabbix, Nagios and
-others, but also through the OS and SQream DB directly.</p>
+smooth operation. It is possible to monitor SQream DB either globally through the OS or from within the SQream cluster using the following utility functions:</p>
+        </div>
+        <div class="ulist">
+            <ul>
+                <li>
+                    <p><a href="#show-server-status">show-server-status</a> </p>
+                </li>
+                <li>
+                    <p><a href="#See">show connections</a> </p>
+                </li>
+            </ul>
         </div>
         <div class="sect3">
             <h4 id="_from_the_os">From the OS</h4>
             <div class="paragraph">
-                <p>See <a href="17_3.2_Setting_up_SQream_DB.htm#IdentifyingRunning">Identifying which SQream daemons are running</a></p>
+                <p>You can use a 3rd-party tool such as Zabbix or Nagios to monitor a SQream DB from the OS&#160;layer.</p>
             </div>
         </div>
         <div class="sect3">
             <h4 id="_from_each_node">From each node</h4>
             <div class="sect4">
-                <h5 id="_see_connections_to_the_server">See connections to the server</h5>
-                <div class="paragraph">
-                    <p>You can monitor existing connections to the database by using the <code>show_connections()</code> utility function:</p>
-                </div>
-                <div class="code">
-                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">show_connections</span><span class="tok-p">();</span></code></pre>
-                    </div>
-                </div>
-                <table class="TableStyle-Default_Table" style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
-                    <caption class="title">Table 21. Sample result from <code>show_connections()</code></caption>
-                    <colgroup>
-                        <col style="width: 16.6666%;">
-                        </col>
-                        <col style="width: 16.6666%;">
-                        </col>
-                        <col style="width: 16.6666%;">
-                        </col>
-                        <col style="width: 16.6666%;">
-                        </col>
-                        <col style="width: 16.6666%;">
-                        </col>
-                        <col style="width: 16.667%;">
-                        </col>
-                    </colgroup>
-                    <thead>
-                        <tr class="TableStyle-Default_Table-Head-Header1">
-                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">ip</th>
-                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">conn_id</th>
-                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">conn_start_time</th>
-                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">stmt_id</th>
-                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">stmt_start_time</th>
-                            <th class="TableStyle-Default_Table-HeadD-Column1-Header1">stmt</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="TableStyle-Default_Table-Body-Body1">
-                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                <p class="tableblock">192.168.0.93</p>
-                            </td>
-                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                <p class="tableblock">19</p>
-                            </td>
-                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                <p class="tableblock">2017-06-22 18:56:54</p>
-                            </td>
-                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                <p class="tableblock">14</p>
-                            </td>
-                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                <p class="tableblock">2017-06-22 18:56:54</p>
-                            </td>
-                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-                                <p class="tableblock">select show_connections()</p>
-                            </td>
-                        </tr>
-                        <tr class="TableStyle-Default_Table-Body-Body2">
-                            <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
-                                <p class="tableblock">192.168.0.93</p>
-                            </td>
-                            <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
-                                <p class="tableblock">17</p>
-                            </td>
-                            <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
-                                <p class="tableblock">2017-06-22 18:56:48</p>
-                            </td>
-                            <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
-                                <p class="tableblock">-1</p>
-                            </td>
-                            <td class="TableStyle-Default_Table-BodyB-Column1-Body2">
-                                <p class="tableblock">2017-06-22 18:56:48</p>
-                            </td>
-                            <td class="TableStyle-Default_Table-BodyA-Column1-Body2"> </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="sect4">
                 <h5 id="show-server-status"><a name="show-server-status"></a>Show server / cluster status</h5>
                 <div class="paragraph">
                     <p>The <code>show_server_status()</code> utility function can be used to see which statements are running
-across the cluster, across all databases.</p>
+					across the cluster, across all databases.</p>
                 </div>
                 <div class="admonitionblock note">
                     <table>
                         <tr>
-                            <td class="icon"><i class="fa icon-note" title="Note"></i>
-                            </td>
                             <td class="content">
-If no queries are running, this query will return 0 rows in the result set.
-</td>
+								If no queries are running, this query will return 0 rows in the result set.
+							</td>
                         </tr>
                     </table>
                 </div>
@@ -116,8 +46,8 @@ If no queries are running, this query will return 0 rows in the result set.
                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">show_server_status</span><span class="tok-p">();</span></code></pre>
                     </div>
                 </div>
-                <table class="TableStyle-Default_Table" style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
-                    <caption class="title">Table 22. Sample result from <code>show_server_status()</code></caption>
+                <table class="TableStyle-DefaultTable" style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                    <caption class="title">Sample result from <code>show_server_status()</code></caption>
                     <colgroup>
                         <col style="width: 8.3333%;">
                         </col>
@@ -145,57 +75,57 @@ If no queries are running, this query will return 0 rows in the result set.
                         </col>
                     </colgroup>
                     <thead>
-                        <tr class="TableStyle-Default_Table-Head-Header1">
-                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">service_id</th>
-                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">connection_id</th>
-                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">server ip</th>
-                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">server port</th>
-                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">database_name</th>
-                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">user_name</th>
-                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">client ip</th>
-                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">statement id</th>
-                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">statement</th>
-                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">statement start time</th>
-                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">statement status</th>
-                            <th class="TableStyle-Default_Table-HeadD-Column1-Header1">statement status start</th>
+                        <tr class="TableStyle-DefaultTable-Head-Header1">
+                            <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">service_id</th>
+                            <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">connection_id</th>
+                            <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">server ip</th>
+                            <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">server port</th>
+                            <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">database_name</th>
+                            <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">user_name</th>
+                            <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">client ip</th>
+                            <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">statement id</th>
+                            <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">statement</th>
+                            <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">statement start time</th>
+                            <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">statement status</th>
+                            <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">statement status start</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="TableStyle-Default_Table-Body-Body1">
-                            <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                        <tr class="TableStyle-DefaultTable-Body-Body1">
+                            <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
                                 <p class="tableblock">sqream</p>
                             </td>
-                            <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                            <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
                                 <p class="tableblock">32</p>
                             </td>
-                            <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                            <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
                                 <p class="tableblock">192.168.0.93</p>
                             </td>
-                            <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                            <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
                                 <p class="tableblock">5000</p>
                             </td>
-                            <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                            <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
                                 <p class="tableblock">faa</p>
                             </td>
-                            <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                            <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
                                 <p class="tableblock">sqream</p>
                             </td>
-                            <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                            <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
                                 <p class="tableblock">192.168.0.1</p>
                             </td>
-                            <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                            <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
                                 <p class="tableblock">25</p>
                             </td>
-                            <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                            <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
                                 <p class="tableblock">SELECT Year</p>
                             </td>
-                            <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                            <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
                                 <p class="tableblock">Carrier</p>
                             </td>
-                            <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
+                            <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
                                 <p class="tableblock">destCityName</p>
                             </td>
-                            <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
+                            <td class="TableStyle-DefaultTable-BodyA-Column1-Body1">
                                 <p class="tableblock">COUNT( DISTINCT originCityName) from ontime JOIN l_airport_i</p>
                             </td>
                         </tr>
@@ -204,7 +134,7 @@ If no queries are running, this query will return 0 rows in the result set.
                 <div class="paragraph">
                     <div class="title">Possible statement status values</div>
                 </div>
-                <table class="TableStyle-Default_Table" style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                <table class="TableStyle-DefaultTable" style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
                     <colgroup>
                         <col style="width: 50%;">
                         </col>
@@ -212,53 +142,129 @@ If no queries are running, this query will return 0 rows in the result set.
                         </col>
                     </colgroup>
                     <thead>
-                        <tr class="TableStyle-Default_Table-Head-Header1">
-                            <th class="TableStyle-Default_Table-HeadE-Column1-Header1">Status</th>
-                            <th class="TableStyle-Default_Table-HeadD-Column1-Header1">Description</th>
+                        <tr class="TableStyle-DefaultTable-Head-Header1">
+                            <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">Status</th>
+                            <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">Description</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="TableStyle-Default_Table-Body-Body1">
-                            <td class="TableStyle-Default_Table-BodyE-Column1-Body1">
-                                <p class="tableblock">Executing</p>
+                        <tr class="TableStyle-DefaultTable-Body-Body1">
+                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                <p class="tableblock"><span class="strong">Preparing</span>
+                                </p>
                             </td>
-                            <td class="TableStyle-Default_Table-BodyD-Column1-Body1">
-                                <p class="tableblock">The statement is in execution, awaiting results</p>
-                            </td>
-                        </tr>
-                        <tr class="TableStyle-Default_Table-Body-Body2">
-                            <td class="TableStyle-Default_Table-BodyE-Column1-Body2">
-                                <p class="tableblock">Preparing</p>
-                            </td>
-                            <td class="TableStyle-Default_Table-BodyD-Column1-Body2">
-                                <p class="tableblock">The statement is compiling, and is awaiting execution</p>
+                            <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                                <p class="tableblock">Initial compilation</p>
                             </td>
                         </tr>
-                        <tr class="TableStyle-Default_Table-Body-Body1">
-                            <td class="TableStyle-Default_Table-BodyB-Column1-Body1">
-                                <p class="tableblock">Waiting</p>
+                        <tr class="TableStyle-DefaultTable-Body-Body2">
+                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body2"><span class="strong">In Queue</span>
                             </td>
-                            <td class="TableStyle-Default_Table-BodyA-Column1-Body1">
-                                <p class="tableblock">The statement is waiting in the queue for execution</p>
+                            <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                                <p class="tableblock">Waiting for execution</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-DefaultTable-Body-Body1">
+                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                <p><span class="strong">Initializing</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                                <p>“compilation validation” before execution</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-DefaultTable-Body-Body2">
+                            <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                <p class="tableblock"><span class="strong">Executing</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-DefaultTable-BodyA-Column1-Body2">
+                                <p class="tableBody">Executing</p>
                             </td>
                         </tr>
                     </tbody>
                 </table>
                 <div class="paragraph">
                     <p>The DBA can use the show server status output as a baseline for identifying locks and if needed
-to stop running statements (based on the <strong>server ip : server port</strong> and <strong>statement_id</strong> columns).</p>
+					to stop running statements (based on the <strong>server ip : server port</strong> and <strong>statement_id</strong> columns).</p>
                 </div>
             </div>
             <div class="sect4">
-                <h5 id="_by_running_a_query">By running a query</h5>
+                <h5 id="_see_connections_to_the_server"><a name="See"></a>See connections to the server</h5>
                 <div class="paragraph">
-                    <p>Running a query, even the most basic one, should give you an indication if a server is up.
-If you immediately get "Connection refused" or similar, the server is down.</p>
+                    <p>You can monitor existing connections to the database by using the <code>show_connections()</code> utility function:</p>
                 </div>
                 <div class="code">
-                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-mf">1</span><span class="tok-p">;</span></code></pre>
+                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">show_connections</span><span class="tok-p">();</span></code></pre>
                     </div>
                 </div>
+                <table class="TableStyle-DefaultTable" style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                    <caption class="title">Table 21. Sample result from <code>show_connections()</code></caption>
+                    <colgroup>
+                        <col style="width: 16.6666%;">
+                        </col>
+                        <col style="width: 16.6666%;">
+                        </col>
+                        <col style="width: 16.6666%;">
+                        </col>
+                        <col style="width: 16.6666%;">
+                        </col>
+                        <col style="width: 16.6666%;">
+                        </col>
+                        <col style="width: 16.667%;">
+                        </col>
+                    </colgroup>
+                    <thead>
+                        <tr class="TableStyle-DefaultTable-Head-Header1">
+                            <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">ip</th>
+                            <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">conn_id</th>
+                            <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">conn_start_time</th>
+                            <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">stmt_id</th>
+                            <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">stmt_start_time</th>
+                            <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">stmt</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-DefaultTable-Body-Body1">
+                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                <p class="tableblock">192.168.0.93</p>
+                            </td>
+                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                <p class="tableblock">19</p>
+                            </td>
+                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                <p class="tableblock">2017-06-22 18:56:54</p>
+                            </td>
+                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                <p class="tableblock">14</p>
+                            </td>
+                            <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                <p class="tableblock">2017-06-22 18:56:54</p>
+                            </td>
+                            <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                                <p class="tableblock">select show_connections()</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-DefaultTable-Body-Body2">
+                            <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                <p class="tableblock">192.168.0.93</p>
+                            </td>
+                            <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                <p class="tableblock">17</p>
+                            </td>
+                            <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                <p class="tableblock">2017-06-22 18:56:48</p>
+                            </td>
+                            <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                <p class="tableblock">-1</p>
+                            </td>
+                            <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                <p class="tableblock">2017-06-22 18:56:48</p>
+                            </td>
+                            <td class="TableStyle-DefaultTable-BodyA-Column1-Body2"> </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </body>
