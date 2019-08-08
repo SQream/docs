@@ -49,9 +49,8 @@
       PageNumber="1"
       PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl" />
     <TocEntry
-      Title="[%=System.LinkedTitle%]" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-      ComputeToc="true"
-      ComputedTocAction="Replace"
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Guides/Administrator_Guides/Administration_Guide/16_3.1_Understanding_the_SQream_DB_environment.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
       ComputedTocDepth="2"
       BreakType="chapter"
       PageNumber="1"
@@ -60,44 +59,14 @@
       PageNumberReset="continue"></TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
-      Link="/Content/Guides/Administrator_Guides/Administration_Guide/16_3.1_Understanding_the_SQream_DB_environment.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      Link="/Content/Guides/Administrator_Guides/Administration_Guide/17_3.2_Setting_up_SQream_DB.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      ComputedTocAction="Replace"
       ComputedTocDepth="2"
-      BreakType="chapter"
+      ComputeToc="true"
+      BreakType="none"
       PageNumber="1"
       PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
-      StartSection="false"
-      PageNumberReset="continue">
-      <TocEntry
-        Title="Understanding the SQream DB environment"
-        Link="/Content/Guides/Administrator_Guides/Administration_Guide/16_3.1_Understanding_the_SQream_DB_environment.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-        ReplaceMergeNode="false"
-        ComputedTocDepth="2"
-        BreakType="none"
-        PageNumber="1"
-        PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
-        conditions="General.Web_Only"
-        StartSection="false"></TocEntry>
-      <TocEntry
-        Title="[%=System.LinkedTitle%]"
-        Link="/Content/Guides/Administrator_Guides/Administration_Guide/17_3.2_Setting_up_SQream_DB.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-        ComputedTocAction="Replace"
-        ComputedTocDepth="2"
-        ComputeToc="true"
-        BreakType="none"
-        PageNumber="1"
-        PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
-        StartSection="false" />
-      <TocEntry
-        Title="[%=System.LinkedTitle%]"
-        Link="/Content/Guides/Administrator_Guides/Administration_Guide/18_3.3_Highly_available_installations.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-        ComputedTocAction="Replace"
-        ComputedTocDepth="2"
-        ComputeToc="true"
-        BreakType="none"
-        PageNumber="1"
-        PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
-        StartSection="false" />
-    </TocEntry>
+      StartSection="false"></TocEntry>
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Guides/Administrator_Guides/Administration_Guide/19_4.1_Upgrading_a_version.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
@@ -115,15 +84,6 @@
         PageNumber="1"
         PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
         conditions="General.Web_Only"
-        StartSection="false"></TocEntry>
-      <TocEntry
-        Title="[%=System.LinkedTitle%]" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-        ComputedTocAction="Replace"
-        ComputeToc="true"
-        ComputedTocDepth="2"
-        BreakType="none"
-        PageNumber="1"
-        PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
         StartSection="false"></TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"
