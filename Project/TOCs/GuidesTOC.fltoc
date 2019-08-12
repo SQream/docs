@@ -46,10 +46,15 @@
     <TocEntry
       Title="[%=System.LinkedTitle%]"
       Link="/Content/Guides/Installation_Guides/SQream Installation Guides.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-      ComputedTocDepth="2">
+      ComputedTocDepth="3"
+      ComputeToc="false"
+      ComputedTocAction="Replace">
       <TocEntry
         Title="Installating_SQream_via_Docker"
         Link="/Project/TOCs/Installating_SQream_via_Docker.fltoc" />
+      <TocEntry
+        Title="Installating_SQream_via_RPM"
+        Link="/Project/TOCs/Installating_SQream_via_RPM.fltoc" />
     </TocEntry>
     <TocEntry
       Title="DashboardInstallTOC"
