@@ -1,54 +1,488 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
     <head>
+        <link href="../../../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
     </head>
     <body>
-        <h2 id="_operations">Operations</h2>
-        <div class="sectionbody">
-            <div class="sect2">
-                <h3 id="_upgrading_a_version">Upgrading a version</h3>
-                <div class="paragraph">
-                    <p>Here are the necessary steps that ensure a smooth upgrade of your SQream DB version</p>
-                </div>
-                <div class="olist arabic">
-                    <ol class="arabic">
-                        <li>
-                            <p><a href="17_3.2_Setting_up_SQream_DB.htm#StartingAndStopping">Stop SQream instances on all servers</a>
-                            </p>
-                        </li>
-                        <li>
-                            <p>On each node that SQream is installed, unpack the new tarball<br></br>alongside the old SQream DB directory.<br></br>For example:<br></br></p>
-                        </li>
-                    </ol>
-                </div>
-                <div class="code">
-                    <div class="content"><pre xml:space="preserve">$ cd /home/sqream
+        <h3 id="_operations">Operations</h3>
+        <div class="sect3">
+            <h4 id="_upgrading_a_version">Upgrading a version</h4>
+            <div class="paragraph">
+                <p>Here are the necessary steps that ensure a smooth upgrade of your SQream DB version</p>
+            </div>
+            <div class="olist arabic">
+                <ol class="arabic">
+                    <li>
+                        <p><a href="17_3.2_Setting_up_SQream_DB.htm#StartingAndStopping">Stop SQream instances on all servers</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>On each node that SQream is installed, unpack the new tarball<br></br>alongside the old SQream DB directory.<br></br>For example:<br></br></p>
+                    </li>
+                </ol>
+            </div>
+            <div class="code">
+                <div class="content"><pre xml:space="preserve">$ cd /home/sqream
 $ mv sqream sqream-old
 $ tar xf sqream-&lt;version&gt;.tar.gz</pre>
+                </div>
+            </div>
+            <div class="olist arabic">
+                <ol class="arabic" start="3">
+                    <li>
+                        <p>Repeat the above step for each node that the SQream DB executables exist</p>
+                    </li>
+                    <li>
+                        <p>It may be necessary to run the metadata upgrade utility.<br></br>(This may take a few moments)<br></br></p>
+                    </li>
+                </ol>
+            </div>
+            <div class="code">
+                <div class="content"><pre xml:space="preserve">$ cd sqream/bin
+$ ./upgrade_storage &lt;path to sqream storage cluster&gt;</pre>
+                </div>
+            </div>
+            <div class="olist arabic">
+                <ol class="arabic" start="5">
+                    <li>
+                        <p><a href="17_3.2_Setting_up_SQream_DB.htm#StartingAndStopping">Restart the services</a>
+                        </p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="sect3">
+            <h4 id="_monitoring_the_system">Monitoring the system</h4>
+            <div class="paragraph">
+                <p>Because SQream DB can be run in a distributed setting, all nodes should be monitored to ensure
+			smooth operation. It is possible to monitor SQream DB either globally through the OS or from within the SQream cluster using the following utility functions:</p>
+            </div>
+            <div class="ulist">
+                <ul>
+                    <li>
+                        <p><a href="#show-server-status">show-server-status</a> </p>
+                    </li>
+                    <li>
+                        <p><a href="#See">show connections</a> </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="sect4">
+                <h5 id="_from_the_os">From the OS</h5>
+                <div class="paragraph">
+                    <p>You can use a 3rd-party tool such as Zabbix or Nagios to monitor a SQream DB from the OS&#160;layer.</p>
+                </div>
+            </div>
+            <div class="sect4">
+                <h5 id="_from_each_node">From each node</h5>
+                <div class="sect4">
+                    <h5 id="show-server-status"><a name="show-server-status"></a>Show server / cluster status</h5>
+                    <div class="paragraph">
+                        <p>The <code>show_server_status()</code> utility function can be used to see which statements are running
+					across the cluster, across all databases.</p>
+                    </div>
+                    <div class="admonitionblock note">
+                        <table>
+                            <tr>
+                                <td class="content">
+								If no queries are running, this query will return 0 rows in the result set.
+							</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="code">
+                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">show_server_status</span><span class="tok-p">();</span></code></pre>
+                        </div>
+                    </div>
+                    <table class="TableStyle-DefaultTable" style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                        <caption class="title">Sample result from <code>show_server_status()</code></caption>
+                        <colgroup>
+                            <col style="width: 8.3333%;">
+                            </col>
+                            <col style="width: 8.3333%;">
+                            </col>
+                            <col style="width: 8.3333%;">
+                            </col>
+                            <col style="width: 8.3333%;">
+                            </col>
+                            <col style="width: 8.3333%;">
+                            </col>
+                            <col style="width: 8.3333%;">
+                            </col>
+                            <col style="width: 8.3333%;">
+                            </col>
+                            <col style="width: 8.3333%;">
+                            </col>
+                            <col style="width: 8.3333%;">
+                            </col>
+                            <col style="width: 8.3333%;">
+                            </col>
+                            <col style="width: 8.3333%;">
+                            </col>
+                            <col style="width: 8.3337%;">
+                            </col>
+                        </colgroup>
+                        <thead>
+                            <tr class="TableStyle-DefaultTable-Head-Header1">
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">service_id</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">connection_id</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">server ip</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">server port</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">database_name</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">user_name</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">client ip</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">statement id</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">statement</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">statement start time</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">statement status</th>
+                                <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">statement status start</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="TableStyle-DefaultTable-Body-Body1">
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                    <p class="tableblock">sqream</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                    <p class="tableblock">32</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                    <p class="tableblock">192.168.0.93</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                    <p class="tableblock">5000</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                    <p class="tableblock">faa</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                    <p class="tableblock">sqream</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                    <p class="tableblock">192.168.0.1</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                    <p class="tableblock">25</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                    <p class="tableblock">SELECT Year</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                    <p class="tableblock">Carrier</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                    <p class="tableblock">destCityName</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyA-Column1-Body1">
+                                    <p class="tableblock">COUNT( DISTINCT originCityName) from ontime JOIN l_airport_i</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="paragraph">
+                        <div class="title">Possible statement status values</div>
+                    </div>
+                    <table class="TableStyle-DefaultTable" style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                        <colgroup>
+                            <col style="width: 50%;">
+                            </col>
+                            <col style="width: 50%;">
+                            </col>
+                        </colgroup>
+                        <thead>
+                            <tr class="TableStyle-DefaultTable-Head-Header1">
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">Status</th>
+                                <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="TableStyle-DefaultTable-Body-Body1">
+                                <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                    <p class="tableblock"><span class="strong">Preparing</span>
+                                    </p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                                    <p class="tableblock">Initial compilation</p>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-DefaultTable-Body-Body2">
+                                <td class="TableStyle-DefaultTable-BodyE-Column1-Body2"><span class="strong">In Queue</span>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                                    <p class="tableblock">Waiting for execution</p>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-DefaultTable-Body-Body1">
+                                <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                    <p><span class="strong">Initializing</span>
+                                    </p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                                    <p>“compilation validation” before execution</p>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-DefaultTable-Body-Body2">
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                    <p class="tableblock"><span class="strong">Executing</span>
+                                    </p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyA-Column1-Body2">
+                                    <p class="tableBody">Executing</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="paragraph">
+                        <p>The DBA can use the show server status output as a baseline for identifying locks and if needed
+					to stop running statements (based on the <strong>server ip : server port</strong> and <strong>statement_id</strong> columns).</p>
                     </div>
                 </div>
-                <div class="olist arabic">
-                    <ol class="arabic" start="3">
+                <div class="sect4">
+                    <h5 id="_see_connections_to_the_server"><a name="See"></a>See connections to the server</h5>
+                    <div class="paragraph">
+                        <p>You can monitor existing connections to the database by using the <code>show_connections()</code> utility function:</p>
+                    </div>
+                    <div class="code">
+                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">show_connections</span><span class="tok-p">();</span></code></pre>
+                        </div>
+                    </div>
+                    <table class="TableStyle-DefaultTable" style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                        <caption class="title">Table 21. Sample result from <code>show_connections()</code></caption>
+                        <colgroup>
+                            <col style="width: 16.6666%;">
+                            </col>
+                            <col style="width: 16.6666%;">
+                            </col>
+                            <col style="width: 16.6666%;">
+                            </col>
+                            <col style="width: 16.6666%;">
+                            </col>
+                            <col style="width: 16.6666%;">
+                            </col>
+                            <col style="width: 16.667%;">
+                            </col>
+                        </colgroup>
+                        <thead>
+                            <tr class="TableStyle-DefaultTable-Head-Header1">
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">ip</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">conn_id</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">conn_start_time</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">stmt_id</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">stmt_start_time</th>
+                                <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">stmt</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="TableStyle-DefaultTable-Body-Body1">
+                                <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                    <p class="tableblock">192.168.0.93</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                    <p class="tableblock">19</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                    <p class="tableblock">2017-06-22 18:56:54</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                    <p class="tableblock">14</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                    <p class="tableblock">2017-06-22 18:56:54</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                                    <p class="tableblock">select show_connections()</p>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-DefaultTable-Body-Body2">
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                    <p class="tableblock">192.168.0.93</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                    <p class="tableblock">17</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                    <p class="tableblock">2017-06-22 18:56:48</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                    <p class="tableblock">-1</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                    <p class="tableblock">2017-06-22 18:56:48</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyA-Column1-Body2"> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="sect3">
+            <h4 id="_stopping_existing_statements">Stopping existing statements</h4>
+            <div class="paragraph">
+                <p>The <strong>stop_statement()</strong> utility function can be used to cancel or stop a running statement before it finishes.</p>
+            </div>
+            <div class="ulist">
+                <div class="title">Usage</div>
+                <ul>
+                    <li>
+                        <p>Identify the running statement ID and server IP and port (see <a href="21_4.3_Monitoring_the_system.htm#show-server-status"><strong>show server status</strong></a> or <strong>show_connections</strong> above)</p>
+                    </li>
+                    <li>
+                        <p>From the same server/port combination - run the stop_statement command:<br></br></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="code">
+                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">stop_statement</span><span class="tok-p">(</span><span class="tok-mf">42</span><span class="tok-p">);</span></code></pre>
+                </div>
+            </div>
+        </div>
+        <div class="sect3">
+            <h4 id="_logs">Logs</h4>
+            <div class="paragraph">
+                <p>SQream DB generates the following log files for the DBA everyday work</p>
+            </div>
+            <div class="ulist">
+                <div class="title">Log files:</div>
+                <ul>
+                    <li>
+                        <p><strong>clientLogger_statement</strong> - Keeps track of statements being run in the server, including success/failure, number of rows returned from the query and number of rows processed by the query.</p>
+                    </li>
+                    <li>
+                        <p><strong>clientLogger_server</strong> - Keeps track of server start/stop times</p>
+                    </li>
+                    <li>
+                        <p><strong>clientLogger_session</strong> - Keeps track of different sessions</p>
+                    </li>
+                    <li>
+                        <p><strong>clientLogger_login</strong> - Tracks user login times and IP addresses</p>
+                    </li>
+                    <li>
+                        <p><strong>clientLogger_exception</strong> - Tracks system exceptions</p>
+                    </li>
+                    <li>
+                        <p><strong>clientLogger_execution</strong> - Tracks heavy statements execution statistics (over nodeInfoLoggingSec flag)</p>
+                    </li>
+                    <li>
+                        <p><strong>clientLogger_debug</strong> - Logs debug information. Default debug log level = 4 (INFO). The debug log level can be changed running a statement (e.g., SET logDebugLevel = 6;). No need to restart the SQream instance.</p>
+                    </li>
+                    <li>
+                        <p><strong>metadata_server.log</strong> - Tracks metadata server status and executions queue</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="admonitionblock note">
+                <div class="paragraph">
+                    <p>File names: Log file names contain a day and time stamp. For example: <strong>clientLogger_statement_20181108_000000.log</strong></p>
+                </div>
+                <div class="paragraph">
+                    <p>Statement log messages are cut at a length of 10,000 characters. This is to allow loading statements logs files (CSV) into External Tables of SQream. Remember: Row length is limited to 10,240 characters.</p>
+                </div>
+            </div>
+            <div class="paragraph">
+                <div class="title">Log file configuration:</div>
+                <p>From V2.18.1 the following default behavior is configured:</p>
+            </div>
+            <div class="ulist">
+                <ul>
+                    <li>
+                        <p>Each SQream instance generates a separate set of log files into a dedicated folder (folder name contains IP and port). For example: /home/sqream/sqream_storage/sqreamdb/logs/<strong>127.0.0.1_5000</strong>.</p>
+                    </li>
+                    <li>
+                        <p>Log file rotation: One separate log file per calendar day. New file is generated at midnight.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="paragraph">
+                <div class="title">Related runtimeGlobalflags:</div>
+            </div>
+            <div class="ulist">
+                <ul>
+                    <li>
+                        <p><strong>useClientLog</strong>: This flag is set the TRUE (by default) to activate the new logging framework.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="ulist">
+                <ul>
+                    <li>
+                        <p><strong>useLogFileRotateHourOfDay</strong>: Enable/disable the rotation of log files. By default this flag is set to TRUE to allow seperate files for separate days.</p>
+                    </li>
+                    <li>
+                        <p><strong>logFileRotateHourOfDay</strong>: Rollover time parameter. By default this flag is set to 0 (=rotation at midnight). Set in the hour of the day. Possible range of values: 0-23.</p>
+                    </li>
+                    <li>
+                        <p><strong>enableLogDebug</strong>: Activate / deactivate the debug log. Default value = true;</p>
+                    </li>
+                    <li>
+                        <p><strong>logDebugLevel</strong>: Supported Log Levels are: 0 = [SYSTEM], 1 - [FATAL], 2 - [ERROR], 3 - [WARN], 4 - [INFO], 5 - [DEBUG], 6 - [TRACE]. Default = 4 (INFO);</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sect3">
+            <h4 id="_support_utilities">Support Utilities</h4>
+            <div class="sect4">
+                <h5 id="_report_collection">Report Collection</h5>
+                <div class="paragraph">
+                    <p>This support utility is used to collect logs and/or the leveldb at a client’s site. The generated tar file can then be sent to the SQream support team for further investigation.</p>
+                </div>
+                <div class="ulist">
+                    <ul>
                         <li>
-                            <p>Repeat the above step for each node that the SQream DB executables exist</p>
+                            <p>Output file format: report_[date]_[time].tar</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="paragraph">
+                    <p>Can run as a utility function or executable, allowing to collect information also if the SQream server is not running.
+				Supported collection modes:</p>
+                </div>
+                <div class="ulist">
+                    <ul>
+                        <li>
+                            <p>log = only log files are collected</p>
                         </li>
                         <li>
-                            <p>It may be necessary to run the metadata upgrade utility.<br></br>(This may take a few moments)<br></br></p>
+                            <p>db = only leveldb</p>
                         </li>
-                    </ol>
+                        <li>
+                            <p>db_and_log = both log files and leveldb are collected</p>
+                        </li>
+                    </ul>
                 </div>
                 <div class="code">
-                    <div class="content"><pre xml:space="preserve">$ cd sqream/bin
-$ ./upgrade_storage &lt;path to sqream storage cluster&gt;</pre>
+                    <div class="title">Syntax and example when running as a utility function:</div>
+                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">report_collection</span><span class="tok-p">(</span><span class="tok-s1">'&lt;/pathToOutputFolder&gt;'</span><span class="tok-p">,</span>  <span class="tok-s1">'&lt;mode&gt;'</span><span class="tok-p">);</span>  
+
+					<span class="tok-k">SELECT</span>  <span class="tok-n">report_collection</span><span class="tok-p">(</span><span class="tok-s1">'/home/sqream/log_collection'</span><span class="tok-p">,</span><span class="tok-s1">'log'</span><span class="tok-p">);</span>  <span class="tok-p">)</span></code></pre>
                     </div>
                 </div>
-                <div class="olist arabic">
-                    <ol class="arabic" start="5">
-                        <li>
-                            <p><a href="17_3.2_Setting_up_SQream_DB.htm#StartingAndStopping">Restart the services</a>
-                            </p>
-                        </li>
-                    </ol>
+                <div class="code">
+                    <div class="title">Syntax and example for executable. The executable works only when no SQream instance is running:</div>
+                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">./bin/report_collection &lt;pathToSqreamDb&gt; &lt;/pathToOutputFolder&gt; &lt;mode&gt;./bin/report_collection /home/sqream/sqream_storage/ /home/sqream/log_collection log</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="sect4">
+                <h5 id="_export_reproducible_sample_data">Export Reproducible Sample Data</h5>
+                <div class="paragraph">
+                    <p>This support utility is used to collect data in order to reproduce a problematic query in a support lab (not only onsite at customer’s site). Typically used for query issues that are data related.
+				It runs a query, collects the data and stores the data in a small SQream DB (compressed into a single tar file). This file together with the query can be used in a remote system (support lab) to recreate and investigate the issue.</p>
+                </div>
+                <div class="paragraph">
+                    <p>The output folder contains both the final tar file and data before its compression. It is sufficient to send the tar file.
+				Works as utility function. No executable.</p>
+                </div>
+                <div class="code">
+                    <div class="title">Syntax and example:</div>
+                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">select</span>  <span class="tok-n">export_reproducible_sample</span><span class="tok-p">(</span><span class="tok-s1">'&lt;/pathToOutputFolder&gt;'</span><span class="tok-p">,</span>  <span class="tok-s1">'sql query1'</span><span class="tok-p">,</span>  <span class="tok-s1">'sql query 2'</span><span class="tok-p">,</span>  <span class="tok-mf">..</span><span class="tok-p">);</span>  
+
+					<span class="tok-k">select</span>  <span class="tok-n">export_reproducible_sample</span><span class="tok-p">(</span><span class="tok-s1">'home/sqream/data_collection'</span><span class="tok-p">,</span>  <span class="tok-s1">'select * from t'</span><span class="tok-p">);</span></code></pre>
+                    </div>
+                </div>
+                <div class="sect3">
+                    <h4 id="_backup">Backup</h4>
                 </div>
             </div>
         </div>

@@ -75,56 +75,12 @@
       PageNumber="1"
       PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
       StartSection="false"
-      PageNumberReset="continue">
-      <TocEntry
-        Title="Upgrading a version"
-        Link="/Content/Guides/Administrator_Guides/Administration_Guide/19_4.1_Upgrading_a_version.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-        ComputedTocDepth="2"
-        BreakType="none"
-        PageNumber="1"
-        PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
-        conditions="General.Web_Only"
-        StartSection="false"></TocEntry>
-      <TocEntry
-        Title="[%=System.LinkedTitle%]"
-        Link="/Content/Guides/Administrator_Guides/Administration_Guide/21_4.3_Monitoring_the_system.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-        ComputedTocAction="Replace"
-        ComputeToc="true"
-        ComputedTocDepth="2"
-        BreakType="none"
-        PageNumber="1"
-        PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
-        StartSection="false" />
-      <TocEntry
-        Title="[%=System.LinkedTitle%]"
-        Link="/Content/Guides/Administrator_Guides/Administration_Guide/22_4.4_Stopping_existing_statements.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-        ComputedTocAction="Replace"
-        ComputeToc="true"
-        ComputedTocDepth="2"
-        BreakType="none"
-        PageNumber="1"
-        PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
-        StartSection="false" />
-      <TocEntry
-        Title="[%=System.LinkedTitle%]"
-        Link="/Content/Guides/Administrator_Guides/Administration_Guide/23_4.5_Logs.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-        ComputedTocAction="Replace"
-        ComputeToc="true"
-        ComputedTocDepth="2"
-        BreakType="none"
-        PageNumber="1"
-        PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
-        StartSection="false" />
-      <TocEntry
-        Title="[%=System.LinkedTitle%]"
-        Link="/Content/Guides/Administrator_Guides/Administration_Guide/24_4.6_Support_Utilities.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-        ComputedTocAction="Replace"
-        ComputeToc="true"
-        ComputedTocDepth="2"
-        BreakType="none"
-        PageNumber="1"
-        PageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
-        StartSection="false" />
-    </TocEntry>
+      PageNumberReset="continue"
+      ComputeToc="true"
+      SectionNumberReset="continue"
+      VolumeNumberReset="same"
+      ChapterNumberReset="continue"
+      ReplaceMergeNode="false"
+      ComputedTocAction="Replace"></TocEntry>
   </TocEntry>
 </CatapultToc>

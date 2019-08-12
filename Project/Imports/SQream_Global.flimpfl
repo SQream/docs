@@ -14,7 +14,7 @@
   DeleteStale="true"
   DeleteUnreferenced="false"
   AutoSync="true"
-  LastImport="2019-08-08T15:14:59.9259400+03:00">
+  LastImport="2019-08-12T19:53:50.0952484+03:00">
   <Files>
     <Url
       Source="file:///C:/Madcap Flare/SQream_Global/SQream_Global.flprj"
@@ -24,6 +24,12 @@
     <Url
       Source="../ConditionTagSets/General.flcts"
       AbsoluteSource="file:///C:/Madcap Flare/SQream docs/Project/ConditionTagSets/General.flcts" />
+    <Url
+      Source="../../Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/4_Sqream_active_session.htm"
+      AbsoluteSource="file:///C:/Madcap Flare/SQream docs/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/4_Sqream_active_session.htm" />
+    <Url
+      Source="../../Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/7_Stop_active_statement.htm"
+      AbsoluteSource="file:///C:/Madcap Flare/SQream docs/Content/Guides/Quick_Guides/Quick_Administrator_Guide_-_Managing_a_SQream_DB_Cluster/7_Stop_active_statement.htm" />
   </ExcludedFiles>
   <CollectedSourceFiles>
     <Url
