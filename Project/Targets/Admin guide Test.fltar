@@ -9,9 +9,11 @@
   MasterPageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
   MasterToc="/Project/TOCs/AdminGuideTOC.fltoc"
   OutputFile="Admin_Guide"
-  ConditionTagExpression="include[General.Print_Only] exclude[General.Web_Only] "
+  ConditionTagExpression="include[General.Web_Only] exclude[General.Print_Only] "
   GetLatestBeforeCompile="false"
-  OutputFolder="C:\Madcap Flare\Test zips">
+  OutputFolder="C:\Madcap Flare\Test zips"
+  DefaultUrl="/Content/Home.htm"
+  MasterStylesheetOverride="true">
   <PrintedOutput
     CollapseMargins="true"
     GenerateTOCProxy="false"
