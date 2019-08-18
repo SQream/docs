@@ -20,28 +20,6 @@ requirements for running SQream DB.</p>
             </div>
         </div>
         <div class="sect3">
-            <h4 id="_create_the_cluster"><a name="CreateTheCluster"></a>Create the cluster</h4>
-            <div class="admonitionblock note">
-                <p>In a multi-node cluster, the SQream cluster must be created in a directory in a device accessible by all nodes in the cluster.
-                </p>
-            </div>
-            <div class="olist arabic">
-                <ol class="arabic">
-                    <li>
-                        <p>Enter the <code>sqream</code> directory and create a storage cluster</p>
-                    </li>
-                    <li>
-                        <p><code>./bin/SqreamStorage -C -r &lt;full path to new cluster&gt;</code>
-                        </p>
-                    </li>
-                </ol>
-            </div>
-            <div class="paragraph">
-                <div class="title">Example: Create storage cluster</div>
-                <p>If your main storage is on <code>/mnt/storage</code>, you can run<br></br><code>./bin/SqreamStorage -C -r /mnt/storage/sqream_storage</code></p>
-            </div>
-        </div>
-        <div class="sect3">
             <h4 id="_configure_the_instances">Configure the instances</h4>
             <div class="paragraph">
                 <p>Each SQream DB daemon must run against a configuration file.</p>
@@ -51,13 +29,16 @@ requirements for running SQream DB.</p>
 This file will start the server on port <strong>5000</strong>, against GPU #<strong>0</strong>.</p>
             </div>
             <div class="code">
-                <div class="title">Example minimal configuration JSON</div>
+                <div class="title">Example of a minimal configuration JSON</div>
                 <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="json"><span class="tok-p">{</span>  
-    <span class="tok-nt">"compileFlags"</span><span class="tok-p">:</span>  <span class="tok-p">{</span>  
+    <span class="tok-nt">"compileFlags"</span><span class="tok-p">:</span>  <span class="tok-p">{</span>
+    <span class="tok-nt">"runtimeFlags"</span><span class="tok-p">:</span> 
+	<span class="tok-nt">"insertParsers": 8,</span> 
+	<span class="tok-nt">"insertCompressors":8</span>  
     <span class="tok-p">},</span>  
-    <span class="tok-nt">"runtimeFlags"</span><span class="tok-p">:</span>  <span class="tok-p">{</span>  
-    <span class="tok-p">},</span>  
-    <span class="tok-nt">"runtimeGlobalFlags"</span><span class="tok-p">:</span>  <span class="tok-p">{</span>  
+    <span class="tok-nt">"runtimeGlobalFlags"</span><span class="tok-p">:</span>  <span class="tok-p">{</span>
+	<span class="tok-nt">"spoolMemoryGB": 250,</span> 
+	<span class="tok-nt">"initialSubscribedServices" : "sqream,dwh,management”</span>    
     <span class="tok-p">},</span>  
     <span class="tok-nt">"server"</span><span class="tok-p">:</span>  <span class="tok-p">{</span>  
         <span class="tok-nt">"licensePath"</span>  <span class="tok-p">:</span>  <span class="tok-s2">"/etc/sqream/license.enc"</span><span class="tok-p">,</span>  
@@ -95,25 +76,28 @@ with SQream support or through the configuration utility.</p>
             </div>
         </div>
         <div class="sect3">
-            <h4 id="_configuring_instances_parameters">Configuring instances parameters</h4>
+            <h4 id="_configuring_instances_parameters">Configuring instance parameters</h4>
             <table class="TableStyle-DefaultTable" style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
-                <caption class="title">Table 20. Common parameters setting</caption>
-                <colgroup>
-                    <col style="width: 20%;">
-                    </col>
-                    <col style="width: 20%;">
-                    </col>
-                    <col style="width: 20%;">
-                    </col>
-                    <col style="width: 20%;">
-                    </col>
-                    <col style="width: 20%;">
-                    </col>
-                </colgroup>
+                <caption class="title">Common parameter settings</caption>
+                <col style="width: 16%;" class="TableStyle-DefaultTable-Column-Column1">
+                </col>
+                <col style="width: 17%;" class="TableStyle-DefaultTable-Column-Column1">
+                </col>
+                <col style="width: 17%;" class="TableStyle-DefaultTable-Column-Column1">
+                </col>
+                <col style="width: 16%;" class="TableStyle-DefaultTable-Column-Column1">
+                </col>
+                <col style="width: 17%;" class="TableStyle-DefaultTable-Column-Column1">
+                </col>
+                <col style="width: 17%;" class="TableStyle-DefaultTable-Column-Column1">
+                </col>
                 <thead>
                     <tr class="TableStyle-DefaultTable-Head-Header1">
                         <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">Flag Name</th>
                         <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">Description</th>
+                        <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
+                            <p class="tableBody">json File Section</p>
+                        </th>
                         <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">Default Value</th>
                         <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">Range of Values</th>
                         <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">Remark</th>
@@ -127,6 +111,10 @@ with SQream support or through the configuration utility.</p>
                         </td>
                         <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                             <p>Controls the amount of RAM allocated by a SQream instance for intermediate results before writing them to disk</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p><span class="codeCH">runtimeGlobalFlags</span>
+                            </p>
                         </td>
                         <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                             <div class="literal"><pre xml:space="preserve"> 128gb</pre>
@@ -149,6 +137,10 @@ with SQream support or through the configuration utility.</p>
                             <p class="tableblock">Sets the number of parsing threads to be launched for each file during the bulk load process</p>
                         </td>
                         <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p><span class="codeCH">runtimeFlags</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                             <div class="literal"><pre xml:space="preserve"> 4</pre>
                             </div>
                         </td>
@@ -167,6 +159,10 @@ with SQream support or through the configuration utility.</p>
                         </td>
                         <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                             <p class="tableblock">Sets the number of compression threads to be launched for each file during the bulk load process</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p><span class="codeCH">runtimeFlags</span>
+                            </p>
                         </td>
                         <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                             <div class="literal"><pre xml:space="preserve"> 4</pre>
@@ -189,6 +185,10 @@ with SQream support or through the configuration utility.</p>
                             <p class="tableblock">Sets the number of seconds SQream will wait for a lock before returning an error</p>
                         </td>
                         <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p><span class="codeCH">runtimeGlobalFlags</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                             <div class="literal"><pre xml:space="preserve"> 3</pre>
                             </div>
                         </td>
@@ -206,6 +206,10 @@ with SQream support or through the configuration utility.</p>
                         </td>
                         <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                             <p class="tableblock">Shows complete error message</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p><span class="codeCH">runtimeGlobalFlags</span>
+                            </p>
                         </td>
                         <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                             <div class="literal"><pre xml:space="preserve"> FALSE</pre>
@@ -228,6 +232,10 @@ with SQream support or through the configuration utility.</p>
                             <p class="tableblock">List of services the instance will be subscribed to</p>
                         </td>
                         <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p><span class="codeCH">runtimeGlobalFlags</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
                             <div class="literal"><pre xml:space="preserve">sqream</pre>
                             </div>
                         </td>
@@ -246,6 +254,10 @@ with SQream support or through the configuration utility.</p>
                         </td>
                         <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                             <p class="tableblock">Defines whether SQream logs should be cycled every logMaxFileSizeMB size</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p class="tableBody"><span class="codeCH">runtimeGlobalFlags</span>
+                            </p>
                         </td>
                         <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
                             <div class="literal"><pre xml:space="preserve"> TRUE</pre>
@@ -267,6 +279,10 @@ with SQream support or through the configuration utility.</p>
                             <p class="tableblock">Sets the size of SQream logs cycle</p>
                         </td>
                         <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                            <p><span class="codeCH">runtimeGlobalFlags</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
                             <div class="literal"><pre xml:space="preserve"> 20</pre>
                             </div>
                         </td>
@@ -282,6 +298,26 @@ with SQream support or through the configuration utility.</p>
             </table>
         </div>
         <div class="sect3">
+            <h4 id="_create_the_cluster"><a name="CreateTheCluster"></a>Create the cluster</h4>
+            <div class="admonitionblock note">
+                <p>In a multi-node cluster, the SQream cluster must be created in a directory in a device accessible by all nodes in the cluster.
+				</p>
+            </div>
+            <div class="olist arabic">
+                <ol class="arabic">
+                    <li>
+                        <p>Enter the <code>sqream</code> directory and create a storage cluster</p>
+                        <p><code>./bin/SqreamStorage -C -r &lt;full path to new cluster&gt;</code>
+                        </p>
+                    </li>
+                </ol>
+            </div>
+            <div class="paragraph">
+                <div class="title">Example: Create storage cluster</div>
+                <p>If your main storage is on <code>/mnt/storage</code>, you can run<br></br><code>./bin/SqreamStorage -C -r /mnt/storage/sqream_storage</code></p>
+            </div>
+        </div>
+        <div class="sect3">
             <h4 id="service-start-stop"><a name="StartingAndStopping"></a>Starting and Stopping the SQream DB daemons</h4>
             <p> The procedure for starting and stopping the SQream DB daemons varies depending on your installation type:</p>
             <ul>
@@ -289,7 +325,7 @@ with SQream support or through the configuration utility.</p>
                 <li>SQream based on RPM</li>
             </ul>
             <h5>SQream based on Docker</h5>
-            <p>Use the start and stop options of the sqreamd command as described in the sqream-console commands in <a href="../../Installation_Guides/Installing_SQream_via_Docker/3_Installation_procedure.htm#Start">Start the SQream Console</a>.</p>
+            <p>Use the start and stop options of the sqreamd command as described in the sqream-console commands in <a href="../../Installation_Guides/Installing_SQream_via_Docker/3_Installation_procedure.htm#Start">Start the SQream Console</a>. You can also use the sqreamd command to monitor a Sqream instance.</p>
             <h5>SQream based on RPM</h5>
             <p>A SQream RPM installation uses the Monit service to control the SQream services.</p>
             <p>To start the SQream demons (Metadata, Server Picker and SQreamD):</p>
@@ -429,12 +465,10 @@ with SQream support or through the configuration utility.</p>
             <div class="sect3">
                 <h4 id="_enabling_ssl_server_authentication_within_sqream_instance">Enabling SSL server authentication within SQream Instance:</h4>
                 <div class="paragraph">
-                    <p>Configure the SERVER flag ssl_port in the SQream instance configuration file to the needed port number. <br></br></p>
-                </div>
-                <div class="paragraph">
-                    <p class="example">For Example:</p>
+                    <p>Configure the SERVER flag ssl_port in the SQream instance configuration file to the appropriate port number. <br /></p>
                 </div>
                 <div class="code">
+                    <div class="title">Example</div>
                     <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="json"><span class="tok-p">{</span>  
 <span class="tok-nt">"server"</span><span class="tok-p">:{</span>  
     <span class="tok-nt">"port"</span><span class="tok-p">:</span>  <span class="tok-mi">5001</span><span class="tok-p">,</span>  
@@ -447,15 +481,7 @@ with SQream support or through the configuration utility.</p>
                     </div>
                 </div>
                 <div class="admonitionblock note">
-                    <table>
-                        <tr>
-                            <td class="icon"><i class="fa icon-note" title="Note"></i>
-                            </td>
-                            <td class="content">
 Restart the SQream DB daemons after making this configuration change
-</td>
-                        </tr>
-                    </table>
                 </div>
             </div>
             <div class="sect3">

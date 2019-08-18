@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="2"
+  Comment="Install Test Target"
+  Type="WebHelp2"
+  Destinations=""
+  GlossaryTermConversion="marked"
+  MasterStylesheet="/Content/Resources/Stylesheets/MainStyles.css"
+  MasterPageLayout="/Content/Resources/PageLayouts/default-page-layout.flpgl"
+  MasterToc="/Project/TOCs/GuidesTOC.fltoc"
+  OutputFile="Admin_Guide"
+  ConditionTagExpression="include[General.Web_Only] exclude[General.Print_Only] "
+  GetLatestBeforeCompile="false"
+  OutputFolder="C:\Madcap Flare\Test zips"
+  DefaultUrl="/Content/Home.htm"
+  MasterStylesheetOverride="true">
+  <PrintedOutput
+    CollapseMargins="true"
+    GenerateTOCProxy="false"
+    GenerateIndexProxy="false"
+    GenerateGlossaryProxy="false" />
+  <Destinations></Destinations>
+  <PDF
+    ShowUsedBookmarks="false" />
+  <Variables>
+    <Variable
+      Name="General/DocumentName">Administration Guide</Variable>
+  </Variables>
+</CatapultTarget>
