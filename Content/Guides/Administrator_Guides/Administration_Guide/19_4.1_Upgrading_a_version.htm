@@ -1,54 +1,922 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="mp-topic" style="mc-master-page: url('..\..\..\Resources\MasterPages\Guides.flmsp');">
     <head>
+        <link href="../../../Resources/Table Styles/DefaultTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
     </head>
     <body>
-        <h2 id="_operations">Operations</h2>
-        <div class="sectionbody">
-            <div class="sect2">
-                <h3 id="_upgrading_a_version">Upgrading a version</h3>
-                <div class="paragraph">
-                    <p>Here are the necessary steps that ensure a smooth upgrade of your SQream DB version</p>
-                </div>
-                <div class="olist arabic">
-                    <ol class="arabic">
-                        <li>
-                            <p><a href="17_3.2_Setting_up_SQream_DB.htm#StartingAndStopping">Stop SQream instances on all servers</a>
-                            </p>
-                        </li>
-                        <li>
-                            <p>On each node that SQream is installed, unpack the new tarball<br></br>alongside the old SQream DB directory.<br></br>For example:<br></br></p>
-                        </li>
-                    </ol>
-                </div>
-                <div class="code">
-                    <div class="content"><pre xml:space="preserve">$ cd /home/sqream
+        <h3 id="_operations">Operations</h3>
+        <div class="sect3">
+            <h4 id="_upgrading_a_version">Upgrading a version</h4>
+            <div class="paragraph">
+                <p>Here are the necessary steps that ensure a smooth upgrade of your SQream DB version</p>
+            </div>
+            <div class="olist arabic">
+                <ol class="arabic">
+                    <li>
+                        <p><a href="17_3.2_Setting_up_SQream_DB.htm#StartingAndStopping">Stop SQream instances on all servers</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>On each node that SQream is installed, unpack the new tarball<br></br>alongside the old SQream DB directory.<br></br>For example:<br></br></p>
+                    </li>
+                </ol>
+            </div>
+            <div class="code">
+                <div class="content"><pre xml:space="preserve">$ cd /home/sqream
 $ mv sqream sqream-old
 $ tar xf sqream-&lt;version&gt;.tar.gz</pre>
+                </div>
+            </div>
+            <div class="olist arabic">
+                <ol class="arabic" start="3">
+                    <li>
+                        <p>Repeat the above step for each node that the SQream DB executables exist</p>
+                    </li>
+                    <li>
+                        <p>It may be necessary to run the metadata upgrade utility.<br></br>(This may take a few moments)<br></br></p>
+                    </li>
+                </ol>
+            </div>
+            <div class="code">
+                <div class="content"><pre xml:space="preserve">$ cd sqream/bin
+$ ./upgrade_storage &lt;path to sqream storage cluster&gt;</pre>
+                </div>
+            </div>
+            <div class="olist arabic">
+                <ol class="arabic" start="5">
+                    <li>
+                        <p><a href="17_3.2_Setting_up_SQream_DB.htm#StartingAndStopping">Restart the services</a>
+                        </p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="sect3">
+            <h4 id="_monitoring_the_system">Monitoring the system</h4>
+            <div class="paragraph">
+                <p>Because SQream DB can be run in a distributed setting, all nodes should be monitored to ensure
+			smooth operation. It is possible to monitor SQream DB either globally through the OS or from within the SQream cluster using the following utility functions:</p>
+            </div>
+            <div class="ulist">
+                <ul>
+                    <li>
+                        <p><a href="#show-server-status">show-server-status</a> </p>
+                    </li>
+                    <li>
+                        <p><a href="#See">show connections</a> </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="sect4">
+                <h5 id="_from_the_os">From the OS</h5>
+                <div class="paragraph">
+                    <p>You can use a 3rd-party tool such as Zabbix or Nagios to monitor a SQream DB from the OS&#160;layer.</p>
+                </div>
+            </div>
+            <div class="sect4">
+                <h5 id="_from_each_node">From each node</h5>
+                <div class="sect4">
+                    <h5 id="show-server-status"><a name="show-server-status"></a>Show server / cluster status</h5>
+                    <div class="paragraph">
+                        <p>The <code>show_server_status()</code> utility function can be used to see which statements are running
+					across the cluster, across all databases.</p>
+                    </div>
+                    <div class="admonitionblock note">
+                        <table>
+                            <tr>
+                                <td class="content">
+								If no queries are running, this query will return 0 rows in the result set.
+							</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="code">
+                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">show_server_status</span><span class="tok-p">();</span></code></pre>
+                        </div>
+                    </div>
+                    <table class="TableStyle-DefaultTable" style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                        <caption class="title">Sample result from <code>show_server_status()</code></caption>
+                        <colgroup>
+                            <col style="width: 8.3333%;">
+                            </col>
+                            <col style="width: 8.3333%;">
+                            </col>
+                            <col style="width: 8.3333%;">
+                            </col>
+                            <col style="width: 8.3333%;">
+                            </col>
+                            <col style="width: 8.3333%;">
+                            </col>
+                            <col style="width: 8.3333%;">
+                            </col>
+                            <col style="width: 8.3333%;">
+                            </col>
+                            <col style="width: 8.3333%;">
+                            </col>
+                            <col style="width: 8.3333%;">
+                            </col>
+                            <col style="width: 8.3333%;">
+                            </col>
+                            <col style="width: 8.3333%;">
+                            </col>
+                            <col style="width: 8.3337%;">
+                            </col>
+                        </colgroup>
+                        <thead>
+                            <tr class="TableStyle-DefaultTable-Head-Header1">
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">service_id</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">connection_id</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">server ip</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">server port</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">database_name</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">user_name</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">client ip</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">statement id</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">statement</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">statement start time</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">statement status</th>
+                                <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">statement status start</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="TableStyle-DefaultTable-Body-Body1">
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                    <p class="tableblock">sqream</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                    <p class="tableblock">32</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                    <p class="tableblock">192.168.0.93</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                    <p class="tableblock">5000</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                    <p class="tableblock">dwh</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                    <p class="tableblock">sqream</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                    <p class="tableblock">192.168.0.1</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                    <p class="tableblock">25</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                    <p class="tableblock">SELECT Year</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                    <p>2019-06-22 18:56:54</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                                    <p>executing</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyA-Column1-Body1">
+                                    <p>2019-06-22 18:56:54</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="paragraph">
+                        <div class="title">Possible statement status values</div>
+                    </div>
+                    <table class="TableStyle-DefaultTable" style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                        <colgroup>
+                            <col style="width: 50%;">
+                            </col>
+                            <col style="width: 50%;">
+                            </col>
+                        </colgroup>
+                        <thead>
+                            <tr class="TableStyle-DefaultTable-Head-Header1">
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">Status</th>
+                                <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="TableStyle-DefaultTable-Body-Body1">
+                                <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                    <p class="tableblock"><span class="strong">Preparing</span>
+                                    </p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                                    <p class="tableblock">Initial compilation</p>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-DefaultTable-Body-Body2">
+                                <td class="TableStyle-DefaultTable-BodyE-Column1-Body2"><span class="strong">In Queue</span>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                                    <p class="tableblock">Waiting for execution</p>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-DefaultTable-Body-Body1">
+                                <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                    <p><span class="strong">Initializing</span>
+                                    </p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                                    <p>“compilation validation” before execution</p>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-DefaultTable-Body-Body2">
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                    <p class="tableblock"><span class="strong">Executing</span>
+                                    </p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyA-Column1-Body2">
+                                    <p class="tableBody">Executing</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="paragraph">
+                        <p>The DBA can use the show server status output as a baseline for identifying locks and if needed
+					to stop running statements (based on the <strong>server ip : server port</strong> and <strong>statement_id</strong> columns).</p>
                     </div>
                 </div>
-                <div class="olist arabic">
-                    <ol class="arabic" start="3">
+                <div class="sect4">
+                    <h5 id="_see_connections_to_the_server"><a name="See"></a>See connections to the server</h5>
+                    <div class="paragraph">
+                        <p>You can monitor existing connections to the database by using the <code>show_connections()</code> utility function:</p>
+                    </div>
+                    <div class="code">
+                        <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">show_connections</span><span class="tok-p">();</span></code></pre>
+                        </div>
+                    </div>
+                    <table class="TableStyle-DefaultTable" style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" cellspacing="0">
+                        <caption class="title">Table 21. Sample result from <code>show_connections()</code></caption>
+                        <colgroup>
+                            <col style="width: 16.6666%;">
+                            </col>
+                            <col style="width: 16.6666%;">
+                            </col>
+                            <col style="width: 16.6666%;">
+                            </col>
+                            <col style="width: 16.6666%;">
+                            </col>
+                            <col style="width: 16.6666%;">
+                            </col>
+                            <col style="width: 16.667%;">
+                            </col>
+                        </colgroup>
+                        <thead>
+                            <tr class="TableStyle-DefaultTable-Head-Header1">
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">ip</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">conn_id</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">conn_start_time</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">stmt_id</th>
+                                <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">stmt_start_time</th>
+                                <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">stmt</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="TableStyle-DefaultTable-Body-Body1">
+                                <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                    <p class="tableblock">192.168.0.93</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                    <p class="tableblock">19</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                    <p class="tableblock">2017-06-22 18:56:54</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                    <p class="tableblock">14</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                                    <p class="tableblock">2017-06-22 18:56:54</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                                    <p class="tableblock">select show_connections()</p>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-DefaultTable-Body-Body2">
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                    <p class="tableblock">192.168.0.93</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                    <p class="tableblock">17</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                    <p class="tableblock">2017-06-22 18:56:48</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                    <p class="tableblock">-1</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                                    <p class="tableblock">2017-06-22 18:56:48</p>
+                                </td>
+                                <td class="TableStyle-DefaultTable-BodyA-Column1-Body2"> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="sect3">
+            <h4 id="_stopping_existing_statements">Stopping existing statements</h4>
+            <div class="paragraph">
+                <p>The <strong>stop_statement()</strong> utility function can be used to cancel or stop a running statement before it finishes.</p>
+            </div>
+            <div class="ulist">
+                <div class="title">Usage</div>
+                <ul>
+                    <li>
+                        <p>Identify the running statement ID  (see <a href="21_4.3_Monitoring_the_system.htm#show-server-status"><strong>show server status</strong></a> )</p>
+                    </li>
+                    <li>
+                        <p>Run the stop_statement command:<br /></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="code">
+                <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">stop_statement</span><span class="tok-p">(</span><span class="tok-mf">42</span><span class="tok-p">);</span></code></pre>
+                </div>
+            </div>
+        </div>
+        <div class="sect3">
+            <h4 id="_logs">Logs</h4>
+            <p>Each SQream instance generates its own set of log files based on the log rotation policy (see <a href="#Log">Log rotation policy</a>). The files will be located in a dedicated folder (folder name contains IP and port). </p>
+            <p>For example: <span class="emphasis">/home/sqream/sqream_storage/sqreamdb/logs/</span><span class="strong">127.0.0.1_5000</span>.</p>
+            <div class="tip">
+                <p>SQream recommends storing the log files in the shared storage&#160; so they can be all analyzed in a single tool (e.g: SQream external table, Kibana etc.). </p>
+            </div>
+            <p>To generate an external table over the log files, use the command: </p>
+            <div class="code">
+                <p>create or replace external table external_logs</p>
+                <p>(&#160; start_message varchar(4), </p>
+                <p>&#160;&#160;&#160; row_id bigint, </p>
+                <p>&#160;&#160;&#160; timestamp datetime, </p>
+                <p>&#160;&#160;&#160; message_level nvarchar(6),<br />&#160;&#160;&#160; thread_id nvarchar(40), </p>
+                <p>&#160;&#160;&#160; ip nvarchar(15), </p>
+                <p>&#160;&#160;&#160; port int, </p>
+                <p>&#160;&#160;&#160; connection_id int,<br />&#160;&#160;&#160; db_name nvarchar(128), </p>
+                <p>&#160;&#160;&#160; user_name nvarchar(128), </p>
+                <p>&#160;&#160;&#160; statement_id int,</p>
+                <p>&#160;</p>
+                <p>&#160;&#160;&#160; service_name nvarchar(128), </p>
+                <p>&#160;&#160;&#160; message_type_id int, </p>
+                <p>&#160;&#160;&#160; message nvarchar(10000),<br />&#160;&#160;&#160; end_message varchar(5))</p>
+                <p>using format csv with path</p>
+                <p>'/home/sqream/sqream_storage/sqreamdb/logs/sqream*.log'</p>
+                <p>field delimiter '|'</p>
+                <p>;</p>
+            </div>
+            <h5>Log file format: </h5>
+            <p>Delimited text format with the following column list: </p>
+            <ul>
+                <li>Row Id</li>
+                <li>Timestamp</li>
+                <li>Message Level</li>
+                <li>Thread id</li>
+                <li>IP</li>
+                <li>Port</li>
+                <li>Connection Id</li>
+                <li>DB name</li>
+                <li>User Id</li>
+                <li>Statement Id</li>
+                <li>Service name</li>
+                <li>Message type id</li>
+                <li>Message</li>
+            </ul>
+            <p class="tableHeader">Message type/contents:&#160;</p>
+            <table style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" class="TableStyle-DefaultTable" cellspacing="0">
+                <thead>
+                    <tr class="TableStyle-DefaultTable-Head-Header1">
+                        <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
+                            <p>Message Type Code</p>
+                        </th>
+                        <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
+                            <p>Message Type</p>
+                        </th>
+                        <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
+                            <p>Message Content</p>
+                        </th>
+                        <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">
+                            <p>Log level</p>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>1</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>Statement started</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>Statement</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                            <p>Info</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>2</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>Statement reconstruct</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>Statement</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                            <p>Info</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>4</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>Statement execution</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>"Executing"</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                            <p>Info</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>10</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>Statement ended</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>"Success" / "Failed"</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                            <p>Info</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>20</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>Compilation error</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>Error text</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                            <p>Info</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>21</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>Execution error</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>Error text</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                            <p>Info</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>30</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>Size</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>#MB</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                            <p>Info</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>31</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>Result Set Rows</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>#records</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                            <p>Info</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>32</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>Processed Rows</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>#records</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                            <p>Info</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>100</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>Session started</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>Client IP address</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                            <p>Info</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>101</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>Login</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>"Success" / "Failed"</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                            <p>Info</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>110</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>Session ended</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>"Session ended"</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                            <p>Info</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>200</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>Node info</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>Node info lines</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                            <p>Info</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>500</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>Exception</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>Exception data</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                            <p>Error</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>1000</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>Server startup</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>"Server startup"</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                            <p>System</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>1002</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>Metadata</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>Metadata server location</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                            <p>System</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>1003</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>Configuration</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>Configuration flags</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                            <p>System</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>1004</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>STORAGE VERSION</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>storage version number</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                            <p>System</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>1010</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>Server Error</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>Error message</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                            <p>fatal</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>1090</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>Set config</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>Successful set config &lt;flag_name&gt; to value: &lt;value&gt;</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                            <p>info</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                            <p>1100</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                            <p>Server shutdown</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                            <p>Server shutdown</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyA-Column1-Body1">
+                            <p>System</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5><a name="Log"></a>Log rotation policy</h5>
+            <div class="paragraph">
+                <p>The log rotation parameters are in the json configuration file  in the <span class="strong">runtimeGlobalFlags</span> section. (See <a href="17_3.2_Setting_up_SQream_DB.htm">Setting up a SQream DB</a>.)</p>
+            </div>
+            <table style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" class="TableStyle-DefaultTable" cellspacing="0">
+                <thead>
+                    <tr class="TableStyle-DefaultTable-Head-Header1">
+                        <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
+                            <p>Parameter </p>
+                        </th>
+                        <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
+                            <p>Description</p>
+                        </th>
+                        <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
+                            <p>Possible Values </p>
+                        </th>
+                        <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
+                            <p>Default Value </p>
+                        </th>
+                        <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">
+                            <p>Comment </p>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1"><span class="strong">useLogMaxFileSize</span>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>Apply rotation based on log file size limit</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>TRUE / FALSE</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>FALSE</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                            <p>When set to ‘TRUE’ <span class="strong">logRotateSizeMB</span> configuration parameter is enabled. </p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2"><span class="strong">logMaxFileSizeMB</span>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>Log file size in MB. </p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>Integer between 1-1024</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body2">
+                            <p>20</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body2">
+                            <p>&#160;</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body1"><span class="strong">logFileRotateTimeFrequency</span>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                            <p>Frequency of log rotation</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                            <p>Daily | Weekly |&#160; Monthly | Never</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body1">
+                            <p>Never</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyA-Column1-Body1">
+                            <p>Not case sensitive</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>Log Levels</h5>
+            <div class="note">A&#160;more inclusive level of logging (a lower numerical log level value) may impact performance.</div>
+            <table style="mc-table-style: url('../../../Resources/Table Styles/DefaultTable.css');" class="TableStyle-DefaultTable" cellspacing="0">
+                <p class="tableheading">Message type/contents:</p>
+                <thead>
+                    <tr class="TableStyle-DefaultTable-Head-Header1">
+                        <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
+                            <p>Parameter </p>
+                        </th>
+                        <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
+                            <p>Description</p>
+                        </th>
+                        <th class="TableStyle-DefaultTable-HeadE-Column1-Header1">
+                            <p>Possible Values </p>
+                        </th>
+                        <th class="TableStyle-DefaultTable-HeadD-Column1-Header1">
+                            <p>Default Value </p>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-DefaultTable-Body-Body1">
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1"><span class="strong">logClientLevel</span>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>Log level </p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyE-Column1-Body1">
+                            <p>0 SYSTEM |</p>
+                            <p>1 FATAL&#160;&#160;&#160; |</p>
+                            <p>2 ERROR&#160;&#160; |</p>
+                            <p>3 WARNING |</p>
+                            <p>4 INFO&#160;&#160;&#160;&#160; </p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyD-Column1-Body1">
+                            <p>4 (INFO)</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-DefaultTable-Body-Body2">
+                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body2"><span class="strong">nodeInfoLoggingSec</span>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                            <p>Threshold for writing from execution log to the instance log </p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyB-Column1-Body2">
+                            <p>Number to represent seconds</p>
+                        </td>
+                        <td class="TableStyle-DefaultTable-BodyA-Column1-Body2">
+                            <p>60 </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="sect3">
+            <h4 id="_support_utilities">Support Utilities</h4>
+            <div class="sect4">
+                <h5 id="_report_collection">Report Collection</h5>
+                <div class="paragraph">
+                    <p>This support utility is used to collect logs and/or the leveldb at a client’s site. The generated tar file can then be sent to the SQream support team for further investigation.</p>
+                </div>
+                <div class="ulist">
+                    <ul>
                         <li>
-                            <p>Repeat the above step for each node that the SQream DB executables exist</p>
+                            <p>Output file format: report_[date]_[time].tar</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="paragraph">
+                    <p>Can run as a utility function or executable, allowing to collect information also if the SQream server is not running.
+				Supported collection modes:</p>
+                </div>
+                <div class="ulist">
+                    <ul>
+                        <li>
+                            <p>log = only log files are collected</p>
                         </li>
                         <li>
-                            <p>It may be necessary to run the metadata upgrade utility.<br></br>(This may take a few moments)<br></br></p>
+                            <p>db = only leveldb</p>
                         </li>
-                    </ol>
+                        <li>
+                            <p>db_and_log = both log files and leveldb are collected</p>
+                        </li>
+                    </ul>
                 </div>
                 <div class="code">
-                    <div class="content"><pre xml:space="preserve">$ cd sqream/bin
-$ ./upgrade_storage &lt;path to sqream storage cluster&gt;</pre>
+                    <div class="title">Syntax and example when running as a utility function:</div>
+                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">SELECT</span>  <span class="tok-n">report_collection</span><span class="tok-p">(</span><span class="tok-s1">'&lt;/pathToOutputFolder&gt;'</span><span class="tok-p">,</span>  <span class="tok-s1">'&lt;mode&gt;'</span><span class="tok-p">);</span>  
+
+					<span class="tok-k">SELECT</span>  <span class="tok-n">report_collection</span><span class="tok-p">(</span><span class="tok-s1">'/home/sqream/log_collection'</span><span class="tok-p">,</span><span class="tok-s1">'log'</span><span class="tok-p">);</span>  <span class="tok-p">)</span></code></pre>
                     </div>
                 </div>
-                <div class="olist arabic">
-                    <ol class="arabic" start="5">
-                        <li>
-                            <p><a href="17_3.2_Setting_up_SQream_DB.htm#StartingAndStopping">Restart the services</a>
-                            </p>
-                        </li>
-                    </ol>
+                <div class="code">
+                    <div class="title">Syntax and example for executable. The executable works only when no SQream instance is running:</div>
+                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="bash">./bin/report_collection &lt;pathToSqreamDb&gt; &lt;/pathToOutputFolder&gt; &lt;mode&gt;./bin/report_collection /home/sqream/sqream_storage/ /home/sqream/log_collection log</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="sect4">
+                <h5 id="_export_reproducible_sample_data">Export Reproducible Sample Data</h5>
+                <div class="paragraph">
+                    <p>This support utility is used to collect data in order to reproduce a problematic query in a support lab (not only onsite at customer’s site). Typically used for query issues that are data-related.
+				It runs a query, collects the data and stores the data in a small SQream DB (compressed into a single tar file). This file together with the query can be used in a remote system (support lab) to recreate and investigate the issue.</p>
+                </div>
+                <div class="paragraph">
+                    <p>The output folder contains both the final tar file and data before compression. It is sufficient to send the tar file, which works as a utility function with no executable.</p>
+                </div>
+                <div class="code">
+                    <div class="title">Syntax and example:</div>
+                    <div class="content"><pre class="pygments highlight" xml:space="preserve"><code data-lang="sqream db"><span class="tok-k">select</span>  <span class="tok-n">export_reproducible_sample</span><span class="tok-p">(</span><span class="tok-s1">'&lt;/pathToOutputFolder&gt;'</span><span class="tok-p">,</span>  <span class="tok-s1">'sql query1'</span><span class="tok-p">,</span>  <span class="tok-s1">'sql query 2'</span><span class="tok-p">,</span>  <span class="tok-mf">..</span><span class="tok-p">);</span>  
+
+					<span class="tok-k">select</span>  <span class="tok-n">export_reproducible_sample</span><span class="tok-p">(</span><span class="tok-s1">'home/sqream/data_collection'</span><span class="tok-p">,</span>  <span class="tok-s1">'select * from t'</span><span class="tok-p">);</span></code></pre>
+                    </div>
+                </div>
+                <div class="sect3">
+                    <h4 id="_backup">Backing up your data</h4>
+                    <div class="paragraph">
+                        <p>The SQream cluster and all its files should be backed up via O/S storage on a regular basis.</p>
+                    </div>
+                    <div class="ulist">
+                        <ul>
+                            <li>
+                                <p>
+                                    <p>Offline backup:  Stop all SQream instances and the metadata server. Then copy the relevant files.</p>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <p>Online backup:  This option is available on under the following conditions:</p>
+                                </p>
+                                <div class="ulist">
+                                    <ul>
+                                        <li>
+                                            <p>Storage provides an instant backup mechanism such as <span class="emphasis">snapshot</span><![CDATA[ 
+											]]></p>
+                                        </li>
+                                        <li>
+                                            <p>The entire SQream cluster storage is in the same file system 
+											</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
